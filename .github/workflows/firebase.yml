@@ -1,0 +1,14 @@
+on: [push]
+name: Deploy Hugo to Firebase
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        submodules: true
+    - uses: ryank90/action-hugo-firebase-deploy@master
+      with:
+        firebase-token: ${{ secrets.firebase_token }}
+        alias: ${{ alias }} // Optional
+        hugo-params: -D // Optional. Any params for the `hugo` command. [Refer doc here](https://gohugo.io/commands/hugo/) 
