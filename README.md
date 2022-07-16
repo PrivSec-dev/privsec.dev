@@ -1,2 +1,2 @@
 # privsec.dev
-Practical Privacy and Security stuff
+A practical approach to privacy and security
