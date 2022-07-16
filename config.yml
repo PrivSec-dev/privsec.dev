@@ -4,9 +4,6 @@ paginate: 5
 theme: PaperMod
 
 enableRobotsTXT: true
-buildDrafts: false
-buildFuture: false
-buildExpired: false
 
 minify:
   disableXML: true
@@ -14,33 +11,18 @@ minify:
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: PrivSec.dev
-  description: "A practical approach to privacy and security"
-  keywords: [Privacy, Security]
-  author: PrivSec.dev Team
+  author: PrivSec Team
   # author: ["Me", "You"] # multiple authors
-  images: ["<link or path of image for opengraph, twitter-cards>"]
-  DateFormat: "January 2, 2006"
-  defaultTheme: auto # dark, light
+  defaultTheme: dark # dark, light
   disableThemeToggle: false
 
   ShowReadingTime: true
-  ShowShareButtons: true
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
-  ShowCodeCopyButtons: false
   ShowWordCount: true
+  showtoc: true
   ShowRssButtonInSectionTermList: true
-  UseHugoToc: true
-  disableSpecial1stPost: false
-  disableScrollToTop: false
-  comments: false
-  hidemeta: false
-  hideSummary: false
-  showtoc: false
-  tocopen: false
-  defaultTheme: dark
-  disableThemeToggle: true
+  ShowCodeCopyButtons: true
 
   assets:
     # disableHLJS: true # to disable highlight.js
@@ -59,6 +41,13 @@ params:
     enabled: true # needs to be explicitly set
     title: PrivSec.dev
     subtitle: "A practical approach to privacy and security"
+    buttons:
+      - name: About
+        url: about
+      - name: Donate
+        url: donate
+      - name: Tags
+        url: tags
 
   socialIcons:
     - name: matrix
@@ -74,7 +63,7 @@ params:
     hiddenInSingle: true # hide on single page
 
   editPost:
-    URL: "https://github.com/<path_to_repo>/content"
+    URL: "https://github.com/PrivSec-dev/privsec.dev/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
@@ -92,7 +81,7 @@ menu:
   main:
     - identifier: Knowledge Base
       name: Knowledge Base
-      url: /Knowledge Base/
+      url: /knowledge/
       weight: 10
     - identifier: Operating Systems
       name: Operating Systems
@@ -106,7 +95,7 @@ menu:
       name: Providers
       url: /providers/
       weight: 40
-    - identifier: Self Hosting
-      name: Self Hosting
-      url: /self-hosting/
-      weight: 50
+
+privacy:
+  youtube:
+    privacyEnhanced: true
