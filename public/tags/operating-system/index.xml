@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>operating system&#39; on PrivSec.dev</title>
+    <link>https://privsec.dev/tags/operating-system/</link>
+    <description>Recent content in operating system&#39; on PrivSec.dev</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://privsec.dev/tags/operating-system/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux Insecurities</title>
+      <link>https://privsec.dev/os/linux-insecurities/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://privsec.dev/os/linux-insecurities/</guid>
+      <description>There is a common misconception among privacy communities that Linux is one of the more secure operating systems, either because it is open source or because it is widely used in the cloud. This is however, a far cry from reality.
+There is already a very indepth technical blog explaning the various security weaknesses of Linux by Madaidan, Whonix&amp;rsquo;s Security Researcher. This page will attempt to address some of the questions commonly raised in reaction to his blog post.</description>
+    </item>
+    
+  </channel>
+</rss>

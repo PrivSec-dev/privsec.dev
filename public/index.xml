@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>PrivSec.dev</title>
+    <link>https://privsec.dev/</link>
+    <description>Recent content on PrivSec.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 02 Jan 2022 21:28:31 +0000</lastBuildDate><atom:link href="https://privsec.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>F-Droid Security Analysis</title>
+      <link>https://privsec.dev/software/f-droid-security-analysis/</link>
+      <pubDate>Sun, 02 Jan 2022 21:28:31 +0000</pubDate>
+      
+      <guid>https://privsec.dev/software/f-droid-security-analysis/</guid>
+      <description>F-Droid is a popular alternative app repository for Android, especially known for its main repository dedicated to free and open-source software. F-Droid is often recommended among security and privacy enthusiasts, but how does it stack up against Play Store in practice? This write-up will attempt to emphasize major security issues with F-Droid that you should consider.
+Before we start, a few things to keep in mind:
+The main goal of this write-up was to inform users so they can make responsible choices, not to trash someone else&amp;rsquo;s work.</description>
+    </item>
+    
+    <item>
+      <title>About Us</title>
+      <link>https://privsec.dev/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://privsec.dev/about/</guid>
+      <description>PrivSec.dev is made by a group of enthusiastic individuals looking to provide practical privacy and security advice for the end user. We are security researchers, developers, system administrators&amp;hellip; generally people with technical knowledge and work in the field.
+We focus on in-depth system configuration, security analysis, and software/hardware recommendations. Our site is based on technical merits, not ideologies and politics.
+Tommy System Administrator. Benevolent dictator for life @privsec.dev.
+Website: tommytran.io</description>
+    </item>
+    
+    <item>
+      <title>Donate</title>
+      <link>https://privsec.dev/donate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://privsec.dev/donate/</guid>
+      <description>The domain costs us $12/year to renew from Google. We got our repository hosted for free on GitHub. We got our site hosted for free with Firebase. It costs Tommy ~$20/month to run the mail server, but that server is used for a bunch of his projects, not just PrivSec, and we doubt it will be used that much anyways. The point is, this website does not cost much to run, and as such we will not be accepting donation as a project.</description>
+    </item>
+    
+    <item>
+      <title>Linux Insecurities</title>
+      <link>https://privsec.dev/os/linux-insecurities/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://privsec.dev/os/linux-insecurities/</guid>
+      <description>There is a common misconception among privacy communities that Linux is one of the more secure operating systems, either because it is open source or because it is widely used in the cloud. This is however, a far cry from reality.
+There is already a very indepth technical blog explaning the various security weaknesses of Linux by Madaidan, Whonix&amp;rsquo;s Security Researcher. This page will attempt to address some of the questions commonly raised in reaction to his blog post.</description>
+    </item>
+    
+    <item>
+      <title>Multi-factor Authentication</title>
+      <link>https://privsec.dev/knowledge/multi-factor-authentication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://privsec.dev/knowledge/multi-factor-authentication/</guid>
+      <description>Multi-factor authentication is a security mechanism that requires additional verification beyond your username (or email) and password. This usually comes in the form of a one time passcode, a push notification, or plugging in and tapping a hardware security key.
+Common protocols Email and SMS MFA Email and SMS MFA are examples of the weaker MFA protocols. Email MFA is not great as whoever controls your email account can typically both reset your password and recieve your MFA verification.</description>
+    </item>
+    
+  </channel>
+</rss>
