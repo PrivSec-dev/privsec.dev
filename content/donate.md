@@ -10,7 +10,7 @@ The real cost is the time and energy we put into writing, testing, and fact chec
 **Monero**: `49b1PUPeHJEDwZqaaQm4MQUjycY8ckEko53jvTcPB5yE2QKoS5haNe3Fnbg1Le7nSkgUkm4tcpj4Z2YmtaT3j6KVUVgBGw2`
 
 ### Randomhydrosol
-**Bitcoin**: `bc1qchel9lzhuv3ayfp58yfdu7sxsjw2svgugtvj4v`
+**Bitcoin**: `bc1qchel9lzhuv3ayfp58yfdu7sxsjw2svgugtvj4v`\
 **Monero**: `49yB5DPXK9TJVj5Jq5DkvrXd4wkFnoeC56mPED85bf5wHTUYmSyoYFEbVyyTciKzjFTo1kxMJMiCpLwuR96fT2NWS1hPVFG`
 
 ---
