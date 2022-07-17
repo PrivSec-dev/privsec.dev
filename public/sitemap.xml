@@ -5,7 +5,25 @@
     <loc>https://privsec.dev/tags/android/</loc>
     <lastmod>2022-01-02T21:28:31+00:00</lastmod>
   </url><url>
-    <loc>https://privsec.dev/software/f-droid-security-analysis/</loc>
+    <loc>https://privsec.dev/apps/</loc>
+    <lastmod>2022-01-02T21:28:31+00:00</lastmod>
+  </url><url>
+    <loc>https://privsec.dev/tags/container/</loc>
+    <lastmod>2022-01-02T21:28:31+00:00</lastmod>
+  </url><url>
+    <loc>https://privsec.dev/os/docker-and-oci-hardening/</loc>
+    <lastmod>2022-01-02T21:28:31+00:00</lastmod>
+  </url><url>
+    <loc>https://privsec.dev/apps/f-droid-security-analysis/</loc>
+    <lastmod>2022-01-02T21:28:31+00:00</lastmod>
+  </url><url>
+    <loc>https://privsec.dev/tags/linux/</loc>
+    <lastmod>2022-01-02T21:28:31+00:00</lastmod>
+  </url><url>
+    <loc>https://privsec.dev/tags/operating-systems/</loc>
+    <lastmod>2022-01-02T21:28:31+00:00</lastmod>
+  </url><url>
+    <loc>https://privsec.dev/os/</loc>
     <lastmod>2022-01-02T21:28:31+00:00</lastmod>
   </url><url>
     <loc>https://privsec.dev/</loc>
@@ -15,9 +33,6 @@
     <lastmod>2022-01-02T21:28:31+00:00</lastmod>
   </url><url>
     <loc>https://privsec.dev/tags/software/</loc>
-    <lastmod>2022-01-02T21:28:31+00:00</lastmod>
-  </url><url>
-    <loc>https://privsec.dev/software/</loc>
     <lastmod>2022-01-02T21:28:31+00:00</lastmod>
   </url><url>
     <loc>https://privsec.dev/tags/</loc>
@@ -33,15 +48,11 @@
   </url><url>
     <loc>https://privsec.dev/knowledge/</loc>
   </url><url>
-    <loc>https://privsec.dev/tags/linux/</loc>
-  </url><url>
     <loc>https://privsec.dev/os/linux-insecurities/</loc>
   </url><url>
     <loc>https://privsec.dev/knowledge/multi-factor-authentication/</loc>
   </url><url>
     <loc>https://privsec.dev/tags/operating-system/</loc>
-  </url><url>
-    <loc>https://privsec.dev/os/</loc>
   </url><url>
     <loc>https://privsec.dev/providers/</loc>
   </url>

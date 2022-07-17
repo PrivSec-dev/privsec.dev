@@ -87,9 +87,9 @@ menu:
       name: Operating Systems
       url: /os/
       weight: 20
-    - identifier: Software
-      name: Software
-      url: /software/
+    - identifier: Applications
+      name: Applications
+      url: /apps/
       weight: 30
     - identifier: Providers
       name: Providers
