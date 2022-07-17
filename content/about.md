@@ -28,7 +28,7 @@ Random guy passing by on the Internet who is interested in all kinds of things. 
 **Matrix**: [@wonderfall:lysergide.dev](https://matrix.to/#/@wonderfall:lysergide.dev)
 
 ### Lberrymage
-Accrescent developer. Rust shill and man who can't stop recycling the names of his previous projects.
+Accrescent developer. Rust shill and man who can't stop recycling names of his previous projects.
 
 **Website**: [accrescent.app](https://accrescent.app/)\
 **Matrix**: [@lberrymage:matrix.org](https://matrix.to/#/@lberrymage:matrix.org)
