@@ -1,6 +1,5 @@
 ---
 title: "F-Droid Security Analysis"
-date: 2022-01-02T21:28:31Z
 tags: ['software', 'android', 'security']
 author: Wonderfall
 canonicalURL: https://wonderfall.dev/fdroid-issues
@@ -155,7 +154,6 @@ In modern Android, the background restriction toggle is what really provides the
 
 Another example to illustrate the shortcomings of this approach would be the `QUERY_ALL_PACKAGES` low-level permission, which is referred to as the *query all packages* permission that "allows an app to see all installed packages". While this is somewhat correct, this can also be misleading: apps do not need `QUERY_ALL_PACKAGES` to list other apps within the same user profile. Even without this permission, some apps are visible automatically (visibility is restricted by default [since Android 11](https://developer.android.com/training/package-visibility)). If an app needs more visibility, it will declare a `<queries>` element in its manifest file: in other words, `QUERY_ALL_PACKAGES` is only one way to achieve visibility. Again, this goes to show low-level manifest permissions are not intended to be interpreted as high-level permissions the user should fully comprehend.
 
-Play Store for instance conveys the permissions in a way less misleading way: the main low-level permissions are first grouped in their high-level user-facing toggles, and the rest is shown under "Other". This permission list can only be accessed by taping "About this app" then "App permissions - See more" at the bottom of the page. Play Store will tell the app may request access to the following permissions: this kind of wording is more important than it seems. *Update: since July 2022, Play Store doesn't offer a way to display low-level permissions anymore.*
 
 Moreover, [Play Store restricts the use of highly invasive permissions](https://support.google.com/googleplay/android-developer/answer/9888170) such as `MANAGE_EXTERNAL_STORAGE` which allows apps to opt out of scoped storage if they can't work with [more privacy friendly approaches](https://developer.android.com/guide/topics/providers/document-provider) (like a file explorer). Apps that can't justify their use of this permission (which again has to be granted dynamically) may be removed from Play Store. This is where an app repository can actually be useful in their review process to protect end-users from installing poorly made apps that might compromise their privacy. Not that it matters much if these apps target very old API levels that are inclined to require invasive permissions in the first place...
 

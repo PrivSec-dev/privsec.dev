@@ -2,32 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://privsec.dev/tags/android/</loc>
-    <lastmod>2022-01-02T21:28:31+00:00</lastmod>
-  </url><url>
-    <loc>https://privsec.dev/software/f-droid-security-analysis/</loc>
-    <lastmod>2022-01-02T21:28:31+00:00</lastmod>
-  </url><url>
-    <loc>https://privsec.dev/</loc>
-    <lastmod>2022-01-02T21:28:31+00:00</lastmod>
-  </url><url>
-    <loc>https://privsec.dev/tags/security/</loc>
-    <lastmod>2022-01-02T21:28:31+00:00</lastmod>
-  </url><url>
-    <loc>https://privsec.dev/tags/software/</loc>
-    <lastmod>2022-01-02T21:28:31+00:00</lastmod>
-  </url><url>
-    <loc>https://privsec.dev/software/</loc>
-    <lastmod>2022-01-02T21:28:31+00:00</lastmod>
-  </url><url>
-    <loc>https://privsec.dev/tags/</loc>
-    <lastmod>2022-01-02T21:28:31+00:00</lastmod>
-  </url><url>
     <loc>https://privsec.dev/about/</loc>
+  </url><url>
+    <loc>https://privsec.dev/tags/android/</loc>
+  </url><url>
+    <loc>https://privsec.dev/apps/</loc>
   </url><url>
     <loc>https://privsec.dev/categories/</loc>
   </url><url>
+    <loc>https://privsec.dev/os/choosing-your-desktop-linux-distribution/</loc>
+  </url><url>
+    <loc>https://privsec.dev/tags/container/</loc>
+  </url><url>
+    <loc>https://privsec.dev/os/docker-and-oci-hardening/</loc>
+  </url><url>
     <loc>https://privsec.dev/donate/</loc>
+  </url><url>
+    <loc>https://privsec.dev/apps/f-droid-security-analysis/</loc>
   </url><url>
     <loc>https://privsec.dev/tags/knowledge-base/</loc>
   </url><url>
@@ -41,8 +32,20 @@
   </url><url>
     <loc>https://privsec.dev/tags/operating-system/</loc>
   </url><url>
+    <loc>https://privsec.dev/tags/operating-systems/</loc>
+  </url><url>
     <loc>https://privsec.dev/os/</loc>
   </url><url>
+    <loc>https://privsec.dev/</loc>
+  </url><url>
     <loc>https://privsec.dev/providers/</loc>
+  </url><url>
+    <loc>https://privsec.dev/os/securing-openssh-with-fido2/</loc>
+  </url><url>
+    <loc>https://privsec.dev/tags/security/</loc>
+  </url><url>
+    <loc>https://privsec.dev/tags/software/</loc>
+  </url><url>
+    <loc>https://privsec.dev/tags/</loc>
   </url>
 </urlset>

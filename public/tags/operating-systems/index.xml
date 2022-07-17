@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>operating systems on PrivSec.dev</title>
+    <link>https://privsec.dev/tags/operating-systems/</link>
+    <description>Recent content in operating systems on PrivSec.dev</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://privsec.dev/tags/operating-systems/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker and OCI Hardening</title>
+      <link>https://privsec.dev/os/docker-and-oci-hardening/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://privsec.dev/os/docker-and-oci-hardening/</guid>
+      <description>Containers aren&amp;rsquo;t that new fancy thing anymore, but they were a big deal. And they still are. They are a concrete solution to the following problem:
+- Hey, your software doesn&amp;rsquo;t work&amp;hellip;
+- Sorry, it works on my computer! Can&amp;rsquo;t help you.
+Whether we like them or not, containers are here to stay. Their expressiveness and semantics allow for an abstraction of the OS dependencies that a software has, the latter being often dynamically linked against certain libraries.</description>
+    </item>
+    
+    <item>
+      <title>Securing OpenSSH with FIDO2</title>
+      <link>https://privsec.dev/os/securing-openssh-with-fido2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://privsec.dev/os/securing-openssh-with-fido2/</guid>
+      <description>Passwordless authentication with OpenSSH keys has been the de facto security standard for years. SSH keys are more robust since they&amp;rsquo;re cryptographically sane by default, and are therefore resilient to most bruteforce atacks. They&amp;rsquo;re also easier to manage while enabling a form of decentralized authentication (it&amp;rsquo;s easy and painless to revoke them). So, what&amp;rsquo;s the next step? And more exactly, why would one need something even better?
+Why? The main problem with SSH keys is that they&amp;rsquo;re not magic: they consist of a key pair, of which the private key is stored on your disk.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -32,7 +32,7 @@ If you have a [Yubikey](https://www.yubico.com/), you should store the "shared s
 
 Unlike [WebAuthn](#fido-fast-identity-online), TOTP offers no protection against [phishing](https://en.wikipedia.org/wiki/Phishing) or reuse attacks. If an adversary obtains a valid code from you, they may use it as many times as they like until it expires (generally 60 seconds + grace period).
 
-Despite of its short comings, TOTP is considered better and safer than Push Confirmations.
+Despite of its short comings, we consider TOTP better and safer than Push Confirmations.
 
 ### Yubico OTP
 
@@ -48,7 +48,7 @@ The Yubico validation server is a cloud based service, and you're placing trust 
 
 Yubico OTP is an inferior protocol compared to TOTP since TOTP does not need trust in a third party server and most security keys that support Yubico OTP (namely the Yubikey and OnlyKey) supports TOTP anyway. Yubico OTP is still better than Push Confirmation, however.
 
-### FIDO (Fast IDentity Online)
+### FIDO2 (Fast IDentity Online)
 
 [FIDO](https://en.wikipedia.org/wiki/FIDO_Alliance) includes a number of standards; first there was U2F and then later [FIDO2](https://en.wikipedia.org/wiki/FIDO2_Project) which includes the web standard [WebAuthn](https://en.wikipedia.org/wiki/WebAuthn).
 
@@ -56,15 +56,9 @@ U2F and FIDO2 refer to the [Client to Authenticator Protocol](https://en.wikiped
 
 WebAuthn is the most secure and private form of second factor authentication. While the authentication experience is similar to Yubico OTP, the key does not print out a one-time password and validate with a third-party server. Instead, it uses [public key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography) for authentication.
 
-When you create an account, the public key is sent to the service, then when you log in, the service will require you to "sign" some data with your private key. The benefit of this is that no password data is ever stored by the service, so there is nothing for an adversary to steal.
-
 {{< youtube id="aMo4ZlWznao">}}
 
-FIDO2 and WebAuthn have superior security and privacy properties when compared to any MFA methods.
-
-Web services typically use WebAuthn which is a part of the [W3C recommendations](https://en.wikipedia.org/wiki/World_Wide_Web_Consortium#W3C_recommendation_(REC)). It uses public key authentication and is more secure than shared secrets used in Yubico OTP and TOTP methods, as it includes the origin name (usually, the domain name) during authentication. Attestation is provided to protect you from phishing attacks, as it helps you to determine that you are using the authentic service and not a fake copy.
-
-Unlike Yubico OTP, WebAuthn does not use any public ID, so the key is **not** identifiable across different websites. It also does not use any third-party cloud server for authentication. All communication is completed between the key and the website you are logging into. FIDO also uses a counter which is incremented upon use in order to prevent session reuse and cloned keys.
+Since FIDO2/WebAuthn uses unique cryptographic keys with each internet site, a site pretending to be another one will not be able to get the correct response to the challenge for MFA, making FIDO2/Webauthn is invulnerable phising. It is also because of this authentication mechanism that a physical FIDO2 security key is not identifiable across different services like Yubico OTP. Even better, FIDO2 uses a counter for each authentication, which would help with detecting cloned keys.
 
 If a website or service supports WebAuthn for the authentication, it is highly recommended that you use it over any other form of MFA.
 
@@ -78,4 +72,12 @@ When buying a security key, it is important that you change the default credenti
 
 You should always have backups for your MFA method. Hardware security keys can get lost, stolen, or simply stop working over time. It is recommended that you have a pair of hardware security keys with the same access to your accounts instead of just one.
 
-When using TOTP with an authenticator app, be sure to back up your recovery keys or the app itself, or copy the "shared secrets" to another instance of the app on a different phone or to an encrypted container (e.g. [VeraCrypt](../encryption.md#veracrypt)).
+When using TOTP with an authenticator app, be sure to back up your recovery keys to an offline and encrypted storage device.
+
+### Weakest link
+
+You are only as secure as the weakest authentication method you use. For instance, it makes little sense to add SMS 2FA as an alternative MFA method if you are already using FIDO2. An adversary who can compromise your SMS 2FA will get into your account just as easily as if you didn't use FIDO2 at all.
+
+Thus, it is important to stick to the best authentication method you have acess to. It is better to have 2 Yubikeys for FIDO2 than 1 FIDO2 key and one authenticator app for TOTP. Likewise, it is better to have 1 TOTP instance and a backup key than to use TOTP alongside with Email or SMS 2FA.
+
+
