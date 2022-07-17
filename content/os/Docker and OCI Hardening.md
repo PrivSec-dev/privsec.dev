@@ -1,213 +1,258 @@
 ---
 title: "Docker and OCI Hardening"
-date: 2022-01-02T21:28:31Z
+date: 2022-03-30T21:23:12Z
 tags: ['operating systems', 'linux', 'container', 'security']
 author: Wonderfall
 canonicalURL: https://wonderfall.dev/docker-hardening/
 ShowCanonicalLink: true
 ---
 
-F-Droid is a popular alternative app repository for Android, especially known for its main repository dedicated to free and open-source software. F-Droid is often recommended among security and privacy enthusiasts, but how does it stack up against Play Store in practice? This write-up will attempt to emphasize major security issues with F-Droid that you should consider.
+Containers aren't that new fancy thing anymore, but they were a big deal. And they still are. They are a concrete solution to the following problem:
 
-Before we start, a few things to keep in mind:
+> \- Hey, your software doesn't work...
+>
+> \- Sorry, it works on my computer! Can't help you.
 
-- The main goal of this write-up was to inform users so they can make responsible choices, not to trash someone else's work. I have respect for any work done in the name of good intentions. Likewise, please don't misinterpret the intentions of this article.
-- You have your own reasons for using open-source or free/libre/whatever software which won't be discussed here. A development model shouldn't be an excuse for bad practices and shouldn't lure you into believing that it can provide strong guarantees it cannot.
-- A lot of information in this article is sourced from official and trusted sources, but you're welcome to do your own research.
-- These analyses do not account for threat models and personal preferences. As the author of this article, I'm only interested in facts and not ideologies.
+Whether we like them or not, containers are here to stay. Their expressiveness and semantics allow for an abstraction of the OS dependencies that a software has, the latter being often dynamically linked against certain libraries. The developer can therefore provide a known-good environment where it is expected that their software "just works". That is particularly useful for development to eliminate environment-related issues, and that is often used in production as well.
 
-*This is not an in-depth security review, nor is it exhaustive.*
+Containers are often perceived as a great tool for isolation, that is, they can provide an isolated workspace that won't pollute your host OS - all that without the overhead of virtual machines. Security-wise: containers, as we know them on Linux, are glorified namespaces at their core. Containers usually share the same kernel with the host, and **namespaces** is the kernel feature for separating kernel resources across containers (IDs, networks, filesystems, IPC, etc.). Containers also leverage the features of **cgroups** to separate system resources (CPU, memory, etc.), and security features such as seccomp to restrict syscalls, or MACs (AppArmor, SELinux).
 
-## 1. The trusted party problem
-To understand why this is a problem, you'll have to understand a bit about F-Droid's architecture, the things it does very differently from other app repositories, and the [Android platform security model](https://arxiv.org/pdf/1904.05572.pdf) (some of the issues listed in this article are somewhat out of the scope of the OS security model, but the majority is).
+At first, it seems that containers may not provide the same isolation boundary as virtual machines. That's fine, they were not designed to. But they can't be simplified to a simple `chroot` either. We'll see that a "container" can mean a lot of things, and their definition may vary a lot depending on the implementation: as such, containers are mostly defined by their semantics.
 
-Unlike other repositories, F-Droid signs all the apps in the main repository with **its own signing keys** (unique per app) at the exception of the very few [reproducible builds](https://f-droid.org/en/docs/Reproducible_Builds/). A signature is a mathematical scheme that guarantees the authenticity of the applications you download. Upon the installation of an app, Android pins the signature across the entire OS (including user profiles): that's what we call a *trust-on-first-use* model since all subsequent updates of the app must have the corresponding signature to be installed.
+## Docker is dead, long live Docker... and OCI!
+When people think of containers, a large group of them may think of Docker. While Docker played a big role in the popularity of containers a few years ago, it didn't introduce the technology: on Linux, LXC did (*Linux Containers*). In fact, Docker in its early days was a high-level wrapper for LXC which already combined the power of namespaces and cgroups. Docker then replaced LXC with `libcontainer` which does more or less the same, plus extra features.
 
-Normally, the developer is supposed to sign their own app prior to its upload on a distribution channel, whether that is a website or a traditional repository (or both). You don't have to trust the source (usually recommended by the developer) except for the first installation: future updates will have their authenticity cryptographically guaranteed. The issue with F-Droid is that all apps are signed by the same party (F-Droid) which is also not the developer. You're now adding another party you'll have to trust since **you still have to trust the developer** anyway, which isn't ideal: **the fewer parties, the better**.
+Then, what happened? *Open Container Initiative* (OCI). That is the current standard that defines the container ecosystem. That means that whether you're using Docker, Podman, or Kubernetes, you're in fact running OCI-compliant tools. That is a good thing, as it saves a lot of interoperability headaches.
 
-On the other hand, Play Store now manages the app signing keys too, as [Play App Signing](https://developer.android.com/studio/publish/app-signing#app-signing-google-play) is required for app bundles which are required for new apps since August 2021. These signing keys can be uploaded or automatically generated, and are securely stored by [Google Cloud Key Management Service](https://services.google.com/fh/files/misc/security_whitepapers_march2018.pdf). It should be noted that the developer still has to sign the app with **an upload key** so that Google can verify its authenticity before signing it with the app signing key. For apps created before August 2021 that may have [not opted in Play App Signing](https://developer.android.com/studio/publish/app-signing#opt-out) yet, the developer still manages the private key and is responsible for its security, as a compromised private key can allow a third party to sign and distribute malicious code.
-
-F-Droid requires that the source code of the app is exempt from any proprietary library or ad service, according to their [inclusion policy](https://f-droid.org/en/docs/Inclusion_Policy/). Usually, that means that some developers will have to maintain a slightly different version of their codebase that should comply with F-Droid's requirements. Besides, their "quality control" offers **close to no guarantees** as having access to the source code doesn't mean it can be easily proofread. Saying Play Store is filled with malicious apps is beyond the point: the **false sense of security** is a real issue. Users should not think of the F-Droid main repository as free of malicious apps, yet unfortunately many are inclined to believe this.
-
-> But... can't I just trust F-Droid and be done with it?
-
-[You don't have to take my word for it](https://forum.f-droid.org/t/is-it-as-safe-as-it-is-from-fdroid-official-repo/15956/12): they openly admit themselves it's a [very basic process](https://forum.f-droid.org/t/is-it-as-safe-as-it-is-from-fdroid-official-repo/15956/2) relying on badness enumeration (this doesn't work by the way) which consists in a few scripts scanning the code for proprietary blobs and known trackers. You are therefore not exempted from trusting upstream developers and it goes for any repository.
-
-*A tempting idea would be to compare F-Droid to the desktop Linux model where users trust their distribution maintainers out-of-the-box (this can be sane if you're already trusting the OS anyway), but the desktop platform is intrinsically chaotic and heterogeneous for better and for worse. It really shouldn't be compared to the Android platform in any way.*
-
-While we've seen that F-Droid controls the signing servers (much like Play App Signing), F-Droid also fully controls the build servers that run the disposable VMs used for building apps. And [as of July 2022](https://gitlab.com/groups/fdroid/-/milestones/5#tab-issues), their guest VM image officially runs a version of Debian which reached EOL. Undoubtedly, this raises questions about their whole infrastructure security.
-
-> How can you be sure that the app repository can be held to account for the code it delivers?
-
-F-Droid's answer, interesting yet largely unused, is [build reproducibility](https://f-droid.org/en/docs/Reproducible_Builds/). While deterministic builds are a neat idea in theory, it requires the developer to make their toolchain match with what F-Droid provides. It's additional work on both ends sometimes resulting in [apps severely lagging behind in updates](https://code.briarproject.org/briar/briar/-/issues/1612), so reproducible builds are not as common as we would have wanted. It should be noted that reproducible builds in the main repository can be exclusively developer-signed.
-
-Google's approach is [code transparency for app bundles](https://developer.android.com/guide/app-bundle/code-transparency), which is a simple idea addressing some of the concerns with Play App Signing. A JSON Web Token (JWT) signed by a key private to the developer is included in the app bundle before its upload to Play Store. This token contains a list of DEX files and native `.so` libraries and their hashes, allowing end-users to verify that the running code was built and signed by the app developer. Code transparency has known limitations, however: not all resources can be verified, and this verification can only be done manually since it's not part of the Android platform itself (so requiring a code transparency file cannot be enforced by the OS right now). Despite its incompleteness, code transparency is still helpful, easy to implement, and thus something we should see more often as time goes by.
-
-> What about other app repositories such as Amazon?
-
-[To my current knowledge](https://developer.amazon.com/docs/app-submission/understanding-submission.html#code_wrapper), the Amazon Appstore has always been wrapping APKs with their own code (including their own trackers), and this means they were effectively resigning submitted APKs.
-
-If you understood correctly the information above, Google can't do this for apps that haven't opted in Play App Signing. As for apps concerned by Play App Signing, while Google could technically introduce their own code like Amazon, they wouldn't do that without telling about it since this will be easily noticeable by the developer and more globally researchers. They have other means on the Android app development platform to do so. Believing they won't do that based on this principle is not a strong guarantee, however: hence the above paragraph about code transparency for app bundles.
-
-Huawei AppGallery seems to have a [similar approach](https://developer.huawei.com/consumer/en/doc/distribution/app/20210812) to Google, where submitted apps could be developer-signed, but newer apps will be resigned by Huawei.
-
-## 2. Slow and irregular updates
-Since you're adding one more party to the mix, that party is now responsible for delivering proper builds of the app: it's a common thing among traditional Linux distributions and their packaging system. They have to catch up with *upstream* on a regular basis, but very few do it well (Arch Linux comes to my mind). Others, like Debian, prefer making extensive *downstream* changes and delivering security fixes for a subset of vulnerabilities assigned to a CVE (yeah, it's as bad as it sounds, but that's another topic).
-
-Not only does F-Droid require specific changes for the app to comply with its inclusion policy, which often leads to more maintenance work, it also has a rather strange way of triggering new builds. Part of its build process seems to be [automated](https://f-droid.org/en/docs/FAQ_-_App_Developers/), which is the least you could expect. Now here's the thing: app signing keys are on an **air-gapped server** (meaning it's disconnected from any network, at least that's what they claim: see [their recommendations](https://f-droid.org/docs/Building_a_Signing_Server/) for reference), which forces an irregular update cycle where a human has to manually trigger the signing process. It is far from an ideal situation, and you may argue it's the least to be expected since by entrusting all the signing keys to one party, you could also introduce a single point of failure. Should their system be compromised (whether from the inside or the outside), this could lead to serious security issues affecting plenty of users.
-
-*This is one of the main reasons why Signal refused to support the inclusion of a third-party build in the F-Droid official repository. While [this GitHub issue](https://github.com/signalapp/Signal-Android/issues/127) is quite old, many points still hold true today.*
-
-Considering all this, and the fact that their build process is often broken using outdated tools, you have to expect **far slower updates** compared to a traditional distribution system. Slow updates mean that you will be exposed to security vulnerabilities more often than you should've been. It would be unwise to have a full browser updated through the F-Droid official repository, for instance. F-Droid third-party repositories somewhat mitigate the issue of slow updates since they can be managed directly by the developer. It isn't ideal either as you will see below.
-
-## 3. Low target API level (SDK) for client & apps
-SDK stands for *Software Development Kit* and is the collection of software to build apps for a given platform. On Android, a higher SDK level means you'll be able to make use of modern API levels of which each iteration brings **security and privacy improvements**. For instance, API level 31 makes use of all these improvements on Android 12.
-
-As you may already know, Android has a strong sandboxing model where each application is sandboxed. You could say that an app compiled with the highest API level benefits from all the latest improvements brought to the app sandbox; as opposed to outdated apps compiled with older API levels, which have a **weaker sandbox**.
+**Docker** is no longer the monolithic platform it once was. `libcontainer` was absorbed by `runc`, the reference OCI runtime. The high-level components of Docker split into different parts related to the upstream Moby project (Docker is the "assembled product" of the "Moby components"). When we refer to Docker, we refer in fact at this powerful high-level API that manages OCI containers. By design, Docker is a daemon that communicates with `containerd`, a lower-level layer, which in turn communicates with the OCI runtime. That also means that you could very well skip Docker altogether and use `containerd` or even `runc` directly.
 
 ```
-# b/35917228 - /proc/misc access
-# This will go away in a future Android release
-allow untrusted_app_25 proc_misc:file r_file_perms;
-
-# Access to /proc/tty/drivers, to allow apps to determine if they
-# are running in an emulated environment.
-# b/33214085 b/33814662 b/33791054 b/33211769
-# https://github.com/strazzere/anti-emulator/blob/master/AntiEmulator/src/diff/strazzere/anti/emulator/FindEmulator.java
-# This will go away in a future Android release
-allow untrusted_app_25 proc_tty_drivers:file r_file_perms;
+Docker client <=> Docker daemon <=> containerd <=> containerd-shim <=> runc
 ```
 
-This is a mere sample of the [SELinux exceptions](https://android.googlesource.com/platform/system/sepolicy/+/refs/tags/android-12.0.0_r21/private) that have to be made on older API levels so that you can understand why it matters.
+**Podman** is an alternative to Docker developed by RedHat, that also intends to be a drop-in replacement for Docker. It doesn't work with a daemon, and can work rootless by design (Docker has support for rootless too, but that is not without caveats). I would largely recommend Podman over Docker for someone who wants a simple tool to run containers and test code on their machine.
 
-It turns out the official F-Droid client doesn't care much about this since it lags behind quite a bit, **[targeting the API level 25](https://gitlab.com/fdroid/fdroidclient/-/blob/2a8b16683a2dbee16d624a58e7dd3ea1da772fbd/app/build.gradle#L33)** (Android 7.1) of which some SELinux exceptions were shown above. As a workaround, some users recommended third-party clients such as [Foxy Droid](https://f-droid.org/en/packages/nya.kitsunyan.foxydroid/) or [Aurora Droid](https://f-droid.org/en/packages/com.aurora.adroid/). While these clients might be technically better, they're poorly maintained for some, and they also introduce yet another party to the mix. [Droid-ify](https://github.com/Iamlooker/Droid-ify) (recently rebreanded to Neo-Store) seems to be a better option than the official client in most aspects.
+**Kubernetes** (also known as K8S) is the container platform made by Google. It is designed with scaling in mind, and is about running containers across a cluster whereas Docker focuses on packaging containers on a single node. Docker Swarm is the direct alternative to that, but it has never really took off due to the popularity of K8S.
 
-Furthermore, F-Droid **doesn't enforce a minimum target SDK** for the official repository. Play Store [does that quite aggressively](https://developer.android.com/google/play/requirements/target-sdk) for new apps and app updates:
+For the rest of this article, we will use Docker as the reference for our examples, along with the [Compose specification](https://docs.docker.com/compose/compose-file/) format. Most of these examples can be adapted to other platforms without issues.
 
-- Since August 2021, Play Store requires new apps to target at least API level 30.
-- Since November 2021, existing apps must at least target API level 30 for updates to be submitted.
+## The nightmare of dependencies
+Containers are made from images, and images are typically built from a Dockerfile. Images can be built and distributed through OCI registries: [Docker Hub](https://hub.docker.com/), [Google Container Registry](https://cloud.google.com/container-registry), [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), and so on. You can also set up your own private registry as well, but the reality is that people often pull images from these public registries.
 
-While it may seem bothersome, it's a necessity to keep the **app ecosystem modern and healthy**. Here, F-Droid sends the wrong message to developers (and even users) because they should care about it, and this is why many of us think it may be even harmful to the FOSS ecosystem. Backward compatibility is often the enemy of security, and while there's a middle-ground for convenience and obsolescence, it shouldn't be exaggerated. As a result of this philosophy, the main repository of F-Droid is filled with obsolete apps from another era, just for these apps to be able to run on the more than ten years old Android 4.0 Ice Cream Sandwich. Let's not make the same mistake as the desktop platforms: instead, complain to your vendors for selling devices with no decent OS/firmware support.
-
-There is little practical reason for developers not to increase the target SDK version (`targetSdkVersion`) along with each Android release. This attribute matches the version of the platform an app is targeting, and allows access to modern improvements, rules and features on a modern OS. The app can still ensure backwards compatibility in such a way that it can run on older platforms: the `minSdkVersion` attribute informs the system about the minimum API level required for the application to run. Setting it too low isn't practical though, because this requires having a lot of fallback code (most of it is handled by common libraries) and separate code paths.
-
-At the time of writing:
-- Android 9 is the oldest Android version that is [getting security updates](https://endoflife.date/android).
-- [~80% of the Android devices](https://developer.android.com/about/dashboards) used in the world are **at least** running 8.0 Oreo.
-
-*Overall statistics do not reflect real-world usage of a given app (people using old devices are not necessarily using your app). If anything, it should be viewed as an underestimation.*
-
-## 4. General lack of good practices
-The F-Droid client allows multiple repositories to coexist within the same app. Many of the issues highlighted above were focused on the main official repository which most of the F-Droid users will use anyway. However, having **other repositories in a single app also violates the security model of Android** which was not designed for this at all. The OS expects you to trust **an app repository as a single source** of apps, yet F-Droid isn't that by design as it mixes several repositories in one single app. This is important because the OS management APIs and features (such as [UserManager](https://developer.android.com/reference/android/os/UserManager)) are not meant for this and see F-Droid as a single source, so you're trusting the app client to not mess up far more than you should, especially when the privileged extension comes into the picture. This is also a problem with the OS first-party source feature.
-
-On that note, it is also worth noting the repository metadata format isn't properly signed by lacking whole-file signing and key rotation. [Their index v1](https://f-droid.org/2021/02/05/apis-for-all-the-things.html#the-repo-index) format [uses JAR signing](https://gitlab.com/fdroid/fdroidserver/-/blob/3182b77d180b2313f4fdb101af96c035380abfd7/fdroidserver/signindex.py) with `jarsigner`, which has serious security flaws. It seems that [work is in progress on a v2 format](https://gitlab.com/fdroid/fdroidserver/-/commit/3182b77d180b2313f4fdb101af96c035380abfd7) with support for `apksigner`, although the final implementation remains to be seen. This just seems to be an over-engineered and flawed approach since better suited tools such as `signify` could be used to sign the metadata JSON.
-
-As a matter of fact, the [new unattended update API](https://developer.android.com/reference/android/Manifest.permission#UPDATE_PACKAGES_WITHOUT_USER_ACTION) added in API level 31 (Android 12) that allows seamless app updates for app repositories without [privileged access](https://f-droid.org/en/packages/org.fdroid.fdroid.privileged/) to the system (such an approach is not compatible with the security model) won't work with F-Droid "as is". It should be mentioned that the aforementioned third-party client [Neo-Store](https://github.com/Iamlooker/Droid-ify/issues/20) supports this API, although the underlying issues about the F-Droid infrastructure largely remain. Indeed, this secure API allowing for unprivileged unattended updates not only requires for the app repository client to target API level 31, but the apps to be updated also have to at least target API level 29.
-
-Their client also lacks **TLS certificate pinning**, unlike Play Store which improves security for all connections to Google (they generally use a limited set of root CAs including [their own](https://pki.goog/)). Certificate pinning is a way for apps to increase the security of their connection to services [by providing a set of public key hashes](https://developer.android.com/training/articles/security-config#CertificatePinning) of known-good certificates for these services instead of trusting pre-installed CAs. This can avoid some cases where an interception (*man-in-the-middle* attack) could be possible and lead to various security issues considering you're trusting the app to deliver you other apps.
-
-It is an important security feature that is also straightforward to implement using the [declarative network security configuration](https://developer.android.com/training/articles/security-config) available since Android 7.0 (API level 24). See how GrapheneOS pins both root and CA certificates in their [app repository client](https://github.com/GrapheneOS/Apps):
+### Images, immutability and versioning
+Images are what make containers, well, containers. Containers made from the same image should behave similary on different machines. Images can have **tags**, which are useful for software versioning. The usage of generic tags such as `latest` is often discouraged because it defeats the purpose of the expected behavior of the container. Tags are not necessarily immutable by design, and they shouldn't be (more on that below). **Digest**, however, is the attribute of an immutable image, and is often generated with the SHA-256 algorithm.
 
 ```
-<!-- res/xml/network_security_config.xml -->
-<network-security-config>
-    <base-config cleartextTrafficPermitted="false"/>
-    <domain-config>
-        <domain includeSubdomains="true">apps.grapheneos.org</domain>
-        <pin-set>
-            <!-- ISRG Root X1 -->
-            <pin digest="SHA-256">C5+lpZ7tcVwmwQIMcRtPbsQtWLABXhQzejna0wHFr8M=</pin>
-            <!-- ISRG Root X2 -->
-            <pin digest="SHA-256">diGVwiVYbubAI3RW4hB9xU8e/CH2GnkuvVFZE8zmgzI=</pin>
-            <!-- Let's Encrypt R3 -->
-            <pin digest="SHA-256">jQJTbIh0grw0/1TkHSumWb+Fs0Ggogr621gT3PvPKG0=</pin>
-            <!-- Let's Encrypt E1 -->
-            <pin digest="SHA-256">J2/oqMTsdhFWW/n85tys6b4yDBtb6idZayIEBx7QTxA=</pin>
-            ...
-        </pin-set>
-    </domain-config>
-</network-security-config>
+docker.io/library/golang:1.17.1@sha256:232a180dbcbcfa7250917507f3827d88a9ae89bb1cdd8fe3ac4db7b764ebb25
+         ^          ^       ^                                   ^ 
+         |          |       |                                   |
+     Registry     Image    Tag                          Digest (immutable)
 ```
 
-To be fair, they've thought several times about adding certificate pinning to their client [at least for the default repositories](https://gitlab.com/fdroid/fdroidclient/-/issues/105). [Relics of preliminary work](https://gitlab.com/fdroid/fdroidclient/-/blob/1.14-alpha4/app/src/main/java/org/fdroid/fdroid/FDroidCertPins.java) can even be found in their current codebase, but it's unfortunate that they haven't been able to find [any working implementation](https://github.com/f-droid/fdroidclient/commit/7f78b46664981b9b73cadbfdda6391f6fe939c77) so far. Given the overly complex nature of F-Droid, that's largely understandable.
+Now onto why tags shouldn't be immutable: as written above, containers bring us an abstraction over the OS dependencies that are used by the packaged software. That is nice indeed, but this shouldn't lure us into believing that we can forget security updates. The fact is, **there is still a whole OS to care about**, and we can't just think of the container as a simple package tool for software.
 
-F-Droid also has a problem regarding the adoption of **[new signature schemes](https://source.android.com/security/apksigning)** as they [held out on the v1 signature scheme](https://forum.f-droid.org/t/why-f-droid-is-still-using-apk-signature-scheme-v1/10602) (which was [horrible](https://www.xda-developers.com/janus-vulnerability-android-apps/) and deprecated since 2017) until they were forced by Android 11 requirements to support the newer v2/v3 schemes (v2 was introduced in Android 7.0). Quite frankly, this is straight-up bad, and **signing APKs with GPG** is no better considering [how bad PGP and its reference implementation GPG are](https://latacora.micro.blog/2019/07/16/the-pgp-problem.html) (even Debian [is trying to move away from it](https://wiki.debian.org/Teams/Apt/Spec/AptSign)). Ideally, F-Droid should fully move on to newer signature schemes, and should completely phase out the legacy signature schemes which are still being used for some apps and metadata.
+For these reasons, good practices were established:
+- An image should be as minimal as possible (Alpine Linux, or scratch/distroless).
+- An image, with a given tag, should be regularly built, without cache to ensure all layers are freshly built.
+- An image should be rebuilt when the images it's based on are updated.
 
-## 5. Confusing UX
-It is worth mentioning that their website has (for some reason) always been hosting an [outdated APK of F-Droid](https://forum.f-droid.org/t/why-does-the-f-droid-website-nearly-always-host-an-outdated-f-droid-apk/6234), and this is still the case today, leading to many users wondering why they can't install F-Droid on their secondary user profile (due to the downgrade prevention enforced by Android). "Stability" seems to be the main reason mentioned on their part, which doesn't make sense: either your version isn't ready to be published in a stable channel, or it is and new users should be able to access it easily.
+### A minimal base system
+[Alpine Linux](https://alpinelinux.org/) is often the choice for official images for the first reason. This is not a typical Linux distribution as it uses musl as its C library, but it works quite well. Actually, I'm quite fond of Alpine Linux and `apk` (its package manager). If a supervision suite is needed, I'd look into `s6`. If you need a glibc distribution, Debian provides slim variants for lightweight base images. We can do even better than using Alpine by using **distroless images**, allowing us to have state-of-the-art application containers.
 
-F-Droid should enforce the approach of prefixing the package name of their alternate builds with `org.f-droid` for instance (or add a `.fdroid` suffix as some already have). Building and signing while **reusing the package name** ([application ID](https://developer.android.com/studio/build/configure-app-module)) is bad practice as it causes **signature verification errors** when some users try to update/install these apps from other sources, even directly from the developer. That is again due to the security model of Android which enforces a signature check when installing app updates (or installing them again in a secondary user profile). Note that this is going to be an issue with Play App Signing as well, and developers are encouraged to follow this approach should they intend to distribute their apps through different distribution channels.
+"Distroless" is a fancy name referring to an image with a minimal set of dependencies, from none (for fully static binaries) to some common libraries (typically the C library). Google maintains [distroless images](https://github.com/GoogleContainerTools/distroless) you can use as a base for your own images. If you were wondering, the difference with `scratch` (empty starting point) is that distroless images contain common dependencies that "almost-statically compiled" binaries may need, such as `ca-certificates`.
 
-This results in a confusing user experience where it's hard to keep track of who signs each app, and from which repository the app should be downloaded or updated.
-
-## 6. Misleading permissions approach
-F-Droid shows a list of the [low-level permissions](https://developer.android.com/reference/android/Manifest.permission) for each app: these low-level permissions are usually grouped in the standard high-level permissions (Location, Microphone, Camera, etc.) and special toggles (nearby Wi-Fi networks, Bluetooth devices, etc.) that are explicitly based on a type of sensitive data. While showing a list of low-level permissions could be useful information for a developer, it's often a **misleading** and inaccurate approach for the end-user. Since Android 6, apps have to [request the standard permissions at runtime](https://developer.android.com/guide/topics/permissions/overview#runtime) and do not get them simply by being installed, so showing all the "under the hood" permissions without proper context is not useful and makes the permission model unnecessarily confusing.
-
-F-Droid claims that these low-level permissions are relevant because they support Android 5.1+, meaning they support very outdated versions of Android where apps could have [install-time permissions](https://source.android.com/devices/tech/config/runtime_perms). Anyway, if a technical user wants to see all the manifest permissions for some reason, then they can access the app manifest pretty easily (in fact, exposing the raw manifest would be less misleading). But this is already beyond the scope of this article because anyone who cares about privacy and security wouldn't run a 8 years old version of Android that has not received security updates for years.
-
-*To clear up confusion: even apps targeting an API level below 23 (Android 5.1 or older) do not have permissions granted at install time on modern Android, which instead displays a legacy permission grant dialog. Whether or not permissions are granted at install time does not just depend on the app's `targetSdkVersion`. And even if this were the case, the OS package installer on modern Android would've been designed to show the requested permissions for those legacy apps.*
-
-For example, the low-level permission `RECEIVE_BOOT_COMPLETED` is referred to in F-Droid as the *run at startup* description, when in fact this permission is not needed to start at boot and just refers to a specific time broadcasted by the system once it finishes booting, and is not about background usage (though power usage may be a valid concern). To be fair, these short summaries used to be provided by the Android documentation years ago, but the permission model has drastically evolved since then and most of them aren't accurate anymore.
-
-> *Allows the app to have itself started as soon as the system has finished booting. This can make it take longer to start the phone and allow the app to slow down the overall phone by always running.*
-
-In modern Android, the background restriction toggle is what really provides the ability for apps to run in the background. Some low-level permissions don't even have a security/privacy impact and shouldn't be misinterpreted as having one. Anyhow, you can be sure that each dangerous low-level permission has a **high-level representation** that is **disabled by default** and needs to be **granted dynamically** to the app (by a toggle or explicit user consent in general).
-
-Another example to illustrate the shortcomings of this approach would be the `QUERY_ALL_PACKAGES` low-level permission, which is referred to as the *query all packages* permission that "allows an app to see all installed packages". While this is somewhat correct, this can also be misleading: apps do not need `QUERY_ALL_PACKAGES` to list other apps within the same user profile. Even without this permission, some apps are visible automatically (visibility is restricted by default [since Android 11](https://developer.android.com/training/package-visibility)). If an app needs more visibility, it will declare a `<queries>` element in its manifest file: in other words, `QUERY_ALL_PACKAGES` is only one way to achieve visibility. Again, this goes to show low-level manifest permissions are not intended to be interpreted as high-level permissions the user should fully comprehend.
-
-Play Store for instance conveys the permissions in a way less misleading way: the main low-level permissions are first grouped in their high-level user-facing toggles, and the rest is shown under "Other". This permission list can only be accessed by taping "About this app" then "App permissions - See more" at the bottom of the page. Play Store will tell the app may request access to the following permissions: this kind of wording is more important than it seems. *Update: since July 2022, Play Store doesn't offer a way to display low-level permissions anymore.*
-
-Moreover, [Play Store restricts the use of highly invasive permissions](https://support.google.com/googleplay/android-developer/answer/9888170) such as `MANAGE_EXTERNAL_STORAGE` which allows apps to opt out of scoped storage if they can't work with [more privacy friendly approaches](https://developer.android.com/guide/topics/providers/document-provider) (like a file explorer). Apps that can't justify their use of this permission (which again has to be granted dynamically) may be removed from Play Store. This is where an app repository can actually be useful in their review process to protect end-users from installing poorly made apps that might compromise their privacy. Not that it matters much if these apps target very old API levels that are inclined to require invasive permissions in the first place...
-
-## Conclusion: what should you do?
-So far, you have been presented with referenced facts that are easily verifiable. In the next part, I'll allow myself to express my own thoughts and opinions. You're free to disagree with them, but don't let that overshadow the rest.
-
-While some improvements could easily be made, I don't think F-Droid is in an ideal situation to solve all of these issues because some of them are **inherent flaws** in their architecture. I'd also argue that their core philosophy is not aligned with some security principles expressed in this article. In any case, I can only wish for them to improve since they're one of the most popular alternatives to commercial app repositories, and are therefore trusted by a large userbase.
-
-F-Droid is often seen as the only way to get and support open-source apps: that is not the case. Sure, F-Droid could help you in finding FOSS apps that you wouldn't otherwise have known existed. Many developers also publish their FOSS apps on the **Play Store** or their website directly. Most of the time, releases are available on **GitHub**, which is great since each GitHub releases page has an Atom feed. If downloading APKs from regular websites, you can use `apksigner` to validate the authenticity by comparing the certificate fingerprint against the fingerprint from another source (it wouldn't matter otherwise).
-
-This is how you may proceed to get the app certificate:
+However, distroless images are not suited for every application. In my experience though, distroless is an excellent option with pure Go binaries. Going with minimal images drastically reduces the available attack surface in the container. For example, here's a [multi-stage Dockerfile](https://docs.docker.com/develop/develop-images/multistage-build/) resulting in a minimal non-root image for a simple Go project:
 
 ```
-apksigner verify --print-certs --verbose myCoolApp.apk
+FROM golang:alpine as build
+WORKDIR /app
+COPY . .
+RUN CGO_ENABLED=0 go mod -o /my_app cmd/my_app
+
+FROM gcr.io/distroless/static
+COPY --from=build /my_app /
+USER nobody
+ENTRYPOINT ["/my_app"]
 ```
 
-Also, as written above: the OS pins the app signature (for all profiles) upon installation, and enforces signature check for app updates. In practice, this means the source doesn't matter as much after the initial installation.
+The main drawback of using minimal images is the lack of tools that help with debugging, which also constitute the very attack surface we're trying to get rid of. The trade-off is probably not worth the hassle for development-focused containers, and if you're running such images in production, you have to be confident enough to operate with them. Note that the `gcr.io/distroless` images have a `:debug` tag to help in that regard.
 
-For most people, I'd recommend just **sticking with Play Store**. Play Store isn't quite flawless, but emphasises the adoption of modern security standards which in turn encourages better privacy practices; as strange as it may sound, Google is not always doing bad things in that regard.
+### Keeping images up-to-date
+The two other points are highly problematic, because most software vendors just publish an image on release, and forget about it. You should take it up to them if you're running images that are versioned but not regularly updated. I'd say running scheduled builds **once a week** is the bare minimum to make sure dependencies stay up-to-date. Alpine Linux is a better choice than most other "stable" distributions because it usually has more recent packages.
 
-*Note: this article obviously can't address all the flaws related to Play Store itself. Again, the main topic of this article is about F-Droid and should not be seen as an exhaustive comparison between different app repositories.*
+Stable distributions often rely on backporting security fixes from CVEs, which is known to be a flawed approach to security since CVEs aren't always assigned or even taken care of. Alpine has more recent packages, and it has versioning, so it's once again a particulary good choice as long as `musl` doesn't cause issues.
 
-> Should I really care?
+### Is it really a security nightmare?
+When people say Docker is a security nightmare because of that, that's a fair point. On a traditional system, you could upgrade your whole system with a single command or two. With Docker, you'll have to recreate several containers... if the images were kept up-to-date in the first place. Recreating itself is not a big deal actually: hot upgrades of binaries and libraries often require the services that use them to restart, otherwise they could still use an old (and vulnerable) version of them in memory. But yeah, the fact is most people are running outdated containers, and more often than not, they don't have the choice if they rely on third-party images.
 
-**It's up to your threat model**, and of course your personal preferences. Most likely, your phone won't turn into a nuclear weapon if you install F-Droid on it - and this is far from the point that this article is trying to make. Still, I believe the information presented will be valuable for anyone who values a **practical approach to privacy** (rather than an ideological one). Such an approach is partially described below.
+[Trivy](https://github.com/aquasecurity/trivy) is an excellent tool to scan images for a subset of **known vulnerabilities** an image might have. You should play with it and see for yourself how outdated many publicly available images are.
 
-> But there is more malware in Play Store! How can you say that it's more secure?
+### Supply-chain attacks
+As with any code downloaded from a software vendor, OCI images are not exempt from supply-chain attacks. The good practice is quite simple: rely on official images, and ideally build and maintain your own images. One should definitely not automatically trust random third-party images they can find on Docker Hub. Half of these images, if not more, contain vulnerabilities, and I bet a good portion of them contains malwares [such as miners](https://www.trendmicro.com/vinfo/fr/security/news/virtualization-and-cloud/malicious-docker-hub-container-images-cryptocurrency-mining) or worse.
 
-As explained above, it doesn't matter as you shouldn't really rely on any quality control to be the sole guarantee that a software is free of malicious or exploitable code. Play Store and even the Apple App Store may have a considerable amount of malware because a full reverse-engineering of any uploaded app isn't feasible realistically. However, they fulfill their role quite well, and that is all that is expected of them.
+As an image maintainer, you can sign your images to improve the authenticity assurance. Most official images make use of [Docker Content Trust](https://docs.docker.com/engine/security/trust/), which works with a OCI registry attached to a [Notary server](https://github.com/notaryproject/notary). With the Docker toolset, setting the environment variable `DOCKER_CONTENT_TRUST=1` enforces signature verification (a signature is only good if it's checked in the first place). The SigStore initiative is developing [cosign](https://github.com/sigstore/cosign), an alternative that doesn't require a Notary server because it works with features already provided by the registry such as tags. Kubernetes users may be interested in [Connaisseur](https://github.com/sse-secure-systems/connaisseur) to ensure all signatures have been validated.
 
-> With Play App Signing being effectively enforced for new apps, isn't Play Store as "flawed" as F-Droid?
+## Leave my root alone!
 
-I've seen this comment repeatedly, and it would be dismissing all the other points made in this article. Also, I strongly suggest that you carefully read the sections related to Play App Signing, and preferably the official documentation on this matter. It's not a black and white question and there are many more nuances to it.
+### Attack surface
+Traditionally, Docker runs as a daemon owned by root. That also means that root in the container is actually the root on the host and may be a few commands away from compromising the host. More generally, the attacker has to exploit the available attack surface to escape the container. There is a huge attack surface, actually: the Linux kernel. [Someone wise once said](https://grsecurity.net/huawei_hksp_introduces_trivially_exploitable_vulnerability):
 
-> Aren't open-source apps more secure? Doesn't it make F-Droid safer?
+> The kernel can effectively be thought of as the largest, most vulnerable setuid root binary on the system.
 
-You can still find and get your open-source apps elsewhere. And no, open-source apps [aren't necessarily more private or secure](https://seirdy.one/2022/02/02/floss-security.html). Instead, you should rely on the strong security and privacy guarantees provided by a modern operating system with **a robust sandboxing/permission model**, namely modern Android, GrapheneOS and iOS. Pay close attention to the permissions you grant, and avoid legacy apps as they could require invasive permissions to run.
+That applies particulary to traditional containers which weren't designed to provide a robust level of isolation. A recent example was [CVE-2022-0492](https://unit42.paloaltonetworks.com/cve-2022-0492-cgroups/): the attacker could abuse root in the container to exploit cgroups v1, and compromise the host. Of course defense-in-depth measures would have prevented that, and we'll mention them. But fundamentally, container escapes are possible by design.
 
-When it comes to *trackers* (this really comes up a lot), you shouldn't believe in the flawed idea that you can enumerate all of them. The *enumerating badness* approach is [known to be flawed in the security field](https://www.ranum.com/security/computer_security/editorials/dumb/), and the same applies to privacy. You shouldn't believe that a random script can detect every single line of code that can be used for data exfiltration. Data exfiltration can be properly prevented in the first place by the permission model, which again **denies access to sensitive data by default**: this is a simple, yet rigorous and effective approach.
+Breaking out via the OCI runtime `runc` is also possible, although [CVE-2019-5736](https://unit42.paloaltonetworks.com/breaking-docker-via-runc-explaining-cve-2019-5736/) was a particularly nasty bug. The attacker had to gain access to root in the container first in order to access `/proc/[runc-pid]/exe`, which indicates them where to overwrite the `runc` binary.
 
-No app should be unnecessarily entrusted with any kind of permission. It is only if you deem it necessary that you should allow access to a type of data, and this access should be as fine-grained as possible. That's the way the Android platform works (regular apps run in the explicit `untrusted_app` domain) and continues evolving. Contrary to some popular beliefs, usability and most productivity tasks can still be achieved in a secure and private way.
+Good practices have been therefore established:
+- Avoid using root in the container, plain and simple.
+- Keep the host kernel, Docker and the OCI runtime updated.
+- Consider the usage of user namespaces.
 
-> Isn't Google evil? Isn't Play Store spyware?
+By the way, it goes without saying that any user who has access to the Docker daemon should be considered as privileged as root. Mounting the Docker socket (`/var/run/docker.sock`) in a container makes it highly privileged, and so it should be avoided. The socket should only be owned by root, and if that doesn't work with your environment, use Docker rootless or Podman.
 
-Some people tend to exaggerate the importance of Google in their threat model, at the cost of pragmatism and security/privacy good practices. Play Store isn't spyware and can run unprivileged like it does on GrapheneOS (including with unattended updates support). On the vast majority of devices though, Google Play is a privileged app and a core part of the OS that provides low-level system modules. In that case, the trust issues involved with Play App Signing could be considered less important since Google Play is already trusted as a privileged component.
+### Avoiding root
+root can be avoided in different ways in the final container:
+- Image creation time: setting the `USER` instruction in the Dockerfile.
+- Container creation time: via the tools available (`user:` in the Compose file).
+- Container runtime: degrading privileges with entrypoints scripts (`gosu UID:GID`).
 
-**Play Store evidently has some privacy issues** given it's a proprietary service which requires an account (this cannot be circumvented), and Google services have a history of nagging users to enable privacy-invasive features. Again, some of these privacy issues can be mitigated by setting up the [Play services compatibility layer from GrapheneOS](https://grapheneos.org/usage#sandboxed-google-play) which runs Play services and Play Store in the regular app sandbox (the `untrusted_app` domain). [ProtonAOSP also shares that feature](https://protonaosp.org/features#privacy-and-security). This solution could very well be ported to other Android-based operating systems. If you want to go further, consider using a properly configured account with the least amount of personally indentifiable information possible (note that the phone number requirement appears to be region-dependent).
+Well-made images with security in mind will have a `USER` instruction. In my experience, most people will run images blindly, so it's good harm reduction. Setting the user manually works in some images that aren't designed without root in mind, and it's also great to mitigate some *scenarii* where the image is controlled by an attacker. You also won't have surprises when mounting volumes, so I highly recommend setting the user explicitly and make sure volume permissions are correct once.
 
-If you don't have Play services installed, you can use a third-party Play Store client called **[Aurora Store](https://auroraoss.com/)**. Aurora Store has some issues of its own, and some of them overlap in fact with F-Droid. Aurora Store somehow still requires [the legacy storage permission](https://gitlab.com/AuroraOSS/AuroraStore/-/blob/26f5d4fd558263a89baee4c3cbe1d220913da104/app/src/main/AndroidManifest.xml#L28-32), has yet to [implement certificate pinning](https://gitlab.com/AuroraOSS/AuroraStore/-/issues/697), has been known to sometimes retrieve wrong versions of apps, and [distributed account tokens](https://gitlab.com/AuroraOSS/AuroraStore/-/issues/722) over [cleartext HTTP](https://gitlab.com/AuroraOSS/AuroraStore/-/issues/734) until fairly recently; not that it matters much since tokens were designed to be shared between users, which is already concerning. I'd recommend against using the shared "anonymous" accounts feature: you should make your own throwaway account with minimal information.
+Some images allow users to define their own user with UID/GID environment variables, with an entrypoint script that runs as root and takes care of the volume permissions before dropping privileges. While technically fine, it is still attack surface, and it requires the `SETUID`/`SETGID` capabilities to be available in the container.
 
-You should also keep an eye on the great work **GrapheneOS** does on [their future app repository](https://github.com/GrapheneOS/Apps). It will be a simple, secure, modern app repository for a curated list of high-quality apps, some of which will have their own builds (for instance, Signal still uses their [original 1024-bits RSA key](https://github.com/signalapp/Signal-Android/issues/9362) that has never been rotated since then). Inspired by this work, a GrapheneOS community member is developing a more generic app repository called [Accrescent](https://twitter.com/lberrymage/status/1475307653089792003). Hopefully, we'll see well-made alternatives like these flourish.
+### User namespaces: sandbox or paradox?
+As mentioned just above, [user namespaces](https://www.man7.org/linux/man-pages/man7/user_namespaces.7.html) are a solution to ensure root in the container is not root on the host. Docker supports user namespaces, for instance you could set the default mapping in `/etc/docker/daemon.json`:
 
-*Thanks to the GrapheneOS community for proofreading this article. Bear in mind that these are not official recommendations from the GrapheneOS project.*
+```
+    "userns-remap": "default"
+```
 
-*Post-publication note: it's unfortunate that the release of this article mostly triggered a negative response from the F-Droid team which prefers to dismiss this article on several occasions rather than bringing relevant counterpoints. Some of their core members are also involved in a harassment campaign towards projects and security researchers that do not share their views. While this article remains a technical one, there are definitely ethical concerns to take into consideration.*
+`whoami && sleep 60` in the container will return root, but `ps -fC sleep` on the host will show us the PID of another user. That is nice, but it has limitations and therefore shouldn't be considered as a real sandbox. In fact, the paradox is that [user namespaces are attack surface](https://lists.archlinux.org/pipermail/arch-general/2017-February/043066.html) (and vulnerabilities are still being found [years later](https://www.openwall.com/lists/oss-security/2022/01/29/1)), and it's common wisdom to restrict them to privileged users (`kernel.unprivileged_userns_clone=0`). That is fine for Docker with its traditional root daemon, but Podman expects you to let unprivileged users interact with user namespaces (so essentially privileged code).
+
+Enabling `userns-remap` in Docker shouldn't be a substitute for running unprivileged application containers (where applicable). User namespaces are mostly useful if you intend to run full-fledged OS containers which need root in order to function, but that is out of the scope of the container technologies mentioned in this article; for them, I'd argue exposing such a vulnerable attack surface from the host kernel for dubious sandboxing benefits isn't an interesting trade-off to make.
+
+### The no_new_privs bit
+After ensuring root isn't used in your containers, you should look into setting the `no_new_privs` bit. [This Linux feature](https://docs.kernel.org/userspace-api/no_new_privs.html) restricts syscalls such as `execve()` from granting privileges, which is what you want to restrict in-container privilege escalation. This flag can be set for a given container in a Compose file:
+
+```
+    security_opt:
+        - no-new-privileges: true
+```
+
+Gaining privileges in the container will be much harder that way.
+
+### Capabilities
+Furthermore, we should mention capabilities: root powers are divided into distinct units by the Linux kernel, called capabilities. Each granted capability also grants privilege and therefore access to a significant amount of attack surface. Security researcher Brad Spengler enumerates [19 important capabilities](https://forums.grsecurity.net/viewtopic.php?f=7&t=2522#p10271). Docker **restricts certain capabilities by default**, but [some of the most important ones](https://github.com/moby/moby/blob/1308a3a99faa13ff279dcb4eb5ad23aee3ab5cdb/oci/caps/defaults.go) are still available to a container by default.
+
+You should consider the following rule of thumb:
+- Drop all capabilities by default.
+- Allow only the ones you really need to.
+
+If you already run your containers unprivileged without root, your container will very likely work fine with all capabilities dropped. That can be done in a Compose file:
+
+```
+    cap_drop:
+        - ALL
+    #cap_add:
+    #  - CHOWN
+    #  - DAC_READ_SEARCH
+    #  - SETUID
+    #  - SETGID
+```
+Never use the `--privileged` option unless you really need to: a privileged container is given access to almost all capabilities, kernel features and devices.
+
+## Other security features
+MACs and seccomp are robust tools that may vastly improve container security.
+
+### Mandatory Access Control
+MAC stand for Mandatory Access Control: traditionnally a Linux Security Module that will enforce a policy to restrict the userspace. Examples are **AppArmor** and **SELinux**: the former being more easy-to-use, the later being more fine-grained. Both are strong tools that can help... Yet, their sole presence does not mean they're really effective. A robust policy starts from a *deny all* policy, and only allows the necessary resources to be accessed.
+
+### seccomp
+seccomp (short for secure computing mode) on the other hand is a much simpler and complementary tool, and there is no reason not to use it. What it does is restricting a process to a set of system calls, thus drastically reducing the attack surface available.
+
+Docker provides default profiles for [AppArmor](https://github.com/moby/moby/tree/85eaf23bf46b12827273ab2ff523c753117dbdc7/profiles/apparmor) and [seccomp](https://github.com/moby/moby/blob/85eaf23bf46b12827273ab2ff523c753117dbdc7/profiles/seccomp/default.json), and they're enabled by default for newly created containers unless the `unconfined` option is explicitly passed. Note: Kubernetes doesn't enable the default seccomp profile by default, so you should probably [try it](https://kubernetes.io/docs/tutorials/security/seccomp/#enable-the-use-of-runtimedefault-as-the-default-seccomp-profile-for-all-workloads).
+
+These profiles are a great start, but you should do much more if you take security seriously, because they were made to not break compatibility with a large range of images. The default seccomp profile only disables [around 44 syscalls](https://docs.docker.com/engine/security/seccomp/#significant-syscalls-blocked-by-the-default-profile), which are mostly not very common and/or obsoleted. Of course, the best profile you can get is supposed to be written for a given program. It also doesn't make sense to insist on the permissiveness of the default profiles, and [a lof of work has gone](https://blog.jessfraz.com/post/containers-security-and-echo-chambers/) into hardening containers.
+
+### cgroups
+Use cgroups to restrict access to hardware and system resources. You likely don't want a guest container to monopolize the host resources. You also don't want to be vulnerable to stupid fork bomb attacks. In a Compose file, consider setting these limits:
+
+```
+    mem_limit: 4g
+    cpus: 4
+    pids_limit: 256
+```
+
+More runtime options can be found in [the official documentation](https://docs.docker.com/config/containers/resource_constraints/). All of them should have a [Compose spec](https://github.com/compose-spec/compose-spec/blob/master/spec.md) equivalent.
+
+The `--cgroup-parent` option should be avoided as it uses the host cgroup and not the one configured from Docker (or else), which is the default.
+
+### Read-only filesystem
+It is good practice to treat the image as some refer to as the "golden image".
+
+In other words, you'll run containers in *read-only* mode, with an immutable filesystem inherited from the image. Only the mounted volumes will be read/write accessible, and those should ideally be mounted with the `noexec`, `nosuid` and `nodev` options for extra security. If read/write access isn't needed, mount these volumes as read-only too.
+
+However, the image may not be perfect and still require read/write access to some parts of the filesystem, likely directories such as `/tmp`, `/run` or `/var`. You can make a **tmpfs** for those (a temporary filesystem in the container attributed memory), because they're not persistent data anyway.
+
+In a Compose file, that would look like the following settings:
+
+```
+    read_only: true
+    tmpfs:
+        - /tmp:size=10M,mode=0770,uid=1000,gid=1000,noexec,nosuid,nodev
+```
+
+That is quite verbose indeed, but that's to show you the different options for a tmpfs mount. You want to restrict them in size and permissions ideally.
+
+### Network isolation
+By default, all Docker containers will use the default network bridge. They will see and be able to communicate with each other. Each container should have its own user-defined bridge network, and each connection between containers should have an internal network. If you intend to run a reverse proxy in front of several containers, you should make a dedicated network for each container you want to expose to the reverse proxy.
+
+The `--network host` option also shouldn't be used for obvious reasons since the container would share the same network as the host, providing no isolation at all.
+
+## Alternative runtimes (gVisor)
+`runc` is the reference OCI runtime, but that means other runtimes can exist as well as long as they're compliant with the OCI standard. These runtimes can be interchanged quite seamlessly. There's a few alternatives, such as [crun](https://github.com/containers/crun) or [youki](https://github.com/containers/youki), respectively implemented in C and Rust (`runc` is a Go implementation). However, there is one particular runtime that does a lot more for security: `runsc`, provided by the [gVisor project](https://gvisor.dev/) by the folks at Google.
+
+**Containers are not a sandbox**, and while we can improve their security, they will fundamentally share a common attack surface with the host. Virtual machines are a solution to that problem, but you might prefer container semantics and ecosystem. gVisor can be perceived as an attempt to get the "best of both worlds": containers that are easy to manage while providing a native isolation boundary. gVisor did just that by implementing two things:
+
+- **Sentry**: an application kernel in Go, a language known to be memory-safe. It implements the Linux logic in userspace such as various system calls.
+- **Gofer**: a host process which communicates with Sentry and the host filesystem, since Sentry is restricted in that aspect.
+
+A platform like ptrace or KVM is used to intercept system calls and redirect them from the application to Sentry, which is running in the userspace. This has some costs: there is a higher per-syscall overhead, and compatibility is reduced since not all syscalls are implemented. On top of that, gVisor employs security mechanisms we've glanced over above, such as a [very restrictive seccomp profile](https://github.com/google/gvisor/blob/86ad7d5b5838da1b539e976886d04b93c939ca3d/runsc/boot/filter/config.go) between Sentry and the host kernel, the [no_new_privs bit](https://github.com/google/gvisor/blob/6ef268409620c57197b9d573e23be8cb05dbf381/pkg/sentry/kernel/task_identity.go#L464), and isolated namespaces from the host.
+
+The security model of gVisor is comparable to what you would expect from a virtual machine. It is also very easy to [install and use](https://gvisor.dev/docs/user_guide/install/). The path to runsc along with its different configuration flags (`runsc flags`) should be added to `/etc/docker/daemon.json`:
+
+```
+    "runtimes": {
+        "runsc-ptrace": {
+            "path": "/usr/local/bin/runsc",
+            "runtimeArgs": [
+                "--platform=ptrace"
+            ]
+        },
+        "runsc-kvm": {
+            "path": "/usr/local/bin/runsc",
+            "runtimeArgs": [
+                "--platform=kvm"
+            ]
+        }
+    }
+```
+
+`runsc` needs to start with root to set up some mitigations, including the use of its own network stack separated from the host. The sandbox itself drops privileges to nobody as soon as possible. You can still use `runsc` rootless if you want (which should be needed for Podman):
+
+```
+./runsc --rootless do uname -a
+*** Warning: sandbox network isn't supported with --rootless, switching to host ***
+Linux 4.4.0 #1 SMP Sun Jan 10 15:06:54 PST 2016 x86_64 GNU/Linux
+```
+
+Linux 4.4.0 is shown because that is the version of the Linux API that Sentry tries to mimic. As you've probably guessed, you're not really using Linux 4.4.0, but the application kernel that behaves like it. By the way, gVisor is of course compatible with cgroups.
+
+## Conclusion: what's a container after all?
+Like I wrote above, a container is mostly defined by its semantics and ecosystem. Containers shouldn't be solely defined by the OCI reference runtime implementation, as we've seen with gVisor that provides an entirely different security model.
+
+Still not convinced? What if I told you a container can leverage the same technologies as a virtual machine? That is exactly what [Kata Containers](https://katacontainers.io/) does by using a VMM like QEMU-lite to provide containers that are in fact lightweight virtual machines, with their traditional resources and security model, compatibility with container semantics and toolset, and an optimized overhead. While not in the OCI ecosystem, Amazon achieves quite the same with [Firecracker](https://firecracker-microvm.github.io/).
+
+If you're running untrusted workloads, I highly suggest you consider gVisor instead of a traditional container runtime. Your definition of "untrusted" may vary: for me, almost everything should be considered untrusted. That is how modern security works, and how mobile operating systems work. It's quite simple, security should be simple, and gVisor simply offers native security.
+
+Containers are a popular, yet strange world. They revolutionized the way we make and deploy software, but one should not loose the sight of what they really are and aren't. This hardening guide is non-exhaustive, but I hope it can make you aware of some aspects you've never thought of.

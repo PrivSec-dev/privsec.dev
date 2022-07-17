@@ -12,7 +12,7 @@ sed -i '/^tags:.*/a author: Wonderfall' './content/apps/F-Droid Security Analysi
 
 #Docker and OCI Hardening
 rm -rf './content/os/Docker and OCI Hardening.md'
-curl https://raw.githubusercontent.com/Wonderfall/wonderfall.github.io/main/content/posts/fdroid-issues.md -o './content/os/Docker and OCI Hardening.md'
+curl https://raw.githubusercontent.com/Wonderfall/wonderfall.github.io/main/content/posts/docker-hardening.md -o './content/os/Docker and OCI Hardening.md'
 sed -i 's/title:.*/title: "Docker and OCI Hardening"/' './content/os/Docker and OCI Hardening.md'
 sed -i '/draft: false/d' './content/os/Docker and OCI Hardening.md'
 sed -i "s/tags:.*/tags: ['operating systems', 'linux', 'container', 'security']/" './content/os/Docker and OCI Hardening.md'

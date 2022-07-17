@@ -2,40 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://privsec.dev/tags/container/</loc>
+    <lastmod>2022-03-30T21:23:12+00:00</lastmod>
+  </url><url>
+    <loc>https://privsec.dev/os/docker-and-oci-hardening/</loc>
+    <lastmod>2022-03-30T21:23:12+00:00</lastmod>
+  </url><url>
+    <loc>https://privsec.dev/tags/linux/</loc>
+    <lastmod>2022-03-30T21:23:12+00:00</lastmod>
+  </url><url>
+    <loc>https://privsec.dev/tags/operating-systems/</loc>
+    <lastmod>2022-03-30T21:23:12+00:00</lastmod>
+  </url><url>
+    <loc>https://privsec.dev/os/</loc>
+    <lastmod>2022-03-30T21:23:12+00:00</lastmod>
+  </url><url>
+    <loc>https://privsec.dev/</loc>
+    <lastmod>2022-03-30T21:23:12+00:00</lastmod>
+  </url><url>
+    <loc>https://privsec.dev/tags/security/</loc>
+    <lastmod>2022-03-30T21:23:12+00:00</lastmod>
+  </url><url>
+    <loc>https://privsec.dev/tags/</loc>
+    <lastmod>2022-03-30T21:23:12+00:00</lastmod>
+  </url><url>
     <loc>https://privsec.dev/tags/android/</loc>
     <lastmod>2022-01-02T21:28:31+00:00</lastmod>
   </url><url>
     <loc>https://privsec.dev/apps/</loc>
     <lastmod>2022-01-02T21:28:31+00:00</lastmod>
   </url><url>
-    <loc>https://privsec.dev/tags/container/</loc>
-    <lastmod>2022-01-02T21:28:31+00:00</lastmod>
-  </url><url>
-    <loc>https://privsec.dev/os/docker-and-oci-hardening/</loc>
-    <lastmod>2022-01-02T21:28:31+00:00</lastmod>
-  </url><url>
     <loc>https://privsec.dev/apps/f-droid-security-analysis/</loc>
     <lastmod>2022-01-02T21:28:31+00:00</lastmod>
   </url><url>
-    <loc>https://privsec.dev/tags/linux/</loc>
-    <lastmod>2022-01-02T21:28:31+00:00</lastmod>
-  </url><url>
-    <loc>https://privsec.dev/tags/operating-systems/</loc>
-    <lastmod>2022-01-02T21:28:31+00:00</lastmod>
-  </url><url>
-    <loc>https://privsec.dev/os/</loc>
-    <lastmod>2022-01-02T21:28:31+00:00</lastmod>
-  </url><url>
-    <loc>https://privsec.dev/</loc>
-    <lastmod>2022-01-02T21:28:31+00:00</lastmod>
-  </url><url>
-    <loc>https://privsec.dev/tags/security/</loc>
-    <lastmod>2022-01-02T21:28:31+00:00</lastmod>
-  </url><url>
     <loc>https://privsec.dev/tags/software/</loc>
-    <lastmod>2022-01-02T21:28:31+00:00</lastmod>
-  </url><url>
-    <loc>https://privsec.dev/tags/</loc>
     <lastmod>2022-01-02T21:28:31+00:00</lastmod>
   </url><url>
     <loc>https://privsec.dev/about/</loc>

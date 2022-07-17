@@ -5,20 +5,11 @@
     <link>https://privsec.dev/tags/</link>
     <description>Recent content in Tags on PrivSec.dev</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 02 Jan 2022 21:28:31 +0000</lastBuildDate><atom:link href="https://privsec.dev/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>android</title>
-      <link>https://privsec.dev/tags/android/</link>
-      <pubDate>Sun, 02 Jan 2022 21:28:31 +0000</pubDate>
-      
-      <guid>https://privsec.dev/tags/android/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Wed, 30 Mar 2022 21:23:12 +0000</lastBuildDate><atom:link href="https://privsec.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>container</title>
       <link>https://privsec.dev/tags/container/</link>
-      <pubDate>Sun, 02 Jan 2022 21:28:31 +0000</pubDate>
+      <pubDate>Wed, 30 Mar 2022 21:23:12 +0000</pubDate>
       
       <guid>https://privsec.dev/tags/container/</guid>
       <description></description>
@@ -27,7 +18,7 @@
     <item>
       <title>linux</title>
       <link>https://privsec.dev/tags/linux/</link>
-      <pubDate>Sun, 02 Jan 2022 21:28:31 +0000</pubDate>
+      <pubDate>Wed, 30 Mar 2022 21:23:12 +0000</pubDate>
       
       <guid>https://privsec.dev/tags/linux/</guid>
       <description></description>
@@ -36,7 +27,7 @@
     <item>
       <title>operating systems</title>
       <link>https://privsec.dev/tags/operating-systems/</link>
-      <pubDate>Sun, 02 Jan 2022 21:28:31 +0000</pubDate>
+      <pubDate>Wed, 30 Mar 2022 21:23:12 +0000</pubDate>
       
       <guid>https://privsec.dev/tags/operating-systems/</guid>
       <description></description>
@@ -45,9 +36,18 @@
     <item>
       <title>security</title>
       <link>https://privsec.dev/tags/security/</link>
-      <pubDate>Sun, 02 Jan 2022 21:28:31 +0000</pubDate>
+      <pubDate>Wed, 30 Mar 2022 21:23:12 +0000</pubDate>
       
       <guid>https://privsec.dev/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>android</title>
+      <link>https://privsec.dev/tags/android/</link>
+      <pubDate>Sun, 02 Jan 2022 21:28:31 +0000</pubDate>
+      
+      <guid>https://privsec.dev/tags/android/</guid>
       <description></description>
     </item>
     
