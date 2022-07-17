@@ -32,7 +32,7 @@ If you have a [Yubikey](https://www.yubico.com/), you should store the "shared s
 
 Unlike [WebAuthn](#fido-fast-identity-online), TOTP offers no protection against [phishing](https://en.wikipedia.org/wiki/Phishing) or reuse attacks. If an adversary obtains a valid code from you, they may use it as many times as they like until it expires (generally 60 seconds + grace period).
 
-Despite of its short comings, TOTP is considered better and safer than Push Confirmations.
+Despite of its short comings, we consider TOTP better and safer than Push Confirmations.
 
 ### Yubico OTP
 
@@ -58,7 +58,7 @@ WebAuthn is the most secure and private form of second factor authentication. Wh
 
 {{< youtube id="aMo4ZlWznao">}}
 
-Since FIDO2/WebAuthn uses unique cryptographic keys with each internet site, a site pretending to be another one will not be able to get the correct response to the challenge for MFA, making FIDO2/Webauthn is invulnerable to phising. It is also because of this authentication mechanism that a physical FIDO2 security key is not identifiable across different services like Yubico OTP. Even better, FIDO2 uses a counter for each authentication, which would help with detecting cloned keys.
+Since FIDO2/WebAuthn uses unique cryptographic keys with each internet site, a site pretending to be another one will not be able to get the correct response to the challenge for MFA, making FIDO2/Webauthn is invulnerable phising. It is also because of this authentication mechanism that a physical FIDO2 security key is not identifiable across different services like Yubico OTP. Even better, FIDO2 uses a counter for each authentication, which would help with detecting cloned keys.
 
 If a website or service supports WebAuthn for the authentication, it is highly recommended that you use it over any other form of MFA.
 
@@ -74,7 +74,7 @@ You should always have backups for your MFA method. Hardware security keys can g
 
 When using TOTP with an authenticator app, be sure to back up your recovery keys to an offline and encrypted storage device.
 
-### Weakest MFA method
+### Weakest link
 
 You are only as secure as the weakest authentication method you use. For instance, it makes little sense to add SMS 2FA as an alternative MFA method if you are already using FIDO2. An adversary who can compromise your SMS 2FA will get into your account just as easily as if you didn't use FIDO2 at all.
 
