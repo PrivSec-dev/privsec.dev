@@ -33,3 +33,5 @@ On Linux, there is no such clear distinction between the system and user install
 Operating systems like Android and ChromeOS have full system mandatory access control, every process from the init process is strictly confined. Regardless of which application you install or how you install them, they have to play by the rules of an untrusted SELinux domain.
 
 On Linux, it is quite the opposite. 
+
+Work in progress...
