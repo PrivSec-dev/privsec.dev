@@ -6,6 +6,17 @@
     <description>Recent content in linux on PrivSec.dev</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="https://privsec.dev/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Choosing Your Desktop Linux Distribution</title>
+      <link>https://privsec.dev/os/choosing-your-desktop-linux-distribution/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://privsec.dev/os/choosing-your-desktop-linux-distribution/</guid>
+      <description>Not all Linux distributions are created equal. When choosing a Linux distribution, there are several things you need to keep in mind.
+Release cycle You should choose a distribution which stays close to the stable upstream software releases, typically rolling release distributions. This is because frozen release cycle distributions often don’t update package versions and fall behind on security updates.
+For frozen distributions, package maintainers are expected to backport patches to fix vulnerabilities (Debian is one such example) rather than bump the software to the “next version” released by the upstream developer.</description>
+    </item>
+    
+    <item>
       <title>Docker and OCI Hardening</title>
       <link>https://privsec.dev/os/docker-and-oci-hardening/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
