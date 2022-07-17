@@ -10,7 +10,7 @@ author: Tommy
 
 ### Email and SMS MFA
 
-Email and SMS MFA are examples of the weaker MFA protocols. Email MFA is not great as whoever controls your email account can typically both reset your password and recieve your MFA verification. SMS on the other hand is problematic due to the lack of any kind of encryption, making it vulnerable to sniffing. [Sim swap](https://en.wikipedia.org/wiki/SIM_swap_scam) attacks, if carried out successfully, will allow an attacker to recieve your one time passcode while locking you out of your own account. In certain cases,websites or services may also allow the user to reset their account login by calling them using the phone number used for MFA, which could be faked with a [spoofed CallerID](https://en.wikipedia.org/wiki/Caller_ID_spoofing).
+Email and SMS MFA are examples of the weaker MFA protocols. Email MFA is not great as whoever controls your email account can typically both reset your password and receive your MFA verification. SMS, on the other hand, is problematic due to the lack of any kind of encryption, making it vulnerable to sniffing. [Sim swap](https://en.wikipedia.org/wiki/SIM_swap_scam) attacks, if carried out successfully, will allow an attacker to receive your one time passcode while locking you out of your own account. In certain cases, websites or services may also allow the user to reset their account login by calling them using the phone number used for MFA, which could be faked with a [spoofed CallerID](https://en.wikipedia.org/wiki/Caller_ID_spoofing).
 
 Only use these protocols when it is the only option you have, and be very careful with SMS MFA as it could actually worsen your security.
 
@@ -50,7 +50,7 @@ Yubico OTP is an inferior protocol compared to TOTP since TOTP does not need tru
 
 ### FIDO2 (Fast IDentity Online)
 
-[FIDO](https://en.wikipedia.org/wiki/FIDO_Alliance) includes a number of standards, first there was U2F and then later [FIDO2](https://en.wikipedia.org/wiki/FIDO2_Project) which includes the web standard [WebAuthn](https://en.wikipedia.org/wiki/WebAuthn).
+[FIDO](https://en.wikipedia.org/wiki/FIDO_Alliance) includes a number of standards; first there was U2F and then later [FIDO2](https://en.wikipedia.org/wiki/FIDO2_Project) which includes the web standard [WebAuthn](https://en.wikipedia.org/wiki/WebAuthn).
 
 U2F and FIDO2 refer to the [Client to Authenticator Protocol](https://en.wikipedia.org/wiki/Client_to_Authenticator_Protocol), which is the protocol between the security key and the computer, such as a laptop or phone. It complements WebAuthn which is the component used to authenticate with the website (the "Relying Party") you're trying to log in on.
 
@@ -70,7 +70,7 @@ When buying a security key, it is important that you change the default credenti
 
 ### Backups
 
-You should always have backups for your MFA method. Hardware security keys can get lost, stolen or simply stop working over time. It is recommended that you have a pair of hardware security keys with the same access to your accounts instead of just one.
+You should always have backups for your MFA method. Hardware security keys can get lost, stolen, or simply stop working over time. It is recommended that you have a pair of hardware security keys with the same access to your accounts instead of just one.
 
 When using TOTP with an authenticator app, be sure to back up your recovery keys to an offline and encrypted storage device.
 
