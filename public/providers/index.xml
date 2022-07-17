@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Providers on PrivSec.dev</title>
-    <link>https://privsec.dev/providers/</link>
-    <description>Recent content in Providers on PrivSec.dev</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://privsec.dev/providers/index.xml" rel="self" type="application/rss+xml" />
-  </channel>
-</rss>
