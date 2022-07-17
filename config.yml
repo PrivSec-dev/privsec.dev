@@ -56,6 +56,8 @@ params:
       url: "https://github.com/PrivSec-dev"
     - name: email
       url: "mailto:contact@privsec.dev"
+    - name: rss
+      url: /index.xml
 
   cover:
     hidden: true # hide everywhere but not in structured data
