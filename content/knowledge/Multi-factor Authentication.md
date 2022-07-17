@@ -10,7 +10,7 @@ author: Tommy
 
 ### Email and SMS MFA
 
-Email and SMS MFA are examples of the weaker MFA protocols. Email MFA is not great as whoever controls your email account can typically both reset your password and recieve your MFA verification. SMS on the other hand is problematic due to the lack of any kind of encryption, making it vulnerable to sniffing. [Sim swap](https://en.wikipedia.org/wiki/SIM_swap_scam) attacks, if carried out successfully, will allow an attacker to recieve your one time passcode while locking you out of your own account. In certain cases,websites or services may also allow the user to reset their account login by calling them using the phone number used for MFA, which could be faked with a [spoofed CallerID](https://en.wikipedia.org/wiki/Caller_ID_spoofing).
+Email and SMS MFA are examples of the weaker MFA protocols. Email MFA is not great as whoever controls your email account can typically both reset your password and receive your MFA verification. SMS, on the other hand, is problematic due to the lack of any kind of encryption, making it vulnerable to sniffing. [Sim swap](https://en.wikipedia.org/wiki/SIM_swap_scam) attacks, if carried out successfully, will allow an attacker to receive your one time passcode while locking you out of your own account. In certain cases, websites or services may also allow the user to reset their account login by calling them using the phone number used for MFA, which could be faked with a [spoofed CallerID](https://en.wikipedia.org/wiki/Caller_ID_spoofing).
 
 Only use these protocols when it is the only option you have, and be very careful with SMS MFA as it could actually worsen your security.
 
@@ -50,7 +50,7 @@ Yubico OTP is an inferior protocol compared to TOTP since TOTP does not need tru
 
 ### FIDO (Fast IDentity Online)
 
-[FIDO](https://en.wikipedia.org/wiki/FIDO_Alliance) includes a number of standards, first there was U2F and then later [FIDO2](https://en.wikipedia.org/wiki/FIDO2_Project) which includes the web standard [WebAuthn](https://en.wikipedia.org/wiki/WebAuthn).
+[FIDO](https://en.wikipedia.org/wiki/FIDO_Alliance) includes a number of standards; first there was U2F and then later [FIDO2](https://en.wikipedia.org/wiki/FIDO2_Project) which includes the web standard [WebAuthn](https://en.wikipedia.org/wiki/WebAuthn).
 
 U2F and FIDO2 refer to the [Client to Authenticator Protocol](https://en.wikipedia.org/wiki/Client_to_Authenticator_Protocol), which is the protocol between the security key and the computer, such as a laptop or phone. It complements WebAuthn which is the component used to authenticate with the website (the "Relying Party") you're trying to log in on.
 
@@ -62,7 +62,7 @@ When you create an account, the public key is sent to the service, then when you
 
 FIDO2 and WebAuthn have superior security and privacy properties when compared to any MFA methods.
 
-Typically for web services it is used with WebAuthn which is a part of the [W3C recommendations](https://en.wikipedia.org/wiki/World_Wide_Web_Consortium#W3C_recommendation_(REC)). It uses public key authentication and is more secure than shared secrets used in Yubico OTP and TOTP methods, as it includes the origin name (usually, the domain name) during authentication. Attestation is provided to protect you from phishing attacks, as it helps you to determine that you are using the authentic service and not a fake copy.
+Web services typically use WebAuthn which is a part of the [W3C recommendations](https://en.wikipedia.org/wiki/World_Wide_Web_Consortium#W3C_recommendation_(REC)). It uses public key authentication and is more secure than shared secrets used in Yubico OTP and TOTP methods, as it includes the origin name (usually, the domain name) during authentication. Attestation is provided to protect you from phishing attacks, as it helps you to determine that you are using the authentic service and not a fake copy.
 
 Unlike Yubico OTP, WebAuthn does not use any public ID, so the key is **not** identifiable across different websites. It also does not use any third-party cloud server for authentication. All communication is completed between the key and the website you are logging into. FIDO also uses a counter which is incremented upon use in order to prevent session reuse and cloned keys.
 
@@ -76,6 +76,6 @@ When buying a security key, it is important that you change the default credenti
 
 ### Backups
 
-You should always have backups for your MFA method. Hardware security keys can get lost, stolen or simply stop working over time. It is recommended that you have a pair of hardware security keys with the same access to your accounts instead of just one.
+You should always have backups for your MFA method. Hardware security keys can get lost, stolen, or simply stop working over time. It is recommended that you have a pair of hardware security keys with the same access to your accounts instead of just one.
 
 When using TOTP with an authenticator app, be sure to back up your recovery keys or the app itself, or copy the "shared secrets" to another instance of the app on a different phone or to an encrypted container (e.g. [VeraCrypt](../encryption.md#veracrypt)).
