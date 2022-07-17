@@ -4,12 +4,11 @@
     <title>software on PrivSec.dev</title>
     <link>https://privsec.dev/tags/software/</link>
     <description>Recent content in software on PrivSec.dev</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 02 Jan 2022 21:28:31 +0000</lastBuildDate><atom:link href="https://privsec.dev/tags/software/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://privsec.dev/tags/software/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>F-Droid Security Analysis</title>
       <link>https://privsec.dev/apps/f-droid-security-analysis/</link>
-      <pubDate>Sun, 02 Jan 2022 21:28:31 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://privsec.dev/apps/f-droid-security-analysis/</guid>
       <description>F-Droid is a popular alternative app repository for Android, especially known for its main repository dedicated to free and open-source software. F-Droid is often recommended among security and privacy enthusiasts, but how does it stack up against Play Store in practice? This write-up will attempt to emphasize major security issues with F-Droid that you should consider.

@@ -4,12 +4,11 @@
     <title>linux on PrivSec.dev</title>
     <link>https://privsec.dev/tags/linux/</link>
     <description>Recent content in linux on PrivSec.dev</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 30 Mar 2022 21:23:12 +0000</lastBuildDate><atom:link href="https://privsec.dev/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://privsec.dev/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Docker and OCI Hardening</title>
       <link>https://privsec.dev/os/docker-and-oci-hardening/</link>
-      <pubDate>Wed, 30 Mar 2022 21:23:12 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://privsec.dev/os/docker-and-oci-hardening/</guid>
       <description>Containers aren&amp;rsquo;t that new fancy thing anymore, but they were a big deal. And they still are. They are a concrete solution to the following problem:
@@ -26,6 +25,16 @@ Whether we like them or not, containers are here to stay. Their expressiveness a
       <guid>https://privsec.dev/os/linux-insecurities/</guid>
       <description>There is a common misconception among privacy communities that Linux is one of the more secure operating systems, either because it is open source or because it is widely used in the cloud. This is however, a far cry from reality.
 There is already a very indepth technical blog explaning the various security weaknesses of Linux by Madaidan, Whonix&amp;rsquo;s Security Researcher. This page will attempt to address some of the questions commonly raised in reaction to his blog post.</description>
+    </item>
+    
+    <item>
+      <title>Securing OpenSSH with FIDO2</title>
+      <link>https://privsec.dev/os/securing-openssh-with-fido2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://privsec.dev/os/securing-openssh-with-fido2/</guid>
+      <description>Passwordless authentication with OpenSSH keys has been the de facto security standard for years. SSH keys are more robust since they&amp;rsquo;re cryptographically sane by default, and are therefore resilient to most bruteforce atacks. They&amp;rsquo;re also easier to manage while enabling a form of decentralized authentication (it&amp;rsquo;s easy and painless to revoke them). So, what&amp;rsquo;s the next step? And more exactly, why would one need something even better?
+Why? The main problem with SSH keys is that they&amp;rsquo;re not magic: they consist of a key pair, of which the private key is stored on your disk.</description>
     </item>
     
   </channel>

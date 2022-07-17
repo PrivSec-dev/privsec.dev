@@ -4,12 +4,11 @@
     <title>container on PrivSec.dev</title>
     <link>https://privsec.dev/tags/container/</link>
     <description>Recent content in container on PrivSec.dev</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 30 Mar 2022 21:23:12 +0000</lastBuildDate><atom:link href="https://privsec.dev/tags/container/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://privsec.dev/tags/container/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Docker and OCI Hardening</title>
       <link>https://privsec.dev/os/docker-and-oci-hardening/</link>
-      <pubDate>Wed, 30 Mar 2022 21:23:12 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://privsec.dev/os/docker-and-oci-hardening/</guid>
       <description>Containers aren&amp;rsquo;t that new fancy thing anymore, but they were a big deal. And they still are. They are a concrete solution to the following problem:

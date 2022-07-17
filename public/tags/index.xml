@@ -4,59 +4,22 @@
     <title>Tags on PrivSec.dev</title>
     <link>https://privsec.dev/tags/</link>
     <description>Recent content in Tags on PrivSec.dev</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 30 Mar 2022 21:23:12 +0000</lastBuildDate><atom:link href="https://privsec.dev/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>container</title>
-      <link>https://privsec.dev/tags/container/</link>
-      <pubDate>Wed, 30 Mar 2022 21:23:12 +0000</pubDate>
-      
-      <guid>https://privsec.dev/tags/container/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://privsec.dev/tags/linux/</link>
-      <pubDate>Wed, 30 Mar 2022 21:23:12 +0000</pubDate>
-      
-      <guid>https://privsec.dev/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>operating systems</title>
-      <link>https://privsec.dev/tags/operating-systems/</link>
-      <pubDate>Wed, 30 Mar 2022 21:23:12 +0000</pubDate>
-      
-      <guid>https://privsec.dev/tags/operating-systems/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>security</title>
-      <link>https://privsec.dev/tags/security/</link>
-      <pubDate>Wed, 30 Mar 2022 21:23:12 +0000</pubDate>
-      
-      <guid>https://privsec.dev/tags/security/</guid>
-      <description></description>
-    </item>
-    
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://privsec.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>android</title>
       <link>https://privsec.dev/tags/android/</link>
-      <pubDate>Sun, 02 Jan 2022 21:28:31 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://privsec.dev/tags/android/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>software</title>
-      <link>https://privsec.dev/tags/software/</link>
-      <pubDate>Sun, 02 Jan 2022 21:28:31 +0000</pubDate>
+      <title>container</title>
+      <link>https://privsec.dev/tags/container/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://privsec.dev/tags/software/</guid>
+      <guid>https://privsec.dev/tags/container/</guid>
       <description></description>
     </item>
     
@@ -70,11 +33,47 @@
     </item>
     
     <item>
+      <title>linux</title>
+      <link>https://privsec.dev/tags/linux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://privsec.dev/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>operating system</title>
       <link>https://privsec.dev/tags/operating-system/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://privsec.dev/tags/operating-system/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>operating systems</title>
+      <link>https://privsec.dev/tags/operating-systems/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://privsec.dev/tags/operating-systems/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>security</title>
+      <link>https://privsec.dev/tags/security/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://privsec.dev/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>software</title>
+      <link>https://privsec.dev/tags/software/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://privsec.dev/tags/software/</guid>
       <description></description>
     </item>
     

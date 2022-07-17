@@ -4,31 +4,7 @@
     <title>PrivSec.dev</title>
     <link>https://privsec.dev/</link>
     <description>Recent content on PrivSec.dev</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 30 Mar 2022 21:23:12 +0000</lastBuildDate><atom:link href="https://privsec.dev/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Docker and OCI Hardening</title>
-      <link>https://privsec.dev/os/docker-and-oci-hardening/</link>
-      <pubDate>Wed, 30 Mar 2022 21:23:12 +0000</pubDate>
-      
-      <guid>https://privsec.dev/os/docker-and-oci-hardening/</guid>
-      <description>Containers aren&amp;rsquo;t that new fancy thing anymore, but they were a big deal. And they still are. They are a concrete solution to the following problem:
-- Hey, your software doesn&amp;rsquo;t work&amp;hellip;
-- Sorry, it works on my computer! Can&amp;rsquo;t help you.
-Whether we like them or not, containers are here to stay. Their expressiveness and semantics allow for an abstraction of the OS dependencies that a software has, the latter being often dynamically linked against certain libraries.</description>
-    </item>
-    
-    <item>
-      <title>F-Droid Security Analysis</title>
-      <link>https://privsec.dev/apps/f-droid-security-analysis/</link>
-      <pubDate>Sun, 02 Jan 2022 21:28:31 +0000</pubDate>
-      
-      <guid>https://privsec.dev/apps/f-droid-security-analysis/</guid>
-      <description>F-Droid is a popular alternative app repository for Android, especially known for its main repository dedicated to free and open-source software. F-Droid is often recommended among security and privacy enthusiasts, but how does it stack up against Play Store in practice? This write-up will attempt to emphasize major security issues with F-Droid that you should consider.
-Before we start, a few things to keep in mind:
-The main goal of this write-up was to inform users so they can make responsible choices, not to trash someone else&amp;rsquo;s work.</description>
-    </item>
-    
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://privsec.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About Us</title>
       <link>https://privsec.dev/about/</link>
@@ -42,12 +18,35 @@ Website: tommytran.io</description>
     </item>
     
     <item>
+      <title>Docker and OCI Hardening</title>
+      <link>https://privsec.dev/os/docker-and-oci-hardening/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://privsec.dev/os/docker-and-oci-hardening/</guid>
+      <description>Containers aren&amp;rsquo;t that new fancy thing anymore, but they were a big deal. And they still are. They are a concrete solution to the following problem:
+- Hey, your software doesn&amp;rsquo;t work&amp;hellip;
+- Sorry, it works on my computer! Can&amp;rsquo;t help you.
+Whether we like them or not, containers are here to stay. Their expressiveness and semantics allow for an abstraction of the OS dependencies that a software has, the latter being often dynamically linked against certain libraries.</description>
+    </item>
+    
+    <item>
       <title>Donate</title>
       <link>https://privsec.dev/donate/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://privsec.dev/donate/</guid>
       <description>The domain costs us $12/year to renew from Google. We got our repository hosted for free on GitHub. We got our site hosted for free with Firebase. It costs Tommy ~$20/month to run the mail server, but that server is used for a bunch of his projects, not just PrivSec, and we doubt it will be used that much anyways. The point is, this website does not cost much to run, and as such we will not be accepting donation as a project.</description>
+    </item>
+    
+    <item>
+      <title>F-Droid Security Analysis</title>
+      <link>https://privsec.dev/apps/f-droid-security-analysis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://privsec.dev/apps/f-droid-security-analysis/</guid>
+      <description>F-Droid is a popular alternative app repository for Android, especially known for its main repository dedicated to free and open-source software. F-Droid is often recommended among security and privacy enthusiasts, but how does it stack up against Play Store in practice? This write-up will attempt to emphasize major security issues with F-Droid that you should consider.
+Before we start, a few things to keep in mind:
+The main goal of this write-up was to inform users so they can make responsible choices, not to trash someone else&amp;rsquo;s work.</description>
     </item>
     
     <item>
@@ -68,6 +67,16 @@ There is already a very indepth technical blog explaning the various security we
       <guid>https://privsec.dev/knowledge/multi-factor-authentication/</guid>
       <description>Multi-factor authentication is a security mechanism that requires additional verification beyond your username (or email) and password. This usually comes in the form of a one time passcode, a push notification, or plugging in and tapping a hardware security key.
 Common protocols Email and SMS MFA Email and SMS MFA are examples of the weaker MFA protocols. Email MFA is not great as whoever controls your email account can typically both reset your password and recieve your MFA verification.</description>
+    </item>
+    
+    <item>
+      <title>Securing OpenSSH with FIDO2</title>
+      <link>https://privsec.dev/os/securing-openssh-with-fido2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://privsec.dev/os/securing-openssh-with-fido2/</guid>
+      <description>Passwordless authentication with OpenSSH keys has been the de facto security standard for years. SSH keys are more robust since they&amp;rsquo;re cryptographically sane by default, and are therefore resilient to most bruteforce atacks. They&amp;rsquo;re also easier to manage while enabling a form of decentralized authentication (it&amp;rsquo;s easy and painless to revoke them). So, what&amp;rsquo;s the next step? And more exactly, why would one need something even better?
+Why? The main problem with SSH keys is that they&amp;rsquo;re not magic: they consist of a key pair, of which the private key is stored on your disk.</description>
     </item>
     
   </channel>
