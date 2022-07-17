@@ -39,7 +39,7 @@ GrapheneOS Developer. Friendliest Indian tech support on planet Earth.
 **Matrix**: [@randomhydrosol:grapheneos.org](https://matrix.to/#/@randomhydrosol:grapheneos.org)
 
 ### Madaidan
-Security Researcher. Whonix developer. Uses Firefox, Telegram, and Linux like a true IRA terrorist.
+Security Researcher. Whonix developer. Uses Firefox, Telegram, and Linux against his own advice like a true hypocrite.
 
 **Website**: [https://madaidans-insecurities.github.io/](https://madaidans-insecurities.github.io/)\
 **Matrix**: [@madaidan.:matrix.org](https://matrix.to/#/@madaidan.:matrix.org)

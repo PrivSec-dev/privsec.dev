@@ -1,6 +1,6 @@
 ---
 title: "Linux Insecurities"
-tags: ['knowledge base', operating system', 'security', 'linux']
+tags: ['operating system', 'security', 'linux']
 author: Tommy
 ---
 
