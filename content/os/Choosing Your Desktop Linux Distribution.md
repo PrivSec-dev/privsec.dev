@@ -28,7 +28,7 @@ A transactional update system creates a snapshot that is made before and after a
 
 {{< youtube id="-hpV5l-gJnQ">}}
 
-Even if you are worried about the stability of the system because of regularly updated packages (which you shouldn't be), it makes more sense to use a system which you can safely update and rollback instead of an outdated distribution partially made up of unreliable backport packages without an easy to actually roll back in case something goes wrong like Debian.
+Even if you are worried about the stability of the system because of regularly updated packages (which you shouldn't be), it makes more sense to use a system which you can safely update and rollback instead of an outdated distribution partially made up of unreliable backport packages without an easy rollback mechanism in case something goes wrong like Debian.
 
 ## Arch-based distributions
 
