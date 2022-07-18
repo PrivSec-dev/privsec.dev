@@ -20,13 +20,13 @@ params:
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
   ShowWordCount: true
-  showtoc: true
+  ShowToc: true
   ShowRssButtonInSectionTermList: true
   ShowCodeCopyButtons: true
 
   assets:
     # disableHLJS: true # to disable highlight.js
-    # disableFingerprinting: true
+    disableFingerprinting: true
     favicon: "<link / abs url>"
     favicon16x16: "<link / abs url>"
     favicon32x32: "<link / abs url>"
