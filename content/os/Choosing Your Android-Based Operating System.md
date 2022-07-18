@@ -79,7 +79,7 @@ For usability purposes, GrapheneOS supports [Sandboxed Google Play](https://grap
 
 Because GrapheneOS does not grant any Google Apps and Services apart from the opt-in eSIM action app privileged access to the system, Play Protect cannot disable or uninstall known malicious applications when it detects them. As for restricted app installation, this feature is not that useful on stock operating system anyways, since it is bypassable with `adb push`.
 
-Recently, GrapheneOS has also added the [Storage Scopes](https://grapheneos.org/usage#storage-access) feature, allowing you to limit what legacy apps which still use the old storage API can access. With this new feature, you no longer have to grant certain apps access to all of your media or files to use them anymore.
+Recently, GrapheneOS has also added the [Storage Scopes](https://grapheneos.org/usage#storage-access) feature, allowing you to force apps that request broad storage access permission to function with scoped storage. With this new feature, you no longer have to grant certain apps access to all of your media or files to use them anymore.
 
 ![VLC Storage Scopes](/vlc-storage-scopes.png)
 
@@ -88,10 +88,14 @@ Currently, Google Pixel phones are the only devices that meet GrapheneOS's [hard
 ### DivestOS
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [DivestOS](https://divestos.org/) is a great aftermarket operating system for devices that have gone end of life or near end of life. Note that this is a harm reduction project, run by one developer on a best effort basis, and you should not buy a new device just to run DivestOS.
 =======
 DivestOS is a great aftermarket operating system for devices that have gone end-of-life or near end-of-life. Note that this is a harm reduction project, run by one developer on a best effort basis, and you should not buy a new device just to run DivestOS.
 >>>>>>> 48b45c6 (Fix grammar in Android page)
+=======
+[DivestOS](https://divestos.org/) is a great aftermarket operating system for devices that have gone end-of-life or are near end-of-life. Note that this is a harm reduction project, ran by one developer on the best effort basis, and you should not buy a new device just to run DivestOS.
+>>>>>>> 870634f (Minor fixes)
 
 Being a soft-fork of [LineageOS](https://lineageos.org/), DivestOS inherits many [supported devices](https://divestos.org/index.php?page=devices&base=LineageOS) from LineageOS. It has signed builds, making it possible to have [verified boot](https://source.android.com/security/verifiedboot) on some non-Pixel devices.
 
