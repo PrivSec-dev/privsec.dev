@@ -73,7 +73,7 @@ Currently, I am only aware of two Android-based operating systems that should be
 ### GrapheneOS
 ![GrapheneOS Phone & Cat](/grapheneos-phone-cat.jpg)
 
-GrapheneOS is the **only** custom Android-based operating system you should buy a new phone for. It provides additional [security hardening](https://en.wikipedia.org/wiki/Hardening_(computing)) and privacy improvements over the stock operating system from Google. It has a [hardened memory allocator](https://github.com/GrapheneOS/hardened_malloc), network and sensor permissions, and various other [security feature](https://grapheneos.org/features). GrapheneOS also comes with full firmware updates and signed builds, so verified boot is fully supported.
+[GrapheneOS](https://grapheneos.org) is the **only** custom Android-based operating system you should buy a new phone for. It provides additional [security hardening](https://en.wikipedia.org/wiki/Hardening_(computing)) and privacy improvements over the stock operating system from Google. It has a [hardened memory allocator](https://github.com/GrapheneOS/hardened_malloc), network and sensor permissions, and various other [security feature](https://grapheneos.org/features). GrapheneOS also comes with full firmware updates and signed builds, so verified boot is fully supported.
 
 For usability purposes, GrapheneOS supports [Sandboxed Google Play](https://grapheneos.org/usage#sandboxed-google-play), which runs Google Play Services fully sandboxed like any other regular app. This means you can take advantage of most Google Play Services, such as [push notifications](https://firebase.google.com/docs/cloud-messaging/), while giving you full control over their permissions and access, and while containing them to a specific work profile or user profile of your choice. Most interestingly, the [In-app Billing API](https://android-doc.github.io/google/play/billing/api.html), [Google Play Games](https://play.google.com/googleplaygames), [Play Asset Delivery](https://developer.android.com/guide/playcore/asset-delivery), [FIDO2](/knowledge/multi-factor-authentication/#fido2-fast-identity-online) all work exceptionally well. Most [Advanced Protection Program](https://landing.google.com/advancedprotection/) features, except for [Play Protect](https://support.google.com/googleplay/answer/2812853?hl=en) and restricted app installation, also work.
 
@@ -87,7 +87,7 @@ Currently, Google Pixel phones are the only devices that meet GrapheneOS's [hard
 
 ### DivestOS
 
-DivestOS is a great aftermarket operating system for devices that have gone end of life or near end of life. Note that this is a harm reduction project, run by one developer on a best effort basis, and you should not buy a new device just to run DivestOS.
+[DivestOS](https://divestos.org/) is a great aftermarket operating system for devices that have gone end of life or near end of life. Note that this is a harm reduction project, run by one developer on a best effort basis, and you should not buy a new device just to run DivestOS.
 
 Being a soft-fork of [LineageOS](https://lineageos.org/), DivestOS inherits many [supported devices](https://divestos.org/index.php?page=devices&base=LineageOS) from LineageOS. It has signed builds, making it possible to have [verified boot](https://source.android.com/security/verifiedboot) on some non-Pixel devices.
 
