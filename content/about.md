@@ -9,17 +9,22 @@ We focus on in-depth system configuration, security analysis, and software/hardw
 ---
 
 ### Tommy
-System Administrator. Benevolent dictator for life @privsec.dev.
+Benevolent dictator for life @privsec.dev. System Administrator.
 
 **Website**: [tommytran.io](https://tommytran.io)\
 **Matrix**: [@tommy:arcticfoxes.net](https://matrix.to/#/@tommy:arcticfoxes.net)\
 **Email**: [tommy@privsec.dev](mailto:tommy@privsec.dev)
 
 ### June
-Security Researcher. GrapheneOS Developer. Excessively obsessed with Homestuck.
+Privsec.dev Administrator. Security Researcher. GrapheneOS Developer. Excessively obsessed with Homestuck.
 
 **Matrix**: [@june:grapheneos.org](https://matrix.to/#/@june:grapheneos.org)\
 **Email**: [june@privsec.dev](mailto:june@privsec.dev)
+
+### Randomhydrosol
+Privsec.dev Administrator. GrapheneOS Developer. Friendliest Indian tech support on planet Earth.
+
+**Matrix**: [@randomhydrosol:grapheneos.org](https://matrix.to/#/@randomhydrosol:grapheneos.org)
 
 ### Wonderfall
 Random guy passing by on the Internet who is interested in all kinds of things. Total nerd.
@@ -32,11 +37,6 @@ Accrescent developer. Rust shill and man who can't stop recycling names of his p
 
 **Website**: [accrescent.app](https://accrescent.app/)\
 **Matrix**: [@lberrymage:matrix.org](https://matrix.to/#/@lberrymage:matrix.org)
-
-### Randomhydrosol
-GrapheneOS Developer. Friendliest Indian tech support on planet Earth.
-
-**Matrix**: [@randomhydrosol:grapheneos.org](https://matrix.to/#/@randomhydrosol:grapheneos.org)
 
 ### Madaidan
 Security Researcher. Whonix developer. Uses Firefox, Telegram, and Linux against his own advice like a hypocrite.
