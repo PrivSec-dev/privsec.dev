@@ -10,7 +10,7 @@ When you buy an Android phone, the device's default operating system often comes
 
 This problem could be solved by using a custom Android-based operating system that does not come with such invasive integration. Unfortunately, many custom Android-based operating systems often violate the Android security model by not supporting critical security features such as AVB, rollback protection, firmware updates, and so on. Some of them also ship [`userdebug`](https://source.android.com/setup/build/building#choose-a-target) builds which expose root over [ADB](https://developer.android.com/studio/command-line/adb) and require [more permissive](https://github.com/LineageOS/android_system_sepolicy/search?q=userdebug&type=code) SELinux policies to accommodate debugging features, resulting in a further increased attack surface and weakened security model.
 
-When choosing a custom Android-based operating system, you should make sure that it upholds the Android security model. Ideally, the custom operating system should have subtantial privacy and security improvements to justify adding yet another party to trust.
+When choosing a custom Android-based operating system, you should make sure that it upholds the Android security model. Ideally, the custom operating system should have substantial privacy and security improvements to justify adding yet another party to trust.
 
 ## Baseline Security
 
@@ -46,7 +46,7 @@ It would be much better if you just stick to the stock operating system (which g
 
 ### Chromium Webview Updates
 
-Android comes with a system [webview](https://developer.android.com/reference/android/webkit/WebView), a component that many apps rely on to use as part of their activity layout. It effectively behaves like a minimal browser, opening random websites with arbitary code the internet. Thus, it is very important that this component is consistently kept up to dater.
+Android comes with a system [webview](https://developer.android.com/reference/android/webkit/WebView), a component that many apps rely on to use as part of their activity layout. It effectively behaves like a minimal browser, opening random websites with arbitrary code the internet. Thus, it is very important that this component is consistently kept up to dater.
 
 Some Android-based operating systems, including ones like CalyxOS, often fall behind on security updates for this component. Particularly, this has gotten so bad that they actually fell behind for [3 months](https://github.com/privacyguides/privacyguides.org/pull/548#issuecomment-1018245074) back in January 2022 and [2 months](https://github.com/privacyguides/privacyguides.org/pull/1378) in June 2022. It is a good indication that these operating systems cannot keep up with security updates and should not be used.
 
@@ -58,7 +58,7 @@ End users should be using the production `user` builds, and any distributions th
 
 ### SELinux in Enforcing Mode
 
-[SELinux](https://source.android.com/security/selinux) is a critical part of the Android security model, having the Linux kernel enforcing confinement for all proccesses, including system processes running as root. 
+[SELinux](https://source.android.com/security/selinux) is a critical part of the Android security model, having the Linux kernel enforcing confinement for all processes, including system processes running as root. 
 
 Unfortunately, many custom Android-based operating system builds (especially unofficial LineageOS builds) disables SELinux or set it into permissive mode. You can check whether SELinux is in enforcing mode or not by executing `getenforce` in the ADB shell (the expected output is `Enforcing`). You should avoid any Android-based operating system builds that do not have SELinux in enforcing mode at all cost.
 
@@ -79,7 +79,7 @@ Currently, Google Pixel phones are the only devices that meet GrapheneOS's [hard
 
 ### DivestOS
 
-DivestOS is a great aftermarket operating system for devices that have gone end of life or near end of life. Note that this is a harm reduction project, run by one developer on a best effort basis, and you should not buy a new device just to run DivestOS.
+DivestOS is a great aftermarket operating system for devices that have gone end-of-life or near end-of-life. Note that this is a harm reduction project, run by one developer on a best effort basis, and you should not buy a new device just to run DivestOS.
 
 Being a soft-fork of [LineageOS](https://lineageos.org/), DivestOS inherits many [supported devices](https://divestos.org/index.php?page=devices&base=LineageOS) from LineageOS. It has signed builds, making it possible to have [verified boot](https://source.android.com/security/verifiedboot) on some non-Pixel devices.
 
