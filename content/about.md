@@ -22,11 +22,7 @@ PrivSec.dev Administrator. Security Researcher. GrapheneOS Developer. Excessivel
 **Email**: [june@privsec.dev](mailto:june@privsec.dev)
 
 ### Randomhydrosol
-<<<<<<< HEAD
 Privsec.dev Administrator. GrapheneOS Developer. Friendliest Indian tech support on the planet Earth.
-=======
-PrivSec.dev Administrator. GrapheneOS Developer. Friendliest Indian tech support on planet Earth.
->>>>>>> upstream/main
 
 **Matrix**: [@randomhydrosol:grapheneos.org](https://matrix.to/#/@randomhydrosol:grapheneos.org)
 
