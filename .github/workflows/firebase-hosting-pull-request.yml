@@ -8,7 +8,8 @@ jobs:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
       - name: Hugo setup
         uses: peaceiris/actions-hugo@v2
@@ -18,7 +19,8 @@ jobs:
       - name: Build
         run: hugo --minify
 
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Deploy
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PRIVSEC_356523 }}'
