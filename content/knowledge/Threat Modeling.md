@@ -15,7 +15,7 @@ Why are we not trusting "big-tech companies", but then shift our trust to "small
 Generally, there are four primary threats a person would want to protect themselves from:
 
 - A service provider spying their users
-- "Mass surveillance", cross site tracking and data sharing
+- Cross site/service tracking and data sharing, a.k.a "mass surveillance"
 - An app developer spying on users through their malicious software
 - A hacker trying to get into the users' computers
 
