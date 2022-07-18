@@ -14,7 +14,7 @@ For frozen distributions, package maintainers are expected to backport patches t
 
 In fact, in certain cases, there have been vulnerabilities introduced by Debian because of their patching process. [Bug 1633467](https://bugzilla.mozilla.org/show_bug.cgi?id=1633467) and [Bug 1679430](https://bugzilla.mozilla.org/show_bug.cgi?id=1679430) are examples of this.
 
-![Upstream - Distros Gap](/upstream-distros-gap.png)
+![Upstream / Distros Gap](/upstream-distros-gap.png)
 
 Holding packages back and applying interim patches is generally not a good idea, as it diverges from the way the developer might have intended the software to work. [Richard Brown](https://rootco.de/aboutme/) has a presentation about this:
 
@@ -47,7 +47,7 @@ If you are experienced with Linux and wish to use an Arch-based distribution, yo
 
 ## Kicksecure
 
-While you should not use an outdated distributions like Debian, if you decide to use it, it would be a good idea to [convert](https://www.kicksecure.com/wiki/Debian) it into [Kicksecure](https://www.kicksecure.com/). Kicksecure, in oversimplified terms, is a set of scripts, configurations, and packages that substantially reduce the attack surface of Debian. It covers a lot of privacy and hardening recommendations by default.
+While you should not use outdated distributions like Debian, if you decide to use it, it would be a good idea to [convert](https://www.kicksecure.com/wiki/Debian) it into [Kicksecure](https://www.kicksecure.com/). Kicksecure, in oversimplified terms, is a set of scripts, configurations, and packages that substantially reduce the attack surface of Debian. It covers a lot of privacy and hardening recommendations by default.
 
 ## “Security-focused” distributions
 
