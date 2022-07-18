@@ -1,6 +1,6 @@
 ---
 title: "Choosing Your Android-Based Operating System"
-tags: ['operating systems', 'security', 'android']
+tags: ['operating systems', 'android', 'privacy', 'security']
 author: Tommy
 ---
 

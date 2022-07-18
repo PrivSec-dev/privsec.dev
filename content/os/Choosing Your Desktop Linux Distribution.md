@@ -1,6 +1,6 @@
 ---
 title: "Choosing Your Desktop Linux Distribution"
-tags: ['operating systems', 'security', 'linux']
+tags: ['operating systems', 'linux', 'security']
 author: Tommy
 ---
 
