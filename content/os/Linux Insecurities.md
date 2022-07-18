@@ -22,7 +22,7 @@ Linux servers are lighter than Desktop Linux systems by order of magnitude, with
 
 ## Linux Hardening Myths
 
-There is a common claim in response to Madaidan that Linux is only insecure by default, and that an experience user can make it the most secure operating system out there, surpassing the likes of macOS or ChromeOS. Unfortunately, this is wishful thinking. There is no amount of hardening that one can reasonably apply as a user to fix up the inherent issues with Linux.
+There is a common claim in response to Madaidan that Linux is only insecure by default, and that an experienced user can make it the most secure operating system out there, surpassing the likes of macOS or ChromeOS. Unfortunately, this is wishful thinking. There is no amount of hardening that one can reasonably apply as a user to fix up the inherent issues with Linux.
 
 ### Lack of verified boot
 
@@ -34,7 +34,7 @@ On Linux, there is no such clear distinction between the system and user install
 
 Operating systems like Android and ChromeOS have full system mandatory access control, every process from the init process is strictly confined. Regardless of which application you install or how you install them, they have to play by the rules of an untrusted SELinux domain and are only able to utilize unprivileged APIs.
 
-Even on macOS, where the application sandbox is opt-in for developers, there is still a system wide permission control for unprivileged application. Apps run by the user do not have unrestricted access their microphone, webcam, keystrokes, sensitive documents, and so on.
+Even on macOS, where the application sandbox is opt-in for developers, there is still a system wide permission control for unprivileged application. Apps run by the user do not have unrestricted access to their microphone, webcam, keystrokes, sensitive documents, and so on.
 
 On Linux, it is quite the opposite. Out of the box, most systems only have a few system daemons confined. Some Linux distributions don't even have a Mandatory Access Control system at all. Applications are designed in an environment where they expect to be able to do whatever they want, and the app sandboxes/mandatory access control system are merely an afterthought trying to restrict an app to only access what it expects to be accessible. 
 
