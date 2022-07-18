@@ -50,10 +50,10 @@ params:
         url: tags
 
   socialIcons:
-    - name: matrix
-      url: "https://matrix.to/#/#privsec:arcticfoxes.net"
     - name: github
       url: "https://github.com/PrivSec-dev"
+    - name: matrix
+      url: "https://matrix.to/#/#privsec:arcticfoxes.net"
     - name: email
       url: "mailto:contact@privsec.dev"
     - name: rss

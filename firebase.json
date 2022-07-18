@@ -1,6 +1,44 @@
 {
   "hosting": {
     "public": "public",
+    "headers": [ 
+      {
+        "key": "Content-Security-Policy",
+        "value": "upgrade-insecure-requests; block-all-mixed-content; form-action 'none'; frame-ancestors 'self'"
+      },
+      {
+        "key": "X-Content-Type-Options",
+        "value": "nosniff"
+      },    
+      {
+        "key": "Referrer-Policy",
+        "value": "no-referrer"
+      },   
+      {
+        "key": "Cross-Origin-Opener-Policy",
+        "value": "same-origin"
+      },   
+      {
+        "key": "Cross-Origin-Embedder-Policy",
+        "value": "require-corp"
+      },   
+      {
+        "key": "X-Frame-Options",
+        "value": "DENY"
+      },  
+      {
+        "key": "X-XSS-Protection",
+        "value": "0"
+      },  
+      {
+        "key": "Permissions-Policy",
+        "value": "accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), clipboard-read=(), clipboard-write=(), display-capture=(), document-domain=(), encrypted-media=(), fullscreen=(), geolocation=(), gyroscope=(), hid=(), idle-detection=(), interest-cohort=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), serial=(), sync-xhr=(), usb=(), xr-spatial-tracking=()"
+      },  
+      {
+        "key": "Cross-Origin-Resource-Policy",
+        "value": "same-origin"
+      }
+    ],
     "ignore": [
       "firebase.json",
       "**/.*",
