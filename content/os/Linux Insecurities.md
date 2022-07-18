@@ -30,8 +30,14 @@ On Linux, there is no such clear distinction between the system and user install
 
 ### Lack of application sandboxing
 
-Operating systems like Android and ChromeOS have full system mandatory access control, every process from the init process is strictly confined. Regardless of which application you install or how you install them, they have to play by the rules of an untrusted SELinux domain.
+Operating systems like Android and ChromeOS have full system mandatory access control, every process from the init process is strictly confined. Regardless of which application you install or how you install them, they have to play by the rules of an untrusted SELinux domain and are only able to utilize unprivileged APIs.
 
-On Linux, it is quite the opposite. 
+Even on macOS, where the application sandbox is opt-in for developers, there is still a system wide permission control for unprivileged application. Apps run by the user do not have unrestricted access their microphone, webcam, keystrokes, sensitive documents, and so on.
 
-Work in progress...
+On Linux, it is quite the opposite. Out of the box, most systems only have a few system daemons confined. Some Linux distributions don't even have a Mandatory Access Control system at all. Applications are designed in an environment where they expect to be able to do whatever they want, and the app sandboxes/mandatory access control system are merely an afterthought trying to restrict an app to only access what it expects to be accessible. 
+
+This is reflected in the under utilization of the [Portals API](https://docs.flatpak.org/en/latest/portal-api-reference.html) as an example. Portals is designed to be an API where apps have to prompt the user to access their files (through the File Manager) or their microphone and camera. Unfortunately, the vast majority of apps are not designed with this in mind, and expect direct access to the filesystem, pulseaudio socket or the entire /dev. As a result, Flatpak maintainers often opt to have extremely laxed permissions to the point where they have to grant `filesystem=home`, `filesystem=host`, `socket=pulseaudio` or `devices=all`, otherwise apps will break and give users a bad experience.
+
+To make matters worse, some system daemons are not designed with permission control in mind at all. For example, PulseAudio does not have any concept of audio in or out permission. Thus, the user is often left with only the choice of granting an app access to the socket or not. If they want to block microphone access, they have to block access to the socket, and thus break audio playback in the process. If they do want an auudio playback, then they have to allow access to the PulseAudio socket, which in turns give an app unrestricted access to record them at any moment.
+
+The only way to systematically fix this problem is to design a whole new system from stratch with a permission model like that of Android in mind. And even when that happens, it will take substantial work to get developers to develop their apps for said system.
