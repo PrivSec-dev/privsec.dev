@@ -78,7 +78,7 @@ params:
     distance: 1000
     threshold: 0.4
     minMatchCharLength: 0
-    keys: ["title"]
+    keys: ["title", "summary"]
 
 #Enabling Search
 outputs:
