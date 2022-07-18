@@ -4,13 +4,13 @@ tags: ['knowledge base', 'security']
 author: Tommy
 ---
 
-**Multi-factor authentication** is a security mechanism that requires additional verification beyond your username (or email) and password. This usually comes in the form of a one-time passcode, a push notification, or plugging in and tapping a hardware security key.
+**Multi-factor authentication** is a security mechanism that requires additional verification beyond your username (or email) and password. This usually comes in the form of a one time passcode, a push notification, or plugging in and tapping a hardware security key.
 
 ## Common protocols
 
 ### Email and SMS MFA
 
-Email and SMS MFA are examples of the weaker MFA protocols. Email MFA is not great as whoever controls your email account can typically both reset your password and receive your MFA verification. SMS, on the other hand, is problematic due to the lack of any kind of encryption, making it vulnerable to sniffing. [Sim swap](https://en.wikipedia.org/wiki/SIM_swap_scam) attacks, if carried out successfully, will allow an attacker to receive your one-time passcode while locking you out of your own account. In certain cases, websites or services may also allow the user to reset their account login by calling them using the phone number used for MFA, which could be faked with a [spoofed CallerID](https://en.wikipedia.org/wiki/Caller_ID_spoofing).
+Email and SMS MFA are examples of the weaker MFA protocols. Email MFA is not great as whoever controls your email account can typically both reset your password and receive your MFA verification. SMS, on the other hand, is problematic due to the lack of any kind of encryption, making it vulnerable to sniffing. [Sim swap](https://en.wikipedia.org/wiki/SIM_swap_scam) attacks, if carried out successfully, will allow an attacker to receive your one time passcode while locking you out of your own account. In certain cases, websites or services may also allow the user to reset their account login by calling them using the phone number used for MFA, which could be faked with a [spoofed CallerID](https://en.wikipedia.org/wiki/Caller_ID_spoofing).
 
 Only use these protocols when it is the only option you have, and be very careful with SMS MFA as it could actually worsen your security.
 
@@ -18,9 +18,9 @@ Only use these protocols when it is the only option you have, and be very carefu
 
 Push confirmation MFA is typically a notification being sent to an app on your phone asking you to confirm new account logins. This method is a lot better than SMS or email, since an attacker typically wouldn't be able to get these push notifications without having an already logged-in device.
 
-Push confirmation in most cases relies on a third party provider like [Duo](https://duo.com/). This means that trust is placed in a server that neither you nor your service provider control. A malicious push confirmation server could compromise your MFA or profile you based on which website and account you use with the service.
+Push comfirmation in most cases rely on a third party provider like [Duo](https://duo.com/). This means that trust is placed in a server that neither you nor your service provider control. A malicious push confirmation server could compromise your MFA or profile you based on which website and account you use with the service.
 
-Even if the push notification application and server is provided by a first party as is the case with Microsoft login and [Microsoft Authenticator](https://www.microsoft.com/en-us/security/mobile-authenticator-app), there is still a risk of you accidentally tapping on the confirmation button.
+Even if the push notification application and server is provided by first party as is the case with Microsoft login and [Microsoft Authenticator](https://www.microsoft.com/en-us/security/mobile-authenticator-app), there is still a risk of you accidentally tapping on the confirmation button.
 
 ### Time-based One-time Password (TOTP)
 
@@ -32,7 +32,7 @@ If you have a [Yubikey](https://www.yubico.com/), you should store the "shared s
 
 Unlike [WebAuthn](#fido-fast-identity-online), TOTP offers no protection against [phishing](https://en.wikipedia.org/wiki/Phishing) or reuse attacks. If an adversary obtains a valid code from you, they may use it as many times as they like until it expires (generally 60 seconds + grace period).
 
-Despite its short comings, we consider TOTP better and safer than Push Confirmations.
+Despite of its short comings, we consider TOTP better and safer than Push Confirmations.
 
 ### Yubico OTP
 
