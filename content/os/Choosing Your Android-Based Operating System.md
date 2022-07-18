@@ -62,6 +62,8 @@ End users should be using the production `user` builds, and any distributions th
 
 Unfortunately, many custom Android-based operating system builds (especially unofficial LineageOS builds) disables SELinux or set it into permissive mode. You can check whether SELinux is in enforcing mode or not by executing `getenforce` in the ADB shell (the expected output is `Enforcing`). You should avoid any Android-based operating system builds that do not have SELinux in enforcing mode at all cost.
 
+![ADB SELinux](/adb-selinux.png)
+
 ## Good Android-Based Operating Systems
 
 Currently, I am only aware of two Android-based operating systems that should be used over the stock operating systems:
@@ -74,6 +76,8 @@ GrapheneOS is the **only** custom Android-based operating system you should buy 
 For usability purposes, GrapheneOS supports [Sandboxed Google Play](https://grapheneos.org/usage#sandboxed-google-play), which runs Google Play Services fully sandboxed like any other regular app. This means you can take advantage of most Google Play Services, such as [push notifications](https://firebase.google.com/docs/cloud-messaging/), while giving you full control over their permissions and access, and while containing them to a specific work profile or user profile of your choice. Most interestingly, the [In-app Billing API](https://android-doc.github.io/google/play/billing/api.html), [Google Play Games](https://play.google.com/googleplaygames), [Play Asset Delivery](https://developer.android.com/guide/playcore/asset-delivery), [FIDO2](/knowledge/multi-factor-authentication/#fido2-fast-identity-online) all work exceptionally well. Most [Advanced Protection Program](https://landing.google.com/advancedprotection/) features, except for [Play Protect](https://support.google.com/googleplay/answer/2812853?hl=en), also work.
 
 Recently, GrapheneOS has also added the [Storage Scopes](https://grapheneos.org/usage#storage-access) feature, allowing you to limit what legacy apps which still use the old storage API can access. With this new feature, you no longer have to grant certain apps access to all of your media or files to use them anymore.
+
+![VLC Storage Scopes](/vlc-storage-scopes.png)
 
 Currently, Google Pixel phones are the only devices that meet GrapheneOS's [hardware security requirements](https://grapheneos.org/faq#device-support).
 
