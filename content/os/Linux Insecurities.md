@@ -1,6 +1,6 @@
 ---
 title: "Linux Insecurities"
-tags: ['operating systems', 'security', 'linux']
+tags: ['operating systems', 'linux', 'security',]
 author: Tommy
 ---
 
