@@ -71,7 +71,7 @@ Unfortunately, many custom Android-based operating system builds (especially uno
 Currently, I am only aware of two Android-based operating systems that should be used over the stock operating systems:
 
 ### GrapheneOS
-![GrapheneOS Phone & Cat](/grapheneos-phone-cat.jpg)
+![GrapheneOS Aurora](/grapheneos-aurora.jpg)
 
 [GrapheneOS](https://grapheneos.org) is the **only** custom Android-based operating system you should buy a new phone for. It provides additional [security hardening](https://en.wikipedia.org/wiki/Hardening_(computing)) and privacy improvements over the stock operating system from Google. It has a [hardened memory allocator](https://github.com/GrapheneOS/hardened_malloc), network and sensor permissions, and various other [security feature](https://grapheneos.org/features). GrapheneOS also comes with full firmware updates and signed builds, so verified boot is fully supported.
 
