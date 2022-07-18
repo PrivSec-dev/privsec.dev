@@ -40,6 +40,10 @@
           {
             "key": "Cross-Origin-Resource-Policy",
             "value": "same-origin"
+          },
+          {
+            "key": "Expect-CT",
+            "value": "enforce, max-age=63072000"
           }
         ]
       }    
