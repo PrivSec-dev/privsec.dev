@@ -51,7 +51,7 @@ There is often some confusion about “security-focused” distributions and “
 
 ## Linux-libre kernel and “Libre” distributions
 
-**Do not** the Linux-libre kernel, since it [removes security mitigations](https://www.phoronix.com/scan.php?page=news_item&px=GNU-Linux-Libre-5.7-Released) and [suppresses kernel warnings](https://news.ycombinator.com/item?id=29674846) about vulnerable microcode for ideological reasons.
+**Do not** use the Linux-libre kernel, since it [removes security mitigations](https://www.phoronix.com/scan.php?page=news_item&px=GNU-Linux-Libre-5.7-Released) and [suppresses kernel warnings](https://news.ycombinator.com/item?id=29674846) about vulnerable microcode for ideological reasons.
 
 If you want to use one of these distributions for reasons other than ideology, you should make sure that they there is a way to easily obtain, install and update a proper kernel and missing firmware. For example, if you are looking to use [GUIX](https://guix.gnu.org/en/download/), you should absolutely use something like the [Nonguix](https://gitlab.com/nonguix/nonguix) repository and get all of the fixes as mentioned above.
 
@@ -85,7 +85,7 @@ You can refer to the video by [Adam Šamalík](https://twitter.com/adsamalik) li
 
 ### openSUSE Tumbleweed and MicroOS
 
-Fedora Workstation and Silverblue's European counterpart. These are rolling release, fast updating distributions with [transactional update](https://kubic.opensuse.org/blog/2018-04-04-transactionalupdates/) using [Btrfs](https://en.wikipedia.org/wiki/Btrfs) and [Snapper](https://en.opensuse.org/openSUSE:Snapper_Tutorial).
+Fedora Workstation and Silverblue's European counterpart. These are rolling release, fast updating distributions with [transactional update](https://kubic.opensuse.org/blog/2018-04-04-transactionalupdates/) using [Btrfs](https://en.wikipedia.org/wiki/Btrfs) and [Snapper](https://en.opensuse.org/openSUSE:Snapper_Tutorial). 
 
 MicroOS has a much smaller base system than Tumbleweed and mounts the running BTRFS subvomumes as read-only (hence its name and why it is considered an immutable distribution). Currently, it is still in Beta so bugs are to be expected. Nevertheless, it is an awesome project.
 
