@@ -16,8 +16,8 @@ jobs:
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
-      - name: Fecth External Blog
-        run: ./external-blogs.sh
+      #- name: Fecth External Blog
+      #  run: ./external-blogs.sh
 
       - name: Hugo setup
         uses: peaceiris/actions-hugo@v2
