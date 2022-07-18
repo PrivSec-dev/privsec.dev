@@ -20,13 +20,13 @@ params:
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
   ShowWordCount: true
-  showtoc: true
+  ShowToc: true
   ShowRssButtonInSectionTermList: true
   ShowCodeCopyButtons: true
 
   assets:
     # disableHLJS: true # to disable highlight.js
-    # disableFingerprinting: true
+    disableFingerprinting: true
     favicon: "<link / abs url>"
     favicon16x16: "<link / abs url>"
     favicon32x32: "<link / abs url>"
@@ -78,7 +78,15 @@ params:
     distance: 1000
     threshold: 0.4
     minMatchCharLength: 0
-    keys: ["title", "permalink", "summary", "content"]
+    keys: ["title", "summary"]
+
+#Enabling Search
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON # is necessary
+
 menu:
   main:
     - identifier: Knowledge Base
@@ -97,6 +105,10 @@ menu:
       name: Providers
       url: /providers/
       weight: 40
+    - identifier: Search
+      name: Search
+      url: /search/
+      weight: 50
 
 privacy:
   youtube:

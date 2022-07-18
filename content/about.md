@@ -9,20 +9,24 @@ We focus on in-depth system configuration, security analysis, and software/hardw
 ---
 
 ### Tommy
-Benevolent dictator for life @privsec.dev. System Administrator.
+Benevolent dictator for life @PrivSec.dev. System Administrator.
 
 **Website**: [tommytran.io](https://tommytran.io)\
 **Matrix**: [@tommy:arcticfoxes.net](https://matrix.to/#/@tommy:arcticfoxes.net)\
 **Email**: [tommy@privsec.dev](mailto:tommy@privsec.dev)
 
 ### June
-Privsec.dev Administrator. Security Researcher. GrapheneOS Developer. Excessively obsessed with Homestuck.
+PrivSec.dev Administrator. Security Researcher. GrapheneOS Developer. Excessively obsessed with Homestuck.
 
 **Matrix**: [@june:grapheneos.org](https://matrix.to/#/@june:grapheneos.org)\
 **Email**: [june@privsec.dev](mailto:june@privsec.dev)
 
 ### Randomhydrosol
+<<<<<<< HEAD
 Privsec.dev Administrator. GrapheneOS Developer. Friendliest Indian tech support on the planet Earth.
+=======
+PrivSec.dev Administrator. GrapheneOS Developer. Friendliest Indian tech support on planet Earth.
+>>>>>>> upstream/main
 
 **Matrix**: [@randomhydrosol:grapheneos.org](https://matrix.to/#/@randomhydrosol:grapheneos.org)
 

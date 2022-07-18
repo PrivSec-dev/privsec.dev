@@ -1,6 +1,6 @@
 ---
 title: "Choosing Your Desktop Linux Distribution"
-tags: ['operating system', 'security', 'linux']
+tags: ['operating systems', 'linux', 'security']
 author: Tommy
 ---
 
@@ -75,7 +75,7 @@ Here is a quick non authoritative list of distributions that are generally bette
 
 ![Fedora](/fedora-screenshot.png)
 
-Fedora Workstation is a great general purpose Linux distribution, especially for those who are new to Linux. It is a semi-rolling release distribution. While some packages like GNOME are frozen until the next Fedora release, most packages (including the kernel) are updated frequently throughout the lifespan of the release. Each Fedora release is supported for one year, with a new version released every 6 months.
+[Fedora Workstation](https://getfedora.org/en/workstation/) is a great general purpose Linux distribution, especially for those who are new to Linux. It is a semi-rolling release distribution. While some packages like GNOME are frozen until the next Fedora release, most packages (including the kernel) are updated frequently throughout the lifespan of the release. Each Fedora release is supported for one year, with a new version released every 6 months.
 
 WIth that, Fedora generally adopts newer technologies before other distributions e.g., [Wayland](https://wayland.freedesktop.org/), [PipeWire](https://pipewire.org/), and soon, [FS-Verity](https://fedoraproject.org/wiki/Changes/FsVerityRPM). These new technologies often come with improvements in security, privacy, and usability in general.
 
@@ -83,7 +83,7 @@ While lacking transactional or atomic updates, Fedora's package manager, `dnf`, 
 
 ### Fedora Silverblue & Kinoite
 
-Fedora Silverblue and Fedora Kinoite are immutable variants of Fedora with a strong focus on container workflows. Silverblue comes with the [GNOME](https://www.gnome.org/) desktop environment while Kinoite comes with [KDE](https://kde.org/). Silverblue and Kinoite follow the same release schedule as Fedora Workstation, benefiting from the same fast updates and staying very close to upstream.
+[Fedora Silverblue](https://silverblue.fedoraproject.org/) and [Fedora Kinoite](https://kinoite.fedoraproject.org/) are immutable variants of Fedora with a strong focus on container workflows. Silverblue comes with the [GNOME](https://www.gnome.org/) desktop environment while Kinoite comes with [KDE](https://kde.org/). Silverblue and Kinoite follow the same release schedule as Fedora Workstation, benefiting from the same fast updates and staying very close to upstream.
 
 You can refer to the video by [Adam Šamalík](https://twitter.com/adsamalik) linked [above](#traditional-and-atomic-updates) on how these distributions work.
 
@@ -91,13 +91,13 @@ You can refer to the video by [Adam Šamalík](https://twitter.com/adsamalik) li
 
 Fedora Workstation and Silverblue's European counterpart. These are rolling release, fast updating distributions with [transactional update](https://kubic.opensuse.org/blog/2018-04-04-transactionalupdates/) using [Btrfs](https://en.wikipedia.org/wiki/Btrfs) and [Snapper](https://en.opensuse.org/openSUSE:Snapper_Tutorial). 
 
-MicroOS has a much smaller base system than Tumbleweed and mounts the running BTRFS subvomumes as read-only (hence its name and why it is considered an immutable distribution). Currently, it is still in Beta so bugs are to be expected. Nevertheless, it is an awesome project.
+[MicroOS](https://microos.opensuse.org/) has a much smaller base system than [Tumbleweed](https://get.opensuse.org/tumbleweed) and mounts the running BTRFS subvomumes as read-only (hence its name and why it is considered an immutable distribution). Currently, it is still in Beta so bugs are to be expected. Nevertheless, it is an awesome project.
 
 {{< youtube id="jcl_4Vh6qP4">}}
 
 ### Whonix
 
-Whonix is a distribution focused on anonimity based on [Kicksecure](https://www.whonix.org/wiki/Kicksecure). It is meant to run as two virtual machines: a “Workstation” and a Tor “Gateway.” All communications from the Workstation must go through the Tor gateway. This means that even if the Workstation is compromised by malware of some kind, the true IP address remains hidden.
+[Whonix](https://www.whonix.org/) is a distribution focused on anonimity based on [Kicksecure](https://www.whonix.org/wiki/Kicksecure). It is meant to run as two virtual machines: a “Workstation” and a Tor “Gateway.” All communications from the Workstation must go through the Tor gateway. This means that even if the Workstation is compromised by malware of some kind, the true IP address remains hidden.
 
 Some of its features include Tor Stream Isolation, [keystroke anonymization](https://www.whonix.org/wiki/Keystroke_Deanonymization#Kloak), [encrypted swap](https://github.com/Whonix/swap-file-creator), and a hardened memory allocator.
 
@@ -107,6 +107,6 @@ Although Whonix is best used [in conjunction with Qubes](https://www.whonix.org/
 
 ### Tails
 
-Tails is a live operating system based on Debian focusing on anonimity and amnesia.
+[Tails](https://tails.boum.org/) is a live operating system based on Debian focusing on anonimity and amnesia.
 
 While it is great for counter forensics as nothing is written to the disk; it is not a hardened distribution like Whonix. It lacks many anonymity and security features that Whonix has and gets updated much less often (only once every six weeks). A Tails system that is compromised by malware may potentially bypass the transparent proxy allowing for the user to be deanonymized.
