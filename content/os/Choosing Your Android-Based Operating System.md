@@ -66,7 +66,7 @@ Unfortunately, many custom Android-based operating system builds (especially uno
 
 ![ADB SELinux](/adb-selinux.png)
 
-## Good Android-Based Operating Systems
+## Recommended Android-Based Operating Systems
 
 Currently, I am only aware of two Android-based operating systems that should be used over the stock operating systems:
 

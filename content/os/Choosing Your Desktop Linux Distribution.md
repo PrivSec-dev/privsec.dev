@@ -6,7 +6,7 @@ author: Tommy
 
 Not all Linux distributions are created equal. When choosing a Linux distribution, there are several things you need to keep in mind.
 
-## Release cycle
+## Release Cycle
 
 You should choose a distribution which stays close to the stable upstream software releases, typically rolling release distributions. This is because frozen release cycle distributions often don’t update package versions and fall behind on security updates.
 
@@ -34,7 +34,7 @@ A transactional update system creates a snapshot that is made before and after a
 
 Even if you are worried about the stability of the system because of regularly updated packages (which you shouldn't be), it makes more sense to use a system which you can safely update and rollback instead of an outdated distribution partially made up of unreliable backport packages without an easy rollback mechanism in case something goes wrong like Debian.
 
-## Arch-based distributions
+## Arch-based Distributions
 
 Acrh Linux has very up to date packages with minimal downstream patching. That being said, Arch based distributions are not recommended for those new to Linux, regardless of the distribution. Arch does not have an distribution update mechanism for the underlying software choices. As a result you have to stay aware with current trends and adopt technologies as they supersede older practices on your own.
 
@@ -49,11 +49,11 @@ If you are experienced with Linux and wish to use an Arch-based distribution, yo
 
 While you should not use outdated distributions like Debian, if you decide to use it, it would be a good idea to [convert](https://www.kicksecure.com/wiki/Debian) it into [Kicksecure](https://www.kicksecure.com/). Kicksecure, in oversimplified terms, is a set of scripts, configurations, and packages that substantially reduce the attack surface of Debian. It covers a lot of privacy and hardening recommendations by default.
 
-## “Security-focused” distributions
+## “Security-focused” Distributions
 
 There is often some confusion about “security-focused” distributions and “pentesting” distributions. A quick search for “the most secure Linux distribution” will often give results like Kali Linux, Black Arch and Parrot OS. These distributions are offensive penetration testing distributions that bundle tools for testing other systems. They don’t include any “extra security” or defensive mitigations intended for regular use.
 
-## Linux-libre kernel and “Libre” distributions
+## Linux-libre Kernel and “Libre” Distributions
 
 **Do not** use the Linux-libre kernel, since it [removes security mitigations](https://www.phoronix.com/scan.php?page=news_item&px=GNU-Linux-Libre-5.7-Released) and [suppresses kernel warnings](https://news.ycombinator.com/item?id=29674846) about vulnerable microcode for ideological reasons.
 
@@ -67,7 +67,7 @@ Fortunately, common environments such as [GNOME](https://www.gnome.org), [KDE](h
 
 Try **not** to use desktop environments or window managers that do not have Wayland support such as Cinnamon (default on Linux Mint), Pantheon (default on Elementary OS), MATE, Xfce, and i3.
 
-## Generally good distributions
+## Recommended Distributions
 
 Here is a quick non authoritative list of distributions that are generally better than others:
 
