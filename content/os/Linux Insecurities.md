@@ -8,6 +8,8 @@ There is a common misconception among privacy communities that Linux is one of t
 
 There is already a very in-depth technical blog explaining the various security weaknesses of Linux by Madaidan, [Whonix](https://www.whonix.org/)'s Security Researcher. This page will attempt to address some of the questions commonly raised in reaction to his blog post. You can find the original article [here](https://madaidans-insecurities.github.io/linux.html).
 
+![Madaidan's Linux Insecurities](/madaidan-insecurities-linux.png)
+
 ## Why is Linux used on servers if it is so insecure?
 
 On servers, while most of the problems referenced in the article still exists, they are somewhat less problematic. 
