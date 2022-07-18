@@ -8,20 +8,20 @@ The first task a person should do when taking steps to protect their privacy and
 
 ## Defining a threat
 
-To make a threat model, we must first define a threat. A common mistake made by people who are just getting into the privacy space is to define the threat as "big-tech companies". There is a fundamental problem with this definition:
+To make a threat model, we must first define a threat. A common mistake made by people who are just getting into the privacy space is to define the threat as "big-tech companies." There is a fundamental problem with this definition:
 
-Why are we not trusting "big-tech companies", but then shift our trust to "small-tech companies"? What happens if those "small-tech companies" turn out to be malicious? What happens when our favorite "small-tech company" becomes successful and grow exponentially? **The proper way to define the threat here is the "service provider", not "big-tech".**
+Why are we not trusting "big-tech companies," but then shift our trust to "small-tech companies"? What happens if those "small-tech companies" turn out to be malicious? What happens when our favorite "small-tech company" becomes successful and grow exponentially? **The proper way to define the threat here is the "service provider," not "big-tech."**
 
 Generally, there are four primary threats a person would want to protect themselves from:
 
 - A service provider spying their users
-- Cross site/service tracking and data sharing, a.k.a "mass surveillance"
+- Cross site/service tracking and data sharing, a.k.a. "mass surveillance"
 - An app developer spying on users through their malicious software
 - A hacker trying to get into the users' computers
 
 A typical person would have several of these threats in their threat model. Some of these threats may weigh more than others. For example, a software developer would have a hacker stealing their source code, signing keys and secrets as their primary threat, but beyond that they would also want privacy from the websites they visit and so on. Likewise, an average Joe may have their primary threat as mass surveillance and service providers, but beyond that they also need to have decent security to prevent a hacker from stealing their data.
 
-For whistleblowers, the threat model is much more extreme. Beyond what is mentioned above, they also need anonimity. Beyond just hiding what they do, what data they have, not getting hacked by hackers or governments, they also have to hide who they are. 
+For whistleblowers, the threat model is much more extreme. Beyond what is mentioned above, they also need anonymity. Beyond just hiding what they do, what data they have, not getting hacked by hackers or governments, they also have to hide who they are. 
 
 ## Privacy from service providers
 
@@ -29,9 +29,9 @@ In most setups, our "private" messages, emails, social interactions are typicall
 
 With end-to-end encryption, you can alleviate this issue by encrypting communications between you and your desired recipients before they are even sent to the server. The confidentiality of your messages is guaranteed, so long as the service provider does not have access to the private keys of either party.
 
-In practice, the effectiveness of different end-to-end encryption implementations varies. Applications such as Signalrun natively on your device, and every copy of the application is the same across different installations. If the service provider were to backdoor their application in an attempt to steal your private keys, that could later be detected using reverse engineering.
+In practice, the effectiveness of different end-to-end encryption implementations varies. Applications such as Signal run natively on your device, and every copy of the application is the same across different installations. If the service provider were to backdoor their application in an attempt to steal your private keys, that could later be detected using reverse engineering.
 
-On the other hand, web based end-to-end encryption implementations such as Proton Mail's webmail or Bitwarden's web vault rely on the server dynamically serving JavaScript code to the browser to handle cryptographic operations. A malicious server could target a specific user and send them malicious JavaScript code to steal their encryption key, and it would be extremely hard for the user to ever notice such a thing. Even if the user does notice the attempt to steal their key, it would be incredibly hard to prove that it is the provider trying to do so, because the server can choose to serve different web clients to different users.
+On the other hand, web-based end-to-end encryption implementations such as Proton Mail's webmail or Bitwarden's web vault rely on the server dynamically serving JavaScript code to the browser to handle cryptographic operations. A malicious server could target a specific user and send them malicious JavaScript code to steal their encryption key, and it would be extremely hard for the user to ever notice such a thing. Even if the user does notice the attempt to steal their key, it would be incredibly hard to prove that it is the provider trying to do so, because the server can choose to serve different web clients to different users.
 
 Therefore, when relying on end-to-end encryption, you should choose to use native applications over web clients whenever possible.
 
@@ -50,7 +50,7 @@ Your goals should be to segregate your online identities from each other, to ble
 
 Instead of relying on privacy policies (which are promises that could be violated), try to obfuscate your information in such a way that it is very difficult for different providers to correlate data with each other and build a profile on you. This could come in the form of using encryption tools like Cryptomator prior to uploading your data to cloud services, using prepaid cards or cryptocurrency to protect your credit/debit card information, using a VPN to hide your IP address from websites and services on the internet, etc. The privacy policy should only be relied upon as a last resort, when you have exhausted all of your option for true privacy and need to put complete trust in your service provider.
 
-Bear in mind that companies can hide their ownership or or share your information with data brokers, even if they are not in the advertising business. Thus, it makes little sense to solely focus on the "ad-tech" industry as a threat in your threat model. Rather, it makes a lot more sense to protect yourself from service providers as a whole, and any kind of corporate surveillance threat that most people are concerned about will be thwarted along with the rest.
+Bear in mind that companies can hide their ownership or share your information with data brokers, even if they are not in the advertising business. Thus, it makes little sense to solely focus on the "ad-tech" industry as a threat in your threat model. Rather, it makes a lot more sense to protect yourself from service providers as a whole, and any kind of corporate surveillance threat that most people are concerned about will be thwarted along with the rest.
 
 ## Limiting Public Information
 
@@ -83,10 +83,10 @@ As a beginner, you may often fall into some bad practices while making a threat 
 - Heavy reliance on privacy policies
 - Blindly shifting trust from one service provider to another
 - Heavy reliance on badness enumeration for privacy instead of systematically solving the problem
-- Blindly trusting open source software
+- Blindly trusting open-source software
 
 As discussed, focusing solely on advertising networks and relying solely on privacy policies does not make up a sensible threat model. When switching away from a service provider, try to determine what the root problem is and see if your new provider has any technical solution to the problem. For example, you may not like Google Drive as it means giving Google access to all of your data. The underlying problem here is the lack of end to end encryption, which you can solve by using an encryption tool like Cryptomator or by switching to a provider who provides it out of the box like ProtonDrive. Blindly switching from Google Drive to a provider who does not provide end to end encryption like the Murena Cloud does not make sense.
 
-Badness enumeration cannot provide any privacy guarantee and should not be relied upon against real threat actors. While things like adblockers may help block the low hanging fruits that is common tracking domains, they are trivially bypassed by just using a new domain that is not on common blacklists, or proxying third party tracking code on the first part domain. Likewise, antivirus software may help you quickly detect common malware with known signatures, but they can never fully protect you from said threat.
+Badness enumeration cannot provide any privacy guarantee and should not be relied upon against real threat actors. While things like ad blockers may help block the low hanging fruits that is common tracking domains, they are trivially bypassed by just using a new domain that is not on common blacklists, or proxying third-party tracking code on the first part domain. Likewise, antivirus software may help you quickly detect common malware with known signatures, but they can never fully protect you from said threat.
 
-Another thing to keep in mind is that open source software is not automatically private or secure. Malicious code can be sneaked into the package by the developer of the project, contributors, libary developers, or the person who compile the code. Beyond that, sometimes, a piece of open source software may have worse security properties than its proprietary counterpart. An example of this would be traditional Linux desktops lacking verified boot, system integrity protection, or a full system access control for apps when compared to macOS. When doing threat modeling, it is vital that you evaluate the privacy and security properties of each piece of software being used, rather than just blindly trusting it because it is open source.
+Another thing to keep in mind is that open-source software is not automatically private or secure. Malicious code can be sneaked into the package by the developer of the project, contributors, library developers or the person who compile the code. Beyond that, sometimes, a piece of open-source software may have worse security properties than its proprietary counterpart. An example of this would be traditional Linux desktops lacking verified boot, system integrity protection, or a full system access control for apps when compared to macOS. When doing threat modeling, it is vital that you evaluate the privacy and security properties of each piece of software being used, rather than just blindly trusting it because it is open-source.
