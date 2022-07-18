@@ -7,7 +7,7 @@ name: Deploy to Firebase Hosting on merge
     branches:
       - main
 jobs:
-  build_and_deploy:
+  Build_and_Deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -15,6 +15,9 @@ jobs:
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Fecth External Blog
+        run: ./external-blogs.sh
 
       - name: Hugo setup
         uses: peaceiris/actions-hugo@v2
