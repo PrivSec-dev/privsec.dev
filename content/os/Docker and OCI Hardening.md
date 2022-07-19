@@ -1,6 +1,6 @@
 ---
 title: "Docker and OCI Hardening"
-tags: ['operating systems', 'linux', 'container', 'security']
+tags: ['Operating Systems', 'Linux', 'Container', 'Security']
 author: Wonderfall
 canonicalURL: https://wonderfall.dev/docker-hardening/
 ShowCanonicalLink: true

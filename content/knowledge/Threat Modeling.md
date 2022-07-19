@@ -1,6 +1,6 @@
 ---
 title: "Threat Modeling"
-tags: ['knowledge base', 'privacy', 'security']
+tags: ['Knowledge base', 'Privacy', 'Security']
 author: Tommy
 ---
 
