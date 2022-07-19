@@ -18,9 +18,9 @@ Only use these protocols when it is the only option you have, and be very carefu
 
 Push confirmation MFA is typically a notification being sent to an app on your phone asking you to confirm new account logins. This method is a lot better than SMS or email, since an attacker typically wouldn't be able to get these push notifications without having an already logged-in device.
 
-Push confirmation in most cases relies on a third party provider like [Duo](https://duo.com/). This means that trust is placed in a server that neither you nor your service provider control. A malicious push confirmation server could compromise your MFA or profile you based on which website and account you use with the service.
+Push confirmation in most cases relies on a third-party provider like [Duo](https://duo.com/). This means that trust is placed in a server that neither you nor your service provider control. A malicious push confirmation server could compromise your MFA or profile you based on which website and account you use with the service.
 
-Even if the push notification application and server is provided by a first party as is the case with Microsoft login and [Microsoft Authenticator](https://www.microsoft.com/en-us/security/mobile-authenticator-app), there is still a risk of you accidentally tapping on the confirmation button.
+Even if the push notification application and server is provided by a first-party as is the case with Microsoft login and [Microsoft Authenticator](https://www.microsoft.com/en-us/security/mobile-authenticator-app), there is still a risk of you accidentally tapping on the confirmation button.
 
 ### Time-based One-time Password (TOTP)
 
@@ -46,7 +46,7 @@ The service will then forward the one-time password to the Yubico OTP server for
 
 The Yubico validation server is a cloud based service, and you're placing trust in Yubico that their server won't be used to bypass your MFA or profile you. The public ID associated with Yubico OTP is reused on every website and could be another avenue for third-parties to profile you. Like TOTP, Yubico OTP does not provide phishing resistance.
 
-Yubico OTP is an inferior protocol compared to TOTP since TOTP does not need trust in a third party server and most security keys that support Yubico OTP (namely the Yubikey and OnlyKey) supports TOTP anyway. Yubico OTP is still better than Push Confirmation, however.
+Yubico OTP is an inferior protocol compared to TOTP since TOTP does not need trust in a third-party server and most security keys that support Yubico OTP (namely the Yubikey and OnlyKey) supports TOTP anyway. Yubico OTP is still better than Push Confirmation, however.
 
 ### FIDO2 (Fast IDentity Online)
 
