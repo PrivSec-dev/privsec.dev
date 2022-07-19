@@ -7,7 +7,7 @@
         "headers": [
           {
             "key": "Content-Security-Policy",
-            "value": "default-src 'none'; child-src 'self'; connect-src 'self'; font-src 'self'; img-src 'self'; manifest-src 'self'; script-src 'self'; style-src 'self'; form-action 'none'; frame-ancestors 'none'; block-all-mixed-content; base-uri 'none'"
+            "value": "default-src 'self'; child-src 'self'; connect-src 'self'; font-src 'self'; img-src 'self'; manifest-src 'self'; script-src 'self'; style-src 'self'; form-action 'none'; frame-ancestors 'none'; block-all-mixed-content; base-uri 'none'"
           },
           {
             "key": "X-Content-Type-Options",
@@ -35,7 +35,7 @@
           },  
           {
             "key": "Permissions-Policy",
-            "value": "accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), clipboard-read=(), clipboard-write=(), display-capture=(), document-domain=(), encrypted-media=(), fullscreen=(), geolocation=(), gyroscope=(), hid=(), idle-detection=(), interest-cohort=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), serial=(), sync-xhr=(), usb=(), xr-spatial-tracking=()"
+            "value": "accelerometer=(), autoplay=(), camera=(), clipboard-read=(), clipboard-write=(), display-capture=(), document-domain=(), encrypted-media=(), fullscreen=(), geolocation=(), gyroscope=(), hid=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), xr-spatial-tracking=()"
           },  
           {
             "key": "Cross-Origin-Resource-Policy",
