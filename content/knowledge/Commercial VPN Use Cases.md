@@ -34,11 +34,11 @@ VPNs cannot provide anonymity. Your VPN provider will still see your real IP add
 
 ## Should I use Tor over VPN?
 
-By using Tor over VPN, you are creating essentially adding an extra node in the beginning of circuit. This provides zero additional benefits to you, while increasing the latency of your connection dramatically. If you wish to hide your Tor usage from your ISP or your government, Tor has a built-in solution for that: Tor bridges. 
+By using Tor over VPN, you are creating essentially adding an extra node in the beginning of the circuit. This provides zero additional benefits to you, while increasing the latency of your connection dramatically. If you wish to hide your Tor usage from your ISP or your government, Tor has a built-in solution for that: Tor bridges. 
 
 ## What about VPN over Tor?
 
-By using VPN over Tor, you are adding an extra node at the end of a circuit, which is always controlled by the same entity. If you pay for the VPN using the traditional banking system, it essentially breaks the anonimity that the 3 hops in front of it would provide. If you pay for the VPN subscription using cash or a private cryptocurrency like Monero, your privacy is reduced to that of pseudonymity, since the VPN provider still knows the connections being made are from the same individual, they just do not know who you really are. Even if you are using a free VPN, you would still break [Stream Isolation](https://www.whonix.org/wiki/Stream_Isolation), one of Tor's important anonimity features. There are very few use cases where it would make sense to add a VPN server at the end of the chain.
+By using VPN over Tor, you are adding an extra node at the end of a circuit, which is always controlled by the same entity. If you pay for the VPN using the traditional banking system, it essentially breaks the anonymity that the three  hops in front of it would provide. If you pay for the VPN subscription using cash or a private cryptocurrency like Monero, your privacy is reduced to that of pseudonymity, since the VPN provider still knows the connections being made are from the same individual, they just do not know who you really are. Even if you are using a free VPN, you would still break [Stream Isolation](https://www.whonix.org/wiki/Stream_Isolation), one of Tor's important anonymity features. There are very few use cases where it would make sense to add a VPN server at the end of the chain.
 
 ## What about VPN providers that provide Tor nodes?
 
