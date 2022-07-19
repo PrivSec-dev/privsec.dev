@@ -22,7 +22,7 @@ jobs:
                run_id: ${{github.event.workflow_run.id }},
             });
             var matchArtifact = artifacts.data.artifacts.filter((artifact) => {
-              return artifact.name == "public"
+              return artifact.name == "hugo"
             })[0];
             var download = await github.actions.downloadArtifact({
                owner: context.repo.owner,
@@ -31,10 +31,13 @@ jobs:
                archive_format: 'zip',
             });
             var fs = require('fs');
-            fs.writeFileSync('${{github.workspace}}/public.zip', Buffer.from(download.data));
+            fs.writeFileSync('${{github.workspace}}/hugo.zip', Buffer.from(download.data));
 
       - name: Unzip artifact
-        run: unzip public.zip
+        run: unzip hugo.zip
+
+      - name: Remove artifact zip
+        run: rm hugo.zip
 
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
