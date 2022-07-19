@@ -40,7 +40,7 @@ params:
   profileMode:
     enabled: true # needs to be explicitly set
     title: PrivSec.dev
-    subtitle: "A practical approach to privacy and security"
+    subtitle: "A practical approach to Privacy and Security"
     buttons:
       - name: About
         url: about
