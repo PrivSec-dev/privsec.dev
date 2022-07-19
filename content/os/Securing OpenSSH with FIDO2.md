@@ -1,5 +1,6 @@
 ---
 title: "Securing OpenSSH with FIDO2"
+date: 2022-04-09T17:43:12Z
 tags: ['Operating Systems', 'Linux', 'Security']
 author: Wonderfall
 canonicalURL: https://wonderfall.dev/openssh-fido2/
