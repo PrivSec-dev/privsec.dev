@@ -44,6 +44,8 @@ params:
     buttons:
       - name: About
         url: about
+      - name: Conduct
+        url: conduct
       - name: Donate
         url: donate
       - name: Tags
