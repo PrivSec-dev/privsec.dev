@@ -1,6 +1,6 @@
 ---
 title: "F-Droid Security Analysis"
-tags: ['applications', 'android', 'security']
+tags: ['Applications', 'Android', 'Security']
 author: Wonderfall
 canonicalURL: https://wonderfall.dev/fdroid-issues
 ShowCanonicalLink: true
