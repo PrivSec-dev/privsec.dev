@@ -26,7 +26,7 @@ For the Privacy policy of GitHub, please check out [this link](https://docs.gith
 
 We use Matrix as our primary communication method. Since Matrix is a Federated protocol, the privacy of our conversaion depends on that of your homeserver and the homeserver of your contact.
 
-You should not have any expectation of privacy for your conversation in our public room, as anyone (be it a person or a bot) can access all of your messages and log them. Even if you "delete" your messages, it is merely a redaction request to the participating homeservers in the room, and any of them could choose to ignore said request.
+You should not have any expectation of privacy for your conversations in our public room, as anyone (be it a person or a bot) can access all of your messages and log them. Even if you "delete" your messages, it is merely a redaction request to the participating homeservers in the room, and any of them could choose to ignore said request.
 
 Direct or private messages with individuals are end to end encrypted by default. However, the Matrix protocol does not provide any metadata protection, and homeserver admins know who you have been talking to, how often you talk to them, and so on.
 
