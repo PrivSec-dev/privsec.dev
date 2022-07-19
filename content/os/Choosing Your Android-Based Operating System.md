@@ -1,5 +1,6 @@
 ---
 title: "Choosing Your Android-Based Operating System"
+date: 2022-07-18
 tags: ['Operating Systems', 'Android', 'Privacy', 'Security']
 author: Tommy
 ---

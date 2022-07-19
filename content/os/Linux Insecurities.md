@@ -1,5 +1,6 @@
 ---
 title: "Linux Insecurities"
+date: 2022-07-18
 tags: ['Operating Systems', 'Linux', 'Security',]
 author: Tommy
 ---

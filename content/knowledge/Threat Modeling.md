@@ -1,5 +1,6 @@
 ---
 title: "Threat Modeling"
+date: 2022-07-18
 tags: ['Knowledge base', 'Privacy', 'Security']
 author: Tommy
 ---
