@@ -44,12 +44,12 @@ params:
     buttons:
       - name: About
         url: about
-      - name: Conduct
-        url: conduct
+      - name: Code
+        url: code
+      - name: Privacy
+        url: privacy
       - name: Donate
         url: donate
-      - name: Tags
-        url: tags
 
   socialIcons:
     - name: github
@@ -111,7 +111,30 @@ menu:
       name: Search
       url: /search/
       weight: 50
+    - identifier: Tags
+      name: Tags
+      url: /tags/
+      weight: 60
 
 privacy:
+  disqus:
+    disable: true
+  googleAnalytics:
+    anonymizeIP: true
+    disable: true
+    respectDoNotTrack: true
+    useSessionStorage: false
+  instagram:
+    disable: true
+    simple: false
+  twitter:
+    disable: false
+    enableDNT: true
+    simple: false
+  vimeo:
+    disable: false
+    enableDNT: true
+    simple: false
   youtube:
+    disable: false
     privacyEnhanced: true
