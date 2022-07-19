@@ -8,6 +8,8 @@ The first task a person should do when taking steps to protect their privacy and
 
 ## Defining a threat
 
+![Cameras in Trees](/cameras-in-trees.jpg)
+
 To make a threat model, we must first define a threat. A common mistake made by people who are just getting into the privacy space is to define the threat as "big-tech companies." There is a fundamental problem with this definition:
 
 Why are we not trusting "big-tech companies," but then shift our trust to "small-tech companies"? What happens if those "small-tech companies" turn out to be malicious? What happens when our favorite "small-tech company" becomes successful and grow exponentially? **The proper way to define the threat here is the "service provider," not "big-tech."**
@@ -25,6 +27,8 @@ For whistleblowers, the threat model is much more extreme. Beyond what is mentio
 
 ## Privacy from service providers
 
+![Camera Drawing](/camera-drawing.jpg)
+
 In most setups, our "private" messages, emails, social interactions are typically stored on a server somewhere. The obvious problem with this is that the service provider (or a hacker who has compromised the server) can look into your "private" conversations whenever and however they want, without you ever knowing. This applies to many common services like SMS messaging, Telegram, Discord, and so on.
 
 With end-to-end encryption, you can alleviate this issue by encrypting communications between you and your desired recipients before they are even sent to the server. The confidentiality of your messages is guaranteed, so long as the service provider does not have access to the private keys of either party.
@@ -38,6 +42,9 @@ Therefore, when relying on end-to-end encryption, you should choose to use nativ
 Even with end-to-end encryption, service providers can still profile you based on **metadata**, which is typically not protected. While the service provider could not read your messages to see what you're saying, they can still observe things like who you're talking to, how often you message them, and what times you're typically active. Protection of metadata is fairly uncommon, and you should pay close attention to the technical documentation of the software you are using to see if there is any metadata minimization or protection at all, if that is a concern for you.
 
 ## Protection from cross site/service tracking
+
+![Surveillance Room](/surveillance-room.jpg)
+
 You can be tracked across websites and services using some form of identifiers. These are typically:
 
 - Your IP address
@@ -61,6 +68,8 @@ On sites where you do share information, checking the privacy settings of your a
 If you have already submitted your real information to a number of sites which shouldn't have it, consider employing disinformation tactics such as submitting fictitious information related to the same online identity to make your real information indistinguishable from the false information.
 
 ## Protection from malware and hackers
+
+![Motherboard](/motherboard-1.jpg)
 
 You need security to obtain any semblance of privacy: **Using tools which appear private is futile if they could easily be exploited by attackers to release your data later.**
 
