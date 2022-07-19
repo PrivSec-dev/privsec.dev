@@ -7,7 +7,7 @@
         "headers": [
           {
             "key": "Content-Security-Policy",
-            "value": "block-all-mixed-content; form-action 'none'; frame-ancestors 'self'"
+            "value": "block-all-mixed-content; default-src: 'none'; form-action 'none'; frame-ancestors 'self'"
           },
           {
             "key": "X-Content-Type-Options",
