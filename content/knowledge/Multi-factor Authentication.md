@@ -1,6 +1,6 @@
 ---
 title: "Multi-factor Authentication"
-tags: ['knowledge base', 'security']
+tags: ['Knowledge Base', 'Security']
 author: Tommy
 ---
 
