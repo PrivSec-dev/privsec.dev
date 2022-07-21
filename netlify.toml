@@ -5,7 +5,7 @@
     Content-Security-Policy = "default-src 'none'; connect-src 'self'; img-src 'self'; script-src-elem 'self'; style-src 'self' 'unsafe-inline'; style-src-elem 'self'; frame-src www.youtube-nocookie.com; form-action 'none'; frame-ancestors 'none'; block-all-mixed-content; base-uri 'none'"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "no-referrer"
-    #Cross-Origin-Opener-Policy = "same-origin"
+    Cross-Origin-Opener-Policy = "same-origin"
     #Cross-Origin-Embedder-Policy = "require-corp"
     X-Frame-Options = "DENY"
     X-XSS-Protection = "0"
