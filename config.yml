@@ -1,6 +1,5 @@
 baseURL: "https://privsec.dev"
 title: PrivSec.dev
-paginate: 5
 theme: PaperMod
 
 enableRobotsTXT: true
@@ -55,6 +54,8 @@ params:
       url: "https://github.com/PrivSec-dev"
     - name: matrix
       url: "https://matrix.to/#/#privsec:arcticfoxes.net"
+    - name: twitter
+      url: "https://twitter.com/privsec_dev"
     - name: email
       url: "mailto:contact@privsec.dev"
     - name: rss
