@@ -108,5 +108,5 @@ if (params.themeToggle) themeToggle();
 if (params.showCodeCopyButtons) showCodeCopyButtons();
 
 if ('hljs' in window) {
-    hljs.initHighlightingOnLoad();
+    hljs.highlightAll();
 }
