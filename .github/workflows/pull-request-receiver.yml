@@ -24,6 +24,11 @@ jobs:
       - name: Build Hugo site
         run: hugo --minify
           
+      - name: Save PR number
+        run: |
+          mkdir -p ./pr
+          echo ${{ github.event.number }} > ./pr/NR
+
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:

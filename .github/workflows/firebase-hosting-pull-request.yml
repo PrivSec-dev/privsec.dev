@@ -45,3 +45,5 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PRIVSEC_356523 }}'
           projectId: privsec-356523
+          channelID: '$(cat ./pr/NR)'
+          expires: 30d
