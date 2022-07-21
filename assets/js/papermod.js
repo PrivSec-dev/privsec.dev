@@ -60,12 +60,12 @@ function showCodeCopyButtons() {
 
         const copybutton = document.createElement('button');
         copybutton.classList.add('copy-code');
-        copybutton.innerHTML = '{{- i18n "code_copy" | default "copy" }}';
+        copybutton.innerHTML = 'copy';
 
         function copyingDone() {
-            copybutton.innerHTML = '{{- i18n "code_copied" | default "copied!" }}';
+            copybutton.innerHTML = 'copied!';
             setTimeout(() => {
-                copybutton.innerHTML = '{{- i18n "code_copy" | default "copy" }}';
+                copybutton.innerHTML = 'copy';
             }, 2000);
         }
 
