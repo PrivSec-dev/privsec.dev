@@ -1,5 +1,7 @@
 ---
 title: "Code of Conflict"
+date: 2022-07-18
+lastmod: 2022-07-21
 ---
 
 The development effort of PrivSec.dev is a very personal process compared to “traditional” ways of developing a community website. Your recommendations and ideas behind it will be carefully reviewed, often resulting in critique and criticism. Know that this happens because everyone involved wants to see the best possible solution for the overall success of PrivSec.dev. 

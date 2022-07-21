@@ -1,5 +1,7 @@
 ---
 title: "Privacy Policy"
+date: 2022-07-18
+lastmod: 2022-07-21
 ---
 
 PrivSec.dev as a project does not collect any personal information. We do not log your IPs, collect your fingerprints, or run any sort of analytics on you. In sort, we do not care who you are, what you do, or how you are using our website. It is none of our business.
@@ -12,9 +14,9 @@ Services like Disqus, Instagram, and Google Analytics are disabled. We do link t
 
 ## Hosting Provider
 
-We use Google Domains, Google DNS, and Google Firebase Hosting to run our website. We turn Google Analytics off for our project, so it should not collect any data on you.
+We use Google Domains, Google DNS. We host our website on Netlify. We turn Netlify Analytics off for our project, so we do not have any information about you. We do not use Netlify assets optimization, so nothing is hosted on CloudFront.
 
-For the Privacy Policy of Firebase Hosting, please check out [this link](https://firebase.google.com/support/privacy).
+Netlify does store your IP address and access logs for less than 30 days. Please check out [this link](https://www.netlify.com/gdpr-ccpa/) for their policy regarding this. Their general privacy policy can be found [here](https://www.netlify.com/gdpr-ccpa/).
 
 ## Git Repository
 
@@ -33,3 +35,4 @@ Direct or private messages with individuals are end to end encrypted by default.
 ## Email
 
 Our mail server is hosted by Tommy on his own Dedicated Server colocated in the United Kingdom. Many of us use our @privsec.dev email as an alias and forward it to another email provider. The privacy of your emails with us is the same as with any other person you communicate with using this protocol - the hosting providers can read all of your conversations with us unless you are using PGP, and even when you use PGP there is no metadata protection.
+
