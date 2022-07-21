@@ -14,7 +14,7 @@ Services like Disqus, Instagram, and Google Analytics are disabled. We do link t
 
 ## Hosting Provider
 
-We use Google Domains, Google DNS. We host our website on Netlify, who in turn uses CloudFront as a Content Delivery Network. We turn Netlify Analytics off for our project, so we do not have any information about you.
+We use Google Domains, Google DNS. We host our website on Netlify. We turn Netlify Analytics off for our project, so we do not have any information about you. We do not use Netlify assets optimization, so nothing is hosted on CloudFront.
 
 Netlify does store your IP address and access logs for less than 30 days. Please check out [this link](https://www.netlify.com/gdpr-ccpa/) for their policy regarding this. Their general privacy policy can be found [here](https://www.netlify.com/gdpr-ccpa/).
 
