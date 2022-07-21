@@ -1,7 +1,7 @@
 ---
 title: "Donate"
 date: 2022-07-16
-las
+lastmod: 2022-07-21
 ---
 
 The domain costs us $12/year to renew from Google. We got our repository hosted for free on GitHub. We got our site hosted for free with Firebase. It costs Tommy ~$20/month to run the mail server, but that server is used for a bunch of his projects, not just PrivSec, and we doubt it will be used that much anyways. The point is, this website does not cost much to run, and as such we will not be accepting donation as a project.
