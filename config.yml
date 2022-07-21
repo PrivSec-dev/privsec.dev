@@ -24,7 +24,7 @@ params:
   ShowCodeCopyButtons: true
 
   assets:
-    # disableHLJS: true # to disable highlight.js
+    disableHLJS: true # to disable highlight.js
     disableFingerprinting: true
     favicon: "/favicon.ico"
     favicon16x16: "</favicon-16x16.png>"
