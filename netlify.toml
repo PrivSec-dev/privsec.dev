@@ -16,4 +16,4 @@
   HUGO_VERSION = "0.101.0"
 
 [context.deploy-preview]
-command = "hugo -b $DEPLOY_PRIME_URL"
+  command = "hugo -b $DEPLOY_PRIME_URL"
