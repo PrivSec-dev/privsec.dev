@@ -1,0 +1,4 @@
+version: STSv1
+mode: enforce
+mx: mail.tommytran.io
+max_age: 604800
