@@ -10,7 +10,7 @@
     X-XSS-Protection = "0"
     Permissions-Policy = "accelerometer=(), autoplay=(), camera=(), clipboard-read=(), display-capture=(), document-domain=(), encrypted-media=(), fullscreen=(), geolocation=(), gyroscope=(), hid=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), xr-spatial-tracking=()"
     Cross-Origin-Resource-Policy = "same-origin"
-    Expect-CT = “max-age=63072000, enforce”
+    Expect-CT = "max-age=63072000, enforce"
 
 [build.environment]
   HUGO_VERSION = "0.101.0"
