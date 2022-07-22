@@ -1,4 +1,4 @@
-# PriSec.dev
+# PrivSec.dev
 A practical approach to Privacy and Security
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ba0d8ddc-031b-4c16-8240-9929a4ad201a/deploy-status)](https://app.netlify.com/sites/privsec-dev/deploys)
@@ -13,12 +13,14 @@ The Hugo Framework used to create this website is under the [Apache License](htt
 
 The PaperMod theme used for the website and modifications made by us are under the [MIT License](https://github.com/adityatelange/hugo-PaperMod/blob/master/LICENSE). 
 
-## Netlify Previews:
+## Netlify Previews
 
-We use Netlify to host our website and generate previews. Simply add your articles inside of /content or make any modifications that you want, open a new Pull Request and a preview page will be generated for you automatically.
+We use [Netlify](https://netlify.com) to host our website and generate previews. Simply add your articles inside of /content or make any modifications that you want, open a new Pull Request and a preview page will be generated for you automatically.
 
-## Local Development:
+## Local Development
 
-1. Git clone this repository: `git clone https://github.com/PrivSec-dev/privsec.dev`.
-2. [Install Hugo](https://github.com/PrivSec-dev/privsec.dev).
-3. Run `hugo serve`. The local version of the website should be available at `http://127.0.0.1:1313`.
+1. Git clone this repository: `git clone https://github.com/PrivSec-dev/privsec.dev`
+2. [Install Hugo](https://github.com/PrivSec-dev/privsec.dev)
+3. Run `hugo serve`. The local version of the website should be available at `http://127.0.0.1:1313`
+4. You can run `git submodule update --remote --merge` to update the PaperMod theme. 
+5. You can run `./external-blogs.sh` to pull the latest versions of the articles from [wonderfall.dev](https://wonderfall.dev) and place them in /content.
