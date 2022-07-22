@@ -22,5 +22,5 @@ We use [Netlify](https://netlify.com) to host our website and generate previews.
 1. Git clone this repository: `git clone https://github.com/PrivSec-dev/privsec.dev`
 2. [Install Hugo](https://github.com/PrivSec-dev/privsec.dev)
 3. Run `hugo serve`. The local version of the website should be available at `http://127.0.0.1:1313`
-4. You can run `git submodule update --remote --merge` to update the PaperMod theme. 
-5. You can run `./external-blogs.sh` to pull the latest versions of the articles from [wonderfall.dev](https://wonderfall.dev) and place them in /content.
+4. You can run `git submodule update --remote --merge` to update the PaperMod theme
+5. You can run `./external-blogs.sh` to pull the latest versions of the articles from [wonderfall.dev](https://wonderfall.dev) and place them in `/content`
