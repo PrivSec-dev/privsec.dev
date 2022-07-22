@@ -18,9 +18,9 @@ Google Pixel phones are the **only** devices I would recommend for purchase. Pix
 When purchasing a device, you should one as new as possible. The software and firmware of mobile devices are only supported for a limited time, so buying new extends that lifespan as much as possible. Also, beginning with the **Pixel 6** and **6 Pro**, Pixel devices receive a minimum of 5 years of guaranteed security updates, ensuring a much longer lifespan compared to the 2-4 years competing OEMs typically offer.
 
 ### Phones to Avoid
-Avoid buying the Fairphone 4, which only has just over 2 years of full security updates since its release date despite of them advertising 6 years of support. This is because the System on a Chip they use (Snapdragon 750G) only has 3 years of support from Qualcomm, and the SoC was already old when the phone came out. This is not to mention, the Fairphone 4 [uses the Android Verified Boot Test Key as their OEM keys]((https://forum.fairphone.com/t/bootloader-avb-keys-used-in-roms-for-fairphone-3-4/83448/11)), effectively making Verified Boot useless. In general, you should check for how long the SoC a phone uses is supported for and not blindly trust the phone manufacturer's claims.
+Avoid buying the Fairphone 4, which only has just over 2 years of full security updates since its release date despite them advertising 6 years of support. This is because the System on a Chip they use (Snapdragon 750G) only has 3 years of support from Qualcomm, and the SoC was already old when the phone came out. This is not to mention, the Fairphone 4 [uses the Android Verified Boot Test Key as their OEM keys]((https://forum.fairphone.com/t/bootloader-avb-keys-used-in-roms-for-fairphone-3-4/83448/11)), effectively making Verified Boot useless. In general, you should check for how long the SoC a phone uses is supported for and not blindly trust the phone manufacturer's claims.
 
-You should also avoid buying the /e/ OS phones (sometimes branded as the Murena phones). /e/ OS in itself extremely insecure, not supporting verified boot, shipping userdebug build, [bundling years old version Orbot into their operating system then marketing it as "Advanced Privacy"](https://community.e.foundation/t/advanced-privacy-know-all-about-it/41992/3), etc. They have recently also had an incident where their cloud service mishandled session keys and give users access to each other's files, then proceeded to [mislead the users that the server cannot see their files](https://community.e.foundation/t/service-announcement-26-may/41252/30) despite of there being no end-to-end encryption.
+You should also avoid buying the /e/ OS phones (sometimes branded as the Murena phones). /e/ OS in itself extremely insecure, not supporting verified boot, shipping userdebug build, [bundling years old version Orbot into their operating system then marketing it as "Advanced Privacy"](https://community.e.foundation/t/advanced-privacy-know-all-about-it/41992/3), etc. They have recently also had an incident where their cloud service mishandled session keys and give users access to each other's files, then proceeded to [mislead the users that the server cannot see their files](https://community.e.foundation/t/service-announcement-26-may/41252/30) despite there being no end-to-end encryption.
 
 You should also be very wary of low quality privacy branded phones like the Freedom Phone, Brax2 Phone, Volta Phone, and the like. These are cheap Chinese phones with the [Mediatek Helio P60](https://i.mediatek.com/p60) from 2018, which has already reached end-of-life or is near end-of-life. Needless to say, you should also avoid any vendor who claims they are Zero-day proof like this: 
 
@@ -30,7 +30,7 @@ You should also be very wary of low quality privacy branded phones like the Free
 
 ![GrapheneOS Aurora](/grapheneos-aurora.jpg)
 
-In certain cases, installing a custom Android-based operating system can help increase your privacy and security. This is rather tricky; however, as the vast majority of these operating systems (a.k.a "custom ROMs") do exactly the opposite - breaking the Android security model, ruining your security while providing no or dubious privacy benefits.
+In certain cases, installing a custom Android-based operating system can help increase your privacy and security. This is rather tricky; however, as the vast majority of these operating systems (a.k.a. "custom ROMs") do exactly the opposite - breaking the Android security model, ruining your security while providing no or dubious privacy benefits.
 
 I have written a detailed post on selecting your Android-based operating system, which you can find [here](../../os/choosing-your-android-based-operating-system/).
 
@@ -59,7 +59,7 @@ You can manage Android permissions by going to **Settings** → **Privacy ** →
 Android 7 and above supports a VPN killswitch and it is available without the need to install third-party apps. This feature can prevent leaks if the VPN is disconnected. It can be found in **Settings** → **Network & internet** → **VPN** → **Block connections without VPN**.
 
 ## Media Access
-Quite a few applications allows you to "share" a file with them for media upload. If you want to, for example, tweet a picture to Twitter, do not grant Twitter access to your "media and photos", because it will have access to all of your pictures then. Instead, go to your file manager (documentsUI), hold onto the picture, then share it with Twitter.
+Quite a few applications allow you to "share" a file with them for media upload. If you want to, for example, tweet a picture to Twitter, do not grant Twitter access to your "media and photos", because it will have access to all of your pictures then. Instead, go to your file manager (documentsUI), hold onto the picture, then share it with Twitter.
 
 If you are using GrapheneOS, you should utilize the Storage Scopes feature to force apps that request broad storage access permission to function with scoped storage.
 
@@ -83,7 +83,7 @@ This method is generally less secure than a secondary user profile; however, it 
 
 ## Baseband Modem Attack Surface Reduction
 
-By default, your baseband modem will typically set to support just about every generation of mobile celluar technology, from 2G to 5G. This gives a large attack surface.
+By default, your baseband modem will typically set to support just about every generation of mobile cellular technology, from 2G to 5G. This gives a large attack surface.
 
 You can reduce this attack surface by limiting the baseband modem to just using the generation that in needs. In most cases, this would be 4G/LTE.
 
