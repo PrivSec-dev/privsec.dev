@@ -1,0 +1,8 @@
+.paginav {
+    background: none;
+    border: none;
+}
+
+.paginav a:hover {
+    background: none;
+}
