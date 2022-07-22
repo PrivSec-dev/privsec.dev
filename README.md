@@ -15,7 +15,7 @@ The PaperMod theme used for the website and modifications made by us are under t
 
 ## Netlify Previews
 
-We use [Netlify](https://netlify.com) to host our website and generate previews. Simply add your articles inside of /content or make any modifications that you want, open a new Pull Request and a preview page will be generated for you automatically.
+We use [Netlify](https://netlify.com) to host our website and generate previews. Simply add your articles inside of `/content` or make any modifications that you want, open a new Pull Request and a preview page will be generated for you automatically.
 
 ## Local Development
 
