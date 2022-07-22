@@ -6,3 +6,8 @@
 .paginav a:hover {
     background: none;
 }
+
+.share-buttons {
+    background: none;
+    border: none;
+}
