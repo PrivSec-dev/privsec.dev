@@ -1,7 +1,7 @@
 {{- if not (.Param "hideFooter") }}
 <footer class="footer">
     {{- if site.Copyright }}
-    <span>{{ site.Copyright | markdownify }}</span>
+    <span>{{ site.Copyright | markdownify }} ·</span>
     {{- else }}
     <span>&copy; {{ now.Year }} <a href="{{ "" | absLangURL }}">{{ site.Title }}</a></span>
     {{- end }}
