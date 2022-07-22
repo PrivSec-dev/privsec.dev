@@ -32,7 +32,7 @@ You should also be very wary of low quality privacy branded phones like the Free
 
 In certain cases, installing a custom Android-based operating system can help increase your privacy and security. This is rather tricky; however, as the vast majority of these operating systems (a.k.a "custom ROMs") do exactly the opposite - breaking the Android security model, ruining your security while providing no or dubious privacy benefits.
 
-I have written a detailed post on selecting your Android-based operating system, which you can find [here](choosing-your-android-based-operating-system/).
+I have written a detailed post on selecting your Android-based operating system, which you can find [here](../../os/choosing-your-android-based-operating-system/).
 
 **TLDR**: If you are using a modern Pixel, use [GrapheneOS](https://grapheneos.org). If you are on a device supported by [DivestOS](https://divestos.org), use DivestOS. Otherwise, stick to your stock operating system. Do not blindly use an OS just because it is advertised as "degoogled".
 
@@ -105,7 +105,7 @@ My recommendation is to stick with the Google Play Store unless your threat mode
 
 ### F-Droid
 
-F-Droid, despite being oftenly recommended in the privacy community, has various security deficiencies. You can read more about them [here](apps/f-droid-security-analysis/).
+F-Droid, despite being oftenly recommended in the privacy community, has various security deficiencies. You can read more about them [here](../../apps/f-droid-security-analysis/).
 
 I do not recommend that you use F-Droid at all unless you have no other choice to obtain certain apps.
 
