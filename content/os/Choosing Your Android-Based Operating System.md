@@ -1,6 +1,7 @@
 ---
 title: "Choosing Your Android-Based Operating System"
 date: 2022-07-18
+lastmod: 2022-07-23
 tags: ['Operating Systems', 'Android', 'Privacy', 'Security']
 author: Tommy
 ---
@@ -103,4 +104,6 @@ It comes with substantial hardening over AOSP. DivestOS has automated kernel vul
 - GrapheneOS's per-network full [MAC randomization](https://en.wikipedia.org/wiki/MAC_address#Randomization) option on version 17.1 and higher
 - Automatic reboot/Wi-Fi/Bluetooth [timeout options](https://grapheneos.org/features)
 
-With that being said, DivestOS is not without its faults. The developer does not have all of the devices he is building for, and for a lot of them he simply publishes the builds blind without actually testing them. Firmware update support [varies](https://gitlab.com/divested-mobile/firmware-empty/-/blob/master/STATUS) across devices. DivestOS also takes a very long time to update to a new major Android, and actually took longer than CalyxOS did as mentioned [above](#firmware-updates). It does not tend to fall behind on Chromium updates, however.
+With that being said, DivestOS is not without its faults. The developer does not have all of the devices he is building for, and for a lot of them he simply publishes the builds blind without actually testing them. Firmware update support [varies](https://gitlab.com/divested-mobile/firmware-empty/-/blob/master/STATUS) across devices. DivestOS also takes a very long time to update to a new major Android, and actually took longer than CalyxOS did as mentioned [above](#firmware-updates). It does not tend to fall behind on Chromium updates like CalyxOS, however.
+
+Also, please note that I am only recommending DivestOS here, and not any of its related apps. For instance, I would not recommend using Mull, since it is just a Firefox Android fork with better defaults and still inherits many security deficiencies from its upstream, including the lack of support for [site isolation](https://wiki.mozilla.org/Project_Fission) and [isolatedProcess](https://bugzilla.mozilla.org/show_bug.cgi?id=1565196).
