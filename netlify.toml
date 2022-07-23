@@ -1,17 +1,3 @@
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
-    Content-Security-Policy = "default-src 'none'; connect-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; frame-src https://www.youtube-nocookie.com; block-all-mixed-content; base-uri 'none'"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "no-referrer"
-    Cross-Origin-Opener-Policy = "same-origin"
-    X-Frame-Options = "DENY"
-    X-XSS-Protection = "0"
-    Permissions-Policy = "accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), clipboard-read=(), display-capture=(), document-domain=(), encrypted-media=(), fullscreen=(), geolocation=(), gyroscope=(), hid=(), idle-detection=(), interest-cohort=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), serial=(), usb=(), sync-xhr=(), xr-spatial-tracking=()"
-    Cross-Origin-Resource-Policy = "same-origin"
-    Expect-CT = "max-age=63072000, enforce"
-
 [build.environment]
   HUGO_VERSION = "0.101.0"
 
