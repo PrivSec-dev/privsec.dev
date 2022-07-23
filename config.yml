@@ -1,6 +1,6 @@
 baseURL: "https://privsec.dev"
 title: PrivSec.dev
-theme: PaperMod
+theme: WonderMod
 copyright: '[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)'
 
 enableRobotsTXT: true

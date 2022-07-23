@@ -11,7 +11,7 @@ The articles originally posted on [wonderfall.dev](https://wonderfall.dev) are u
 
 The Hugo Framework used to create this website is under the [Apache License](https://github.com/gohugoio/hugo/blob/master/LICENSE).
 
-The PaperMod theme used for the website and modifications made by us are under the [MIT License](https://github.com/adityatelange/hugo-PaperMod/blob/master/LICENSE). 
+The WonderMod theme used for the website and modifications made by us are under the [MIT License](https://github.com/adityatelange/hugo-PaperMod/blob/master/LICENSE). 
 
 ## Netlify Previews
 
