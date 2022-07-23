@@ -5,9 +5,9 @@ tags: ['Operating Systems', 'Android', 'Privacy', 'Security']
 author: Tommy
 ---
 
-## Android Devices
-
 Android is a very secure and robust operating system out of the box. This post will be less of a "hardening guide", but more of a non-exhaustive list of tips when it comes to buying and using Android phones.
+
+## Android Devices
 
 ### Recommended Phones
 
