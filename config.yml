@@ -23,7 +23,6 @@ params:
   ShowToc: true
   ShowRssButtonInSectionTermList: true
   ShowCodeCopyButtons: true
-  ShowShareButtons: true
 
   assets:
     # disableHLJS: true # to disable highlight.js
