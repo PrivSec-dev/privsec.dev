@@ -2,7 +2,6 @@ baseURL: "https://privsec.dev"
 title: PrivSec.dev
 theme: WonderMod
 copyright: '[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)'
-
 enableRobotsTXT: true
 
 minify:
@@ -13,9 +12,11 @@ params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   author: PrivSec Team
   # author: ["Me", "You"] # multiple authors
+  description: A practical approach to Privacy and Security
+  keywords: [Privacy, Security]
   defaultTheme: dark # dark, light
   disableThemeToggle: false
-
+  images: ["/privsec.png"]
   ShowReadingTime: true
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
@@ -28,9 +29,9 @@ params:
     # disableHLJS: true # to disable highlight.js
     disableFingerprinting: true
     favicon: "/favicon.ico"
-    favicon16x16: "</favicon-16x16.png>"
-    favicon32x32: "</favicon-32x32.png>"
-    apple_touch_icon: "</apple-touch-icon.png>"
+    favicon16x16: "/favicon-16x16.png"
+    favicon32x32: "/favicon-32x32.png"
+    apple_touch_icon: "/apple-touch-icon.png"
 
   label:
     text: "PrivSec.dev"
@@ -63,9 +64,9 @@ params:
       url: /index.xml
 
   cover:
-    hidden: true # hide everywhere but not in structured data
+    hidden: false # hide everywhere but not in structured data
     hiddenInList: true # hide on list pages and home
-    hiddenInSingle: true # hide on single page
+    hiddenInSingle: false # hide on single page
 
   editPost:
     URL: "https://github.com/PrivSec-dev/privsec.dev/blob/main/content"

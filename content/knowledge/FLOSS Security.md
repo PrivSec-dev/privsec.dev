@@ -137,8 +137,7 @@ Fuzzing doesn't necessarily depend on access to source code, as it is a black-bo
 
 Fuzzing frequently catches bugs that are only apparent by running a program, not by reading source code. Even so, the biggest beneficiaries of fuzzing are open source projects. [cURL](https://github.com/curl/curl-fuzzer), [OpenSSL](https://github.com/openssl/openssl/tree/master/fuzz), web browsers, text rendering libraries (HarfBuzz, FreeType) and toolchains (GCC, Clang, the official Go toolchain, etc.) are some notable examples.
 
-
-> \- I've said it before but let me say it again: fuzzing is really the top method to find problems in curl once we've fixed all flaws that the static analyzers we use have pointed out. The primary fuzzing for curl is done by OSS-Fuzz, that tirelessly keeps hammering on the most recent curl code.
+> I've said it before but let me say it again: fuzzing is really the top method to find problems in curl once we've fixed all flaws that the static analyzers we use have pointed out. The primary fuzzing for curl is done by OSS-Fuzz, that tirelessly keeps hammering on the most recent curl code.
 
 - [Daniel Stenberg](https://daniel.haxx.se/) | [A Google grant for libcurl work](https://daniel.haxx.se/blog/2020/09/23/a-google-grant-for-libcurl-work/)
 
