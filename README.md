@@ -7,7 +7,7 @@ A practical approach to Privacy and Security
 
 The website content (under `/content`) is under the [Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
 
-The articles originally posted on [wonderfall.dev](https://wonderfall.dev) are under the same license.
+The articles originally posted on [wonderfall.dev](https://wonderfall.dev) and [seirdy.one](https://seirdy.one) are under the same license.
 
 The Hugo Framework used to create this website is under the [Apache License](https://github.com/gohugoio/hugo/blob/master/LICENSE).
 
