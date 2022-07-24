@@ -10,5 +10,4 @@
   Cross-Origin-Resource-Policy : same-origin
 
 /*.xml
-  ! Content-Security-Policy
   Content-Security-Policy : default-src 'none'; img-src 'self' data: https://www.w3.org/; style-src 'self' 'unsafe-inline'; block-all-mixed-content; base-uri 'none'
