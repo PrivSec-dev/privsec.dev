@@ -32,7 +32,7 @@ sed -i '/draft:.*/d' './content/os/Securing OpenSSH with FIDO2.md'
 sed -i "s/tags:.*/tags: ['Operating Systems', 'Linux', 'Security']/" './content/os/Securing OpenSSH with FIDO2.md'
 sed -i '/^tags:.*/a ShowCanonicalLink: true' './content/os/Securing OpenSSH with FIDO2.md'
 sed -i '/^tags:.*/a canonicalURL: https://wonderfall.dev/openssh-fido2/' './content/os/Securing OpenSSH with FIDO2.md'
-sed -i '/^tags:.*/a author: Wonderfall'
+sed -i '/^tags:.*/a author: Wonderfall' './content/os/Securing OpenSSH with FIDO2.md'
 
 # Blogs by Rohan Kumar (a.k.a Seirdy) currently need to be manually ported, as he uses a lot of HTML inside of the source instead of just markdown.
 # His GitHub repo: https://github.com/Seirdy/seirdy.one
