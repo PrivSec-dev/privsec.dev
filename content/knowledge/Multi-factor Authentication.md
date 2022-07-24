@@ -31,7 +31,7 @@ The time-limited code is then derived from the shared secret and the current tim
 
 If you have a [Yubikey](https://www.yubico.com/), you should store the "shared secrets" on the key itself using the [Yubico Authenticator](https://www.yubico.com/products/yubico-authenticator/) app. After the initial setup, the Yubico Authenticator will only expose the 6 digit code to the machine it is running on, but not the shared secret. Additional security can be set up by requiring touch confirmation, protecting digit codes not in used from a compromised operating system.
 
-Unlike [WebAuthn](#fido-fast-identity-online), TOTP offers no protection against [phishing](https://en.wikipedia.org/wiki/Phishing) or reuse attacks. If an adversary obtains a valid code from you, they may use it as many times as they like until it expires (generally 60 seconds + grace period).
+Unlike [WebAuthn](#fido2-fast-identity-online), TOTP offers no protection against [phishing](https://en.wikipedia.org/wiki/Phishing) or reuse attacks. If an adversary obtains a valid code from you, they may use it as many times as they like until it expires (generally 60 seconds + grace period).
 
 Despite its short comings, we consider TOTP better and safer than Push Confirmations.
 

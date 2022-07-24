@@ -6,7 +6,7 @@ tags: ['Operating Systems', 'Android', 'Privacy', 'Security']
 author: Tommy
 ---
 
-Android is a secure operating system that has strong [app sandboxing](https://source.android.com/security/app-sandbox), [Verified Boot](https://source.android.com/security/verifiedboot) (AVB), and a robust [permission](permission) control system.
+Android is a secure operating system that has strong [app sandboxing](https://source.android.com/security/app-sandbox), [Verified Boot](https://source.android.com/security/verifiedboot) (AVB), and a robust [permission](https://developer.android.com/guide/topics/permissions/overview) control system.
 
 When you buy an Android phone, the device's default operating system often comes with invasive integration with apps and services that are not part of the [Android Open-Source Project](https://source.android.com/). An example of such is Google Play Services, which has irrevocable privileges to access your files, contacts storage, call logs, SMS messages, location, camera, microphone, hardware identifiers, and so on. These apps and services increase the attack surface of your device and are the source of various privacy concerns with Android.
 
@@ -99,7 +99,7 @@ It comes with substantial hardening over AOSP. DivestOS has automated kernel vul
 - Kernel patches from GrapheneOS and enables all available kernel security features via [defconfig hardening](https://github.com/Divested-Mobile/DivestOS-Build/blob/master/Scripts/Common/Functions.sh#L758). All kernels newer than version 3.4 include full page [sanitization](https://lwn.net/Articles/334747/) and all ~22 Clang-compiled kernels have [`-ftrivial-auto-var-init=zero`](https://reviews.llvm.org/D54604?id=174471) enabled.
 -  GrapheneOS's [`INTERNET`](https://developer.android.com/training/basics/network-ops/connecting) and SENSORS permission toggle.
 - [Hardened memory allocator](https://github.com/GrapheneOS/hardened_malloc)
-- [Secure Exec-Spawning](android/grapheneos-vs-calyxos.md#additional-hardening)
+- [Secure Exec-Spawning](https://grapheneos.org/usage#exec-spawning)
 - Partial [bionic](https://en.wikipedia.org/wiki/Bionic_(software)) hardening patchsets from GrapheneOS
 - GrapheneOS's per-network full [MAC randomization](https://en.wikipedia.org/wiki/MAC_address#Randomization) option on version 17.1 and higher
 - Automatic reboot/Wi-Fi/Bluetooth [timeout options](https://grapheneos.org/features)
