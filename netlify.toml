@@ -21,8 +21,3 @@ package = "netlify-plugin-checklinks"
   # Checklinks outputs TAP (https://testanything.org/tap-version-13-specification.html)
   # by default. Enabling pretty mode makes the output easier on the eyes.
   pretty = true
-
-  # Report on all broken links to external pages.
-  # Enabling this will make your tests more brittle, since you can't control
-  # external pages.
-  checkExternal = true
