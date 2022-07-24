@@ -26,7 +26,3 @@ package = "netlify-plugin-checklinks"
   # Enabling this will make your tests more brittle, since you can't control
   # external pages.
   checkExternal = true
-
-  # Enable to check references to source maps, source map sources etc.
-  # Many build tools don't emit working references, so this is disabled by default
-  followSourceMaps = true
