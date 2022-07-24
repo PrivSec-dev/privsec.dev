@@ -26,7 +26,7 @@ params:
   ShowCodeCopyButtons: true
 
   assets:
-    # disableHLJS: true # to disable highlight.js
+    disableHLJS: true
     disableFingerprinting: true
     favicon: "/favicon.ico"
     favicon16x16: "/favicon-16x16.png"
@@ -90,6 +90,14 @@ outputs:
         - HTML
         - RSS
         - JSON # is necessary
+
+# Enable Chroma
+markup:
+    highlight:
+        style: dracula
+        lineNos: false
+        noClasses: false
+        guessSyntax: true
 
 menu:
   main:
