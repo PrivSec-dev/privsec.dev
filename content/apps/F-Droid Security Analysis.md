@@ -108,7 +108,7 @@ Their client also lacks **TLS certificate pinning**, unlike Play Store which imp
 
 It is an important security feature that is also straightforward to implement using the [declarative network security configuration](https://developer.android.com/training/articles/security-config) available since Android 7.0 (API level 24). See how GrapheneOS pins both root and CA certificates in their [app repository client](https://github.com/GrapheneOS/Apps):
 
-```
+```xml
 <!-- res/xml/network_security_config.xml -->
 <network-security-config>
     <base-config cleartextTrafficPermitted="false"/>

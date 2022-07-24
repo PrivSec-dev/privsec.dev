@@ -63,7 +63,7 @@ For these reasons, good practices were established:
 
 However, distroless images are not suited for every application. In my experience though, distroless is an excellent option with pure Go binaries. Going with minimal images drastically reduces the available attack surface in the container. For example, here's a [multi-stage Dockerfile](https://docs.docker.com/develop/develop-images/multistage-build/) resulting in a minimal non-root image for a simple Go project:
 
-```
+```Dockerfile
 FROM golang:alpine as build
 WORKDIR /app
 COPY . .
@@ -221,7 +221,7 @@ A platform like ptrace or KVM is used to intercept system calls and redirect the
 
 The security model of gVisor is comparable to what you would expect from a virtual machine. It is also very easy to [install and use](https://gvisor.dev/docs/user_guide/install/). The path to runsc along with its different configuration flags (`runsc flags`) should be added to `/etc/docker/daemon.json`:
 
-```
+```json
     "runtimes": {
         "runsc-ptrace": {
             "path": "/usr/local/bin/runsc",
