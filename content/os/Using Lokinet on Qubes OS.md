@@ -24,7 +24,7 @@ author: Tommy
 
 ## Creating the TemplateVM
 
-As mentioned [above](#disadvantages), the Lokinet client only works well with Debian-based distributions. This means that our template will have to be one of the Debian-based ones, and I would highly recommend that you convert the official Debian template by the Qubes OS team into a KickSecure template to use as a base. KickSecure reduces the attack surface of Debian with a substantial set of hardening configurations, and a nice feature to go with an anonimity network like Lokinet is [Boot Clock Randomization](https://www.kicksecure.com/wiki/Boot_Clock_Randomization) which helps defend against [time-based denonymization attacks(https://www.whonix.org/wiki/Time_Attacks). You will only need the `kicksecure-cli` meta package (`kicksecure-gui` is unnecessary), and experimental services like `proc-hidepid`, `hide-hardware-info` and `permission-hardening` work just fine with the Lokinet client. [Hardened Malloc](https://www.kicksecure.com/wiki/Hardened_Malloc) and [LKRG](https://www.kicksecure.com/wiki/Linux_Kernel_Runtime_Guard_LKRG) do not cause any problem with Lokinet, either.
+As mentioned [above](#disadvantages), the Lokinet client only works well with Debian-based distributions. This means that our template will have to be one of the Debian-based ones, and I would highly recommend that you convert the official Debian template by the Qubes OS team into a KickSecure template to use as a base. KickSecure reduces the attack surface of Debian with a substantial set of hardening configurations, and a nice feature to go with an anonimity network like Lokinet is [Boot Clock Randomization](https://www.kicksecure.com/wiki/Boot_Clock_Randomization) which helps defend against [time-based denonymization attacks](https://www.whonix.org/wiki/Time_Attacks). You will only need the `kicksecure-cli` meta package (`kicksecure-gui` is unnecessary), and experimental services like `proc-hidepid`, `hide-hardware-info` and `permission-hardening` work just fine with the Lokinet client. [Hardened Malloc](https://www.kicksecure.com/wiki/Hardened_Malloc) and [LKRG](https://www.kicksecure.com/wiki/Linux_Kernel_Runtime_Guard_LKRG) do not cause any problem with Lokinet, either.
 
 Since DNS with Lokinet does not work if it is installed inside of a ProxyVM, we will need to have Lokinet running inside the same AppVM as the applications you intend to run. This is less than ideal, as a compromised AppVM could reveal your IP address. Beyond that, accidental leaks can happen, too.
 
@@ -48,7 +48,7 @@ When you are done, install `lokinet-gui` and `resolvconf`:
 
 `sudo apt install lokinet-gui resolvconf`
 
-Note that you **must** install resolveconf to get DNS working.
+Note that you **must** install `resolveconf` to get DNS working.
 
 Next, edit `/var/lib/lokinet/lokinet.ini` and add the exit server you want to use:
 
