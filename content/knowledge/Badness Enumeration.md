@@ -5,7 +5,7 @@ tags: ['Knowledge base', 'Privacy', 'Security']
 author: Tommy
 ---
 
-Badness enumeration is the concept of making a list of known bad actors and attempting to block them. While it may seem intuitive at first glance, badness enumeration should not be relied upon for privacy or security. In many cases, it actually does the exact opposite and directly harms the user. This post will attempt to explain why badness enumeration as a concept is flawed and give *some examples* of its failings in practice.
+Badness enumeration is the concept of making a list of known bad actors and attempting to block them. While it seems intuitive at first glance, badness enumeration should not be relied upon for privacy or security. In many cases, it actually does the exact opposite and directly harms the user. This post will attempt to explain why badness enumeration as a concept is flawed and give *some* examples of its failings in practice.
 
 ## The Obvious Problem
 
