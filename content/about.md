@@ -11,7 +11,7 @@ We focus on in-depth system configuration, security analysis, and software/hardw
 ---
 
 ### Tommy
-Benevolent dictator for life @PrivSec.dev. System Administrator.
+Benevolent dictator for life @PrivSec.dev. System Administrator. Avid GrapheneOS and Qubes OS user.
 
 **Website**: [tommytran.io](https://tommytran.io)\
 **Matrix**: [@tommy:arcticfoxes.net](https://matrix.to/#/@tommy:arcticfoxes.net)\
