@@ -43,7 +43,7 @@ When logging into a website, all you need to do is to physically touch the secur
 
 The service will then forward the one-time password to the Yubico OTP server for validation. A counter is incremented both on the key and Yubico's validation server. The OTP can only be used once, and when a successful authentication occurs, the counter is increased which prevents reuse of the OTP. Yubico provides a [detailed document](https://developers.yubico.com/OTP/OTPs_Explained.html) about the process.
 
-![Yubico OTP](/yubico-otp.png)
+![Yubico OTP](/images/yubico-otp.png)
 
 The Yubico validation server is a cloud based service, and you're placing trust in Yubico that their server won't be used to bypass your MFA or profile you. The public ID associated with Yubico OTP is reused on every website and could be another avenue for third-parties to profile you. Like TOTP, Yubico OTP does not provide phishing resistance.
 

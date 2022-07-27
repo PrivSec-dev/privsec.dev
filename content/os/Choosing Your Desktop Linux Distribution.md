@@ -15,7 +15,7 @@ For frozen distributions, package maintainers are expected to backport patches t
 
 In fact, in certain cases, there have been vulnerabilities introduced by Debian because of their patching process. [Bug 1633467](https://bugzilla.mozilla.org/show_bug.cgi?id=1633467) and [Bug 1679430](https://bugzilla.mozilla.org/show_bug.cgi?id=1679430) are examples of this.
 
-![Upstream / Distros Gap](/upstream-distros-gap.png)
+![Upstream / Distros Gap](/images/upstream-distros-gap.png)
 
 Holding packages back and applying interim patches is generally not a good idea, as it diverges from the way the developer might have intended the software to work. [Richard Brown](https://rootco.de/aboutme/) has a presentation about this:
 
@@ -74,7 +74,7 @@ Here is a quick non authoritative list of distributions that are generally bette
 
 ### Fedora Workstation
 
-![Fedora](/fedora-screenshot.png)
+![Fedora](/images/fedora-screenshot.png)
 
 [Fedora Workstation](https://getfedora.org/en/workstation/) is a great general purpose Linux distribution, especially for those who are new to Linux. It is a semi-rolling release distribution. While some packages like GNOME are frozen until the next Fedora release, most packages (including the kernel) are updated frequently throughout the lifespan of the release. Each Fedora release is supported for one year, with a new version released every 6 months.
 

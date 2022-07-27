@@ -11,7 +11,7 @@ Android is a very secure and robust operating system out of the box. This post w
 
 ### Recommended Phones
 
-![Google Store](/google-store.png)
+![Google Store](/images/google-store.png)
 
 Google Pixel phones are the **only** devices I would recommend for purchase. Pixel phones have stronger hardware security than any other Android devices currently on the market, due to proper AVB support for third-party operating systems and Google's custom [Titan](https://security.googleblog.com/2021/10/pixel-6-setting-new-standard-for-mobile.html) security chips acting as the Secure Element.
 
@@ -24,11 +24,11 @@ You should also avoid buying the /e/ OS phones (sometimes branded as the Murena 
 
 You should also be very wary of low quality privacy branded phones like the Freedom Phone, BraX2 Phone, Volta Phone, and the like. These are cheap Chinese phones with the [Mediatek Helio P60](https://i.mediatek.com/p60) from 2018, which has already reached end-of-life or is near end-of-life. Needless to say, you should also avoid any vendor who claims they are Zero-day proof like this: 
 
-![Volta phone](/volta-phone.png)
+![Volta phone](/images/volta-phone.png)
 
 ## Android-based Operating Systems
 
-![GrapheneOS Aurora](/grapheneos-aurora.jpg)
+![GrapheneOS Aurora](/images/grapheneos-aurora.jpg)
 
 In certain cases, installing a custom Android-based operating system can help increase your privacy and security. This is rather tricky; however, as the vast majority of these operating systems (a.k.a. "custom ROMs") do exactly the opposite - breaking the Android security model, ruining your security while providing no or dubious privacy benefits.
 
@@ -63,7 +63,7 @@ Quite a few applications allow you to "share" a file with them for media upload.
 
 If you are using GrapheneOS, you should utilize the Storage Scopes feature to force apps that request broad storage access permission to function with scoped storage.
 
-![VLC Storage Scopes](/vlc-storage-scopes.png)
+![VLC Storage Scopes](/images/vlc-storage-scopes.png)
 
 ## User Profiles
 
@@ -115,7 +115,7 @@ If you are using a device with Google services, either your stock operating syst
 
 ### Enroll in the Advanced Protection Program
 
-![Advanced Protection Program](/advanced-protection-program.png)
+![Advanced Protection Program](/images/advanced-protection-program.png)
 
 If you have a Google account we suggest enrolling in the [Advanced Protection Program](https://landing.google.com/advancedprotection/). It is available at no cost to anyone with two or more hardware security keys with [FIDO2](/knowledge/multi-factor-authentication/#fido2-fast-identity-online) support.
 
@@ -150,6 +150,6 @@ On Android distributions with privileged Google Play Services (such as stock OSe
 - **Settings** → **Google** → **Ads**
 - **Settings** → **Privacy** → **Ads**
 
-![Ads=id](/ads-id.png)
+![Ads=id](/images/ads-id.png)
 
 You will either be given the option to delete your advertising ID or to *Opt out of interest-based ads*, this varies between OEM distributions of Android. If presented with the option to delete the advertising ID that is preferred. If not, then make sure to opt out and reset your advertising ID.

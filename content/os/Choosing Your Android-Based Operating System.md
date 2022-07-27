@@ -18,7 +18,7 @@ When choosing a custom Android-based operating system, you should make sure that
 
 ### Verified Boot
 
-![Verified Boot](/verified-boot.png)
+![Verified Boot](/images/verified-boot.png)
 
 [Verified Boot](https://source.android.com/security/verifiedboot) is an important part of the Android security model. It provides protection against [evil maid](https://en.wikipedia.org/wiki/Evil_maid_attack) attacks, malware persistence, and ensures security updates cannot be downgraded with [rollback protection](https://source.android.com/security/verifiedboot/verified-boot#rollback-protection).
 
@@ -66,14 +66,14 @@ In order for a system to be secure, it must have SELinux in Enforcing mode, acco
 
 Unfortunately, many custom Android-based operating system builds (especially unofficial LineageOS builds) disables SELinux or set it into Permissive mode. You can check whether SELinux is in enforcing mode or not by executing `getenforce` in the ADB shell (the expected output is `Enforcing`). You should avoid any Android-based operating system builds that do not have SELinux in enforcing mode at all cost.
 
-![ADB SELinux](/adb-selinux.png)
+![ADB SELinux](/images/adb-selinux.png)
 
 ## Recommended Android-Based Operating Systems
 
 Currently, I am only aware of two Android-based operating systems that should be used over the stock operating systems:
 
 ### GrapheneOS
-![GrapheneOS Aurora](/grapheneos-aurora.jpg)
+![GrapheneOS Aurora](/images/grapheneos-aurora.jpg)
 
 [GrapheneOS](https://grapheneos.org) is the **only** custom Android-based operating system you should buy a new phone for. It provides additional [security hardening](https://en.wikipedia.org/wiki/Hardening_(computing)) and privacy improvements over the stock operating system from Google. It has a [hardened memory allocator](https://github.com/GrapheneOS/hardened_malloc), network and sensor permissions, and various other [security feature](https://grapheneos.org/features). GrapheneOS also comes with full firmware updates and signed builds, so verified boot is fully supported.
 
@@ -83,7 +83,7 @@ Because GrapheneOS does not grant any Google Apps and Services apart from the op
 
 Recently, GrapheneOS has also added the [Storage Scopes](https://grapheneos.org/usage#storage-access) feature, allowing you to force apps that request broad storage access permission to function with scoped storage. With this new feature, you no longer have to grant certain apps access to all of your media or files to use them anymore.
 
-![VLC Storage Scopes](/vlc-storage-scopes.png)
+![VLC Storage Scopes](/images/vlc-storage-scopes.png)
 
 Currently, Google Pixel phones are the only devices that meet GrapheneOS's [hardware security requirements](https://grapheneos.org/faq#device-support).
 
