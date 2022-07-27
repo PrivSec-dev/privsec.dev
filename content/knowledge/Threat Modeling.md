@@ -9,7 +9,7 @@ The first task a person should do when taking steps to protect their privacy and
 
 ## Defining a threat
 
-![Cameras](/cameras-1.jpg)
+![Cameras](/images/cameras-1.jpg)
 
 To make a threat model, we must first define a threat. A common mistake made by people who are just getting into the privacy space is to define the threat as "big-tech companies." There is a fundamental problem with this definition:
 
@@ -66,7 +66,7 @@ If you have already submitted your real information to a number of sites which s
 
 ## Protection from malware and hackers
 
-![Motherboard](/motherboard-1.jpg)
+![Motherboard](/images/motherboard-1.jpg)
 
 You need security to obtain any semblance of privacy: **Using tools which appear private is futile if they could easily be exploited by attackers to release your data later.**
 
