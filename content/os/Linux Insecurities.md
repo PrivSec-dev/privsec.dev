@@ -19,7 +19,7 @@ On Desktop Linux, GUI applications run under your user, and thus have access to 
 
 Another thing to keep in mind is that Mandatory Access Control is also somewhat effective on servers, as commonly run system daemons are confined. In contrast, on desktop, there is virtually no AppArmor profile to confine even regularly used apps like Chrome or Firefox, let alone less common ones. On SELinux systems, these apps run in the UNCONFINED SELinux domain.
 
-Linux servers are lighter than Desktop Linux systems by order of magnitude, without hundreds of packages and dozens of system daemons running like X11, audio servers, printing stack, and so on. Thus, the attack surface is much smaller.
+Linux servers are lighter than Desktop Linux systems by orders of magnitude, without hundreds of packages and dozens of system daemons running like X11, audio servers, printing stack, and so on. Thus, the attack surface is much smaller.
 
 ## Linux Hardening Myths
 
@@ -39,7 +39,7 @@ Even on macOS, where the application sandbox is opt-in for developers, there is 
 
 On Linux, it is quite the opposite. Out of the box, most systems only have a few system daemons confined. Some Linux distributions don't even have a Mandatory Access Control system at all. Applications are designed in an environment where they expect to be able to do whatever they want, and the app sandboxes/mandatory access control system are merely an afterthought trying to restrict an app to only access what it expects to be accessible. 
 
-This is reflected in the under utilization of the [Portals API](https://docs.flatpak.org/en/latest/portal-api-reference.html) as an example. Portals is designed to be an API where apps have to prompt the user to access their files (through the File Manager) or their microphone and camera. Unfortunately, the vast majority of apps are not designed with this in mind, and expect direct access to the filesystem, pulseaudio socket or the entire /dev. As a result, Flatpak maintainers often opt to have extremely lax permissions to the point where they have to grant `filesystem=home`, `filesystem=host`, `socket=pulseaudio` or `devices=all`, otherwise apps will break and give users a bad experience.
+This is reflected in the under utilization of the [Portals API](https://docs.flatpak.org/en/latest/portal-api-reference.html) as an example. Portals is designed to be an API where apps have to prompt the user to access their files (through the File Manager) or their microphone and camera. Unfortunately, the vast majority of apps are not designed with this in mind, and expect direct access to the filesystem, pulseaudio socket or the entire `/dev`. As a result, Flatpak maintainers often opt to have extremely lax permissions to the point where they have to grant `filesystem=home`, `filesystem=host`, `socket=pulseaudio` or `devices=all`, otherwise apps will break and give users a bad experience.
 
 To make matters worse, some system daemons are not designed with permission control in mind at all. For example, PulseAudio does not have any concept of audio in or out permission. Thus, the user is often left with only the choice of granting an app access to the socket or not. If they want to block microphone access, they have to block access to the socket, and thus break audio playback in the process. If they do want an audio playback, then they have to allow access to the PulseAudio socket, which in turns give an app unrestricted access to record them at any moment.
 
