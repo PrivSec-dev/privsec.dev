@@ -31,22 +31,27 @@ Since DNS with Lokinet does not work if it is installed inside of a ProxyVM, we 
 A potential solution to this problem is to set up an unbound server or firewall script redirecting all DNS traffic to the ProxyVM to its Lokinet DNS server at `127.3.2.1:53`; however, I have been unable to get it working. Another solution is to simply override the DNS server inside the AppVM to a custom DNS server, but this will make you stand out out and break `.loki` DNS resolution. Websites like [DNS leak test](https://dnsleaktest.com) can observe which DNS server you are actually using and potentially fingerprint you. For the same reason that you should not use custom DNS servers when connected to the Tor network, you really should not use a custom DNS server when connected to Lokinet.
 
 Start by importing the Oxen's PGP key:
+
 `sudo curl --proxy http://127.0.0.1:8082 -so /etc/apt/trusted.gpg.d/oxen.gpg https://deb.oxen.io/pub.gpg`
 
 Then, add Oxen's Debian repository:
+
 `echo "deb https://deb.oxen.io $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/oxen.list`
 
 Next, update the repositories:
+
 `sudo apt update`
 
 If updates for your packages are found, **DO NOT** attempt to upgrade them directly. Instead, use the Qubes Updater to update the TemplateVM.
 
 When you are done, install `lokinet-gui` and `resolvconf`:
+
 `sudo apt install lokinet-gui resolvconf`
 
 Note that you **must** install resolveconf to get DNS working.
 
 Next, edit `/var/lib/lokinet/lokinet.ini` and add the exit server you want to use:
+
 `exit-node=exit.loki`
 
 Note that I am using `exit.loki` here, as it is the one mentioned in the [Lokinet documentation](https://docs.oxen.io/products-built-on-oxen/lokinet/exit-nodes).
@@ -59,6 +64,7 @@ There are some other exit servers listed on [probably.loki](http://probably.loki
 - secret.loki (Netherlands, run by Secret)
 
 Finally, enable the `lokinet` service:
+
 `systemctl enable lokinet`
 
 ## Creating the AppVM
