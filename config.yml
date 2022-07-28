@@ -23,6 +23,7 @@ params:
   ShowWordCount: true
   ShowToc: true
   ShowRssButtonInSectionTermList: true
+  ShowFullTextinRSS: true
   ShowCodeCopyButtons: true
 
   assets:
