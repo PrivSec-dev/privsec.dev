@@ -9,7 +9,7 @@ Badness enumeration is the concept of making a list of known bad actors and atte
 
 ## The Obvious Problem
 
-The obvious argument against badness enumeration is that there are so many threat actors out there, it is impossible to make a list to block all of them. Even when you make a magical list that somehow includes all of the threat actors that exist today, tomorrow a new threat actor will pop up and attack you anyways. Enumerating badness does not systematically solve the underlying problem. It is simply running away from the problem and hoping that a competent adversary will not come after you. Badness enumeration does not work, cannot work, has never worked, and will never work.
+The obvious argument against badness enumeration is that there are so many threat actors out there, it is impossible to make a list to block all of them. Even when you make a magical list that somehow includes all of the threat actors that exist today, tomorrow a new threat actor will pop up and attack you anyways. Enumerating badness does not systematically solve the underlying problem. Instead, it is running away from the problem and hoping that a competent adversary will not come after you. Badness enumeration does not work, cannot work, has never worked, and will never work.
 
 ## Adblocking Extensions
 
