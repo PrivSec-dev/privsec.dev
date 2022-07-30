@@ -25,9 +25,9 @@ Overall, adblockers weaken your security for dubios privacy benefits. You are be
 
 DNS filtering solutions. while not having any negative impact on security, are trivially bypassable by just hosting the ads and tracker under the primary domain. For example, instead of hosting advertisement and trackers under ads.example.com, the webmaster can move them to be under example.com/ads and it would be impossible for DNS filters to block.
 
-It should also be noted that websites can detect which DNS server a visitor uses. You can look at [DNSLeakTest](https://www.dnsleaktest.com/) as an example. Using non-network provided DNS server adds to the fingerprint and make you more identifiable.
+It should also be noted that websites can detect which DNS servers a visitor uses. You can look at [DNSLeakTest](https://www.dnsleaktest.com/) as an example. Using non-network provided DNS servers adds to the fingerprint and make you more identifiable.
 
-The best way to do DNS filtering is to use a VPN provider which has this feature built in like [ProtonVPN](https://protonvpn.com), [Mullvad](https://mullvad.net), and [IVPN](https://www.ivpn.net/) so that you do not standout from other users of the same VPN provider. Even then, DNS filtering is purely a convenince feature and cannot be relied on for privacy and security.
+The best way to do DNS filtering is to use a VPN provider which has this feature built in like [ProtonVPN](https://protonvpn.com), [Mullvad](https://mullvad.net), and [IVPN](https://www.ivpn.net/) in order to not standout from other users of the same VPN provider. Even then, DNS filtering is purely a convenince feature and cannot be relied on for privacy and security.
 
 ## Antiviruses
 
