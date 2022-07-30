@@ -23,7 +23,7 @@ Overall, adblockers weaken your security for dubios privacy benefits. You are be
 
 ## DNS Filtering
 
-DNS filtering solutions. while not having any negative impact on security, are trivially bypassable by just hosting the ads and tracker under the primary domain. For example, instead of hosting advertisement and trackers under ads.example.com, the webmaster can move them to be under example.com/ads and it would be impossible for DNS filters to block.
+DNS filtering solutions. while not having any negative impact on security, are trivially bypassable by just hosting the advertisement and trackers under the apex domain instead of a subdomain. For example, instead of hosting advertisement and trackers under ads.example.com, the webmaster can move them to be under example.com/ads and it would be impossible for DNS filters to block.
 
 It should also be noted that websites can detect which DNS servers a visitor uses. You can look at [DNSLeakTest](https://www.dnsleaktest.com/) as an example. Using non-network provided DNS servers adds to the fingerprint and make you more identifiable.
 
