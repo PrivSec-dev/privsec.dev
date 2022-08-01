@@ -49,7 +49,7 @@ It's important to not use an [end-of-life](https://endoflife.date/android) versi
 
 On Android, the phone unlock (Password, Pin, Pattern) is used to protect the encryption key for your device. Thus, it is vital that your unlock secret is secure and can withstand Bruteforce attacks.
 
-Pattern unlock is extremely insecure and should be avoided at all cost. This is discussed in detail in the Cracking Android Pattern Lock in Five Attempts(/researches/Cracking-Android-Pattern-Lock-in-Five-Attempts.pdf) research paper.
+Pattern unlock is extremely insecure and should be avoided at all cost. This is discussed in detail in the [Cracking Android Pattern Lock in Five Attempts](/researches/Cracking-Android-Pattern-Lock-in-Five-Attempts.pdf) research paper.
 
 If you trust the hardware enforced rate limiting features (typically done by the [Secure Element](https://en.wikipedia.org/wiki/Secure_cryptoprocessor) or [Trusted Execution Environment](https://en.wikipedia.org/wiki/Trusted_execution_environment)) of your device, a 8+ digit PIN may be sufficient.
 
