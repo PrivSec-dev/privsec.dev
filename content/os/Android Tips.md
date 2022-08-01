@@ -53,7 +53,7 @@ Pattern unlock is extremely insecure and should be avoided at all cost. This is 
 
 If you trust the hardware enforced rate limiting features (typically done by the [Secure Element](https://en.wikipedia.org/wiki/Secure_cryptoprocessor) or [Trusted Execution Environment](https://en.wikipedia.org/wiki/Trusted_execution_environment)) of your device, a 8+ digit PIN may be sufficient.
 
-Ideally, you should be using a 8-10 words [diceware passphrase](https://en.wikipedia.org/wiki/Diceware) to secure your phone. This would make your phone unlock practially impossible to bruteforce, regardless of whether there is proper rate limiting or not.
+Ideally, you should be using a 8-10 word [diceware passphrase](https://en.wikipedia.org/wiki/Diceware) to secure your phone. This would make your phone unlock practially impossible to bruteforce, regardless of whether there is proper rate limiting or not.
 
 ## Use Global Toggles
 
