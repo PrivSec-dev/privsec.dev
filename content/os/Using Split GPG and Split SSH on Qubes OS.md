@@ -1,7 +1,9 @@
+---
 title: "Using Split GPG and Split SSH on Qubes OS"
 date: 2022-08-13
 tags: ['Operating Systems', 'Qubes OS', 'Security']
 author: Tommy
+---
 
 ![Split GPG & SSH](/split-gpg-ssh.png)
 
