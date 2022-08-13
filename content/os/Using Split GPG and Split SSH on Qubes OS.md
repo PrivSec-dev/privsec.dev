@@ -5,7 +5,7 @@ tags: ['Operating Systems', 'Qubes OS', 'Security']
 author: Tommy
 ---
 
-![Split GPG & SSH](/split-gpg-ssh.png)
+![Split GPG & SSH](/images/split-gpg-ssh.png)
 
 This post will go over setting up Split GPG, then setting up Split SSH with the same PGP keys, emulating what you can do with a PGP smartcard on QubesOS.
 
