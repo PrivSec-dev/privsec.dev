@@ -23,14 +23,14 @@ This part is based on the Qubes Community's [guide](https://github.com/Qubes-Com
 
 - Create `/etc/qubes-rpc/policy/qubes.SshAgent` with `@anyvm @anyvm ask,default_target=vault` as the content. Since the keys ar not passphrase protected, you should **not** set the policy to allow.
 
-### In `vault` AppVM:
+### In `vault` AppVM
 - Add `enable-ssh-support` to the end of `~/.gnupg/gpg-agent.conf`
 - Get your keygrip with `gpg --with-keygrip -k`
 - Add your keygrip to the end of `~/.gnupg/sshconrol`
 
 ![PGP Keygrip](/images/keygrip.png)
 
-### In `vault`'s TemplateVM:
+### In `vault`'s TemplateVM
 
 - Create `/etc/qubes-rpc/qubes.SshAgent` with the following content:    
 ```bash
@@ -52,7 +52,7 @@ socat - "UNIX-CONNECT:$SSH_AUTH_SOCK"
 - Make it executable with `sudo chmod +x /etc/qubes-rpc/qubes.SshAgent`
 - Turn off the templateVM. If the `vault` VM is running, turn it off, then start it to update the VM's configuration.
 
-### In `ssh-client` AppVM:
+### In `ssh-client` AppVM
 
 - Add the following to the end of `/rw/config/rc.local`:
 ```bash
@@ -82,5 +82,5 @@ fi
 
 - Restart `ssh-client` and confirm if it's working with `ssh-add -L`.
 
-### Limitations:
+### Limitations
 A malicious `ssh-client` AppVM can hold onto the ssh-agent connection for more than one use until it is shut down. While your private key is protected, a malicious actor with access to the AppVM can still abuse the ssh-agent to log into your servers.
