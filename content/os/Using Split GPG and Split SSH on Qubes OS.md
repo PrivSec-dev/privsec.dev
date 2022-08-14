@@ -28,7 +28,7 @@ This part is based on the Qubes Community's [guide](https://github.com/Qubes-Com
 - Get your keygrip with `gpg --with-keygrip -k`
 - Add your keygrip to the end of `~/.gnupg/sshconrol`
 
-~[PGP Keygrip](/images/keygrip.png)
+![PGP Keygrip](/images/keygrip.png)
 
 ### In `vault`'s TemplateVM:
 
