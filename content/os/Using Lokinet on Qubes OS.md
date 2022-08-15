@@ -57,11 +57,11 @@ Next, edit `/var/lib/lokinet/lokinet.ini` and add the exit server you want to us
 Note that I am using `exit.loki` here, as it is the one mentioned in the [Lokinet documentation](https://docs.oxen.io/products-built-on-oxen/lokinet/exit-nodes).
 There are some other exit servers listed on [probably.loki](http://probably.loki/wiki/index.php?title=Exit_Nodes) as well, and for your convenience, I will just copy-paste them here:
 
-- exit.loki (USA, run by Jeff)
-- exit2.loki (USA, run by Jeff, same ip as exit.loki)
-- xite.loki (Iceland, run by Loutchi)
-- peter.loki (USA, run by peter)
-- secret.loki (Netherlands, run by Secret)
+- `exit.loki` (USA, run by Jeff)
+- `exit2.loki` (USA, run by Jeff, same ip as exit.loki)
+- `xite.loki` (Iceland, run by Loutchi)
+- `peter.loki` (USA, run by peter)
+- `secret.loki` (Netherlands, run by Secret)
 
 Finally, enable the `lokinet` service:
 
