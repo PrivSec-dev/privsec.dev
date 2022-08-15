@@ -193,7 +193,7 @@ My [Contact](https://akc3n.org/about/#contact) info for alternative method of su
 
 ## Notes
 
-If you have any issues with what is listed on this site or about this project page, you may open an issue on this websites [issue-tracker](https://github.com/akc3n/akc3ndotorg/issues) or [contact](/about/#contact) me directly.
+If you have any issues with what is listed on this site or about this project page, you may open an issue on this websites [issue-tracker](https://github.com/akc3n/akc3ndotorg/issues) or [contact](https://akc3n.org/about/#contact) me directly.
 
  - GrapheneOS has a [detailed guide](https://grapheneos.org/articles/attestation-compatibility-guide) for app developers on how to support GrapheneOS with the hardware attestation API. Direct use of the hardware attestation API provides much higher assurance than using SafetyNet so these apps have nothing to lose by using a more meaningful API and supporting a more secure OS.  
 
