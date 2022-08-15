@@ -1,6 +1,7 @@
 ---
 title: "Choosing Your Desktop Linux Distribution"
 date: 2022-07-17
+lastmod: 2022-08-15
 tags: ['Operating Systems', 'Linux', 'Security']
 author: Tommy
 ---
@@ -66,7 +67,7 @@ You should use a desktop environment that supports the [Wayland](https://en.wiki
 
 Fortunately, common environments such as [GNOME](https://www.gnome.org), [KDE](https://kde.org), and the window manager [Sway](https://swaywm.org) have support for Wayland. Some distributions like Fedora and Tumbleweed use it by default, and some others may do so in the future as X11 is in [hard maintenance mode](https://www.phoronix.com/scan.php?page=news_item&px=X.Org-Maintenance-Mode-Quickly). If you’re using one of those environments it is as easy as selecting the “Wayland” session at the desktop display manager ([GDM](https://en.wikipedia.org/wiki/GNOME_Display_Manager), [SDDM](https://en.wikipedia.org/wiki/Simple_Desktop_Display_Manager)).
 
-Try **not** to use desktop environments or window managers that do not have Wayland support such as Cinnamon (default on Linux Mint), Pantheon (default on Elementary OS), MATE, Xfce, and i3.
+Try **not** to use desktop environments or window managers that do not have Wayland support such as Cinnamon (default on Linux Mint), Pantheon (default on Elementary OS), MATE, Xfce, and i3. If you are using i3, consider switching to [Sway](https://swaywm.org), which is a drop-in replacement with Wayland support as mentioned above.
 
 ## Recommended Distributions
 
