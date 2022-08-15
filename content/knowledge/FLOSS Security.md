@@ -102,7 +102,7 @@ Decompilers are seldom used alone in this context. Instead, they're typically a 
 
 These reverse-engineering techniques---a combination of tracing, packet sniffing, binary analysis, and memory dumps---make up the workings of most modern malware analysis. See [this example](https://www.hybrid-analysis.com/sample/1ef3b7e9ba5f486afe53fcbd71f69c3f9a01813f35732222f64c0981a0906429/5e428f69c88e9e64c33afe64) of a fully-automated analysis of the Zoom Windows installer. It enumerates plenty of information about Zoom without access to its source code: reading unique machine information, anti-VM and anti-reverse-engineering tricks, reading config files, various types of network access, scanning mounted volumes, and more.
 
-To try this out yourself, use a sandbox designed for dynamic analysis. [Cuckoo](https://cuckoosandbox.org/) is a common and easy-to-use solution, while [DRAKVUF](https://drakvuf.com/) is more advanced.
+To try this out yourself, use a sandbox designed for dynamic analysis. [Cuckoo](https://github.com/cuckoosandbox) is a common and easy-to-use solution, while [DRAKVUF](https://drakvuf.com/) is more advanced.
 
 ### Extreme example: the truth about Intel ME and AMT
 
