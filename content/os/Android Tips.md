@@ -1,7 +1,7 @@
 ---
 title: "Android Tips"
 date: 2022-07-22
-lastmod: 2022-08-01
+lastmod: 2022-08-15
 tags: ['Operating Systems', 'Android', 'Privacy', 'Security']
 author: Tommy
 ---
@@ -21,7 +21,7 @@ When purchasing a device, you should buy one as new as possible. The software an
 ### Phones to Avoid
 Avoid buying the Fairphone 4, which only has just over 2 years of full security updates since its release date despite them advertising 6 years of support. This is because the System on a Chip they use (Snapdragon 750G) only has 3 years of support from Qualcomm, and the SoC was already old when the phone came out. This is not to mention, the Fairphone 4 [uses the Android Verified Boot Test Key as their OEM keys](https://forum.fairphone.com/t/bootloader-avb-keys-used-in-roms-for-fairphone-3-4/83448/11), effectively making Verified Boot useless. In general, you should check for how long the SoC a phone uses is supported for and not blindly trust the phone manufacturer's claims.
 
-You should also avoid buying the /e/ OS phones (sometimes branded as the Murena phones). /e/ OS in itself extremely insecure, not supporting verified boot, shipping userdebug build, [bundling years old version Orbot into their operating system then marketing it as "Advanced Privacy"](https://community.e.foundation/t/advanced-privacy-know-all-about-it/41992/3), etc. They have recently also had an incident where their cloud service mishandled session keys and give users access to each other's files, then proceeded to [mislead the users that the server cannot see their files](https://community.e.foundation/t/service-announcement-26-may/41252/30) despite there being no end-to-end encryption.
+You should also avoid buying the /e/ OS phones (sometimes branded as the Murena phones). /e/ OS in itself extremely insecure, not supporting verified boot, shipping userdebug build, [shipping months old version of Chromium, bundling years old version Orbot into their operating system then marketing it as "Advanced Privacy"](https://divestos.org/misc/e.txt), etc. They have recently also had an incident where their cloud service mishandled session keys and give users access to each other's files, then proceeded to [mislead the users that the server cannot see their files](https://community.e.foundation/t/service-announcement-26-may/41252/30) despite there being no end-to-end encryption.
 
 You should also be very wary of low quality privacy branded phones like the Freedom Phone, BraX2 Phone, Volta Phone, and the like. These are cheap Chinese phones with the [Mediatek Helio P60](https://i.mediatek.com/p60) from 2018, which has already reached end-of-life or is near end-of-life. Needless to say, you should also avoid any vendor who claims they are Zero-day proof like this: 
 
