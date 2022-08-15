@@ -63,13 +63,14 @@ You can restrict applications further by issuing [Flatpak overrides](https://doc
 
 Some sensitive permissions you should pay attention to:
 
-- the Network (`share=network`) socket (internet access)
-- the PulseAudio socket (for both audio in and out), `device=all` (access to all devices including the camera)
-- `org.freedesktop.secrets` dbus (access to secrets stored on your keychain) for applications which do not need it
+- the Network (`--share=network`) socket (internet access)
+- the PulseAudio socket (`--socket=pulseaudio`) for audio and sound
+- `--device=all` access to all devices including the camera
+- `--talk-name=org.freedesktop.secrets` dbus (access to secrets stored on your keychain) for applications which do not need it
 
-If an application works natively with Wayland (and not running through the [XWayland](https://wayland.freedesktop.org/xserver.html) compatibility layer), consider revoking its access to the X11 (`socket=x11`) and [Inter-process communications (IPC)](https://en.wikipedia.org/wiki/Unix_domain_socket) socket (`share=ipc`) as well.
+If an application works natively with Wayland (*not* running through the [XWayland](https://wayland.freedesktop.org/xserver.html) compatibility layer), consider revoking its access to the X11 (`--socket=x11`) and [inter-process communications (IPC)](https://en.wikipedia.org/wiki/Unix_domain_socket) socket (`--share=ipc`) as well.
 
-Many flatpak apps come with broad filesystem permissions such as `filesystem=home` and `filesystem=host`. Some applications like implement the [Portals](https://docs.flatpak.org/en/latest/portal-api-reference.html) [API](https://en.wikipedia.org/wiki/API), which allows a file manager to pass files to the Flatpak application (e.g. VLC) without specific filesystem access privileges. Despite of this, many of them, including ones like VLC [still includes](https://github.com/flathub/org.videolan.VLC/blob/master/org.videolan.VLC.json) `filesystem=host` for no apparant reason. 
+Many Flatpak apps come with broad filesystem permissions such as `--filesystem=home` and `--filesystem=host`. Some applications implement the [Portal API](https://docs.flatpak.org/en/latest/portal-api-reference.html), which allows a file manager to pass files to the Flatpak application (e.g. VLC) without specific filesystem access privileges. Despite this, many of them, including ones like VLC [still use `--filesystem=host`](https://github.com/flathub/org.videolan.VLC/blob/master/org.videolan.VLC.json) for no apparent reason. 
 
 My strategy to deal with this is to revoke all filesystem access first, then test if an application works without it. If it does, it means the app is already using Portals and I don't need to do anything else. If it doesn't, then I start granting permission to specific directories.
 
@@ -89,7 +90,7 @@ Snap permissions can be managed via the Snap Store or Ubuntu's custom patched GN
 
 Madaidan [provided](https://madaidans-insecurities.github.io/linux.html#firejail) additional details on how Firejail can worsen the security of your device.
 
-Generally, you are should are better off not using it.
+Generally, you are better off not using it.
 
 ### Mandatory Access Control
 
@@ -132,7 +133,7 @@ A [firewall](https://en.wikipedia.org/wiki/Firewall_(computing)) may be used to 
 
 Red Hat distributions (such as Fedora) are typically configured through [firewalld](https://en.wikipedia.org/wiki/Firewalld). Red Hat has plenty of [documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_networking/using-and-configuring-firewalld_configuring-and-managing-networking) regarding this topic. There is also the [Uncomplicated Firewall](https://en.wikipedia.org/wiki/Uncomplicated_Firewall) which can be used as an alternative.
 
-You could also set your default firewall zone to drop packets. If you're on a Redhat based distribution, such as Fedora this can be done with the following commands:
+You could also set your default firewall zone to drop packets. If you're on a Red Hat based distribution such as Fedora this can be done with the following commands:
 
 ```
 firewall-cmd --set-default-zone=drop
@@ -142,7 +143,7 @@ firewall-cmd --add-service=dhcpv6-client --permanent
 
 All these firewalls use the [Netfilter](https://en.wikipedia.org/wiki/Netfilter) framework and therefore cannot protect against malicious programs running on the system. A malicious program could insert its own rules.
 
-There are some per-binary outbound firewalls such as [OpenSnitch](https://github.com/evilsocket/opensnitch) or [Portmaster](https://safing.io/portmaster/) that you could use as well. But just like Firewalld and UFW, they are bypassable.
+There are some per-binary outbound firewalls such as [OpenSnitch](https://github.com/evilsocket/opensnitch) or [Portmaster](https://safing.io/portmaster/) that you could use as well. But just like firewalld and UFW, they are bypassable.
 
 If you are using Flatpak packages, you can revoke their network socket access using Flatseal and prevent those applications from accessing your network. This permission is not bypassable.
 
@@ -159,21 +160,21 @@ We **strongly** recommend that you learn what these options do before applying t
 
     Disabling access to `/sys` without a proper whitelist will lead to various applications breaking. This will unfortunately be an extremely tedious process for most users. Kicksecure, and by extension, Whonix, has an experimental [hide hardware info service](https://github.com/Kicksecure/security-misc/blob/master/lib/systemd/system/hide-hardware-info.service) which does just this. From our testing, these work perfectly fine on minimal Kicksecure installations and both Qubes-Whonix Workstation and Gateway. If you are using Kicksecure or Whonix, we recommend that you follow the [Kicksecure Wiki](https://www.kicksecure.com/wiki/Security-misc) to enable hide hardware info service.
 
-### Linux-Hardened
+### linux-hardened
 
-Some distributions like Arch Linux have the [linux-hardened](https://github.com/anthraxx/linux-hardened), kernel package. It includes [hardening patches](https://wiki.archlinux.org/title/security#Kernel_hardening) and more security-conscious defaults. Linux-Hardened has `kernel.unprivileged_userns_clone=0` disabled by default. See the [note above](#kernel-hardening) about how this might impact you.
+Some distributions like Arch Linux have the [linux-hardened](https://github.com/anthraxx/linux-hardened) kernel package. It includes [hardening patches](https://wiki.archlinux.org/title/security#Kernel_hardening) and more security-conscious defaults. linux-hardened has `kernel.unprivileged_userns_clone=0` disabled by default as well. See the [note above](#kernel-hardening) about how this might impact you.
 
 ### Linux Kernel Runtime Guard (LKRG)
 
 LKRG is a kernel module that performs runtime integrity check on the kernel to help detect exploits against the kernel. LKRG works in a *post*-detect fashion, attempting to respond to unauthorized modifications to the running Linux kernel. While it is [bypassable by design](https://lkrg.org/), it does stop off-the-shelf malware that does not specifically target LKRG itself. This may make exploits harder to develop and execute on vulnerable systems.
 
-If you can get LKRG and maintain module updates, it provides a worthwhile improvement to security. Debian based distributions can get the LKRG DKMS package from KickSecure's secure repository and the [KickSecure documentation](https://www.kicksecure.com/wiki/Linux_Kernel_Runtime_Guard_LKRG) has instructions.
+If you can get LKRG and maintain module updates, it provides a worthwhile improvement to security. Debian-based distributions can get the LKRG DKMS package from KickSecure's repository and the [KickSecure documentation](https://www.kicksecure.com/wiki/Linux_Kernel_Runtime_Guard_LKRG) has installation instructions.
 
 On Fedora, [fepitre](https://github.com/fepitre), a QubesOS developer has a [COPR repository](https://copr.fedorainfracloud.org/coprs/fepitre/lkrg/) where you can install it. Arch based systems can obtain the LKRG DKMS package via an [AUR package](https://aur.archlinux.org/packages/lkrg-dkms).
 
-### GRSecurity
+### grsecurity
 
-GRSecurity is a set of kernel patches that attempt to improve security of the Linux kernel. It requires [payment to access](https://grsecurity.net/purchase) the code and is worth using if you have a subscription.
+grsecurity is a set of kernel patches that attempt to improve security of the Linux kernel. It requires [payment to access](https://grsecurity.net/purchase) the code and is worth using if you have a subscription.
 
 ### Simultaneous multithreading (SMT)
 
@@ -211,7 +212,7 @@ Users of other distributions can adapt the permission hardener to their own syst
 
 ### Secure Time Synchronization
 
-Most Linux distributions by default (especially Arch based distributions with `systemd-timesyncd`) use un-encrypted NTP for time synchronization. Securing NTP can be achieved by [configuring NTS with chronyd](https://fedoramagazine.org/secure-ntp-with-nts/) or by using [swdate](https://github.com/Kicksecure/sdwdate) on Debian based distributions.
+Most Linux distributions by default (especially Arch based distributions with `systemd-timesyncd`) use NTP for time synchronization which is unencrypted and unauthenticated. Securing NTP can be achieved by [configuring NTS with chronyd](https://fedoramagazine.org/secure-ntp-with-nts/) or by using [sdwdate](https://github.com/Kicksecure/sdwdate) on Debian based distributions.
 
 ### Linux Pluggable Authentication Modules (PAM)
 
