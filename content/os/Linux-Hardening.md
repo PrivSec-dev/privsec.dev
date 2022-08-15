@@ -96,7 +96,7 @@ Generally, you are better off not using it.
 
 [Mandatory access control](https://en.wikipedia.org/wiki/Mandatory_access_control) systems require policy files in order to force constraints on the system.
 
-The two main control systems are [SELinux](https://en.wikipedia.org/wiki/Security-Enhanced_Linux) (used on Android and Fedora) and [AppArmor](https://en.wikipedia.org/wiki/AppArmor).
+The two main control systems are [SELinux](https://en.wikipedia.org/wiki/Security-Enhanced_Linux) (used on Android and Fedora based distributions) and [AppArmor](https://en.wikipedia.org/wiki/AppArmor) (Used on Debian based distributions and most openSUSE variants).
 
 Fedora includes SELinux preconfigured with some policies that will confine [system daemons](https://en.wikipedia.org/wiki/Daemon_(computing)) (background processes). You should keep it in Enforcing mode.
 
@@ -168,9 +168,9 @@ Some distributions like Arch Linux have the [linux-hardened](https://github.com/
 
 LKRG is a kernel module that performs runtime integrity check on the kernel to help detect exploits against the kernel. LKRG works in a *post*-detect fashion, attempting to respond to unauthorized modifications to the running Linux kernel. While it is [bypassable by design](https://lkrg.org/), it does stop off-the-shelf malware that does not specifically target LKRG itself. This may make exploits harder to develop and execute on vulnerable systems.
 
-If you can get LKRG and maintain module updates, it provides a worthwhile improvement to security. Debian-based distributions can get the LKRG DKMS package from KickSecure's repository and the [KickSecure documentation](https://www.kicksecure.com/wiki/Linux_Kernel_Runtime_Guard_LKRG) has installation instructions.
+If you can get LKRG and maintain module updates, it provides a worthwhile improvement to security. Debian-based distributions can get the LKRG DKMS package from KickSecure's repository and the [KickSecure documentation](https://www.kIf you’re on a public network, the necessity of this may be greater than if you’re on a local trusted network that you control. icksecure.com/wiki/Linux_Kernel_Runtime_Guard_LKRG) has installation instructions.
 
-On Fedora, [fepitre](https://github.com/fepitre), a QubesOS developer has a [COPR repository](https://copr.fedorainfracloud.org/coprs/fepitre/lkrg/) where you can install it. Arch based systems can obtain the LKRG DKMS package via an [AUR package](https://aur.archlinux.org/packages/lkrg-dkms).
+On Fedora, [fepitre](https://github.com/fepitre), a QubesOS developer, has a [COPR repository](https://copr.fedorainfracloud.org/coprs/fepitre/lkrg/) where you can install it. Arch based systems can obtain the LKRG DKMS package via an [AUR package](https://aur.archlinux.org/packages/lkrg-dkms).
 
 ### grsecurity
 
@@ -192,9 +192,9 @@ If you are not using openSUSE, consider changing the default [umask](https://en.
 
 ### Mountpoint hardening
 
-Consider adding the [following options](https://man7.org/linux/man-pages/man8/mount.8.html) `nodev`, `noexec`, and `nosuid` to [mountpoints](https://en.wikipedia.org/wiki/Mount_(computing)) which do not need them. Typically, these could be applied to `/boot`, `/boot/efi`, and `/var`.
+Consider adding the [following options](https://man7.org/linux/man-pages/man8/mount.8.html) `nodev`, `noexec`, and `nosuid` to mountpoints which do not need them. Typically, these could be applied to `/boot`, `/boot/efi`, and `/var`.
 
-These flags could also be applied to `/home` and `/root` as well, however, `noexec` will prevent applications from working that require binary execution in those locations. This includes products such as Flatpak and Snap.
+These flags could also be applied to `/home` and `/root` as well, however, `noexec` will prevent applications from working that require binary execution in those locations. This includes products such as Flatpak and Snap. It should also be noted that this is not fool proof, as `noexec` is bypassable. You can see an example of that [here](https://chromium.googlesource.com/chromiumos/docs/+/HEAD/security/noexec_shell_scripts.md)
 
 If you use [Toolbox](https://docs.fedoraproject.org/en-US/fedora-silverblue/toolbox/), you should not set any of those options on `/var/log/journal`. From my testing, the Toolbox container will fail to start if you have `nodev`, `nosuid`, or `noexec` on said directory. If you are on Arch Linux, you probably would not want to set `noexec` on `/var/tmp`, as it will make some AUR packages fail to build.
 
@@ -236,7 +236,7 @@ Another alternative option if you’re using the [linux-hardened](#linux-hardene
 
 [Secure Boot](https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface#Secure_Boot) can be used to secure the boot process by preventing the loading of [unsigned](https://en.wikipedia.org/wiki/Public-key_cryptography) [UEFI](https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface) drivers or [boot loaders](https://en.wikipedia.org/wiki/Bootloader).
 
-One of the problems with Secure Boot, particularly on Linux is, that only the [chainloader](https://en.wikipedia.org/wiki/Chain_loading#Chain_loading_in_boot_manager_programs) (shim), the [boot loader](https://en.wikipedia.org/wiki/Bootloader) (GRUB), and the [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) are verified and that's where verification stops. The [initramfs](https://en.wikipedia.org/wiki/Initial_ramdisk) is often left unverified, unencrypted, and open up the window for an [evil maid](https://en.wikipedia.org/wiki/Evil_maid_attack) attack. The firmware on most devices is also configured to trust Microsoft's keys for Windows and its partners, leading to a large attacks surface.
+One of the problems with Secure Boot, particularly on Linux is, that only the chainloader (shim), the [boot loader](https://en.wikipedia.org/wiki/Bootloader) (GRUB), and the [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) are verified and that's where verification stops. The [initramfs](https://en.wikipedia.org/wiki/Initial_ramdisk) is often left unverified, unencrypted, and open up the window for an [evil maid](https://en.wikipedia.org/wiki/Evil_maid_attack) attack. The firmware on most devices is also configured to trust Microsoft's keys for Windows and its partners, leading to a large attacks surface.
 
 To eliminate the need to trust Microsoft's keys, follow the "Using your own keys" section on the [Arch Wiki](https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot). The important thing that needs to be done here is to replace the OEM's key with your own Platform Key.
 
@@ -244,7 +244,7 @@ There are several ways to work around the unverified initramfs:
 
 The first way is to [encrypt the /boot partition](https://wiki.archlinux.org/title/GRUB#Encrypted_/boot). If you are on Fedora Workstation (not Silverblue), you can follow [this guide](https://mutschler.eu/linux/install-guides/fedora-btrfs-33/) to convert the existing installation to encrypted `/boot`. openSUSE comes with this that by default.
 
-Encrypting `/boot` however have its own issues, one being that [GRUB](https://en.wikipedia.org/wiki/GNU_GRUB) only supports [LUKS1](https://en.wikipedia.org/wiki/Linux_Unified_Key_Setup) and not the newer default LUKS2 scheme. As the bootloader runs in [protected mode](https://en.wikipedia.org/wiki/Protected_mode) and the encryption module lacks [SSE acceleration](https://en.wikipedia.org/wiki/Streaming_SIMD_Extensions) so the boot process will take minutes to complete. Another problem with this is that you have to type the encryption password twice, which could be solved by following the [openSUSE Wiki](https://en.opensuse.org/SDB:Encrypted_root_file_system#Avoiding_to_type_the_passphrase_twice).
+Encrypting `/boot` however have its own issues, one being that [GRUB](https://en.wikipedia.org/wiki/GNU_GRUB) only supports [LUKS1](https://en.wikipedia.org/wiki/Linux_Unified_Key_Setup) and not the newer default LUKS2 scheme. As the bootloader runs in [protected mode](https://en.wikipedia.org/wiki/Protected_mode) and the encryption module lacks SSE acceleration so the boot process will take minutes to complete. Another problem with this is that you have to type the encryption password twice, which could be solved by following the [openSUSE Wiki](https://en.opensuse.org/SDB:Encrypted_root_file_system#Avoiding_to_type_the_passphrase_twice).
 
 There are a few options depending on your configuration:
 
