@@ -36,3 +36,6 @@ sed -i '/^tags:.*/a author: Wonderfall' './content/os/Securing OpenSSH with FIDO
 
 # Blogs by Rohan Kumar (a.k.a Seirdy) currently need to be manually ported, as he uses a lot of HTML inside of the source instead of just markdown.
 # His GitHub repo: https://github.com/Seirdy/seirdy.one
+
+# Blogs by akc3n currently needs to be manually ported, though a script for it can be written later. He is planning to change his website soon, so it is better to wait till then.
+# His GitHub repo: https://github.com/akc3n/akc3ndotorg 
