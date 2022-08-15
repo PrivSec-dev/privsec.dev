@@ -17,9 +17,9 @@ author: Tommy
 
 ## Disadvantages
 
-- Only works well on Debian-based distributions. The client for Windows has DNS Leaks, and support for macOS, Android, and other Linux distributions is experimental.
-- Does not have a killswitch which could lead to accidental leaks
-- Requires a user defined exit node (cannot use Stream Isolation like on the Tor network)
+- Only works well on Debian-based distributions. The client for Windows has DNS Leaks, and support for macOS, Android, and other Linux distributions is experimental. It should be noted that this is a problem with the official client, not the protocol itself.
+- Does not have a killswitch which could lead to accidental leaks (as opposed to common commercial VPN clients which lock the connections to just the provider's servers).
+- The official client requires a user to manually define an exit node, or to set certain IP ranges to be routed through certain exit nodes. While this makes it possible to setup some form of Steam Isolation, it is not as good as Tor's `isolatedDestinationAddress` and `isolatedDesitnationPort`. which automatically use a random exit node for every destination/port you visit.
 - DNS does not work when used as a ProxyVM on Qubes OS
 
 ## Creating the TemplateVM
