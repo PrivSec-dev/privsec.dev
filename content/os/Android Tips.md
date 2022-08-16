@@ -102,7 +102,7 @@ GrapheneOS has the LTE only mode exposed in settings. You can set this by going 
 
 If your Android-based operating system does not expose this setting in the Settings app, or if you want to set your baseband modem to a less restrictive mode, dial `*#*#4636#*#*` then hit **Phone information**. Here, you can set preferred network type to just the generations that you intend to use. For example, if you only want to use 4G and 5G, you can set it to `NR/LTE`.
 
-## App Stores
+## Where to Get Your Aspplications
 
 ### GrapheneOS App Store
 
@@ -118,7 +118,22 @@ My recommendation is to stick with the Google Play Store unless your threat mode
 
 F-Droid, despite being oftenly recommended in the privacy community, has various security deficiencies. You can read more about them [here](../../apps/f-droid-security-analysis/).
 
-I do not recommend that you use F-Droid at all unless you have no other choice to obtain certain apps.
+I do not recommend that you use F-Droid at all unless you have no other choice to obtain certain apps. In some rare cases, there may be some apps which require the F-Droid version to work properly without Google Play Services. If you do end up using F-Droid, I recommend avoiding the official repository as much as possible and using the F-Droid repositories from the app developers. You should also avoid the official F-Droid client (which is extremely outdated and targets API level 25) and use a more modern client with seamless updates such as [NeoStore](https://github.com/NeoApplications/Neo-Store).
+
+### GitHub
+
+You can also obtain your apps directly from their GitHub repositories. In most cases, there would be a pre-built APK for you to download. You can verify the signature of the downloaded using apksinger:
+
+- Install the [Android Studio](https://developer.android.com/studio) which includes apksinger.
+- Run `apksigner verify --print-certs --verbose myCoolApp.apk` to verify the certificate of the apk.
+
+After you have verified the signature of the apk and installed it on your phone, there are several strategies you can use to keep the app up-to-date. The first strategy is to add the atom feed of the app's release page (`https://github.com/GrapheneOS/Camera/releases.atom` for example) to an RSS Reader like [ReadYou](https://github.com/GrapheneOS/Camera/releases.atom) to get notified of new releases. You would still need to download and install the new releases manually. If you are confused, here is a video that could help with this process: 
+
+{{< youtube id="FFz57zNR_M0">}}
+
+The second strategy is to use the [IzzyOnDroid](https://apt.izzysoft.de/fdroid/) F-Droid repository with a modern F-Droid client like [NeoStore](https://github.com/NeoApplications/Neo-Store), as mentioned [above](#f-droid). The IzzyOnDroid repository pulls new releases from various GitHub repositories and host them on their server, which can then be automatically updated by NeoStore. The downside of this strategy is that not every application on GitHub is on IzzyOnDroid, and sometimes IzzyOnDroid fails to pull a new release, resulting in you not getting any updates at all.
+
+It should be noted that since Android has automatic signature checking for existing applications on the system, you only need to manually check the signature of the apk the first time you install an application. If you do use IzzyOnDroid to update the applications, you will need to manually confirm the first update of an application to authorize the NeoStore as the installation source. After that, future updates will be seamless.
 
 ## Google
 
