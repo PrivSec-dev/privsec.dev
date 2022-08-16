@@ -1,7 +1,7 @@
 ---
 title: "Choosing Your Android-Based Operating System"
 date: 2022-07-18
-lastmod: 2022-07-23
+lastmod: 2022-09-16
 tags: ['Operating Systems', 'Android', 'Privacy', 'Security']
 author: Tommy
 ---
@@ -81,9 +81,10 @@ For usability purposes, GrapheneOS supports [Sandboxed Google Play](https://grap
 
 Because GrapheneOS does not grant any Google Apps and Services apart from the opt-in eSIM action app privileged access to the system, Play Protect cannot disable or uninstall known malicious applications when it detects them. As for restricted app installation, this feature is not that useful on stock operating system anyways, since it is bypassable with `adb push`.
 
-Recently, GrapheneOS has also added the [Storage Scopes](https://grapheneos.org/usage#storage-access) feature, allowing you to force apps that request broad storage access permission to function with scoped storage. With this new feature, you no longer have to grant certain apps access to all of your media or files to use them anymore.
+Recently, GrapheneOS has also added the [Storage Scopes](https://grapheneos.org/usage#storage-access) feature, allowing you to force apps that request broad storage access permission to function with scoped storage. With this new feature, you no longer have to grant certain apps access to all of your media or files to use them anymore. You can see a video of Storage Scope in action here:
 
-![VLC Storage Scopes](/images/vlc-storage-scopes.png)
+{{< youtube id="WjrANjvrSzw">}}
+
 
 Currently, Google Pixel phones are the only devices that meet GrapheneOS's [hardware security requirements](https://grapheneos.org/faq#device-support).
 
