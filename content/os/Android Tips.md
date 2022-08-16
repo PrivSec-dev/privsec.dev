@@ -1,7 +1,7 @@
 ---
 title: "Android Tips"
 date: 2022-07-22
-lastmod: 2022-08-15
+lastmod: 2022-08-16
 tags: ['Operating Systems', 'Android', 'Privacy', 'Security']
 author: Tommy
 ---
@@ -127,7 +127,7 @@ You can also obtain your apps directly from their GitHub repositories. In most c
 - Install the [Android Studio](https://developer.android.com/studio) which includes apksinger.
 - Run `apksigner verify --print-certs --verbose myCoolApp.apk` to verify the certificate of the apk.
 
-After you have verified the signature of the apk and installed it on your phone, there are several strategies you can use to keep the app up-to-date. The first strategy is to add the atom feed of the app's release page (`https://github.com/GrapheneOS/Camera/releases.atom` for example) to an RSS Reader like [ReadYou](https://github.com/GrapheneOS/Camera/releases.atom) to get notified of new releases. You would still need to download and install the new releases manually. If you are confused, here is a video that could help with this process: 
+After you have verified the signature of the apk and installed it on your phone, there are several strategies you can use to keep the app up-to-date. The first strategy is to add the atom feed of the app's release page (`https://github.com/GrapheneOS/Camera/releases.atom` for example) to an RSS Reader like [ReadYou](https://github.com/GrapheneOS/Camera/releases.atom) to get notified of new releases. You will still need to download and install the new releases manually. If you are confused, here is a video that could help with this process: 
 
 {{< youtube id="FFz57zNR_M0">}}
 
