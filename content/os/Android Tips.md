@@ -53,7 +53,7 @@ Pattern unlock is extremely insecure and should be avoided at all cost. This is 
 
 If you trust the hardware enforced rate limiting features (typically done by the [Secure Element](https://en.wikipedia.org/wiki/Secure_cryptoprocessor) or [Trusted Execution Environment](https://en.wikipedia.org/wiki/Trusted_execution_environment)) of your device, a 8+ digit PIN may be sufficient.
 
-Ideally, you should be using a 8-10 word [diceware passphrase](https://en.wikipedia.org/wiki/Diceware) to secure your phone. This would make your phone unlock practially impossible to bruteforce, regardless of whether there is proper rate limiting or not.
+Ideally, you should be using a 8-10 word [diceware passphrase](https://en.wikipedia.org/wiki/Diceware) to secure your phone. This would make your phone unlock practically impossible to bruteforce, regardless of whether there is proper rate limiting or not.
 
 ## Use Global Toggles
 
@@ -116,7 +116,7 @@ My recommendation is to stick with the Google Play Store unless your threat mode
 
 ### F-Droid
 
-F-Droid, despite being oftenly recommended in the privacy community, has various security deficiencies. You can read more about them [here](../../apps/f-droid-security-analysis/).
+F-Droid, despite being often recommended in the privacy community, has various security deficiencies. You can read more about them [here](../../apps/f-droid-security-analysis/).
 
 I do not recommend that you use F-Droid at all unless you have no other choice to obtain certain apps. In some rare cases, there may be some apps which require the F-Droid version to work properly without Google Play Services. If you do end up using F-Droid, I highly recommend that you avoid the official F-Droid client (which is extremely outdated and targets API level 25) and use a more modern client with seamless updates such as [NeoStore](https://github.com/NeoApplications/Neo-Store). You should also avoid using the official F-Droid repository as mmuch as possible and stick to the F-Droid repositories hosted by the app developers instead.
 

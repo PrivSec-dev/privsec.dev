@@ -87,6 +87,6 @@ When using TOTP with an authenticator app, be sure to back up your recovery keys
 
 You are only as secure as the weakest authentication method you use. For instance, it makes little sense to add SMS 2FA as an alternative MFA method if you are already using FIDO2. An adversary who can compromise your SMS 2FA will get into your account just as easily as if you didn't use FIDO2 at all.
 
-Thus, it is important to stick to the best authentication method you have acess to. It is better to have 2 Yubikeys for FIDO2 than 1 FIDO2 key and one authenticator app for TOTP. Likewise, it is better to have 1 TOTP instance and a backup key than to use TOTP alongside with Email or SMS 2FA.
+Thus, it is important to stick to the best authentication method you have access to. It is better to have 2 Yubikeys for FIDO2 than 1 FIDO2 key and one authenticator app for TOTP. Likewise, it is better to have 1 TOTP instance and a backup key than to use TOTP alongside with Email or SMS 2FA.
 
 
