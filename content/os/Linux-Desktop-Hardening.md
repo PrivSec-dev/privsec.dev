@@ -152,6 +152,13 @@ Another option is [Kata containers](https://katacontainers.io/), where virtual m
 
 ![opensuse-computer.jpg](/images/opensuse-computer.jpg)
 
+### Umask 077
+If you are not using openSUSE, consider changing the default [umask](https://en.wikipedia.org/wiki/Umask) for both regular user accounts and root to 077. Changing umask to 077 can break snapper on openSUSE and is **not** recommended.
+
+The configuration for this varies per distribution, but typically it can be set in `/etc/profile`, `/etc/bashrc`, or `/etc/login.defs`.
+
+Note that unlike on macOS, this will only change the umask for the shell. Files created by running applications will not have their permissions set to 700.
+
 ### Firewalls
 
 A [firewall](https://en.wikipedia.org/wiki/Firewall_(computing)) may be used to secure connections to your system.
@@ -237,10 +244,6 @@ grsecurity is a set of kernel patches that attempt to improve security of the Li
 The [hardened memory allocator](https://github.com/GrapheneOS/hardened_malloc) from [GrapheneOS](https://grapheneos.org) can also be used on general Linux distributions. It is available as an [AUR package](https://wiki.archlinux.org/title/Security#Hardened_malloc) on Arch based distributions, and (though not enabled by default) on Whonix and Kicksecure.
 
 If you are using Whonix, Kicksecure or the AUR package, consider setting up `LD_PRELOAD` as described in the [Kicksecure Documentation](https://www.kicksecure.com/wiki/Hardened_Malloc) or [Arch Wiki](https://wiki.archlinux.org/title/Security#Hardened_malloc).
-
-### Strict UMASK
-
-If you are not using openSUSE, consider changing the default [umask](https://en.wikipedia.org/wiki/Umask) for both regular user accounts and root to 077. Changing umask to 077 can break snapper on openSUSE and is **not** recommended.
 
 ### Mountpoint Hardening
 
