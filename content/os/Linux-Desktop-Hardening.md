@@ -12,6 +12,18 @@ Linux is [not](https://madaidans-insecurities.github.io/linux.html) a security o
 ![Fedora Tux](/images/fedora-tux.png)
 
 
+## During Installation
+
+### Drive Encryption
+
+Most Linux distributions have an option within its installer for enabling [LUKS](../encryption.md#linux-unified-key-setup) full disk encryption. If this option isn’t set at installation time, you will have to backup your data and re-install, as encryption is applied after [disk partitioning](https://en.wikipedia.org/wiki/Disk_partitioning), but before [file systems](https://en.wikipedia.org/wiki/File_system) are formatted. 
+
+### Encrypted Swap
+
+Consider using [encrypted swap](https://wiki.archlinux.org/title/Dm-crypt/Swap_encryption) or [ZRAM](https://wiki.archlinux.org/title/Swap#zram-generator) instead of unencrypted swap to avoid potential security issues with sensitive data being pushed to [swap space](https://en.wikipedia.org/wiki/Memory_paging). While ZRAM can be set up post-installation, if you want to use encrypted swap, you should set it up while partitioning your drive.
+
+Depending on your distribution, encrypted swap may be sutomatically set up if you choose to encrypt your drive. Fedora [uses ZRAM by default](https://fedoraproject.org/wiki/Changes/SwapOnZRAM), regardless of whether you enable drive encryption or not.
+
 ## Privacy Tweaks
 
 ### MAC Address Randomization
@@ -117,7 +129,7 @@ Arch and Arch-based operating systems often do not come with a mandatory access 
 
 Note that unlike Android, traditional desktop Linux distributions typically do not have full system Mandatory Access Control policies, and only a few system daemons are actually confined.
 
-### Making your own policies/profiles
+### Making Your Own Policies/Profiles
 
 You can make your own AppArmor profiles, SELinux policies, Bubblewrap profiles, and [seccomp](https://en.wikipedia.org/wiki/Seccomp) blacklist to have better confinement of applications. This is an advanced and sometimes tedious task, so I won’t go into detail about how to do it here, but there are a few projects that you could use as reference.
 
@@ -126,7 +138,7 @@ You can make your own AppArmor profiles, SELinux policies, Bubblewrap profiles, 
 - noatsecure’s [SELinux templates](https://github.com/noatsecure/hardhat-selinux-templates)
 - Seirdy’s [Bubblewrap scripts](https://sr.ht/~seirdy/bwrap-scripts)
 
-### Securing Linux containers
+### Securing Linux Containers
 
 If you’re running a server, you may have heard of Linux Containers. They are more common in server environments where individual services are built to operate independently. However, you may sometimes see them on desktop systems as well, especially for development purposes.
 
@@ -144,7 +156,7 @@ A [firewall](https://en.wikipedia.org/wiki/Firewall_(computing)) may be used to 
 
 Red Hat distributions (such as Fedora) are typically configured through [firewalld](https://en.wikipedia.org/wiki/Firewalld). Red Hat has plenty of [documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_networking/using-and-configuring-firewalld_configuring-and-managing-networking) regarding this topic. There is also the [Uncomplicated Firewall](https://en.wikipedia.org/wiki/Uncomplicated_Firewall) which can be used as an alternative.
 
-You could also set your default firewall zone to drop packets. If you're on a Red Hat based distribution such as Fedora this can be done with the following commands:
+You could also set your default firewall zone to drop packets. If you're on a Red Hat or SUSE based distribution such as Fedora this can be done with the following commands:
 
 ```
 firewall-cmd --set-default-zone=drop
@@ -160,16 +172,24 @@ If you are using Flatpak packages, you can revoke their network socket access us
 
 If you are using non-classic [Snap](https://en.wikipedia.org/wiki/Snap_(package_manager)) packages on a system with proper snap confinement support (with both AppArmor and [cgroups](https://en.wikipedia.org/wiki/Cgroups) v1 present), you can use the Snap Store to revoke network permission as well. This is also not bypassable.
 
-### Kernel hardening
+### Kernel Hardening
+There are some additional kernel hardening options such as configuring [sysctl](https://en.wikipedia.org/wiki/Sysctl#Linux) keys and [kernel command-line parameters](https://www.kernel.org/doc/html/latest/admin-guide/kernel-parameters.html) which are described in the Madaidan's guide. You should read through them before applying these changes.
 
-Kernel hardening options such as configuring [sysctl](https://en.wikipedia.org/wiki/Sysctl#Linux) keys and [kernel command-line parameters](https://www.kernel.org/doc/html/latest/admin-guide/kernel-parameters.html) can help harden your system. We suggest looking at the following [sysctl settings](https://madaidans-insecurities.github.io/guides/linux-hardening.html#sysctl) and [boot parameters](https://madaidans-insecurities.github.io/guides/linux-hardening.html#boot-parameters).
+- [Recommended sysctl settings](https://madaidans-insecurities.github.io/guides/linux-hardening.html#sysctl)
+- [Recommended boot parameters](https://madaidans-insecurities.github.io/guides/linux-hardening.html#boot-parameters)
+- [Additional recommendations to reduce the kernel's attack surface](https://madaidans-insecurities.github.io/guides/linux-hardening.html#kernel-attack-surface-reduction)
 
-We **strongly** recommend that you learn what these options do before applying them. There are also some methods of [kernel attack surface reduction](https://madaidans-insecurities.github.io/guides/linux-hardening.html#kernel-attack-surface-reduction) and [access restrictions to sysfs](https://madaidans-insecurities.github.io/guides/linux-hardening.html#restricting-sysfs) that can further improve security.
+Madaidan recommends that you disable unprivileged [user namespaces](https://madaidans-insecurities.github.io/linux.html#kernel) due to it being responsible for various privileged escalation vulnerabilities. However, some software such as Podman and LXD require unprivileged user namespaces to function. If you decide that you want to use these technoligies, do not disable `kernel.unprivileged_userns_clone`.
 
-!!! Note
-    Unprivileged [user namespaces](https://madaidans-insecurities.github.io/linux.html#kernel) can be disabled, due to it being responsible for various privileged escalation vulnerabilities. Some software such as Docker, Podman, and LXC require unprivileged user namespaces to function. If you use these tools you should not disable `kernel.unprivileged_userns_clone`.
+If you are using KickSecure or Whonix, most of these hardening have already been done for you thanks to [security-misc](https://github.com/Kicksecure/security-misc). If you are using a Debian, you should consider [morphing](https://www.kicksecure.com/wiki/Debian) it into KickSecure. On other distributions, you can copy the configurations from the following files to use:
 
-    Disabling access to `/sys` without a proper whitelist will lead to various applications breaking. This will unfortunately be an extremely tedious process for most users. Kicksecure, and by extension, Whonix, has an experimental [hide hardware info service](https://github.com/Kicksecure/security-misc/blob/master/lib/systemd/system/hide-hardware-info.service) which does just this. From our testing, these work perfectly fine on minimal Kicksecure installations and both Qubes-Whonix Workstation and Gateway. If you are using Kicksecure or Whonix, we recommend that you follow the [Kicksecure Wiki](https://www.kicksecure.com/wiki/Security-misc) to enable hide hardware info service.
+- [`/etc/sysctl.d/30_security-misc.conf`](https://github.com/Kicksecure/security-misc/blob/master/etc/sysctl.d/30_security-misc.conf)
+- [`/etc/sysctl.d/30_silent-kernel-printk.conf`](https://github.com/Kicksecure/security-misc/blob/master/etc/sysctl.d/30_silent-kernel-printk.conf)
+- [`/etc/modprobe.d/30_security-misc.conf`](https://github.com/Kicksecure/security-misc/blob/master/etc/modprobe.d/30_security-misc.conf)
+
+Note that these configurations do not disable unprivileged user namespaces. There are also a few things in `/etc/modprobe.d/30_security-misc.conf` to keep in mind:
+- The `bluetooth` and `btusb` kernel modules are disabled by default. You need to comment out `install bluetooth /bin/disabled-bluetooth-by-security-misc` and `install btusb /bin/disabled-bluetooth-by-security-misc` if you want to use Bluetooth.
+- Apple filesystems are disabled by default. This is generally fine on non-Apple systems; however, if you are using Linux on an Apple product, you **must** check what filesystem your EFI partition uses. For example, if your EFI filesystem is HFS+, you need to comment out `install hfsplus /bin/disabled-filesys-by-security-misc`, otherwise your computer will not be able to boot into Linux.
 
 ### linux-hardened
 
@@ -187,21 +207,27 @@ On Fedora, [fepitre](https://github.com/fepitre), a QubesOS developer, has a [CO
 
 grsecurity is a set of kernel patches that attempt to improve security of the Linux kernel. It requires [payment to access](https://grsecurity.net/purchase) the code and is worth using if you have a subscription.
 
-### Simultaneous multithreading (SMT)
+### Restricting access to /sys and /proc
+
+There are also some methods of [kernel attack surface reduction](https://madaidans-insecurities.github.io/guides/linux-hardening.html#kernel-attack-surface-reduction) and [access restrictions to sysfs](https://madaidans-insecurities.github.io/guides/linux-hardening.html#restricting-sysfs) that can further improve security.
+
+Disabling access to `/sys` without a proper whitelist will lead to various applications breaking. This will unfortunately be an extremely tedious process for most users. Kicksecure, and by extension, Whonix, has an experimental [hide hardware info service](https://github.com/Kicksecure/security-misc/blob/master/lib/systemd/system/hide-hardware-info.service) which does just this. From our testing, these work perfectly fine on minimal Kicksecure installations and both Qubes-Whonix Workstation and Gateway. If you are using Kicksecure or Whonix, we recommend that you follow the [Kicksecure Wiki](https://www.kicksecure.com/wiki/Security-misc) to enable hide hardware info service.
+
+### Disable Simultaneous Multithreading (SMT)
 
 [SMT](https://en.wikipedia.org/wiki/Simultaneous_multithreading) has been the cause of numerous hardware vulnerabilities, and subsequent patches for those vulnerabilities often come with performance penalties that negate most of the performance gain given by SMT. If you followed the “kernel hardening” section above, some kernel parameters already disable SMT. If the option is available to you, we recommend that you disable it in your firmware as well.
 
-### Hardened memory allocator
+### Hardened Memory Allocator
 
 The [hardened memory allocator](https://github.com/GrapheneOS/hardened_malloc) from [GrapheneOS](https://grapheneos.org) can also be used on general Linux distributions. It is available as an [AUR package](https://wiki.archlinux.org/title/Security#Hardened_malloc) on Arch based distributions, and (though not enabled by default) on Whonix and Kicksecure.
 
 If you are using Whonix, Kicksecure or the AUR package, consider setting up `LD_PRELOAD` as described in the [Kicksecure Documentation](https://www.kicksecure.com/wiki/Hardened_Malloc) or [Arch Wiki](https://wiki.archlinux.org/title/Security#Hardened_malloc).
 
-### Umask
+### Strict UMASK
 
 If you are not using openSUSE, consider changing the default [umask](https://en.wikipedia.org/wiki/Umask) for both regular user accounts and root to 077. Changing umask to 077 can break snapper on openSUSE and is **not** recommended.
 
-### Mountpoint hardening
+### Mountpoint Hardening
 
 Consider adding the [following options](https://man7.org/linux/man-pages/man8/mount.8.html) `nodev`, `noexec`, and `nosuid` to mountpoints which do not need them. Typically, these could be applied to `/boot`, `/boot/efi`, and `/var`.
 
@@ -237,7 +263,7 @@ sudo authselect select <profile_id, default: sssd> with-faillock without-nullok 
 
 On systems where [`pam_faillock`](https://man7.org/linux/man-pages/man8/pam_tally.8.html) is not available, consider using [`pam_tally2`](https://man7.org/linux/man-pages/man8/pam_tally.8.html) instead.
 
-### USB port protection
+### USB Port Protection
 
 To better protect your [USB](https://en.wikipedia.org/wiki/USB) ports from attacks such as [BadUSB](https://en.wikipedia.org/wiki/BadUSB), we recommend [USBGuard](https://github.com/USBGuard/usbguard). USBGuard has [documentation](https://github.com/USBGuard/usbguard#documentation) as does the [Arch Wiki](https://wiki.archlinux.org/title/USBGuard).
 
