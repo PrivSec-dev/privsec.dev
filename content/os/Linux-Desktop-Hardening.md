@@ -115,7 +115,7 @@ If you do use Firejail, there is a tool called [Firetools](https://github.com/ne
 
 Firejail can also confine X11 windows using Xpra or Xephr, something that Flatpak and Snap cannot do. I highly recommend that you check out their [documentation](https://firejail.wordpress.com/documentation-2/x11-guide/) on how to set this up.
 
-One trick to consistently launch applications which have a Firejail profile confined is to use the `firecfg` command. This will create a symlink in `/usr/local/bin/app_name_here` pointing to Firejail. `.desktop` files which do not specifically specify the absolute path of the binaries to use will launch the application through the symlink and have Firejail sandbox them this way. Of course, this is bypassable if you or some other applications launch the application directly from `/usr/bin/app_name_here` instead.
+One trick to consistently launch applications which have a Firejail profile confined is to use the `sudo firecfg` command. This will create a symlink in `/usr/local/bin/app_name_here` pointing to Firejail. `.desktop` files which do not specifically specify the absolute path of the binaries to use will launch the application through the symlink and have Firejail sandbox them this way. Of course, this is bypassable if you or some other applications launch the application directly from `/usr/bin/app_name_here` instead.
 
 ### Mandatory Access Control
 
@@ -230,7 +230,7 @@ grsecurity is a set of kernel patches that attempt to improve security of the Li
 
 ### Disable Simultaneous Multithreading (SMT)
 
-[SMT](https://en.wikipedia.org/wiki/Simultaneous_multithreading) has been the cause of numerous hardware vulnerabilities, and subsequent patches for those vulnerabilities often come with performance penalties that negate most of the performance gain given by SMT. If you followed the “kernel hardening” section above, some kernel parameters already disable SMT. If the option is available to you, we recommend that you disable it in your firmware as well.
+[SMT](https://en.wikipedia.org/wiki/Simultaneous_multithreading) has been the cause of numerous hardware vulnerabilities, and subsequent patches for those vulnerabilities often come with performance penalties that negate a lot of the performance gain given by SMT. If you followed the “Hardening Boot Parameters” section above, some kernel parameters already disable SMT. If the option is available to you, we recommend that you disable it in your firmware as well.
 
 ### Hardened Memory Allocator
 
