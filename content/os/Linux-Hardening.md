@@ -6,7 +6,7 @@ author: Tommy
 
 Linux is [not](https://madaidans-insecurities.github.io/linux.html) a security operating system. However, there are step you can take harden it, reduce its attack surface and improve its privacy.
 
-**Disclosure**: This guide is largely based on [Madaidan's Linux hardening guide](https://madaidans-insecurities.github.io/guides/linux-hardening.html); however, it does take into account the usability, ease of maintenance of each recommendation. The goal is to produce a guide that intermediate to advanced Linux users can reasonably follow to set up and maintain the security configurations. It will also **not** try to be distribution agnostic, and there will be many distribution specific recommendations.
+**Notes**: This guide is largely based on [Madaidan's Linux hardening guide](https://madaidans-insecurities.github.io/guides/linux-hardening.html); however, it does take into account the usability, ease of maintenance of each recommendation. The goal is to produce a guide that intermediate to advanced Linux users can reasonably follow to set up and maintain the security configurations. It will also **not** try to be distribution agnostic, and there will be many distribution specific recommendations.
 
 ![Fedora Tux](/images/fedora-tux.png)
 
@@ -35,15 +35,15 @@ There are other system identifiers which you may wish to be careful about. You s
 
 ### System Counting
 
-The Fedora Project [counts](https://fedoraproject.org/wiki/Changes/DNF_Better_Counting) how many unique systems access its mirrors by using a [`countme`](https://fedoraproject.org/wiki/Changes/DNF_Better_Counting#Detailed_Description) variable instead of a unique ID. Fedora does this to determine load and provision better servers for updates where necessary.
+Many Linux distributions sends some telemetry data by default to count how many systems are using their software. Consider disabling this depending on your threat model.
 
-This [option](https://dnf.readthedocs.io/en/latest/conf_ref.html#options-for-both-main-and-repo) is currently off by default. We recommend adding `countme=false` to `/etc/dnf/dnf.conf` just in case it is enabled in the future. On systems that use `rpm-ostree` such as Silverblue, the countme option is disabled by masking the [rpm-ostree-countme](https://fedoramagazine.org/getting-better-at-counting-rpm-ostree-based-systems/) timer.
+The Fedora Project does this by [counting](https://fedoraproject.org/wiki/Changes/DNF_Better_Counting) how many unique systems access its mirrors by using a [`countme`](https://fedoraproject.org/wiki/Changes/DNF_Better_Counting#Detailed_Description) variable instead of a unique ID. 
+
+This [option](https://dnf.readthedocs.io/en/latest/conf_ref.html#options-for-both-main-and-repo) is currently off by default. However, you could add `countme=false` to `/etc/dnf/dnf.conf` just in case it is enabled in the future. On systems that use `rpm-ostree` such as Fedora Silverblue or Kinoite, the `countme` option can be disabled by masking the [rpm-ostree-countme](https://fedoramagazine.org/getting-better-at-counting-rpm-ostree-based-systems/) timer.
 
 openSUSE also uses a [unique ID](https://en.opensuse.org/openSUSE:Statistics) to count systems, which can be disabled by deleting the `/var/lib/zypp/AnonymousUniqueId` file.
 
-[Snapd](https://github.com/snapcore/snapd), while providing somewhat useful sandboxing on AppArmor + Cgroupsv1 systems, assigns a [unique ID](https://snapcraft.io/docs/snap-store-metrics) to your snapd installation and use it for telemetry. While this is generally not a problem, if your threat model calls for anonimity, you should not be using snap packages, and you should remove snapd from your Ubuntu installation.
-
-Ubuntu does like to put packages in the .deb repository that will just install its snap counterpart. An example of this would be the [Chromium package](https://askubuntu.com/questions/1185091/why-apt-package-chromium-browser-installs-snap-package-instead). If you choose to remove snapd, you can use `sudo apt-mark hold snapd` to prevent accidental installation of snapd again.
+[Snapd](https://github.com/snapcore/snapd) assigns a [unique ID](https://snapcraft.io/docs/snap-store-metrics) to your snapd installation and use it for telemetry. While this is generally not a problem, if your threat model calls for anonimity, you should not be using snap packages, and you should remove snapd from your Ubuntu installation. On Debian based distributions, and especially Ubuntu, consider holding `snapd` with `sudo apt-mark hold snapd` to avoid accidentally installing it in the future.
 
 ### Keystroke Anonymization
 You could be [fingerprinted based on soft biometric traits](https://www.whonix.org/wiki/Keystroke_Deanonymization) when you use the keyboard. The [Kloak](https://github.com/vmonaco/kloak) package could help you mitigate this threat. It is available as a .deb package from [Kicksecure's repository](https://www.kicksecure.com/wiki/Packages_for_Debian_Hosts) and an [AUR package](https://aur.archlinux.org/packages/kloak-git).
@@ -51,7 +51,7 @@ You could be [fingerprinted based on soft biometric traits](https://www.whonix.o
 WIth that being said, if your threat model calls for using something like Kloak, you are probably better off just using Whonix.
 
 ## Application Confinement
-Some sandboxing solutions for desktop Linux distributions do exist, however they are not as strict as those found in macOS or ChromeOS. Applications installed from the package manager (`dnf`, `apt`, etc.) typically have **no** sandboxing or confinement whatsoever. Below are a few projects that aim to solve this problem:
+Some sandboxing solutions for desktop Linux distributions do exist; however, they are not as strict as those found in macOS or ChromeOS. Applications installed from the package manager (`dnf`, `apt`, etc.) typically have **no** sandboxing or confinement whatsoever. Below are a few projects that aim to solve this problem:
 
 ### Flatpak
 
@@ -70,7 +70,7 @@ Some sensitive permissions you should pay attention to:
 
 If an application works natively with Wayland (*not* running through the [XWayland](https://wayland.freedesktop.org/xserver.html) compatibility layer), consider revoking its access to the X11 (`--socket=x11`) and [inter-process communications (IPC)](https://en.wikipedia.org/wiki/Unix_domain_socket) socket (`--share=ipc`) as well.
 
-Many Flatpak apps come with broad filesystem permissions such as `--filesystem=home` and `--filesystem=host`. Some applications implement the [Portal API](https://docs.flatpak.org/en/latest/portal-api-reference.html), which allows a file manager to pass files to the Flatpak application (e.g. VLC) without specific filesystem access privileges. Despite this, many of them, including ones like VLC [still use `--filesystem=host`](https://github.com/flathub/org.videolan.VLC/blob/master/org.videolan.VLC.json) for no apparent reason. 
+Many Flatpak apps come with broad filesystem permissions such as `--filesystem=home` and `--filesystem=host`. Some applications implement the [Portal API](https://docs.flatpak.org/en/latest/portal-api-reference.html), which allows a file manager to pass files to the Flatpak application (e.g. VLC) without specific filesystem access privileges. Despite this, many of them, including ones like VLC [still use](https://github.com/flathub/org.videolan.VLC/blob/master/org.videolan.VLC.json) `--filesystem=host`.
 
 My strategy to deal with this is to revoke all filesystem access first, then test if an application works without it. If it does, it means the app is already using Portals and I don't need to do anything else. If it doesn't, then I start granting permission to specific directories.
 
@@ -83,6 +83,8 @@ Snap is another universal package manager with some sandboxing support. It is de
 Snap packages come in [two variants](https://snapcraft.io/docs/snap-confinement): classic snap with no confinement and strict snap with confinement on systems with AppArmor and Cgroupsv1. If a snap package is classic snap, you are better off using a version provided by your distribution's repository instead, if one is available. If your system does not have AppArmor, then you are better off not using snap at all. Most modern systems outside of Ubuntu and its derivatives only use Cgroupsv2 by default, so you have to set `systemd.unified_cgroup_hierarchy=0` in your kernel parameters to get Cgroupsv1 working.
 
 Snap permissions can be managed via the Snap Store or Ubuntu's custom patched GNOME Control Center.
+
+There are some caveats with snapd, including the fact that it has failed multiple security autdits by openSUSE, according to Richard Brown.
 
 ### Firejail
 
