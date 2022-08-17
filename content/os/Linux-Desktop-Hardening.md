@@ -15,7 +15,6 @@ Some of the sections will include mentions of unofficial builds of packages like
 
 ![Fedora Tux](/images/fedora-tux.png)
 
-
 ## During Installation
 
 ### Drive Encryption
@@ -161,7 +160,7 @@ If you are not using openSUSE, consider changing the default [umask](https://en.
 
 The configuration for this varies per distribution, but typically it can be set in `/etc/profile`, `/etc/bashrc`, or `/etc/login.defs`.
 
-Note that unlike on macOS, this will only change the umask for the shell. Files created by running applications will not have their permissions set to 700.
+Note that unlike on macOS, this will only change the umask for the shell. Files created by running applications will not have their permissions set to 600.
 
 ### Firewalls
 
