@@ -105,6 +105,8 @@ One caveat with Snap packages is that you only have control over the interfaces 
 
 ### Firejail
 
+{{< youtube id="N-Mso2bSr3o">}}
+
 [Firejail](https://firejail.wordpress.com/) is another method of sandboxing. As it is a large [setuid](https://en.wikipedia.org/wiki/Setuid) binary, it has a large attack surface which may assist in [privilege escalation](https://en.wikipedia.org/wiki/Privilege_escalation).
 
 Madaidan [provided](https://madaidans-insecurities.github.io/linux.html#firejail) additional details on how Firejail can worsen the security of your device.
