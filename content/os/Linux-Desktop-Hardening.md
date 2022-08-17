@@ -62,7 +62,7 @@ openSUSE uses a [unique ID](https://en.opensuse.org/openSUSE:Statistics) to coun
 
 Zorin OS uses the `zorin-os-cencus` package, which also uses a [unique ID](https://zorin.com/legal/privacy/) to count systems. You can opt out of this by doing `sudo apt purge zorin-os-census`, and optionally hold it with `sudo apt-mark hold zorin-os-census` to avoid accidentally installing it in the future.
 
-[Snapd](https://github.com/snapcore/snapd) assigns a [unique ID](https://snapcraft.io/docs/snap-store-metrics) to your snapd installation and use it for telemetry. While this is generally not a problem, if your threat model calls for anonimity, you should not be using snap packages, and you should remove snapd from your Ubuntu installation. Like with Zorin Census, on Debian based distributions, and especially Ubuntu, consider holding `snapd` with `sudo apt-mark hold snapd`.
+[Snapd](https://github.com/snapcore/snapd) assigns a [unique ID](https://snapcraft.io/docs/snap-store-metrics) to your snapd installation and use it for telemetry. While this is generally not a problem, if your threat model calls for anonymity, you should not be using snap packages, and you should remove snapd from your Ubuntu installation. Like with Zorin Census, on Debian based distributions, and especially Ubuntu, consider holding `snapd` with `sudo apt-mark hold snapd`.
 
 Of course, this is a non-exhaustive list of how different Linux distributions do this. If you are aware of any other tracking mechanisms that different distributions use, feel free to make a [pull request](https://github.com/PrivSec-dev/privsec.dev/blob/main/content/os/Linux-Desktop-Hardening.md) or [discussion post](https://github.com/PrivSec-dev/privsec.dev/discussions) detailing them!
 
@@ -105,7 +105,7 @@ Snap packages come in [two variants](https://snapcraft.io/docs/snap-confinement)
 
 Snap permissions can be managed via the Snap Store or Ubuntu's custom patched GNOME Control Center.
 
-One caveat with Snap packages is that you only have control over the interfaces declared in their manifests. For example, snap has seperate interfaces for `audio-playback` and `audio-record`; however, some packages will only declare the legacy `pulseaudio` interface which grants them permission to both play and record audio. Likewise, some applications may work perfectly fine with Wayland, but the package maintainer may only declare the X11 interface in their manifest. For these cases, you need to reach out to the maintainer of the Snap package to update the manifest accordingly.
+One caveat with Snap packages is that you only have control over the interfaces declared in their manifests. For example, snap has separate interfaces for `audio-playback` and `audio-record`; however, some packages will only declare the legacy `pulseaudio` interface which grants them permission to both play and record audio. Likewise, some applications may work perfectly fine with Wayland, but the package maintainer may only declare the X11 interface in their manifest. For these cases, you need to reach out to the maintainer of the Snap package to update the manifest accordingly.
 
 ### Firejail
 
@@ -189,7 +189,7 @@ If you are using non-classic [Snap](https://en.wikipedia.org/wiki/Snap_(package_
 There are some additional kernel hardening options such as configuring [sysctl](https://en.wikipedia.org/wiki/Sysctl#Linux) keys and [kernel command-line parameters](https://www.kernel.org/doc/html/latest/admin-guide/kernel-parameters.html) which are described in the Madaidan's guide. You should read through them before applying these changes.
 
 - [2.2 Sysctl](https://madaidans-insecurities.github.io/guides/linux-hardening.html#sysctl)
-- [2.5.2 Blacklisting kenrel modules](https://madaidans-insecurities.github.io/guides/linux-hardening.html#kasr-kernel-modules)
+- [2.5.2 Blacklisting kernel modules](https://madaidans-insecurities.github.io/guides/linux-hardening.html#kasr-kernel-modules)
 
 Madaidan recommends that you disable unprivileged [user namespaces](https://madaidans-insecurities.github.io/linux.html#kernel) due to it being responsible for various privileged escalation vulnerabilities. However, some software such as Podman and LXD require unprivileged user namespaces to function. If you decide that you want to use these technoligies, do not disable `kernel.unprivileged_userns_clone`.
 

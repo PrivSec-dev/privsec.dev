@@ -20,7 +20,7 @@ The main problem with SSH keys is that they're not magic: they consist of a key 
 
 All these attempts are particularly a thing on desktop platforms, because they don't have a proper sandboxing model. On Windows, non-UWP apps could likely have full access to your `.ssh` directory. On desktop Linux distributions, sandboxing is also lacking, and the situation is even worse if you're using X.org since it allows apps to spy on each other (and on your keyboard) by design. A first good step would be to only use SSH from a trusted & decently secure system.
 
-Another layer of defense would obviously be multi-factor authentification, or the fact that you're relying on a shared secret instead. We can use FIDO2 security keys for that. That way, even if your private key is compromised, the attacker needs physical access to your security key. TOTP is another common 2FA technique, but it's vulnerable to various attacks, and relies on the quality of the implementation on the server.
+Another layer of defense would obviously be multi-factor authentication, or the fact that you're relying on a shared secret instead. We can use FIDO2 security keys for that. That way, even if your private key is compromised, the attacker needs physical access to your security key. TOTP is another common 2FA technique, but it's vulnerable to various attacks, and relies on the quality of the implementation on the server.
 
 
 ## How?
@@ -47,7 +47,7 @@ ssh-keygen -t ed25519-sk -O resident -O application=ssh:user1
 As you can see, a few options must be specified:
 
 - `-O resident` will tell `ssh-keygen` to generate a resident key, meaning that the private "handle" key will also be stored on the security key itself. This has security implications, but you may want that to move seamlessly between different computers. In that case, you should absolutely protect your key with a PIN beforehand.
-- `-O application=ssh:` is necessary to instruct that the resident key will use a particular slot, because the security key will have to index the resident keys (by default, they use `ssh:` with an empty user ID). If this is not specificed, the next key generation might overwrite the previous one.
+- `-O application=ssh:` is necessary to instruct that the resident key will use a particular slot, because the security key will have to index the resident keys (by default, they use `ssh:` with an empty user ID). If this is not specified, the next key generation might overwrite the previous one.
 - `-O verify-required` is optional but instructs that a PIN is required to generate/access the key.
 
 Resident keys can be retrieved using `ssh-keygen -K` or `ssh-add -K` if you don't want to write them to the disk.

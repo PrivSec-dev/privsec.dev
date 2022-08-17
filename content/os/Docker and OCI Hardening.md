@@ -40,7 +40,7 @@ For the rest of this article, we will use Docker as the reference for our exampl
 Containers are made from images, and images are typically built from a Dockerfile. Images can be built and distributed through OCI registries: [Docker Hub](https://hub.docker.com/), [Google Container Registry](https://cloud.google.com/container-registry), [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), and so on. You can also set up your own private registry as well, but the reality is that people often pull images from these public registries.
 
 ### Images, immutability and versioning
-Images are what make containers, well, containers. Containers made from the same image should behave similary on different machines. Images can have **tags**, which are useful for software versioning. The usage of generic tags such as `latest` is often discouraged because it defeats the purpose of the expected behavior of the container. Tags are not necessarily immutable by design, and they shouldn't be (more on that below). **Digest**, however, is the attribute of an immutable image, and is often generated with the SHA-256 algorithm.
+Images are what make containers, well, containers. Containers made from the same image should behave similarly on different machines. Images can have **tags**, which are useful for software versioning. The usage of generic tags such as `latest` is often discouraged because it defeats the purpose of the expected behavior of the container. Tags are not necessarily immutable by design, and they shouldn't be (more on that below). **Digest**, however, is the attribute of an immutable image, and is often generated with the SHA-256 algorithm.
 
 ```
 docker.io/library/golang:1.17.1@sha256:232a180dbcbcfa7250917507f3827d88a9ae89bb1cdd8fe3ac4db7b764ebb25
@@ -80,7 +80,7 @@ The main drawback of using minimal images is the lack of tools that help with de
 ### Keeping images up-to-date
 The two other points are highly problematic, because most software vendors just publish an image on release, and forget about it. You should take it up to them if you're running images that are versioned but not regularly updated. I'd say running scheduled builds **once a week** is the bare minimum to make sure dependencies stay up-to-date. Alpine Linux is a better choice than most other "stable" distributions because it usually has more recent packages.
 
-Stable distributions often rely on backporting security fixes from CVEs, which is known to be a flawed approach to security since CVEs aren't always assigned or even taken care of. Alpine has more recent packages, and it has versioning, so it's once again a particulary good choice as long as `musl` doesn't cause issues.
+Stable distributions often rely on backporting security fixes from CVEs, which is known to be a flawed approach to security since CVEs aren't always assigned or even taken care of. Alpine has more recent packages, and it has versioning, so it's once again a particularly good choice as long as `musl` doesn't cause issues.
 
 ### Is it really a security nightmare?
 When people say Docker is a security nightmare because of that, that's a fair point. On a traditional system, you could upgrade your whole system with a single command or two. With Docker, you'll have to recreate several containers... if the images were kept up-to-date in the first place. Recreating itself is not a big deal actually: hot upgrades of binaries and libraries often require the services that use them to restart, otherwise they could still use an old (and vulnerable) version of them in memory. But yeah, the fact is most people are running outdated containers, and more often than not, they don't have the choice if they rely on third-party images.
@@ -99,7 +99,7 @@ Traditionally, Docker runs as a daemon owned by root. That also means that root 
 
 > The kernel can effectively be thought of as the largest, most vulnerable setuid root binary on the system.
 
-That applies particulary to traditional containers which weren't designed to provide a robust level of isolation. A recent example was [CVE-2022-0492](https://unit42.paloaltonetworks.com/cve-2022-0492-cgroups/): the attacker could abuse root in the container to exploit cgroups v1, and compromise the host. Of course defense-in-depth measures would have prevented that, and we'll mention them. But fundamentally, container escapes are possible by design.
+That applies particularly to traditional containers which weren't designed to provide a robust level of isolation. A recent example was [CVE-2022-0492](https://unit42.paloaltonetworks.com/cve-2022-0492-cgroups/): the attacker could abuse root in the container to exploit cgroups v1, and compromise the host. Of course defense-in-depth measures would have prevented that, and we'll mention them. But fundamentally, container escapes are possible by design.
 
 Breaking out via the OCI runtime `runc` is also possible, although [CVE-2019-5736](https://unit42.paloaltonetworks.com/breaking-docker-via-runc-explaining-cve-2019-5736/) was a particularly nasty bug. The attacker had to gain access to root in the container first in order to access `/proc/[runc-pid]/exe`, which indicates them where to overwrite the `runc` binary.
 
@@ -165,7 +165,7 @@ Never use the `--privileged` option unless you really need to: a privileged cont
 MACs and seccomp are robust tools that may vastly improve container security.
 
 ### Mandatory Access Control
-MAC stand for Mandatory Access Control: traditionnally a Linux Security Module that will enforce a policy to restrict the userspace. Examples are **AppArmor** and **SELinux**: the former being more easy-to-use, the later being more fine-grained. Both are strong tools that can help... Yet, their sole presence does not mean they're really effective. A robust policy starts from a *deny all* policy, and only allows the necessary resources to be accessed.
+MAC stand for Mandatory Access Control: traditionally a Linux Security Module that will enforce a policy to restrict the userspace. Examples are **AppArmor** and **SELinux**: the former being more easy-to-use, the later being more fine-grained. Both are strong tools that can help... Yet, their sole presence does not mean they're really effective. A robust policy starts from a *deny all* policy, and only allows the necessary resources to be accessed.
 
 ### seccomp
 seccomp (short for secure computing mode) on the other hand is a much simpler and complementary tool, and there is no reason not to use it. What it does is restricting a process to a set of system calls, thus drastically reducing the attack surface available.
