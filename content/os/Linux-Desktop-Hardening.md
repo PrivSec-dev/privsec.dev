@@ -310,7 +310,7 @@ Another alternative option if you’re using the [linux-hardened](#linux-hardene
 
 One of the problems with Secure Boot, particularly on Linux is, that only the chainloader (shim), the [boot loader](https://en.wikipedia.org/wiki/Bootloader) (GRUB), and the [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) are verified and that's where verification stops. The [initramfs](https://en.wikipedia.org/wiki/Initial_ramdisk) is often left unverified, unencrypted, and open up the window for an [evil maid](https://en.wikipedia.org/wiki/Evil_maid_attack) attack. The firmware on most devices is also configured to trust Microsoft's keys for Windows and its partners, leading to a large attacks surface.
 
-To eliminate the need to trust Microsoft's keys, follow the "Using your own keys" section on the [Arch Wiki](https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot). The important thing that needs to be done here is to replace the OEM's key with your own Platform Key.
+To eliminate the need to trust Microsoft's keys, either follow the "Using your own keys" section on the [Arch Wiki](https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot) or use [sbctl](https://github.com/Foxboron/sbctl). The important thing that needs to be done here is to replace the OEM's key with your own Platform Key.
 
 There are several ways to work around the unverified initramfs:
 
@@ -327,10 +327,10 @@ There are a few options depending on your configuration:
 
 ### Unified Kernel Image
 
-The second option is to creating an [Unified Kernel Image](https://wiki.archlinux.org/title/Unified_kernel_image) that contains the kernel, [initramfs](https://en.wikipedia.org/wiki/Initial_ramdisk), and [microcode](https://en.wikipedia.org/wiki/Microcode). This EFI stub can then be signed. If you use [dracut](https://en.wikipedia.org/wiki/Dracut_(software)) this can easily be done with the [`--uefi-stub` switch](https://man7.org/linux/man-pages/man8/dracut.8.html) or the [`uefi_stub` config](https://www.man7.org/linux/man-pages/man5/dracut.conf.5.html) option. This option also requires you to leave the keys on the disk to setup automatic signing, which weakens the security model.
+The second option is to creating an [Unified Kernel Image](https://wiki.archlinux.org/title/Unified_kernel_image) that contains the kernel, [initramfs](https://en.wikipedia.org/wiki/Initial_ramdisk), and [microcode](https://en.wikipedia.org/wiki/Microcode). This EFI stub can then be signed. I recommend using [sbctl](https://github.com/Foxboron/sbctl) to generate such EFI image. This option also requires you to leave the keys on the disk to setup automatic signing, which weakens the security model.
+
+### Notes
 
 After setting up Secure Boot it is crucial that you set a “firmware password” (also called a “supervisor password”, “BIOS password” or “UEFI password”), otherwise an adversary can simply disable Secure Boot.
 
 These recommendations can make you a little more resistant to [evil maid](https://en.wikipedia.org/wiki/Evil_maid_attack) attacks, but they not good as a proper verified boot process such as that found on [Android](https://source.android.com/security/verifiedboot), [ChromeOS](https://support.google.com/chromebook/answer/3438631) or [Windows](https://docs.microsoft.com/en-us/windows/security/information-protection/secure-the-windows-10-boot-process).
-
-### Automatic Kernel Module Signing
