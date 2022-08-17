@@ -52,7 +52,7 @@ Many Linux distributions sends some telemetry data by default to count how many 
 
 The Fedora Project does this by [counting](https://fedoraproject.org/wiki/Changes/DNF_Better_Counting) how many unique systems access its mirrors by using a [`countme`](https://fedoraproject.org/wiki/Changes/DNF_Better_Counting#Detailed_Description) variable instead of a unique ID. 
 
-This [option](https://dnf.readthedocs.io/en/latest/conf_ref.html#options-for-both-main-and-repo) is currently off by default. However, you could add `countme=false` to `/etc/dnf/dnf.conf` just in case it is enabled in the future. On systems that use `rpm-ostree` such as Fedora Silverblue or Kinoite, the `countme` option can be disabled by masking the [rpm-ostree-countme](https://fedoramagazine.org/getting-better-at-counting-rpm-ostree-based-systems/) timer.
+This [option](https://dnf.readthedocs.io/en/latest/conf_ref.html#options-for-both-main-and-repo) is currently off by default. However, you could add `countme=false` to `/etc/dnf/dnf.conf` just in case it is enabled in the future. On systems that use rpm-ostree such as Fedora Silverblue or Kinoite, the `countme` option can be disabled by masking the [rpm-ostree-countme](https://fedoramagazine.org/getting-better-at-counting-rpm-ostree-based-systems/) timer.
 
 openSUSE uses a [unique ID](https://en.opensuse.org/openSUSE:Statistics) to count systems, which can be disabled by deleting the `/var/lib/zypp/AnonymousUniqueId` file.
 
@@ -175,9 +175,8 @@ If you are using non-classic [Snap](https://en.wikipedia.org/wiki/Snap_(package_
 ### Kernel Hardening
 There are some additional kernel hardening options such as configuring [sysctl](https://en.wikipedia.org/wiki/Sysctl#Linux) keys and [kernel command-line parameters](https://www.kernel.org/doc/html/latest/admin-guide/kernel-parameters.html) which are described in the Madaidan's guide. You should read through them before applying these changes.
 
-- [Recommended sysctl settings](https://madaidans-insecurities.github.io/guides/linux-hardening.html#sysctl)
-- [Recommended boot parameters](https://madaidans-insecurities.github.io/guides/linux-hardening.html#boot-parameters)
-- [Additional recommendations to reduce the kernel's attack surface](https://madaidans-insecurities.github.io/guides/linux-hardening.html#kernel-attack-surface-reduction)
+- [2.2 Sysctl](https://madaidans-insecurities.github.io/guides/linux-hardening.html#sysctl)
+- [2.5.2 Blacklisting kenrel modules](https://madaidans-insecurities.github.io/guides/linux-hardening.html#kasr-kernel-modules)
 
 Madaidan recommends that you disable unprivileged [user namespaces](https://madaidans-insecurities.github.io/linux.html#kernel) due to it being responsible for various privileged escalation vulnerabilities. However, some software such as Podman and LXD require unprivileged user namespaces to function. If you decide that you want to use these technoligies, do not disable `kernel.unprivileged_userns_clone`.
 
@@ -190,6 +189,26 @@ If you are using KickSecure or Whonix, most of these hardening have already been
 Note that these configurations do not disable unprivileged user namespaces. There are also a few things in `/etc/modprobe.d/30_security-misc.conf` to keep in mind:
 - The `bluetooth` and `btusb` kernel modules are disabled by default. You need to comment out `install bluetooth /bin/disabled-bluetooth-by-security-misc` and `install btusb /bin/disabled-bluetooth-by-security-misc` if you want to use Bluetooth.
 - Apple filesystems are disabled by default. This is generally fine on non-Apple systems; however, if you are using Linux on an Apple product, you **must** check what filesystem your EFI partition uses. For example, if your EFI filesystem is HFS+, you need to comment out `install hfsplus /bin/disabled-filesys-by-security-misc`, otherwise your computer will not be able to boot into Linux.
+
+### Harding Boot Parameters
+
+Read through this section on how to harden your boot parameters:
+- [2.3 Boot Parameters](https://madaidans-insecurities.github.io/guides/linux-hardening.html#boot-parameters)
+
+Kicksecure comes with these boot parameters by default. This section is fairly short, so I'd recommend that you read it through. With that being said, here are all of the parameters that you would need:
+
+`slab_nomerge init_on_alloc=1 init_on_free=1 page_alloc.shuffle=1 pti=on vsyscall=none debugfs=off oops=panic module.sig_enforce=1 lockdown=confidentiality mce=0 quiet loglevel=0 spectre_v2=on spec_store_bypass_disable=on tsx=off tsx_async_abort=full,nosmt mds=full,nosmt l1tf=full,force nosmt=force kvm.nx_huge_pages=force`
+
+Note that [SMT](https://en.wikipedia.org/wiki/Simultaneous_multithreading) is disabled due to it being the cause of various security vulnerabilities. Also, on rpm-ostree based distributions, you should set the kernel parameters using `rpm-ostree kargs` rather than messing with grub configurations directly.
+
+### Restricting access to /proc and /sys
+
+You should read these 2 sections in Madaidan's guide to further reduce the attack surface on the kernel:
+
+- [2.4 hidepid](https://madaidans-insecurities.github.io/guides/linux-hardening.html#hidepid)
+- [2.7 Restricting access to sysfs](https://madaidans-insecurities.github.io/guides/linux-hardening.html#restricting-sysfs)
+
+Disabling access to `/sys` without a proper whitelist will lead to various applications breaking. This will unfortunately be an extremely tedious process for most users. Kicksecure, and by extension, Whonix, has the experimental [proc-hidepid](https://github.com/Kicksecure/security-misc/blob/master/lib/systemd/system/proc-hidepid.service) and [hide-hardware-info](https://github.com/Kicksecure/security-misc/blob/master/lib/systemd/system/hide-hardware-info.service) services which do just this. From my testing, these work perfectly fine on minimal Kicksecure installations and both Qubes-Whonix Workstation and Gateway.
 
 ### linux-hardened
 
@@ -206,12 +225,6 @@ On Fedora, [fepitre](https://github.com/fepitre), a QubesOS developer, has a [CO
 ### grsecurity
 
 grsecurity is a set of kernel patches that attempt to improve security of the Linux kernel. It requires [payment to access](https://grsecurity.net/purchase) the code and is worth using if you have a subscription.
-
-### Restricting access to /sys and /proc
-
-There are also some methods of [kernel attack surface reduction](https://madaidans-insecurities.github.io/guides/linux-hardening.html#kernel-attack-surface-reduction) and [access restrictions to sysfs](https://madaidans-insecurities.github.io/guides/linux-hardening.html#restricting-sysfs) that can further improve security.
-
-Disabling access to `/sys` without a proper whitelist will lead to various applications breaking. This will unfortunately be an extremely tedious process for most users. Kicksecure, and by extension, Whonix, has an experimental [hide hardware info service](https://github.com/Kicksecure/security-misc/blob/master/lib/systemd/system/hide-hardware-info.service) which does just this. From our testing, these work perfectly fine on minimal Kicksecure installations and both Qubes-Whonix Workstation and Gateway. If you are using Kicksecure or Whonix, we recommend that you follow the [Kicksecure Wiki](https://www.kicksecure.com/wiki/Security-misc) to enable hide hardware info service.
 
 ### Disable Simultaneous Multithreading (SMT)
 
