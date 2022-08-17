@@ -70,5 +70,5 @@ Finally, enable the `lokinet` service:
 ## Creating the AppVM
 
 Just create the AppVM as usual, and you would be good to go. There are a few things to keep in mind though:
-- You should probably set networking to use `sys-firewall`. I have tested using my ProtonVPN ProxyVM for networking, and DNS was not working. Besides, it makes litle sense to attempt such setup anyways, unless you are worried about accidental leaks or a compromised AppVM.
+- You should probably set networking to use `sys-firewall`. I have tested using my ProtonVPN ProxyVM for networking, and DNS was not working. Besides, it makes little sense to attempt such setup anyways, unless you are worried about accidental leaks or a compromised AppVM.
 - You should give the AppVM the `network-manager` service so that Lokinet can set up networking properly and get DNS working.
