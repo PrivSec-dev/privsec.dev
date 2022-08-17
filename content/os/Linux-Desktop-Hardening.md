@@ -243,7 +243,11 @@ grsecurity is a set of kernel patches that attempt to improve security of the Li
 
 The [hardened memory allocator](https://github.com/GrapheneOS/hardened_malloc) from [GrapheneOS](https://grapheneos.org) can also be used on general Linux distributions. It is available as an [AUR package](https://wiki.archlinux.org/title/Security#Hardened_malloc) on Arch based distributions, and (though not enabled by default) on Whonix and Kicksecure.
 
-If you are using Whonix, Kicksecure or the AUR package, consider setting up `LD_PRELOAD` as described in the [Kicksecure Documentation](https://www.kicksecure.com/wiki/Hardened_Malloc) or [Arch Wiki](https://wiki.archlinux.org/title/Security#Hardened_malloc).
+On Fedora, there are currently 2 builds for it:
+- [Build by Divested Computing Group](https://github.com/divestedcg/rpm-hardened_malloc)
+- [Build by HardHatOS](https://github.com/HardHatOS/hardened_malloc)
+
+If you are using Whonix, Kicksecure or have Hardened_Malloc installed somewhere, consider setting up `LD_PRELOAD` as described in the [Kicksecure Documentation](https://www.kicksecure.com/wiki/Hardened_Malloc) or [Arch Wiki](https://wiki.archlinux.org/title/Security#Hardened_malloc).
 
 ### Mountpoint Hardening
 
