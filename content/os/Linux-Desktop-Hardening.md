@@ -5,9 +5,13 @@ tags: ['operating systems', 'linux', 'privacy', 'security']
 author: Tommy
 ---
 
-Linux is [not](https://madaidans-insecurities.github.io/linux.html) a security operating system. However, there are step you can take harden it, reduce its attack surface and improve its privacy.
+Linux is [not](https://madaidans-insecurities.github.io/linux.html) a secure operating system. However, there are step you can take harden it, reduce its attack surface and improve its privacy.
 
-**Notes**: This guide is largely based on [Madaidan's Linux hardening guide](https://madaidans-insecurities.github.io/guides/linux-hardening.html); however, it does take into account the usability, ease of maintenance of each recommendation. The goal is to produce a guide that intermediate to advanced Linux users can reasonably follow to set up and maintain the security configurations. It will also **not** try to be distribution agnostic, and there will be many distribution specific recommendations.
+**Disclaimers**: 
+
+This guide is largely based on [Madaidan's Linux hardening guide](https://madaidans-insecurities.github.io/guides/linux-hardening.html); however, it does take into account usability and ease of maintenance of each recommendation. The goal is to produce a guide that intermediate to advanced Linux users can reasonably follow to set up and maintain the security configurations. It will also **not** try to be distribution agnostic, and there will be many distribution specific recommendations. 
+
+Some of the sections will include mentions of unofficial builds of packages like `linux-hardened`, `lkrg-akmod`, `hardend-malloc`, and so on. These are not endorsements. They are merely there to show you that you have an option to easily obtain and update these packages. Using unofficial builds of packages means adding more parties to trust, and you have to evaluate whether it is worth doing so for the potential privacy or security benefits or not.
 
 ![Fedora Tux](/images/fedora-tux.png)
 
@@ -221,7 +225,9 @@ Disabling access to `/sys` without a proper whitelist will lead to various appli
 
 ### linux-hardened
 
-Some distributions like Arch Linux have the [linux-hardened](https://github.com/anthraxx/linux-hardened) kernel package. It includes [hardening patches](https://wiki.archlinux.org/title/security#Kernel_hardening) and more security-conscious defaults. linux-hardened has `kernel.unprivileged_userns_clone=0` disabled by default as well. See the [note above](#kernel-hardening) about how this might impact you.
+Some distributions like Arch Linux have the [linux-hardened](https://github.com/anthraxx/linux-hardened) kernel package. It includes [hardening patches](https://wiki.archlinux.org/title/security#Kernel_hardening) and more security-conscious defaults. There is an [unofficial build](https://github.com/HardHatOS/kernel-hardened) of linux-hardened by HardHatOS, though it is not signed with a secure boot key like the official Fedora kernel, unfortunately.
+
+linux-hardened has `kernel.unprivileged_userns_clone=0` disabled by default as well. See the [note above](#kernel-hardening) about how this might impact you.
 
 ### Linux Kernel Runtime Guard (LKRG)
 
@@ -235,7 +241,7 @@ On Fedora, [fepitre](https://github.com/fepitre), a QubesOS developer, has a [CO
 
 grsecurity is a set of kernel patches that attempt to improve security of the Linux kernel. It requires [payment to access](https://grsecurity.net/purchase) the code and is worth using if you have a subscription.
 
-### Disable Simultaneous Multithreading (SMT)
+### Disabling Simultaneous Multithreading (SMT)
 
 [SMT](https://en.wikipedia.org/wiki/Simultaneous_multithreading) has been the cause of numerous hardware vulnerabilities, and subsequent patches for those vulnerabilities often come with performance penalties that negate a lot of the performance gain given by SMT. If you followed the “Hardening Boot Parameters” section above, some kernel parameters already disable SMT. If the option is available to you, we recommend that you disable it in your firmware as well.
 
@@ -263,15 +269,20 @@ SUID allows a user to execute an application as the owner of that application, w
 
 It is desirable to remove SUID from as many binaries as possible; however, this takes substantial effort and trial and error on the user's part, as some applications require SUID to function.
 
-Kicksecure, and by extension, Whonix has an experimental [permission hardening service](https://github.com/Kicksecure/security-misc/blob/master/lib/systemd/system/permission-hardening.service) and [application whitelist](https://github.com/Kicksecure/security-misc/tree/master/etc/permission-hardening.d) to automate SUID removal from most binaries and libraries on the system. From our testing, these work perfectly fine on a minimal Kicksecure installation and both Qubes-Whonix Workstation and Gateway.
+Kicksecure, and by extension, Whonix has an experimental [permission hardening service](https://github.com/Kicksecure/security-misc/blob/master/lib/systemd/system/permission-hardening.service) and [application whitelist](https://github.com/Kicksecure/security-misc/tree/master/etc/permission-hardening.d) to automate SUID removal from most binaries and libraries on the system. From my testing, these work perfectly fine on a minimal Kicksecure installation and both Qubes-Whonix Workstation and Gateway.
 
-If you are using Kicksecure or Whonix, we recommend that you follow the [Kicksecure Wiki](https://www.kicksecure.com/wiki/SUID_Disabler_and_Permission_Hardener) to enable the permission hardener.
+If you are using Kicksecure or Whonix, consider enabling the `permission-hardening` service.
 
-Users of other distributions can adapt the permission hardener to their own system based on the source code linked above.
+### Securing Time Synchronization
 
-### Secure Time Synchronization
+Most Linux distributions by default (especially distributions with `systemd-timesyncd`) use NTP for time synchronization which is unencrypted and unauthenticated. There are two ways to easily solve this problem:
 
-Most Linux distributions by default (especially Arch based distributions with `systemd-timesyncd`) use NTP for time synchronization which is unencrypted and unauthenticated. Securing NTP can be achieved by [configuring NTS with chronyd](https://fedoramagazine.org/secure-ntp-with-nts/) or by using [sdwdate](https://github.com/Kicksecure/sdwdate) on Debian based distributions.
+- [Configure NTS with chronyd](https://fedoramagazine.org/secure-ntp-with-nts/)
+- Use [sdwdate](https://github.com/Kicksecure/sdwdate) on Debian based distributions.
+
+If decide on using NTS with chronyd, consider using multiple different sources to synchronize your time with, and require at least half or more of those providers to actually change the time on your system.
+
+[GrapheneOS](https://grapheneos.org) actually uses a quite nice configuration for this with their infrastructure. I recommend that you replicate their [`chrony.conf`](https://github.com/GrapheneOS/infrastructure/blob/main/chrony.conf) on your system.
 
 ### Linux Pluggable Authentication Modules (PAM)
 
@@ -285,13 +296,15 @@ sudo authselect select <profile_id, default: sssd> with-faillock without-nullok 
 
 On systems where [`pam_faillock`](https://man7.org/linux/man-pages/man8/pam_tally.8.html) is not available, consider using [`pam_tally2`](https://man7.org/linux/man-pages/man8/pam_tally.8.html) instead.
 
+If you have a Yubikey, you can also use the `pam_u2f` module to require second factor authentication for your login. Follow the [Arch Wiki](https://wiki.archlinux.org/title/Universal_2nd_Factor) documentation for this. Note that you **must** set a non-transient hostname before setting this up, as you will not be able to login when your hostname changes.
+
 ### USB Port Protection
 
 To better protect your [USB](https://en.wikipedia.org/wiki/USB) ports from attacks such as [BadUSB](https://en.wikipedia.org/wiki/BadUSB), we recommend [USBGuard](https://github.com/USBGuard/usbguard). USBGuard has [documentation](https://github.com/USBGuard/usbguard#documentation) as does the [Arch Wiki](https://wiki.archlinux.org/title/USBGuard).
 
 Another alternative option if you’re using the [linux-hardened](#linux-hardened) is the [`deny_new_usb`](https://github.com/GrapheneOS/linux-hardened/commit/96dc427ab60d28129b36362e1577b6673b0ba5c4) sysctl. See [Preventing USB Attacks with `linux-hardened`](https://blog.lizzie.io/preventing-usb-attacks-with-linux-hardened.html).
 
-### Secure Boot
+## Secure Boot
 
 [Secure Boot](https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface#Secure_Boot) can be used to secure the boot process by preventing the loading of [unsigned](https://en.wikipedia.org/wiki/Public-key_cryptography) [UEFI](https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface) drivers or [boot loaders](https://en.wikipedia.org/wiki/Bootloader).
 
@@ -300,6 +313,8 @@ One of the problems with Secure Boot, particularly on Linux is, that only the ch
 To eliminate the need to trust Microsoft's keys, follow the "Using your own keys" section on the [Arch Wiki](https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot). The important thing that needs to be done here is to replace the OEM's key with your own Platform Key.
 
 There are several ways to work around the unverified initramfs:
+
+### Encrypted /boot
 
 The first way is to [encrypt the /boot partition](https://wiki.archlinux.org/title/GRUB#Encrypted_/boot). If you are on Fedora Workstation (not Silverblue), you can follow [this guide](https://mutschler.eu/linux/install-guides/fedora-btrfs-33/) to convert the existing installation to encrypted `/boot`. openSUSE comes with this that by default.
 
@@ -310,7 +325,9 @@ There are a few options depending on your configuration:
 - If you enroll your own keys as described above, and your distribution supports Secure Boot by default, you can add your distribution's EFI Key into the list of trusted keys (db keys). It can then be enrolled into the firmware. Then, you should move all of your keys off your local storage device.
 - If you enroll your own keys as described above, and your distribution does **not** support Secure Boot out of the box (like Arch Linux), you have to leave the keys on the disk and setup automatic signing of the [kernel](https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#Signing_the_kernel_with_a_pacman_hook) and bootloader. If you are using Grub, you can install it with the `--no-shim-lock` option and remove the need for the chainloader.
 
-The second option is to creating an [EFI Boot Stub](https://wiki.archlinux.org/title/Unified_kernel_image) that contains the kernel, [initramfs](https://en.wikipedia.org/wiki/Initial_ramdisk), and [microcode](https://en.wikipedia.org/wiki/Microcode). This EFI stub can then be signed. If you use [dracut](https://en.wikipedia.org/wiki/Dracut_(software)) this can easily be done with the [`--uefi-stub` switch](https://man7.org/linux/man-pages/man8/dracut.8.html) or the [`uefi_stub` config](https://www.man7.org/linux/man-pages/man5/dracut.conf.5.html) option. This option also requires you to leave the keys on the disk to setup automatic signing, which weakens the security model.
+### Unified Kernel Image
+
+The second option is to creating an [Unified Kernel Image](https://wiki.archlinux.org/title/Unified_kernel_image) that contains the kernel, [initramfs](https://en.wikipedia.org/wiki/Initial_ramdisk), and [microcode](https://en.wikipedia.org/wiki/Microcode). This EFI stub can then be signed. If you use [dracut](https://en.wikipedia.org/wiki/Dracut_(software)) this can easily be done with the [`--uefi-stub` switch](https://man7.org/linux/man-pages/man8/dracut.8.html) or the [`uefi_stub` config](https://www.man7.org/linux/man-pages/man5/dracut.conf.5.html) option. This option also requires you to leave the keys on the disk to setup automatic signing, which weakens the security model.
 
 After setting up Secure Boot it is crucial that you set a “firmware password” (also called a “supervisor password”, “BIOS password” or “UEFI password”), otherwise an adversary can simply disable Secure Boot.
 
