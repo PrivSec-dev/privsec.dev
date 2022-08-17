@@ -1,5 +1,6 @@
 ---
-title: "Linux Hardening Guide"
+title: "Linux Desktop Hardening"
+date: 2022-08-17
 tags: ['operating systems', 'linux', 'privacy', 'security']
 author: Tommy
 ---
@@ -41,9 +42,13 @@ The Fedora Project does this by [counting](https://fedoraproject.org/wiki/Change
 
 This [option](https://dnf.readthedocs.io/en/latest/conf_ref.html#options-for-both-main-and-repo) is currently off by default. However, you could add `countme=false` to `/etc/dnf/dnf.conf` just in case it is enabled in the future. On systems that use `rpm-ostree` such as Fedora Silverblue or Kinoite, the `countme` option can be disabled by masking the [rpm-ostree-countme](https://fedoramagazine.org/getting-better-at-counting-rpm-ostree-based-systems/) timer.
 
-openSUSE also uses a [unique ID](https://en.opensuse.org/openSUSE:Statistics) to count systems, which can be disabled by deleting the `/var/lib/zypp/AnonymousUniqueId` file.
+openSUSE uses a [unique ID](https://en.opensuse.org/openSUSE:Statistics) to count systems, which can be disabled by deleting the `/var/lib/zypp/AnonymousUniqueId` file.
 
-[Snapd](https://github.com/snapcore/snapd) assigns a [unique ID](https://snapcraft.io/docs/snap-store-metrics) to your snapd installation and use it for telemetry. While this is generally not a problem, if your threat model calls for anonimity, you should not be using snap packages, and you should remove snapd from your Ubuntu installation. On Debian based distributions, and especially Ubuntu, consider holding `snapd` with `sudo apt-mark hold snapd` to avoid accidentally installing it in the future.
+Zorin OS uses the `zorin-os-cencus` package, which also uses a [unique ID](https://zorin.com/legal/privacy/) to count systems. You can opt out of this by doing `sudo apt purge zorin-os-census`, and optionally hold it with `sudo apt-mark hold zorin-os-census` to avoid accidentally installing it in the future.
+
+[Snapd](https://github.com/snapcore/snapd) assigns a [unique ID](https://snapcraft.io/docs/snap-store-metrics) to your snapd installation and use it for telemetry. While this is generally not a problem, if your threat model calls for anonimity, you should not be using snap packages, and you should remove snapd from your Ubuntu installation. Like with Zorin Census, on Debian based distributions, and especially Ubuntu, consider holding `snapd` with `sudo apt-mark hold snapd`.
+
+Of course, this is a non-exhaustive list of how different Linux distributions do this. If you are aware of any other tracking mechanisms that different distributions use, feel free to make a [pull request](https://github.com/PrivSec-dev/privsec.dev/blob/main/content/os/Linux-Desktop-Hardening.md) or [discussion post](https://github.com/PrivSec-dev/privsec.dev/discussions) detailing them!
 
 ### Keystroke Anonymization
 You could be [fingerprinted based on soft biometric traits](https://www.whonix.org/wiki/Keystroke_Deanonymization) when you use the keyboard. The [Kloak](https://github.com/vmonaco/kloak) package could help you mitigate this threat. It is available as a .deb package from [Kicksecure's repository](https://www.kicksecure.com/wiki/Packages_for_Debian_Hosts) and an [AUR package](https://aur.archlinux.org/packages/kloak-git).
@@ -84,7 +89,7 @@ Snap packages come in [two variants](https://snapcraft.io/docs/snap-confinement)
 
 Snap permissions can be managed via the Snap Store or Ubuntu's custom patched GNOME Control Center.
 
-There are some caveats with snapd, including the fact that it has failed multiple security autdits by openSUSE, according to Richard Brown.
+One caveat with Snap packages is that you only have control over the interfaces declared in their manifests. For example, snap has seperate interfaces for `audio-playback` and `audio-record`; however, some packages will only declare the legacy `pulseaudio` interface which grants them permission to both play and record audio. Likewise, some applications may work perfectly fine with Wayland, but the package maintainer may only declare the X11 interface in their manifest. For these cases, you need to reach out to the maintainer of the Snap package to update the manifest accordingly.
 
 ### Firejail
 
@@ -92,11 +97,15 @@ There are some caveats with snapd, including the fact that it has failed multipl
 
 Madaidan [provided](https://madaidans-insecurities.github.io/linux.html#firejail) additional details on how Firejail can worsen the security of your device.
 
-Generally, you are better off not using it.
+If you do use Firejail, there is a tool called [Firetools](https://github.com/netblue30/firetools) which can help you quickly manage what an application can have access to and launch them. Note that the configurations by `Firetools` are temporarily and it does not provide you with an option to save a profile for long term use. 
+
+Firejail can also confine X11 windows using Xpra or Xephr, something that Flatpak and Snap cannot do. I highly recommend that you check out their [documentation](https://firejail.wordpress.com/documentation-2/x11-guide/) on how to set this up.
+
+One trick to consistently launch applications which have a Firejail profile confined is to use the `firecfg` command. This will create a symlink in `/usr/local/bin/app_name_here` pointing to Firejail. `.desktop` files which do not specifically specify the absolute path of the binaries to use will launch the application through the symlink and have Firejail sandbox them this way. Of course, this is bypassable if you or some other applications launch the application directly from `/usr/bin/app_name_here` instead.
 
 ### Mandatory Access Control
 
-[Mandatory access control](https://en.wikipedia.org/wiki/Mandatory_access_control) systems require policy files in order to force constraints on the system.
+Common Linux [Mandatory access control](https://en.wikipedia.org/wiki/Mandatory_access_control) frameworks require policy files in order to force constraints on the system.
 
 The two main control systems are [SELinux](https://en.wikipedia.org/wiki/Security-Enhanced_Linux) (used on Android and Fedora based distributions) and [AppArmor](https://en.wikipedia.org/wiki/AppArmor) (Used on Debian based distributions and most openSUSE variants).
 
@@ -104,9 +113,9 @@ Fedora includes SELinux preconfigured with some policies that will confine [syst
 
 openSUSE gives the choice of AppArmor or SELinux during the installation process. You should stick to the default for each variant (AppArmor for [Tumbleweed](https://get.opensuse.org/tumbleweed/) and SELinux for [MicroOS](https://microos.opensuse.org/)). openSUSE’s SELinux policies are derived from Fedora.
 
-Arch and Arch-based operating systems often do not come with a mandatory access control system and that must be configured manually for either [AppArmor](https://wiki.archlinux.org/title/AppArmor) or [SELinux](https://wiki.archlinux.org/title/SELinux).
+Arch and Arch-based operating systems often do not come with a mandatory access control system and you must manually install and configure [AppArmor](https://wiki.archlinux.org/title/AppArmor) for it.
 
-Linux desktops don't usually include individual app confinement rules, unlike Android which sandboxes every application installed.
+Note that unlike Android, traditional desktop Linux distributions typically do not have full system Mandatory Access Control policies, and only a few system daemons are actually confined.
 
 ### Making your own policies/profiles
 
@@ -119,9 +128,9 @@ You can make your own AppArmor profiles, SELinux policies, Bubblewrap profiles, 
 
 ### Securing Linux containers
 
-If you’re running a server, you may have heard of Linux Containers, Docker. Containers are more common in server and development environments where individual apps are built to operate independently.
+If you’re running a server, you may have heard of Linux Containers. They are more common in server environments where individual services are built to operate independently. However, you may sometimes see them on desktop systems as well, especially for development purposes.
 
-[Docker](https://en.wikipedia.org/wiki/Docker_(software)) is one of the most common container solutions. It is **not** a proper sandbox, and this means that there is a large kernel attack surface. You can should the [Docker and OCI Hardening](/os/docker-and-oci-hardening/) guide to mitigate this problem.
+[Docker](https://en.wikipedia.org/wiki/Docker_(software)) is one of the most common container solutions. It is **not** a proper sandbox, and this means that there is a large kernel attack surface. You can should the [Docker and OCI Hardening](/os/docker-and-oci-hardening/) guide to mitigate this problem. In short, there are things you can do like using rootless containers (either through configuration or through using [Podman](https://podman.io/)), using a runtime which provides a psedo-kernel for each container ([gVisor](https://gvisor.dev/)), and so on.
 
 Another option is [Kata containers](https://katacontainers.io/), where virtual machines masquerade as containers. Each Kata container has its own Linux kernel and is isolated from the host.
 
