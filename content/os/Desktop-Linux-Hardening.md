@@ -1,13 +1,13 @@
 ---
 title: "Desktop Linux Hardening"
-date: 2022-08-17
+date: 2022-08-18
 tags: ['operating systems', 'linux', 'privacy', 'security']
 author: Tommy
 ---
 
 Linux is [not](https://madaidans-insecurities.github.io/linux.html) a secure operating system. However, there are steps you can take to harden it, reduce its attack surface and improve its privacy.
 
-**Disclaimers**: 
+**Before We Start**... 
 
 This guide is largely based on [Madaidan's Linux hardening guide](https://madaidans-insecurities.github.io/guides/linux-hardening.html); however, it does take into account usability and ease of maintenance of each recommendation. The goal is to produce a guide that intermediate to advanced Linux users can reasonably follow to set up and maintain the security configurations. It will also **not** try to be distribution agnostic, and there will be many distribution specific recommendations. 
 
@@ -242,7 +242,7 @@ grsecurity is a set of kernel patches that attempt to improve security of the Li
 
 ### Disabling Simultaneous Multithreading (SMT)
 
-[SMT](https://en.wikipedia.org/wiki/Simultaneous_multithreading) has been the cause of numerous hardware vulnerabilities, and subsequent patches for those vulnerabilities often come with performance penalties that negate a lot of the performance gain given by SMT. If you followed the “Hardening Boot Parameters” section above, some kernel parameters already disable SMT. If the option is available to you, we recommend that you disable it in your firmware as well.
+[SMT](https://en.wikipedia.org/wiki/Simultaneous_multithreading) has been the cause of numerous hardware vulnerabilities, and subsequent patches for those vulnerabilities often come with performance penalties that negate a lot of the performance gain given by SMT. If you followed the “Hardening Boot Parameters” section above, some kernel parameters already disable SMT. If the option is available to you, I recommend that you disable it in your firmware as well.
 
 ### Hardened Memory Allocator
 
@@ -299,7 +299,7 @@ If you have a Yubikey, you can also use the `pam_u2f` module to require second f
 
 ### USB Port Protection
 
-To better protect your [USB](https://en.wikipedia.org/wiki/USB) ports from attacks such as [BadUSB](https://en.wikipedia.org/wiki/BadUSB), we recommend [USBGuard](https://github.com/USBGuard/usbguard). USBGuard has [documentation](https://github.com/USBGuard/usbguard#documentation) as does the [Arch Wiki](https://wiki.archlinux.org/title/USBGuard).
+To better protect your [USB](https://en.wikipedia.org/wiki/USB) ports from attacks such as [BadUSB](https://en.wikipedia.org/wiki/BadUSB), I recommend [USBGuard](https://github.com/USBGuard/usbguard). USBGuard has [documentation](https://github.com/USBGuard/usbguard#documentation) as does the [Arch Wiki](https://wiki.archlinux.org/title/USBGuard).
 
 Another alternative option if you’re using the [linux-hardened](#linux-hardened) is the [`deny_new_usb`](https://github.com/GrapheneOS/linux-hardened/commit/96dc427ab60d28129b36362e1577b6673b0ba5c4) sysctl. See [Preventing USB Attacks with `linux-hardened`](https://blog.lizzie.io/preventing-usb-attacks-with-linux-hardened.html).
 
