@@ -1,7 +1,8 @@
 ---
 title: "Desktop Linux Hardening"
-date: 2022-08-18
-tags: ['operating systems', 'linux', 'privacy', 'security']
+date: 2022-08-17
+lastmod: 2022-08-18
+tags: ['Operating Systems', 'Linux', 'Privacy', 'Security']
 author: Tommy
 ---
 
