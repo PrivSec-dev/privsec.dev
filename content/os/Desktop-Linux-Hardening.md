@@ -25,7 +25,7 @@ Most Linux distributions have an option within its installer for enabling [LUKS]
 
 Consider using [encrypted swap](https://wiki.archlinux.org/title/Dm-crypt/Swap_encryption) or [ZRAM](https://wiki.archlinux.org/title/Swap#zram-generator) instead of unencrypted swap to avoid potential security issues with sensitive data being pushed to [swap space](https://en.wikipedia.org/wiki/Memory_paging). While ZRAM can be set up post-installation, if you want to use encrypted swap, you should set it up while partitioning your drive.
 
-Depending on your distribution, encrypted swap may be sutomatically set up if you choose to encrypt your drive. Fedora [uses ZRAM by default](https://fedoraproject.org/wiki/Changes/SwapOnZRAM), regardless of whether you enable drive encryption or not.
+Depending on your distribution, encrypted swap may be automatically set up if you choose to encrypt your drive. Fedora [uses ZRAM by default](https://fedoraproject.org/wiki/Changes/SwapOnZRAM), regardless of whether you enable drive encryption or not.
 
 ## Privacy Tweaks
 
@@ -147,7 +147,7 @@ You can make your own AppArmor profiles, SELinux policies, Bubblewrap profiles, 
 
 If you’re running a server, you may have heard of Linux Containers. They are more common in server environments where individual services are built to operate independently. However, you may sometimes see them on desktop systems as well, especially for development purposes.
 
-[Docker](https://en.wikipedia.org/wiki/Docker_(software)) is one of the most common container solutions. It is **not** a proper sandbox, and this means that there is a large kernel attack surface. You can should the [Docker and OCI Hardening](/os/docker-and-oci-hardening/) guide to mitigate this problem. In short, there are things you can do like using rootless containers (either through configuration or through using [Podman](https://podman.io/)), using a runtime which provides a psedo-kernel for each container ([gVisor](https://gvisor.dev/)), and so on.
+[Docker](https://en.wikipedia.org/wiki/Docker_(software)) is one of the most common container solutions. It is **not** a proper sandbox, and this means that there is a large kernel attack surface. You can should the [Docker and OCI Hardening](/os/docker-and-oci-hardening/) guide to mitigate this problem. In short, there are things you can do like using rootless containers (either through configuration or through using [Podman](https://podman.io/)), using a runtime which provides a psuedo-kernel for each container ([gVisor](https://gvisor.dev/)), and so on.
 
 Another option is [Kata containers](https://katacontainers.io/), where virtual machines masquerade as containers. Each Kata container has its own Linux kernel and is isolated from the host.
 
@@ -190,7 +190,7 @@ There are some additional kernel hardening options such as configuring [sysctl](
 - [2.2 Sysctl](https://madaidans-insecurities.github.io/guides/linux-hardening.html#sysctl)
 - [2.5.2 Blacklisting kernel modules](https://madaidans-insecurities.github.io/guides/linux-hardening.html#kasr-kernel-modules)
 
-Madaidan recommends that you disable unprivileged [user namespaces](https://madaidans-insecurities.github.io/linux.html#kernel) due to it being responsible for various privileged escalation vulnerabilities. However, some software such as Podman and LXD require unprivileged user namespaces to function. If you decide that you want to use these technoligies, do not disable `kernel.unprivileged_userns_clone`.
+Madaidan recommends that you disable unprivileged [user namespaces](https://madaidans-insecurities.github.io/linux.html#kernel) due to it being responsible for various privilege escalation vulnerabilities. However, some software such as Podman and LXD require unprivileged user namespaces to function. If you decide that you want to use these technologies, do not disable `kernel.unprivileged_userns_clone`.
 
 If you are using KickSecure or Whonix, most of these hardening have already been done for you thanks to [security-misc](https://github.com/Kicksecure/security-misc). If you are using a Debian, you should consider [morphing](https://www.kicksecure.com/wiki/Debian) it into KickSecure. On other distributions, you can copy the configurations from the following files to use:
 
@@ -232,7 +232,7 @@ linux-hardened has `kernel.unprivileged_userns_clone=0` disabled by default as w
 
 LKRG is a kernel module that performs runtime integrity check on the kernel to help detect exploits against the kernel. LKRG works in a *post*-detect fashion, attempting to respond to unauthorized modifications to the running Linux kernel. While it is [bypassable by design](https://lkrg.org/), it does stop off-the-shelf malware that does not specifically target LKRG itself. This may make exploits harder to develop and execute on vulnerable systems.
 
-If you can get LKRG and maintain module updates, it provides a worthwhile improvement to security. Debian-based distributions can get the LKRG DKMS package from KickSecure's repository and the [KickSecure documentation](https://www.kicksecure.com/wiki/Linux_Kernel_Runtime_Guard_LKRG) has installation instructions. Once again,if you are using debian, consider  [morphing](https://www.kicksecure.com/wiki/Debian) it into KickSecure. It should be noted that KickSecure does not currently install LKRG by default, and you will need to run `sudo apt install lkrg-dkms linux-headers-amd64` to obtain it.
+If you can get LKRG and maintain module updates, it provides a worthwhile improvement to security. Debian-based distributions can get the LKRG DKMS package from KickSecure's repository and the [KickSecure documentation](https://www.kicksecure.com/wiki/Linux_Kernel_Runtime_Guard_LKRG) has installation instructions. Once again, if you are using Debian, consider [morphing](https://www.kicksecure.com/wiki/Debian) it into KickSecure. It should be noted that KickSecure does not currently install LKRG by default, and you will need to run `sudo apt install lkrg-dkms linux-headers-amd64` to obtain it.
 
 On Fedora, [fepitre](https://github.com/fepitre), a QubesOS developer, has a [COPR repository](https://copr.fedorainfracloud.org/coprs/fepitre/lkrg/) where you can install it. Arch based systems can obtain the LKRG DKMS package via an [AUR package](https://aur.archlinux.org/packages/lkrg-dkms).
 
