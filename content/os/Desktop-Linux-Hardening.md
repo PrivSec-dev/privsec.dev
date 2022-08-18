@@ -1,5 +1,5 @@
 ---
-title: "Linux Desktop Hardening"
+title: "Desktop Linux Hardening"
 date: 2022-08-17
 tags: ['operating systems', 'linux', 'privacy', 'security']
 author: Tommy
@@ -68,7 +68,7 @@ Of course, this is a non-exhaustive list of how different Linux distributions do
 ### Keystroke Anonymization
 You could be [fingerprinted based on soft biometric traits](https://www.whonix.org/wiki/Keystroke_Deanonymization) when you use the keyboard. The [Kloak](https://github.com/vmonaco/kloak) package could help you mitigate this threat. It is available as a .deb package from [Kicksecure's repository](https://www.kicksecure.com/wiki/Packages_for_Debian_Hosts) and an [AUR package](https://aur.archlinux.org/packages/kloak-git).
 
-WIth that being said, if your threat model calls for using something like Kloak, you are probably better off just using Whonix.
+With that being said, if your threat model calls for using something like Kloak, you are probably better off just using Whonix.
 
 ## Application Confinement
 Some sandboxing solutions for desktop Linux distributions do exist; however, they are not as strict as those found in macOS or ChromeOS. Applications installed from the package manager (`dnf`, `apt`, etc.) typically have **no** sandboxing or confinement whatsoever. Below are a few projects that aim to solve this problem:
