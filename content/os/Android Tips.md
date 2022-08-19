@@ -163,9 +163,9 @@ The Advanced Protection Program provides enhanced threat monitoring and enables:
 
 ### Google Play System Updates
 
-In the past, Android security updates had to be shipped by the operating system vendor. Android has become more modular beginning with Android 10, and Google can push security updates for **some** system components via the privileged Play Services.
+In the past, Android security updates had to be shipped by the operating system vendor. Android has become more modular beginning with [Android 10](https://www.android.com/android-10/), and Google [can push security updates](https://blog.google/products/android-enterprise/android-10-security/) for **some** system components via the privileged Play Services.
 
-If you have an EOL device shipped with Android 10 or above and are unable to run any of our recommended operating systems on your device, you are likely going to be better off sticking with your OEM Android installation (as opposed to an insecure operating system here such as LineageOS or /e/ OS). This will allow you to receive **some** security fixes from Google, while not violating the Android security model by using an insecure Android derivative and increasing your attack surface. You should still upgrade to a supported device as soon as possible.
+If you have an EOL device shipped with Android 10 or above (shipped beginnning 2020) and are unable to run any of our recommended operating systems on your device, you are likely going to be better off sticking with your OEM Android installation (as opposed to an insecure operating system here such as LineageOS or /e/ OS). This will allow you to receive **some** security fixes from Google, while not violating the Android security model by using an insecure Android derivative and increasing your attack surface. You should still upgrade to a supported device as soon as possible.
 
 ### Disable Advertising ID
 
