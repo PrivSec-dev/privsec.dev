@@ -115,7 +115,7 @@ One caveat with Snap packages is that you only have control over the interfaces 
 
 Madaidan [provided](https://madaidans-insecurities.github.io/linux.html#firejail) additional details on how Firejail can worsen the security of your device.
 
-If you do use Firejail, there is a tool called [Firetools](https://github.com/netblue30/firetools) which can help you quickly manage what an application can have access to and launch them. Note that the configurations by `Firetools` are temporarily and it does not provide you with an option to save a profile for long term use. 
+If you do use Firejail, there is a tool called [Firetools](https://github.com/netblue30/firetools) which can help you quickly manage what an application can have access to and launch them. Note that the configurations by `Firetools` are temporary and it does not provide you with an option to save a profile for long term use. 
 
 Firejail can also confine X11 windows using Xpra or Xephr, something that Flatpak and Snap cannot do. I highly recommend that you check out their [documentation](https://firejail.wordpress.com/documentation-2/x11-guide/) on how to set this up.
 
