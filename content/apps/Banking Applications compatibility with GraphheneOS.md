@@ -1,6 +1,7 @@
 ---
 title: "Banking Applications Compatibility with GrapheneOS"
 date: "2022-01-26"
+lastmod: "2022-08-21"
 tags: ['Applications', 'Android']
 author: akc3n
 canonicalURL: https://akc3n.org/projects/banking/
