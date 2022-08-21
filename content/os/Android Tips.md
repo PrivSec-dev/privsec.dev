@@ -63,7 +63,7 @@ Modern Android devices have global toggles for disabling Bluetooth and location 
 
 [Permissions on Android](https://developer.android.com/guide/topics/permissions/overview) grant you control over what apps are allowed to access. Google regularly makes [improvements](https://developer.android.com/about/versions/11/privacy/permissions) on the permission system in each successive version. All apps you install are strictly [sandboxed](https://source.android.com/security/app-sandbox), therefore, there is no need to install any antivirus apps. 
 
-You can manage Android permissions by going to **Settings** → **Privacy ** → **Permission Manager**. Be sure to remove from apps any permissions that they do not need.
+You can manage Android permissions by going to **Settings** → **Privacy** → **Permission Manager**. Be sure to remove from apps any permissions that they do not need.
 
 ## Enable VPN Killswitch
 
@@ -102,7 +102,7 @@ GrapheneOS has the LTE only mode exposed in settings. You can set this by going 
 
 If your Android-based operating system does not expose this setting in the Settings app, or if you want to set your baseband modem to a less restrictive mode, dial `*#*#4636#*#*` then hit **Phone information**. Here, you can set preferred network type to just the generations that you intend to use. For example, if you only want to use 4G and 5G, you can set it to `NR/LTE`.
 
-## Where to Get Your Aspplications
+## Where to Get Your Applications
 
 ### GrapheneOS App Store
 
