@@ -41,7 +41,13 @@ Beyond just reading the documentation from your VPN provider, you should also ch
 
 ## Multi-Hopping
 
-This feature is not a must, but it is very nice to have. Not all VPN providers own their hardware, datacenter, and network [WIP]
+This feature is not a must, but it is very nice to have. 
+
+Not all VPN providers own their hardware, datacenter, and network . In fact, if your check their network, most VPN providers end to rent their servers from different service providers. This means that beyond trusting the VPN provider, you are also trusting their providers to not monitor your traffic.
+
+By using using multihop, you can minize the risk of being monitored by your VPN provider's service providers. Your packets are encrypted at least twice and routed through at least 2 hops, with the entry node only knowing who you are but not what you visit, and with the exit node only knowing what you visit but not who you are. This cannot protect you from a malicious VPN provider as they will just compromise the VPN server on both ends, but it can help against a single node compromise (caused by a rougue datacenter employee for example).
+
+Ideally, you should choose two servers from two different countries when using this feature.
 
 ## Pluggable Transport
 
