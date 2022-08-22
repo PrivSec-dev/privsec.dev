@@ -36,6 +36,7 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 
 ### Belgium
 
+- [Belfius Mobile](https://play.google.com/store/apps/details?id=be.belfius.directmobile.android) - [Report](https://github.com/akc3n/banking/issues/110)
 - [ING Belgium](https://play.google.com/store/apps/details?id=com.ing.banking) - [Report](https://github.com/akc3n/banking/issues/45)
 
 ### Brazil
@@ -50,9 +51,13 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 - [EQ Bank Mobile Banking](https://play.google.com/store/apps/details?id=com.eqbank.eqbank) - [Report](https://github.com/akc3n/banking/issues/103)
 - [KOHO Financial](https://play.google.com/store/apps/details?id=ca.koho) - [Report](https://github.com/akc3n/banking/issues/104)
 - [RBC Mobile](https://play.google.com/store/apps/details?hl=en&id=com.rbc.mobile.android) - [Report](https://github.com/akc3n/banking/issues/32)
+- [QuestMobile: Invest & Trade](https://play.google.com/store/apps/details?id=com.questrade.questmobile) - [Report](https://github.com/akc3n/banking/issues/115)
+- [Questrade](https://play.google.com/store/apps/details?id=com.questrade.my) - [Report](https://github.com/akc3n/banking/issues/114)
 - [Simplii Financial](https://play.google.com/store/apps/details?id=com.pcfinancial.mobile) - [Report](https://github.com/akc3n/banking/issues/17)
 - [Tangerine Mobile App](https://play.google.com/store/apps/details?id=ca.tangerine.clients.banking.app) - [Report](https://github.com/akc3n/banking/issues/16)
-
+- [Wealthsimple](https://play.google.com/store/apps/details?id=com.wealthsimple) - [Report](https://github.com/akc3n/banking/issues/116)
+- [Wealthsimple Invest](https://play.google.com/store/apps/details?id=com.wealthsimple.trade) - [Report](https://github.com/akc3n/banking/issues/117)
+- 
 ### Czech Republic
 
 - [AirBank](https://play.google.com/store/apps/details?id=cz.airbank.android) - [Report](https://github.com/akc3n/banking/issues/31)
@@ -62,7 +67,9 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 
 - [Mobilbank DK – Danske Bank](https://play.google.com/store/apps/details?id=com.danskebank.mobilebank3.dk) - [Report](https://github.com/akc3n/banking/issues/5)
 - [MobilePay](https://play.google.com/store/apps/details?id=dk.danskebank.mobilepay) - [Report](https://github.com/akc3n/banking/issues/7)
+- [MitID](https://play.google.com/store/apps/details?id=dk.mitid.app.android) - [Report](https://github.com/akc3n/banking/issues/121)
 - [NemID nøgleapp](https://play.google.com/store/apps/details?id=dk.e_nettet.mobilekey.everyone) - [Report](https://github.com/akc3n/banking/issues/10)
+- [Nordea Mobile](https://play.google.com/store/apps/details?id=dk.nordea.mobilebank) - [Report](https://github.com/akc3n/banking/issues/118)
 
 ### Finland
 
@@ -83,6 +90,7 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 - [Kontist](https://play.google.com/store/apps/details?id=com.kontist&hl=en_US&gl=US) - [Report](https://github.com/akc3n/banking/issues/23)
 - [N26 — The Mobile Bank](https://play.google.com/store/apps/details?id=de.number26.android&hl=en_US&gl=US) - [Report](https://github.com/akc3n/banking/issues/21)
 - [Penta — Business Banking App](https://play.google.com/store/apps/details?id=com.getpenta.app&hl=en_US&gl=US) - [Report](https://github.com/akc3n/banking/issues/24)
+- [Santander Banking](https://play.google.com/store/apps/details?id=de.santander.presentation) - [Report](https://github.com/akc3n/banking/issues/119)
 - [Sparkasse](https://play.google.com/store/apps/details?id=com.starfinanz.smob.android.sfinanzstatus) - [Report](https://github.com/akc3n/banking/issues/44)
 - [Tomorrow Mobile Banking](https://play.google.com/store/apps/details?id=one.tomorrow.app&hl=en_US&gl=US) - [Report](https://github.com/akc3n/banking/issues/20)
 - [Volksbanken Raiffeisenbanken](https://play.google.com/store/apps/details?id=de.fiduciagad.banking.vr) - [Report](https://github.com/akc3n/banking/issues/36)
@@ -91,6 +99,7 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 ### Hungary
 
 - [UniCredit mBanking](https://play.google.com/store/apps/details?id=hr.asseco.android.jimba.mUCI.hu&hl=en&gl=US) - [Report](https://github.com/akc3n/banking/issues/87)
+
 
 ### India
 
@@ -102,9 +111,10 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 
 ### Netherlands
 
+- [ABN AMRO](https://play.google.com/store/apps/details?id=com.abnamro.nl.mobile.payments) - [Report](https://github.com/akc3n/banking/issues/108)
 - [ASN Bank](https://play.google.com/store/search?q=asn%20bank&c=apps&hl=nl&gl=US) - [Report](https://github.com/akc3n/banking/issues/105)
 - [Rabobank](https://play.google.com/store/apps/details?id=nl.rabomobiel) - [Report](https://github.com/akc3n/banking/issues/47)
-
+- 
 ### Norway
 
 - [Bank Norwegian](https://play.google.com/store/search?q=bank+norwegian&c=apps) - [Report](https://github.com/akc3n/banking/issues/95)
@@ -120,6 +130,10 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 
 - [IKO](https://play.google.com/store/apps/details?id=pl.pkobp.iko) - [Report](https://github.com/akc3n/banking/issues/25)
 
+### Portugal
+
+- [Caixadirecta Empresas](https://play.google.com/store/apps/details?id=pt.cgd.caixadirectaempresas) - [Report](https://github.com/akc3n/banking/issues/120)
+
 ### Romania
 
 - [BT Pay — Banca Transilvania](https://play.google.com/store/apps/details?id=ro.btrl.pay) - [Report](https://github.com/akc3n/banking/issues/83)
@@ -128,6 +142,10 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 ### Serbia
 
 - [Moja mBanka Raiffeisen](https://play.google.com/store/apps/details?id=rs.Raiffeisen.mobile) - [Report](https://github.com/akc3n/banking/issues/70)
+
+### Spain
+
+- [Evo Banco](https://play.google.com/store/apps/details?id=es.evobanco.bancamovil) - [Report](https://github.com/akc3n/banking/issues/112)
 
 ### Sweden
 
@@ -169,6 +187,7 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 ### United States
 
 - [Alliant Mobile Banking](https://play.google.com/store/apps/details?id=org.alliant.mobile&gl=US) - [Report](https://github.com/akc3n/banking/issues/85)
+- [Ally: Banking & Investing](https://play.google.com/store/apps/details?id=com.ally.MobileBanking&hl=en_US&gl=US) - [Report](https://github.com/akc3n/banking/issues/113)
 - [BECU](https://play.google.com/store/apps/details?id=org.becu.androidapp&gl=US) - [Report](https://github.com/akc3n/banking/issues/60)
 - [Chase Mobile](https://play.google.com/store/appds/details?id=com.chase.sig.android) - [Report](https://github.com/akc3n/banking/issues/13)
 - [Chime Mobile Banking](https://play.google.com/store/apps/details?id=com.onedebit.chime&gl=US) - [Report](https://github.com/akc3n/banking/issues/46)
@@ -180,6 +199,7 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 - [Grow Mobile Banking](https://play.google.com/store/apps/details?id=com.growfinancialfcu.growfinancialfcu&gl=US) - [Report](https://github.com/akc3n/banking/issues/68)
 - [GTE Mobile](https://play.google.com/store/apps/details?id=org.gtefinancial.mobile) - [Report](https://github.com/akc3n/banking/issues/81)
 - [GTE Cards (GTE Financial - Debit/Credit card management)](https://play.google.com/store/apps/details?id=com.a84102934.wallet.cardcontrol) - [Report](https://github.com/akc3n/banking/issues/82)
+- [Mainstreet Credit Union](https://play.google.com/store/apps/details?id=org.mainstreetcu.grip) - [Report](https://github.com/akc3n/banking/issues/111)
 - [Schwab Mobile](https://play.google.com/store/apps/details?id=com.schwab.mobile&gl=US) - [Report](https://github.com/akc3n/banking/issues/61)
 - [Texan CU Mobile](https://play.google.com/store/apps/details?id=com.ifs.banking.fiid1373) - [Report](https://github.com/akc3n/banking/issues/56)
 - [USAA Mobile](https://play.google.com/store/apps/details?id=com.usaa.mobile.android.usaa&gl=US) - [Report](https://github.com/akc3n/banking/issues/80)
