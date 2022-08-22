@@ -1,7 +1,7 @@
 ---
 title: "About Us"
 date: 2022-07-16
-lastmod: 2022-07-30
+lastmod: 2022-08-21
 ---
 
 PrivSec.dev is made by a group of enthusiastic individuals looking to provide practical privacy and security advice for the end user. We are security researchers, developers, system administrators... generally people with technical knowledge and work in the field.
@@ -18,12 +18,6 @@ Benevolent dictator for life @PrivSec.dev. System Administrator. Avid GrapheneOS
 **Website**: [tommytran.io](https://tommytran.io)\
 **Matrix**: [@tommy:arcticfoxes.net](https://matrix.to/#/@tommy:arcticfoxes.net)\
 **Email**: [tommy@privsec.dev](mailto:tommy@privsec.dev)
-
-### June
-PrivSec.dev Administrator. Security Researcher. GrapheneOS Developer. Excessively obsessed with Homestuck.
-
-**Matrix**: [@june:grapheneos.org](https://matrix.to/#/@june:grapheneos.org)\
-**Email**: [june@privsec.dev](mailto:june@privsec.dev)
 
 ### Randomhydrosol
 PrivSec.dev Administrator. GrapheneOS Developer. Friendliest Indian tech support on the planet Earth.
