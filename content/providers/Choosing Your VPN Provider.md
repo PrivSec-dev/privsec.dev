@@ -25,15 +25,27 @@ While this is generally not a problem with most providers, there has been instan
 
 Before buying a VPN, you should check the provider's documentation on what type of encryption they use, or if they do not have it, ask their support directly. 
 
+## VPN Killswitch
+
+A killswitch is critical for a VPN to prevent accidental IP leakage. Ideally, the VPN should create a new network interface, then drop all of the connections on other interfaces except when the connection is to the VPN provider's servers. This networking setup should also persist even when the VPN client is off to prevent leaks in case of a crash or during system startup. You should keep in mind that there may be applications which start up before the VPN client and attempt to access the network.
+
+On Android, this is less of an issue because the operating system has a built in killswitch since Android 7. However, other operating systems like Windows, macOS, common Linux distributions, iOS, etc do not have this feature built in, so you should really check if your VPN provider provides such a feature for your specific platform.
+
+Note that currently on iOS, VPNs are leaky due to a [vulnerability in the operating system](https://protonvpn.com/blog/apple-ios-vulnerability-disclosure/) itself, and has been for years.
+
+Some VPN providers like BytzVPN will only give you a bunch of OpenVPN profiles and tell you to import them to your OpenVPN client/NetworkManager configuration. Neither the OpenVPN client nor NetworkManager has a killswitch feature (not even a non-persistent one) on desktop operating systems. Manually making and **maintaining** a killswitch + keeping all of the profiles up-to-date is an extremely tedious task, and you should avoid these types of providers at all cost.
+
+## Checking for Leaks
+
+Beyond just reading the documentation from your VPN provider, you should also check for leaks yourself. [WIP]
+
 ## Multi-Hopping
 
-This feature is not a must, but it is very nice to have. Not all VPN providers own their hardware, datacenter, and network 
+This feature is not a must, but it is very nice to have. Not all VPN providers own their hardware, datacenter, and network [WIP]
 
 ## Pluggable Transport
 
 ## Payment Methods
-
-## VPN Killswitch
 
 ## DNS Filtering
 
