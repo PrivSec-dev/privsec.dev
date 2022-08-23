@@ -1,7 +1,6 @@
 ---
 title: "FLOSS Security"
 date: "2022-02-02T23:16:00+00:00"
-lastmod: "2022-03-17T23:32:15-07:00"
 tags: ['Knowledge Base', 'Privacy', 'Security']
 author: Rohan Kumar
 canonicalURL: https://seirdy.one/posts/2022/02/02/floss-security/

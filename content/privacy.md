@@ -1,7 +1,6 @@
 ---
 title: "Privacy Policy"
 date: 2022-07-18
-lastmod: 2022-08-03
 ---
 
 PrivSec.dev as a project does not collect any personal information. We do not log your IPs, collect your fingerprints, or run any sort of analytics on you. In sort, we do not care who you are, what you do, or how you are using our website. It is none of our business.

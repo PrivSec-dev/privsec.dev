@@ -1,7 +1,6 @@
 ---
 title: "Choosing Your Desktop Linux Distribution"
 date: 2022-07-17
-lastmod: 2022-08-15
 tags: ['Operating Systems', 'Linux', 'Security']
 author: Tommy
 ---
