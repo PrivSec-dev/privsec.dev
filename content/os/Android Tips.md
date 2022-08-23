@@ -1,7 +1,6 @@
 ---
 title: "Android Tips"
 date: 2022-07-22
-lastmod: 2022-08-16
 tags: ['Operating Systems', 'Android', 'Privacy', 'Security']
 author: Tommy
 ---

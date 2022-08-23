@@ -25,6 +25,7 @@ params:
   ShowRssButtonInSectionTermList: true
   ShowFullTextinRSS: true
   ShowCodeCopyButtons: true
+  enableGitInfo: true
 
   assets:
     disableHLJS: true
