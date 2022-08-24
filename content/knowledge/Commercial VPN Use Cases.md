@@ -2,7 +2,7 @@
 title: "Commercial VPN Use Cases"
 date: 2022-07-19
 tags: ['Knowledge base', 'VPN', 'Privacy']
-author: Tommy
+author: ['Tommy', 'WfKe9vLwSvv7rN']
 ---
 
 Virtual Private Networks are a way of creating a protected and private network over the open Internet. It was originally designed to provide remote access to an internal corporate network. However, in recent years, it has also been used by commercial VPN companies to hide their clients' real IP address from third-party websites and services.
@@ -53,3 +53,52 @@ A VPN is useful in a variety of scenarios, such as:
 - Hiding your traffic from **only** your Internet Service Provider.
 - Hiding your downloads (such as torrents) from your ISP and anti-piracy organizations.
 - Hiding your IP from third-party websites and services, preventing IP based tracking.
+
+## Circumventing censorship/filters {#circumventing-censorship}
+
+Network filtering can take many forms, from simplistic DNS or IP blocklists to sophisticated deep packet inspection ({{< rawhtml >}}<abbr>DPI</abbr>{{< /rawhtml >}}). A VPN, if not itself blocked, is the most robust method to circumvent filtering, but other methods may also be worth considering:
+
+{{< rawhtml >}}
+<dl>
+  <dt>Encrypted DNS</dt><dd><ul>
+    <li>Bypasses unsophisticated DNS blocks only</li>
+    <li>Easily thwarted by unsophisticated IP address or <a href="https://www.cloudflare.com/learning/ssl/what-is-sni/"><abbr title="Server Name Identification">SNI</abbr></a> blocks</li>
+    <li>Increases fingerprintability</li>
+    <li>Free and easy (<a href="https://quad9.net/service/service-addresses-and-features">Quad9</a>, <a href="https://developers.cloudflare.com/1.1.1.1/encryption/">Cloudflare&nbsp;1.1.1.1</a>, <a href="https://developers.google.com/speed/public-dns/docs/secure-transports">Google&nbsp;Public&nbsp;DNS</a>)</li>
+  </ul></dd>
+
+  <dt><a href="https://github.com/ValdikSS/GoodbyeDPI">GoodbyeDPI</a> or <a href="https://github.com/krlvm/PowerTunnel">PowerTunnel</a></dt><dd><ul>
+    <li>Works for HTTP(S) traffic only</li>
+    <li>Attempts to work around DPI by exploiting bugs in DPI software</li>
+    <li>May increase fingerprintability</li>
+    <li>Free and does not rely on external servers</li>
+  </ul></dd>
+
+  <dt>VPN on port tcp/443</dt><dd><ul>
+    <li>Extremely difficult to block without affecting HTTPS traffic</li>
+    <li>Slow due to encapsulation with TCP</li>
+    <li>Cannot use WireGuard (requires UDP)</li>
+    <li>Offered by many commercial VPN providers (<a href="https://www.ivpn.net/knowledgebase/troubleshooting/how-do-i-change-the-port-or-protocol-used-to-connect/">IVPN</a>, <a href="https://mullvad.net/en/help/connection-speed-why-it-so-slow/">Mullvad</a>, <a href="https://protonvpn.com/support/udp-tcp/">Proton&nbsp;VPN</a>)</li>
+  </ul></dd>
+
+  <dt>Obfuscation proxy: <a href="https://shadowsocks.org/">Shadowsocks</a>, <a href="https://gitlab.com/yawning/obfs4">obfs4</a>, or <a href="https://www.v2fly.org/en_US/">V2Ray</a> (VMess)</dt><dd><ul>
+    <li>Specifically designed for obfuscating traffic from DPI</li>
+    <li>Very similar to VPNs, unlike traditional proxy implementations</li>
+    <li>Security implications generally less explored than VPNs</li>
+    <li>Limited or zero commercial availability (requires self&#8209;hosting)</li>
+  </ul></dd>
+
+  <dt>VPN over obfuscation proxy</dt><dd><ul>
+    <li>Increased latency compared to standalone proxy</li>
+    <li>More complex setup for self-hosting</li>
+    <li>Offered by some commercial VPN providers (<a href="https://www.ivpn.net/knowledgebase/troubleshooting/i-cant-connect-from-china-or-vietnam-or-iran-etc-how-do-i-enable-obfsproxy/">IVPN</a>, <a href="https://mullvad.net/en/help/intro-shadowsocks/">Mullvad&nbsp;Bridges</a>)
+  </ul></dd>
+
+  <dt><a href="https://www.torproject.org/">Tor</a></dt><dd><ul>
+    <li>Works for TCP traffic only (UDP tunneling over Tor is <a href="https://www.whonix.org/wiki/Transporting_UDP_Tunnels_over_Tor">complicated, fragile, and counterproductive</a>)</li>
+    <li>Extremely slow</li>
+    <li>Offers DPI-bypassing entrance proxies (<a href="https://tb-manual.torproject.org/circumvention/">Tor&nbsp;bridge pluggable&nbsp;transports</a>)
+    <li>Free and decentralized</li>
+  </ul></dd>
+</dl>
+{{< /rawhtml >}}
