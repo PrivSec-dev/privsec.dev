@@ -225,7 +225,7 @@ Read through this section on how to harden your boot parameters:
 
 Kicksecure comes with these boot parameters by default. This section is fairly short, so I'd recommend that you read it through. With that being said, here are all of the parameters that you would need:
 
-`slab_nomerge init_on_alloc=1 init_on_free=1 page_alloc.shuffle=1 pti=on vsyscall=none debugfs=off oops=panic module.sig_enforce=1 lockdown=confidentiality mce=0 quiet loglevel=0 spectre_v2=on spec_store_bypass_disable=on tsx=off tsx_async_abort=full,nosmt mds=full,nosmt l1tf=full,force nosmt=force kvm.nx_huge_pages=force`
+```slab_nomerge init_on_alloc=1 init_on_free=1 page_alloc.shuffle=1 pti=on vsyscall=none debugfs=off oops=panic module.sig_enforce=1 lockdown=confidentiality mce=0 quiet loglevel=0 spectre_v2=on spec_store_bypass_disable=on tsx=off tsx_async_abort=full,nosmt mds=full,nosmt l1tf=full,force nosmt=force kvm.nx_huge_pages=force randomize_kstack_offset=on```
 
 Note that [SMT](https://en.wikipedia.org/wiki/Simultaneous_multithreading) is disabled due to it being the cause of various security vulnerabilities. Also, on rpm-ostree based distributions, you should set the kernel parameters using `rpm-ostree kargs` rather than messing with grub configurations directly.
 
