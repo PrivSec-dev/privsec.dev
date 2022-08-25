@@ -1,0 +1,48 @@
+{{/*
+
+  HTML abbreviation element
+  https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr
+
+  Output:
+    <abbr>Abbreviation</abbr>
+    <abbr title="Expansion">Abbreviation</abbr>
+
+  Syntax:
+    {{< abbr "Abbreviation" />}}
+    {{< abbr abbr="Abbreviation" />}}
+    {{< abbr >}}Abbreviation{{< /abbr >}}
+
+    {{< abbr "Abbreviation" "Expansion" />}}
+    {{< abbr abbr="Abbreviation" title="Expansion" />}}
+    {{< abbr "Expansion" >}}Abbreviation{{< /abbr >}}
+    {{< abbr title="Expansion" >}}Abbreviation{{< /abbr >}}
+  
+  This file and its contents are licensed under the Blue Oak Model License 1.0.0.
+  https://blueoakcouncil.org/license/1.0.0
+  (c) 2022 WfKe9vLwSvv7rN
+   
+*/}}
+
+{{- $abbr := "" -}}
+{{- $title := "" -}}
+
+{{- with .Get "title" -}}
+  {{- $title = . -}}
+{{- end -}}
+{{- with .Inner -}}
+  {{- $abbr = $.Page.RenderString . -}}
+  {{- with $.Get 0 -}}
+    {{- $title = . -}}
+  {{- end -}}
+{{- else -}}
+  {{- if .IsNamedParams -}}
+    {{- $abbr = .Get "abbr" -}}
+  {{- else -}}
+    {{- $abbr = .Get 0 -}}
+    {{- with .Get 1 -}}
+      {{- $title = . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+<abbr {{- with $title }} title="{{ . }}"{{ end }}>{{ $abbr }}</abbr>
