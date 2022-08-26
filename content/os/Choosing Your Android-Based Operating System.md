@@ -91,15 +91,7 @@ Currently, Google Pixel phones are the only devices that meet GrapheneOS's [hard
 
 ### DivestOS
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[DivestOS](https://divestos.org/) is a great aftermarket operating system for devices that have gone end of life or near end of life. Note that this is a harm reduction project, run by one developer on a best effort basis, and you should not buy a new device just to run DivestOS.
-=======
-DivestOS is a great aftermarket operating system for devices that have gone end-of-life or near end-of-life. Note that this is a harm reduction project, run by one developer on a best effort basis, and you should not buy a new device just to run DivestOS.
->>>>>>> 48b45c6 (Fix grammar in Android page)
-=======
 [DivestOS](https://divestos.org/) is a great aftermarket operating system for devices that have gone end-of-life or are near end-of-life. Note that this is a harm reduction project, ran by one developer on the best effort basis, and you should not buy a new device just to run DivestOS.
->>>>>>> 870634f (Minor fixes)
 
 Being a soft-fork of [LineageOS](https://lineageos.org/), DivestOS inherits many [supported devices](https://divestos.org/index.php?page=devices&base=LineageOS) from LineageOS. It has signed builds, making it possible to have [verified boot](https://source.android.com/security/verifiedboot) on some non-Pixel devices.
 
