@@ -57,11 +57,13 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 - [Tangerine Mobile App](https://play.google.com/store/apps/details?id=ca.tangerine.clients.banking.app) - [Report](https://github.com/akc3n/banking/issues/16)
 - [Wealthsimple](https://play.google.com/store/apps/details?id=com.wealthsimple) - [Report](https://github.com/akc3n/banking/issues/116)
 - [Wealthsimple Invest](https://play.google.com/store/apps/details?id=com.wealthsimple.trade) - [Report](https://github.com/akc3n/banking/issues/117)
-- 
+
 ### Czech Republic
 
 - [AirBank](https://play.google.com/store/apps/details?id=cz.airbank.android) - [Report](https://github.com/akc3n/banking/issues/31)
 - [CREDITAS Banking](https://play.google.com/store/apps/details?id=cz.creditas.richee) - [Report](https://github.com/akc3n/banking/issues/78)
+
+[ToC ↩︎](#table-of-contents)
 
 ### Denmark
 
@@ -100,7 +102,6 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 
 - [UniCredit mBanking](https://play.google.com/store/apps/details?id=hr.asseco.android.jimba.mUCI.hu&hl=en&gl=US) - [Report](https://github.com/akc3n/banking/issues/87)
 
-
 ### India
 
 - [YONO SBI](https://play.google.com/store/apps/details?id=com.sbi.lotusintouch&hl=en_IN&gl=US) - [Report](https://github.com/akc3n/banking/issues/79)
@@ -114,7 +115,7 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 - [ABN AMRO](https://play.google.com/store/apps/details?id=com.abnamro.nl.mobile.payments) - [Report](https://github.com/akc3n/banking/issues/108)
 - [ASN Bank](https://play.google.com/store/search?q=asn%20bank&c=apps&hl=nl&gl=US) - [Report](https://github.com/akc3n/banking/issues/105)
 - [Rabobank](https://play.google.com/store/apps/details?id=nl.rabomobiel) - [Report](https://github.com/akc3n/banking/issues/47)
-- 
+
 ### Norway
 
 - [Bank Norwegian](https://play.google.com/store/search?q=bank+norwegian&c=apps) - [Report](https://github.com/akc3n/banking/issues/95)
@@ -171,6 +172,14 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 - [CTBC Bank Home Bank](https://play.google.com/store/apps/details?id=com.chinatrust.mobilebank) -[Report](https://github.com/akc3n/banking/issues/30)
 - [Taishin International Bank](https://play.google.com/store/apps/details?id=tw.com.taishinbank.mobile) - [Report](https://github.com/akc3n/banking/issues/28)
 
+### Ukraine
+
+- [Privat24](https://play.google.com/store/apps/details?id=ua.privatbank.ap24) - [Report](https://github.com/akc3n/banking/issues/124)
+
+### United Arab Emirates
+
+- [ADCB](https://play.google.com/store/apps/details?id=com.adcb.bank) - [Report](https://github.com/akc3n/banking/issues/123)
+
 ### United Kingdom
 
 - [Amex United Kingdom](https://play.google.com/store/apps/details?id=com.americanexpress.android.acctsvcs.uk) - [Report](https://github.com/akc3n/banking/issues/40)
@@ -188,6 +197,7 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 
 - [Alliant Mobile Banking](https://play.google.com/store/apps/details?id=org.alliant.mobile&gl=US) - [Report](https://github.com/akc3n/banking/issues/85)
 - [Ally: Banking & Investing](https://play.google.com/store/apps/details?id=com.ally.MobileBanking&hl=en_US&gl=US) - [Report](https://github.com/akc3n/banking/issues/113)
+- [American Express](https://play.google.com/store/apps/details?id=com.americanexpress.android.acctsvcs.us) - [Report](https://github.com/akc3n/banking/issues/125)
 - [BECU](https://play.google.com/store/apps/details?id=org.becu.androidapp&gl=US) - [Report](https://github.com/akc3n/banking/issues/60)
 - [Chase Mobile](https://play.google.com/store/appds/details?id=com.chase.sig.android) - [Report](https://github.com/akc3n/banking/issues/13)
 - [Chime Mobile Banking](https://play.google.com/store/apps/details?id=com.onedebit.chime&gl=US) - [Report](https://github.com/akc3n/banking/issues/46)
@@ -196,10 +206,13 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 - [Discover Mobile](https://play.google.com/store/apps/details?id=com.discoverfinancial.mobile) - [Report](https://github.com/akc3n/banking/issues/64)
 - [Fidelity Investments](https://play.google.com/store/apps/details?id=com.fidelity.android) - [Repor](https://github.com/akc3n/banking/issues/65)
 - [Fifth Third Mobile Banking](https://play.google.com/store/apps/details?id=com.clairmail.fth) - [Report](https://github.com/akc3n/banking/issues/41)
+- [Greenstate CU Mobile](https://play.google.com/store/apps/details?id=com.q2e.universityofiowacommunitycreditunion5086.mobile.production&hl=en_US&gl=US) - [Report](https://github.com/akc3n/banking/issues/122)
 - [Grow Mobile Banking](https://play.google.com/store/apps/details?id=com.growfinancialfcu.growfinancialfcu&gl=US) - [Report](https://github.com/akc3n/banking/issues/68)
 - [GTE Mobile](https://play.google.com/store/apps/details?id=org.gtefinancial.mobile) - [Report](https://github.com/akc3n/banking/issues/81)
 - [GTE Cards (GTE Financial - Debit/Credit card management)](https://play.google.com/store/apps/details?id=com.a84102934.wallet.cardcontrol) - [Report](https://github.com/akc3n/banking/issues/82)
 - [Mainstreet Credit Union](https://play.google.com/store/apps/details?id=org.mainstreetcu.grip) - [Report](https://github.com/akc3n/banking/issues/111)
+- [PayPal Mobile](https://play.google.com/store/apps/details?id=com.paypal.android.p2pmobile) - [Report](https://github.com/akc3n/banking/issues/127)
+- [SchoolsFirst FCU Mobile](https://play.google.com/store/apps/details?id=org.schoolsfirstfcu.mobile.banking.isam) - [Report](https://github.com/akc3n/banking/issues/126)
 - [Schwab Mobile](https://play.google.com/store/apps/details?id=com.schwab.mobile&gl=US) - [Report](https://github.com/akc3n/banking/issues/61)
 - [Texan CU Mobile](https://play.google.com/store/apps/details?id=com.ifs.banking.fiid1373) - [Report](https://github.com/akc3n/banking/issues/56)
 - [USAA Mobile](https://play.google.com/store/apps/details?id=com.usaa.mobile.android.usaa&gl=US) - [Report](https://github.com/akc3n/banking/issues/80)
