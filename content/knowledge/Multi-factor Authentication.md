@@ -59,15 +59,7 @@ WebAuthn is the most secure and private form of second factor authentication. Wh
 
 {{< youtube id="aMo4ZlWznao">}}
 
-<<<<<<< HEAD
 Since FIDO2/WebAuthn uses unique cryptographic keys with each internet site, a site pretending to be another one will not be able to get the correct response to the challenge for MFA, making FIDO2/Webauthn is invulnerable phising. It is also because of this authentication mechanism that a physical FIDO2 security key is not identifiable across different services like Yubico OTP. Even better, FIDO2 uses a counter for each authentication, which would help with detecting cloned keys.
-=======
-FIDO2 and WebAuthn have superior security and privacy properties when compared to any MFA methods.
-
-Web services typically use WebAuthn which is a part of the [W3C recommendations](https://en.wikipedia.org/wiki/World_Wide_Web_Consortium#W3C_recommendation_(REC)). It uses public key authentication and is more secure than shared secrets used in Yubico OTP and TOTP methods, as it includes the origin name (usually, the domain name) during authentication. Attestation is provided to protect you from phishing attacks, as it helps you to determine that you are using the authentic service and not a fake copy.
-
-Unlike Yubico OTP, WebAuthn does not use any public ID, so the key is **not** identifiable across different websites. It also does not use any third-party cloud server for authentication. All communication is completed between the key and the website you are logging into. FIDO also uses a counter which is incremented upon use in order to prevent session reuse and cloned keys.
->>>>>>> f39eaef (Grammar/wording fixes)
 
 If a website or service supports WebAuthn for the authentication, it is highly recommended that you use it over any other form of MFA.
 
