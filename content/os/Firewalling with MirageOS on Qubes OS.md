@@ -56,8 +56,8 @@ Create a TemplateVM:
 qvm-create \
   --property kernel=mirage-firewall \
   --property kernelopts='' \
-  --property memory=64 \
-  --property maxmem=64 \
+  --property memory=128 \
+  --property maxmem=128 \
   --property vcpus=1 \
   --property virt_mode=pvh \
   --label=black \
