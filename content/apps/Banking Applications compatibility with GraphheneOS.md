@@ -1,7 +1,6 @@
 ---
 title: "Banking Applications Compatibility with GrapheneOS"
 date: "2022-01-26"
-lastmod: "2022-08-21"
 tags: ['Applications', 'Android']
 author: akc3n
 canonicalURL: https://akc3n.org/projects/banking/
@@ -104,7 +103,13 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 
 ### India
 
+- [BHIM](https://play.google.com/store/apps/details?id=in.org.npci.upiapp) - [Report](https://github.com/akc3n/banking/issues/135)
+- [PhonePe](https://play.google.com/store/apps/details?id=com.phonepe.app) - [Report](https://github.com/akc3n/banking/issues/134)
 - [YONO SBI](https://play.google.com/store/apps/details?id=com.sbi.lotusintouch&hl=en_IN&gl=US) - [Report](https://github.com/akc3n/banking/issues/79)
+
+## Italy
+
+- [Fineco](https://play.google.com/store/apps/details?id=com.fineco.it) - [Report](https://github.com/akc3n/banking/issues/131)
 
 ### Lithuania
 
@@ -126,6 +131,7 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 - [Sbanken](https://play.google.com/store/search?q=Sbanken&c=apps) - [Report](https://github.com/akc3n/banking/issues/96)
 - [Trumf Visa](https://play.google.com/store/search?q=trumf+visa&c=apps) - [Report](https://github.com/akc3n/banking/issues/101)
 - [Vipps](https://play.google.com/store/apps/details?id=no.dnb.vipps&hl=en&gl=US) - [Report](https://github.com/akc3n/banking/issues/74)
+- [Triodos Bankieren NL](https://play.google.com/store/apps/details?id=com.triodos.bankingnl) - [Report](https://github.com/akc3n/banking/issues/133)
 
 ### Poland
 
@@ -185,12 +191,15 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 - [Amex United Kingdom](https://play.google.com/store/apps/details?id=com.americanexpress.android.acctsvcs.uk) - [Report](https://github.com/akc3n/banking/issues/40)
 - [Barclaycard](https://play.google.com/store/apps/details?id=com.barclays.bca) - [Report](https://github.com/akc3n/banking/issues/42)
 - [Chase UK](https://play.google.com/store/apps/details?id=com.chase.intl) - [Report](https://github.com/akc3n/banking/issues/69)
+- [First Direct](https://play.google.com/store/apps/details?id=com.firstdirect.bankingonthego&gl=UK) - [Report](https://github.com/akc3n/banking/issues/128)
 - [HSBC UK Mobile Banking](https://play.google.com/store/apps/details?id=uk.co.hsbc.hsbcukmobilebanking&hl=en) - [Report](https://github.com/akc3n/banking/issues/33)
 - [Lloyds Bank Mobile Banking](https://play.google.com/store/apps/details?id=com.grppl.android.shell.CMBlloydsTSB73) - [Report](https://github.com/akc3n/banking/issues/53)
 - [Monzo Bank](https://play.google.com/store/apps/details?id=co.uk.getmondo) - [Report](https://github.com/akc3n/banking/issues/58)
 - [NatWest Mobile Banking](https://play.google.com/store/apps/details?id=com.rbs.mobile.android.natwest&hl=en) - [Report](https://github.com/akc3n/banking/issues/34)
 - [Revolut](https://play.google.com/store/apps/details?id=com.revolut.revolut) - [Report](https://github.com/akc3n/banking/issues/90)
 - [Starling Bank - Mobile Banking](https://play.google.com/store/apps/details?id=com.starlingbank.android) - [Report](https://github.com/akc3n/banking/issues/39)
+- [Tesco Bank](https://play.google.com/store/apps/details?id=com.tescobank.mobile&gl=UK) - [Report](https://github.com/akc3n/banking/issues/129)
+- [Triodos Bank UK](https://play.google.com/store/apps/details?id=com.triodos.bankinguk) - [Report](https://github.com/akc3n/banking/issues/132)
 - [Virgin Money Mobile Banking](https://play.google.com/store/apps/details?id=com.virginmoney.uk.mobile.android) - [Report](https://github.com/akc3n/banking/issues/54)
 
 ### United States
