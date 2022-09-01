@@ -314,6 +314,30 @@ On systems where [`pam_faillock`](https://man7.org/linux/man-pages/man8/pam_tall
 
 If you have a Yubikey, you can also use the `pam_u2f` module to require second factor authentication for your login. Follow the [Arch Wiki](https://wiki.archlinux.org/title/Universal_2nd_Factor) documentation for this. Note that you **must** set a non-transient hostname before setting this up, as you will not be able to login when your hostname changes.
 
+### Storage Media Handling
+
+Most Linux distributions automatically mount arbitary filesystems from storage medias plugged into the computer. This is a security risk, as an adversary can attach a malicious storage device to your computer to exploit vulnerable filesystem drivers.
+
+**udisks**
+
+On systems which use `udisks` to automount and use `GNOME`/`Cinnamon` as their desktop environment, along with `Nautilus`/`Nemo` as the file manager can mitigate this risk by running the following commands:
+
+```bash
+echo "[org/gnome/desktop/media-handling]
+automount=false
+automount-open=false" | sudo tee /etc/dconf/db/local.d/custom
+```
+
+This will set the default `dconf` settings for new users and override all `dconf` settings for existing users. Note that this can be overidden by regular users on your system, simply by changing their individual `dconf` settings.
+
+**autofs**
+
+On older systems where `autofs` is used, you should mask the `autofs` service to disable this behavior.
+
+**Whonix**
+
+On Whonix, you generally do not need to worry about this behavior since it is disabled by default.
+
 ### USB Port Protection
 
 To better protect your [USB](https://en.wikipedia.org/wiki/USB) ports from attacks such as [BadUSB](https://en.wikipedia.org/wiki/BadUSB), I recommend [USBGuard](https://github.com/USBGuard/usbguard). USBGuard has [documentation](https://github.com/USBGuard/usbguard#documentation) as does the [Arch Wiki](https://wiki.archlinux.org/title/USBGuard).
