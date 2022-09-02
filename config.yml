@@ -57,6 +57,8 @@ params:
   socialIcons:
     - name: github
       url: "https://github.com/PrivSec-dev"
+    - name: gitea
+      url: "https://git.tommytran.io/privsec-dev"
     - name: matrix
       url: "https://matrix.to/#/#privsec:arcticfoxes.net"
     - name: twitter
