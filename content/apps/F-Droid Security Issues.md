@@ -1,5 +1,5 @@
 ---
-title: "F-Droid Security Analysis"
+title: "F-Droid Security Issues"
 date: 2022-01-02T21:28:31Z
 tags: ['Applications', 'Android', 'Security']
 author: Wonderfall
