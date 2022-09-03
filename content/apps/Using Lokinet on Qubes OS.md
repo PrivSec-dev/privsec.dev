@@ -1,7 +1,7 @@
 ---
 title: "Using Lokinet on Qubes OS"
 date: 2022-07-27
-tags: ['Operating Systems', 'Qubes OS', 'Anonymity', 'Privacy']
+tags: ['Applications', 'Qubes OS', 'Anonymity', 'Privacy']
 author: Tommy
 ---
 

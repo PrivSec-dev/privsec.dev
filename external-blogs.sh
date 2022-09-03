@@ -14,14 +14,14 @@ sed -i '/^tags:.*/a author: Wonderfall' './content/apps/F-Droid Security Analysi
 
 #Docker and OCI Hardening
 echo "Fetching and Modifying the Docker and OCI Hardening post"
-rm -rf './content/os/Docker and OCI Hardening.md'
-curl https://raw.githubusercontent.com/Wonderfall/wonderfall.github.io/main/content/posts/docker-hardening.md -o './content/os/Docker and OCI Hardening.md'
-sed -i 's/title:.*/title: "Docker and OCI Hardening"/' './content/os/Docker and OCI Hardening.md'
-sed -i '/draft:.*/d' './content/os/Docker and OCI Hardening.md'
-sed -i "s/tags:.*/tags: ['Operating Systems', 'Linux', 'Container', 'Security']/" './content/os/Docker and OCI Hardening.md'
-sed -i '/^tags:.*/a ShowCanonicalLink: true' './content/os/Docker and OCI Hardening.md'
-sed -i '/^tags:.*/a canonicalURL: https://wonderfall.dev/docker-hardening/' './content/os/Docker and OCI Hardening.md'
-sed -i '/^tags:.*/a author: Wonderfall' './content/os/Docker and OCI Hardening.md'
+rm -rf './content/apps/Docker and OCI Hardening.md'
+curl https://raw.githubusercontent.com/Wonderfall/wonderfall.github.io/main/content/posts/docker-hardening.md -o './content/apps/Docker and OCI Hardening.md'
+sed -i 's/title:.*/title: "Docker and OCI Hardening"/' './content/apps/Docker and OCI Hardening.md'
+sed -i '/draft:.*/d' './content/apps/Docker and OCI Hardening.md'
+sed -i "s/tags:.*/tags: ['Applications', 'Linux', 'Container', 'Security']/" './content/apps/Docker and OCI Hardening.md'
+sed -i '/^tags:.*/a ShowCanonicalLink: true' './content/apps/Docker and OCI Hardening.md'
+sed -i '/^tags:.*/a canonicalURL: https://wonderfall.dev/docker-hardening/' './content/apps/Docker and OCI Hardening.md'
+sed -i '/^tags:.*/a author: Wonderfall' './content/apps/Docker and OCI Hardening.md'
 
 #Securing OpenSSH with FIDO2
 echo "Fetching and Modifying the OpenSSH with FIDO2 Hardening post"
