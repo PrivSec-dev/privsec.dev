@@ -326,6 +326,8 @@ On systems which use `udisks` to automount and use `GNOME`/`Cinnamon` as their d
 echo "[org/gnome/desktop/media-handling]
 automount=false
 automount-open=false" | sudo tee /etc/dconf/db/local.d/custom
+
+sudo dconf update
 ```
 
 This will set the default `dconf` settings for new users and override all `dconf` settings for existing users. Note that this can be overidden by regular users on your system, simply by changing their individual `dconf` settings.
