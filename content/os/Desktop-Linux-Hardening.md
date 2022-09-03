@@ -162,7 +162,7 @@ You can make your own AppArmor profiles, SELinux policies, Bubblewrap profiles, 
 
 If you’re running a server, you may have heard of Linux Containers. They are more common in server environments where individual services are built to operate independently. However, you may sometimes see them on desktop systems as well, especially for development purposes.
 
-[Docker](https://en.wikipedia.org/wiki/Docker_(software)) is one of the most common container solutions. It is **not** a proper sandbox, and this means that there is a large kernel attack surface. You should follow the [Docker and OCI Hardening](/os/docker-and-oci-hardening/) guide to mitigate this problem. In short, there are things you can do like using rootless containers (either through configuration or through using [Podman](https://podman.io/)), using a runtime which provides a psuedo-kernel for each container ([gVisor](https://gvisor.dev/)), and so on.
+[Docker](https://en.wikipedia.org/wiki/Docker_(software)) is one of the most common container solutions. It is **not** a proper sandbox, and this means that there is a large kernel attack surface. You should follow the [Docker and OCI Hardening](/apps/docker-and-oci-hardening/) guide to mitigate this problem. In short, there are things you can do like using rootless containers (either through configuration or through using [Podman](https://podman.io/)), using a runtime which provides a psuedo-kernel for each container ([gVisor](https://gvisor.dev/)), and so on.
 
 Another option is [Kata containers](https://katacontainers.io/), where virtual machines masquerade as containers. Each Kata container has its own Linux kernel and is isolated from the host.
 
