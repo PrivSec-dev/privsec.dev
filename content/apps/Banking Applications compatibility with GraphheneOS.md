@@ -7,11 +7,11 @@ canonicalURL: https://akc3n.org/projects/banking/
 ShowCanonicalLink: true
 ---
 
-This is a on-going *Work In Progress* project to collect crowd sourced usage information on banking apps and present it in a manner that is easily accessible for users to figure out if a banking app works on [GrapheneOS](https://grapheneos.org/).[^1]
+This is a on-going *Work In Progress* project to collect crowd sourced usage information on banking apps and present it in a manner that is easily accessible for users to figure out if a banking app works on [GrapheneOS](https://grapheneos.org/).
 
-Banking apps are a very problematic app for security and privacy focused OSes, or even alternative OSes, due to the app being incompatible with majority of hardening, having a hard dependency on Google Play services, or require passing SafetyNet `ctsProfileMatch` and `basicIntegrity`.[^2]  
+Banking apps are a very problematic app for security and privacy focused OSes, or even alternative OSes, due to the app being incompatible with majority of hardening, having a hard dependency on Google Play services, or require passing SafetyNet `ctsProfileMatch` and `basicIntegrity`.
 
-GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google so it does not pass `ctsProfileMatch`.[^3]
+GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google so it does not pass `ctsProfileMatch`.[^1]
 
 [GrapheneOS's usage guide](https://grapheneos.org/usage) on [banking apps](https://grapheneos.org/usage#banking-apps).
 
@@ -266,11 +266,6 @@ If you have any issues with what is listed on this site or about this project pa
 ### Contributors
 
 Thank you for collaborating on project and contributing:  
-- [June](https://github.com/Zanthed) - [Commits](https://github.com/akc3n/banking/commits?author=Zanthed)  
 - [JollyRoger](https://github.com/Peter-Easton) - [PR](https://github.com/akc3n/banking/pull/18/commits) 
 
-[^1]: [twitter.com/ZanthedNT](https://twitter.com/ZanthedNT/status/1487709140621344769) | [nitter.eu](https://nitter.eu/ZanthedNT/status/1487709140621344769)
-
-[^2]: [twitter.com/ZanthedNT](https://twitter.com/ZanthedNT/status/1487709142559174657) | [nitter.eu](https://nitter.eu/ZanthedNT/status/1487709142559174657)
-
-[^3]: [GrapheneOS Banking apps - paras. 3, ln. 2](https://grapheneos.org/usage#banking-apps) - [twitter.com/ZanthedNT](https://twitter.com/ZanthedNT/status/1487709144316534785) | [nitter.eu](https://nitter.eu/ZanthedNT/status/1487709144316534785)
+[^1]: [GrapheneOS Banking apps - paras. 3, ln. 2](https://grapheneos.org/usage#banking-apps)
