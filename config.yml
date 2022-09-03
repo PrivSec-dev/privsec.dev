@@ -51,8 +51,8 @@ params:
         url: code
       - name: Privacy
         url: privacy
-      - name: Donate
-        url: donate
+      - name: PGP
+        url: https://tommytran.io/gpg.asc
 
   socialIcons:
     - name: github
@@ -64,7 +64,7 @@ params:
     - name: twitter
       url: "https://twitter.com/privsec_dev"
     - name: email
-      url: "mailto:contact@privsec.dev"
+      url: "mailto:tommy@privsec.dev"
     - name: rss
       url: /index.xml
 
@@ -118,17 +118,17 @@ menu:
       name: Applications
       url: /apps/
       weight: 30
-    - identifier: Providers
-      name: Providers
-      url: /providers/
-      weight: 40
     - identifier: Search
       name: Search
       url: /search/
-      weight: 50
+      weight: 40
     - identifier: Tags
       name: Tags
       url: /tags/
+      weight: 50
+    - identifier: Donate
+      name: Donate
+      url: /donate/
       weight: 60
 
 privacy:
