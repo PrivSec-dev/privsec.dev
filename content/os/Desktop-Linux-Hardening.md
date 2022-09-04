@@ -241,7 +241,7 @@ Disabling access to `/sys` without a proper whitelist will lead to various appli
 
 ### linux-hardened
 
-Some distributions like Arch Linux have the [linux-hardened](https://github.com/anthraxx/linux-hardened) kernel package. It includes [hardening patches](https://wiki.archlinux.org/title/security#Kernel_hardening) and more security-conscious defaults. There is an [unofficial build](https://github.com/HardHatOS/kernel-hardened) of linux-hardened by HardHatOS, though it is not signed with a secure boot key like the official Fedora kernel, unfortunately.
+Some distributions like Arch Linux have the [linux-hardened](https://github.com/anthraxx/linux-hardened) kernel package. It includes [hardening patches](https://wiki.archlinux.org/title/security#Kernel_hardening) and more security-conscious defaults.
 
 linux-hardened has `kernel.unprivileged_userns_clone=0` disabled by default as well. See the [note above](#kernel-hardening) about how this might impact you.
 
@@ -265,9 +265,7 @@ grsecurity is a set of kernel patches that attempt to improve security of the Li
 
 The [hardened memory allocator](https://github.com/GrapheneOS/hardened_malloc) from [GrapheneOS](https://grapheneos.org) can also be used on general Linux distributions. It is available as an [AUR package](https://wiki.archlinux.org/title/Security#Hardened_malloc) on Arch based distributions, and (though not enabled by default) on Whonix and Kicksecure.
 
-On Fedora, there are currently 2 builds for it:
-- [Build by Divested Computing Group](https://github.com/divestedcg/rpm-hardened_malloc)
-- [Build by HardHatOS](https://github.com/HardHatOS/hardened_malloc)
+On Fedora, there is currently a build for it by Divested Computing Group that you can find [here](https://github.com/divestedcg/rpm-hardened_malloc)
 
 If you are using Whonix, Kicksecure or have Hardened_Malloc installed somewhere, consider setting up `LD_PRELOAD` as described in the [Kicksecure Documentation](https://www.kicksecure.com/wiki/Hardened_Malloc) or [Arch Wiki](https://wiki.archlinux.org/title/Security#Hardened_malloc).
 
