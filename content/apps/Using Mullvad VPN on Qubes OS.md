@@ -49,7 +49,7 @@ sudo shutdown now
 
 ## Creating the ProxyVM
 
-Create an AppVM based on the TemplateVM you have just created. Set `sys-firewall` (or whatever Firewall VM you have connected to your `sys-net`) as the net qube. If you do not have such Firewall VM, use `sys-net` as the net qube. Next, go to the advanced tab and tick the `provides network access to other qubes` box.
+Create an AppVM based on the TemplateVM you have just created. Set `sys-firewall` (or whatever FirewallVM you have connected to your `sys-net`) as the net qube. If you do not have such FirewallVM, use `sys-net` as the net qube. Next, go to the advanced tab and tick the `provides network access to other qubes` box.
 
 ![Provides Network](/images/provides-network.png)
 
@@ -66,6 +66,6 @@ You can now use this ProxyVM as the net qube for other qubes!
 
 With this current setup, the ProxyVM you have just created will be responsible for handling Firewall rules for the qubes behind it. This is not ideal, as this is still a fairly large VM, and there is a risk that Mullvad or some other apps may interfere with its firewall handling.
 
-Instead, I highly recommend that you [create a minimal Mirage Firewall VM](/os/firewalling-with-mirageos-on-qubes-os/) and use it as a firewall **behind** the Mullvad ProxyVM. Other AppVMs then should use the Mirage Firewall as the net qube instead. This way, you can make sure that firewall rules are properly enforced.
+Instead, I highly recommend that you [create a minimal Mirage FirewallVM](/os/firewalling-with-mirageos-on-qubes-os/) and use it as a firewall **behind** the Mullvad ProxyVM. Other AppVMs then should use the Mirage Firewall as the net qube instead. This way, you can make sure that firewall rules are properly enforced.
 
 ![MirageOS](/images/mirageos.png)

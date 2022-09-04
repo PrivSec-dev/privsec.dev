@@ -86,9 +86,9 @@ qvm-features your_disposable_template_name no-default-kernelopts 1
 
 Your disposable templates should now launch and shutdown properly.
 
-### Disposable Firewall VMs
+### Disposable FirewallVMs
 
-You can now create disposable firewall VMs based on your disposable template. I recommend replacing `sys-firewall` with a disposable Mirage firewall. If you use ProxyVMs like `sys-whonix`, I recommend that you add a disposable Mirage firewakk after the ProxyVM as well, and use it as the net qube for your AppVMs. 
+You can now create disposable FirewallVMs based on your disposable template. I recommend replacing `sys-firewall` with a disposable Mirage firewall. If you use ProxyVMs like `sys-whonix`, I recommend that you add a disposable Mirage Firewall after the ProxyVM as well, and use it as the net qube for your AppVMs. 
 
 ```bash
 qvm-create \
