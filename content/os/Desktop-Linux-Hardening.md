@@ -109,7 +109,7 @@ Many Flatpak apps come with broad filesystem permissions such as `--filesystem=h
 
 My strategy to deal with this is to revoke all filesystem access first, then test if an application works without it. If it does, it means the app is already using Portals and I don't need to do anything else. If it doesn't, then I start granting permission to specific directories.
 
-As odd as this may sound, **you should not automatically update your Flatpak packages**. The problem with Flatpak is that it grants install-time permissions when you update your applications, and you will not be notified of the permission change unless you update them manually via the command line or `gnome-software`.
+As odd as this may sound, **you should not do unattended updates with your Flatpak packages**. The problem with Flatpak is that it grants install-time permissions when you update your applications, and you will not be notified of the permission change if you or app store simply executes `flatpak update -y`. Using automatic update with `gnome-software` is fine, as it will not update packages with permission changes, and you have to manually open it's update tab to apply the update.
 
 ### Snap
 
