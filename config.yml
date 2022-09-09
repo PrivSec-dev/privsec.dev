@@ -52,7 +52,7 @@ params:
       - name: Privacy
         url: privacy
       - name: PGP
-        url: https://tommytran.io/gpg.asc
+        url: https://tommytran.io/tommy.asc
 
   socialIcons:
     - name: github
