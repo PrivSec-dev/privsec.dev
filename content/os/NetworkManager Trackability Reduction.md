@@ -150,7 +150,7 @@ The script must have specific file permissions and a symlink to take effect:
 cd /etc/NetworkManager/dispatcher.d/
 sudo chown root:root no-wait.d/01-no-send-hostname.sh
 sudo chmod 744 no-wait.d/01-no-send-hostname.sh
-sudo ln -s no-wait.d/01-no-send-hostname.sh
+sudo ln -s no-wait.d/01-no-send-hostname.sh ./
 ```
 
 This script will be automatically triggered on connection events to modify the connection's `dhcp-send-hostname` settings. If the connection's _cloned MAC address_ is [explicitly overridden](#per-connection-overrides) to `permanent`, the hostname will be sent to the DHCP server on future connections. In all other cases, the hostname will be masked on future connections, so the DHCP server will only see the MAC address.
