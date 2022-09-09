@@ -103,8 +103,14 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 
 ### India
 
+- [Axis Mobile](https://play.google.com/store/apps/details?id=com.axis.mobile) - [Report](https://github.com/akc3n/banking/issues/139)
 - [BHIM](https://play.google.com/store/apps/details?id=in.org.npci.upiapp) - [Report](https://github.com/akc3n/banking/issues/135)
+- [Cent Mobile](https://play.google.com/store/apps/details?id=com.infrasofttech.CentralBank) - [Report](https://github.com/akc3n/banking/issues/142)
+- [HDFC Bank](https://play.google.com/store/apps/details?id=com.snapwork.hdfc) - [Report](https://github.com/akc3n/banking/issues/138)
+- [Kotak - 811 & Mobile Banking](https://play.google.com/store/apps/details?id=com.msf.kbank.mobile) - [Report](https://github.com/akc3n/banking/issues/137)
 - [PhonePe](https://play.google.com/store/apps/details?id=com.phonepe.app) - [Report](https://github.com/akc3n/banking/issues/134)
+- [Paytm](https://play.google.com/store/apps/details?id=net.one97.paytm) - [Report](https://github.com/akc3n/banking/issues/140)
+- [Union Bank of India - nxt](https://play.google.com/store/apps/details?id=com.infrasoft.uboi) - [Report](https://github.com/akc3n/banking/issues/141)
 - [YONO SBI](https://play.google.com/store/apps/details?id=com.sbi.lotusintouch&hl=en_IN&gl=US) - [Report](https://github.com/akc3n/banking/issues/79)
 
 ## Italy
@@ -136,6 +142,7 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 ### Poland
 
 - [IKO](https://play.google.com/store/apps/details?id=pl.pkobp.iko) - [Report](https://github.com/akc3n/banking/issues/25)
+- [mBank PL](https://play.google.com/store/apps/details?id=pl.mbank) - [Report](https://github.com/akc3n/banking/issues/136)
 
 ### Portugal
 
@@ -200,6 +207,7 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 - [Starling Bank - Mobile Banking](https://play.google.com/store/apps/details?id=com.starlingbank.android) - [Report](https://github.com/akc3n/banking/issues/39)
 - [Tesco Bank](https://play.google.com/store/apps/details?id=com.tescobank.mobile&gl=UK) - [Report](https://github.com/akc3n/banking/issues/129)
 - [Triodos Bank UK](https://play.google.com/store/apps/details?id=com.triodos.bankinguk) - [Report](https://github.com/akc3n/banking/issues/132)
+- [TSB Internet Banking](https://play.google.com/store/apps/details?id=uk.co.tsb.newmobilebank&hl=en_GB&gl=US) - [Report](https://github.com/akc3n/banking/issues/143)
 - [Virgin Money Mobile Banking](https://play.google.com/store/apps/details?id=com.virginmoney.uk.mobile.android) - [Report](https://github.com/akc3n/banking/issues/54)
 
 ### United States
