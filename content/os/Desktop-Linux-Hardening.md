@@ -30,13 +30,13 @@ Depending on your distribution, encrypted swap may be automatically set up if yo
 
 ## Privacy Tweaks
 
-### MAC Address Randomization
+### NetworkManager Trackability Reduction
 
-Many desktop Linux distributions (Fedora, openSUSE, etc) will come with [NetworkManager](https://en.wikipedia.org/wiki/NetworkManager), to configure Ethernet and Wi-Fi settings.
+Most desktop Linux distributions including Fedora, openSUSE, Ubuntu, and so on come with [NetworkManager](https://en.wikipedia.org/wiki/NetworkManager) by default to configure Ethernet and Wi-Fi settings.
 
-It is possible to [randomize](https://fedoramagazine.org/randomize-mac-address-nm/) the [MAC address](https://en.wikipedia.org/wiki/MAC_address) when using NetworkManager. This provides a bit more privacy on Wi-Fi networks as it makes it harder to track specific devices on the network you’re connected to. It does [**not**](https://papers.mathyvanhoef.com/wisec2016.pdf) make you anonymous.
+WfKe9vLwSvv7rN has detailed guide on [trackability reduction with NetworkManager](/os/networkmanager-trackability-reduction/) and I highly recommend that you check it out.
 
-If you use NetworkManager, add the following to your `/etc/NetworkManager/conf.d/00-macrandomize.conf`
+In short, if you use NetworkManager, add the following to your `/etc/NetworkManager/conf.d/00-macrandomize.conf`:
 ```
 [device]
 wifi.scan-rand-mac-address=yes
@@ -46,13 +46,24 @@ wifi.cloned-mac-address=random
 ethernet.cloned-mac-address=random
 ```
 
+Next, disable transient hostname management by adding the following to your `/etc/NetworkManager/conf.d/01-transient-hostname.conf`:
+
+```
+[main]
+hostname-mode=none
+```
+
 Then, restart your NetworkManager service:
 
-```
-systemctl restart NetworkManager
+```bash
+sudo systemctl restart NetworkManager
 ```
 
-If you are using [systemd-networkd](https://en.wikipedia.org/wiki/Systemd#Ancillary_components), you will need to set [`MACAddressPolicy=random`](https://www.freedesktop.org/software/systemd/man/systemd.link.html#MACAddressPolicy=) which will enable [RFC 7844 (Anonymity Profiles for DHCP Clients)](https://www.freedesktop.org/software/systemd/man/systemd.network.html#Anonymize=).
+Finally, set your hostname to `localhost`:
+
+```bash
+sudo hostnamectl hostname "localhost"
+```
 
 Note that randomizing Wi-Fi MAC addresses depends on support from the Wi-Fi card firmware.
 
@@ -60,7 +71,6 @@ Note that randomizing Wi-Fi MAC addresses depends on support from the Wi-Fi card
 
 There are other system identifiers which you may wish to be careful about. You should give this some thought to see if it applies to your [threat model](/knowledge/threat-modeling/):
 
-- **Hostnames:** Your system's hostname is shared with the networks you connect to. You should avoid including identifying terms like your name or operating system in your hostname, instead sticking to generic terms or random strings.
 - **Usernames:** Similarly, your username is used in a variety of ways across your system. Consider using generic terms like "user" rather than your actual name.
 - **Machine ID:**: During installation a unique machine ID is generated and stored on your device. Consider [setting it to a generic ID](https://madaidans-insecurities.github.io/guides/linux-hardening.html#machine-id).
 

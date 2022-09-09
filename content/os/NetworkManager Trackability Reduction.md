@@ -17,21 +17,21 @@ There are three different aspects of MAC address randomization in NetworkManager
 
 #### WiFi scanning
 
-```bash
+```
 [device]
 wifi.scan-rand-mac-address=yes
 ```
 
 #### WiFi connections
 
-```bash
+```
 [connection]
 wifi.cloned-mac-address=<mode>
 ```
 
 #### Ethernet connections
 
-```bash
+```
 [connection]
 ethernet.cloned-mac-address=<mode>
 ```
@@ -50,7 +50,7 @@ ethernet.cloned-mac-address=<mode>
 
 It's best to create a dedicated configuration file, such as `/etc/NetworkManager/conf.d/99-random-mac.conf`, to ensure package updates do not overwrite the configuration. In general, I recommend the following:
 
-```bash
+```
 [device]
 wifi.scan-rand-mac-address=yes
 
@@ -65,7 +65,7 @@ After editing the file, run `sudo nmcli general reload conf` to apply the new co
 
 ### Per-connection overrides
 
-Connection-specific settings take precedence over configuration file defaults. They can be set through `nm-connection-editor`("Network Connections"), a DE-specific network settings GUI, `nmtui`, or `nmcli`.
+Connection-specific settings take precedence over configuration file defaults. They can be set through `nm-connection-editor` ("Network Connections"), a DE-specific network settings GUI, `nmtui`, or `nmcli`.
 
 Look for "Cloned MAC address" under the "Wi-Fi" or "Ethernet" section:
 
@@ -107,7 +107,7 @@ An empty (blank) hostname is also an option, but a static hostname of "localhost
 
 It's best to create a dedicated configuration file, such as `/etc/NetworkManager/conf.d/01-transient-hostname.conf`, to ensure package updates do not overwrite the configuration:
 
-```bash
+```
 [main]
 hostname-mode=none
 ```
@@ -128,7 +128,7 @@ Due to being leaky, this configuration is virtually useless without also [random
 
 Create `/etc/NetworkManager/dispatcher.d/no-wait.d/01-no-send-hostname.sh` as follows:
 
-```bash
+```sh
 #!/bin/sh
 
 if [ "$(nmcli -g 802-11-wireless.cloned-mac-address c show "$CONNECTION_UUID")" = 'permanent' ] \
