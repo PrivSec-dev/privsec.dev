@@ -160,7 +160,7 @@ This script will be automatically triggered on connection events to modify the c
 After initiating first connection with a network:
 
 ```bash
-$ nmcli c show connection | grep dhcp-send-hostname
+$ nmcli c show <connection> | grep dhcp-send-hostname
 ipv4.dhcp-send-hostname:                no
 ipv6.dhcp-send-hostname:                no
 ```
