@@ -81,24 +81,16 @@ For public networks with captive portals (webpages that must be accessed to gain
 
 Activate the connection in question, and then look for `GENERAL.HWADDR` in the output of `nmcli device show`. This represents the MAC address currently in use by the interface, whether randomized or not. It is also visible as "Hardware Address" (or similar) in NetworkManager GUIs under active connection details.
 
-{{< terminal >}}
-$ <kbd>nmcli device show</kbd>
+```bash
+$ nmcli device show
 GENERAL.DEVICE:                         enp5s0
 GENERAL.TYPE:                           ethernet
-<strong>GENERAL.HWADDR:                         XX:XX:XX:XX:XX:XX</strong>
-&hellip;
+GENERAL.HWADDR:                         XX:XX:XX:XX:XX:XX
 
 GENERAL.DEVICE:                         wlp3s0
 GENERAL.TYPE:                           wifi
-<strong>GENERAL.HWADDR:                         XX:XX:XX:XX:XX:XX</strong>
-&hellip;
-{{< /terminal >}}
-
-### Sources
-
-- [MAC Address Spoofing in NetworkManager 1.4.0](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0/)
-- [NetworkManager.conf man page](https://networkmanager.dev/docs/api/latest/NetworkManager.conf.html)
-- [ArchWiki&nbsp;--- NetworkManager](https://wiki.archlinux.org/title/NetworkManager#Configuring_MAC_address_randomization)
+GENERAL.HWADDR:                         XX:XX:XX:XX:XX:XX
+```
 
 ---
 
@@ -123,11 +115,6 @@ hostname-mode=none
 This will prevent NetworkManager from setting transient hostnames that may be provided by some DHCP servers. This will have no visible effect except with an empty static hostname.
 
 After editing the file, run `sudo nmcli general reload conf` to apply the new configuration. Run `sudo hostnamectl \--transient hostname` to reset the transient hostname.
-
-### Sources
-
-- [NetworkManager.conf man page](https://networkmanager.dev/docs/api/latest/NetworkManager.conf.html)
-- [hostnamectl man page](https://www.freedesktop.org/software/systemd/man/hostnamectl)
 
 ---
 
@@ -172,18 +159,24 @@ This script will be automatically triggered on connection events to modify the c
 
 After initiating first connection with a network:
 
-{{< terminal >}}
-$ <kbd>nmcli c show <strong>&lt;connection&gt;</strong> | grep dhcp-send-hostname</kbd>
+```bash
+$ nmcli c show connection | grep dhcp-send-hostname
 ipv4.dhcp-send-hostname:                no
 ipv6.dhcp-send-hostname:                no
-{{< /terminal >}}
+```
 
 `<connection>` can be the connection name (usually the SSID for WiFi networks) or UUID, obtained from `nmcli c show [--active]`.
 
 _Recall that these setting values are set based on the previous connection activation and take effect for the next connection activation._
 
-### Sources
+---
 
+## Sources
+- [MAC Address Spoofing in NetworkManager 1.4.0](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0/)
+- [NetworkManager.conf man page](https://networkmanager.dev/docs/api/latest/NetworkManager.conf.html)
+- [ArchWiki&nbsp;--- NetworkManager](https://wiki.archlinux.org/title/NetworkManager#Configuring_MAC_address_randomization)
+- [NetworkManager.conf man page](https://networkmanager.dev/docs/api/latest/NetworkManager.conf.html)
+- [hostnamectl man page](https://www.freedesktop.org/software/systemd/man/hostnamectl)
 - [NetworkManager: Disable Sending Hostname to DHCP Server](https://viliampucik.blogspot.com/2016/09/networkmanager-disable-sending-hostname.html)
 - [NetworkManager-dispatcher man page](https://networkmanager.dev/docs/api/latest/NetworkManager-dispatcher.html)
 - [nmcli man page](https://networkmanager.dev/docs/api/latest/nmcli.html)
