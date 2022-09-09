@@ -172,10 +172,10 @@ _Recall that these setting values are set based on the previous connection activ
 ---
 
 ## Sources
-- [MAC Address Spoofing in NetworkManager 1.4.0](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0/)
-- [NetworkManager.conf man page](https://networkmanager.dev/docs/api/latest/NetworkManager.conf.html)
 - [ArchWiki&nbsp;--- NetworkManager](https://wiki.archlinux.org/title/NetworkManager#Configuring_MAC_address_randomization)
 - [hostnamectl man page](https://www.freedesktop.org/software/systemd/man/hostnamectl)
-- [NetworkManager: Disable Sending Hostname to DHCP Server](https://viliampucik.blogspot.com/2016/09/networkmanager-disable-sending-hostname.html)
+- [MAC Address Spoofing in NetworkManager 1.4.0](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0/)
+- [NetworkManager.conf man page](https://networkmanager.dev/docs/api/latest/NetworkManager.conf.html)
 - [NetworkManager-dispatcher man page](https://networkmanager.dev/docs/api/latest/NetworkManager-dispatcher.html)
+- [NetworkManager: Disable Sending Hostname to DHCP Server](https://viliampucik.blogspot.com/2016/09/networkmanager-disable-sending-hostname.html)
 - [nmcli man page](https://networkmanager.dev/docs/api/latest/nmcli.html)
