@@ -114,7 +114,7 @@ hostname-mode=none
 
 This will prevent NetworkManager from setting transient hostnames that may be provided by some DHCP servers. This will have no visible effect except with an empty static hostname.
 
-After editing the file, run `sudo nmcli general reload conf` to apply the new configuration. Run `sudo hostnamectl --transient hostname` to reset the transient hostname.
+After editing the file, run `sudo nmcli general reload conf` to apply the new configuration. Run `sudo hostnamectl --transient hostname ""` to reset the transient hostname.
 
 ---
 
