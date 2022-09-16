@@ -187,6 +187,20 @@ The configuration for this varies per distribution, but typically it can be set 
 
 Note that unlike on macOS, this will only change the umask for the shell. Files created by running applications will not have their permissions set to 600.
 
+### Firmware Updates
+Hardware vendors typically offer updates to Linux systems through the [Linux Vendor Firmware Service](https://fwupd.org/). You can download the updates using the following commands:
+
+```bash
+# Update metadata
+fwupdmgr refresh
+# Download firmware updates and apply them
+fwupdmgr update
+```
+On a typical desktop Linux system, the desktop enviroment's app store such as `gnome-software`, `discover`, or `snap-store` would integrate with `fwupd` and update your system firmware automatically. However, not all desktop environment/app store have this integration, so you should check your specific system and setup scheduled update tasks using [systemd timers](https://wiki.archlinux.org/title/systemd/Timers) or [cron](https://wiki.archlinux.org/title/Cron) if needed.
+
+Some distributions like Debian do not have `fwupd` installed by default, so you should check for its existence on your system and install it if needed as well.
+
+Note that `fwupd` supports UEFI update using the UEFI capsule. This could potentially cause issues if your system gets shutdown in the middle of an update. Unless you have USB FlashBack, you should disable this in your UEFI firmware (it is usually called Windows UEFI Firmware Update) or in `/etc/fwupd/uefi_capsule.conf` by adding `uefi` to the end of the `DisabledPlugins` line.
 ### Firewalls
 
 A [firewall](https://en.wikipedia.org/wiki/Firewall_(computing)) may be used to secure connections to your system.
