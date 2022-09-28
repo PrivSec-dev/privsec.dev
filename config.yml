@@ -1,5 +1,5 @@
 baseURL: "https://privsec.dev"
-title: PrivSec.dev
+title: PrivSec - A practical approach to Privacy and Security
 theme: WonderMod
 copyright: '[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)'
 enableRobotsTXT: true
@@ -37,7 +37,7 @@ params:
     safari_pinned_tab: "/safari-pinned-tab.svg"
 
   label:
-    text: "PrivSec.dev"
+    text: "PrivSec"
 
   # profile-mode
   profileMode:
