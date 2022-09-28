@@ -111,7 +111,7 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 - [Union Bank of India - nxt](https://play.google.com/store/apps/details?id=com.infrasoft.uboi) - [Report](https://github.com/akc3n/banking/issues/141)
 - [YONO SBI](https://play.google.com/store/apps/details?id=com.sbi.lotusintouch&hl=en_IN&gl=US) - [Report](https://github.com/akc3n/banking/issues/79)
 
-## Italy
+### Italy
 
 - [Fineco](https://play.google.com/store/apps/details?id=com.fineco.it) - [Report](https://github.com/akc3n/banking/issues/131)
 
