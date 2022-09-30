@@ -40,6 +40,9 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 
 - [Caixa](https://play.google.com/store/apps/details?id=br.com.gabba.Caixa) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/89)
 - [Nubank](https://play.google.com/store/apps/details?id=com.nu.production) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/92)
+- [Santander Brasil](https://play.google.com/store/apps/details?id=com.santander.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/151)
+- [Santander Empresas](https://play.google.com/store/apps/details?id=com.santandermovelempresarial.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/153)
+- [Santander Way: App de cartões](https://play.google.com/store/apps/details?id=br.com.santander.way) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/152)
 
 ### Canada
 
@@ -76,6 +79,7 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 
 ### France
 
+- [Crédit Mutuel de Bretagne](https://play.google.com/store/apps/details?id=com.arkea.android.application.cmb&gl=FR) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/150)
 - [La Banque Postale](https://play.google.com/store/apps/details?id=com.fullsix.android.labanquepostale.accountaccess) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/14)
 - [Ma Banque](https://play.google.com/store/apps/details?id=fr.creditagricole.androidapp&gl=FR) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/73)
 
@@ -113,7 +117,11 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 
 ### Italy
 
+- [BNL](https://play.google.com/store/apps/details?id=it.bnl.apps.banking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/144)
 - [Fineco](https://play.google.com/store/apps/details?id=com.fineco.it) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/131)
+
+### Kazakhstan
+- [Kaspi.kz](https://play.google.com/store/apps/details?id=kz.kaspi.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/149)
 
 ### Lithuania
 
@@ -155,6 +163,10 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 
 - [Moja mBanka Raiffeisen](https://play.google.com/store/apps/details?id=rs.Raiffeisen.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/70)
 
+### Singapore
+
+- [OCBC Digital](https://play.google.com/store/apps/details?id=com.ocbc.mobile&hl=en_US&gl=US) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/146)
+
 ### Spain
 
 - [Evo Banco](https://play.google.com/store/apps/details?id=es.evobanco.bancamovil) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/112)
@@ -171,6 +183,7 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 
 ### Switzerland
 
+- [BCN Mobile banking](https://play.google.com/store/apps/details?id=com.bcn.android.mbanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/145)
 - [Credit Suisse](https://play.google.com/store/apps/details?id=com.csg.cs.dnmb) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/72)
 - [Raiffeisen E-Banking](https://play.google.com/store/apps/details?id=ch.raiffeisen.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/26)
 - [ZKB Access](https://play.google.com/store/apps/details?id=ch.zkb.digipass) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/94)
@@ -212,11 +225,13 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 
 - [Alliant Mobile Banking](https://play.google.com/store/apps/details?id=org.alliant.mobile&gl=US) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/85)
 - [Ally: Banking & Investing](https://play.google.com/store/apps/details?id=com.ally.MobileBanking&hl=en_US&gl=US) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/113)
+- [America First Mobile Banking](https://play.google.com/store/apps/details?id=com.afcu.mobilebanking) - [Report](https://play.google.com/store/apps/details?id=com.afcu.mobilebanking)
 - [American Express](https://play.google.com/store/apps/details?id=com.americanexpress.android.acctsvcs.us) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/125)
 - [BECU](https://play.google.com/store/apps/details?id=org.becu.androidapp&gl=US) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/60)
 - [Chase Mobile](https://play.google.com/store/appds/details?id=com.chase.sig.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/13)
 - [Chime Mobile Banking](https://play.google.com/store/apps/details?id=com.onedebit.chime&gl=US) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/46)
 - [Citizens Bank Mobile](https://play.google.com/store/apps/details?id=com.citizensbank.androidapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/66)
+- [CommunityAmerica Mobile](https://play.google.com/store/apps/details?id=com.ifs.banking.fiid1454) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/154)
 - [DCU Digital Banking](https://play.google.com/store/apps/details?id=com.projectfinance.android.dcu) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/67)
 - [Discover Mobile](https://play.google.com/store/apps/details?id=com.discoverfinancial.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/64)
 - [Fidelity Investments](https://play.google.com/store/apps/details?id=com.fidelity.android) - [Repor](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/65)
