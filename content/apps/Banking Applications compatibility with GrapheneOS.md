@@ -213,7 +213,6 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 - [HSBC UK Mobile Banking](https://play.google.com/store/apps/details?id=uk.co.hsbc.hsbcukmobilebanking&hl=en) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/33)
 - [Lloyds Bank Mobile Banking](https://play.google.com/store/apps/details?id=com.grppl.android.shell.CMBlloydsTSB73) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/53)
 - [Monzo Bank](https://play.google.com/store/apps/details?id=co.uk.getmondo) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/58)
-- [NatWest Mobile Banking](https://play.google.com/store/apps/details?id=com.rbs.mobile.android.natwest&hl=en) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/34)
 - [Revolut](https://play.google.com/store/apps/details?id=com.revolut.revolut) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/90)
 - [Starling Bank - Mobile Banking](https://play.google.com/store/apps/details?id=com.starlingbank.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/39)
 - [Tesco Bank](https://play.google.com/store/apps/details?id=com.tescobank.mobile&gl=UK) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/129)
