@@ -18,7 +18,7 @@ Effectively, any application that binds to the connected physical interface (as 
 You can check this with `curl`: 
 
 ```bash
-curl --interface your_public_interface_name https://ipinfo.io
+curl --interface <physical interface> https://ipinfo.io
 ```
 
 This will return your actual IP address.
