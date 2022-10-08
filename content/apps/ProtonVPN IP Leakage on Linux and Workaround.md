@@ -14,7 +14,6 @@ I sent Proton an email regarding this issue in late August 2022 and was told the
 Ideally, when implementing a killswitch, a VPN client should drop all connections on non-VPN interfaces except when the connection is to the VPN provider's servers. This is necessary to prevent accidental leaks, at least by unprivileged applications. Unfortunately, the ProtonVPN client does not currently do this.
 
 Effectively, any application that binds to the connected physical interface (as opposed to the VPN's virtual interface) on your Linux system will expose your actual IP address, regardless of the killswitch state. This is problematic, especially for certain applications like Torrent clients, as they tend to use whatever interfaces they can access (rather than just the default one) to connect to the internet.
-.
 You can check this with `curl`: 
 
 ```bash
