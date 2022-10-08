@@ -35,7 +35,7 @@ On Linux, there is no such clear distinction between the system and user install
 
 Operating systems like Android and ChromeOS have full system mandatory access control, every process from the init process is strictly confined. Regardless of which application you install or how you install them, they have to play by the rules of an untrusted SELinux domain and are only able to utilize unprivileged APIs.
 
-Even on macOS, where the application sandbox is opt-in for developers, there is still a permission control system (TCC) for unprivileged application. Apps run by the user do not have unrestricted access to their microphone, webcam, keystrokes, sensitive documents, and so on.
+Even on macOS, where the application sandbox is opt-in for developers, there is still a permission control system (TCC) for unprivileged applications. Apps run by the user do not have unrestricted access to their microphone, webcam, keystrokes, sensitive documents, and so on.
 
 On Linux, it is quite the opposite. Out of the box, most systems only have a few system daemons confined. Some Linux distributions don't even have a Mandatory Access Control system at all. Applications are designed in an environment where they expect to be able to do whatever they want, and the app sandboxes/mandatory access control system are merely an afterthought trying to restrict an app to only access what it expects to be accessible. 
 
