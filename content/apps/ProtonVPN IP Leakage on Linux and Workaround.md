@@ -23,7 +23,7 @@ curl --interface your_public_interface_name https://ipinfo.io
 
 This will return your actual IP address.
 
-## The workaround
+## The Workaround
 
 ### Qubes OS
 
