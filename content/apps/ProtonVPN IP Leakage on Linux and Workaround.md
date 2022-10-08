@@ -26,7 +26,7 @@ This will return your actual IP address.
 
 ### Qubes OS
 
-On Qubes OS, you generally will not have much of a problem if you use the ProtonVPN client in a ProxyVM. While the same issue still exists within the ProxyVM itself, it is unlikely to happen as you should not be running any other applications in the same qubes anyways. Apps in an AppVM cannot bind to the public interface of the ProxyVM, and I have not observed any leaks from an AppVM behind a ProtonVPN ProxyVM.
+On Qubes OS, you generally should not have a problem if you use the ProtonVPN client in a ProxyVM. While the same issue still exists within the ProxyVM itself, it is unlikely to manifest as you should not be running any other applications in the same Qube anyways, and apps in an AppVM cannot bind to the public interface of the ProxyVM. I have not observed any leaks from an AppVM behind a ProtonVPN ProxyVM.
 
 ### General Linux Distributions
 
