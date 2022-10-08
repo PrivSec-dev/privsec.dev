@@ -42,7 +42,7 @@ net.ipv6.conf.lo.disable_ipv6=1' | sudo tee -a /etc/sysctl.d/10-disable-ipv6.con
 sudo sysctl -p
 ```
 
-Next, download your OpenVPN configuration files from [account.protonvpn.com](https://account.protonvpn.com/). In the configuration files, you should see a list of IP addresses and ports of ProtonVPN's servers.
+Next, download your OpenVPN configuration files from [account.protonvpn.com](https://account.protonvpn.com/). In those configuration files, you should see a list of IP addresses and ports of ProtonVPN's servers.
 
 Finally, set up the VPN killswitch. The rules I posted here are based on [this discussion](https://airvpn.org/forums/topic/15061-firewalld-killswitch/).
 
