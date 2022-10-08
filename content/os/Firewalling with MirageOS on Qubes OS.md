@@ -15,12 +15,8 @@ author: Tommy
 - Fast startup time.
 
 ## Disadvantages
-- No official package for Qubes OS and while [Qubes Mirage Firewall](https://github.com/mirage/qubes-mirage-firewall) is still maintained, it has not had an official release since 2020. This means that you need to follow the development process on GitHub and make a new build yourself whenever there is a new commit.
+- No official package for Qubes OS and while [Qubes Mirage Firewall](https://github.com/mirage/qubes-mirage-firewall) is still maintained, it rarely gets an official release. This means that you need to follow the development process on GitHub and make a new build yourself whenever there is a new commit.
 - Does not work well with the Windows PV network driver. With that being said, the Windows PV networking driver is pretty buggy on its own, and I don't recommend that you use it anyways.
-
-## MirageOS 4.2
-
-As of this writing, the main branch of Qubes Mirage Firewall is still on the old MirageOS 3.10. The Dockerfile it uses is also extremely old (still on Fedora 32), and no longer works without some patching. As such, I recommend building Mirage 4.2 from this [pull request](https://github.com/mirage/qubes-mirage-firewall/pull/140) instead.
 
 ### Prebuilt Image
 
