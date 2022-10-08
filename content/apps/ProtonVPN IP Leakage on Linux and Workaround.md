@@ -47,6 +47,7 @@ Next, download your OpenVPN configuration files from [account.protonvpn.com](htt
 Finally, set up the VPN killswitch. The rules I posted here are based on [this discussion](https://airvpn.org/forums/topic/15061-firewalld-killswitch/).
 
 #### Firewalld
+
 ```bash
 sudo firewall-cmd --direct --permanent --add-rule ipv4 filter FORWARD 0 -o tun+ -j ACCEPT
 sudo firewall-cmd --direct --permanent --add-rule ipv4 filter FORWARD 0 -i tun+ -j ACCEPT
@@ -70,6 +71,7 @@ sudo firewall-cmd --reload
 ```
 
 #### UFW
+
 ```bash
 sudo ufw default deny incoming
 sudo ufw default deny outgoing
