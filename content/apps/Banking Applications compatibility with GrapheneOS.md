@@ -132,6 +132,7 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 - [ABN AMRO](https://play.google.com/store/apps/details?id=com.abnamro.nl.mobile.payments) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/108)
 - [ASN Bank](https://play.google.com/store/search?q=asn%20bank&c=apps&hl=nl&gl=US) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/105)
 - [Rabobank](https://play.google.com/store/apps/details?id=nl.rabomobiel) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/47)
+- [Triodos Bankieren NL](https://play.google.com/store/apps/details?id=com.triodos.bankingnl) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/133)
 
 ### Norway
 
@@ -143,7 +144,6 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 - [Sbanken](https://play.google.com/store/search?q=Sbanken&c=apps) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/96)
 - [Trumf Visa](https://play.google.com/store/search?q=trumf+visa&c=apps) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/101)
 - [Vipps](https://play.google.com/store/apps/details?id=no.dnb.vipps&hl=en&gl=US) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/74)
-- [Triodos Bankieren NL](https://play.google.com/store/apps/details?id=com.triodos.bankingnl) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/133)
 
 ### Poland
 
