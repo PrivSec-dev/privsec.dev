@@ -227,6 +227,7 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 - [America First Mobile Banking](https://play.google.com/store/apps/details?id=com.afcu.mobilebanking) - [Report](https://play.google.com/store/apps/details?id=com.afcu.mobilebanking)
 - [American Express](https://play.google.com/store/apps/details?id=com.americanexpress.android.acctsvcs.us) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/125)
 - [BECU](https://play.google.com/store/apps/details?id=org.becu.androidapp&gl=US) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/60)
+- [Capital One Mobile](https://play.google.com/store/apps/details?id=com.konylabs.capitalone&hl=en_US&gl=US) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/107)
 - [Chase Mobile](https://play.google.com/store/appds/details?id=com.chase.sig.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/13)
 - [Chime Mobile Banking](https://play.google.com/store/apps/details?id=com.onedebit.chime&gl=US) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/46)
 - [Citizens Bank Mobile](https://play.google.com/store/apps/details?id=com.citizensbank.androidapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/66)
