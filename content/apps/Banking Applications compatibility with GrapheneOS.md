@@ -23,6 +23,7 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 - [Bendigo Bank](https://play.google.com/store/apps/details?id=com.bendigobank.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/88)
 - [CommBank](https://play.google.com/store/apps/details?id=com.commbank.netbank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/75)
 - [NAB Mobile Banking](https://play.google.com/store/apps/details?id=au.com.nab.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/76)
+- [ubank – Daily Money App](https://play.google.com/store/apps/details?id=au.com.bank86400) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/156)
 - [Up Money](https://play.google.com/store/apps/details?id=au.com.up.money&hl=en) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/102)
 - [Westpac](https://play.google.com/store/apps/details?id=org.westpac.bank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/77)
 
