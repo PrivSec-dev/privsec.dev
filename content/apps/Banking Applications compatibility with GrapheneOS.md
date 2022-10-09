@@ -272,9 +272,4 @@ If you have any issues with what is listed on this site or about this project pa
 
 > GrapheneOS users are strongly encouraged to share this documentation with app developers enforcing only being able to use the stock OS. Send an email to the developers and leave a review of the app with a link to this information. Share it with other users and create pressure to support GrapheneOS rather than locking users into the stock OS without a valid security reason. GrapheneOS not only upholds the app security model but substantially reinforces it, so it cannot be justified with reasoning based on security, anti-fraud, etc.
 
-### Contributors
-
-Thank you for collaborating on project and contributing:  
-- [JollyRoger](https://github.com/Peter-Easton) - [PR](https://github.com/akc3n/banking/pull/18/commits) 
-
 [^1]: [GrapheneOS Banking apps - paras. 3, ln. 2](https://grapheneos.org/usage#banking-apps)
