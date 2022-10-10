@@ -81,6 +81,8 @@ Multiple user profiles can be found in **Settings** → **System** → **Multipl
 
 With user profiles, you can impose restrictions on a specific profile, such as: making calls, using SMS, or installing apps on the device. Each profile is encrypted using its own encryption key and cannot access the data of any other profiles. Even the device owner cannot view the data of other profiles without knowing their password. Multiple user profiles are a more secure method of isolation.
 
+Note that there is currently a [VPN leakage with secondary user profiles](/os/android-vpn-leakage-with-secondary-user-profiles/).
+
 ## Work Profile
 
 [Work Profiles](https://support.google.com/work/android/answer/6191949) are another way to isolate individual apps and may be more convenient than separate user profiles.
