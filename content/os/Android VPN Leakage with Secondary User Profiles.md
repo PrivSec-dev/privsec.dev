@@ -18,7 +18,7 @@ You can reproduce the leak by doing the following:
 1. Create a new user profile (you need to create a secondary user pfofile for this, as it is not reproducible on your owner profile or a work profile). Do not log into your Google account at this stage.
 2. Sideload a VPN app. The leak happens with every VPN provider I have tried (since it is likely a platform issue), though if you do not have a VPN subscription I would recommend getting a free one with [ProtonVPN](https://protonvpn.com).
 3. Setup the VPN and the [Android VPN killswitch](/os/android-tips/#enable-vpn-killswitch).
-4. Log into your Google account through Play Services or MicroG.
+4. Log into your Google account through Play Services.
 5. Restart the phone. Open the secondary user profile again.
 6. Go to Google's [My Devices](https://myaccount.google.com/device-activity) page. Observe that one of the sessions for your phone has your actual location obtained with GeoIP. In some cases, your actual IP address will be shown there as well.
 
