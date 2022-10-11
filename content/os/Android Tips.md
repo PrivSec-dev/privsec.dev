@@ -32,7 +32,7 @@ You should also be very wary of low quality privacy branded phones like the Free
 
 In certain cases, installing a custom Android-based operating system can help increase your privacy and security. This is rather tricky; however, as the vast majority of these operating systems (a.k.a. "custom ROMs") do exactly the opposite - breaking the Android security model, ruining your security while providing no or dubious privacy benefits.
 
-I have written a detailed post on selecting your Android-based operating system, which you can find [here](../../os/choosing-your-android-based-operating-system/).
+I have written a detailed post on selecting your Android-based operating system, which you can find [here](../../os/choosing-your-android-based-operating-system).
 
 **TLDR**: If you are using a modern Pixel, use [GrapheneOS](https://grapheneos.org). If you are on a device supported by [DivestOS](https://divestos.org), use DivestOS. Otherwise, stick to your stock operating system. Do not blindly use an OS just because it is advertised as "degoogled".
 
@@ -81,7 +81,7 @@ Multiple user profiles can be found in **Settings** → **System** → **Multipl
 
 With user profiles, you can impose restrictions on a specific profile, such as: making calls, using SMS, or installing apps on the device. Each profile is encrypted using its own encryption key and cannot access the data of any other profiles. Even the device owner cannot view the data of other profiles without knowing their password. Multiple user profiles are a more secure method of isolation.
 
-Note that there is currently a [VPN leakage with secondary user profiles](/os/android-vpn-leakage-with-secondary-user-profiles/).
+Note that there is currently a [VPN leakage with secondary user profiles](/os/android-vpn-leakage-with-secondary-user-profiles).
 
 ## Work Profile
 

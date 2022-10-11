@@ -5,7 +5,7 @@ tags: ['Operating Systems', 'Linux', 'Privacy', 'Security']
 author: Tommy
 ---
 
-Linux is [not](https://madaidans-insecurities.github.io/linux.html) a secure operating system. However, there are steps you can take to harden it, reduce its attack surface and improve its privacy.
+Linux is [not](/os/linux-insecurities) a secure operating system. However, there are steps you can take to harden it, reduce its attack surface and improve its privacy.
 
 **Before We Start**... 
 
