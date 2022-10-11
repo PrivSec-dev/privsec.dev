@@ -1,0 +1,30 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Contact: https://matrix.to/#/@tommy:arcticfoxes.net
+Contact: mailto:contact@tommytran.io
+Contact: mailto:tommy@arcticfoxes.net
+Contact: mailto:tommy@privsec.dev
+Expires: 2023-10-11T04:00:00.000Z
+Encryption: https://tommytran.io/tommy.asc
+Encryption: openpgp4fpr:25A967C33D210802F7A49380060B29EB996BD9F2
+Preferred-Languages: en-US, vi-VN
+Canonical: https://tommytran.io/security.txt
+Canonical: https://arcticfoxes.net/security.txt
+Canonical: https://privsec.dev/security.txt
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEEJalnwz0hCAL3pJOABgsp65lr2fIFAmNF1/YACgkQBgsp65lr
+2fJReA//dvkcm/0v6qc38M5HmhWk46BMpayBHz3Si6D3qz1peh1+oEve18OzObV5
+SoV+NJGZPDAaPPbGIVPKXe9cdCjHBBRFWhyiYVnSVl8hnbIA56ViLw0wSWwYbspK
+B8AAySqNOHRKdxYH3/E8NT0VgadsztcNPMNMtCFdYjXZK3nY4SGMlmIbJrfKJIwi
+X4uO28DzbhTaMd5BlA1W6bCEmZThE/F09itw8J6t6bER1bF9ieJXGnzw/7KVqSDp
+l1STnRAP0qqIqnZ2RbDkSD5fI7FQe3EpNEAwdX/ofQ0iaA1uEnM5TypT5ss3qNz7
+Tk/tjTD/oDawQuja8sLkkbNzmnTO61aNIEBfUcU8nKe71d0CnIiijyozgn+J1hGu
+pC/m7XwbuDXZ+RSeLmvdOSBGZc6Rp/xGotHvAlhVvg/JPYrW+1ijnt0iE9gKuBKo
+G/TSNl9nSys1SIp6md9VIQta06CER7D1j++OVGoG0f0hlhyxc37D44lEBKNOT8th
+SFSGRMXbWKKpFTF6GMpVcFYlOM+2O1zaTBNu560972KP+JIp/qY+SmKfP2ZEWzVH
+Bbm6U/C+D+vi+rMcBHL5Km0yEV9f3F0Jg7xUw7TnhSqUhIsFMHcmSjbT0f+c+zXW
+gdw6DkLZ0D1ulwJ/KfVHbfCPYot/vq+sgVyCIYFXjLC9zyTREro=
+=wpIX
+-----END PGP SIGNATURE-----
