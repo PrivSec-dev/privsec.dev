@@ -68,6 +68,29 @@ You can manage Android permissions by going to **Settings** → **Privacy** → 
 
 Android 7 and above supports a VPN killswitch and it is available without the need to install third-party apps. This feature can prevent leaks if the VPN is disconnected. It can be found in **Settings** → **Network & internet** → **VPN** → **Block connections without VPN**.
 
+## Connectivity Check
+
+Connectivity checks on Android [do not go through the VPN tunnel](https://mullvad.net/en/blog/2022/10/10/android-leaks-connectivity-check-traffic/) (they are not supposed to anyway). This is generally not a cause for concern, however, you should be aware that Google and a network observer outside of the VPN provider and their infrastructure can see that there is an Android device with your actual IP address.
+
+On GrapheneOS, connectivity checks by default are done with GrapheneOS's own servers, instead of the Google ones. Said network observer can see that you are using a GrapheneOS device. If you want to appear like a regular Android device instead, go to **Settings** → **Network & internet** → **Internet connectivity check** and select **Standard (Google)** instead.
+
+If you want to, you can disable connectivity check altogether. Note that this will stop captive portal from working.
+
+- On GrapheneOS, go to **Settings** → **Network & internet** → **Internet connectivity check** and select **Disabled**
+- On other Android-based operating systems, you can [disable captive portal via ADB](https://gitlab.com/CalyxOS/calyxos/-/issues/1226#note_1130393164).
+
+To disable:
+
+```bash
+adb shell settings put global captive_portal_mode 0
+```
+
+To re-enable:
+
+```bash
+adb shell settings delete global captive_portal_mode
+```
+
 ## Media Access
 Quite a few applications allow you to "share" a file with them for media upload. If you want to, for example, tweet a picture to Twitter, do not grant Twitter access to your "media and photos", because it will have access to all of your pictures then. Instead, go to your file manager (documentsUI), hold onto the picture, then share it with Twitter.
 
