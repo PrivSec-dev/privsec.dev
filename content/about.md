@@ -32,11 +32,17 @@ Random guy passing by on the Internet who is interested in all kinds of things. 
 ### Lberrymage
 Accrescent developer. Rust shill and man who can't stop recycling names of his previous projects.
 
-**Website**: [accrescent.app](https://accrescent.app/)\
+**Website**: [accrescent.app](https://accrescent.app)\
 **Matrix**: [@lberrymage:matrix.org](https://matrix.to/#/@lberrymage:matrix.org)
 
 ### Madaidan
 Security Researcher. Whonix developer. Uses Firefox, Telegram, and Linux against his own advice like a hypocrite.
 
-**Website**: [https://madaidans-insecurities.github.io/](https://madaidans-insecurities.github.io/)\
+**Website**: [madaidans-insecurities.github.io](https://madaidans-insecurities.github.io)\
 **Matrix**: [@madaidan.:matrix.org](https://matrix.to/#/@madaidan.:matrix.org)
+
+### akc3n
+Just an ordinary guy that loves learning, solving puzzles, and eating food. Maintaining the banking app compatibility list for GrapheneOS. GrapheneOS community moderator and Arch Linux user.
+
+**Website**: [akc3n.page](https://akc3n.page)\
+**Matrix**: [@akc3n:grapheneos.org](https://matrix.to/#/@akc3n:grapheneos.org)
