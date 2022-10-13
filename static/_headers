@@ -24,5 +24,8 @@
 /os/choosing-your-desktop-linux-distribution/
   Content-Security-Policy : default-src 'none'; connect-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; frame-src https://www.youtube-nocookie.com https://www.google.com; form-action 'none'; frame-ancestors 'none'; block-all-mixed-content; base-uri 'none'
 
+/os/desktop-linux-hardening/
+  Content-Security-Policy : default-src 'none'; connect-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; frame-src https://www.youtube-nocookie.com https://www.google.com; form-action 'none'; frame-ancestors 'none'; block-all-mixed-content; base-uri 'none'
+  
 /*.xml
   Content-Security-Policy : default-src 'none'; img-src 'self' data: https://www.w3.org/; style-src 'self' 'unsafe-inline'; block-all-mixed-content; base-uri 'none'
