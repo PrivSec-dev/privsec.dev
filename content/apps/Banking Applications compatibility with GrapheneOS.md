@@ -96,6 +96,7 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 - [Kontist](https://play.google.com/store/apps/details?id=com.kontist&hl=en_US&gl=US) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/23)
 - [N26 — The Mobile Bank](https://play.google.com/store/apps/details?id=de.number26.android&hl=en_US&gl=US) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/21)
 - [Penta — Business Banking App](https://play.google.com/store/apps/details?id=com.getpenta.app&hl=en_US&gl=US) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/24)
+- [PSD Banking](https://play.google.com/store/apps/details?id=de.psd.banking.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/159)
 - [Santander Banking](https://play.google.com/store/apps/details?id=de.santander.presentation) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/119)
 - [Sparkasse](https://play.google.com/store/apps/details?id=com.starfinanz.smob.android.sfinanzstatus) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/44)
 - [Tomorrow Mobile Banking](https://play.google.com/store/apps/details?id=one.tomorrow.app&hl=en_US&gl=US) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/20)
