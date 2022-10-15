@@ -379,7 +379,7 @@ There are several ways to work around the unverified initramfs:
 
 ### Encrypted /boot
 
-The first way is to [encrypt the /boot partition](https://wiki.archlinux.org/title/GRUB#Encrypted_/boot). If you are on Fedora Workstation (not Silverblue), you can follow [this guide](https://mutschler.eu/linux/install-guides/fedora-btrfs-33/) to convert the existing installation to encrypted `/boot`. openSUSE comes with this that by default.
+The first way is to [encrypt the /boot partition](https://wiki.archlinux.org/title/GRUB#Encrypted_/boot). If you are on Fedora Workstation (not Silverblue), you can follow [this guide](https://mutschler.dev/linux/fedora-btrfs-33/) to convert the existing installation to encrypted `/boot`. openSUSE comes with this that by default.
 
 Encrypting `/boot` however have its own issues, one being that [GRUB](https://en.wikipedia.org/wiki/GNU_GRUB) does not support LUKS2 well, so you will most likely need to fall back to using the old LUKS1 encryption scheme. In particular, it only supports PBKDF2 key derivation, and not Argon2 (the default with LUKS2). The `grub-install` command, from my own testing, also seems to have trouble detecting LUKS2 volumes, while it works just fine with LUKS1 volumes. Another problem with encrypted `/boot` is that you have to type the encryption password twice, though it could be solved by following the [openSUSE Wiki](https://en.opensuse.org/SDB:Encrypted_root_file_system#Avoiding_to_type_the_passphrase_twice).
 
