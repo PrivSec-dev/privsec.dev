@@ -72,7 +72,7 @@ Android 7 and above supports a VPN killswitch and it is available without the ne
 
 Connectivity checks on Android [do not go through the VPN tunnel](https://mullvad.net/en/blog/2022/10/10/android-leaks-connectivity-check-traffic/) (they are not supposed to anyway). This is generally not a cause for concern, however, you should be aware that Google and a network observer on your internet service provider (ISP)'s network can see that there is an Android device with your actual IP address.
 
-On GrapheneOS, connectivity checks by default are done with GrapheneOS's own servers, instead of with Google ones. A network observer on your ISP’s network can see that you are using a GrapheneOS device. If you are using a VPN and want to appear like a regular Android device to your ISP, go to **Settings** → **Network & internet** → **Internet connectivity check** and select **Standard (Google)** instead.
+On GrapheneOS, connectivity checks by default are done with GrapheneOS's own servers, instead of with Google ones. A network observer on your ISP’s network can see that you are using a GrapheneOS device. If you are using a VPN and want to appear like a regular Android device to your ISP, go to **Settings** → **Network & internet** → **Internet connectivity check** and select **Standard (Google)** instead. Note that this will not stop a determined adversarial ISP from finding out you are not using stock OS [through your DNS fallback](https://grapheneos.org/faq#default-dns).
 
 If you want to, you can disable connectivity check altogether. Note that this will stop captive portal from working.
 
@@ -125,6 +125,8 @@ You can reduce this attack surface by limiting the baseband modem to just using 
 GrapheneOS has the LTE only mode exposed in settings. You can set this by going to **Settings** → **Internet** → **Your carrier name** → **Preferred network type** → **LTE Only**.
 
 If your Android-based operating system does not expose this setting in the Settings app, or if you want to set your baseband modem to a less restrictive mode, dial `*#*#4636#*#*` then hit **Phone information**. Here, you can set preferred network type to just the generations that you intend to use. For example, if you only want to use 4G and 5G, you can set it to `NR/LTE`.
+
+## Carrier Tracking
 
 ## Where to Get Your Applications
 
