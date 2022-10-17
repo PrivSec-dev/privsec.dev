@@ -1,3 +1,26 @@
-/f-droid*               /apps/f-droid-security-issues/                                  301
-/banking*               /apps/banking-applications-compatibility-with-grapheneos/       301
-/apps/banking*          /apps/banking-applications-compatibility-with-grapheneos/       301  
+/os/android-tips/                               /posts/android/android-tips/                                        301
+/os/android-vpn-leakage*                        /posts/android/android-vpn-leakage-with-secondary-user-profiles/    301
+/apps/banking*                                  /posts/android/banking-applications-compatibility-with-grapheneos/  301
+/os/choosing-your-android*                      /posts/android/choosing-your-android-based-operating-system/        301
+/apps/f-droid*                                  /posts/android/f-droid-security-issues/                             301
+
+/knowledge/badness-enumeration/                 /posts/knowledge/badness-enumeration/                               301
+/knowledge/commercial-vpn-use-cases/            /posts/proxies/commercial-vpn-use-cases/                            301
+/knowledge/floss-security/                      /posts/knowledge/floss-security/                                    301
+/knowledge/multi-factor-authentication/         /posts/knowledge/multi-factor-authentication/                       301
+/knowledge/threat-modeling/                     /posts/kmowledge/threat-modeling/                                   301
+
+/os/choosing-your-desktop-linux*                /posts/linux/choosing-your-desktop-linux-distribution/              301
+/os/desktop-linux-hardening*                    /posts/linux/desktop-linux-hardening/                               301
+/apps/docker*                                   /posts/linux/docker-and-oci-hardening/                              301
+/os/linux-insecurities*                         /posts/linux/linux-insecurities/                                    301
+/os/networkmanager*                             /posts/linux/networkmanager-trackability-reduction/                 301
+/apps/protonvpn-ip*                             /posts/linux/protonvpn-ip-leakage-on-linux-and-workaround/          301
+/os/securing-openssh-with-fido2*                /posts/linux/securing-openssh-with-fido2/                           301
+
+/apps/update-your-signal*                       /posts/proxies/update-your-signal-tls-proxy/                        301
+
+/os/firewalling-with-mirageos*                  /posts/qubes/firewalling-with-mirageos-on-qubes-os/                 301
+/apps/using-lokinet-on-qubes-os*                /posts/qubes/using-lokinet-on-qubes-os/                             301
+/apps/using-mullvad-vpn-on-qube*                /posts/qubes/using-mullvad-vpn-on-qubes-os/                         301
+/os/using-split-gpg-and-split-ssh*              /posts/qubes/using-split-gpg-and-split-ssh-on-qubes-os/             301

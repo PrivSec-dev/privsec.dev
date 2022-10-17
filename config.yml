@@ -51,8 +51,8 @@ params:
         url: code
       - name: Privacy
         url: privacy
-      - name: PGP
-        url: https://tommytran.io/tommy.asc
+      - name: Donate
+        url: donate
 
   socialIcons:
     - name: github
@@ -106,30 +106,22 @@ markup:
 
 menu:
   main:
-    - identifier: Knowledge Base
-      name: Knowledge Base
-      url: /knowledge/
+    - identifier: Categories
+      name: Categories
+      url: /posts/
       weight: 10
-    - identifier: Operating Systems
-      name: Operating Systems
-      url: /os/
-      weight: 20
-    - identifier: Applications
-      name: Applications
-      url: /apps/
-      weight: 30
     - identifier: Search
       name: Search
       url: /search/
-      weight: 40
+      weight: 20
     - identifier: Tags
       name: Tags
       url: /tags/
-      weight: 50
-    - identifier: Donate
-      name: Donate
-      url: /donate/
-      weight: 60
+      weight: 30
+    - identifier: PGP
+      name: PGP
+      url: https://tommytran.io/tommy.asc
+      weight: 40
 
 privacy:
   disqus:
