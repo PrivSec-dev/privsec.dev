@@ -1,7 +1,7 @@
 ---
 title: "Update your Signal TLS Proxy"
 date: 2022-10-15
-tags: ['Applications', 'Linux', 'Container', 'Censorship Evasion']
+tags: ['Proxies', 'Containers', 'Security']
 author: Tommy
 ---
 

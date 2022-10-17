@@ -1,7 +1,7 @@
 ---
 title: "Commercial VPN Use Cases"
 date: 2022-07-19
-tags: ['Knowledge base', 'VPN', 'Privacy']
+tags: ['Proxies', 'Privacy']
 author: Tommy
 ---
 
