@@ -47,7 +47,7 @@ The only way to systematically fix this problem is to design a whole new system 
 
 ## But Linux is open source!
 
-Something being open source does not imply that it is inherently private, secure, or trustworthy. I recommend reading the [FLOSS Security](/knowledge/floss-security) post by [Rohan Kumar](https://seirdy.one/posts/2022/02/02/floss-security/).
+Something being open source does not imply that it is inherently private, secure, or trustworthy. I recommend reading the [FLOSS Security](/posts/knowledge/floss-security) post by [Rohan Kumar](https://seirdy.one/posts/2022/02/02/floss-security/).
 
 ## But there is less malware on Linux!
 

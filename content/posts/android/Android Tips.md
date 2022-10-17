@@ -32,7 +32,7 @@ You should also be very wary of low quality privacy branded phones like the Free
 
 In certain cases, installing a custom Android-based operating system can help increase your privacy and security. This is rather tricky; however, as the vast majority of these operating systems (a.k.a. "custom ROMs") do exactly the opposite - breaking the Android security model, ruining your security while providing no or dubious privacy benefits.
 
-I have written a detailed post on selecting your Android-based operating system, which you can find [here](../../os/choosing-your-android-based-operating-system).
+I have written a detailed post on selecting your Android-based operating system, which you can find [here](/posts/os/choosing-your-android-based-operating-system).
 
 **TLDR**: If you are using a modern Pixel, use [GrapheneOS](https://grapheneos.org). If you are on a device supported by [DivestOS](https://divestos.org), use DivestOS. Otherwise, stick to your stock operating system. Do not blindly use an OS just because it is advertised as "degoogled".
 
@@ -104,7 +104,7 @@ Multiple user profiles can be found in **Settings** → **System** → **Multipl
 
 With user profiles, you can impose restrictions on a specific profile, such as: making calls, using SMS, or installing apps on the device. Each profile is encrypted using its own encryption key and cannot access the data of any other profiles. Even the device owner cannot view the data of other profiles without knowing their password. Multiple user profiles are a more secure method of isolation.
 
-Note that there is currently a [VPN leakage with secondary user profiles](/os/android-vpn-leakage-with-secondary-user-profiles).
+Note that there is currently a [VPN leakage with secondary user profiles](/posts/os/android-vpn-leakage-with-secondary-user-profiles).
 
 ## Work Profile
 
@@ -154,7 +154,7 @@ My recommendation is to stick with the Google Play Store unless your threat mode
 
 ### F-Droid
 
-F-Droid, despite being often recommended in the privacy community, has various security deficiencies. You can read more about them [here](/apps/f-droid-security-issues/).
+F-Droid, despite being often recommended in the privacy community, has various security deficiencies. You can read more about them [here](/posts/android/f-droid-security-issues/).
 
 I do not recommend that you use F-Droid at all unless you have no other choice to obtain certain apps. In some rare cases, there may be some apps which require the F-Droid version to work properly without Google Play Services. If you do end up using F-Droid, I highly recommend that you avoid the official F-Droid client (which is extremely outdated and targets API level 25) and use a more modern client with seamless updates such as [NeoStore](https://github.com/NeoApplications/Neo-Store). You should also avoid using the official F-Droid repository as much as possible and stick to the F-Droid repositories hosted by the app developers instead.
 
@@ -187,7 +187,7 @@ If you have a Google account we suggest enrolling in the [Advanced Protection Pr
 
 The Advanced Protection Program provides enhanced threat monitoring and enables:
 
-- Stricter two factor authentication; e.g. that [FIDO2](/knowledge/multi-factor-authentication/#fido2-fast-identity-online) **must** be used and disallows the use of [SMS OTP](/knowledge/multi-factor-authentication/#fido2-fast-identity-online), [TOTP](/knowledge/multi-factor-authentication/#time-based-one-time-password-totp) and [OAuth](https://en.wikipedia.org/wiki/OAuth)
+- Stricter two factor authentication; e.g. that [FIDO2](/posts/knowledge/multi-factor-authentication/#fido2-fast-identity-online) **must** be used and disallows the use of [SMS OTP](/posts/knowledge/multi-factor-authentication/#fido2-fast-identity-online), [TOTP](/posts/knowledge/multi-factor-authentication/#time-based-one-time-password-totp) and [OAuth](https://en.wikipedia.org/wiki/OAuth)
 - Only Google and verified third-party apps can access account data
 - Scanning of incoming emails on Gmail accounts for [phishing](https://en.wikipedia.org/wiki/Phishing#Email_phishing) attempts
 - Stricter [safe browser scanning](https://www.google.com/chrome/privacy/whitepaper.html#malware) with Google Chrome

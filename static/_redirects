@@ -1,4 +1,26 @@
-/*android-tips*/        /categories/android/android-tips/
-/f-droid*               /apps/f-droid-security-issues/                                  301
-/banking*               /apps/banking-applications-compatibility-with-grapheneos/       301
-/apps/banking*          /apps/banking-applications-compatibility-with-grapheneos/       301  
+/*android-tips*                 /posts/android/android-tips/                                        301
+/*android-vpn-leakage*          /posts/android/android-vpn-leakage-with-secondary-user-profiles/    301
+/*banking*                      /posts/android/banking-applications-compatibility-with-grapheneos/  301
+/*choosing-your-android*        /posts/android/choosing-your-android-based-operating-system/        301
+/*f-droid*                      /posts/android/f-droid-security-issues/                             301
+
+/*badness-enumeration*          /posts/knowledge/badness-enumeration/                               301
+/*commercial-vpn*               /posts/knowledge/commercial-vpn-use-cases/                          301
+/*floss-security*               /posts/knowledge/floss-security/                                    301
+/*multi-factor-authentication*  /posts/knowledge/multi-factor-authentication/                       301
+/*threat-modeling*              /posts/kmowledge/threat-modeling/                                   301
+
+/*choosing-your-desktop-linux*  /posts/linux/choosing-your-desktop-linux-distribution/              301
+/*desktop-linux-hardening*      /posts/linux/desktop-linux-hardening/                               301
+/*docker-and-oci-hardening*     /posts/linux/docker-and-oci-hardening/                              301
+/*linux-insecurities*           /posts/linux/linux-insecurities/                                    301
+/*networkmanager-trackability*  /posts/linux/networkmanager-trackability-reduction/                 301
+/*protonvpn-ip-leakage*         /posts/linux/protonvpn-ip-leakage-on-linux-and-workaround/          301
+/*openssh-with-fido2*           /posts/linux/securing-openssh-with-fido2/                           301
+
+/*signal-tls*                   /posts/proxies/update-your-signal-tls-proxy/                        301
+
+/*mirageos-on-qubes*            /posts/qubes/firewalling-with-mirageos-on-qubes-os/                 301
+/*lokinet-on-qubes*             /posts/qubes/using-lokinet-on-qubes-os/                             301
+/*mullvad-on-qubes*             /posts/qubes/using-mullvad-vpn-on-qubes-os/                         301
+/*split-ssh*                    /posts/qubes/using-split-gpg-and-split-ssh-on-qubes-os/             301

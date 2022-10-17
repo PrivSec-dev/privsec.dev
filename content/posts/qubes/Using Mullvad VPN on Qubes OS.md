@@ -33,11 +33,11 @@ EOF
 Inside of the TemplateVM you have just created, do the following:
 
 ```bash
-sudo dnf install https://mullvad.net/media/app/MullvadVPN-2022.4_x86_64.rpm
+sudo dnf install https://mullvad.net/media/app/MullvadVPN-2022.5_x86_64.rpm
 sudo systemctl enable mullvad-daemon
 ```
 
-Replace `https://mullvad.net/media/app/MullvadVPN-2022.4_x86_64.rpm` with whatever the latest URL for the Mullvad App is. I will try to update this post to give you the accurate command, but you should just take them from [their website](https://mullvad.net/en/download/linux/).
+Replace `https://mullvad.net/media/app/MullvadVPN-2022.5_x86_64.rpm` with whatever the latest URL for the Mullvad App is. I will try to update this post to give you the accurate command, but you should just take them from [their website](https://mullvad.net/en/download/linux/).
 
 ![Mullvad VPN URL](/images/mullvad-vpn-2.png)
 
@@ -66,6 +66,6 @@ You can now use this ProxyVM as the net qube for other qubes!
 
 With this current setup, the ProxyVM you have just created will be responsible for handling Firewall rules for the qubes behind it. This is not ideal, as this is still a fairly large VM, and there is a risk that Mullvad or some other apps may interfere with its firewall handling.
 
-Instead, I highly recommend that you [create a minimal Mirage FirewallVM](/os/firewalling-with-mirageos-on-qubes-os/) and use it as a firewall **behind** the Mullvad ProxyVM. Other AppVMs then should use the Mirage Firewall as the net qube instead. This way, you can make sure that firewall rules are properly enforced.
+Instead, I highly recommend that you [create a minimal Mirage FirewallVM](/posts/os/firewalling-with-mirageos-on-qubes-os/) and use it as a firewall **behind** the Mullvad ProxyVM. Other AppVMs then should use the Mirage Firewall as the net qube instead. This way, you can make sure that firewall rules are properly enforced.
 
 ![MirageOS](/images/mirageos.png)

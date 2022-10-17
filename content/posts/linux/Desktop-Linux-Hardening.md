@@ -5,7 +5,7 @@ tags: ['Operating Systems', 'Linux', 'Privacy', 'Security']
 author: Tommy
 ---
 
-Linux is [not](/os/linux-insecurities) a secure operating system. However, there are steps you can take to harden it, reduce its attack surface and improve its privacy.
+Linux is [not](/posts/os/linux-insecurities) a secure operating system. However, there are steps you can take to harden it, reduce its attack surface and improve its privacy.
 
 **Before We Start**... 
 
@@ -33,7 +33,7 @@ Depending on your distribution, encrypted swap may be automatically set up if yo
 
 Most desktop Linux distributions including Fedora, openSUSE, Ubuntu, and so on come with [NetworkManager](https://en.wikipedia.org/wiki/NetworkManager) by default to configure Ethernet and Wi-Fi settings.
 
-WfKe9vLwSvv7rN has detailed guide on [trackability reduction with NetworkManager](/os/networkmanager-trackability-reduction/) and I highly recommend that you check it out.
+WfKe9vLwSvv7rN has detailed guide on [trackability reduction with NetworkManager](/posts/os/networkmanager-trackability-reduction/) and I highly recommend that you check it out.
 
 In short, if you use NetworkManager, add the following to your `/etc/NetworkManager/conf.d/00-macrandomize.conf`:
 ```
@@ -68,7 +68,7 @@ Note that randomizing Wi-Fi MAC addresses depends on support from the Wi-Fi card
 
 ### Other Identifiers
 
-There are other system identifiers which you may wish to be careful about. You should give this some thought to see if it applies to your [threat model](/knowledge/threat-modeling/):
+There are other system identifiers which you may wish to be careful about. You should give this some thought to see if it applies to your [threat model](/posts/knowledge/threat-modeling/):
 
 - **Usernames:** Similarly, your username is used in a variety of ways across your system. Consider using generic terms like "user" rather than your actual name.
 - **Machine ID:**: During installation a unique machine ID is generated and stored on your device. Consider [setting it to a generic ID](https://madaidans-insecurities.github.io/guides/linux-hardening.html#machine-id).
@@ -87,7 +87,7 @@ Zorin OS uses the `zorin-os-cencus` package, which also uses a [unique ID](https
 
 [Snapd](https://github.com/snapcore/snapd) assigns a [unique ID](https://snapcraft.io/docs/snap-store-metrics) to your snapd installation and use it for telemetry. While this is generally not a problem, if your threat model calls for anonymity, you should not be using snap packages, and you should remove snapd from your Ubuntu installation. Like with Zorin Census, on Debian based distributions, and especially Ubuntu, consider holding `snapd` with `sudo apt-mark hold snapd`.
 
-Of course, this is a non-exhaustive list of how different Linux distributions do this. If you are aware of any other tracking mechanisms that different distributions use, feel free to make a [pull request](https://github.com/PrivSec-dev/privsec.dev/blob/main/content/os/Linux-Desktop-Hardening.md) or [discussion post](https://github.com/PrivSec-dev/privsec.dev/discussions) detailing them!
+Of course, this is a non-exhaustive list of how different Linux distributions do this. If you are aware of any other tracking mechanisms that different distributions use, feel free to make a [pull request](https://github.com/PrivSec-dev/privsec.dev/blob/main/content/posts/linux/Linux-Desktop-Hardening.md) or [discussion post](https://github.com/PrivSec-dev/privsec.dev/discussions) detailing them!
 
 ### Keystroke Anonymization
 You could be [fingerprinted based on soft biometric traits](https://www.whonix.org/wiki/Keystroke_Deanonymization) when you use the keyboard. The [Kloak](https://github.com/vmonaco/kloak) package could help you mitigate this threat. It is available as a .deb package from [Kicksecure's repository](https://www.kicksecure.com/wiki/Packages_for_Debian_Hosts) and an [AUR package](https://aur.archlinux.org/packages/kloak-git).
@@ -171,7 +171,7 @@ You can make your own AppArmor profiles, SELinux policies, Bubblewrap profiles, 
 
 If you’re running a server, you may have heard of Linux Containers. They are more common in server environments where individual services are built to operate independently. However, you may sometimes see them on desktop systems as well, especially for development purposes.
 
-[Docker](https://en.wikipedia.org/wiki/Docker_(software)) is one of the most common container solutions. It is **not** a proper sandbox, and this means that there is a large kernel attack surface. You should follow the [Docker and OCI Hardening](/apps/docker-and-oci-hardening/) guide to mitigate this problem. In short, there are things you can do like using rootless containers (either through configuration or through using [Podman](https://podman.io/)), using a runtime which provides a psuedo-kernel for each container ([gVisor](https://gvisor.dev/)), and so on.
+[Docker](https://en.wikipedia.org/wiki/Docker_(software)) is one of the most common container solutions. It is **not** a proper sandbox, and this means that there is a large kernel attack surface. You should follow the [Docker and OCI Hardening](/posts/apps/docker-and-oci-hardening/) guide to mitigate this problem. In short, there are things you can do like using rootless containers (either through configuration or through using [Podman](https://podman.io/)), using a runtime which provides a psuedo-kernel for each container ([gVisor](https://gvisor.dev/)), and so on.
 
 Another option is [Kata containers](https://katacontainers.io/), where virtual machines masquerade as containers. Each Kata container has its own Linux kernel and is isolated from the host.
 

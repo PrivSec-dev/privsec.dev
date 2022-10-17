@@ -108,7 +108,7 @@ menu:
   main:
     - identifier: Categories
       name: Categories
-      url: /categories/
+      url: /posts/
       weight: 10
     - identifier: Search
       name: Search
