@@ -1,8 +1,10 @@
 /os/android-tips/                               /posts/android/android-tips/                                        301
 /os/android-vpn-leakage*                        /posts/android/android-vpn-leakage-with-secondary-user-profiles/    301
 /apps/banking*                                  /posts/android/banking-applications-compatibility-with-grapheneos/  301
+/banking*                                       /posts/android/banking-applications-compatibility-with-grapheneos/  301
 /os/choosing-your-android*                      /posts/android/choosing-your-android-based-operating-system/        301
 /apps/f-droid*                                  /posts/android/f-droid-security-issues/                             301
+/f-droid*                                       /posts/android/f-droid-security-issues/                             301
 
 /knowledge/badness-enumeration/                 /posts/knowledge/badness-enumeration/                               301
 /knowledge/commercial-vpn-use-cases/            /posts/proxies/commercial-vpn-use-cases/                            301
