@@ -38,6 +38,7 @@ params:
 
   label:
     text: "PrivSec"
+    icon: "/privsec.png"
 
   # profile-mode
   profileMode:
