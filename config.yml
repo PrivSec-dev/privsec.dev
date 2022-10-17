@@ -110,13 +110,13 @@ menu:
       name: Categories
       url: /posts/
       weight: 10
-    - identifier: Search
-      name: Search
-      url: /search/
-      weight: 20
     - identifier: Tags
       name: Tags
       url: /tags/
+      weight: 20
+    - identifier: Search
+      name: Search
+      url: /search/
       weight: 30
     - identifier: PGP
       name: PGP
