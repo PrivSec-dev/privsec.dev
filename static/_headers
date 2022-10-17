@@ -12,19 +12,19 @@
   Report-To: {"group":"default","max_age":31536000,"endpoints":[{"url":"https://tommytran732.report-uri.com/a/d/g"}],"include_subdomains":true}
   NEL: {"report_to":"default","max_age":31536000,"include_subdomains":true}
 
-/knowledge/multi-factor-authentication/
+/categories/knowledge/multi-factor-authentication/
   Content-Security-Policy : default-src 'none'; connect-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; frame-src https://www.youtube-nocookie.com https://www.google.com; form-action 'none'; frame-ancestors 'none'; block-all-mixed-content; base-uri 'none'
   
-/os/android-tips/
+/categories/os/android-tips/
   Content-Security-Policy : default-src 'none'; connect-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; frame-src https://www.youtube-nocookie.com https://www.google.com; form-action 'none'; frame-ancestors 'none'; block-all-mixed-content; base-uri 'none'
 
-/os/choosing-your-android-based-operating-system/
+/categories/os/choosing-your-android-based-operating-system/
   Content-Security-Policy : default-src 'none'; connect-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; frame-src https://www.youtube-nocookie.com https://www.google.com; form-action 'none'; frame-ancestors 'none'; block-all-mixed-content; base-uri 'none'
   
-/os/choosing-your-desktop-linux-distribution/
+/categories/os/choosing-your-desktop-linux-distribution/
   Content-Security-Policy : default-src 'none'; connect-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; frame-src https://www.youtube-nocookie.com https://www.google.com; form-action 'none'; frame-ancestors 'none'; block-all-mixed-content; base-uri 'none'
 
-/os/desktop-linux-hardening/
+/categories/os/desktop-linux-hardening/
   Content-Security-Policy : default-src 'none'; connect-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; frame-src https://www.youtube-nocookie.com https://www.google.com; form-action 'none'; frame-ancestors 'none'; block-all-mixed-content; base-uri 'none'
   
 /*.xml

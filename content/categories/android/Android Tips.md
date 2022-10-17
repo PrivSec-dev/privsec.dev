@@ -136,6 +136,10 @@ I have seen several common suggestions in the privacy community to mitigate this
 
 - **Using PGPP as a carrier**: The service randomizes your IMSI by regularly reprovisioning your eSIM. However, the IMEI broadcasted by the baseband modem would remain unchanged, allowing the carriers to track you anyways.
 
+## SMS App
+
+
+
 ## Where to Get Your Applications
 
 ### GrapheneOS App Store
