@@ -124,9 +124,17 @@ You can reduce this attack surface by limiting the baseband modem to just using 
 
 GrapheneOS has the LTE only mode exposed in settings. You can set this by going to **Settings** → **Internet** → **Your carrier name** → **Preferred network type** → **LTE Only**.
 
-If your Android-based operating system does not expose this setting in the Settings app, or if you want to set your baseband modem to a less restrictive mode, dial `*#*#4636#*#*` then hit **Phone information**. Here, you can set preferred network type to just the generations that you intend to use. For example, if you only want to use 4G and 5G, you can set it to `NR/LTE`.
+If your Android-based operating system does not expose this setting in the Settings app, or if you want to set your baseband modem to a less restrictive mode, dial `*#*#4636#*#*` then hit **Phone information**. Here, you can set preferred network type to just the generations that you intend to use. For example, if you only want to use 5G and 4G, you can set it to `NR/LTE`.
 
 ## Carrier Tracking
+
+Carriers can track your coarse location via cell towers using the IMSI and IMEI broadcasted by your baseband modem. In order to avoid this type of tracking, you have to enable the airplane mode which would disable the baseband modem.
+
+I have seen several common suggestions in the privacy community to mitigate this problem which does not actually work:
+
+- **Removing the SIM Card**: The baseband modem will continue to contact the cell towers with its IMEI to prepare for emergency calls. In fact, this is how you are able to call `911` even when you do not have a SIM card inserted.
+
+- **Using PGPP as a carrier**: The service randomizes your IMSI by regularly reprovisioning your eSIM. However, the IMEI broadcasted by the baseband modem would remain unchanged, allowing the carriers to track you anyways.
 
 ## Where to Get Your Applications
 
