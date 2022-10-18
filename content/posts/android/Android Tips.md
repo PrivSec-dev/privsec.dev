@@ -136,10 +136,6 @@ I have seen several common suggestions in the privacy community to mitigate this
 
 - **Using PGPP as a carrier**: The service randomizes your IMSI by regularly reprovisioning your eSIM. However, the IMEI broadcasted by the baseband modem would remain unchanged, allowing the carriers to track you anyways.
 
-## SMS App
-
-
-
 ## Where to Get Your Applications
 
 ### GrapheneOS App Store
@@ -219,3 +215,13 @@ On Android distributions with privileged Google Play Services (such as stock OSe
 ![Ads=id](/images/ads-id.png)
 
 You will either be given the option to delete your advertising ID or to *Opt out of interest-based ads*, this varies between OEM distributions of Android. If presented with the option to delete the advertising ID that is preferred. If not, then make sure to opt out and reset your advertising ID.
+
+### Google Messages
+
+Google is currently pushing for the adoption of [RCS with end to end encryption](https://support.google.com/messages/answer/10262381?hl=en) to compete with iMessage. On certain Android devices, especially Google Pixels with stock OS, [Google Messages](https://messages.google.com/) is set as the default SMS app to provide this feature.
+
+If you are on an OS with Play Services installed, I highly recommend that you use Google Messages as the SMS app to get opportunistic end to end encryption with your contacts. It works fairly well on GrapheneOS with Sandboxed Play Services, too.
+
+You can disable telemetry in Google Messages by going to **⋮** → **Settings** → **General** → **Help Improve Messages** and toggling it off. There are also some other configurations in **⋮** → **Settings** → **General** → **Chat features** that you might want to go over such as sending typing indicator or read receipt.
+
+If you have trouble connecting to RCS, try disabling your VPN and the VPN killswitch first, then reconnect to RCS. Once you have connected to the server, you can re-enable your VPN and the killswitch and it should work just fine across reboots. I am not sure what is causing this issue, but it might be related to [this bug](https://issuetracker.google.com/issues/189577131).
