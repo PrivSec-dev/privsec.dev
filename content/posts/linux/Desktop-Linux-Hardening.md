@@ -179,6 +179,21 @@ Another option is [Kata containers](https://katacontainers.io/), where virtual m
 
 ![opensuse-computer.jpg](/images/opensuse-computer.jpg)
 
+<!--
+### Requiring Package Managers to Use TLS (DRAFT)
+
+- [Fedora Package Delivery Security](https://puiterwijk.org/posts/fedora-package-delivery-security/)
+    - Note that there is a `Repo-expire` field now, which presumably is what the author was saying didn't exist at the time
+- [Attacks against GPG signed APT repositories](https://blog.packagecloud.io/attacks-against-gpg-signed-apt-repositories/)
+- [Remote Code Execution in apt/apt-get](https://justi.cz/security/2019/01/22/apt-rce.html)
+- [Why does DNF and zypper use HTTPS?](https://old.reddit.com/r/linux/comments/ain7uo/why_does_dnf_and_zypper_use_https/)
+- https://askubuntu.com/a/146117
+
+How to:
+- [Fedora](https://old.reddit.com/r/Fedora/comments/86r5ya/how_do_i_switch_to_https_for_mirrors_for_fedora/dw7ery0/)
+- [Kali](https://www.kali.org/blog/kali-linux-repository-https-support/) (same for all Ubuntu derivatives when supported)
+
+-->
 ### Umask 077
 If you are not using openSUSE, consider changing the default [umask](https://en.wikipedia.org/wiki/Umask) for both regular user accounts and root to 077. Changing umask to 077 can break snapper on openSUSE and is **not** recommended.
 
