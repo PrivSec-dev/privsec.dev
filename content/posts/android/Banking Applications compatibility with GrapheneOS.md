@@ -83,9 +83,10 @@ GrapheneOS passes SafetyNet `basicIntegrity`, but it is not certified by Google 
 
 - [Boursorama Banque](https://play.google.com/store/apps/details?id=com.boursorama.android.clients) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/147)
 - [Crédit Mutuel de Bretagne](https://play.google.com/store/apps/details?id=com.arkea.android.application.cmb&gl=FR) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/150)
-- [Hello bank!](https://play.google.com/store/apps/details?id=com.bnpp.hellobank&gl=FR) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/163)
+- [Hello bank!](https://play.google.com/store/apps/details?id=com.bnpp.hellobank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/163)
 - [La Banque Postale](https://play.google.com/store/apps/details?id=com.fullsix.android.labanquepostale.accountaccess) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/14)
-- [Ma Banque](https://play.google.com/store/apps/details?id=fr.creditagricole.androidapp&gl=FR) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/73)
+- [Ma Banque](https://play.google.com/store/apps/details?id=fr.creditagricole.androidapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/73)
+- [Mes Comptes BNP Paribas](https://play.google.com/store/apps/details?id=net.bnpparibas.mescomptes) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/165)
 
 ### Germany
 
