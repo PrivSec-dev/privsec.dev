@@ -56,11 +56,11 @@ Create an AppVM based on the TemplateVM you have just created. Set `sys-firewall
 Edit `/rw/config/rc.local` to workaround [issue 3803](https://github.com/mullvad/mullvadvpn-app/issues/3803):
 
 ```bash
-echo "sleep 10 # Waiting a bit that Mullvad succeeds to establish connection
+echo "sleep 10 # Waiting a bit so that Mullvad can establish a connection
 /usr/lib/qubes/qubes-setup-dnat-to-ns" | sudo tee -a /rw/config/rc.local
 ```
 
-You can now use this ProxyVM as the net qube for other qubes!
+Restart the ProxyVM. You can now use this ProxyVM as the net qube for other qubes!
 
 ## Notes
 
