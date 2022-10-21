@@ -11,6 +11,9 @@ The real cost is the time and energy we put into writing, testing, and fact chec
 **Bitcoin**: `bc1qchel9lzhuv3ayfp58yfdu7sxsjw2svgugtvj4v`\
 **Monero**: `49yB5DPXK9TJVj5Jq5DkvrXd4wkFnoeC56mPED85bf5wHTUYmSyoYFEbVyyTciKzjFTo1kxMJMiCpLwuR96fT2NWS1hPVFG`
 
+### akc3n
+**PayPal**: `https://paypal.me/akc3n`
+
 ---
 
 Alternatively, please consider donating to the projects below. These are projects which we rely on for our own digital safety and recommend to our readers. They are vital for the privacy, security, and safety of thousands of people.
