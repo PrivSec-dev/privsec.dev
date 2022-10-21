@@ -44,11 +44,11 @@ Create an AppVM based on the TemplateVM you have just created. Set `sys-firewall
 
 ![Provides Network](/images/provides-network.png)
 
-To work around [issue 191](https://github.com/ivpn/desktop-app/issues/191), you need to select **Force management of DNS using resolv.conf** in the app's settings.
+To get DNS for AppVMs working, you need to select **Force management of DNS using resolv.conf** in the app's settings.
 
 ![IVPN DNS Settings](/images/ivpn-dns-settings.png)
 
-Edit `/rw/config/rc.local` to workaround [issue 216](https://github.com/ivpn/desktop-app/issues/216):
+You will also need to edit `/rw/config/rc.local` to workaround [issue 216](https://github.com/ivpn/desktop-app/issues/216):
 
 ```bash
 echo "sleep 10 # Waiting a bit so that IVPN can establish a connection
