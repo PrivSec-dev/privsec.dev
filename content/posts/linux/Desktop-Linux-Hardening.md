@@ -186,7 +186,7 @@ The configuration for this varies per distribution, but typically it can be set 
 
 Note that unlike on macOS, this will only change the umask for the shell. Files created by running applications will not have their permissions set to 600.
 
-### Microcode updates
+### Microcode Updates
 You should make sure that your system has microcode updates to get security fixes for vulnerabilities like [Meltdown and Spectre](https://meltdownattack.com/).
 
 Debian does not ship microcode updates out of the box, so be sure to [enable the non-free repository](https://wiki.debian.org/SourcesList) and install the `microcode` package.
@@ -209,6 +209,7 @@ On a typical desktop Linux system, the desktop enviroment's app store such as `g
 Some distributions like Debian do not have `fwupd` installed by default, so you should check for its existence on your system and install it if needed as well.
 
 Note that `fwupd` supports UEFI update using the UEFI capsule. This could potentially cause issues if your system gets shutdown in the middle of an update. Unless you have USB FlashBack, you should disable this in your UEFI firmware (it is usually called Windows UEFI Firmware Update) or in `/etc/fwupd/uefi_capsule.conf` by adding `uefi` to the end of the `DisabledPlugins` line.
+
 ### Firewalls
 
 A [firewall](https://en.wikipedia.org/wiki/Firewall_(computing)) may be used to secure connections to your system.
