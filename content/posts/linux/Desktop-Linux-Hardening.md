@@ -186,6 +186,15 @@ The configuration for this varies per distribution, but typically it can be set 
 
 Note that unlike on macOS, this will only change the umask for the shell. Files created by running applications will not have their permissions set to 600.
 
+### Microcode updates
+You should make sure that your system has microcode updates to get security fixes for vulnerabilities like [Meltdown and Spectre](https://meltdownattack.com/).
+
+Debian does not ship microcode updates out of the box, so be sure to [enable the non-free repository](https://wiki.debian.org/SourcesList) and install the `microcode` package.
+
+On Arch Linux, make sure you have the `intel-ucode` or `amd-ucode` package installed.
+
+Avoid the Linux-libre kernel at all cost, as they actively block [microcode updates to be loaded in runtime](https://www.phoronix.com/news/GNU-Linux-Libre-5.13). If you are looking to use [GUIX](https://guix.gnu.org/en/download/), you should absolutely use something like the [Nonguix](https://gitlab.com/nonguix/nonguix) repository and get the microcode updates.
+
 ### Firmware Updates
 Hardware vendors typically offer updates to Linux systems through the [Linux Vendor Firmware Service](https://fwupd.org/). You can download the updates using the following commands:
 
