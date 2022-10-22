@@ -130,7 +130,7 @@ If your Android-based operating system does not expose this setting in the Setti
 
 Carriers can track your coarse location via cell towers using the IMSI and IMEI broadcasted by your baseband modem. In order to avoid this type of tracking, you have to enable the airplane mode which would disable the baseband modem.
 
-I have seen several common suggestions in the privacy community to mitigate this problem which does not actually work:
+I have seen several common suggestions in the privacy community to mitigate this problem which do not actually work:
 
 - **Removing the SIM Card**: The baseband modem will continue to contact the cell towers with its IMEI to prepare for emergency calls. In fact, this is how you are able to call `911` even when you do not have a SIM card inserted.
 
