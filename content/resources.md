@@ -3,7 +3,7 @@ title: "Resources"
 date: 2022-10-22
 ---
 
-Here is non-exhaustive list of resources in the privacy communities.
+Here is a small list of popular resources in the privacy communities.
 
 ### Good Resouces
 
@@ -15,6 +15,7 @@ NAME | NOTES |
 [Madaidan's Insecurities](https://madaidans-insecurities.github.io/) | Highlighting security issues within popular technologies, debunking misinformation, and providing free security guidance for everyone.
 [PrivacyGuides](https://privacyguides.org) | Privacy software recommendations and information for protecting your data security and privacy. Note that we do not agree with all of their recommendations.
 [Wonderfall's Lab](https://wonderfall.dev) | Thoughts and research on security, privacy, and pharmacology.
+[Wonderfall's Space](https://wonderfall.space/) | Blog posts about privacy and security in French.
 [Seidgy's Blog](https://seirdy.one) | Thoughts on security, privacy, and software freedom.
 
 ### Bad Resources
