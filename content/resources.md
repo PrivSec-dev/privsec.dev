@@ -7,7 +7,7 @@ Here is a small list of popular resources in the privacy communities.
 
 ### Good Resouces
 
-These websites contains a significant amount of factual technical information and are generally good resources to follow.
+These websites contain a significant amount of factual technical information and are generally good resources to follow.
 
 NAME | NOTES |
 | :--- | :--- |
