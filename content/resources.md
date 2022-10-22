@@ -20,7 +20,7 @@ NAME | NOTES |
 
 ### Bad Resources
 
-These resources spread a significant amount of misinformation, poorly researched claims, and fear-uncertainy-doubt, yet is somehow very popular.
+These resources spread a significant amount of misinformation, poorly researched claims, and fear-uncertainy-doubt.
 
 NAME | NOTES |
 | :--- | :--- |
