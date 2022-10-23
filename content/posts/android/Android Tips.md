@@ -212,7 +212,7 @@ On Android distributions with privileged Google Play Services (such as stock OSe
 - **Settings** → **Google** → **Ads**
 - **Settings** → **Privacy** → **Ads**
 
-![Ads=id](/images/ads-id.png)
+![Ads id](/images/ads-id.png)
 
 You will either be given the option to delete your advertising ID or to *Opt out of interest-based ads*, this varies between OEM distributions of Android. If presented with the option to delete the advertising ID that is preferred. If not, then make sure to opt out and reset your advertising ID.
 
@@ -225,3 +225,15 @@ If you are on an OS with Play Services installed, I highly recommend that you us
 You can disable telemetry in Google Messages by going to **⋮** → **Settings** → **General** → **Help Improve Messages** and toggling it off. There are also some other configurations in **⋮** → **Settings** → **General** → **Chat features** that you might want to go over such as sending typing indicator or read receipt.
 
 If you have trouble connecting to RCS, try disabling your VPN and the VPN killswitch first, then reconnect to RCS. Once you have connected to the server, you can re-enable your VPN and the killswitch and it should work just fine across reboots. I am not sure what is causing this issue, but it might be related to [this bug](https://issuetracker.google.com/issues/189577131).
+
+### Google Fi
+
+Google Fi provides [opportunistic end to end encryption](https://fi.google.com/about/end-to-end-encrypted-calls) for phone calls between Android Fi users. Google also includes [Fi VPN](https://support.google.com/fi/answer/9040000?visit_id=638021545722263144-1946671988&p=vpn_help&rd=1) in the subscription plan. On the Pixel 4 and above, Google Fi will take advatage of the [virtual carrier network](https://www.gstatic.com/fi/wormhole/whitepaper-a00cc4732620f382da5b7aac2bcb6905f970ba6b.pdf) to proxy hotspot, tetherting and secondary user profiles traffic.
+
+This is not without its caveats:
+- Google Fi requires Play Services and the [Fi app](https://play.google.com/store/apps/details?id=com.google.android.apps.tycho&hl=en_US) to work properly. Without Play Services, all of the features mentioned above, along with visual voicemail will not work. SMS messages will have random strings added at the end of each of them.
+- On GrapheneOS, Fi VPN and end to end encrypted calls with Fi will not work. Fi VPN requires privileged integration with the operating system which GrapheneOS developers are not willing to bundle, so it will likely never work in the foreseeable future. I am not entirely sure why end to end encrypted calls with FI are not working at the moment.
+
+If you are living in the United States and use the stock operating system, I highly recommend using Google Fi as the carrier to take advantage of the end to end encrypted calls and Fi VPN. Pixel 4 and bove users will benefit the most from the VCN as mentioned.
+
+If you are using GrapheneOS and do not mind installing Sandboxed Play Services, Fi is still a better option than to other providers thanks to Google's general good security practices and the fact that you can enroll in the Advanced Protection Program to have much better protection for your account. Some other provides do not even have multi-factor authentication support, and most will not let you enforce FIDO2 as the authentication method.
