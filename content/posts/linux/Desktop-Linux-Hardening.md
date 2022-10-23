@@ -261,7 +261,7 @@ Kicksecure comes with these boot parameters by default. This section is fairly s
 slab_nomerge init_on_alloc=1 init_on_free=1 page_alloc.shuffle=1 pti=on vsyscall=none debugfs=off oops=panic module.sig_enforce=1 lockdown=confidentiality mce=0 quiet loglevel=0 spectre_v2=on spec_store_bypass_disable=on tsx=off tsx_async_abort=full,nosmt mds=full,nosmt l1tf=full,force nosmt=force kvm.nx_huge_pages=force randomize_kstack_offset=on
 ```
 
-Note that [SMT](https://en.wikipedia.org/wiki/Simultaneous_multithreading) is disabled due to it being the cause of various security vulnerabilities. Also, on rpm-ostree based distributions, you should set the kernel parameters using `rpm-ostree kargs` rather than messing with grub configurations directly.
+Note that [SMT](https://en.wikipedia.org/wiki/Simultaneous_multithreading) is disabled due to it being the cause of various security vulnerabilities. Also, on rpm-ostree based distributions, you should set the kernel parameters using `rpm-ostree kargs` rather than messing with `GRUB` configurations directly.
 
 ### Restricting access to /proc and /sys
 
@@ -383,24 +383,50 @@ Another alternative option if you’re using the [linux-hardened](#linux-hardene
 
 One of the problems with Secure Boot, particularly on Linux is, that only the chainloader (shim), the [boot loader](https://en.wikipedia.org/wiki/Bootloader) (GRUB), and the [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) are verified and that's where verification stops. The [initramfs](https://en.wikipedia.org/wiki/Initial_ramdisk) is often left unverified, unencrypted, and open up the window for an [evil maid](https://en.wikipedia.org/wiki/Evil_maid_attack) attack. The firmware on most devices is also configured to trust Microsoft's keys for Windows and its partners, leading to a large attacks surface.
 
-To eliminate the need to trust Microsoft's keys, either follow the "Using your own keys" section on the [Arch Wiki](https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot) or use [sbctl](https://github.com/Foxboron/sbctl). The important thing that needs to be done here is to replace the OEM's key with your own Platform Key.
+### Enrolling your own keys
 
-There are several ways to work around the unverified initramfs:
+To eliminate the need to trust the OEM's key, I recommend using [`sbctl`](https://github.com/Foxboron/sbctl).
 
-### Encrypted /boot
+First, you need to boot into your firmware and set the UEFI Secure Boot mode to the setup mode. Then follow the [README page](https://github.com/Foxboron/sbctl#key-creation-and-enrollment) to generate and enroll your own keys.
 
-The first way is to [encrypt the /boot partition](https://wiki.archlinux.org/title/GRUB#Encrypted_/boot). If you are on Fedora Workstation (not Silverblue), you can follow [this guide](https://mutschler.dev/linux/fedora-btrfs-33/) to convert the existing installation to encrypted `/boot`. openSUSE comes with this that by default.
+On certain hardware, this will not work. Instead, you will need to import this in your firmware. You can export the public key to your EFI partition:
 
-Encrypting `/boot` however have its own issues, one being that [GRUB](https://en.wikipedia.org/wiki/GNU_GRUB) does not support LUKS2 well, so you will most likely need to fall back to using the old LUKS1 encryption scheme. In particular, it only supports PBKDF2 key derivation, and not Argon2 (the default with LUKS2). The `grub-install` command, from my own testing, also seems to have trouble detecting LUKS2 volumes, while it works just fine with LUKS1 volumes. Another problem with encrypted `/boot` is that you have to type the encryption password twice, though it could be solved by following the [openSUSE Wiki](https://en.opensuse.org/SDB:Encrypted_root_file_system#Avoiding_to_type_the_passphrase_twice).
-
-There are a few options depending on your configuration:
-
-- If you enroll your own keys as described above, and your distribution supports Secure Boot by default, you can add your distribution's EFI Key into the list of trusted keys (db keys). It can then be enrolled into the firmware. Then, you should move all of your keys off your local storage device.
-- If you enroll your own keys as described above, and your distribution does **not** support Secure Boot out of the box (like Arch Linux), you have to leave the keys on the disk and setup automatic signing of the [kernel](https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#Signing_the_kernel_with_a_pacman_hook) and bootloader. If you are using Grub, you can install it with the `--no-shim-lock` option and remove the need for the chainloader.
+`openssl x509 -in /usr/share/secureboot/keys/db/db.pem -outform DER /boot/efi/EFI/fedora/DB.cer`
 
 ### Unified Kernel Image
 
-The second option is to creating an [Unified Kernel Image](https://wiki.archlinux.org/title/Unified_kernel_image) that contains the kernel, [initramfs](https://en.wikipedia.org/wiki/Initial_ramdisk), and [microcode](https://en.wikipedia.org/wiki/Microcode). This EFI stub can then be signed. I recommend using [sbctl](https://github.com/Foxboron/sbctl) to generate such EFI image. This option also requires you to leave the keys on the disk to setup automatic signing, which weakens the security model.
+On most desktop Linux systems, it will be possible to create a [Unified Kernel Image](https://wiki.archlinux.org/title/Unified_kernel_image) that contains the kernel, [initramfs](https://en.wikipedia.org/wiki/Initial_ramdisk), and [microcode](https://en.wikipedia.org/wiki/Microcode). This unified kernel image can then be signed by the keys you created above.
+
+For a Fedora Workstation specific guide, you can follow this [blog post](https://haavard.name/2022/06/22/full-uefi-secure-boot-on-fedora-using-signed-initrd-and-systemd-boot/) by Håvard Moen. He will walk you through the sbctl installation, unified kernel image generation with `dracut`, and automtic signing with systemd-boot.
+
+For Arch Linux is very similar, though `sbctl` is already included in the official Arch Linux repository, and you will need to switch from `mkinitpcio` to `dracut`.
+
+In my opinion, this is most straight forward setup possible with a lot of potential such as integration with [systemd-measure](https://www.freedesktop.org/software/systemd/man/systemd-measure.html) in the future for better verification of the unified kernel image. With that being said, it does not appear to work well with specialized setups such as Fedora Silverblue/Kinoite or Ubuntu with `ZSYS`, and I need to do more testing to see if I can get them working.
+
+### Encrypted `/boot`
+
+#### openSUSE
+openSUSE and its derivatives come with encrypted `/boot` out of the box, with `/boot` being part of the root partition. This setup does work, as encryption will mask the problem that the initramfs is unsigned and unverified.
+
+However, there are a few things to keep in mind:
+
+- openSUSE uses `LUKS1` instead of `LUKS2` for encryption.
+- `GRUB` only supports `PBKDF2` key derivation, and not `Argon2` (the default with `LUKS2`). 
+- You have to type the encryption password twice, though it could be solved by following the [openSUSE Wiki](https://en.opensuse.org/SDB:Encrypted_root_file_system#Avoiding_to_type_the_passphrase_twice).
+- You could potentially improve your security by enrolling your own key as described [above](#enrolling-your-own-keys), reinstalling `GRUB` with the `--no-shim-lock` option, signing the kernel and `GRUB` it with your own keys, removing shim and MOK from the boot chain, and finally setting up hooks to automate these tasks every update. This is a rather tedious task and I have not yet tested it out on openSUSE.
+
+#### Other Distributions
+
+On systems which use [`grub-btrfs`](https://github.com/Antynea/grub-btrfs) to mimic openSUSE such as my old [Arch setup](https://github.com/tommytran732/Arch-Setup-Script), there are also a few things to keep in mind:
+
+- It will be easier to use `LUKS1` instead of `LUKS2` with `PBKDF2` for this setup. I have run into issues in the past where `GRUB` will detect a `LUKS1` partition converted to `LUKS2` with `PBKDF2`, but `grub-install` will not detect an existing `LUKS2` partition.
+- You should make `/boot` part of your root partition instead of a seperate one. In theory, if you have a seperate `/boot` partition, an evil maid attack can replace it with a malicious `/boot` partition and setup a fake `GRUB` decryption prompt for you to unlock the drive and subsequently compromising the rest of the system.
+- You will need to install `GRUB` with the `--no-shim-lock` option. The full command I use on my Arch Linux system is 
+```bash
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=`GRUB` --modules="normal test efi_gop efi_uga search echo linux all_video gfxmenu gfxterm_background gfxterm_menu gfxterm loadenv configfile gzio part_gpt cryptodisk luks gcry_rijndael gcry_sha256 btrfs" --disable-shim-lock
+```
+- You will need to enroll your own key as described [above](#enrolling-your-own-keys), sign the kernel and `GRUB` with your own keys, removing shim and MOK from the boot chain (if you are using them), and finally setting up hooks to automate these tasks every update. On Arch-based distributions, you can find the instructions on setting up the hooks in the [Arch Wiki](https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#Signing_the_kernel_with_a_pacman_hook).
+- You will need to disable the TPM module in your firmware to prevent `GRUB` from attempting to do [Measured Boot](https://www.gnu.org/software/grub/manual/grub/html_node/Measured-Boot.html), which does not work with `grub-btrfs`. The discussion for this issue can be found [here](https://github.com/Antynea/grub-btrfs/issues/156).
 
 ### Notes
 
