@@ -18,7 +18,7 @@ I'd like to expand on these issues, focusing primarily on compiled binaries. Bea
 
 I'll update this post occasionally as I learn more on the subject. If you like it, check back in a month or two to see if it has something new.
 
-_PS: this stance is not absolute; I concede to several good counter-arguments [at the bottom](#good-counter-arguments)!_
+_PS: this stance is not absolute; I concede to several [good counter-arguments in a dedicated section](#good-counter-arguments)!_
 
 ## How security fixes work
 
@@ -47,7 +47,7 @@ Source code[^2] is essential to describe a program's high-level, human-comprehen
 
 - Different compilers and compiler flags can offer different security guarantees and mitigations.
 
-- Source code [can be deceptive](https://en.wikipedia.org/wiki/Underhanded_C_Contest) by featuring sneaky obfuscation techniques, sometimes unintentionally. Confusing naming patterns, re-definitions, and vulnerabilities masquerading as innocent bugs (plausible deniability; look up "hypocrite commits" for an example) have all been well-documented.
+- Source code can be deceptive by featuring sneaky obfuscation techniques, sometimes unintentionally. Confusing naming patterns, re-definitions, and vulnerabilities masquerading as innocent bugs have all been well-documented: look up "hypocrite commits" or the [Underhanded C Contest](https://en.wikipedia.org/wiki/Underhanded_C_Contest) for examples.
 
 - All of the above points apply to each dependency and the underlying operating system, which can impact a program's behavior.
 
@@ -65,7 +65,7 @@ Distributing binaries with sanitizers and debug information to testers is a vali
 
 It's hard to figure out which syscalls and files a large program program needs by reading its source, especially when certain libraries (e.g. the libc implementation/version) can vary. A syscall tracer like [`strace(1)`](https://strace.io/)[^6] makes the process trivial.
 
-A personal example: the understanding I gained from `strace` was necessary for me to write my [bubblewrap scripts](https://sr.ht/~seirdy/bwrap-scripts/). These scripts use [`bubblewrap(1)`](https://github.com/containers/bubblewrap) to sandbox programs with the minimum permissions possible. Analyzing every relevant program and library's source code would have taken me months, while `strace` gave me everything I needed to know in an afternoon: analyzing the `strace` output told me exactly which syscalls to allow and which files to grant access to, without even having to know what language the program was written in. I generated the initial version of the syscall allow-lists with the following command[^7]:
+A personal example: the understanding I gained from `strace` was necessary for me to write [my bubblewrap scripts](https://sr.ht/~seirdy/bwrap-scripts/). These scripts use [`bubblewrap(1)`](https://github.com/containers/bubblewrap) to sandbox programs with the minimum permissions possible. Analyzing every relevant program and library's source code would have taken me months, while `strace` gave me everything I needed to know in an afternoon: analyzing the `strace` output told me exactly which syscalls to allow and which files to grant access to, without even having to know what language the program was written in. I generated the initial version of the syscall allow-lists with the following command[^7]:
 
 ```
 strace name-of-program program-args 2>&1 \
@@ -83,7 +83,7 @@ For more information, we turn to [**core dumps**](https://en.wikipedia.org/wiki/
 
 In 2020, Zoom Video Communications came under scrutiny for marketing its "Zoom" software as a secure, end-to-end encrypted solution for video conferencing. Zoom's documentation claimed that it used "AES-256" encryption. Without source code, did we have to take the docs at their word?
 
-[The Citizen Lab](https://citizenlab.ca/) didn't. In April 2020, it published [a report](https://citizenlab.ca/2020/04/move-fast-roll-your-own-crypto-a-quick-look-at-the-confidentiality-of-zoom-meetings/) revealing critical flaws in Zoom's encryption. It utilized Wireshark and [mitmproxy](https://mitmproxy.org/) to analyze networking activity, and inspected core dumps to learn about its encryption implementation. The Citizen Lab's researchers found that Zoom actually used an incredibly flawed implementation of a weak version of AES-128 (ECB mode), and easily bypassed it.
+[The Citizen Lab](https://citizenlab.ca/) didn't. On 2020-04-03, it published [a report](https://citizenlab.ca/2020/04/move-fast-roll-your-own-crypto-a-quick-look-at-the-confidentiality-of-zoom-meetings/) revealing critical flaws in Zoom's encryption. It utilized Wireshark and [mitmproxy](https://mitmproxy.org/) to analyze networking activity, and inspected core dumps to learn about its encryption implementation. The Citizen Lab's researchers found that Zoom actually used an incredibly flawed implementation of a weak version of AES-128 (ECB mode), and easily bypassed it.
 
 Syscall tracing, packet sniffing, and core dumps are great, but they rely on manual execution which might not hit all the desired code paths. Fortunately, there are other forms of analysis available.
 
@@ -95,11 +95,11 @@ Static binary analysis is a powerful way to inspect a program's underlying desig
 
 The goal doesn't have to be a complete understanding of a program's design (incredibly difficult without source code); it's typically to answer a specific question, fill in a gap left by tracing/fuzzing, or find a well-known property. When developers publish documentation on the security architecture of their closed-source software, reverse engineering tools like decompilers are exactly what you need to verify their honesty (or lack thereof).
 
-Decompilers are seldom used alone in this context. Instead, they're typically a component of reverse engineering frameworks that also sport memory analysis, debugging tools, scripting, and sometimes even IDEs. I use [the radare project](https://www.radare.org/n/), but [Ghidra](https://ghidra-sre.org/) is also popular. Their documentation should help you get started if you're interested.
+Decompilers are seldom used alone in this context. Instead, they're typically a component of reverse engineering frameworks that also sport memory analysis, debugging tools, scripting, and sometimes even IDEs. I use [the Rizin framework](https://rizin.re/), but [Ghidra](https://ghidra-sre.org/) is also popular. Their documentation should help you get started if you're interested.
 
 ### Example: malware analysis
 
-These reverse-engineering techniques---a combination of tracing, packet sniffing, binary analysis, and memory dumps---make up the workings of most modern malware analysis. See [this example](https://www.hybrid-analysis.com/sample/1ef3b7e9ba5f486afe53fcbd71f69c3f9a01813f35732222f64c0981a0906429/5e428f69c88e9e64c33afe64) of a fully-automated analysis of the Zoom Windows installer. It enumerates plenty of information about Zoom without access to its source code: reading unique machine information, anti-VM and anti-reverse-engineering tricks, reading config files, various types of network access, scanning mounted volumes, and more.
+These reverse-engineering techniques---a combination of tracing, packet sniffing, binary analysis, and memory dumps---make up the workings of most modern malware analysis. See [this example of a fully-automated analysis of the Zoom Windows installer](https://www.hybrid-analysis.com/sample/1ef3b7e9ba5f486afe53fcbd71f69c3f9a01813f35732222f64c0981a0906429/5e428f69c88e9e64c33afe64). It enumerates plenty of information about Zoom without access to its source code: reading unique machine information, anti-VM and anti-reverse-engineering tricks, reading config files, various types of network access, scanning mounted volumes, and more.
 
 To try this out yourself, use a sandbox designed for dynamic analysis. [Cuckoo](https://github.com/cuckoosandbox) is a common and easy-to-use solution, while [DRAKVUF](https://drakvuf.com/) is more advanced.
 
@@ -111,11 +111,11 @@ The fact that Intel ME has such deep access to the host system and the fact that
 
 I picked Intel ME+AMT to serve as an extreme example: it shows both the power and limitations of the analysis approaches covered. ME isn't made of simple executables you can just run in an OS because it sits far below the OS, in what's sometimes called "Ring -3".[^10] Analysis is limited to external monitoring (e.g. by monitoring network activity) and reverse-engineering unpacked partially-obfuscated firmware updates, with help from official documentation. This is slower and harder than analyzing a typical executable or library.
 
-Answers are a bit complex and...more boring than what sensationalized headlines would say. Reverse engineers such as Igor Skochinsky and Nicola Corna (the developers of [me-tools](https://github.com/skochinsky/me-tools) and [me_cleaner](https://github.com/corna/me_cleaner), respectively) have [analyzed ME](https://fahrplan.events.ccc.de/congress/2017/Fahrplan/system/event_attachments/attachments/000/003/391/original/Intel_ME_myths_and_reality.pdf), while researchers such as Vassilios Ververis have [thoroughly analyzed AMT](https://kth.diva-portal.org/smash/get/diva2:508256/FULLTEXT01) in 2010. Interestingly, the former pair argues that auditing binary code is preferable to potentially misleading source code: binary analysis allows auditors to "cut the crap" and inspect what software is truly made of. However, this was balanced by a form of binary obfuscation that the pair encountered; I'll describe it in a moment.
+Answers are a bit complex and…more boring than what sensationalized headlines would say. [Igor Skochinsky](https://twitter.com/igorskochinsky) (the developer of [me-tools](https://github.com/skochinsky/me-tools)) and [Nicola Corna](https://github.com/corna) (the developer of [me_cleaner](https://github.com/corna/me_cleaner)) presented their analysis of ME in [Intel Me: Myths and Reality](https://fahrplan.events.ccc.de/congress/2017/Fahrplan/system/event_attachments/attachments/000/003/391/original/Intel_ME_myths_and_reality.pdf); Vassilios Ververis thoroughly analyzed AMT in [Security Evaluation of Intel's Active Management Technology](https://kth.diva-portal.org/smash/get/diva2:508256/FULLTEXT01). Interestingly, the former pair argues that auditing binary code is preferable to potentially misleading source code: binary analysis allows auditors to “cut the crap” and inspect what software is truly made of. However, this was balanced by a form of binary obfuscation that the pair encountered; I’ll describe it in a moment.
 
 Simply monitoring network activity and systematically testing all claims made by the documentation allowed Ververis to uncover a host of security issues in Intel AMT. However, no undocumented features have (to my knowledge) been uncovered. The problematic findings revolved around flawed/insecure implementations of documented functionality. In other words: there's been no evidence of AMT being "a backdoor", but its security flaws could have had a similar impact. Fortunately, AMT can be disabled. What about ME?
 
-This is where some binary analysis comes in. Neither Skochinsky's [ME Secrets](https://recon.cx/2014/slides/Recon%202014%20Skochinsky.pdf) presentation nor the [previously-linked one](https://fahrplan.events.ccc.de/congress/2017/Fahrplan/system/event_attachments/attachments/000/003/391/original/Intel_ME_myths_and_reality.pdf) he gave with Corna seem to enumerate any contradictions with [official documentation](https://link.springer.com/book/10.1007/978-1-4302-6572-6).
+This is where some binary analysis comes in. Neither Skochinsky's [ME Secrets](https://recon.cx/2014/slides/Recon%202014%20Skochinsky.pdf) presentation nor <cite>Intel Me: Myths and Reality</cite> seem to enumerate any contradictions with [official Intel documentation](https://link.springer.com/book/10.1007/978-1-4302-6572-6).
 
 Unfortunately, some components are poorly understood due to being obfuscated using [Huffman compression with unknown dictionaries](http://io.netgarage.org/me/). Understanding the inner workings of the obfuscated components blurs the line between software reverse-engineering and figuring out how the chips are actually made, the latter of which is nigh-impossible if you don't have access to a chip lab full of cash. However, black-box analysis does tell us about the capabilities of these components: see page 21 of "ME Secrets". Thanks to zdctg for clarifying this.
 
@@ -132,7 +132,7 @@ Fuzzing
 
 Manual invocation of a program paired with a tracer like `strace` won't always exercise all code paths or find edge-cases. [Fuzzing helps bridge this gap](https://en.wikipedia.org/wiki/Fuzzing): it automates the process of causing a program to fail by generating random or malformed data to feed it. Researchers then study failures and failure-conditions to isolate a bug.
 
-Fuzzing doesn't necessarily depend on access to source code, as it is a black-box technique. Fuzzers like [American Fuzzy Loop (AFL)](https://lcamtuf.coredump.cx/afl/) normally use [special builds](#special-builds), but [other fuzzing setups](https://aflplus.plus/docs/binaryonly_fuzzing/) can work with just about any binaries. In fact, some types of fuzz tests (e.g. [fuzzing an API](https://github.com/KissPeter/APIFuzzer/) for a web service) hardly need any implementation details.
+Fuzzing doesn't necessarily depend on access to source code, as it is a black-box technique. Fuzzers like [American Fuzzy Loop (AFL)](https://lcamtuf.coredump.cx/afl/) normally use [special fuzz-friendly builds](#special-builds), but [other fuzzing setups](https://aflplus.plus/docs/binaryonly_fuzzing/) can work with just about any binaries. In fact, some types of fuzz tests (e.g. [fuzzing a web API](https://github.com/KissPeter/APIFuzzer/)) hardly need any implementation details.
 
 Fuzzing frequently catches bugs that are only apparent by running a program, not by reading source code. Even so, the biggest beneficiaries of fuzzing are open source projects. [cURL](https://github.com/curl/curl-fuzzer), [OpenSSL](https://github.com/openssl/openssl/tree/master/fuzz), web browsers, text rendering libraries (HarfBuzz, FreeType) and toolchains (GCC, Clang, the official Go toolchain, etc.) are some notable examples.
 
@@ -187,7 +187,7 @@ Both Patience and [Drew Vault](https://drewdevault.com/) argue that given the ab
 
 I've gone over some examples of how analyzing a software's security properties need not depend on source code, and vulnerability discovery in both FLOSS and in proprietary software uses source-agnostic techniques. Dynamic and static black-box techniques are powerful tools that work well from user-space (Zoom) to kernel-space (Linux) to low-level components like Intel ME+AMT. Source code enables the vulnerability-fixing process but has limited utility for the evaluation/discovery process.
 
-Don't assume software is safer than proprietary alternatives just because its source is visible; come to a conclusion after analyzing both. There are lots of great reasons to switch from macOS or Windows to Linux (it's been my main OS for years), but security is [low on that list](https://madaidans-insecurities.github.io/linux.html).
+Don't assume software is safer than proprietary alternatives just because its source is visible; come to a conclusion after analyzing both. There are lots of great reasons to switch from macOS or Windows to Linux (it's been my main OS for years), but [security is low on that list](https://madaidans-insecurities.github.io/linux.html).
 
 All other things being mostly equal, FLOSS is obviously _preferable_ from a security perspective; I listed some reasons why in the counter-arguments section. Unfortunately, being helpful is not the same as being necessary. All I argue is that source unavailability does not imply insecurity, and source availability does not imply security. Analysis approaches that don't rely on source are typically the most powerful, and can be applied to both source-available and source-unavailable software. Plenty of proprietary software is more secure than FLOSS alternatives; few would argue that the sandboxing employed by Google Chrome or Microsoft Edge is more vulnerable than Pale Moon or most WebKitGTK-based browsers, for instance.
 
