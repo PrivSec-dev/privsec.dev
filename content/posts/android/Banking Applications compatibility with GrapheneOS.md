@@ -172,14 +172,13 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Norway
 
-<!-- FIXME: All the /store/search?q= string parameters must be changed to /store/apps/details?id= -->
-- [Bank Norwegian](https://play.google.com/store/search?q=bank+norwegian&c=apps) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/95)
-- [DNB Spare](https://play.google.com/store/search?q=dnb+spare+app&c=apps) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/98)
-- [Engangskode sparebank 1](https://play.google.com/store/search?q=engangskode+sparebank+1&c=apps) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/100)
-- [Kron](https://play.google.com/store/search?q=kron&c=apps) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/97)
-- [Nordnet](https://play.google.com/store/search?q=nordnet&c=apps) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/99)
-- [Sbanken](https://play.google.com/store/search?q=Sbanken&c=apps) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/96)
-- [Trumf Visa](https://play.google.com/store/search?q=trumf+visa&c=apps) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/101)
+- [Bank Norwegian](https://play.google.com/store/apps/details?id=com.banknorwegian) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/95)
+- [DNB Spare](https://play.google.com/store/apps/details?id=no.dnb.spare) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/98)
+- [Engangskode SpareBank 1](https://play.google.com/store/apps/details?id=no.sparebank1.mobilbank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/100)
+- [Kron](https://play.google.com/store/apps/details?id=com.kronmobilapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/97)
+- [Nordnet](https://play.google.com/store/apps/details?id=com.nordnet) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/99)
+- [Sbanken](https://play.google.com/store/apps/details?id=no.skandiabanken) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/96)
+- [Trumf Visa](https://play.google.com/store/apps/details?id=com.evry.android.cardcompanion.ngtv) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/101)
 - [Vipps](https://play.google.com/store/apps/details?id=no.dnb.vipps) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/74)
 
 ### Poland
