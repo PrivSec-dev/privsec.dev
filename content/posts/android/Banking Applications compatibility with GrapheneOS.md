@@ -132,6 +132,10 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Volksbanken Raiffeisenbanken](https://play.google.com/store/apps/details?id=de.fiduciagad.banking.vr) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/36)
 - [Volksbanken Raiffeisenbanken — Companion App](https://play.google.com/store/apps/details?id=de.fiduciagad.android.vrwallet) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/35)
 
+### Ghana
+
+- [SC Mobile Ghana](https://play.google.com/store/apps/details?id=com.breezeghana.ui) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/166)
+
 ### Hungary
 
 - [Revolut](https://play.google.com/store/apps/details?id=com.revolut.revolut) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/164)
