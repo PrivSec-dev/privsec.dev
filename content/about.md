@@ -15,6 +15,7 @@ Also, to avoid any confusion, we are not affiliated, associated or in any way co
 Benevolent dictator for life @PrivSec.dev. System Administrator. Avid GrapheneOS and Qubes OS user.
 
 **Website**: [tommytran.io](https://tommytran.io)\
+**Signal**: +1 4156366350. Note that this number is for Signal only - please do not call or send SMS/MMS/RCS messages.\
 **Matrix**: [@tommy:arcticfoxes.net](https://matrix.to/#/@tommy:arcticfoxes.net)\
 **Email**: [tommy@privsec.dev](mailto:tommy@privsec.dev)
 
