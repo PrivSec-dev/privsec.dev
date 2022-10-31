@@ -134,7 +134,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Ghana
 
-- [SC Mobile Ghana](https://play.google.com/store/apps/details?id=com.breezeghana.ui) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/166)
+- [SC Mobile Ghana](https://play.google.com/store/apps/details?id=com.breezeghana.ui) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/174)
 
 ### Hungary
 
