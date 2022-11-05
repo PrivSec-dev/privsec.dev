@@ -24,7 +24,9 @@ You can obtain a prebuilt image of MirageOS [here](https://github.com/tommytran7
 
 ### Building Mirage-Firewall Yourself
 
-First, you need to make sure that you have Docker installed on your system. Then, run the following commands:
+First, you need an AppVm/DispVM with Docker installed to build the Mirage kernel. Fedora works well enough for this purpose.
+
+Once you have an AppVM/DispVM to build it in, run the following commands:
 
 ```bash
 git clone https://github.com/palainp/qubes-mirage-firewall/
