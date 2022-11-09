@@ -5,13 +5,13 @@ tags: ['Operating Systems', 'Linux', 'Privacy', 'Security']
 author: Tommy
 ---
 
-Linux is [not](/posts/os/linux-insecurities) a secure operating system. However, there are steps you can take to harden it, reduce its attack surface and improve its privacy.
+Linux is [not](https://privsec.dev/posts/linux/linux-insecurities/) a secure operating system. However, there are steps you can take to harden it, reduce its attack surface and improve its privacy.
 
-**Before We Start**... 
+**Before We Start**...
 
-This guide is largely based on [Madaidan's Linux hardening guide](https://madaidans-insecurities.github.io/guides/linux-hardening.html); however, it does take into account usability and ease of maintenance of each recommendation. The goal is to produce a guide that intermediate to advanced Linux users can reasonably follow to set up and maintain the security configurations. It will also **not** try to be distribution agnostic, and there will be many distribution specific recommendations. 
+This guide is largely based on [Madaidan's Linux hardening guide](https://madaidans-insecurities.github.io/guides/linux-hardening.html); however, it does take into account usability and ease of maintenance of each recommendation. The goal is to produce a guide that intermediate to advanced Linux users can reasonably follow to set up and maintain the security configurations. It will also **not** try to be distribution agnostic, and there will be many distribution specific recommendations.
 
-Some of the sections will include mentions of unofficial builds of packages like `linux-hardened`, `lkrg-akmod`, `hardend-malloc`, and so on. These are not endorsements. They are merely there to show you that you have an option to easily obtain and update these packages. Using unofficial builds of packages means adding more parties to trust, and you have to evaluate whether it is worth doing so for the potential privacy or security benefits or not.
+Some of the sections will include mentions of unofficial builds of packages like `linux-hardened`, `lkrg-akmod`, `hardened_malloc`, and so on. These are not endorsements. They are merely there to show you that you have an option to easily obtain and update these packages. Using unofficial builds of packages means adding more parties to trust, and you have to evaluate whether it is worth doing so for the potential privacy or security benefits or not.
 
 ![Fedora Tux](/images/fedora-tux.png)
 
@@ -19,7 +19,7 @@ Some of the sections will include mentions of unofficial builds of packages like
 
 ### Drive Encryption
 
-Most Linux distributions have an option within its installer for enabling [LUKS](../encryption.md#linux-unified-key-setup) full disk encryption. If this option isn’t set at installation time, you will have to backup your data and re-install, as encryption is applied after [disk partitioning](https://en.wikipedia.org/wiki/Disk_partitioning), but before [file systems](https://en.wikipedia.org/wiki/File_system) are formatted. 
+Most Linux distributions have an option within its installer for enabling [LUKS](../encryption.md#linux-unified-key-setup) full disk encryption. If this option isn’t set at installation time, you will have to backup your data and re-install, as encryption is applied after [disk partitioning](https://en.wikipedia.org/wiki/Disk_partitioning), but before [file systems](https://en.wikipedia.org/wiki/File_system) are formatted.
 
 ### Encrypted Swap
 
@@ -77,7 +77,7 @@ There are other system identifiers which you may wish to be careful about. You s
 
 Many Linux distributions sends some telemetry data by default to count how many systems are using their software. Consider disabling this depending on your threat model.
 
-The Fedora Project does this by [counting](https://fedoraproject.org/wiki/Changes/DNF_Better_Counting) how many unique systems access its mirrors by using a [`countme`](https://fedoraproject.org/wiki/Changes/DNF_Better_Counting#Detailed_Description) variable instead of a unique ID. 
+The Fedora Project does this by [counting](https://fedoraproject.org/wiki/Changes/DNF_Better_Counting) how many unique systems access its mirrors by using a [`countme`](https://fedoraproject.org/wiki/Changes/DNF_Better_Counting#Detailed_Description) variable instead of a unique ID.
 
 This [option](https://dnf.readthedocs.io/en/latest/conf_ref.html#options-for-both-main-and-repo) is currently off by default. However, you could add `countme=false` to `/etc/dnf/dnf.conf` just in case it is enabled in the future. On systems that use rpm-ostree such as Fedora Silverblue or Kinoite, the `countme` option can be disabled by masking the [rpm-ostree-countme](https://fedoramagazine.org/getting-better-at-counting-rpm-ostree-based-systems/) timer.
 
@@ -138,7 +138,7 @@ One caveat with Snap packages is that you only have control over the interfaces 
 
 Madaidan [provided](https://madaidans-insecurities.github.io/linux.html#firejail) additional details on how Firejail can worsen the security of your device.
 
-If you do use Firejail, there is a tool called [Firetools](https://github.com/netblue30/firetools) which can help you quickly manage what an application can have access to and launch them. Note that the configurations by `Firetools` are temporary and it does not provide you with an option to save a profile for long term use. 
+If you do use Firejail, there is a tool called [Firetools](https://github.com/netblue30/firetools) which can help you quickly manage what an application can have access to and launch them. Note that the configurations by `Firetools` are temporary and it does not provide you with an option to save a profile for long term use.
 
 Firejail can also confine X11 windows using Xpra or Xephr, something that Flatpak and Snap cannot do. I highly recommend that you check out their [documentation](https://firejail.wordpress.com/documentation-2/x11-guide/) on how to set this up.
 
@@ -300,7 +300,7 @@ The [hardened memory allocator](https://github.com/GrapheneOS/hardened_malloc) f
 
 On Fedora, there is currently a build for it by Divested Computing Group that you can find [here](https://github.com/divestedcg/rpm-hardened_malloc)
 
-If you are using Whonix, Kicksecure or have Hardened_Malloc installed somewhere, consider setting up `LD_PRELOAD` as described in the [Kicksecure Documentation](https://www.kicksecure.com/wiki/Hardened_Malloc) or [Arch Wiki](https://wiki.archlinux.org/title/Security#Hardened_malloc).
+If you are using Whonix, Kicksecure or have hardened_Malloc installed somewhere, consider setting up `LD_PRELOAD` as described in the [Kicksecure Documentation](https://www.kicksecure.com/wiki/Hardened_Malloc) or [Arch Wiki](https://wiki.archlinux.org/title/Security#Hardened_malloc).
 
 ### Mountpoint Hardening
 
@@ -361,7 +361,7 @@ automount-open=false" | sudo tee /etc/dconf/db/local.d/custom
 sudo dconf update
 ```
 
-This will set the default `dconf` settings for new users and override all `dconf` settings for existing users. Note that this can be overidden by regular users on your system, simply by changing their individual `dconf` settings.
+This will set the default `dconf` settings for new users and override all `dconf` settings for existing users. Note that this can be overridden by regular users on your system, simply by changing their individual `dconf` settings.
 
 **autofs**
 
@@ -397,7 +397,7 @@ On certain hardware, this will not work. Instead, you will need to import this i
 
 On most desktop Linux systems, it will be possible to create a [Unified Kernel Image](https://wiki.archlinux.org/title/Unified_kernel_image) that contains the kernel, [initramfs](https://en.wikipedia.org/wiki/Initial_ramdisk), and [microcode](https://en.wikipedia.org/wiki/Microcode). This unified kernel image can then be signed by the keys you created above.
 
-For a Fedora Workstation specific guide, you can follow this [blog post](https://haavard.name/2022/06/22/full-uefi-secure-boot-on-fedora-using-signed-initrd-and-systemd-boot/) by Håvard Moen. He will walk you through the sbctl installation, unified kernel image generation with `dracut`, and automtic signing with systemd-boot.
+For a Fedora Workstation specific guide, you can follow this [blog post](https://haavard.name/2022/06/22/full-uefi-secure-boot-on-fedora-using-signed-initrd-and-systemd-boot/) by Håvard Moen. He will walk you through the sbctl installation, unified kernel image generation with `dracut`, and automatic signing with systemd-boot.
 
 For Arch Linux is very similar, though `sbctl` is already included in the official Arch Linux repository, and you will need to switch from `mkinitpcio` to `dracut`.
 
@@ -411,7 +411,7 @@ openSUSE and its derivatives come with encrypted `/boot` out of the box, with `/
 However, there are a few things to keep in mind:
 
 - openSUSE uses `LUKS1` instead of `LUKS2` for encryption.
-- `GRUB` only supports `PBKDF2` key derivation, and not `Argon2` (the default with `LUKS2`). 
+- `GRUB` only supports `PBKDF2` key derivation, and not `Argon2` (the default with `LUKS2`).
 - You have to type the encryption password twice, though it could be solved by following the [openSUSE Wiki](https://en.opensuse.org/SDB:Encrypted_root_file_system#Avoiding_to_type_the_passphrase_twice).
 - You could potentially improve your security by enrolling your own key as described [above](#enrolling-your-own-keys), reinstalling `GRUB` with the `--no-shim-lock` option, signing the kernel and `GRUB` it with your own keys, removing shim and MOK from the boot chain, and finally setting up hooks to automate these tasks every update. This is a rather tedious task and I have not yet tested it out on openSUSE.
 
@@ -420,8 +420,8 @@ However, there are a few things to keep in mind:
 On systems which use [`grub-btrfs`](https://github.com/Antynea/grub-btrfs) to mimic openSUSE such as my old [Arch setup](https://github.com/tommytran732/Arch-Setup-Script), there are also a few things to keep in mind:
 
 - It will be easier to use `LUKS1` instead of `LUKS2` with `PBKDF2` for this setup. I have run into issues in the past where `GRUB` will detect a `LUKS1` partition converted to `LUKS2` with `PBKDF2`, but `grub-install` will not detect an existing `LUKS2` partition.
-- You should make `/boot` part of your root partition instead of a seperate one. In theory, if you have a seperate `/boot` partition, an evil maid attack can replace it with a malicious `/boot` partition and setup a fake `GRUB` decryption prompt for you to unlock the drive and subsequently compromising the rest of the system.
-- You will need to install `GRUB` with the `--no-shim-lock` option. The full command I use on my Arch Linux system is 
+- You should make `/boot` part of your root partition instead of a separate one. In theory, if you have a separate `/boot` partition, an evil maid attack can replace it with a malicious `/boot` partition and setup a fake `GRUB` decryption prompt for you to unlock the drive and subsequently compromising the rest of the system.
+- You will need to install `GRUB` with the `--no-shim-lock` option. The full command I use on my Arch Linux system is
 ```bash
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB --modules="normal test efi_gop efi_uga search echo linux all_video gfxmenu gfxterm_background gfxterm_menu gfxterm loadenv configfile gzio part_gpt cryptodisk luks gcry_rijndael gcry_sha256 btrfs tpm" --disable-shim-lock
 ```
