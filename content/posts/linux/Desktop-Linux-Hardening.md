@@ -250,6 +250,7 @@ Note that these configurations do not disable unprivileged user namespaces. Ther
 - The `bluetooth` and `btusb` kernel modules are disabled by default. You need to comment out `install bluetooth /bin/disabled-bluetooth-by-security-misc` and `install btusb /bin/disabled-bluetooth-by-security-misc` if you want to use Bluetooth.
 - Apple filesystems are disabled by default. This is generally fine on non-Apple systems; however, if you are using Linux on an Apple product, you **must** check what filesystem your EFI partition uses. For example, if your EFI filesystem is HFS+, you need to comment out `install hfsplus /bin/disabled-filesys-by-security-misc`, otherwise your computer will not be able to boot into Linux.
 - The `cdrom` and `sr_mod` modules are only blacklisted by default. If you have no intention to ever use CD-ROM devices they should be disabled. To implement this, at the bottom of the configuration file 'uncomment' both install (disable) commands and 'comment out' both existing blacklist commands.
+- To produce informative errors when utilising the configuration file, all 10 of the corresponding [debugging scripts](https://github.com/Kicksecure/security-misc/tree/master/bin) should also be copied into `/bin`.
 
 ### Harding Boot Parameters
 
