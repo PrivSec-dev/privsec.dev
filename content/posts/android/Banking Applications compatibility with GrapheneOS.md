@@ -77,12 +77,14 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 ### Canada
 
 - [Affinity Credit Union](https://play.google.com/store/apps/details?id=ca.affinitycu.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/71)
+- [Coast Capital Savings](https://play.google.com/store/apps/details?id=com.coastcapitalsavings.dcu) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/175)
 - [BMO Mobile Banking](https://play.google.com/store/apps/details?id=com.bmo.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/19)
 - [EQ Bank Mobile Banking](https://play.google.com/store/apps/details?id=com.eqbank.eqbank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/103)
 - [KOHO Financial](https://play.google.com/store/apps/details?id=ca.koho) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/104)
 - [RBC Mobile](https://play.google.com/store/apps/details?hl=en&id=com.rbc.mobile.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/32)
 - [QuestMobile: Invest & Trade](https://play.google.com/store/apps/details?id=com.questrade.questmobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/115)
 - [Questrade](https://play.google.com/store/apps/details?id=com.questrade.my) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/114)
+- [Scotiabank](https://play.google.com/store/apps/details?id=com.scotiabank.banking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/176)
 - [Simplii Financial](https://play.google.com/store/apps/details?id=com.pcfinancial.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/17)
 - [Tangerine Mobile App](https://play.google.com/store/apps/details?id=ca.tangerine.clients.banking.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/16)
 - [Wealthsimple](https://play.google.com/store/apps/details?id=com.wealthsimple) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/116)
@@ -200,6 +202,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 ### Romania
 
 - [BT Pay — Banca Transilvania](https://play.google.com/store/apps/details?id=ro.btrl.pay) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/83)
+- [George Romania](https://play.google.com/store/apps/details?id=ro.bcr.georgego) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/179)
 - [Raiffeisen Smart Mobile PI](https://play.google.com/store/apps/details?id=ro.raiffeisen.smartmobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/86)
 
 ### Serbia
@@ -209,6 +212,11 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 ### Singapore
 
 - [OCBC Digital](https://play.google.com/store/apps/details?id=com.ocbc.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/146)
+
+### Slovenia
+
+- [DH Denarnik](https://play.google.com/store/apps/details?id=si.delavskahranilnica.dhdenarnik) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/178)
+- [DH Mobilni](https://play.google.com/store/apps/details?id=com.hrc.eb.mobile.android.hibismobiledh) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/177)
 
 ### Spain
 
