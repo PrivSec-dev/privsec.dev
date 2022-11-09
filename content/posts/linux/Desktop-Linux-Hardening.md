@@ -267,6 +267,12 @@ Regarding Kicksecure, it [no longer](https://forums.whonix.org/t/kernel-hardenin
 
 Note that [SMT](https://en.wikipedia.org/wiki/Simultaneous_multithreading) is disabled due to it being the cause of various security vulnerabilities. Also, on rpm-ostree based distributions, you should set the kernel parameters using `rpm-ostree kargs` rather than messing with `GRUB` configurations directly.
 
+As sources of initial entropy at boot, both the CPU and bootloader should be [distrusted](https://lkml.org/lkml/2022/6/5/271) as implemented in KickSecure. For CPUs, the RBRAND instructions set is [impossible to audit](https://madaidans-insecurities.github.io/guides/linux-hardening.html#rdrand), and moving forward as a precaution, the bootloader should be treated identically. Note that both of these kernel parameters will increase boot time:
+
+```
+random.trust_cpu=off random.trust_bootloader=off
+```
+
 ### Restricting access to /proc and /sys
 
 You should read these 2 sections in Madaidan's guide to further reduce the attack surface on the kernel:
