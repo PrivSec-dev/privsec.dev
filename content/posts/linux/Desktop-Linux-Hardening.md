@@ -254,32 +254,39 @@ Note that these configurations do not disable unprivileged user namespaces. Ther
 
 ### Harding Boot Parameters
 
-Read through this section on how to harden your boot parameters:
+Read through these references on how to harden your boot parameters:
 - [2.3 Boot Parameters](https://madaidans-insecurities.github.io/guides/linux-hardening.html#boot-parameters)
+- [Kicksecure Boot Parameters](https://github.com/Kicksecure/security-misc/tree/master/etc/default/grub.d)
 
-Kicksecure comes with some of these boot parameters enabled by default. This section is fairly short, so I'd recommend that you read it through. With that being said, here are all of the parameters that you would need:
+In this section we succinctly present the parameters used by Kicksecure as those are more regularly updated though strongly recommend reading through Madaidan's guide.
 
+- CPU mitigations
 ```
-slab_nomerge init_on_alloc=1 init_on_free=1 page_alloc.shuffle=1 pti=on vsyscall=none debugfs=off oops=panic module.sig_enforce=1 lockdown=confidentiality mce=0 quiet loglevel=0 spectre_v2=on spec_store_bypass_disable=on tsx=off tsx_async_abort=full, mds=full, l1tf=full,force nosmt=force kvm.nx_huge_pages=force randomize_kstack_offset=on
+spectre_v2=on spec_store_bypass_disable=on l1tf=full,force mds=full,nosmt tsx=off tsx_async_abort=full, mds=full,nosmt kvm.nx_huge_pages=force nosmt=force l1d_flush=on mmio_stale_data=full,nosmt
 ```
 
-Regarding Kicksecure, it [no longer](https://forums.whonix.org/t/kernel-hardening/7296/493) uses `mce=0` and does not enforce either `module.sig_enforce=1` or ` lockdown=confidentiality` as they lead a lot of hardware compatibility issues. They also [add](https://github.com/Kicksecure/security-misc/blob/master/etc/default/grub.d/40_cpu_mitigations.cfg) the `l1d_flush=on` and `mmio_stale_data=full,nosmt` mitigations and apply the additional `extra_latent_entropy` parameter.
+[SMT](https://en.wikipedia.org/wiki/Simultaneous_multithreading) is disabled due to it being the cause of various security vulnerabilities. Also, on rpm-ostree based distributions, you should set the kernel parameters using `rpm-ostree kargs` rather than messing with `GRUB` configurations directly.
 
-Note that [SMT](https://en.wikipedia.org/wiki/Simultaneous_multithreading) is disabled due to it being the cause of various security vulnerabilities. Also, on rpm-ostree based distributions, you should set the kernel parameters using `rpm-ostree kargs` rather than messing with `GRUB` configurations directly.
+- Kernel
+```
+slab_nomerge init_on_alloc=1 init_on_free=1 pti=on vsyscall=none page_alloc.shuffle=1 randomize_kstack_offset=on extra_latent_entropy debugfs=off oops=panic quiet loglevel=0
+```
 
-As sources of initial entropy at boot, both the CPU and bootloader should be [distrusted](https://lkml.org/lkml/2022/6/5/271) as implemented in KickSecure. For CPUs, the RBRAND instructions set is [impossible to audit](https://madaidans-insecurities.github.io/guides/linux-hardening.html#rdrand), and moving forward as a precaution, the bootloader should be treated identically. Note that both of these kernel parameters will increase boot time:
+Kicksecure does not enforce either `module.sig_enforce=1` or ` lockdown=confidentiality` by default as they lead a lot of hardware compatibility issues, consider enabling these if possible on your system. Additionally, `mce=0` is also no [no longer](https://forums.whonix.org/t/kernel-hardening/7296/493) used.
 
+- Entropy generation
 ```
 random.trust_cpu=off random.trust_bootloader=off
 ```
 
-Additionally, direct memory access (DMA) attacks can be [mitigateed](https://madaidans-insecurities.github.io/guides/linux-hardening.html#dma-attacks) via IOMMU and previously mentioned kernel module disabling. Furthermore, [strict enforcement](https://github.com/Kicksecure/security-misc/blob/master/etc/default/grub.d/40_enable_iommu.cfg) of IOMMU TLB invalidation should be applied so devices will never be able to access stale data contents. Applying these kernel parameters is necessary:
+As sources of initial entropy at boot, both the CPU and bootloader should be [distrusted](https://lkml.org/lkml/2022/6/5/271). For CPUs, the RBRAND instructions set is [impossible to audit](https://madaidans-insecurities.github.io/guides/linux-hardening.html#rdrand), and moving forward as a precaution, the bootloader should be treated identically. Note that both of these kernel parameters will increase boot time.
 
+- DMA mitigations
 ```
 intel_iommu=on amd_iommu=on efi=disable_early_pci_dma iommu.passthrough=0 iommu.strict=1
 ```
 
-Note that disabling the busmaster bit on all PCI bridges during very early boot can cause complete boot failure on certain systems if they do not have adequate resources. Therefore, always ensure you have a fallback option to boot into the device.
+Direct memory access (DMA) attacks can be [mitigateed](https://madaidans-insecurities.github.io/guides/linux-hardening.html#dma-attacks) via IOMMU and the previously mentioned kernel module disabling. Furthermore, [strict enforcement](https://github.com/Kicksecure/security-misc/blob/master/etc/default/grub.d/40_enable_iommu.cfg) of IOMMU TLB invalidation should be applied so devices will never be able to access stale data contents. Note that disabling the busmaster bit on all PCI bridges (`disable_early_pci_dma`) during very early boot can cause complete boot failure on certain systems if they do not have adequate resources. Therefore, as always, ensure you have a fallback option to boot into the system whenever modifying any kernel parameters.
 
 ### Restricting access to /proc and /sys
 
@@ -318,7 +325,7 @@ The [hardened memory allocator](https://github.com/GrapheneOS/hardened_malloc) f
 
 On Fedora, there is currently a build for it by Divested Computing Group that you can find [here](https://github.com/divestedcg/rpm-hardened_malloc)
 
-If you are using Whonix, Kicksecure or have hardened_Malloc installed somewhere, consider setting up `LD_PRELOAD` as described in the [Kicksecure Documentation](https://www.kicksecure.com/wiki/Hardened_Malloc) or [Arch Wiki](https://wiki.archlinux.org/title/Security#Hardened_malloc).
+If you are using Whonix, Kicksecure or have hardened_malloc installed somewhere, consider setting up `LD_PRELOAD` as described in the [Kicksecure Documentation](https://www.kicksecure.com/wiki/Hardened_Malloc) or [Arch Wiki](https://wiki.archlinux.org/title/Security#Hardened_malloc).
 
 ### Mountpoint Hardening
 
