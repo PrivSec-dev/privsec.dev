@@ -54,6 +54,14 @@ If you trust the hardware enforced rate limiting features (typically done by the
 
 Ideally, you should be using a 8-10 word [diceware passphrase](https://en.wikipedia.org/wiki/Diceware) to secure your phone. This would make your phone unlock practically impossible to bruteforce, regardless of whether there is proper rate limiting or not.
 
+## Setup Auditor
+
+[Auditor](https://github.com/GrapheneOS/Auditor) provides attestation for GrapheneOS phones and the stock operating systems on [a number of devices](https://attestation.app/about). It verifies the integrity of the system using hardware security features to make sure that the firmware and operating system have not been tampered with or downgraded.
+
+Attestation can be done [locally](https://grapheneos.org/install/web#verifying-installation) by pairing with another Android 8+ device or remotely using [the remote attestation service](https://attestation.app/about). To make sure that your hardware and operating system is genuine, perform local attestation immediately after the device has been setup and prior to any internet connection.
+
+
+
 ## Use Global Toggles
 
 Modern Android devices have global toggles for disabling Bluetooth and location services. Android 12 introduced toggles for the camera and microphone. When not in use, you should disable these features. Apps cannot use disabled features (even if granted individual permission) until re-enabled.
@@ -76,7 +84,7 @@ On GrapheneOS, connectivity checks by default are done with GrapheneOS's own ser
 
 If you want to, you can disable connectivity check altogether. Note that this will stop captive portal from working.
 
-- On GrapheneOS, go to **Settings** → **Network & internet** → **Internet connectivity check** and select **Disabled**
+- On GrapheneOS and DivestOS, go to **Settings** → **Network & internet** → **Internet connectivity check** and select **Disabled**
 - On other Android-based operating systems, you can [disable captive portal via ADB](https://gitlab.com/CalyxOS/calyxos/-/issues/1226#note_1130393164).
 
 To disable:
@@ -90,6 +98,20 @@ To re-enable:
 ```bash
 adb shell settings delete global captive_portal_mode
 ```
+
+## Enable Secure Exec Spawning
+
+GrapheneOS and DivestOS have the option to spawn fresh processes when launching applications instead of using the traditional Zygote spawning model. You can read more about this [here](https://grapheneos.org/usage#exec-spawning).
+
+On GrapheneOS, this feature is enabled by default. On DivestOS, it is not enabled by default, and you should enable it in **Settings** → **Security** → **Enable secure app spawning**.
+
+## Restrict USB Peripherals
+
+USB peripherals should be disabled or set to only be allowed when the device is unlocked if possible.
+
+On GrapheneOS, you can adjust this settings in **Settings** → **Security** → **USB accessories**. The OS defaults to "Allow new USB peripherals when unlocked".
+
+On DivestOS, you can adjust this settings in **Settings** → **Privacy** → **Trust** → **Restrict USB**. The OS defaults to "Always allow USB connections", and you should change it to one of the two other options as mentioned above.
 
 ## Media Access
 Quite a few applications allow you to "share" a file with them for media upload. If you want to, for example, tweet a picture to Twitter, do not grant Twitter access to your "media and photos", because it will have access to all of your pictures then. Instead, go to your file manager (documentsUI), hold onto the picture, then share it with Twitter.
