@@ -33,7 +33,7 @@ Random guy passing by on the Internet who is interested in all kinds of things. 
 ### Lberrymage
 Accrescent developer. Rust shill and man who can't stop recycling names of his previous projects.
 
-**Website**: [accrescent.app](https://accrescent.app)\
+**Website**: [lberrymage.dev](https://lberrymage.dev)\
 **Matrix**: [@lberrymage:matrix.org](https://matrix.to/#/@lberrymage:matrix.org)
 
 ### Madaidan
