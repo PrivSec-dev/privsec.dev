@@ -56,11 +56,9 @@ Ideally, you should be using a 8-10 word [diceware passphrase](https://en.wikipe
 
 ## Setup Auditor
 
-[Auditor](https://github.com/GrapheneOS/Auditor) provides attestation for GrapheneOS phones and the stock operating systems on [a number of devices](https://attestation.app/about). It verifies the integrity of the system using hardware security features to make sure that the firmware and operating system have not been tampered with or downgraded.
+[Auditor](https://github.com/GrapheneOS/Auditor) provides attestation for GrapheneOS phones and the stock operating systems on [a number of devices](https://attestation.app/about). It uses hardware security features to make sure that the firmware and operating system have not been downgraded or tampered with.
 
 Attestation can be done [locally](https://grapheneos.org/install/web#verifying-installation) by pairing with another Android 8+ device or remotely using [the remote attestation service](https://attestation.app/about). To make sure that your hardware and operating system is genuine, perform local attestation immediately after the device has been setup and prior to any internet connection.
-
-
 
 ## Use Global Toggles
 
