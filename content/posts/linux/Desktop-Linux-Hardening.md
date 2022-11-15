@@ -265,7 +265,7 @@ In this section we succinctly present the parameters used by Kicksecure as those
 spectre_v2=on spec_store_bypass_disable=on l1tf=full,force mds=full,nosmt tsx=off tsx_async_abort=full, mds=full,nosmt kvm.nx_huge_pages=force nosmt=force l1d_flush=on mmio_stale_data=full,nosmt
 ```
 
-[SMT](https://en.wikipedia.org/wiki/Simultaneous_multithreading) is disabled due to it being the cause of various security vulnerabilities. Also, on rpm-ostree based distributions, you should set the kernel parameters using `rpm-ostree kargs` rather than messing with `GRUB` configurations directly.
+[SMT](https://en.wikipedia.org/wiki/Simultaneous_multithreading) is disabled due to it being the cause of various security vulnerabilities. Also, on rpm-ostree based distributions, you should set the kernel parameters using `rpm-ostree kargs` rather than messing with `GRUB` configurations directly. As an aside, one should keep in mind that despite the clear security benefits of disabling SMT, the very popular `linux-hardened` kernel for Arch linux does not disable it by default given the [large potential performance costs](https://github.com/anthraxx/linux-hardened/issues/37#issuecomment-619597365). You should determine your own desired level of risk mitigation and if you choose to keep SMT enabled, simply remove all occurrences of `nosmt` and `nosmt=force` from the above parameters.
 
 - Kernel
 ```
