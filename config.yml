@@ -60,8 +60,6 @@ params:
       url: "https://github.com/PrivSec-dev"
     - name: gitea
       url: "https://git.tommytran.io/privsec-dev"
-    - name: phone
-      url: "/about#tommy"
     - name: matrix
       url: "https://matrix.to/#/#privsec:arcticfoxes.net"
     - name: twitter
