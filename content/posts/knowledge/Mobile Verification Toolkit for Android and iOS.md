@@ -2,12 +2,12 @@
 title: "Mobile Verification Toolkit for Android and iOS"
 date: 2022-11-19
 tags: ['Knowledge base', 'Privacy', 'Security', 'Android', 'iOS']
-author:
+author: Raja Grewal
 ---
 
 One of the key principle components involved in maintaining both strong privacy and security infrastructure is the detection of existing and previous compromises. On mobile operating systems such as Android and iOS it is difficult for a end-user to execute this type of search given the lock down nature of these devices. While their respective app stores have a plethora of so-call “anti-virus” programs, these are subject to the same [pitfalls](https://privsec.dev/posts/knowledge/badness-enumeration/#antiviruses) as their desktop variants.
 
-Building on this, both independent and mainstream media are constantly awash with stories regarding the constant discoveries of sophisticated malware installed on users phones that have the ability totally compromise a device by giving external parties effectively root access. The most well-known of these variants of spyware target hitherto unknown zero-day exploits as thoroughly discussed by [Amnesty International Security Lab](https://www.amnesty.org/en/tech/) and [The Citizen Lab](https://citizenlab.ca/).
+Building on this, both independent and mainstream media are constantly awash with stories regarding the frequent discoveries of sophisticated malware installed on users phones that have the ability totally compromise a device by giving external parties effectively root access. The most well-known of these variants of spyware target hitherto unknown zero-day exploits as thoroughly discussed by [Amnesty International Security Lab](https://www.amnesty.org/en/tech/) and [The Citizen Lab](https://citizenlab.ca/).
 
 For example, there is very little any end-user can do to detect intrusions by the infamous Pegasus spyware made by the NSO Group, see [[1](https://citizenlab.ca/2016/08/million-dollar-dissident-iphone-zero-day-nso-group-uae/), [2](https://citizenlab.ca/2020/12/the-great-ipwn-journalists-hacked-with-suspected-nso-group-imessage-zero-click-exploit/), [3](https://www.amnesty.org/en/latest/research/2021/07/forensic-methodology-report-how-to-catch-nso-groups-pegasus/), [4](https://forbiddenstories.org/case/the-pegasus-project/)]. Other high-profile recent examples include [Candiru's spyware](https://citizenlab.ca/2021/07/hooking-candiru-another-mercenary-spyware-vendor-comes-into-focus/) and [Cytrox’s Predator](https://citizenlab.ca/2021/12/pegasus-vs-predator-dissidents-doubly-infected-iphone-reveals-cytrox-mercenary-spyware/).
 
@@ -30,7 +30,7 @@ Next, always ensure either the `mvt-android download-iocs` or `mvt-ios download-
 
 The instructions for then using the software are fairly straight-forward to learn when performing both [Android](https://docs.mvt.re/en/latest/android/methodology/) or [iOS/iPadOS](https://docs.mvt.re/en/latest/ios/methodology/) analyses. In both cases it is advised to always analyse encrypted backups as these will incorporate the scanning of more files.
 
-While an even more thorough scan can be performed by rooting Android and jailbreaking iOS due to more internal logs being accessible, this is strictly [not recommended](https://madaidans-insecurities.github.io/android.html#rooting). One situation where this might be advised is if your now using another device and desire extended scans of no longer used devices.
+While an even more thorough scan can be performed by rooting Android and jailbreaking iOS/iPadOS due to more internal logs being accessible, this is strictly [not recommended](https://madaidans-insecurities.github.io/android.html#rooting). One situation where this might be advised is if your now using another device and desire extended scans of no longer used devices.
 
 Regardless, it should be noted that Android devices currently provide far less diagnostic information that iOS/iPadOS devices and so `mvt` capabilities are correspondingly diminished.
 
@@ -40,7 +40,7 @@ Overall, it should be clear from the command line outputs if any known compromis
 
 While `mvt` is a very handy tool and periodic scans should be performed with a frequency proportional to your threat model, it is once again only a detection tool based on known indicators of compromise. It is also reasonable to assume that once indicators are publicly exposed, sophisticated threat actors will take steps to modify their existing spyware and potentially even temporarily erase it from your device in order to avoid detection. This can be very clearly seen through the time-evolution of NSO Group’s Pegasus infrastructure ([Section 9.3](https://www.amnesty.org/en/latest/research/2021/07/forensic-methodology-report-how-to-catch-nso-groups-pegasus/)) where known malicious domains are quickly replaced. More recently there appears to be shift to using cloud service providers.
 
-Therefore, as with “anti-virus” programs, `mvt` is simply a detection tool with no explicit preventive capabilities, but unlike them, `mvt` does not require extensive administrative permissions at runtime and can be run in a purely offline manner with no telemetry.
+Therefore, as with “anti-virus” programs, `mvt` is simply a detection tool with no explicit preventive capabilities, but unlike them, `mvt` does not require extensive administrative permissions at runtime and can be used in a purely offline manner with no telemetry.
 
 ## Advanced extensions
 
