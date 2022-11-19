@@ -5,13 +5,13 @@ tags: ['Knowledge base', 'Privacy', 'Security', 'Android', 'iOS']
 author: Raja Grewal
 ---
 
-One of the key principle components involved in maintaining both strong privacy and security infrastructure is the detection of existing and previous compromises. On mobile operating systems such as Android and iOS it is difficult for a end-user to execute this type of search given the lock down nature of these devices. While their respective app stores have a plethora of so-call “anti-virus” programs, these are subject to the same [pitfalls](https://privsec.dev/posts/knowledge/badness-enumeration/#antiviruses) as their desktop variants.
+One of the key principle components involved in maintaining both strong privacy and security infrastructure is the detection of existing and previous compromises. On mobile operating systems such as Android and iOS/iPadOS it is difficult for a end-user to execute this type of search given the lock down nature of these devices. While their respective app stores have a plethora of so-call “anti-virus” programs, these are subject to the same [pitfalls](https://privsec.dev/posts/knowledge/badness-enumeration/#antiviruses) as their desktop variants.
 
 Building on this, both independent and mainstream media are constantly awash with stories regarding the frequent discoveries of sophisticated malware installed on users phones that have the ability totally compromise a device by giving external parties effectively root access. The most well-known of these variants of spyware target hitherto unknown zero-day exploits as thoroughly discussed by [Amnesty International Security Lab](https://www.amnesty.org/en/tech/) and [The Citizen Lab](https://citizenlab.ca/).
 
 For example, there is very little any end-user can do to detect intrusions by the infamous Pegasus spyware made by the NSO Group, see [[1](https://citizenlab.ca/2016/08/million-dollar-dissident-iphone-zero-day-nso-group-uae/), [2](https://citizenlab.ca/2020/12/the-great-ipwn-journalists-hacked-with-suspected-nso-group-imessage-zero-click-exploit/), [3](https://www.amnesty.org/en/latest/research/2021/07/forensic-methodology-report-how-to-catch-nso-groups-pegasus/), [4](https://forbiddenstories.org/case/the-pegasus-project/)]. Other high-profile recent examples include [Candiru's spyware](https://citizenlab.ca/2021/07/hooking-candiru-another-mercenary-spyware-vendor-comes-into-focus/) and [Cytrox’s Predator](https://citizenlab.ca/2021/12/pegasus-vs-predator-dissidents-doubly-infected-iphone-reveals-cytrox-mercenary-spyware/).
 
-It should be recognised that being targeted by complex mercenary spyware is an expensive undertaking and so the overwhelming majority individuals are very unlikely to be affected. The confirmed targets involve politicians, activists, developers of AI-based guidance systems, lawyers, and whistleblowers. See The Citizen Lab's [publication list](https://citizenlab.ca/publications/) for more references.
+It should be recognised that being targeted by complex mercenary spyware is an expensive undertaking and so the overwhelming majority individuals are very unlikely to be affected. The confirmed targets involve politicians, activists, developers of AI-based guidance systems, lawyers, journalists, and whistleblowers. See The Citizen Lab's [publication list](https://citizenlab.ca/publications/) for more references.
 
 ## Detecting traces of compromise with `mvt`
 
@@ -35,6 +35,25 @@ While an even more thorough scan can be performed by rooting Android and jailbre
 Regardless, it should be noted that Android devices currently provide far less diagnostic information that iOS/iPadOS devices and so `mvt` capabilities are correspondingly diminished.
 
 Overall, it should be clear from the command line outputs if any known compromises are detected. Additional output details at conclusion will also then provided in the format of a timeline CSV and an assortment of JSON files. If any files ending with “_detected.json” are present, this implies your device shows evidence of past and/or present compromise using the currently available list indicators.
+
+## Privilege escalation from user error
+It should be recognised that [MVT's documentation](https://docs.mvt.re/en/latest/introduction) states that "MVT is not intended for end-user self-assessment". We believe this statement is more than just a standard policy disclosure.
+
+If you run the tool as described above you will find considerable amounts of highly private and sensitive information regarding the contents of your device are outputted and stored in an unencrypted manner and so are at risk of being compromised. In particular, the timeline CSV contains incredibly personal information, as is the case with many of the other JSON files.
+
+These issues are also greatly exacerbated for iOS/iPadOS devices as their entire unencrypted contents must be transferred to the device performing the scan. The generate timeline CSV also provides a (partial) history of almost all events for not just the device being analysed but the entire Apple account (includes all previous devices). Note this is also one of the reasons why iOS/iPadOS analyses are much more comprehensive than their Android counterparts.
+
+Overall, the disclaimer is more than reasonable since on the balance of probabilities, Android and iOS/iPadOS [tend to be far more secure](https://madaidans-insecurities.github.io/security-privacy-advice.html#operating-system) than operating systems available on desktops and laptops. Ultimately then, utilisation of MVT can inadvertently lead to making it easier for threat actors to get access to the contents of your mobile device if they already have control over the system performing the `mvt` scan. This is a form of privilege escalation.
+
+Therefore we highlight a few strict requirements prior to using `mvt`. First ensure you have full control over the desktop/laptop used to conduct the scan, do not use shared or work computers. The desktop/laptop operating system must also be hardened as much as possible.
+
+Next, for transferring internal mobile device content, ensure the data is only ever copied to encrypted storage media. Never under any situation use a unencrypted device to store and analyse the mobile device data since data recovery of ‘deleted’ files is very mature profession.
+
+For maximum privacy we advise the use of [VeraCrypt](https://www.veracrypt.fr/en/Home.html) volumes. Simply create a new volume prior to a scan and only use this volume for all `mvt` related data. For typical devices the required VeraCrypt volume size for `mvt` outputs depends on the length of history of the device, allocating 1GB should be more than sufficient for most cases. For iOS/iPadOS devices, since the entire contents of the devices must also be transferred, allocated volume size must be sufficiently greater than double the size of the all data stored on the mobile devices. Upon completion of the scans, you can transfer `mvt` outputs to other secure storage media for logging purposes, then dismount and delete the VeraCrypt volume which will assist in preventing forensic data recovery.
+
+To emphasise again, extreme care must be taken with the handling and storage of all `mvt` related data. Any leak of this data would be very dangerous as it provides extraordinary amounts of detail regarding the internal contents of the mobile device, the overwhelming of which is even impossible to access on-device.
+
+If you are using `mvt` purely due to a mixture of paranoia and curiosity, after confirming the presence of no malicious indicators, do not retain any scan logs and delete the VeraCrypt volume. For high-risk individuals, retaining periodic scan logs can be beneficial but must be done with appropriately great care.
 
 ## Limitations
 
