@@ -3,11 +3,12 @@
   Content-Security-Policy : default-src 'none'; connect-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; form-action 'none'; frame-ancestors 'none'; block-all-mixed-content; base-uri 'none'
   X-Content-Type-Options : nosniff
   Referrer-Policy : no-referrer
-  # Cross-Origin-Opener-Policy : same-origin
   X-Frame-Options : DENY
   X-XSS-Protection : 0
   Permissions-Policy : accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), clipboard-read=(), display-capture=(), document-domain=(), encrypted-media=(), fullscreen=(), geolocation=(), gyroscope=(), hid=(), idle-detection=(), interest-cohort=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), serial=(), usb=(), sync-xhr=(), xr-spatial-tracking=()
   Cross-Origin-Resource-Policy : same-origin
+  Cross-Origin-Embedder-Policy : require-corp
+  # Cross-Origin-Opener-Policy : same-origin
   Expect-CT: enforce, max-age=63072000
   #Expect-CT: report-uri="https://tommytran732.report-uri.com/r/d/ct/enforce", enforce, max-age=63072000
   #Report-To: {"group":"default","max_age":31536000,"endpoints":[{"url":"https://tommytran732.report-uri.com/a/d/g"}],"include_subdomains":true}
