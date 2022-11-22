@@ -1,7 +1,7 @@
 # PrivSec.dev
-A practical approach to Privacy and Security
-
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ba0d8ddc-031b-4c16-8240-9929a4ad201a/deploy-status)](https://app.netlify.com/sites/privsec-dev/deploys)
+
+A practical approach to Privacy and Security
 
 ## Licensing
 
@@ -13,7 +13,7 @@ The articles originally posted on [wonderfall.dev](https://wonderfall.dev), [akc
 
 The Hugo Framework used to create this website is under the [Apache License](https://github.com/gohugoio/hugo/blob/master/LICENSE).
 
-The WonderMod theme used for the website and modifications made by us are under the [MIT License](https://github.com/adityatelange/hugo-PaperMod/blob/master/LICENSE). 
+The WonderMod theme used for the website and modifications made by us are under the [MIT License](https://github.com/adityatelange/hugo-PaperMod/blob/master/LICENSE).
 
 ## Netlify Previews
 
