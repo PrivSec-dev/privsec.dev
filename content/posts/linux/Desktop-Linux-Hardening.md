@@ -260,7 +260,8 @@ Read through these references on how to harden your boot parameters:
 
 In this section we succinctly present the parameters used by Kicksecure as those are more regularly updated though strongly recommend reading through Madaidan's guide.
 
-- CPU mitigations
+#### CPU mitigations
+
 ```
 spectre_v2=on spec_store_bypass_disable=on l1tf=full,force mds=full,nosmt tsx=off tsx_async_abort=full, mds=full,nosmt kvm.nx_huge_pages=force nosmt=force l1d_flush=on mmio_stale_data=full,nosmt
 ```
