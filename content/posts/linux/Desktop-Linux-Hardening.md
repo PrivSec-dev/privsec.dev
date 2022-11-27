@@ -276,7 +276,8 @@ slab_nomerge init_on_alloc=1 init_on_free=1 pti=on vsyscall=none page_alloc.shuf
 
 Kicksecure does not enforce either `module.sig_enforce=1` or `lockdown=confidentiality` by default as they lead to a lot of hardware compatibility issues; consider enabling these if possible on your system. Additionally, [`mce=0` is no longer recommended](https://forums.whonix.org/t/kernel-hardening/7296/493).
 
-- Entropy generation
+#### Entropy generation
+
 ```
 random.trust_cpu=off random.trust_bootloader=off
 ```
