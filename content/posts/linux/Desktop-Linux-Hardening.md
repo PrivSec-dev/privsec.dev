@@ -268,7 +268,8 @@ spectre_v2=on spec_store_bypass_disable=on l1tf=full,force mds=full,nosmt tsx=of
 
 [SMT](https://en.wikipedia.org/wiki/Simultaneous_multithreading) is disabled due to it being the cause of various security vulnerabilities. Also, on `rpm-ostree`&ndash;based distributions, you should set the kernel parameters using `rpm-ostree kargs` rather than messing with `GRUB` configurations directly. As an aside, one should keep in mind that, despite the clear security benefits of disabling SMT, the very popular `linux-hardened` kernel for Arch Linux does not disable it by default due to the [potentially very large performance penalty](https://github.com/anthraxx/linux-hardened/issues/37#issuecomment-619597365). Assess your own risk tolerance, and, if you choose to keep SMT enabled, simply remove all occurrences of `nosmt` and `nosmt=force` from the above parameters.
 
-- Kernel
+#### Kernel
+
 ```
 slab_nomerge init_on_alloc=1 init_on_free=1 pti=on vsyscall=none page_alloc.shuffle=1 randomize_kstack_offset=on extra_latent_entropy debugfs=off oops=panic quiet loglevel=0
 ```
