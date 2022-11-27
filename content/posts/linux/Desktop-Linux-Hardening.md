@@ -428,7 +428,7 @@ On certain hardware, this will not work. Instead, you will need to import this i
 
 On most desktop Linux systems, it will be possible to create a [Unified Kernel Image](https://wiki.archlinux.org/title/Unified_kernel_image) that contains the kernel, [initramfs](https://en.wikipedia.org/wiki/Initial_ramdisk), and [microcode](https://en.wikipedia.org/wiki/Microcode). This unified kernel image can then be signed by the keys you created above.
 
-Currently, systemd [intends](https://0pointer.de/blog/brave-new-trusted-boot-world.html) to implement this feature in the near future in manner such that the UKI will be homogenously generated which will make the the entire boot process capable of being periodically authenticated using a remote attestation service as is possible with [GrapheneOS](https://privsec.dev/posts/android/android-tips/#setup-auditor).
+At the time of writing, [systemd intends to implement UKIs in the near future](https://0pointer.de/blog/brave-new-trusted-boot-world.html) such that the entire boot process will be capable of being authenticated by a remote attestation service similar to [GrapheneOS Auditor](/posts/android/android-tips/#setup-auditor).
 
 For a Fedora Workstation specific guide, you can follow this [blog post](https://haavard.name/2022/06/22/full-uefi-secure-boot-on-fedora-using-signed-initrd-and-systemd-boot/) by Håvard Moen. He will walk you through the sbctl installation, unified kernel image generation with `dracut`, and automatic signing with systemd-boot.
 
