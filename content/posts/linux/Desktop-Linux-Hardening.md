@@ -284,7 +284,8 @@ random.trust_cpu=off random.trust_bootloader=off
 
 As sources of initial entropy at boot, both the CPU and bootloader should be [distrusted](https://lkml.org/lkml/2022/6/5/271). For CPUs, the RBRAND instructions set is [impossible to audit](https://madaidans-insecurities.github.io/guides/linux-hardening.html#rdrand), and moving forward as a precaution, the bootloader should be treated identically. Note that both of these kernel parameters will increase boot time.
 
-- DMA mitigations
+#### DMA mitigations
+
 ```
 intel_iommu=on amd_iommu=on efi=disable_early_pci_dma iommu.passthrough=0 iommu.strict=1
 ```
