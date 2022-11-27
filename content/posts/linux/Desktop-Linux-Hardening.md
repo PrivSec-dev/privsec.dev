@@ -288,7 +288,9 @@ As sources of initial entropy at boot, both the CPU and bootloader should be [di
 intel_iommu=on amd_iommu=on efi=disable_early_pci_dma iommu.passthrough=0 iommu.strict=1
 ```
 
-Direct memory access (DMA) attacks can be [mitigateed](https://madaidans-insecurities.github.io/guides/linux-hardening.html#dma-attacks) via IOMMU and the previously mentioned kernel module disabling. Furthermore, [strict enforcement](https://github.com/Kicksecure/security-misc/blob/master/etc/default/grub.d/40_enable_iommu.cfg) of IOMMU TLB invalidation should be applied so devices will never be able to access stale data contents. Note that disabling the busmaster bit on all PCI bridges (`disable_early_pci_dma`) during very early boot can cause complete boot failure on certain systems if they do not have adequate resources. Therefore, as always, ensure you have a fallback option to boot into the system whenever modifying any kernel parameters.
+Direct memory access (DMA) attacks can be mitigated via IOMMU and the [aforementioned kernel module disabling](#kernel-hardening). ([See also Madaidan's commentary.](https://madaidans-insecurities.github.io/guides/linux-hardening.html#dma-attacks)) Furthermore, [strict enforcement of IOMMU TLB invalidation](https://github.com/Kicksecure/security-misc/blob/master/etc/default/grub.d/40_enable_iommu.cfg) should be applied so devices will never be able to access stale data contents.
+
+_Note that disabling the busmaster bit on all PCI bridges (`disable_early_pci_dma`) during very early boot can cause complete boot failure on certain systems if they do not have adequate resources. Therefore, as always, ensure you have a fallback option to boot into the system whenever modifying any kernel parameters._
 
 ### Restricting access to /proc and /sys
 
