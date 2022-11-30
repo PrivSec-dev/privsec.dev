@@ -17,11 +17,11 @@
 /posts/knowledge/multi-factor-authentication/
   Content-Security-Policy : default-src 'none'; connect-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; frame-src https://www.youtube-nocookie.com https://www.google.com; form-action 'none'; frame-ancestors 'none'; block-all-mixed-content; base-uri 'none'
   Cross-Origin-Embedder-Policy : unsafe-none
-  
+
 /posts/android/android-tips/
   Content-Security-Policy : default-src 'none'; connect-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; frame-src https://www.youtube-nocookie.com https://www.google.com; form-action 'none'; frame-ancestors 'none'; block-all-mixed-content; base-uri 'none'
   Cross-Origin-Embedder-Policy : unsafe-none
-  
+
 /posts/android/choosing-your-android-based-operating-system/
   Content-Security-Policy : default-src 'none'; connect-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; frame-src https://www.youtube-nocookie.com https://www.google.com; form-action 'none'; frame-ancestors 'none'; block-all-mixed-content; base-uri 'none'
   Cross-Origin-Embedder-Policy : unsafe-none
@@ -32,10 +32,16 @@
 
 /posts/linux/desktop-linux-hardening/
   Content-Security-Policy : default-src 'none'; connect-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; frame-src https://www.youtube-nocookie.com https://www.google.com; form-action 'none'; frame-ancestors 'none'; block-all-mixed-content; base-uri 'none'
-  Cross-Origin-Embedder-Policy : unsafe-none  
-  
+  Cross-Origin-Embedder-Policy : unsafe-none
+
 /*.xml
   Content-Security-Policy : default-src 'none'; img-src 'self' data: https://www.w3.org/; style-src 'self' 'unsafe-inline'; block-all-mixed-content; base-uri 'none'
+
+/*.png
+  Cross-Origin-Resource-Policy : cross-origin
+
+/*.jpg
+  Cross-Origin-Resource-Policy : cross-origin
 
 /.well-known/openpgpkey/hu/*
   Access-Control-Allow-Origin: *
