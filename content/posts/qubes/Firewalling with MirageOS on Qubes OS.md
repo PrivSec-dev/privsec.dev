@@ -15,37 +15,13 @@ author: Tommy
 - Fast startup time.
 
 ## Disadvantages
-- No official package for Qubes OS and while [Qubes Mirage Firewall](https://github.com/mirage/qubes-mirage-firewall) is still maintained, it rarely gets an official release. This means that you need to follow the development process on GitHub and make a new build yourself whenever there is a new commit.
+- No official package for Qubes OS. This means that you need to follow the development process on GitHub and download the new build whenever there is a release.
 - Does not work well with the Windows PV network driver. With that being said, the Windows PV networking driver is pretty buggy on its own, and I don't recommend that you use it anyways.
 
-### Prebuilt Image
+## Installing the unikernel
 
-You can obtain a prebuilt image of MirageOS [here](https://github.com/tommytran732/QubesOS-Scripts/tree/main/mirageos). I do follow the development of Qubes Mirage Firewall (since I use it on my personal computer) and will be uploading builds frequently.
+To deploy MirageOS, you need to copy the `vmlinuz` and `initramfs` files from their [releases page](https://github.com/mirage/qubes-mirage-firewall/releases) to `/var/lib/qubes/vm-kernels/mirage-firewall` in `dom0`. 
 
-### Building Mirage-Firewall Yourself
-
-First, you need an AppVm/DispVM with Docker installed to build the Mirage kernel. Fedora works well enough for this purpose.
-
-Once you have an AppVM/DispVM to build it in, run the following commands:
-
-```bash
-git clone https://github.com/palainp/qubes-mirage-firewall/
-cd qubes-mirage-firewall
-git checkout mirage4
-sudo ./build-with-docker.sh
-```
-Once the build process finishes, the unikernel should be at `~/qubes-mirage-firewall/_build/mirage-firewall/vmlinuz`.
-
-## Deploy
-
-First, you need to copy the unikernel to `/var/lib/qubes/vm-kernels/mirage-firewall` in `dom0` and create a dummy `initramfs`:
-
-```bash
-mkdir -p /var/lib/qubes/vm-kernels/mirage-firewall/
-cd /var/lib/qubes/vm-kernels/mirage-firewall/
-qvm-run -p your_appvm_name 'cat /path/to/the/vmlinuz/file' > vmlinuz
-gzip -n9 < /dev/null > initramfs
-```
 ### TemplateVM
 
 Create a TemplateVM:
