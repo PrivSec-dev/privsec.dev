@@ -2,9 +2,7 @@
 title: "F-Droid Security Issues"
 date: 2022-01-02T21:28:31Z
 tags: ['Applications', 'Android', 'Security']
-author: Wonderfall
-canonicalURL: https://wonderfall.dev/fdroid-issues
-ShowCanonicalLink: true
+author: PrivSec.dev Contributors
 ---
 
 F-Droid is a popular alternative app repository for Android, especially known for its main repository dedicated to free and open-source software. F-Droid is often recommended among security and privacy enthusiasts, but how does it stack up against Play Store in practice? This write-up will attempt to emphasize major security issues with F-Droid that you should consider.
@@ -35,7 +33,7 @@ F-Droid requires that the source code of the app is exempt from any proprietary 
 
 *A tempting idea would be to compare F-Droid to the desktop Linux model where users trust their distribution maintainers out-of-the-box (this can be sane if you're already trusting the OS anyway), but the desktop platform is intrinsically chaotic and heterogeneous for better and for worse. It really shouldn't be compared to the Android platform in any way.*
 
-While we've seen that F-Droid controls the signing servers (much like Play App Signing), F-Droid also fully controls the build servers that run the disposable VMs used for building apps. And [as of July 2022](https://gitlab.com/groups/fdroid/-/milestones/5#tab-issues), their guest VM image officially runs a version of Debian which reached EOL. Undoubtedly, this raises questions about their whole infrastructure security.
+While we've seen that F-Droid controls the signing servers (much like Play App Signing), F-Droid also fully controls the build servers that run the disposable VMs used for building apps. And from June to November of 2022, their guest VM image [officially ran an end-of-life release of Debian LTS](https://gitlab.com/groups/fdroid/-/milestones/5#tab-issues). It is also worth noting that Debian LTS seperate project from Debian which attempts to extend the lifetime of releases that are deemed end-of-life by the Debian project and [does not get handled by the Debian Security team](https://wiki.debian.org/LTS). The version they were using (Debian Stretch) was actually discontinued [2 years prior](https://wiki.debian.org/DebianStretch). Undoubtedly, this raises questions about their whole infrastructure security.
 
 > How can you be sure that the app repository can be held to account for the code it delivers?
 
@@ -147,6 +145,8 @@ F-Droid shows a list of the [low-level permissions](https://developer.android.co
 
 F-Droid claims that these low-level permissions are relevant because they support Android 5.1+, meaning they support very outdated versions of Android where apps could have [install-time permissions](https://source.android.com/devices/tech/config/runtime_perms). Anyway, if a technical user wants to see all the manifest permissions for some reason, then they can access the app manifest pretty easily (in fact, exposing the raw manifest would be less misleading). But this is already beyond the scope of this article because anyone who cares about privacy and security wouldn't run a 8 years old version of Android that has not received security updates for years.
 
+A [discussion about this](https://gitlab.com/fdroid/fdroid-website/-/merge_requests/834) took place on F-Droid's GitLab repository. In short, F-Droid downplayed the issue with their misleading permission labels, and their lead developer proceeded to call the Android permission model a "dumpster fire" and claim that the operating system cannot sandbox untrusted apps while still remaining useful.
+
 *To clear up confusion: even apps targeting an API level below 23 (Android 5.1 or older) do not have permissions granted at install time on modern Android, which instead displays a legacy permission grant dialog. Whether or not permissions are granted at install time does not just depend on the app's `targetSdkVersion`. And even if this were the case, the OS package installer on modern Android would've been designed to show the requested permissions for those legacy apps.*
 
 For example, the low-level permission `RECEIVE_BOOT_COMPLETED` is referred to in F-Droid as the *run at startup* description, when in fact this permission is not needed to start at boot and just refers to a specific time broadcasted by the system once it finishes booting, and is not about background usage (though power usage may be a valid concern). To be fair, these short summaries used to be provided by the Android documentation years ago, but the permission model has drastically evolved since then and most of them aren't accurate anymore.
@@ -208,8 +208,18 @@ Some people tend to exaggerate the importance of Google in their threat model, a
 
 If you don't have Play services installed, you can use a third-party Play Store client called **[Aurora Store](https://auroraoss.com/)**. Aurora Store has some issues of its own, and some of them overlap in fact with F-Droid. Aurora Store somehow still requires [the legacy storage permission](https://gitlab.com/AuroraOSS/AuroraStore/-/blob/26f5d4fd558263a89baee4c3cbe1d220913da104/app/src/main/AndroidManifest.xml#L28-32), has yet to [implement certificate pinning](https://gitlab.com/AuroraOSS/AuroraStore/-/issues/697), has been known to sometimes retrieve wrong versions of apps, and [distributed account tokens](https://gitlab.com/AuroraOSS/AuroraStore/-/issues/722) over [cleartext HTTP](https://gitlab.com/AuroraOSS/AuroraStore/-/issues/734) until fairly recently; not that it matters much since tokens were designed to be shared between users, which is already concerning. I'd recommend against using the shared "anonymous" accounts feature: you should make your own throwaway account with minimal information.
 
-You should also keep an eye on the great work **GrapheneOS** does on [their future app repository](https://github.com/GrapheneOS/Apps). It will be a simple, secure, modern app repository for a curated list of high-quality apps, some of which will have their own builds (for instance, Signal still uses their [original 1024-bits RSA key](https://github.com/signalapp/Signal-Android/issues/9362) that has never been rotated since then). Inspired by this work, a GrapheneOS community member is developing a more generic app repository called [Accrescent](https://accrescent.app/). Hopefully, we'll see well-made alternatives like these flourish.
+### Looking to the future
 
-*Thanks to the GrapheneOS community for proofreading this article. Bear in mind that these are not official recommendations from the GrapheneOS project.*
+**[Accrescent](https://accrescent.app/)** is an up-and-coming app repository which strives to tackle the issues discussed here [and more](https://accrescent.app/features). Hopefully Accrescent or a project like it can flourish as a secure and open ecosystem for app delivery.
 
-*Post-publication note: it's unfortunate that the release of this article mostly triggered a negative response from the F-Droid team which prefers to dismiss this article on several occasions rather than bringing relevant counterpoints. Some of their core members are also involved in a harassment campaign towards projects and security researchers that do not share their views. While this article remains a technical one, there are definitely ethical concerns to take into consideration.*
+It's also worth keeping an eye on the great work **GrapheneOS** does on [their future app repository](https://github.com/GrapheneOS/Apps). It will serve as a simple, secure, modern app repository, albeit only for a curated list of high-quality apps, some of which will have their own builds (for instance, Signal still uses their [original 1024-bits RSA key](https://github.com/signalapp/Signal-Android/issues/9362) that has never been rotated since then).
+
+---
+
+## Meta
+
+This article aims to be **purely technical**. It is not an attack on F-Droid or their mission --- it is meant as an informative piece for end users and a springboard for improvement of the F-Droid project.
+
+In spite of this, the release of this article has unfortunately triggered a mostly negative response from the F-Droid team and some of their community, who seem to take a dismissive stance toward this article rather than bringing relevant counterpoints. Some of these individuals go as far as engaging in harassment campaigns against projects and security researchers that do not share their views; hopefully they realize that such unethical behavior undermines their own project and reputation. Creating a rift between developers and security researchers is not in anyone's best interest.
+
+Some individuals have also falsely associated this article with GrapheneOS. _This article is an entirely independent work and unrelated to the GrapheneOS project. It was not written by a GrapheneOS developer and does not claim to represent the GrapheneOS project's official stance._ Either way, dismissing the article on the basis of association instead of addressing the actual technical content is silly and not helpful to anyone.

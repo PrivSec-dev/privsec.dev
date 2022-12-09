@@ -1,17 +1,5 @@
 #!/bin/bash
 
-#F-Droid Security Issues
-echo "Fetching and Modifying the F-Droid Security Issues post"
-rm -rf './content/posts/android/F-Droid Security Issues.md'
-curl https://raw.githubusercontent.com/Wonderfall/wonderfall.github.io/main/content/posts/fdroid-issues.md -o './content/posts/android/F-Droid Security Issues.md'
-sed -i 's/title:.*/title: "F-Droid Security Issues"/' './content/posts/android/F-Droid Security Issues.md'
-sed -i '/draft:.*/d' './content/posts/android/F-Droid Security Issues.md'
-sed -i "s/tags:.*/tags: ['Applications', 'Android', 'Security']/" './content/posts/android/F-Droid Security Issues.md'
-sed -i '/^tags:.*/a ShowCanonicalLink: true' './content/posts/android/F-Droid Security Issues.md'
-sed -i '/^tags:.*/a canonicalURL: https://wonderfall.dev/fdroid-issues' './content/posts/android/F-Droid Security Issues.md'
-sed -i '/^tags:.*/a author: Wonderfall' './content/posts/android/F-Droid Security Issues.md'
-
-
 #Docker and OCI Hardening
 echo "Fetching and Modifying the Docker and OCI Hardening post"
 rm -rf './content/posts/linux/Docker and OCI Hardening.md'

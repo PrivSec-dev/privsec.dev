@@ -11,7 +11,7 @@ minify:
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  author: PrivSec Team
+  author: PrivSec.dev Team
   # author: ["Me", "You"] # multiple authors
   description: A practical approach to Privacy and Security
   keywords: [Privacy, Security]
