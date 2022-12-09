@@ -5,7 +5,7 @@ date: 2022-07-16
 
 PrivSec.dev is made by a group of enthusiastic individuals looking to provide practical privacy and security advice for the end user. We are security researchers, developers, system administrators... generally people with technical knowledge and work in the field.
 
-We focus on in-depth system configuration, security analysis, and software/hardware recommendations. Our site is based on technical merits, not ideologies and politics. 
+We focus on in-depth system configuration, security analysis, and software/hardware recommendations. Our site is based on technical merits, not ideologies and politics.
 
 Also, to avoid any confusion, we are not affiliated, associated or in any way connected with the PrivSec Global Conference.
 
@@ -46,3 +46,9 @@ Just an ordinary guy that loves learning, solving puzzles, and eating food. Main
 
 **Website**: [akc3n.page](https://akc3n.page)\
 **Matrix**: [@akc3n:grapheneos.org](https://matrix.to/#/@akc3n:grapheneos.org)
+
+### wj25czxj47bu6q
+A nerd who can't stop going down rabbit holes. Very much a perfectionist.
+
+**Website:** [Wandering Computerer](https://wanderingcomputerer.gitlab.io)\
+**Matrix:** [@wj25czxj47bu6q:arcticfoxes.net](https://matrix.to/#/@wj25czxj47bu6q:arcticfoxes.net)
