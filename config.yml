@@ -65,7 +65,7 @@ params:
     - name: twitter
       url: "https://twitter.com/privsec_dev"
     - name: email
-      url: "mailto:tommy@privsec.dev"
+      url: "mailto:contact@tommytran.io"
     - name: rss
       url: /index.xml
 
@@ -127,6 +127,10 @@ menu:
       name: PGP
       url: https://tommytran.io/tommy.asc
       weight: 50
+    - identifier: S/MIME
+      name: S/MIME
+      url: https://tommytran.io/tommy.crt
+      weight: 60
 
 privacy:
   disqus:
