@@ -19,9 +19,9 @@ Benevolent dictator for life @PrivSec.dev. System Administrator. Avid GrapheneOS
 **Email**: [contact@tommytran.io](mailto:contact@tommytran.io)
 
 ### Randomhydrosol
-PrivSec.dev Administrator. GrapheneOS Developer. Friendliest Indian tech support on the planet Earth.
+PrivSec.dev Administrator. Security Researcher. Friendliest Indian tech support on the planet Earth.
 
-**Matrix**: [@randomhydrosol:grapheneos.org](https://matrix.to/#/@randomhydrosol:grapheneos.org)
+**Matrix**: [@randomhydrosol:arcticfoxes.net](https://matrix.to/#/@randomhydrosol:arcticfoxes.net)
 
 ### Wonderfall
 Random guy passing by on the Internet who is interested in all kinds of things. Total nerd.
