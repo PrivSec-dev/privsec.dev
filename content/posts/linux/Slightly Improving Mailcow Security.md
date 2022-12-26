@@ -7,7 +7,7 @@ author: Tommy
 
 ![Mailcow](/images/mailcow.png)
 
-Mailcow is a fairly popular self-hosted mail server. If you use it, there are a few ways you can improve its security configurations.
+Mailcow is a fairly popular self-hosted mail server. If you use it, there are a few ways you can improve its security by following these steps.
 
 ## Postfix Configuration
 
