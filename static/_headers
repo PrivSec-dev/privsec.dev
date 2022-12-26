@@ -9,7 +9,6 @@
   Cross-Origin-Resource-Policy : same-origin
   Cross-Origin-Embedder-Policy : require-corp
   # Cross-Origin-Opener-Policy : same-origin
-  Expect-CT: enforce, max-age=63072000
 
 /posts/knowledge/multi-factor-authentication/
   Content-Security-Policy : default-src 'none'; connect-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; frame-src https://www.youtube-nocookie.com https://www.google.com; form-action 'none'; frame-ancestors 'none'; block-all-mixed-content; base-uri 'none'
