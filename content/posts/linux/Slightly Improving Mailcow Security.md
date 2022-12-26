@@ -69,7 +69,7 @@ add_header Permissions-Policy "accelerometer=(), ambient-light-sensor=(), autopl
 Use the following as your [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP#:~:text=Content%20Security%20Policy%20(CSP)%20is,site%20defacement%2C%20to%20malware%20distribution.):
 
 ```
-add_header Content-Security-Policy "default-src 'none'; connect-src 'self' https://api.github.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; frame-ancestors 'none'; block-all-mixed-content; base-uri 'none'";
+add_header Content-Security-Policy "default-src 'none'; connect-src 'self' https://api.github.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.gravatar.com; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; frame-ancestors 'none'; block-all-mixed-content; base-uri 'none'";
 ```
 
 ### CORP, COEP, COOP
