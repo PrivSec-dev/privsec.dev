@@ -48,10 +48,10 @@ add_header Strict-Transport-Security "max-age=63072000; includeSubDomains; prelo
 
 ### X-XSS-Protection
 
-We will setup Content Security, so this header is no longer needed. In fact, it may do [more harm than good](https://github.com/helmetjs/helmet/issues/230). Change the setting to `0; mode=block`:
+We will setup Content Security, so this header is no longer needed. In fact, it may do [more harm than good](https://github.com/helmetjs/helmet/issues/230). Change the setting to `0`:
 
 ```
-add_header X-XSS-Protection "0; mode=block";
+add_header X-XSS-Protection "0";
 ```
 
 ### Permission Policy
@@ -80,7 +80,7 @@ add_header Content-Security-Policy "default-src 'none'; connect-src 'self' https
 add_header Content-Security-Policy "default-src 'none'; connect-src 'self' https://api.github.com https://www.gravatar.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.gravatar.com; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; frame-ancestors 'none'; block-all-mixed-content; base-uri 'none'";
 ```
 
-### CORP, COEP, COOP
+### Cross-Origin Opener, Resource, and Embedder Policies
 
 Mailcow does not use any cross site scripts, or documents. Thus, you should set CORP and COOP headers to their strictest configuration:
 
@@ -89,7 +89,7 @@ add_header Cross-Origin-Opener-Policy same-origin;
 add_header Cross-Origin-Resource-Policy same-origin;
 ```
 
-If you do not use Gravatar with SOGo, you can also set COEP to require-corp:
+If you do not use Gravatar with SOGo, you can also set COEP to require-corp since image embedding will not be used either:
 
 ```
 add_header Cross-Origin-Embedder-Policy require-corp;
