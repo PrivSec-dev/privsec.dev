@@ -30,7 +30,7 @@ smtpd_tls_mandatory_ciphers = high
 
 These security configurations can be added/modified in `data/conf/nginx/includes/site-defaults.conf`.
 
-## SSL Ciphers
+### SSL Ciphers
 
 Consider only supporting ciphers matching that of TLSv1.3:
 
@@ -38,9 +38,9 @@ Consider only supporting ciphers matching that of TLSv1.3:
 ssl_ciphers "ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256";
 ```
 
-## HSTS
+### HSTS
 
-Consider adding `includeSubDomains;`to the HSTS configuration if all of your services are using HTTPS:
+Consider adding `includeSubDomains;` and `preload;` to the HSTS configuration if all of your services are using HTTPS:
 
 ```
 add_header Strict-Transport-Security "max-age=63072000; includeSubDomains; preload";
@@ -80,13 +80,13 @@ add_header Content-Security-Policy "default-src 'none'; connect-src 'self' https
 add_header Content-Security-Policy "default-src 'none'; connect-src 'self' https://api.github.com https://www.gravatar.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.gravatar.com; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; frame-ancestors 'none'; block-all-mixed-content; base-uri 'none'";
 ```
 
-### Cross-Origin Opener, Resource, and Embedder Policies
+### Cross-Origin Resource, Opener, and Embedder Policies
 
 Mailcow does not use any cross site scripts, or documents. Thus, you should set CORP and COOP headers to their strictest configuration:
 
 ```
-add_header Cross-Origin-Opener-Policy same-origin;
 add_header Cross-Origin-Resource-Policy same-origin;
+add_header Cross-Origin-Opener-Policy same-origin;
 ```
 
 If you do not use Gravatar with SOGo, you can also set COEP to require-corp since image embedding will not be used either:
