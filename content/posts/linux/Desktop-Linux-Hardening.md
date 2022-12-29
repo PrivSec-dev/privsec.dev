@@ -45,7 +45,7 @@ Check your encrypted volumes :
 
 Then, you can finally enroll your encrypted volumes :
 ```
-# systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0+2+4+7 /dev/sdX
+# systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0+2+4+7 /dev/sdX --tpm2-with-pin=yes
 ```
 
 Replace sdX with the right volume.
@@ -71,6 +71,8 @@ SLOT TYPE
    1 tpm2
    2 recovery
 ```
+
+When booting, it will ask you the password for LUKS, then the TPM2 PIN.
 
 Note that with secure boot enabled, you should manually sign your NVidia drivers with [akmod](https://github.com/larsks/akmod-sign-modules).
 
