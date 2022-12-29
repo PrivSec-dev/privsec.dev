@@ -50,6 +50,9 @@ Then, you can finally enroll your encrypted volumes :
 
 Replace sdX with the right volume.
 
+It will ask you the passphrase (you have previously chosen with LUKS) then it will prompt you a PIN for TPM.
+The PIN should be **different** from the LUKS passphrase.
+
 If you have several volumes, you can redo the command with the right volume, etc.
 
 Finally, edit `/etc/crypttab` and add at the end of each line `tpm2-device=auto,discard`, like so :
