@@ -12,7 +12,7 @@ Also, to avoid any confusion, we are not affiliated, associated or in any way co
 ---
 
 ### Tommy
-Benevolent dictator for life @PrivSec.dev. System Administrator. Avid GrapheneOS and Qubes OS user.
+Benevolent dictator for life @PrivSec.dev. System Administrator.
 
 **Website**: [tommytran.io](https://tommytran.io)\
 **Matrix**: [@tommy:arcticfoxes.net](https://matrix.to/#/@tommy:arcticfoxes.net)\
@@ -42,8 +42,7 @@ Security Researcher. Whonix developer. Uses Firefox, Telegram, and Linux against
 **Matrix**: [@madaidan.:matrix.org](https://matrix.to/#/@madaidan.:matrix.org)
 
 ### akc3n
-Just an ordinary guy that loves learning, solving puzzles, and eating food. Maintaining the banking app compatibility list for GrapheneOS. GrapheneOS community moderator and Arch Linux user.
-
+Just an ordinary guy that loves learning, solving puzzles, and eating food.\
 **Website**: [akc3n.page](https://akc3n.page)\
 **Matrix**: [@akc3n:grapheneos.org](https://matrix.to/#/@akc3n:grapheneos.org)
 
