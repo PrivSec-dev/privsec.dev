@@ -29,12 +29,6 @@ Random guy passing by on the Internet who is interested in all kinds of things. 
 **Websites**: [wonderfall.space](https://wonderfall.space) and [wonderfall.dev](https://wonderfall.dev)\
 **Matrix**: [@wonderfall:lysergide.dev](https://matrix.to/#/@wonderfall:lysergide.dev)
 
-### Lberrymage
-Accrescent developer. Rust shill and man who can't stop recycling names of his previous projects.
-
-**Website**: [lberrymage.dev](https://lberrymage.dev)\
-**Matrix**: [@lberrymage:matrix.org](https://matrix.to/#/@lberrymage:matrix.org)
-
 ### Madaidan
 Security Researcher. Whonix developer. Uses Firefox, Telegram, and Linux against his own advice like a hypocrite.
 
