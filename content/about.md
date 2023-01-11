@@ -23,12 +23,6 @@ PrivSec.dev Administrator. Security Researcher. Friendliest Indian tech support 
 
 **Matrix**: [@randomhydrosol:arcticfoxes.net](https://matrix.to/#/@randomhydrosol:arcticfoxes.net)
 
-### Wonderfall
-Random guy passing by on the Internet who is interested in all kinds of things. Total nerd.
-
-**Websites**: [wonderfall.space](https://wonderfall.space) and [wonderfall.dev](https://wonderfall.dev)\
-**Matrix**: [@wonderfall:lysergide.dev](https://matrix.to/#/@wonderfall:lysergide.dev)
-
 ### Madaidan
 Security Researcher. Whonix developer. Uses Firefox, Telegram, and Linux against his own advice like a hypocrite.
 
