@@ -22,7 +22,7 @@ Avoid buying the Fairphone 4, which only has just over 2 years of full security 
 
 You should also avoid buying the /e/ OS phones (sometimes branded as the Murena phones). /e/ OS in itself extremely insecure, not supporting verified boot, shipping userdebug build, [shipping months old version of Chromium, bundling years old version Orbot into their operating system then marketing it as "Advanced Privacy"](https://divestos.org/misc/e.txt), etc. They have recently also had an incident where their cloud service mishandled session keys and give users access to each other's files, then proceeded to [mislead the users that the server cannot see their files](https://community.e.foundation/t/service-announcement-26-may/41252/30) despite there being no end-to-end encryption.
 
-You should also be very wary of low quality privacy branded phones like the Freedom Phone, BraX2 Phone, Volta Phone, and the like. These are cheap Chinese phones with the [Mediatek Helio P60](https://i.mediatek.com/p60) from 2018, which has already reached end-of-life or is near end-of-life. Needless to say, you should also avoid any vendor who claims they are Zero-day proof like this: 
+You should also be very wary of low quality privacy branded phones like the Freedom Phone, BraX2 Phone, Volta Phone, and the like. These are cheap Chinese phones with the [Mediatek Helio P60](https://i.mediatek.com/p60) from 2018, which has already reached end-of-life or is near end-of-life. Needless to say, you should also avoid any vendor who claims they are Zero-day proof like this:
 
 ![Volta phone](/images/volta-phone.png)
 
@@ -66,7 +66,7 @@ Modern Android devices have global toggles for disabling Bluetooth and location 
 
 ## Manage Android Permissions
 
-[Permissions on Android](https://developer.android.com/guide/topics/permissions/overview) grant you control over what apps are allowed to access. Google regularly makes [improvements](https://developer.android.com/about/versions/11/privacy/permissions) on the permission system in each successive version. All apps you install are strictly [sandboxed](https://source.android.com/security/app-sandbox), therefore, there is no need to install any antivirus apps. 
+[Permissions on Android](https://developer.android.com/guide/topics/permissions/overview) grant you control over what apps are allowed to access. Google regularly makes [improvements](https://developer.android.com/about/versions/11/privacy/permissions) on the permission system in each successive version. All apps you install are strictly [sandboxed](https://source.android.com/security/app-sandbox), therefore, there is no need to install any antivirus apps.
 
 You can manage Android permissions by going to **Settings** → **Privacy** → **Permission Manager**. Be sure to remove from apps any permissions that they do not need.
 
@@ -146,6 +146,8 @@ GrapheneOS has the LTE only mode exposed in settings. You can set this by going 
 
 If your Android-based operating system does not expose this setting in the Settings app, or if you want to set your baseband modem to a less restrictive mode, dial `*#*#4636#*#*` then hit **Phone information**. Here, you can set preferred network type to just the generations that you intend to use. For example, if you only want to use 5G and 4G, you can set it to `NR/LTE`.
 
+Depending on the carrier, you may need to enable additional network types for Wifi calling to work. For example, Google Fi requires WCDMA for this feature. Thus, if you want 5G, 4G, and Wifi calling for Google Fi, you need to set the network type as `NR/LTE/WCDMA`.
+
 ## Carrier Tracking
 
 Carriers can track your coarse location via cell towers using the IMSI and IMEI broadcasted by your baseband modem. In order to avoid this type of tracking, you have to enable the airplane mode which would disable the baseband modem.
@@ -181,9 +183,9 @@ You can also obtain your apps directly from their GitHub repositories. In most c
 - Install the [Android Studio](https://developer.android.com/studio) which includes `apksinger`. On macOS, `apksigner` can be found at `~/Library/Android/sdk/build-tools/<version>/apksigner`.
 - Run `apksigner verify --print-certs --verbose myCoolApp.apk` to verify the certificate of the apk.
 
-After you have verified the signature of the apk and installed it on your phone, there are several strategies you can use to keep the application up-to-date. 
+After you have verified the signature of the apk and installed it on your phone, there are several strategies you can use to keep the application up-to-date.
 
-The first strategy is to add the atom feed of the application's release page to an RSS Reader like [ReadYou](https://github.com/Ashinch/ReadYou) to get notified of new releases. You will still need to download and install the new releases manually. If you are confused, here is a video that could help with this process: 
+The first strategy is to add the atom feed of the application's release page to an RSS Reader like [ReadYou](https://github.com/Ashinch/ReadYou) to get notified of new releases. You will still need to download and install the new releases manually. If you are confused, here is a video that could help with this process:
 
 {{< youtube id="FFz57zNR_M0">}}
 
