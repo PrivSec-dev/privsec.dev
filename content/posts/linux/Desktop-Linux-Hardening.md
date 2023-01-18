@@ -344,6 +344,14 @@ It is desirable to remove SUID from as many binaries as possible; however, this 
 
 Kicksecure, and by extension Whonix, has an experimental [permission hardening service](https://github.com/Kicksecure/security-misc/blob/master/lib/systemd/system/permission-hardening.service) and [application whitelist](https://github.com/Kicksecure/security-misc/tree/master/etc/permission-hardening.d) to automate SUID removal from most binaries and libraries on the system. From my testing, these work perfectly fine on minimal Kicksecure installations and both Qubes-Whonix-Workstation and Qubes-Whonix-Gateway.
 
+### DNSSEC
+
+Most Linux distributions do not enable [DNSSEC](https://www.icann.org/resources/pages/dnssec-what-is-it-why-important-2019-03-05-en) by default. I recommend that you enable it to make sure that the responses to your DNS queries are authentic. You will need a DNS provider that supports DNSSEC. Ideally, you should use a VPN which provides this feature with its DNS servers so that you can also blend in with other people.
+
+On systems with `systemd-resolved`, you can edit the `/etc/systemd/resolved.conf` file and add `DNSSEC=yes` to enable it. Do `systemctl restart systemd-resolved` after you are done editing to apply your configuration.
+
+If you are a Whonix or Tails user, you can disregard setting up DNSSEC, as Tor DNS resolution does not support it. Alternatively, you can [use a non-Tor resolver](https://www.whonix.org/wiki/Alternative_DNS_Resolver), though it is not recommended that you do this for an extended amount of time.
+
 ### Time Synchronization
 
 Most Linux distributions by default use the unencrypted and unauthenticated [Network Time Protocol (NTP)](https://en.wikipedia.org/wiki/Network_Time_Protocol) for time synchronization. There are two ways to easily solve this problem:
