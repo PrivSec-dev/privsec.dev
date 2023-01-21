@@ -30,9 +30,9 @@ Security Researcher. Whonix developer. Uses Firefox, Telegram, and Linux against
 **Matrix**: [@madaidan.:matrix.org](https://matrix.to/#/@madaidan.:matrix.org)
 
 ### akc3n
-Just an ordinary guy that loves learning, solving puzzles, and eating food.\
-**Website**: [akc3n.page](https://akc3n.page)\
-**Matrix**: [@akc3n:grapheneos.org](https://matrix.to/#/@akc3n:grapheneos.org)
+Just an ordinary human that loves to learn, solve puzzles, and eat food.
+
+**Website**: [akc3n.page](https://akc3n.page)
 
 ### wj25czxj47bu6q
 A nerd who can't stop going down rabbit holes. Very much a perfectionist.
