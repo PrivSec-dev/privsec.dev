@@ -6,7 +6,7 @@ _\~&ensp;A practical approach to Privacy and Security&ensp;\~_
 
 ## Licensing
 
-Prospective contributors are encouraged to review [CONTRIBUTING.md](/CONTRIBUTING.md), including the [Contributor License Agreement](/CONTRIBUTING.md#contributor-license-agreement).
+Prospective contributors are encouraged to review [CONTRIBUTING.md](/CONTRIBUTING.md) and the [Contributor License Agreement](https://github.com/PrivSec-dev/contributor-license-agreement).
 
 Posts are licensed under the [Creative&nbsp;Commons Attribution&#8209;ShareAlike&nbsp;4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/). _Please make sure to attribute the author(s) properly and include a link to the original publication when applicable._
 
