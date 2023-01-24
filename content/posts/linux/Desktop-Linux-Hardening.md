@@ -252,16 +252,12 @@ _See ["2.2&nbsp;Sysctl"](https://madaidans-insecurities.github.io/guides/linux-h
 
 Madaidan recommends that you disable [unprivileged user namespaces](https://www.containerlabs.kubedaily.com/LXC/Linux%20Containers/User_namespaces.html) due to the [significant attack surface for privilege escalation](https://madaidans-insecurities.github.io/linux.html#kernel). However, some software such as Podman and LXC relies on unprivileged user namespaces. If you wish to use such software, do not disable `kernel.unprivileged_userns_clone`.
 
-If you are using Kicksecure or Whonix, most of this hardening is included by default. If you are using Debian, you should consider [morphing it into Kicksecure](https://www.kicksecure.com/wiki/Debian). On other distributions you can copy the configuration files from Kicksecure:
+If you are using Kicksecure or Whonix, most of this hardening is included by default. If you are using Debian, you should consider [morphing it into Kicksecure](https://www.kicksecure.com/wiki/Debian). On other distributions you can copy the [configuration files from Kicksecure](https://github.com/Kicksecure/security-misc/tree/master/etc/sysctl.d) into `/etc/sysctl.d/` (but note that these configurations do not disable unprivileged user namespaces). There are also a few things in `30_security-misc.conf` to keep in mind:
 
-- [`/etc/sysctl.d/30_security-misc.conf`](https://github.com/Kicksecure/security-misc/blob/master/etc/sysctl.d/30_security-misc.conf)
-- [`/etc/sysctl.d/30_silent-kernel-printk.conf`](https://github.com/Kicksecure/security-misc/blob/master/etc/sysctl.d/30_silent-kernel-printk.conf)
-
-Note that these configurations do not disable unprivileged user namespaces. There are also a few things in `/etc/modprobe.d/30_security-misc.conf` to keep in mind:
-- The `bluetooth` and `btusb` kernel modules are disabled by default. You need to comment out `install bluetooth /bin/disabled-bluetooth-by-security-misc` and `install btusb /bin/disabled-bluetooth-by-security-misc` if you want to use Bluetooth.
-- Apple filesystems are disabled by default. This is generally fine on non-Apple systems; however, if you are using Linux on an Apple product, you **must** check what filesystem your EFI partition uses. For example, if your EFI filesystem is HFS+, you need to comment out `install hfsplus /bin/disabled-filesys-by-security-misc`, otherwise your computer will not be able to boot into Linux.
-- The `cdrom` and `sr_mod` modules are only blacklisted by default. If you have no intention to ever use CD-ROM devices they should be disabled. To implement this, at the bottom of the configuration file 'uncomment' both install (disable) commands and 'comment out' both existing blacklist commands.
-- To produce informative errors when utilising the configuration file, all 10 of the corresponding [debugging scripts](https://github.com/Kicksecure/security-misc/tree/master/bin) should also be copied into `/bin`.
+- The `bluetooth` and `btusb` kernel modules are disabled. You need to comment out `install bluetooth /bin/disabled-bluetooth-by-security-misc` and `install btusb /bin/disabled-bluetooth-by-security-misc` to use Bluetooth.
+- Apple filesystems are disabled. This is generally fine on non-Apple systems; however, if you are using an Apple device, you **must** check what filesystem your EFI partition uses. For example, if your EFI filesystem is HFS+, you need to comment out `install hfsplus /bin/disabled-filesys-by-security-misc`, otherwise your computer will not be able to boot Linux.
+- The `cdrom` and `sr_mod` modules are merely _blacklisted_ (can still be loaded at runtime with `modprobe`). If you have no intention to ever use CD&#8209;ROM devices, they should be _disabled_ by *un*commenting the respective `install` lines. ([More about how this works on the ArchWiki](https://wiki.archlinux.org/title/Kernel_module#Using_files_in_/etc/modprobe.d/_2))
+- To produce informative errors when utilising the configuration file, all 10 of the corresponding [debugging scripts](https://github.com/Kicksecure/security-misc/tree/master/bin) should be copied into `/bin/`.
 
 #### Boot Parameters
 
