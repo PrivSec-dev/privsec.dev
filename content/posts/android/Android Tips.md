@@ -22,7 +22,7 @@ Avoid buying the Fairphone 4, which only has just over 2 years of full security 
 
 You should also avoid buying the /e/ OS phones (sometimes branded as the Murena phones). /e/ OS in itself extremely insecure, not supporting verified boot, shipping userdebug build, [shipping months old version of Chromium, bundling years old version Orbot into their operating system then marketing it as "Advanced Privacy"](https://divestos.org/misc/e.txt), etc. They have recently also had an incident where their cloud service mishandled session keys and give users access to each other's files, then proceeded to [mislead the users that the server cannot see their files](https://community.e.foundation/t/service-announcement-26-may/41252/30) despite there being no end-to-end encryption.
 
-You should also be very wary of low quality privacy branded phones like the Freedom Phone, BraX2 Phone, Volta Phone, and the like. These are cheap Chinese phones with the [Mediatek Helio P60](https://i.mediatek.com/p60) from 2018, which has already reached end-of-life or is near end-of-life. Needless to say, you should also avoid any vendor who claims they are Zero-day proof like this: 
+You should also be very wary of low quality privacy branded phones like the Freedom Phone, BraX2 Phone, Volta Phone, and the like. These are cheap Chinese phones with the [Mediatek Helio P60](https://i.mediatek.com/p60) from 2018, which has already reached end-of-life or is near end-of-life. Needless to say, you should also avoid any vendor who claims they are Zero-day proof like this:
 
 ![Volta phone](/images/volta-phone.png)
 
@@ -54,13 +54,19 @@ If you trust the hardware enforced rate limiting features (typically done by the
 
 Ideally, you should be using a 8-10 word [diceware passphrase](https://en.wikipedia.org/wiki/Diceware) to secure your phone. This would make your phone unlock practically impossible to bruteforce, regardless of whether there is proper rate limiting or not.
 
+## Setup Auditor
+
+[Auditor](https://github.com/GrapheneOS/Auditor) provides attestation for GrapheneOS phones and the stock operating systems on [a number of devices](https://attestation.app/about). It uses hardware security features to make sure that the firmware and operating system have not been downgraded or tampered with.
+
+Attestation can be done [locally](https://grapheneos.org/install/web#verifying-installation) by pairing with another Android 8+ device or remotely using [the remote attestation service](https://attestation.app/about). To make sure that your hardware and operating system is genuine, perform local attestation immediately after the device has been setup and prior to any internet connection.
+
 ## Use Global Toggles
 
 Modern Android devices have global toggles for disabling Bluetooth and location services. Android 12 introduced toggles for the camera and microphone. When not in use, you should disable these features. Apps cannot use disabled features (even if granted individual permission) until re-enabled.
 
 ## Manage Android Permissions
 
-[Permissions on Android](https://developer.android.com/guide/topics/permissions/overview) grant you control over what apps are allowed to access. Google regularly makes [improvements](https://developer.android.com/about/versions/11/privacy/permissions) on the permission system in each successive version. All apps you install are strictly [sandboxed](https://source.android.com/security/app-sandbox), therefore, there is no need to install any antivirus apps. 
+[Permissions on Android](https://developer.android.com/guide/topics/permissions/overview) grant you control over what apps are allowed to access. Google regularly makes [improvements](https://developer.android.com/about/versions/11/privacy/permissions) on the permission system in each successive version. All apps you install are strictly [sandboxed](https://source.android.com/security/app-sandbox), therefore, there is no need to install any antivirus apps.
 
 You can manage Android permissions by going to **Settings** → **Privacy** → **Permission Manager**. Be sure to remove from apps any permissions that they do not need.
 
@@ -76,7 +82,7 @@ On GrapheneOS, connectivity checks by default are done with GrapheneOS's own ser
 
 If you want to, you can disable connectivity check altogether. Note that this will stop captive portal from working.
 
-- On GrapheneOS, go to **Settings** → **Network & internet** → **Internet connectivity check** and select **Disabled**
+- On GrapheneOS and DivestOS, go to **Settings** → **Network & internet** → **Internet connectivity check** and select **Disabled**
 - On other Android-based operating systems, you can [disable captive portal via ADB](https://gitlab.com/CalyxOS/calyxos/-/issues/1226#note_1130393164).
 
 To disable:
@@ -91,6 +97,20 @@ To re-enable:
 adb shell settings delete global captive_portal_mode
 ```
 
+## Enable Secure Exec Spawning
+
+GrapheneOS and DivestOS have the option to spawn fresh processes when launching applications instead of using the traditional Zygote spawning model. You can read more about this [here](https://grapheneos.org/usage#exec-spawning).
+
+On GrapheneOS, this feature is enabled by default. On DivestOS, it is not enabled by default, and you should enable it in **Settings** → **Security** → **Enable secure app spawning**.
+
+## Restrict USB Peripherals
+
+USB peripherals should be disabled or set to only be allowed when the device is unlocked if possible.
+
+On GrapheneOS, you can adjust this settings in **Settings** → **Security** → **USB accessories**. The OS defaults to "Allow new USB peripherals when unlocked".
+
+On DivestOS, you can adjust this settings in **Settings** → **Privacy** → **Trust** → **Restrict USB**. The OS defaults to "Always allow USB connections", and you should change it to one of the two other options as mentioned above.
+
 ## Media Access
 Quite a few applications allow you to "share" a file with them for media upload. If you want to, for example, tweet a picture to Twitter, do not grant Twitter access to your "media and photos", because it will have access to all of your pictures then. Instead, go to your file manager (documentsUI), hold onto the picture, then share it with Twitter.
 
@@ -104,7 +124,7 @@ Multiple user profiles can be found in **Settings** → **System** → **Multipl
 
 With user profiles, you can impose restrictions on a specific profile, such as: making calls, using SMS, or installing apps on the device. Each profile is encrypted using its own encryption key and cannot access the data of any other profiles. Even the device owner cannot view the data of other profiles without knowing their password. Multiple user profiles are a more secure method of isolation.
 
-Note that there is currently a [VPN leakage with secondary user profiles](/posts/os/android-vpn-leakage-with-secondary-user-profiles).
+Note that there is currently a [VPN leakage with secondary user profiles](/posts/android/android-vpn-leakage-with-secondary-user-profiles).
 
 ## Work Profile
 
@@ -125,6 +145,8 @@ You can reduce this attack surface by limiting the baseband modem to just using 
 GrapheneOS has the LTE only mode exposed in settings. You can set this by going to **Settings** → **Internet** → **Your carrier name** → **Preferred network type** → **LTE Only**.
 
 If your Android-based operating system does not expose this setting in the Settings app, or if you want to set your baseband modem to a less restrictive mode, dial `*#*#4636#*#*` then hit **Phone information**. Here, you can set preferred network type to just the generations that you intend to use. For example, if you only want to use 5G and 4G, you can set it to `NR/LTE`.
+
+Depending on the carrier, you may need to enable additional network types for Wifi calling to work. For example, Google Fi requires WCDMA for this feature. Thus, if you want 5G, 4G, and Wifi calling for Google Fi, you need to set the network type as `NR/LTE/WCDMA`.
 
 ## Carrier Tracking
 
@@ -161,9 +183,9 @@ You can also obtain your apps directly from their GitHub repositories. In most c
 - Install the [Android Studio](https://developer.android.com/studio) which includes `apksinger`. On macOS, `apksigner` can be found at `~/Library/Android/sdk/build-tools/<version>/apksigner`.
 - Run `apksigner verify --print-certs --verbose myCoolApp.apk` to verify the certificate of the apk.
 
-After you have verified the signature of the apk and installed it on your phone, there are several strategies you can use to keep the application up-to-date. 
+After you have verified the signature of the apk and installed it on your phone, there are several strategies you can use to keep the application up-to-date.
 
-The first strategy is to add the atom feed of the application's release page to an RSS Reader like [ReadYou](https://github.com/Ashinch/ReadYou) to get notified of new releases. You will still need to download and install the new releases manually. If you are confused, here is a video that could help with this process: 
+The first strategy is to add the atom feed of the application's release page to an RSS Reader like [ReadYou](https://github.com/Ashinch/ReadYou) to get notified of new releases. You will still need to download and install the new releases manually. If you are confused, here is a video that could help with this process:
 
 {{< youtube id="FFz57zNR_M0">}}
 

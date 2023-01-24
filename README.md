@@ -1,31 +1,31 @@
 # PrivSec.dev
-A practical approach to Privacy and Security
+
+_\~&ensp;A practical approach to Privacy and Security&ensp;\~_
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ba0d8ddc-031b-4c16-8240-9929a4ad201a/deploy-status)](https://app.netlify.com/sites/privsec-dev/deploys)
 
 ## Licensing
 
-The website content (under `/content`) is under the [Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
+Prospective contributors are encouraged to review [CONTRIBUTING.md](/CONTRIBUTING.md) and the [Contributor License Agreement](https://github.com/PrivSec-dev/contributor-license-agreement).
 
-The license agreement for contributor is listed [here](/CONTRIBUTING.md).
+Posts are licensed under the [Creative&nbsp;Commons Attribution&#8209;ShareAlike&nbsp;4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/). _Please make sure to attribute the author(s) properly and include a link to the original publication when applicable._
 
-The articles originally posted on [wonderfall.dev](https://wonderfall.dev), [akc3n.page](https://akc3n.page), and [seirdy.one](https://seirdy.one) are under the same license. Articles originally posted on [wanderingcomputerer.gitlab.io](https://WanderingComputerer.gitlab.io) are under the [Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) license.
+[Hugo](https://gohugo.io/), the static site generator used to build the site, is licensed under the [Apache&nbsp;License&nbsp;2.0](https://github.com/gohugoio/hugo/blob/master/LICENSE).
 
-The Hugo Framework used to create this website is under the [Apache License](https://github.com/gohugoio/hugo/blob/master/LICENSE).
+The [WonderMod](https://github.com/Wonderfall/hugo-WonderMod) theme (and its upstream [PaperMod](https://github.com/adityatelange/hugo-PaperMod)) is licensed under the [MIT&nbsp;License](https://github.com/Wonderfall/hugo-WonderMod/blob/master/LICENSE). Except where otherwise noted, PrivSec.dev's modifications to WonderMod are also licensed under the MIT&nbsp;License.
 
-The WonderMod theme used for the website and modifications made by us are under the [MIT License](https://github.com/adityatelange/hugo-PaperMod/blob/master/LICENSE). 
+## Hosting (Netlify)
 
-## Netlify Previews
+The https://privsec.dev website is hosted by [Netlify](https://netlify.com). Netlify will automatically generate previews for pull requests and on pull request updates.
 
-We use [Netlify](https://netlify.com) to host our website and generate previews. Simply add your articles inside of `/content` or make any modifications that you want, open a new Pull Request and a preview page will be generated for you automatically.
+## Local Working Environment
 
-## Local Development
+1. Install [Git](https://git-scm.com/downloads) and [Hugo](https://gohugo.io/getting-started/installing/).
+   - Most users should simply use the [self&#8209;contained Hugo executable for their platform](https://github.com/gohugoio/hugo/releases). Linux package managers often provide old versions of Hugo.
+1. Clone this repository: `git clone --recurse-submodules https://github.com/PrivSec-dev/privsec.dev`.
+1. Run `hugo serve` to start the local development server at (by default) `http://localhost:1313`.
+   - Alternatively run `hugo` to simply build the site into the `public/` directory.
 
-1. [Install Hugo](https://gohugo.io/getting-started/installing/)
-1. Clone this repository: `git clone --recurse-submodules https://github.com/PrivSec-dev/privsec.dev`
-1. Run `hugo serve` to start the local development server at (by default) `http://localhost:1313`
-   - Alternatively run `hugo` to simply build the site into the `/public` directory
-
-- Run `git submodule update --merge` to update the [WonderMod theme](https://github.com/Wonderfall/hugo-WonderMod) to the version specified in this repo
-  - Run `git submodule update --remote --merge` to update to the upstream master branch of WonderMod
-- Run `./external-blogs.sh` to pull the latest versions of the articles from [wonderfall.dev](https://wonderfall.dev) and place them in `/content`
+- Run `git submodule update --merge` to update the [WonderMod theme](https://github.com/Wonderfall/hugo-WonderMod) to the version specified in this repo.
+  - Run `git submodule update --remote --merge` to update to the upstream master branch of WonderMod.
+- Run `./external-blogs.sh` to pull the latest versions of certain posts from their canonical (external) sources.

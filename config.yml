@@ -11,7 +11,7 @@ minify:
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  author: PrivSec Team
+  author: PrivSec.dev Team
   # author: ["Me", "You"] # multiple authors
   description: A practical approach to Privacy and Security
   keywords: [Privacy, Security]
@@ -60,14 +60,12 @@ params:
       url: "https://github.com/PrivSec-dev"
     - name: gitea
       url: "https://git.tommytran.io/privsec-dev"
-    - name: phone
-      url: "/about#tommy"
     - name: matrix
       url: "https://matrix.to/#/#privsec:arcticfoxes.net"
     - name: twitter
       url: "https://twitter.com/privsec_dev"
     - name: email
-      url: "mailto:tommy@privsec.dev"
+      url: "mailto:contact@tommytran.io"
     - name: rss
       url: /index.xml
 
@@ -129,6 +127,10 @@ menu:
       name: PGP
       url: https://tommytran.io/tommy.asc
       weight: 50
+    - identifier: S/MIME
+      name: S/MIME
+      url: https://tommytran.io/tommy.crt
+      weight: 60
 
 privacy:
   disqus:
