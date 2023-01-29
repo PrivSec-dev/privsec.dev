@@ -307,9 +307,19 @@ Further reading:
 intel_iommu=on amd_iommu=on efi=disable_early_pci_dma iommu.passthrough=0 iommu.strict=1
 ```
 
-Direct memory access (DMA) attacks can be mitigated via IOMMU and the [aforementioned kernel module disabling](#kernel-hardening). ([See also Madaidan's commentary.](https://madaidans-insecurities.github.io/guides/linux-hardening.html#dma-attacks)) Furthermore, [strict enforcement of IOMMU TLB invalidation](https://github.com/Kicksecure/security-misc/blob/master/etc/default/grub.d/40_enable_iommu.cfg) should be applied so devices will never be able to access stale data contents.
+[Direct memory access (DMA) attacks](https://en.wikipedia.org/wiki/DMA_attack) can be mitigated via IOMMU and [disabling certain kernel modules](#kernel-modules). Furthermore, [strict enforcement of IOMMU TLB invalidation](https://github.com/Kicksecure/security-misc/blob/master/etc/default/grub.d/40_enable_iommu.cfg) should be applied so devices will never be able to access stale data contents.
 
-_Note that disabling the busmaster bit on all PCI bridges (`disable_early_pci_dma`) during very early boot can cause complete boot failure on certain systems if they do not have adequate resources. Therefore, as always, ensure you have a fallback option to boot into the system whenever modifying any kernel parameters._
+[These parameters **do not provide comprehensive DMA protection**.](https://github.com/PrivSec-dev/privsec.dev/pull/81#issuecomment-1367511126) In early boot (before the kernel has loaded), only the system firmware can enforce IOMMU and thus provide DMA protection. A DMA attack in early boot can patch the kernel in memory to completely undermine these parameters.
+
+_Note that disabling the busmaster bit on all PCI bridges during very early boot (`efi=disable_early_pci_dma`) can cause complete boot failure on certain systems with inadequate resources. Therefore, as always, ensure you have a fallback option to boot into the system whenever modifying any kernel parameters._
+
+Further reading:
+
+- [IOMMU Groups, inside and out](https://vfio.blogspot.com/2014/08/iommu-groups-inside-and-out.html)
+- [IOMMU introduction](https://terenceli.github.io/%E6%8A%80%E6%9C%AF/2019/08/04/iommu-introduction)
+- [intel IOMMU driver analysis](https://terenceli.github.io/%E6%8A%80%E6%9C%AF/2019/08/10/iommu-driver-analysis)
+- [Avoiding gaps in IOMMU protection at boot](https://mjg59.dreamwidth.org/54433.html)
+- [Madaidan: DMA attacks](https://madaidans-insecurities.github.io/guides/linux-hardening.html#dma-attacks)
 
 #### Kernel Modules
 
