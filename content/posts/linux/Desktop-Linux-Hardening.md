@@ -487,7 +487,7 @@ For Fedora Workstation, you can follow [H&aring;vard Moen's guide](https://haava
 
 On Arch, the process is very similar, though sbctl is already included in the official repositories and you will need to switch from [mkinitpcio](https://wiki.archlinux.org/title/Mkinitcpio) to dracut. Arch with linux&#8209;hardened works well with `sbctl`, but some level of tedious pacman hooks are required for appropriately timing the re&#8209;signing of all relevant files every time the kernel or bootloader is updated.
 
-In my opinion, this is the most straightforward setup, with a lot of potential such as [systemd's future UKI plans including support for remote attestation](https://0pointer.de/blog/brave-new-trusted-boot-world.html) similar to [GrapheneOS Auditor](/posts/android/android-tips/#setup-auditor). With that being said, it does not appear to work well with specialized setups such as Fedora Silverblue/Kinoite or Ubuntu with [ZSys](https://github.com/ubuntu/zsys). More testing is needed to see if they can be made to work.
+In my opinion, this is the most straightforward setup, with a lot of potential such as [systemd's future UKI plans including support for early&#8209;boot attestation](https://0pointer.de/blog/brave-new-trusted-boot-world.html). With that being said, it does not appear to work well with specialized setups such as Fedora Silverblue/Kinoite or Ubuntu with [ZSys](https://github.com/ubuntu/zsys). More testing is needed to see if they can be made to work.
 
 ### Encrypted /boot
 
