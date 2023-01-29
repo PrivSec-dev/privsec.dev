@@ -289,7 +289,17 @@ Kicksecure does not enforce either `module.sig_enforce=1` or `lockdown=confident
 random.trust_cpu=off random.trust_bootloader=off
 ```
 
-As sources of initial entropy at boot, both the CPU and bootloader should be [distrusted](https://lkml.org/lkml/2022/6/5/271). For CPUs, the RBRAND instructions set is [impossible to audit](https://madaidans-insecurities.github.io/guides/linux-hardening.html#rdrand), and moving forward as a precaution, the bootloader should be treated identically. Note that both of these kernel parameters will increase boot time.
+Some implementations of the RDRAND instruction (by which the CPU offers a random number generator to the OS) have proven to be [vulnerable](https://en.wikipedia.org/wiki/RDRAND#Security_issues) or [outright defective](https://arstechnica.com/gadgets/2019/10/how-a-months-old-amd-microcode-bug-destroyed-my-weekend/). RDRAND is also impossible to audit, being part of the CPU itself.
+
+As a precaution for the integrity of cryptographic operations, the CPU and bootloader should not be used as _credited_ entropy sources. Note that this change will increase boot time.
+
+Further reading:
+
+- [systemd: Random Seeds](https://systemd.io/RANDOM_SEEDS/)
+- [Madaidan: RDRAND](https://madaidans-insecurities.github.io/guides/linux-hardening.html#rdrand)
+- [Linux kernel mailing list](https://lore.kernel.org/lkml/20220605171539.417872-1-Jason@zx2c4.com/T/)
+- [Hacker News discussion](https://news.ycombinator.com/item?id=33223232)
+- [NixOS discussion](https://github.com/NixOS/nixpkgs/pull/165355) (also cites many additional sources)
 
 ##### DMA mitigations
 
