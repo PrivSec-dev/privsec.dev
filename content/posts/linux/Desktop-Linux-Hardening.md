@@ -309,8 +309,9 @@ Once again, Kicksecure includes this hardening by default and provides a config 
 
 There are a few things in this config to keep in mind:
 
-- The _bluetooth_ and _btusb_ kernel modules are disabled by default. If you wish to use Bluetooth, comment out the lines beginning with `install bluetooth` and `install btusb`.
-- Apple filesystems are disabled by default. This is generally fine on non&#8209;Apple systems; however, if you are using Linux on an Apple device, you **must** check what filesystem your EFI partition uses. For example, if your EFI filesystem is HFS+, you need to comment out `install hfsplus /bin/disabled-filesys-by-security-misc`, otherwise your computer will not be able to boot into Linux.
+- Bluetooth is disabled. Comment out the `install bluetooth` and `install btusb` lines to use Bluetooth.
+- Thunderbolt is disabled. Comment out the `install thunderbolt` line to use Thunderbolt devices.
+- Apple filesystems are disabled. While generally fine on non&#8209;Apple systems, if you are using an Apple device you **must** check the filesystem of your EFI partition and comment out the relevant `install` line, otherwise your Linux install will not boot. For example, comment out the `install hfsplus` line if your ESP filesystem is HFS+.
 
 #### Restricting access to /proc and /sys
 
