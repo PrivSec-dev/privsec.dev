@@ -11,7 +11,7 @@ Linux is [not a secure desktop operating system](/posts/linux/linux-insecurities
 
 This guide is largely based on [Madaidan's Linux Hardening Guide](https://madaidans-insecurities.github.io/guides/linux-hardening.html), however this guide strives to consider the usability and ease of maintenance of each recommendation. The goal is to produce a guide that intermediate to advanced Linux users can reasonably follow to set up and maintain the security configurations. It does **not** endeavor to be distribution agnostic; distribution&#8209;specific recommendations are to be expected.
 
-Some of the sections will include mentions of unofficial builds of packages like linux-hardened, lkrg-akmod, hardened_malloc, and so on. These are not endorsements&nbsp;--- they are merely to show that you have options to easily obtain and update these packages. Using unofficial builds of packages means adding more parties to trust, and you have to evaluate whether it is worth doing so for the potential privacy/security benefits or not.
+Some of the sections will include mentions of unofficial builds of packages like linux&#8209;hardened, lkrg&#8209;akmod, hardened_malloc, and so on. These are not endorsements&nbsp;--- they are merely to show that you have options to easily obtain and update these packages. Using unofficial builds of packages means adding more parties to trust, and you have to evaluate whether it is worth doing so for the potential privacy/security benefits or not.
 
 ![Fedora Tux](/images/fedora-tux.png)
 
@@ -19,7 +19,7 @@ Some of the sections will include mentions of unofficial builds of packages like
 
 ### Drive Encryption
 
-Most Linux distributions have an option within its installer for enabling LUKS full disk encryption. If this option isn’t set at installation time, you will have to backup your data and re-install, as encryption is applied after [disk partitioning](https://en.wikipedia.org/wiki/Disk_partitioning) but before [filesystem](https://en.wikipedia.org/wiki/File_system) creation.
+Most Linux distributions have an option within its installer for enabling LUKS full disk encryption. If this option isn't set at installation time, you will have to backup your data and re-install, as encryption is applied after [disk partitioning](https://en.wikipedia.org/wiki/Disk_partitioning) but before [filesystem](https://en.wikipedia.org/wiki/File_system) creation.
 
 ### Encrypted Swap
 
@@ -252,26 +252,74 @@ _See ["2.2&nbsp;Sysctl"](https://madaidans-insecurities.github.io/guides/linux-h
 
 Madaidan recommends that you disable [unprivileged user namespaces](https://www.containerlabs.kubedaily.com/LXC/Linux%20Containers/User_namespaces.html) due to the [significant attack surface for privilege escalation](https://madaidans-insecurities.github.io/linux.html#kernel). However, some software such as Podman and LXC relies on unprivileged user namespaces. If you wish to use such software, do not disable `kernel.unprivileged_userns_clone`.
 
-If you are using Kicksecure or Whonix, most of this hardening is included by default. If you are using Debian, you should consider [morphing it into Kicksecure](https://www.kicksecure.com/wiki/Debian). On other distributions you can copy the configuration files from Kicksecure:
+If you are using Kicksecure or Whonix, most of this hardening is included by default. If you are using Debian, you should consider [morphing it into Kicksecure](https://www.kicksecure.com/wiki/Debian). On other distributions, you can copy the [configuration files from Kicksecure](https://github.com/Kicksecure/security-misc/tree/master/etc/sysctl.d) into `/etc/sysctl.d/` (but note that these configurations do not disable unprivileged user namespaces). There are also a few things in `30_security-misc.conf` to keep in mind:
 
-- [`/etc/sysctl.d/30_security-misc.conf`](https://github.com/Kicksecure/security-misc/blob/master/etc/sysctl.d/30_security-misc.conf)
-- [`/etc/sysctl.d/30_silent-kernel-printk.conf`](https://github.com/Kicksecure/security-misc/blob/master/etc/sysctl.d/30_silent-kernel-printk.conf)
-
-Note that these configurations do not disable unprivileged user namespaces.
+- The `bluetooth` and `btusb` kernel modules are disabled. You need to comment out `install bluetooth /bin/disabled-bluetooth-by-security-misc` and `install btusb /bin/disabled-bluetooth-by-security-misc` to use Bluetooth.
+- Apple filesystems are disabled. This is generally fine on non-Apple systems; however, if you are using an Apple device, you **must** check what filesystem your EFI partition uses. For example, if your EFI filesystem is HFS+, you need to comment out `install hfsplus /bin/disabled-filesys-by-security-misc`, otherwise your computer will not be able to boot Linux.
+- The `cdrom` and `sr_mod` modules are merely _blacklisted_ (can still be loaded at runtime with `modprobe`). If you have no intention to ever use CD&#8209;ROM devices, they should be _disabled_ by *un*commenting the respective `install` lines. ([More about how this works on the ArchWiki](https://wiki.archlinux.org/title/Kernel_module#Using_files_in_/etc/modprobe.d/_2))
+- To produce informative errors when utilising the configuration file, all 10 of the corresponding [debugging scripts](https://github.com/Kicksecure/security-misc/tree/master/bin) should be copied into `/bin/`.
 
 #### Boot Parameters
 
-_See ["2.3&nbsp;Boot parameters"](https://madaidans-insecurities.github.io/guides/linux-hardening.html#boot-parameters) in Madaidan's guide. If desired, [formal documentation of boot parameters](https://www.kernel.org/doc/html/latest/admin-guide/kernel-parameters.html) is available upstream._
-
-These recommended boot parameters are included in Kicksecure by default:
-
-```
-slab_nomerge init_on_alloc=1 init_on_free=1 page_alloc.shuffle=1 pti=on vsyscall=none debugfs=off oops=panic module.sig_enforce=1 lockdown=confidentiality mce=0 quiet loglevel=0 spectre_v2=on spec_store_bypass_disable=on tsx=off tsx_async_abort=full,nosmt mds=full,nosmt l1tf=full,force nosmt=force kvm.nx_huge_pages=force randomize_kstack_offset=on
-```
-
-_See ["Disabling SMT"](#disabling-smt) for more about the effects of disabling SMT._
+_See ["2.3&nbsp;Boot parameters"](https://madaidans-insecurities.github.io/guides/linux-hardening.html#boot-parameters) in Madaidan's guide and [Kicksecure boot parameters](https://github.com/Kicksecure/security-misc/tree/master/etc/default/grub.d). If desired, [formal documentation of boot parameters](https://www.kernel.org/doc/html/latest/admin-guide/kernel-parameters.html) is available upstream._
 
 Copy these parameters into [your bootloader's configuration](https://wiki.archlinux.org/title/Kernel_parameters#Configuration). On rpm&#8209;ostree distributions, make sure to use `rpm-ostree kargs` rather than editing GRUB configuration directly.
+
+##### CPU mitigations
+
+```
+spectre_v2=on spec_store_bypass_disable=on l1tf=full,force mds=full,nosmt tsx=off tsx_async_abort=full, mds=full,nosmt kvm.nx_huge_pages=force nosmt=force l1d_flush=on mmio_stale_data=full,nosmt
+```
+
+[Simultaneous multithreading (SMT)](https://en.wikipedia.org/wiki/Simultaneous_multithreading) has been the cause of numerous hardware&#8209;level vulnerabilities and is thus disabled here. If the option is available, you should disable SMT/"Hyper&#8209;Threading" in your firmware as well.
+
+Note however that disabling SMT may have a significant performance impact&nbsp;--- [for this reason the popular linux&#8209;hardened kernel for Arch does not disable SMT](https://github.com/anthraxx/linux-hardened/issues/37#issuecomment-619597365) by default. Assess your own risk tolerance, and, if you choose to keep SMT enabled, simply remove all occurrences of `nosmt` and `nosmt=force` from these parameters.
+
+##### Kernel
+
+```
+slab_nomerge init_on_alloc=1 init_on_free=1 pti=on vsyscall=none page_alloc.shuffle=1 randomize_kstack_offset=on extra_latent_entropy debugfs=off oops=panic quiet loglevel=0
+```
+
+Kicksecure does not enforce either `module.sig_enforce=1` or `lockdown=confidentiality` by default as they lead to a lot of hardware compatibility issues; consider enabling these if possible on your system. Additionally, [`mce=0` is no longer recommended](https://forums.whonix.org/t/kernel-hardening/7296/493).
+
+##### Entropy generation
+
+```
+random.trust_cpu=off random.trust_bootloader=off
+```
+
+Some implementations of the RDRAND instruction (by which the CPU offers a random number generator to the OS) have proven to be [vulnerable](https://en.wikipedia.org/wiki/RDRAND#Security_issues) or [outright defective](https://arstechnica.com/gadgets/2019/10/how-a-months-old-amd-microcode-bug-destroyed-my-weekend/). RDRAND is also impossible to audit, being part of the CPU itself.
+
+As a precaution for the integrity of cryptographic operations, the CPU and bootloader should not be used as _credited_ entropy sources. Note that this change will increase boot time.
+
+Further reading:
+
+- [systemd: Random Seeds](https://systemd.io/RANDOM_SEEDS/)
+- [Madaidan: RDRAND](https://madaidans-insecurities.github.io/guides/linux-hardening.html#rdrand)
+- [Linux kernel mailing list](https://lore.kernel.org/lkml/20220605171539.417872-1-Jason@zx2c4.com/T/)
+- [Hacker News discussion](https://news.ycombinator.com/item?id=33223232)
+- [NixOS discussion](https://github.com/NixOS/nixpkgs/pull/165355) (also cites many additional sources)
+
+##### DMA mitigations
+
+```
+intel_iommu=on amd_iommu=on efi=disable_early_pci_dma iommu.passthrough=0 iommu.strict=1
+```
+
+[Direct memory access (DMA) attacks](https://en.wikipedia.org/wiki/DMA_attack) can be mitigated via IOMMU and [disabling certain kernel modules](#kernel-modules). Furthermore, [strict enforcement of IOMMU TLB invalidation](https://github.com/Kicksecure/security-misc/blob/master/etc/default/grub.d/40_enable_iommu.cfg) should be applied so devices will never be able to access stale data contents.
+
+[These parameters **do not provide comprehensive DMA protection**.](https://github.com/PrivSec-dev/privsec.dev/pull/81#issuecomment-1367511126) In early boot (before the kernel has loaded), only the system firmware can enforce IOMMU and thus provide DMA protection. A DMA attack in early boot can patch the kernel in memory to completely undermine these parameters.
+
+_Note that disabling the busmaster bit on all PCI bridges during very early boot (`efi=disable_early_pci_dma`) can cause complete boot failure on certain systems with inadequate resources. Therefore, as always, ensure you have a fallback option to boot into the system whenever modifying any kernel parameters._
+
+Further reading:
+
+- [IOMMU Groups, inside and out](https://vfio.blogspot.com/2014/08/iommu-groups-inside-and-out.html)
+- [IOMMU introduction](https://terenceli.github.io/%E6%8A%80%E6%9C%AF/2019/08/04/iommu-introduction)
+- [intel IOMMU driver analysis](https://terenceli.github.io/%E6%8A%80%E6%9C%AF/2019/08/10/iommu-driver-analysis)
+- [Avoiding gaps in IOMMU protection at boot](https://mjg59.dreamwidth.org/54433.html)
+- [Madaidan: DMA attacks](https://madaidans-insecurities.github.io/guides/linux-hardening.html#dma-attacks)
 
 #### Kernel Modules
 
@@ -281,8 +329,9 @@ Once again, Kicksecure includes this hardening by default and provides a config 
 
 There are a few things in this config to keep in mind:
 
-- The _bluetooth_ and _btusb_ kernel modules are disabled by default. If you wish to use Bluetooth, comment out the lines beginning with `install bluetooth` and `install btusb`.
-- Apple filesystems are disabled by default. This is generally fine on non&#8209;Apple systems; however, if you are using Linux on an Apple device, you **must** check what filesystem your EFI partition uses. For example, if your EFI filesystem is HFS+, you need to comment out `install hfsplus /bin/disabled-filesys-by-security-misc`, otherwise your computer will not be able to boot into Linux.
+- Bluetooth is disabled. Comment out the `install bluetooth` and `install btusb` lines to use Bluetooth.
+- Thunderbolt is disabled. Comment out the `install thunderbolt` line to use Thunderbolt devices.
+- Apple filesystems are disabled. While generally fine on non&#8209;Apple systems, if you are using an Apple device you **must** check the filesystem of your EFI partition and comment out the relevant `install` line, otherwise your Linux install will not boot. For example, comment out the `install hfsplus` line if your ESP filesystem is HFS+.
 
 #### Restricting access to /proc and /sys
 
@@ -292,9 +341,9 @@ Disabling access to `/sys` without a proper whitelist will lead to various appli
 
 #### linux-hardened
 
-Some distributions like Arch Linux offer the [linux-hardened](https://github.com/anthraxx/linux-hardened) kernel package. It includes [hardening patches](https://wiki.archlinux.org/title/security#Kernel_hardening) and more security-conscious defaults.
+Some distributions like Arch Linux offer the [linux&#8209;hardened](https://github.com/anthraxx/linux-hardened) kernel package. It includes [hardening patches](https://wiki.archlinux.org/title/security#Kernel_hardening) and more security-conscious defaults.
 
-linux-hardened has unprivileged user namespaces (`kernel.unprivileged_userns_clone`) disabled by default. [This may impact some software.](#runtime-kernel-parameters-sysctl)
+linux&#8209;hardened has unprivileged user namespaces (`kernel.unprivileged_userns_clone`) disabled by default. [This may impact some software.](#runtime-kernel-parameters-sysctl)
 
 #### Linux Kernel Runtime Guard (LKRG)
 
@@ -313,14 +362,6 @@ Debian-based distributions can get the LKRG DKMS package [from Kicksecure](https
 #### grsecurity
 
 [Grsecurity](https://grsecurity.net/) offers a set of kernel patches that attempt to improve security of the Linux kernel. Payment is required, but grsecurity is worth using if you have a subscription.
-
-### Disabling SMT
-
-[Simultaneous multithreading (SMT)](https://en.wikipedia.org/wiki/Simultaneous_multithreading) has been the cause of numerous hardware&#8209;level vulnerabilities, and subsequent mitigations often negate much of the performance gain offered by SMT.
-
-The [hardened boot parameters](#boot-parameters) presented here include disabling SMT. If the option is available, you should disable SMT/"Hyper&#8209;Threading" in your firmware as well.
-
-Note that disabling SMT may have a significant performance impact.
 
 ### Hardened Memory Allocator
 
@@ -410,7 +451,7 @@ On older systems where `autofs` is used, you should mask the `autofs` service to
 
 To better protect your USB ports from attacks such as [BadUSB](https://www.srlabs.de/bites/usb-peripherals-turn) and the infamous [Hak5 USB Rubber Ducky](https://hak5.org/products/usb-rubber-ducky), I recommend [USBGuard](https://usbguard.github.io). Documentation is available on the [USBGuard website](https://usbguard.github.io) and [ArchWiki](https://wiki.archlinux.org/title/USBGuard).
 
-If you are using [linux-hardened](#linux-hardened), you can alternatively use the `deny_new_usb` kernel parameter&nbsp;--- see ["Preventing USB Attacks with `linux-hardened`"](https://blog.lizzie.io/preventing-usb-attacks-with-linux-hardened.html).
+If you are using [linux&#8209;hardened](#linux-hardened), you can alternatively use the `deny_new_usb` kernel parameter&nbsp;--- see ["Preventing USB Attacks with `linux&#8209;hardened`"](https://blog.lizzie.io/preventing-usb-attacks-with-linux-hardened.html).
 
 ## Secure Boot
 
@@ -444,9 +485,9 @@ On most desktop Linux systems, it is possible to create a [unified kernel image]
 
 For Fedora Workstation, you can follow [H&aring;vard Moen's guide](https://haavard.name/2022/06/22/full-uefi-secure-boot-on-fedora-using-signed-initrd-and-systemd-boot/) which covers sbctl installation, unified kernel image generation with [dracut](https://wiki.archlinux.org/title/Dracut), and automatic signing with systemd&#8209;boot.
 
-On Arch, the process is very similar, though sbctl is already included in the official repositories and you will need to switch from [mkinitpcio](https://wiki.archlinux.org/title/Mkinitcpio) to dracut.
+On Arch, the process is very similar, though sbctl is already included in the official repositories and you will need to switch from [mkinitpcio](https://wiki.archlinux.org/title/Mkinitcpio) to dracut. Arch with linux&#8209;hardened works well with `sbctl`, but some level of tedious pacman hooks are required for appropriately timing the re&#8209;signing of all relevant files every time the kernel or bootloader is updated.
 
-In my opinion, this is the most straightforward setup, with a lot of future potential such as integration with [systemd-measure](https://www.freedesktop.org/software/systemd/man/systemd-measure.html) for better verification of the unified kernel image. With that being said, it does not appear to work well with specialized setups such as Fedora Silverblue/Kinoite or Ubuntu with [ZSys](https://github.com/ubuntu/zsys). More testing is needed to see if they can be made to work.
+In my opinion, this is the most straightforward setup, with a lot of potential such as [systemd's future UKI plans including support for early&#8209;boot attestation](https://0pointer.de/blog/brave-new-trusted-boot-world.html). With that being said, it does not appear to work well with specialized setups such as Fedora Silverblue/Kinoite or Ubuntu with [ZSys](https://github.com/ubuntu/zsys). More testing is needed to see if they can be made to work.
 
 ### Encrypted /boot
 
@@ -468,7 +509,7 @@ However, there are some caveats:
 
 #### Other Distributions
 
-On systems which use [grub-btrfs](https://github.com/Antynea/grub-btrfs) to mimic openSUSE (such as [my old Arch setup](https://github.com/tommytran732/Arch-Setup-Script)), there are a few things to keep in mind:
+On systems which use [grub&#8209;btrfs](https://github.com/Antynea/grub-btrfs) to mimic openSUSE (such as [my old Arch setup](https://github.com/tommytran732/Arch-Setup-Script)), there are a few things to keep in mind:
 
 - It will be easier to use LUKS1 than LUKS2 with PBKDF2 for this setup.
   - I have run into issues where GRUB will detect a LUKS1 partition converted to LUKS2 with PBKDF2 but not a pre&#8209;existing LUKS2 partition.
@@ -486,6 +527,6 @@ On systems which use [grub-btrfs](https://github.com/Antynea/grub-btrfs) to mimi
 
 ### Notes on Secure Boot
 
-After setting up Secure Boot, it is crucial that you password-protect your UEFI settings (sometimes called 'supervisor' or 'administrator' password), otherwise an adversary can simply disable Secure Boot.
+After setting up Secure Boot, it is crucial that you password-protect your UEFI settings (sometimes called 'supervisor' or 'administrator' password)&nbsp;--- otherwise an adversary can simply disable Secure Boot.
 
-These recommendations can make you a little more resistant to evil maid attacks, but they do not constitute a proper verified boot process as found on [Android](https://source.android.com/security/verifiedboot), [ChromeOS](https://support.google.com/chromebook/answer/3438631), or [Windows](https://docs.microsoft.com/en-us/windows/security/information-protection/secure-the-windows-10-boot-process).
+These recommendations can make you a little more resistant to evil maid attacks, but they [do not constitute a proper verified boot process](https://madaidans-insecurities.github.io/guides/linux-hardening.html#verified-boot) as found on [Android](https://source.android.com/security/verifiedboot), [ChromeOS](https://support.google.com/chromebook/answer/3438631), or [Windows](https://docs.microsoft.com/en-us/windows/security/information-protection/secure-the-windows-10-boot-process).
