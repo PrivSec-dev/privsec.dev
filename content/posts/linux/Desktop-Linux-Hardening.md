@@ -9,8 +9,6 @@ Linux is [not a secure desktop operating system](/posts/linux/linux-insecurities
 
 **Before we start...**
 
-This guide is largely based on [Madaidan's Linux Hardening Guide](https://madaidans-insecurities.github.io/guides/linux-hardening.html), however this guide strives to consider the usability and ease of maintenance of each recommendation. The goal is to produce a guide that intermediate to advanced Linux users can reasonably follow to set up and maintain the security configurations. It does **not** endeavor to be distribution agnostic; distribution&#8209;specific recommendations are to be expected.
-
 Some of the sections will include mentions of unofficial builds of packages like linux&#8209;hardened, lkrg&#8209;akmod, hardened_malloc, and so on. These are not endorsements&nbsp;--- they are merely to show that you have options to easily obtain and update these packages. Using unofficial builds of packages means adding more parties to trust, and you have to evaluate whether it is worth doing so for the potential privacy/security benefits or not.
 
 ![Fedora Tux](/images/fedora-tux.png)
