@@ -1,7 +1,7 @@
 ---
 title: "Desktop vs Mobile"
 date: 2023-01-27
-tags: ['Knowledge base', 'Privacy, 'Security']
+tags: ['Knowledge base', 'Privacy', 'Security']
 author: mfwmyfacewhen
 ---
 
