@@ -51,13 +51,13 @@ Some Android-based operating systems, including ones like CalyxOS, often fall be
 
 ### User Builds
 
-As mentioned [above](/posts/os/choosing-your-android-based-operating-system/), `userdebug` builds expose root over ADB and require more permissive SELinux policies to accommodate debugging features. `userdebug` builds violate the Android security model and are really only meant for developers to test out their android builds during development. 
+As mentioned [above](/posts/os/choosing-your-android-based-operating-system/), `userdebug` builds expose root over ADB and require more permissive SELinux policies to accommodate debugging features. They violate the Android security model and are really only meant for developers to test out their android builds during development.
 
-End users should be using the production `user` builds, and any distributions that fail to deliver them like LineageOS or /e/ OS should be avoided.
+End users should be using the production `user` builds. Distributions which do not ship `user` builds like LineageOS or /e/ OS should be avoided, especially if your device has not reached end of life.
 
 ### SELinux in Enforcing Mode
 
-[SELinux](https://source.android.com/security/selinux) is a critical part of the Android security model, having the Linux kernel enforcing confinement for all processes, including system processes running as root. 
+[SELinux](https://source.android.com/security/selinux) is a critical part of the Android security model, having the Linux kernel enforcing confinement for all processes, including system processes running as root.
 
 In order for a system to be secure, it must have SELinux in Enforcing mode, accompanied by fine-grained SELinux policies.
 
@@ -91,7 +91,7 @@ Currently, Google Pixel phones are the only devices that meet GrapheneOS's [hard
 
 [DivestOS](https://divestos.org/) is a great aftermarket operating system for devices that have gone end-of-life or are near end-of-life. Note that this is a harm reduction project, ran by one developer on the best effort basis, and you should not buy a new device just to run DivestOS.
 
-Being a soft-fork of [LineageOS](https://lineageos.org/), DivestOS inherits many [supported devices](https://divestos.org/index.php?page=devices&base=LineageOS) from LineageOS. It has signed builds, making it possible to have [verified boot](https://source.android.com/security/verifiedboot) on some non-Pixel devices.
+Being a soft-fork of [LineageOS](https://lineageos.org/), DivestOS inherits many [supported devices](https://divestos.org/index.php?page=devices&base=LineageOS) from LineageOS. It has signed builds, making it possible to have [verified boot](https://source.android.com/security/verifiedboot) on some non-Pixel devices. Unlike its upstream, it does ship `user` builds.
 
 It comes with substantial hardening over AOSP. DivestOS has automated kernel vulnerability ([CVE](https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures)) [patching](https://gitlab.com/divested-mobile/cve_checker), fewer proprietary blobs, a custom [hosts](https://divested.dev/index.php?page=dnsbl) file, and various security features ported from GrapheneOS. A non-exhaustive list of this includes:
 
