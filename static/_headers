@@ -19,7 +19,7 @@
   Cross-Origin-Embedder-Policy : unsafe-none
 
 /posts/android/choosing-your-android-based-operating-system/
-  Content-Security-Policy : default-src 'none'; connect-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; frame-src https://www.youtube-nocookie.com https://www.google.com; form-action 'none'; frame-ancestors 'none'; block-all-mixed-content; base-uri 'none'
+  Content-Security-Policy : default-src 'none'; connect-src 'self'; img-src 'self' https://i.ytimg.com; script-src 'self'; style-src 'self'; frame-src https://www.youtube-nocookie.com https://www.google.com; form-action 'none'; frame-ancestors 'none'; block-all-mixed-content; base-uri 'none'
   Cross-Origin-Embedder-Policy : unsafe-none
 
 /posts/linux/choosing-your-desktop-linux-distribution/
