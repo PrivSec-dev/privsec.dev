@@ -5,7 +5,9 @@ tags: ['Operating Systems', 'Android', 'Privacy']
 author: Tommy
 ---
 
-**Before We Start**... 
+**Update**: This is no longer reproducible on Android 13 QPR1 and Android 14 Developer Preview 1.
+
+**Before We Start**...
 
 I have been aware of this issue for awhile now (since at least Android 11), though I have not done enough testing to see what actually causes the leak nor do I have any workaround at the moment. My guess is that applications which launch early when you log into a secondary profile can bypass the VPN killswitch.
 
