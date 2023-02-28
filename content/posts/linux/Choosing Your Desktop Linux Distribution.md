@@ -44,7 +44,7 @@ For a secure system, you are also expected to have sufficient Linux knowledge to
 If you are experienced with Linux and wish to use an Arch-based distribution, you should use Arch Linux proper, not any of its derivatives. Here are some examples of why that is the case:
 
 - **Manjaro**: This distribution holds packages back for 2 weeks to make sure that their own changes do not break, not to make sure that upstream is stable. When AUR packages are used, they are often built against the latest [libraries](https://en.wikipedia.org/wiki/Library_(computing)) from Arch’s repositories.
-- **Garuda**: They use [Chaotic-AUR](https://aur.chaotic.cx/) which automatically and blindly compiles packages from the AUR. There is no verification process to make sure that the AUR packages don’t suffer from supply chain attacks.
+- **Garuda**: They use [Chaotic-AUR](https://aur.chaotic.cx/) which automatically and blindly compiles packages from the AUR. There is no verification process to make sure that the AUR packages don’t suffer from supply chain attacks. Beyond that, their official communication channels are also problematic, since they push for very bad security advice such as that [the user should keep secure boot off forever](https://t.me/garudalinux/292499) because it is somehow bad and evil.
 
 ## Kicksecure
 
@@ -90,7 +90,7 @@ You can refer to the video by [Adam Šamalík](https://twitter.com/adsamalik) li
 
 ### openSUSE Tumbleweed and MicroOS
 
-Fedora Workstation and Silverblue's European counterpart. These are rolling release, fast updating distributions with [transactional update](https://kubic.opensuse.org/blog/2018-04-04-transactionalupdates/) using [Btrfs](https://en.wikipedia.org/wiki/Btrfs) and [Snapper](https://en.opensuse.org/openSUSE:Snapper_Tutorial). 
+Fedora Workstation and Silverblue's European counterpart. These are rolling release, fast updating distributions with [transactional update](https://kubic.opensuse.org/blog/2018-04-04-transactionalupdates/) using [Btrfs](https://en.wikipedia.org/wiki/Btrfs) and [Snapper](https://en.opensuse.org/openSUSE:Snapper_Tutorial).
 
 [MicroOS](https://microos.opensuse.org/) has a much smaller base system than [Tumbleweed](https://get.opensuse.org/tumbleweed) and mounts the running BTRFS subvomumes as read-only (hence its name and why it is considered an immutable distribution). Currently, it is still in Beta so bugs are to be expected. Nevertheless, it is an awesome project.
 

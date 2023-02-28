@@ -103,19 +103,6 @@ sudo hostnamectl hostname "localhost"
 
 An empty (blank) hostname is also an option, but a static hostname of "localhost" is less likely to cause breakage. Both will result in no hostname being broadcasted to the DHCP server.
 
-### Disabling transient hostname management {#rmhostname-transient}
-
-It's best to create a dedicated configuration file, such as `/etc/NetworkManager/conf.d/01-transient-hostname.conf`, to ensure package updates do not overwrite the configuration:
-
-```
-[main]
-hostname-mode=none
-```
-
-This will prevent NetworkManager from setting transient hostnames that may be provided by some DHCP servers. This will have no visible effect except with an empty static hostname.
-
-After editing the file, run `sudo nmcli general reload conf` to apply the new configuration. Run `sudo hostnamectl --transient hostname ""` to reset the transient hostname.
-
 ---
 
 ## Disable sending hostname to DHCP server

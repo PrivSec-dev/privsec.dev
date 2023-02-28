@@ -9,7 +9,7 @@ Linux is [not a secure desktop operating system](/posts/linux/linux-insecurities
 
 **Before we start...**
 
-Some of the sections will include mentions of unofficial builds of packages like linux&#8209;hardened, lkrg&#8209;akmod, hardened_malloc, and so on. These are not endorsements&nbsp;--- they are merely to show that you have options to easily obtain and update these packages. Using unofficial builds of packages means adding more parties to trust, and you have to evaluate whether it is worth doing so for the potential privacy/security benefits or not.
+Some of the sections will include mentions of unofficial builds of packages like linux&#8209;hardened, akmod, hardened_malloc, and so on. These are not endorsements&nbsp;--- they are merely to show that you have options to easily obtain and update these packages. Using unofficial builds of packages means adding more parties to trust, and you have to evaluate whether it is worth doing so for the potential privacy/security benefits or not.
 
 ![Fedora Tux](/images/fedora-tux.png)
 
@@ -18,6 +18,8 @@ Some of the sections will include mentions of unofficial builds of packages like
 ### Drive Encryption
 
 Most Linux distributions have an option within its installer for enabling LUKS full disk encryption. If this option isn't set at installation time, you will have to backup your data and re-install, as encryption is applied after [disk partitioning](https://en.wikipedia.org/wiki/Disk_partitioning) but before [filesystem](https://en.wikipedia.org/wiki/File_system) creation.
+
+By default, `cryptsetup` does not setup authenticated encryption. If you are configuring partitioning using the command line, you can enable integrity with the `--integrity` argument.
 
 ### Encrypted Swap
 
@@ -41,13 +43,6 @@ wifi.scan-rand-mac-address=yes
 [connection]
 wifi.cloned-mac-address=random
 ethernet.cloned-mac-address=random
-```
-
-Next, disable transient hostname management by adding the following to your `/etc/NetworkManager/conf.d/01-transient-hostname.conf`:
-
-```
-[main]
-hostname-mode=none
 ```
 
 Then, restart your NetworkManager service:
@@ -133,7 +128,7 @@ One caveat with Snap packages is that you only have control over the interfaces 
 
 ### Firejail
 
-{{< youtube id="N-Mso2bSr3o">}}
+{{< youtube id="uUEkHd60Zyo">}}
 
 [Firejail](https://firejail.wordpress.com/) is another method of sandboxing. As it is a large [setuid](https://en.wikipedia.org/wiki/Setuid) binary, it has a large attack surface which increase susceptibility to [privilege escalation vulnerabilities](https://en.wikipedia.org/wiki/Privilege_escalation). [Madaidan offers additional details on how Firejail can worsen the security of your device.](https://madaidans-insecurities.github.io/linux.html#firejail)
 
@@ -210,9 +205,7 @@ fwupdmgr update
 
 Some distributions like Debian do not have fwupd installed by default, so you should check for its existence on your system and install it if needed.
 
-Several graphical frontends integrate with fwupd to offer firmware updates (GNOME Software, KDE Discover, Snap Store, [GNOME Firmware](https://gitlab.gnome.org/World/gnome-firmware), Pop!\_OS Settings app). However, not all distributions offer this integration by default, so you should check your specific system and setup scheduled updates or update notifications using [systemd timers](https://wiki.archlinux.org/title/systemd/Timers) or [cron](https://wiki.archlinux.org/title/Cron) if needed.
-
-Note that fwupd, like Windows Update, supports updating the UEFI. Power loss or forced shutdown in the middle of a UEFI update can brick your system, so unattended UEFI updating is not recommended unless you have the means to recover from a corrupted UEFI (motherboard flashback functionality or EEPROM flashing tools). fwupd UEFI updates can be disabled by adding `uefi_capsule` to `DisabledPlugins` in `/etc/fwupd/daemon.conf` and then restarting the fwupd daemon (`sudo systemctl restart fwupd`). **Keeping your UEFI up&#8209;to&#8209;date is important for security patches, so make sure to periodically revert this setting and apply updates manually or install UEFI updates via other methods supported by some motherboards.**
+Several graphical frontends integrate with fwupd to offer firmware updates (GNOME Software, KDE Discover, Snap Store, [GNOME Firmware](https://gitlab.gnome.org/World/gnome-firmware), Pop!\_OS Settings app). However, not all distributions offer this integration by default, so you should check your specific system and setup scheduled update notifications using [systemd timers](https://wiki.archlinux.org/title/systemd/Timers) or [cron](https://wiki.archlinux.org/title/Cron) if needed.
 
 ### Firewall
 
@@ -342,20 +335,6 @@ Disabling access to `/sys` without a proper whitelist will lead to various appli
 Some distributions like Arch Linux offer the [linux&#8209;hardened](https://github.com/anthraxx/linux-hardened) kernel package. It includes [hardening patches](https://wiki.archlinux.org/title/security#Kernel_hardening) and more security-conscious defaults.
 
 linux&#8209;hardened has unprivileged user namespaces (`kernel.unprivileged_userns_clone`) disabled by default. [This may impact some software.](#runtime-kernel-parameters-sysctl)
-
-#### Linux Kernel Runtime Guard (LKRG)
-
-LKRG is a kernel module which self&#8209;describes as a runtime kernel integrity checker and exploit detector:
-
-> As controversial as this concept is, LKRG attempts to _post_&#8209;detect and _hopefully_ promptly respond to unauthorized modifications to the running Linux kernel (integrity checking) or to credentials such as user IDs of the running processes (exploit detection). For process credentials, LKRG attempts to detect the exploit and take action before the kernel would grant access (such as open a file) based on the unauthorized credentials.
->
-> LKRG defeats many pre-existing exploits of Linux kernel vulnerabilities, and will likely defeat many future exploits (including of yet unknown vulnerabilities) that do not specifically attempt to bypass LKRG. While LKRG is _bypassable by design_, such bypasses tend to require more complicated and/or less reliable exploits.
-
-_(From [LKRG - Linux Kernel Runtime Guard](https://lkrg.org).)_
-
-If you can get LKRG and maintain module updates, it provides a worthwhile improvement to security.
-
-Debian-based distributions can get the LKRG DKMS package [from Kicksecure](https://www.kicksecure.com/wiki/Linux_Kernel_Runtime_Guard_LKRG), though Kicksecure does not install it by default. Packaging for Fedora is available through a [Copr repository](https://copr.fedorainfracloud.org/coprs/fepitre/lkrg/) maintained by Qubes OS developer fepitre. Arch users can obtain the LKRG DKMS package [from the AUR](https://aur.archlinux.org/packages/lkrg-dkms).
 
 #### grsecurity
 
