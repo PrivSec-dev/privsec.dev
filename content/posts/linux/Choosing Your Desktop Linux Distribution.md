@@ -44,7 +44,7 @@ For a secure system, you are also expected to have sufficient Linux knowledge to
 If you are experienced with Linux and wish to use an Arch-based distribution, you should use Arch Linux proper, not any of its derivatives. Here are some examples of why that is the case:
 
 - **Manjaro**: This distribution holds packages back for 2 weeks to make sure that their own changes do not break, not to make sure that upstream is stable. When AUR packages are used, they are often built against the latest [libraries](https://en.wikipedia.org/wiki/Library_(computing)) from Arch’s repositories.
-- **Garuda**: They use [Chaotic-AUR](https://aur.chaotic.cx/) which automatically and blindly compiles packages from the AUR. There is no verification process to make sure that the AUR packages don’t suffer from supply chain attacks. Beyond that, their official communication channels are also problematic, since they push for very bad security advice such as that [the user should keep secure boot off forever](https://t.me/garudalinux/292499) because it is somehow bad and evil.
+- **Garuda**: They use [Chaotic-AUR](https://aur.chaotic.cx/) which automatically and blindly compiles packages from the AUR. There is no verification process to make sure that the AUR packages don’t suffer from supply chain attacks. Beyond that, they promote incredibly bad advice in their official communication channels such as to [keep Secure Boot off](https://t.me/garudalinux/292499) because it is somehow bad and evil.
 
 ## Kicksecure
 
