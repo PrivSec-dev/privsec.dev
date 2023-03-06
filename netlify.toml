@@ -1,5 +1,5 @@
 [build.environment]
-  HUGO_VERSION = "0.111.1"
+  HUGO_VERSION = "0.111.2"
 
 [context.deploy-preview]
   command = "hugo -b $DEPLOY_PRIME_URL"
@@ -27,9 +27,9 @@ package = "netlify-plugin-checklinks"
   # skipPatterns is an array of strings you can match against failing reports
   skipPatterns = [
     "public/index.html",
-    "public/about/index.html", 
-    "public/code/index.html", 
-    "public/privacy/index.html", 
-    "public/donate/index.html", 
+    "public/about/index.html",
+    "public/code/index.html",
+    "public/privacy/index.html",
+    "public/donate/index.html",
     "public/404.html",
   ]
