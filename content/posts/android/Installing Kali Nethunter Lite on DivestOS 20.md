@@ -28,8 +28,8 @@ fastboot reboot recovery
 
 Select Apply Update and Apply Update from ADB:
 
-```bash
-adb sideload /path/to/divestos.zip
+```
+adb sideload divestos.zip
 ```
 
 Do not attempt to relock the bootloader&nbsp;--- we need to leave it unlocked to enable privileged access ("rooting") anyways. Do not reboot into the OS at this stage either.
