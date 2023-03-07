@@ -1,5 +1,5 @@
 ---
-title: "Installing Kali Nethunter Lite on DivestOS 20"
+title: "Installing Kali NetHunter Lite on DivestOS 20.0"
 date: 2022-07-18
 tags: ['Operating Systems', 'Android', 'Security']
 author: Tommy
