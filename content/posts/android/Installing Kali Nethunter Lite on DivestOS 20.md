@@ -37,7 +37,7 @@ Select Apply Update and Apply Update from ADB:
 adb sideload /path/to/divestos.zip
 ```
 
-Do not attempt to relock the bootloader - we need to leave it unlocked for rooting anyways. Also, do not reboot into the OS - next we need to install Magisk and force disable encryption.
+Do not attempt to relock the bootloader&nbsp;--- we need to leave it unlocked to enable privileged access ("rooting") anyways. Do not reboot into the OS at this stage either.
 
 ## Installing Magisk and disabling forceencrypt
 
