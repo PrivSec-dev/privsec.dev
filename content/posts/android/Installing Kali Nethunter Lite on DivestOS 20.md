@@ -5,7 +5,9 @@ tags: ['Operating Systems', 'Android', 'Security']
 author: Tommy
 ---
 
-**Disclaimer**: This will turn your device into a purely penetration testing device, and it will be very insecure for any other purposes. Please do not do this on your daily driver.
+**This will turn your device into a purely penetration testing device, and it will be very insecure for any other purpose. Please do not do this on your daily driver.**
+
+_This procedure should work without modification on many devices using the standard Android bootloader (not Samsung). However, every device has unique quirks that may require special attention._
 
 ![Kali Nethunter on a OnePlus 7T](/images/kali-nethunter-op7t.jpg)
 
