@@ -9,7 +9,7 @@ author: Tommy
 
 _This procedure should work without modification on many devices using the standard Android bootloader (not Samsung). However, every device has unique quirks that may require special attention._
 
-![Kali Nethunter on a OnePlus 7T](/images/kali-nethunter-op7t.jpg)
+![Kali NetHunter Lite on a OnePlus 7T](/images/kali-nethunter-op7t.jpg)
 
 Originally, I just needed a device to run packet capture on my other devices. I have a OnePlus 7T laying around which I am not using for anything (since it has already reached its end-of-life), so I thought it would be cool to give it a new purpose. I am using DivestOS here since it is my go&#8209;to Android distribution, but you can use LineageOS or any other distribution if you want to.
 
