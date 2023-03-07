@@ -38,7 +38,7 @@ Do not attempt to relock the bootloader&nbsp;--- we need to leave it unlocked to
 
 The official documentation recommends [TWRP](https://twrp.me/) and [Disable_Dm&#8209;Verity_ForceEncrypt](https://forum.xda-developers.com/t/deprecated-universal-dm-verity-forceencrypt-disk-quota-disabler-11-2-2020.3817389/). However, TWRP doesn't exist for Android 12 and above for my device, and Disable_Dm&#8209;Verity_ForceEncrypt is deprecated and doesn't even work on Android 11.
 
-Instead, what we need is just a custom recovery which allows for flashing files with arbitary signatures and a way to disable forceencrypt. Fortunately, the LineageOS Recovery and [Disable Force Encryption NEO](https://forum.xda-developers.com/t/a-b-a-only-script-read-only-erofs-android-10-universal-disable-force-encryption-for-ro-and-rw-neo-stable.4454017/) work for just this.
+Instead, we will use the [LineageOS recovery](https://download.lineageos.org/devices/) (which allows flashing files with arbitrary signatures) and [Disable Force Encryption NEO](https://forum.xda-developers.com/t/a-b-a-only-script-read-only-erofs-android-10-universal-disable-force-encryption-for-ro-and-rw-neo-stable.4454017/).
 
 First, reboot the device into the bootloader.
 
