@@ -21,6 +21,64 @@ Most Linux distributions have an option within its installer for enabling LUKS f
 
 By default, `cryptsetup` does not setup authenticated encryption. If you are configuring partitioning using the command line, you can enable integrity with the `--integrity` argument.
 
+### TPM enrollment
+
+If you have a [TPM](https://en.wikipedia.org/wiki/Trusted_Platform_Module) chip in your computer, you can use it in addition with LUKS.
+
+A full guide how to install is available in this [gist](https://gist.github.com/jdoss/777e8b52c8d88eb87467935769c98a95) or in [Arch's documentation](https://wiki.archlinux.org/title/Trusted_Platform_Module#Data-at-rest_encryption_with_LUKS).
+
+Check if you have TPM available :
+```
+# systemd-cryptenroll --tpm2-device=list
+```
+
+You must have Secure Boot enabled, to check so :
+```
+# mokutil --sb-state
+```
+If it's set to "Disabled", you need to enable it in the UEFI firmware.
+
+Check your encrypted volumes :
+```
+# blkid -t TYPE=crypto_LUKS
+```
+
+Then, you can finally enroll your encrypted volumes :
+```
+# systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0+2+4+7 /dev/sdX --tpm2-with-pin=yes
+```
+
+Replace sdX with the right volume.
+
+It will ask you the passphrase (you have previously chosen with LUKS) then it will prompt you a PIN for TPM.
+The PIN should be **different** from the LUKS passphrase.
+
+If you have several volumes, you can redo the command with the right volume, etc.
+
+Finally, edit `/etc/crypttab` and add at the end of each line `tpm2-device=auto,discard`, like so :
+
+`luks-014aa5a6-a007-11ec-a054-7c10c93c41b1 UUID=0818cd36-a007-11ec-aaab-7c10c93c41b1 - tpm2-device=auto,discard`
+
+Then, edit `/etc/default/grub` and add `rd.luks.options=tpm2-device=auto` in `GRUB_CMDLINE_LINUX`
+
+You can optionally generate a recovery key :
+```
+# systemd-cryptenroll --recovery-key /dev/sdX
+```
+
+Check and reboot :
+```
+# systemd-cryptenroll /dev/sdX
+SLOT TYPE
+   0 password
+   1 tpm2
+   2 recovery
+```
+
+When booting, it will ask you the password for LUKS, then the TPM2 PIN.
+
+Note that with secure boot enabled, you should manually sign your NVidia drivers with [akmod](https://github.com/larsks/akmod-sign-modules).
+
 ### Encrypted Swap
 
 Consider using [encrypted swap](https://wiki.archlinux.org/title/Dm-crypt/Swap_encryption) or [ZRAM](https://wiki.archlinux.org/title/Swap#zram-generator) instead of unencrypted swap to avoid potential security issues with sensitive data being pushed to [swap space](https://en.wikipedia.org/wiki/Memory_paging). While ZRAM can be set up post-installation, if you want to use encrypted swap, you should set it up while partitioning your drive.
