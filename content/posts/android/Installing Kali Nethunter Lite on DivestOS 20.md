@@ -9,7 +9,7 @@ author: Tommy
 
 ![Kali Nethunter on a OnePlus 7T](/images/kali-nethunter-op7t.jpg)
 
-Originally, I just needed a device to run packet capture on my other devices. I have a OnePlus 7T laying around which I am not using for anything (since it has already reached its end-of-life), so I thought it would be cool to give it a new purpose. I am using DivestOS here since it is my go-to distribution, but you can use LineageOS or any other distribution if you want to.
+Originally, I just needed a device to run packet capture on my other devices. I have a OnePlus 7T laying around which I am not using for anything (since it has already reached its end-of-life), so I thought it would be cool to give it a new purpose. I am using DivestOS here since it is my go&#8209;to Android distribution, but you can use LineageOS or any other distribution if you want to.
 
 Officially, Kali Nethunter only supports Android 10 and 11 with OxygenOS on my device. That is quite boring, as those are very old Android versions by this day and age. Besides, since there is no security to be had anyways, there's no need to do things by the book (and their official documentation isn't accurate anyways, as I will explain below).
 
