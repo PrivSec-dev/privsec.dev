@@ -63,4 +63,4 @@ Reboot into your OS and set it up normally. Make sure that encryption is disable
 
 Finally, [download](https://www.kali.org/get-kali/#kali-mobile) the appropriate build for Nethunter and flash it as a Magisk module in the Magisk Manager.
 
-Happy Nethunting!
+Happy NetHunting!
