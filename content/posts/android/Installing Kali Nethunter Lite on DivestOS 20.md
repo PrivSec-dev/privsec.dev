@@ -17,15 +17,10 @@ Officially, Kali Nethunter only supports OxygenOS based on Android 10 or 11 on m
 
 ## Installing DivestOS
 
-The installation procedure for DivestOS is pretty straight forward. All you need to do is to head to the [download page](https://divestos.org/pages/devices), download the recovery, then it using fastboot:
+The installation procedure for DivestOS is fairly straightforward. First [download the recovery](https://divestos.org/pages/devices) and boot it using fastboot:
 
-```bash
-fastboot flash recovery /path/to/the/divestos/recovery.img
 ```
-
-Next, reboot to recovery:
-
-```bash
+fastboot flash recovery divestos-recovery.img
 fastboot reboot recovery
 ```
 
