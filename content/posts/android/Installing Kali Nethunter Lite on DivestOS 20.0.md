@@ -20,7 +20,7 @@ Officially, Kali Nethunter only supports OxygenOS based on Android 10 or 11 on m
 The installation procedure for DivestOS is fairly straightforward. First [download the recovery](https://divestos.org/pages/devices) and boot it using fastboot:
 
 ```
-fastboot flash recovery divestos-recovery.img
+fastboot reboot /path/to/the/divestos/recovery.img
 fastboot reboot recovery
 ```
 
@@ -29,7 +29,7 @@ fastboot reboot recovery
 Select Apply Update and Apply Update from ADB:
 
 ```
-adb sideload divestos.zip
+adb sideload /path/to/the/divestos.zip
 ```
 
 Do not attempt to relock the bootloader&nbsp;--- we need to leave it unlocked to enable privileged access ("rooting") anyways. Do not reboot into the OS at this stage either.
@@ -44,8 +44,8 @@ First, reboot the device into the bootloader.
 
 Then, you need to download the LineageOS Recovery for your device and boot into it:
 
-```bash
-fastboot reboot /path/to/the/divestos/recovery.img
+```
+fastboot reboot /path/to/the/lineageos/recovery.img
 ```
 
 Next, you just need to do ADB sideload for Disable Force Encryption NEO. It will give you the option to install Magisk and disable forceencrypt, and choose yes on both. The rest of the options are up to you - they are not very important.
