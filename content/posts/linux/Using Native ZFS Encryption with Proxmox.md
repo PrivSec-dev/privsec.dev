@@ -56,6 +56,10 @@ zpool export rpool
 
 Reboot into the system. You should now be prompted for an encryption password.
 
+```sh
+reboot -f
+```
+
 ## Encrypting the `rpool/data` dataset
 
 Next, we need to encrypt the `rpool/data` dataset. This is where Proxmox stores virtual machine disks.
