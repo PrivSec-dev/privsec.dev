@@ -114,7 +114,7 @@ apt install --no-install-recommends dropbear
 
 Next, create `/etc/dropbear/authorized_keys` and put your ssh keys in there.
 
-You may also edit `/etc/dropbear/config` and adjust it however you like. You can find the list of the options [here](https://linux.die.net/man/8/dropbear). In my opinion, the default is good enough. Some other blog posts may recommend that you change the port to avoid the ssh fingerprint mismatch warning, but I would recommend just using a different subdomain to connect to dropbear instead. That way, you can pin dropbear's fingerprint with SSHFP records. I will write a seperate post on this later.
+You may also edit `/etc/dropbear/config` and adjust it however you like. You can find the list of the options [here](https://linux.die.net/man/8/dropbear). In my opinion, the default is good enough. Some other blog posts may recommend that you change the port to avoid the ssh fingerprint mismatch warning, but I would recommend just using a different subdomain to connect to dropbear instead. That way, you can pin Dropbear's fingerprint with SSHFP records. I will write a seperate post on this later.
 
 Then, edit the `/etc/initramfs-tools/initramfs.conf` and add the static IP address for it to use. The format is
 
@@ -136,6 +136,6 @@ Finally, generate a new initramfs:
 update-initramfs -u
 ```
 
-You should now be able to ssh into your dropbear upon reboot. Use `zfsunlock` to unlock the `rpool/ROOT` dataset :)
+You should now be able to ssh into your Dropbear upon reboot. Use `zfsunlock` to unlock the `rpool/ROOT` dataset :)
 
 ![Dropbear with Proxmox ZFS](/images/dropbear-proxmox-zfs.png)
