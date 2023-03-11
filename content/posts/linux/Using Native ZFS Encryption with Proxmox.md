@@ -68,10 +68,10 @@ zfs destroy -r rpool/data
 # Create a new encryption key
 dd if=/dev/urandom bs=32 count=1 of=/.data.key
 
-# Setting the approprieate permission
+# Set the approprieate permission
 chmod 400 /.data.key
 
-# Making the key immutable
+# Make the key immutable
 chattr +i /.data.key
 
 # Create a new dataset with encryption enabled
