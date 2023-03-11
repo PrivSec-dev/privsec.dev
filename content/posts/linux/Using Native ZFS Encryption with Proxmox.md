@@ -7,6 +7,8 @@ author: Tommy
 
 Currently, the Proxmox installer does not support setting up encryption with ZFS. Thus, we have to set it up manually. This post will go over how to use the native ZFS encryption with Proxmox.
 
+_The post also assumes that the Proxmox installation is new and does not have any virtual machines or containers yet._
+
 ![Proxmox ZFS Encryption](/images/proxmox-zfs-encryption.png)
 
 ## Encrypting the `rpool/ROOT` dataset
