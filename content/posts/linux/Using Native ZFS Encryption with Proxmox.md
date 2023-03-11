@@ -104,7 +104,7 @@ systemctl enable zfs-load-key
 
 ## Setting Dropbear for remote unlocking (optional)
 
-It is not always convenient to type in the encryption password on the console. You might want to setup Dropbear inside of the initramfs to unlock the drive over SSH instead.
+It is not convenient to type in the encryption password on the console. You might want to setup Dropbear inside of the initramfs to unlock the drive over SSH instead.
 
 First, install the `dropbear` package. Note that we are passing the `--no-install-recommends` argument here, as we don't want it to install `cryptsetup` and give annoying warnings on every initramfs generation.
 
@@ -114,7 +114,7 @@ apt install --no-install-recommends dropbear
 
 Next, create `/etc/dropbear/authorized_keys` and put your ssh keys in there.
 
-You may also edit `/etc/dropbear/config` and adjust it however you like. You can find the list of the options [here](https://linux.die.net/man/8/dropbear). In my opinion, the default is good enough. Some other blog posts may recommend that you change the port to avoid the ssh fingerprint mismatch warning, but I would recommend just using a different subdomain to connect to dropbear instead. That way, you can pin Dropbear's fingerprint with SSHFP records. I will write a seperate post on this later.
+You may also edit `/etc/dropbear/config` and adjust it however you like. You can find the list of the options [here](https://linux.die.net/man/8/dropbear). In my opinion, the default is good enough. Some other blog posts may recommend that you change the port to avoid the ssh fingerprint mismatch warning, but I would recommend using a different subdomain to connect to dropbear instead. That way, you can pin Dropbear's fingerprint with SSHFP records. I will write a seperate post on this later.
 
 Then, edit the `/etc/initramfs-tools/initramfs.conf` and add the static IP address for it to use. The format is
 
