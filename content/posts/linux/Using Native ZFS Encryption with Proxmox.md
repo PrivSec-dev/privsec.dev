@@ -17,6 +17,8 @@ Proxmox installs its system inside of the `rpool/ROOT` dataset. This is what we 
 
 First, boot into the initramfs. On the startup menu, press `e` to edit the boot argument. Remove `root=ZFS=rpool/ROOT/pve-1 boot=zfs` from the argument and press `enter`.
 
+![Proxmox Initramfs Boot](/images/proxmox-initramfs-boot.png)
+
 Load in the `zfs` kernel module:
 
 ```sh
