@@ -15,7 +15,7 @@ _The post also assumes that the Proxmox installation is new and does not have an
 
 Proxmox installs its system inside of the `rpool/ROOT` dataset. This is what we will encrypt first.
 
-First, boots into the initramfs. On the startup menu, press `e` to edit the boot argument. Remove `boot=zfs` and the kernel from the argument and press `enter`.
+First, boot into the initramfs. On the startup menu, press `e` to edit the boot argument. Remove `boot=zfs` and the kernel from the argument and press `enter`.
 
 Load in the `zfs` kernel module:
 
