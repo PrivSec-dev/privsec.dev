@@ -25,7 +25,7 @@ Load in the `zfs` kernel module:
 modprobe zfs
 ```
 
-Next, follow [this gist](https://gist.github.com/yvesh/ae77a68414484c8c79da03c4a4f6fd55) to encrypt the dataset. You do not need to use any sort of live USB or rescue mode, as the initramfs has all what we need. For your convenience, I will copy and paste it here:
+Next, follow [this gist](https://gist.github.com/yvesh/ae77a68414484c8c79da03c4a4f6fd55) to encrypt the dataset. You do not need to use any sort of live USB or rescue mode, as the initramfs has all what we need. In case it gets moved or deleted, I will copy and paste it here:
 
 ```sh
 # Import the old
