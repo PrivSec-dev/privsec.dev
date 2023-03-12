@@ -47,6 +47,9 @@ zfs create -o encryption=on -o keyformat=passphrase rpool/ROOT
 # Copy the files from the copy to the new encrypted zfs root
 zfs send -R rpool/copyroot/pve-1@copy | zfs receive -o encryption=on rpool/ROOT/pve-1
 
+# Deviate from the original gist and delete copyroot
+zfs destroy -r rpool/copyroot
+
 # Set the Mountpoint
 zfs set mountpoint=/ rpool/ROOT/pve-1
 
