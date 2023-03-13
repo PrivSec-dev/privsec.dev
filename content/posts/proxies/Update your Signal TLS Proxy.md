@@ -13,7 +13,7 @@ One thing immediately jumped out - the NGINX image has not been updated [for yea
 
 If you are deploying or maintaining a Signal TLS Proxy, I highly recommend that you use the upstream `nginx:alpine` image instead.
 
-My Docker Compose setup can be found [here](https://github.com/tommytran732/Signal-TLS-Proxy). I have also fixed the missing `:Z` flag for mountpoints and and dropped privileges to reduce the attack surface. I made a couple of pull requests for these changes, but Signal is being very slow on reviewing and merging them, so... yeah.
+My Docker Compose setup can be found [here](https://github.com/ArcticFoxes-net/Signal-TLS-Proxy). I have also fixed the missing `:Z` flag for mountpoints and and dropped privileges to reduce the attack surface. I made a couple of pull requests for these changes, but Signal is being very slow on reviewing and merging them, so... yeah.
 
 - [Drop capabilities](https://github.com/signalapp/Signal-TLS-Proxy/pull/24)
 - [Use upstream NGINX image](https://github.com/signalapp/Signal-TLS-Proxy/pull/23)
