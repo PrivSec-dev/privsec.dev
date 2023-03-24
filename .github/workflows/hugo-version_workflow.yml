@@ -1,0 +1,25 @@
+name: Update Hugo Version
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Run daily at midnight
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  update-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get latest Hugo version
+        id: hugo-version
+        run: echo "::set-output name=version::$(curl --silent https://api.github.com/repos/gohugoio/hugo/releases/latest | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')"
+
+      - name: Update netlify.toml
+        run: sed -i "s/HUGO_VERSION = \".*\"/HUGO_VERSION = \"${{ steps.hugo-version.outputs.version }}\"/" netlify.toml
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: 'Update Hugo version'
