@@ -40,7 +40,7 @@ _Note that we will likely defer you upstream in cases where PrivSec.dev mirrors 
 
 ### New Post Submissions and Requests
 
-Please informally present your request/proposal with the maintainers in a discussion (preferred) or in the [PrivSec.dev Matrix room](https://matrix.to/#/!GDRXkRlmSfDOhfEWGE:arcticfoxes.net?via=arcticfoxes.net&via=matrix.org&via=grapheneos.org), `#privsec:arcticfoxes.net`. Research is expected to be well&#8209;sourced with citations provided wherever applicable. If you are submitting content already written, feel free to directly open a pull&nbsp;request or draft pull&nbsp;request.
+Please informally present your request/proposal with the maintainers in a discussion (preferred) or in the [PrivSec.dev Matrix room](https://invite.arcticfoxes.net/#/!frWBWOPyriepLexnsA:arcticfoxes.net?via=arcticfoxes.net&via=matrix.org&via=envs.net), `#PrivSec.dev:arcticfoxes.net`. Research is expected to be well&#8209;sourced with citations provided wherever applicable. If you are submitting content already written, feel free to directly open a pull&nbsp;request or draft pull&nbsp;request.
 
 <br>
 
