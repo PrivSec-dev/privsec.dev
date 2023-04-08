@@ -259,7 +259,7 @@ Copy these parameters into [your bootloader's configuration](https://wiki.archli
 ##### CPU mitigations
 
 ```
-spectre_v2=on spec_store_bypass_disable=on l1tf=full,force mds=full,nosmt tsx=off tsx_async_abort=full, mds=full,nosmt kvm.nx_huge_pages=force nosmt=force l1d_flush=on mmio_stale_data=full,nosmt
+spectre_v2=on spec_store_bypass_disable=on l1tf=full,force mds=full,nosmt tsx=off tsx_async_abort=full,nosmt kvm.nx_huge_pages=force nosmt=force l1d_flush=on mmio_stale_data=full,nosmt
 ```
 
 [Simultaneous multithreading (SMT)](https://en.wikipedia.org/wiki/Simultaneous_multithreading) has been the cause of numerous hardware&#8209;level vulnerabilities and is thus disabled here. If the option is available, you should disable SMT/"Hyper&#8209;Threading" in your firmware as well.
