@@ -32,12 +32,16 @@ These security configurations can be added/modified in `data/conf/nginx/includes
 
 ### SSL Ciphers
 
-Consider only supporting ciphers matching that of TLSv1.3:
+Consider only supporting strong ciphers:
 
 ```
-ssl_ciphers "ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256";
+ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384;
 ```
 
+And prioritize ChaCha ciphers:
+```
+ssl_conf_command Options PrioritizeChaCha;
+```
 ### HSTS
 
 Consider adding `includeSubDomains;` and `preload;` to the HSTS configuration if all of your services are using HTTPS:
