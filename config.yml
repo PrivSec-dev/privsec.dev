@@ -64,6 +64,8 @@ params:
       url: "https://invite.arcticfoxes.net/#/#PrivSec.dev:arcticfoxes.net"
     - name: twitter
       url: "https://twitter.com/privsec_dev"
+    - name: reddit
+      url: "https://www.reddit.com/r/privsec_dev"
     - name: email
       url: "mailto:contact@tommytran.io"
     - name: rss
