@@ -148,7 +148,7 @@ Depending on the carrier, you may need to enable additional network types for Wi
 
 ## Carrier Tracking
 
-Carriers can track your coarse location via cell towers using the IMSI and IMEI broadcasted by your baseband modem. In order to avoid this type of tracking, you have to enable the airplane mode which would disable the baseband modem.
+Carriers can track your coarse location via cell towers using the IMSI and IMEI broadcasted by your baseband modem. In order to avoid this type of tracking, you have to enable the airplane mode which would disable the baseband modem. In addition, you will also need to disable Wifi calling to avoid IP based tracking by the carrier, as its connection will not go through your VPN tunnel.
 
 I have seen several common suggestions in the privacy community to mitigate this problem which do not actually work:
 
