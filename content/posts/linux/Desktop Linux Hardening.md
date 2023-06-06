@@ -124,6 +124,11 @@ Snap packages come in [two variants](https://snapcraft.io/docs/snap-confinement)
 
 Snap permissions can be managed via the Snap Store or Ubuntu's custom patched GNOME Control Center.
 
+On Ubuntu, you can replace various .deb packages with strictly confined snaps to minimize the attack surface. Some examples of these packages are the printing stack or `ufw`:
+
+![Cups Snap](/ubuntu-cups-snap.png)
+![UFW Snap](/ubuntu-ufw-snap.png)
+
 One caveat with Snap packages is that you only have control over the interfaces declared in their manifests. For example, Snap has separate interfaces for `audio-playback` and `audio-record`, but some packages will only declare the legacy `pulseaudio` interface which grants access to both play and record audio. Likewise, some applications may work perfectly fine with Wayland, but the package maintainer may only declare the X11 interface in their manifest. For these cases, you need to reach out to the maintainer of the snap to update the manifest accordingly.
 
 ### Firejail
