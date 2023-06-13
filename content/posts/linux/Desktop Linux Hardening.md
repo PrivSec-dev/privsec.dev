@@ -75,7 +75,7 @@ Many Linux distributions sends some telemetry data by default to count how many 
 
 The Fedora Project offers a ["countme" variable](https://dnf.readthedocs.io/en/latest/conf_ref.html#countme-label) to much more accurately [count unique systems accessing its mirrors](https://fedoraproject.org/wiki/Changes/DNF_Better_Counting) without involving unique IDs. While currently disabled by default, you could add `countme=false` to `/etc/dnf/dnf.conf` in case the default changes in the future. On rpm&#8209;ostree systems such as Fedora Silverblue and Kinoite, the `countme` option can be disabled by [masking the rpm-ostree-countme timer](https://coreos.github.io/rpm-ostree/countme/).
 
-[openSUSE uses a unique ID to count systems](https://en.opensuse.org/openSUSE:Statistics), which can be disabled by deleting the `/var/lib/zypp/AnonymousUniqueId` file.
+[openSUSE uses a unique ID to count systems](https://en.opensuse.org/openSUSE:Statistics), which can be disabled by emptying the `/var/lib/zypp/AnonymousUniqueId` file.
 
 [Zorin OS also uses a unique ID to count systems.](https://zorin.com/legal/privacy/#census) You can opt&#8209;out by running `sudo apt purge zorin-os-census` and optionally holding the package with `sudo apt-mark hold zorin-os-census` to avoid accidental reinstallation.
 
