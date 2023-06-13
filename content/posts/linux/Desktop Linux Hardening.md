@@ -458,7 +458,7 @@ First, you need to boot into your firmware interface and enter Secure Boot setup
 On certain hardware, this will not work. Instead, you will need to export the public key to your EFI partition and manually import it through your firmware interface:
 
 ```
-openssl x509 -in /usr/share/secureboot/keys/db/db.pem -outform DER -out /boot/efi/EFI/fedora/DB.cer
+openssl x509 -in /usr/share/secureboot/keys/db/db.pem -outform DER -out /boot/efi/EFI/fedora/DB.der
 ```
 
 ### Unified Kernel Image
@@ -467,7 +467,7 @@ On most desktop Linux systems, it is possible to create a [unified kernel image]
 
 For Fedora Workstation, you can follow [H&aring;vard Moen's guide](https://haavard.name/2022/06/22/full-uefi-secure-boot-on-fedora-using-signed-initrd-and-systemd-boot/) which covers sbctl installation, unified kernel image generation with [dracut](https://wiki.archlinux.org/title/Dracut), and automatic signing with systemd&#8209;boot.
 
-On Arch, the process is very similar, though sbctl is already included in the official repositories and you will need to switch from [mkinitpcio](https://wiki.archlinux.org/title/Mkinitcpio) to dracut. Arch with linux&#8209;hardened works well with sbctl, but some level of tedious pacman hooks are required for appropriately timing the re&#8209;signing of all relevant files every time the kernel or bootloader is updated.
+On Arch, the process is very similar, though sbctl is already included in the official repositories and you will need to switch from [mkinitcpio](https://wiki.archlinux.org/title/Mkinitcpio) to dracut. Arch with linux&#8209;hardened works well with sbctl, but some level of tedious pacman hooks are required for appropriately timing the re&#8209;signing of all relevant files every time the kernel or bootloader is updated.
 
 In my opinion, this is the most straightforward setup, with a lot of potential such as [systemd's future UKI plans including support for early&#8209;boot attestation](https://0pointer.de/blog/brave-new-trusted-boot-world.html). With that being said, it does not appear to work well with specialized setups such as Fedora Silverblue/Kinoite or Ubuntu with [ZSys](https://github.com/ubuntu/zsys). More testing is needed to see if they can be made to work.
 
