@@ -2,7 +2,7 @@
   HUGO_VERSION = "0.113.0"
 
 [context.deploy-preview]
-  command = "hugo -b $DEPLOY_PRIME_URL"
+  command = "sed -i 's/! Content-Security-Policy//g' static/_headers && hugo --minify"
 
 [[plugins]]
 package = "netlify-plugin-checklinks"
