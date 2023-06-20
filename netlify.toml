@@ -1,5 +1,5 @@
 [build.environment]
-  HUGO_VERSION = "0.113.0"
+  HUGO_VERSION = "0.114.0"
 
 [context.deploy-preview]
   command = "sed -i 's/! Content-Security-Policy//g' static/_headers && hugo --minify"
