@@ -185,7 +185,7 @@ Once you have verified that everything is working, you can optionally remove the
 
 ## Automatically start the NTP server at boot
 
-Finally, follow the [official documentation]() to automatically start the virtual machine at boot.
+Finally, follow the [official documentation](https://docs.getutm.app/advanced/remote-control/) to automatically start the virtual machine at boot.
 
 Note that for some reason, adding the shortcut to "Login Items" alone is not enough - UTM will launch but it will not start the VM. UTM also needs to be added to the list of "Login Items" for this to work properly. You can follow the discussion regarding this on [GitHub](https://github.com/utmapp/UTM/issues/4179#issuecomment-1606041021).
 
