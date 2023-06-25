@@ -80,9 +80,18 @@ sudo apt install -y chrony
 sudo systemctl enable --now chronyd
 ```
 
-## Configuring chronyd
+Enable automatic updates:
 
-Next, configure `chronyd` to use NTS. On Fedora, the configuration file is `/etc/chrony.conf`. We will use [GrapheneOS's configuration](https://github.com/GrapheneOS/infrastructure/blob/main/chrony.conf) as a reference.
+```bash
+#This is an example for Fedora:
+sudo dnf install dnf-automatic
+sudo sed -i 's/apply_updates = no/apply_updates = yes\nreboot = when-needed/g' /etc/dnf/automatic.conf
+sudo systemctl enable --now dnf-automatic.timer
+```
+
+## Configuring chrony
+
+Next, configure `chrony` to use NTS. On Fedora, the configuration file is `/etc/chrony.conf`. We will use [GrapheneOS's configuration](https://github.com/GrapheneOS/infrastructure/blob/main/chrony.conf) as a reference.
 
 Your configuration should look something like this:
 
@@ -109,9 +118,9 @@ cmdport 0
 allow 10.0.2.2/32
 ```
 
-Explanations:
+If you are confused about what this configuration is doing, here are some quick explanations:
 
-We get our time from 4 different sources:
+* We get our time from 4 different sources:
 
 `
 server time.cloudflare.com iburst nts
@@ -120,11 +129,37 @@ server nts.netnod.se iburst nts
 server ptbtime1.ptb.de iburst nts
 `
 
-Should there be a discrepancy, a time change will only happen if at least 2 sources agree on it:
+* Should there be a discrepancy, a time change will only happen if at least 2 sources agree on it:
 
 `minsources 2`
 
-Finally, we add this line to the configuration file to allow macOS to get time from it:
+* Finally, we add this line to the configuration file to allow macOS to get time from it:
 
 `allow 10.0.2.2/32`.
+
+Note that `10.0.2.2/32` is the default IP address of the macOS host from the virtual machine's perspective. If you changed the Host Address using the Advanced Settings in the virtual machine's network configuration, you need to adjust it accordingly here.
+
+Once you are happy with the configuration, restart `chronyd`:
+
+```bash
+sudo systemctl restart chronyd
+```
+
+Verify that NTS is working:
+
+```
+sudo chronyc -N authdata
+```
+
+![Verifying NTS configuration](/images/nts.png)
+
+## Open the firewall
+
+We will need to open port 123/udp inside of the virtual machine to allow connections from the macOS host:
+
+```bash
+#This is an example for Fedora:
+sudo firewall-cmd --permanent --add-service=ntp
+sudo firewall-cmd --reload
+```
 
