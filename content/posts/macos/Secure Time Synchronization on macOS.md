@@ -63,7 +63,12 @@ Update the OS:
 sudo dnf upgrade -y
 ```
 
-You can also consider installing the qemu-guest-agent. It will help against insane clocks caused by snapshotting and rolling back if UTM implements these features in the future.
+You can also consider installing the `qemu-guest-agent`. It will help against insane clocks caused by snapshotting and rolling back if UTM implements these features in the future.
+
+```bash
+#This is an example for Fedora:
+sudo dnf install qemu-guest-agent -y
+```
 
 If your operating system comes with `systemd-timesyncd` instead of `chrony` by default (as is the case with Ubuntu and Arch Linux), disable it and replace it with `chrony`. Fedora users can skip this step, since it already uses `chrony` by default.
 
@@ -71,7 +76,55 @@ If your operating system comes with `systemd-timesyncd` instead of `chrony` by d
 #This is an example for Ubuntu:
 sudo systemctl disable --now systemd-timesyncd
 sudo apt purge -y systemd-timesyncd
-sudo apt install -y chronyd
+sudo apt install -y chrony
+sudo systemctl enable --now chronyd
 ```
 
 ## Configuring chronyd
+
+Next, configure `chronyd` to use NTS. On Fedora, the configuration file is `/etc/chrony.conf`. We will use [GrapheneOS's configuration](https://github.com/GrapheneOS/infrastructure/blob/main/chrony.conf) as a reference.
+
+Your configuration should look something like this:
+
+```
+server time.cloudflare.com iburst nts
+server ntppool1.time.nl iburst nts
+server nts.netnod.se iburst nts
+server ptbtime1.ptb.de iburst nts
+
+minsources 2
+authselectmode require
+
+driftfile /var/lib/chrony/drift
+ntsdumpdir /var/lib/chrony
+
+leapsectz right/UTC
+makestep 1.0 3
+
+rtconutc
+rtcsync
+
+cmdport 0
+
+allow 10.0.2.2/32
+```
+
+Explanations:
+
+We get our time from 4 different sources:
+
+`
+server time.cloudflare.com iburst nts
+server ntppool1.time.nl iburst nts
+server nts.netnod.se iburst nts
+server ptbtime1.ptb.de iburst nts
+`
+
+Should there be a discrepancy, a time change will only happen if at least 2 sources agree on it:
+
+`minsources 2`
+
+Finally, we add this line to the configuration file to allow macOS to get time from it:
+
+`allow 10.0.2.2/32`.
+
