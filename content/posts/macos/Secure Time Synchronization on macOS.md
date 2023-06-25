@@ -27,7 +27,7 @@ You download Fedora Server from their [official website](https://fedoraproject.o
 
 ## Setting up the VM
 
-Next, create your Linux VM in UTM. Make sure that you use the QEMU backend (as opposed to Apple Virtualization), set the Network Mode to Emulated VLAN, and port forward port 123/UDP and 22/TCP.
+Next, create your Linux VM in UTM. Make sure that you use the QEMU backend (as opposed to Apple Virtualization), set the Network Mode to Emulated VLAN, and port forward port `123/UDP` and `22/TCP`.
 
 ![macOS NTP Port Forwarding](/images/macos-ntp-port-forwarding.png)
 
@@ -135,7 +135,7 @@ server ptbtime1.ptb.de iburst nts
 minsources 2
 ```
 
-* Finally, we add this line to the configuration file to allow macOS to get time from it:
+* Lastly, we add this line to the configuration file to allow macOS to get time from it:
 
 ```
 allow 10.0.2.2/32
@@ -171,7 +171,7 @@ sudo firewall-cmd --reload
 
 Now, we can use our NTP server as the time server for your macOS. Set the time source to `127.0.0.1` in your macOS settings:
 
-![macOS Time Source](/images/macos-time-source.png)
+![macOS time source](/images/macos-time-source.png)
 
 Verify that NTP works on your macOS host:
 
@@ -181,4 +181,13 @@ sntp 127.0.0.1
 
 ![macOS SNTP verification](/images/macos-sntp-verification.png)
 
-Once you have verified that everything is working, you can optionally remove the port 22/TCP forwarding since we will no longer need it.
+Once you have verified that everything is working, you can optionally remove the port `22/TCP` forwarding since we will no longer need it.
+
+## Automatically start the NTP server at boot
+
+Finally, follow the [official documentation]() to automatically start the virtual machine at boot.
+
+Note that for some reason, adding the shortcut to "Login Items" alone is not enough - UTM will launch but it will not start the VM. UTM also needs to be added to the list of "Login Items" for this to work properly. You can follow the discussion regarding this on [GitHub](https://github.com/utmapp/UTM/issues/4179#issuecomment-1606041021).
+
+
+![macOS login items](/images/macos-login-items.png)
