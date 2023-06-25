@@ -122,20 +122,24 @@ If you are confused about what this configuration is doing, here are some quick 
 
 * We get our time from 4 different sources:
 
-`
+```
 server time.cloudflare.com iburst nts
 server ntppool1.time.nl iburst nts
 server nts.netnod.se iburst nts
 server ptbtime1.ptb.de iburst nts
-`
+```
 
 * Should there be a discrepancy, a time change will only happen if at least 2 sources agree on it:
 
-`minsources 2`
+```
+minsources 2
+```
 
 * Finally, we add this line to the configuration file to allow macOS to get time from it:
 
-`allow 10.0.2.2/32`.
+```
+allow 10.0.2.2/32
+```
 
 Note that `10.0.2.2/32` is the default IP address of the macOS host from the virtual machine's perspective. If you changed the Host Address using the Advanced Settings in the virtual machine's network configuration, you need to adjust it accordingly here.
 
@@ -163,3 +167,18 @@ sudo firewall-cmd --permanent --add-service=ntp
 sudo firewall-cmd --reload
 ```
 
+## Use the NTP server with macOS
+
+Now, we can use our NTP server as the time server for your macOS. Set the time source to `127.0.0.1` in your macOS settings:
+
+![macOS Time Source](/images/macos-time-source.png)
+
+Verify that NTP works on your macOS host:
+
+```
+sntp 127.0.0.1
+```
+
+![macOS SNTP verification](/images/macos-sntp-verification.png)
+
+Once you have verified that everything is working, you can optionally remove the port 22/TCP forwarding since we will no longer need it.
