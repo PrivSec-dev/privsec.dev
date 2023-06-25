@@ -7,9 +7,9 @@ author: Tommy
 
 ![macOS NTP](/images/macos-ntp.png)
 
-macOS by default uses the unencrypted and unauthenticated Network Time Protocol (NTP) for time synchronization. A popular solution to mitigate problem this is to use [ChronyControl](https://whatroute.net/chronycontrol.html) to setup NTS. However, the application requires administrator privileges, which less than ideal.
+macOS by default uses the unencrypted and unauthenticated Network Time Protocol (NTP) for time synchronization. A popular solution to mitigate this problem is to use [ChronyControl](https://whatroute.net/chronycontrol.html) to setup NTS. However, the application requires administrator privileges, which is less than ideal.
 
-In this post, I will go over how you leverage virtualization to setup a local Linux server, update its time using NTS, and synchronize your macOS host with it using NTP, all without needing a privileged application.
+In this post, I will go over how to leverage virtualization to setup a local Linux server, update its time using NTS, and synchronize your macOS host with it using NTP, all without needing a privileged application.
 
 ## Installing UTM
 
@@ -17,7 +17,7 @@ The virtualization software we are going for this setup is [UTM](https://mac.get
 
 Personally, I would recommend using the App Store, since you are getting automatic updates with it, and a small donation would really help out the developers.
 
-Note that I am recommending UTM here over other solutions like [Parallels](https://www.parallels.com/) here, specifically for the [Emulated VLAN](https://docs.getutm.app/settings-qemu/devices/network/network/#network-mode) network setup. Parallels only supports the [Shared Network mode](https://kb.parallels.com/4948) where all VMs and the host are connected to the same VLAN, which is less that ideal considering that we will still communicate with our Linux server using the insecure NTP protocol. I have not tried VMWare Fusion or VirtualBox yet, but the general idea is that you should be connecting to the NTP server using a private interface which only the host and the target VM have access to. Another nice thing about UTM is that it is a [sandboxed](https://developer.apple.com/documentation/xcode/configuring-the-macos-app-sandbox/) application and runs without any special privileges.
+Note that I am recommending UTM here over other solutions like [Parallels](https://www.parallels.com/) here, specifically for the [Emulated VLAN](https://docs.getutm.app/settings-qemu/devices/network/network/#network-mode) network setup. Parallels only supports the [Shared Network mode](https://kb.parallels.com/4948) where all VMs and the host are connected to the same VLAN, which is less than ideal considering that we will still communicate with our Linux server using the insecure NTP protocol. I have not tried VMWare Fusion or VirtualBox yet, but the general idea is that you should be connecting to the NTP server using a private interface which only the host and the target VM have access to. Another nice thing about UTM is that it is a [sandboxed](https://developer.apple.com/documentation/xcode/configuring-the-macos-app-sandbox/) application and runs without any special privileges.
 
 ## Choosing your Linux distribution
 
@@ -43,14 +43,14 @@ Next, install your operating system. If you are using Fedora, I recommend going 
 
 Once the operating system is installed, shut down the VM. Remove "USB Drive" from your VM configuration to ensure that you have the correct boot order.
 
-You can also remove other unncessary features from the VM for attack surface reduction:
+You can also remove other unnecessary features from the VM for attack surface reduction:
 
 * Disable USB support
 * Disable Clipboard sharing
 * Delete the display device (we will run the server headless)
 * Delete the audio device
 
-Start the VM, then SSH into it via `127.0.0.1`:
+Start the VM, then SSH into it via `127.0.0.1:22`:
 
 ```bash
 ssh 127.0.0.1
@@ -141,7 +141,7 @@ minsources 2
 allow 10.0.2.2/32
 ```
 
-Note that `10.0.2.2/32` is the default IP address of the macOS host from the virtual machine's perspective. If you changed the Host Address using the Advanced Settings in the virtual machine's network configuration, you need to adjust it accordingly here.
+Note that `10.0.2.2` is the default IP address of the macOS host from the virtual machine's perspective. If you changed the Host Address using the Advanced Settings in the virtual machine's network configuration, you need to adjust it accordingly here.
 
 Once you are happy with the configuration, restart `chronyd`:
 
