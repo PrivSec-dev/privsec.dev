@@ -17,5 +17,61 @@ The virtualization software we are going for this setup is [UTM](https://mac.get
 
 Personally, I would recommend using the App Store, since you are getting automatic updates with it, and a small donation would really help out the developers.
 
-Note that I am recommending UTM here over other solutions like [Parallels](https://www.parallels.com/) here, specifically for the [Emulated VLAN](https://docs.getutm.app/settings-qemu/devices/network/network/#network-mode) network setup. Parallels only supports the [Shared Network mode](https://kb.parallels.com/4948) where all VMs and the host are connected to the same VLAN, which is less that ideal considering that we will still communicate with our Linux server using the insecure NTP protocol. I have not tried VMWare Fusion or VirtualBox yet, but the general idea is that you should be connecting to the NTP server using a private interface which only the host and the target VM have access to. Another nice thing with UTM is that it is a [sandboxed](https://developer.apple.com/documentation/xcode/configuring-the-macos-app-sandbox/) application and runs without any special privileges.
+Note that I am recommending UTM here over other solutions like [Parallels](https://www.parallels.com/) here, specifically for the [Emulated VLAN](https://docs.getutm.app/settings-qemu/devices/network/network/#network-mode) network setup. Parallels only supports the [Shared Network mode](https://kb.parallels.com/4948) where all VMs and the host are connected to the same VLAN, which is less that ideal considering that we will still communicate with our Linux server using the insecure NTP protocol. I have not tried VMWare Fusion or VirtualBox yet, but the general idea is that you should be connecting to the NTP server using a private interface which only the host and the target VM have access to. Another nice thing about UTM is that it is a [sandboxed](https://developer.apple.com/documentation/xcode/configuring-the-macos-app-sandbox/) application and runs without any special privileges.
 
+## Choosing your Linux distribution
+
+Generally, any distribution with `chrony` 4.0 or above would work fine. I recommend using Fedora since it is easy to manage, generally up to date,  and has mostly sane defaults.
+
+You download Fedora Server from their [official website](https://fedoraproject.org/server/download/).
+
+## Setting up the VM
+
+Next, create your Linux VM in UTM. Make sure that you use the QEMU backend (as opposed to Apple Virtualization), set the Network Mode to Emulated VLAN, and port forward port 123/UDP and 22/TCP.
+
+![macOS NTP Port Forwarding](/images/macos-ntp-port-forwarding.png)
+
+Optionally, you can also:
+* Set the CPU allocation to 2 vCPUs. The NTP server does not need access to all of your performance cores.
+* Reduce the allocated Memory to 2048. This is a fairly lightweight server.
+* Enable memory ballooning.
+* Use local time for base clock.
+
+Next, install your operating system. If you are using Fedora, I recommend going with the "Minimal Install" option.
+
+## Post operating system installation
+
+Once the operating system is installed, shut down the VM. Remove "USB Drive" from your VM configuration to ensure that you have the correct boot order.
+
+You can also remove other unncessary features from the VM for attack surface reduction:
+
+* Disable USB support
+* Disable Clipboard sharing
+* Delete the display device (we will run the server headless)
+* Delete the audio device
+
+Start the VM, then SSH into it via `127.0.0.1`:
+
+```bash
+ssh 127.0.0.1
+```
+
+Update the OS:
+
+```bash
+#This is an example for Fedora:
+sudo dnf upgrade -y
+```
+
+You can also consider installing the qemu-guest-agent. It will help against insane clocks caused by snapshotting and rolling back if UTM implements these features in the future.
+
+If your operating system comes with `systemd-timesyncd` instead of `chrony` by default (as is the case with Ubuntu and Arch Linux), disable it and replace it with `chrony`. Fedora users can skip this step, since it already uses `chrony` by default.
+
+```bash
+#This is an example for Ubuntu:
+sudo systemctl disable --now systemd-timesyncd
+sudo apt purge -y systemd-timesyncd
+sudo apt install -y chronyd
+```
+
+## Configuring chronyd
