@@ -13,7 +13,7 @@ In this post, I will go over how to leverage virtualization to setup a local Lin
 
 ## Installing UTM
 
-The virtualization software we are going for this setup is [UTM](https://mac.getutm.app/). You can obtain it through [App Store](https://apps.apple.com/us/app/utm-virtual-machines/id1538878817) for $10 USD or directly through [GitHub](https://github.com/utmapp/UTM/releases) free of charge.
+The virtualization software we are going to use for this setup is [UTM](https://mac.getutm.app/). You can obtain it through [App Store](https://apps.apple.com/us/app/utm-virtual-machines/id1538878817) for $10 USD or directly through [GitHub](https://github.com/utmapp/UTM/releases) free of charge.
 
 Personally, I would recommend using the App Store, since you are getting automatic updates with it, and a small donation would really help out the developers.
 
@@ -23,7 +23,7 @@ Note that I am recommending UTM here over other solutions like [Parallels](https
 
 Generally, any distribution with `chrony` 4.0 or above would work fine. I recommend using Fedora since it is easy to manage, generally up to date,  and has mostly sane defaults.
 
-You download Fedora Server from their [official website](https://fedoraproject.org/server/download/).
+You can download Fedora Server from their [official website](https://fedoraproject.org/server/download/).
 
 ## Setting up the virtual machine
 
