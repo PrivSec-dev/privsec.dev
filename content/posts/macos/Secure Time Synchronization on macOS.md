@@ -25,7 +25,7 @@ Generally, any distribution with `chrony` 4.0 or above would work fine. I recomm
 
 You download Fedora Server from their [official website](https://fedoraproject.org/server/download/).
 
-## Setting up the VM
+## Setting up the virtual machine
 
 Next, create your Linux VM in UTM. Make sure that you use the QEMU backend (as opposed to Apple Virtualization), set the Network Mode to Emulated VLAN, and port forward port `123/UDP` and `22/TCP`.
 
@@ -89,7 +89,7 @@ sudo sed -i 's/apply_updates = no/apply_updates = yes\nreboot = when-needed/g' /
 sudo systemctl enable --now dnf-automatic.timer
 ```
 
-## Configuring chrony
+## Configuring `chrony`
 
 Next, configure `chrony` to use NTS. On Fedora, the configuration file is `/etc/chrony.conf`. We will use [GrapheneOS's configuration](https://github.com/GrapheneOS/infrastructure/blob/main/chrony.conf) as a reference.
 
