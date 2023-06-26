@@ -35,7 +35,6 @@ Optionally, you can also:
 * Set the CPU allocation to 2 vCPUs. The NTP server does not need access to all of your performance cores.
 * Reduce the allocated Memory to 2048. This is a fairly lightweight server.
 * Enable memory ballooning.
-* Use local time for base clock.
 
 Next, install your operating system. If you are using Fedora, I recommend going with the "Minimal Install" option.
 
