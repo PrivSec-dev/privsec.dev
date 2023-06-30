@@ -386,6 +386,8 @@ If decide on using NTS with chronyd, consider using multiple, independent time p
 
 GrapheneOS uses a [quite nice chrony configuration](https://github.com/GrapheneOS/infrastructure/blob/main/chrony.conf) for their infrastructure. I recommend that you replicate their `chrony.conf` on your system.
 
+![Verifying NTS configuration](/images/nts.png)
+
 ### Pluggable Authentication Modules (PAM)
 
 [PAM](https://wiki.archlinux.org/title/PAM)'s [settings can be hardened](https://madaidans-insecurities.github.io/guides/linux-hardening.html#pam) to improve authentication security (though keep in mind the bypassable nature of PAM as opposed to encryption).

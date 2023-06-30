@@ -7,10 +7,6 @@ The domain costs us $12/year to renew from Google. We got our repository hosted 
 
 The real cost is the time and energy we put into writing, testing, and fact checking the content. Some of our members may want to accept donation, and you can donate to them individually.
 
-### Randomhydrosol
-**Bitcoin**: `bc1qchel9lzhuv3ayfp58yfdu7sxsjw2svgugtvj4v`\
-**Monero**: `49yB5DPXK9TJVj5Jq5DkvrXd4wkFnoeC56mPED85bf5wHTUYmSyoYFEbVyyTciKzjFTo1kxMJMiCpLwuR96fT2NWS1hPVFG`
-
 ### akc3n
 **PayPal**: `https://paypal.me/akc3n`
 
