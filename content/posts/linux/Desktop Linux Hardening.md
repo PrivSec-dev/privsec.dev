@@ -180,6 +180,8 @@ Another option is [Kata Containers](https://katacontainers.io/) which masquerade
 
 On distributions besides openSUSE, consider changing the default [umask](https://wiki.archlinux.org/title/Umask) for both root and regular users to `077` (symbolically, `u=rwx,g=,o=`). _On openSUSE, a umask of 077 can break snapper and is thus not recommended._
 
+On Ubuntu, the "Software & Update" application will not work properly if the repository lists in `/etc/apt/sources.list.d` have the 600 permission. You should make sure that they have the 644 permission instead.
+
 The configuration for this varies per distribution, but typically it can be set in `/etc/profile`, `/etc/bashrc`, or `/etc/login.defs`.
 
 Note that, unlike on macOS, this will only change the umask for the shell. Files created by running applications will not have their permissions set to 600.
