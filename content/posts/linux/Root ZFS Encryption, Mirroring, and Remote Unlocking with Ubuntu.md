@@ -36,6 +36,7 @@ While the EFI specs do not support `mdadm`, we can setup mdadm with metadata v1.
 
 ```bash
 mdadm --create /dev/md0 --level 1 --raid-disks --metadata 1.0 /dev/nvme0n1p1 /dev/nvme0n1p2
+mkfs.fat -F 32 /dev/md0
 ```
 
 ## Setup the ZFS partition
@@ -63,8 +64,14 @@ echo 'SomeKeyphrase' > /etc/zfs/zroot.key
 chmod 000 /etc/zfs/zroot.key
 ```
 
-#### For non-mirroring setup
+#### For Non-Mirrored Setups
 
 ```bash
 sudo zpool create -o ashift=12 -O compression=zstd -O acltype=posixacl -O xattr=sa -O atime=off -O encryption=on -O keylocation=file:///etc/zfs/zroot.key -O keyformat=passphrase -o autotrim=on -m none zroot /dev/disk/by-id/nvme-SAMSUNG_MZQL21T9HCJR-00A07_XXXXXXX-part2 
+```
+
+#### For Mirrored Setups
+
+```bash
+zpool create  -o ashift=12  -O compression=zstd  -O acltype=posixacl  -O xattr=sa  -O atime=off  -O encryption=on  -O keylocation=file:///etc/zfs/zroot.key  -O keyformat=passphrase  -o autotrim=on  -m none zroot mirror /dev/disk/by-id/nvme-SAMSUNG_MZQL21T9HCJR-00A07_XXXXXXX-part2 /dev/disk/by-id/nvme-SAMSUNG_MZQL21T9HCJR-00A07_YYYYYYY-part2
 ```
