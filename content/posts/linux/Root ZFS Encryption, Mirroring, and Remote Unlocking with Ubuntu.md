@@ -1,5 +1,5 @@
 ---
-title: "Root ZFS Encryption, RAID and Remote Unlocking on Ubuntu"
+title: "Root ZFS Encryption, Mirroring, and Remote Unlocking on Ubuntu"
 tags: ['Operating Systems', 'Linux', 'Security']
 date: 2023-07-26
 author: Tommy
