@@ -20,9 +20,14 @@ cfdisk /dev/nvme0n1
 cfdisk /dev/nvme0n2
 ```
 
+![cfdisk](/images/cfdisk.png)
 
 ## Mirroring the ESP partition
 
+__Skip this if you are not doing mirroring__
+
 While the EFI specs do not support `mdadm`, we can setup mdadm with metadata v1.0, which will be put at the end of the parition and allows it to boot.
 
-`mdadm --create /dev/md0 --level 1 --raid-disks --metadata 1.0 /dev/nvme0n1p1 /dev/nvme0n1p2`
+```bash
+mdadm --create /dev/md0 --level 1 --raid-disks --metadata 1.0 /dev/nvme0n1p1 /dev/nvme0n1p2
+```
