@@ -75,3 +75,7 @@ sudo zpool create -o ashift=12 -O compression=zstd -O acltype=posixacl -O xattr=
 ```bash
 zpool create  -o ashift=12  -O compression=zstd  -O acltype=posixacl  -O xattr=sa  -O atime=off  -O encryption=on  -O keylocation=file:///etc/zfs/zroot.key  -O keyformat=passphrase  -o autotrim=on  -m none zroot mirror /dev/disk/by-id/nvme-SAMSUNG_MZQL21T9HCJR-00A07_XXXXXXX-part2 /dev/disk/by-id/nvme-SAMSUNG_MZQL21T9HCJR-00A07_YYYYYYY-part2
 ```
+
+#### Notes
+
+We use slightly different options than the official guide. Most notably, `atime` is disabled as it has detrimental effect on performance and unnecessarily increases write operations. `compression` is changed from `lz4` to `zstd` as it has much better compression ratio than `lz4` while still maintaining good performance. We did not specify the encryption type here as `aes-256-gcm` is already the default with openZFS >= 0.8.4.
