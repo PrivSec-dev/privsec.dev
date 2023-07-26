@@ -1,0 +1,40 @@
+Windows 11: Version 22H2
+If you are installing Windows 11, please note that the Home version will offer you the least amount of control regarding settings and disabling telemetry and analytics. If possible, you should try to get Pro, Education, or Enterprise editions. However, these frequently cost more than the Home version (which is usually included free when purchasing the device), sometimes several hundred dollars for a single license. As such, this guide is written for the Home version.
+System > Notifications: Off
+System > Storage > Storage Sense: On
+System > Nearby sharing: Off
+Bluetooth & devices > Bluetooth: Off whenever not in use
+Bluetooth & devices > Phone Link: Do not link your phone
+Bluetooth & devices > AutoPlay: Off
+Network & internet > Wi-Fi > Random hardware addresses: On
+Network & internet > Ethernet > Network profile type: Public network
+Personalization > Lock screen: Leave the default picture, or pick something that does not reveal any personal information
+Personalization > Device usage: Turn everything off
+Apps > Installed apps: Uninstall anything you don’t use/need
+Apps > Advanced app settings > Choose were to get apps: installing apps from the Microsoft Store offers better security due to sandboxing, but may also affect privacy by introducing additional analytics and telemetry. Pick this setting accordingly.
+Accounts: Give your account a nondescript username, like “user” or “admin” (this can be done in Control Panel > User Accounts > User Accounts)
+Accounts > Your info: pick a profile picture that doesn’t reveal any personal information.
+Accounts > Sign-in options > Ways to sign in: (in order of recommendation) Security key, Fingerprint recognition, Password (ideally a passphrase), PIN, Picture Password, or Facial recognition.
+Accounts > Sign-in options > Additional settings > If you’ve been away…: “When PC wakes up from sleep.”
+Accounts > Sign-in options > Additional settings > Automatically save my restartable apps…: Off
+Accounts > Sign-in options > Additional settings > Show account details…: Off
+Accounts > Access work or school: Do not connect a work or school account. 
+Time & language > Typing > Show text suggestions…: Off
+Time & language > Typing > Multilingual text suggestions: Off
+Time & language > Typing > Autocorrect mispelled words: Off
+Time & language > Typing > Highlight mispelled words: Off
+Time & language > Typing > Typing insights: Off
+Privacy & security > Windows Security: Ensure you have green checks on “Virus & threat protection,” “Account protection,” “Firewall & network protection,” “App & browser control,” and “Device security.”
+Privacy & security > General: Turn everything Off.
+Privacy & security > Speech: Off
+Privacy & security > Inking & typing personalizaton > Personal inking and typing dictionary: Off
+Privacy & security > Diganostics & feedback: Turn everythign Off.
+Privacy & security > Diagnostics & feedback > Delete diagnostic data: Delete
+Privacy & security > Activity history: Turn everything off
+Privacy & security > Activity history > Clear activity history for this account: Clear history
+Privacy & security > Search permissions > History: Off
+Privacy & security > Search permissions > History: Clear device search history
+Privacy & security > Search permissions > More settings: off
+Privacy & security > Device Encryption > ON
+Windows Update: Check daily or weekly for updates
+Control Panel: System and Security > Security and Maintenance > Change User Account Control settings > Always notify me when:
