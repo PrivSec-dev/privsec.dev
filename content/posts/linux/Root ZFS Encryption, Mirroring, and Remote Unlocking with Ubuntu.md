@@ -79,3 +79,21 @@ zpool create  -o ashift=12  -O compression=zstd  -O acltype=posixacl  -O xattr=s
 #### Notes
 
 We use slightly different options than the official guide. Most notably, `atime` is disabled as it has detrimental effect on performance and unnecessarily increases write operations. `compression` is changed from `lz4` to `zstd` as it has much better compression ratio than `lz4` while still maintaining good performance. We did not specify the encryption type here as `aes-256-gcm` is already the default with openZFS >= 0.8.4.
+
+### Creating the filesystems
+
+```bash
+zfs create -o mountpoint=none zroot/ROOT
+zfs create -o mountpoint=/ -o canmount=noauto zroot/ROOT/ubuntu
+zfs create -o mountpoint=/home zroot/home
+zfs create -o mountpoint=/var/log zroot/ROOT/ubuntu/log
+zfs create -o mountpoint=/var/spool zroot/ROOT/ubuntu/spool
+zfs create -o mountpoint=/var/cache zroot/ROOT/ubuntu/cache
+
+zpool set bootfs=zroot/ROOT/ubuntu zroot
+```
+
+Here, we deviate from the official guide by splitting out `/var/log`, `/var/spool`, `/var/cache` out into their own datasets. These are directories which are parts of Ubuntu that we do not want to be rolled back along with the system in case we need to boot into a prior snapshot.
+
+If you plan to dual boot with a different system and have shared directory dataset, then you need to make sure that dataset is not under `zroot/ROOT`. `zroot/home` is an example of this.
+
