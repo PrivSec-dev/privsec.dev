@@ -267,3 +267,11 @@ efibootmgr -c -d "/dev/nvme0n2" -p 1 \
   -l \\EFI\\ZBM\\VMLINUZ.EFI
 
 ```
+
+### Exit the environment
+```
+exit
+umount -n -R /mnt
+zpool export zroot
+reboot
+```
