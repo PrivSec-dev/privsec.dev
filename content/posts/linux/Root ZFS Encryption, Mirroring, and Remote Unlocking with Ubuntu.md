@@ -97,3 +97,97 @@ Here, we deviate from the official guide by splitting out `/var/log`, `/var/spoo
 
 If you plan to dual boot with a different system and have shared directory dataset, then you need to make sure that dataset is not under `zroot/ROOT`. `zroot/home` is an example of this.
 
+### Mounting the filesystem
+
+```bash
+zpool export zroot
+zpool import -N -R /mnt zroot
+zfs load-key -L prompt zroot
+zfs mount zroot/ROOT/${ID}
+zfs mount zroot/home
+```
+
+### Update device symlink
+
+```bash
+udevadm trigger
+```
+
+## Install Ubuntu
+
+We will deviate from the ZFSBootMenu's documentation here, as it only installs a minimal system with SysVinit. Instead, we can install ubuntu-server-minimal.
+
+### Bootstrapping
+
+```bash
+debootstrap jammy /mnt
+```
+
+### Copy files into the new install
+
+```bash
+cp /etc/hostid /mnt/etc/hostid
+cp /etc/resolv.conf /mnt/etc/
+mkdir /mnt/etc/zfs
+cp /etc/zfs/zroot.key /mnt/etc/zfs
+```
+
+### Chroot into the new OS
+
+```bash
+mount -t proc proc /mnt/proc
+mount -t sysfs sys /mnt/sys
+mount -B /dev /mnt/dev
+mount -t devpts pts /mnt/dev/pts
+chroot /mnt /bin/bash
+```
+
+### Setup the repositories
+
+```bash
+cat <<EOF > /etc/apt/sources.list
+# Uncomment the deb-src entries if you need source packages
+
+deb https://archive.ubuntu.com/ubuntu/ jammy main restricted universe multiverse
+deb https://archive.ubuntu.com/ubuntu/ jammy-updates main restricted universe multiverse
+deb https://archive.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse
+deb https://archive.ubuntu.com/ubuntu/ jammy-backports main restricted universe multiverse
+deb http://archive.canonical.com/ubuntu/ jammy partner
+EOF
+```
+
+### Install the necessary packages
+
+```bash
+apt update
+apt install --no-install-recommends linux-generic ubuntu-server-minimal
+```
+
+## ZFS Configuration
+
+### Install required packages
+
+```bash
+apt install dosfstools zfs-initramfs zfsutils-linux
+```
+
+### Enable systemd ZFS services
+
+```bash
+systemctl enable zfs.target
+systemctl enable zfs-import-cache
+systemctl enable zfs-mount
+systemctl enable zfs-import.target
+```
+
+### Configure `initramfs-tools`
+
+```bash
+echo "UMASK=0077" > /etc/initramfs-tools/conf.d/umask.conf
+```
+
+### Rebuild the initramfs
+
+```bash
+update-initramfs -c -k all
+```
