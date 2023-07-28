@@ -103,7 +103,10 @@ If you plan to dual boot with a different system and have shared directory datas
 zpool export zroot
 zpool import -N -R /mnt zroot
 zfs load-key -L prompt zroot
-zfs mount zroot/ROOT/${ID}
+zfs mount zroot/ROOT/ubuntu
+zfs mount zroot/ROOT/log
+zfs mount zroot/ROOT/cache
+zfs mount zroot/ROOT/spool
 zfs mount zroot/home
 ```
 
