@@ -242,3 +242,27 @@ dropbear_ecdsa_key=/etc/dropbear/ssh_host_ecdsa_key
 dropbear_acl=/home/zbmuser/.ssh/authorized_keys
 EOF
 ```
+
+### Configure EFI boot entries
+
+```bash
+apt install efibootmgr -y
+
+efibootmgr -c -d /dev/nvme0n1 -p 1 \
+  -L "ZFSBootMenu (Backup)" \
+  -l \\EFI\\ZBM\\VMLINUZ-BACKUP.EFI
+
+efibootmgr -c -d "/dev/nvme0n1" -p 1 \
+  -L "ZFSBootMenu" \
+  -l \\EFI\\ZBM\\VMLINUZ.EFI
+
+### Skip this section if you are not doing mirroring
+efibootmgr -c -d /dev/nvme0n2 -p 1 \
+  -L "ZFSBootMenu (Backup)" \
+  -l \\EFI\\ZBM\\VMLINUZ-BACKUP.EFI
+
+efibootmgr -c -d "/dev/nvme0n2" -p 1 \
+  -L "ZFSBootMenu" \
+  -l \\EFI\\ZBM\\VMLINUZ.EFI
+
+```
