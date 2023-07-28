@@ -224,6 +224,7 @@ cp /boot/efi/EFI/ZBM/VMLINUZ.EFI /boot/efi/EFI/ZBM/VMLINUZ-BACKUP.EFI
 ```bash
 git clone https://github.com/dracut-crypt-ssh/dracut-crypt-ssh
 apt install -y blah blah blah dependency here I forgot
+some build command here
 echo 'omit_dracutmodules+=" crypt-ssh "' >> /etc/dracut-config-location-idk
 mkdir -p /etc/dropbear
 ssh-keygen -t rsa -m PEM -f /etc/dropbear/ssh_host_rsa_key
