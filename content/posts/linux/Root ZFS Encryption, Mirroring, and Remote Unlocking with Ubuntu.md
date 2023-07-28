@@ -191,3 +191,54 @@ echo "UMASK=0077" > /etc/initramfs-tools/conf.d/umask.conf
 ```bash
 update-initramfs -c -k all
 ```
+
+## Install and configure ZFSBootMenu
+
+### Setup the EFI partition
+
+```bash
+zfs set org.zfsbootmenu:commandline="quiet loglevel=4" zroot/ROOT
+zfs set org.zfsbootmenu:keysource="zroot/ROOT/ubuntu" zroot
+
+cat << EOF >> /etc/fstab
+$( blkid | grep /dev/md0 | cut -d ' ' -f 2 ) /boot/efi vfat defaults 0 0
+EOF
+
+mkdir -p /boot/efi
+mount /boot/efi
+```
+
+### Install ZFSBootMenu
+
+#### To use it without remote unlocking, just follow the official guide:
+
+```
+apt install curl -y
+mkdir -p /boot/efi/EFI/ZBM
+curl -o /boot/efi/EFI/ZBM/VMLINUZ.EFI -L https://get.zfsbootmenu.org/efi
+cp /boot/efi/EFI/ZBM/VMLINUZ.EFI /boot/efi/EFI/ZBM/VMLINUZ-BACKUP.EFI
+```
+
+#### To use it with remote unlocking, you have to compile the package:
+
+```bash
+git clone https://github.com/dracut-crypt-ssh/dracut-crypt-ssh
+apt install -y blah blah blah dependency here I forgot
+echo 'omit_dracutmodules+=" crypt-ssh "' >> /etc/dracut-config-location-idk
+mkdir -p /etc/dropbear
+ssh-keygen -t rsa -m PEM -f /etc/dropbear/ssh_host_rsa_key
+ssh-keygen -t ecdsa -m PEM -f /etc/dropbear/ssh_host_ecdsa_key
+mkdir -p /etc/cmdline.d
+echo "ip=dhcp rd.neednet=1" > /etc/cmdline.d/dracut-network.conf
+
+cat <<EOF > /etc/zfsbootmenu/dracut.conf.d/dropbear.conf
+# Enable dropbear ssh server and pull in network configuration args
+add_dracutmodules+=" crypt-ssh "
+install_optional_items+=" /etc/cmdline.d/dracut-network.conf "
+# Copy system keys for consistent access
+dropbear_rsa_key=/etc/dropbear/ssh_host_rsa_key
+dropbear_ecdsa_key=/etc/dropbear/ssh_host_ecdsa_key
+# User zbmuser is the authorized unlocker here
+dropbear_acl=/home/zbmuser/.ssh/authorized_keys
+EOF
+```
