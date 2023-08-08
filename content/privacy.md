@@ -7,11 +7,9 @@ PrivSec.dev as a project does not collect any personal information. We do not tr
 
 ## Hosting Provider
 
-We use Google Domains and Google DNS. We host our website on Netlify. We do not use Netlify assets optimization, so nothing is hosted on CloudFront.
+We use Cloudflare for domain registration, DNS, and web hosting. We use Netlify for website previews. We do not use Netlify assets optimization, so nothing is hosted on CloudFront.
 
-Netlify does store your IP address and access logs for less than 30 days. Please check out [this link](https://www.netlify.com/gdpr-ccpa/) for their policy regarding this. Their general privacy policy can be found [here](https://www.netlify.com/gdpr-ccpa/).
-
-We use [Netlify Analytics](https://www.netlify.com/products/analytics/) to analyze the access logs stored by Netlify. This information is not shared with any third parties.
+We do not have access to your IP addresses or activity logs. Cloudflare does keep logs of your website visits in accordance with their [privacy policy](https://www.cloudflare.com/privacypolicy/).
 
 ## Software
 
