@@ -388,6 +388,13 @@ If decide on using NTS with chronyd, consider using multiple, independent time p
 
 GrapheneOS uses a [quite nice chrony configuration](https://github.com/GrapheneOS/infrastructure/blob/main/chrony.conf) for their infrastructure. I recommend that you replicate their `chrony.conf` on your system.
 
+You should also enable the secommp filter for chronyd in `/etc/sysconfig/chronyd`:
+
+```
+# Command-line options for chronyd
+OPTIONS="-F 1"
+```
+
 ![Verifying NTS configuration](/images/nts.png)
 
 ### Pluggable Authentication Modules (PAM)

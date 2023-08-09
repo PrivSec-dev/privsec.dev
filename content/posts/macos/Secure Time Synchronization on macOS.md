@@ -103,6 +103,9 @@ server ptbtime1.ptb.de iburst nts
 minsources 2
 authselectmode require
 
+# EF
+dscp 46
+
 driftfile /var/lib/chrony/drift
 ntsdumpdir /var/lib/chrony
 
@@ -117,7 +120,14 @@ cmdport 0
 allow 10.0.2.2/32
 ```
 
-If you are confused about what this configuration is doing, here are some quick explanations:
+Optionally, you can enable the secommp filter for chronyd in `/etc/sysconfig/chronyd`:
+
+```
+# Command-line options for chronyd
+OPTIONS="-F 1"
+```
+
+If you are confused about what these configurations are doing, here are some quick explanations:
 
 * We get our time from 4 different sources:
 
