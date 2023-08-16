@@ -190,7 +190,7 @@ sudo usg fix cis_level2_workstation
 
 You will also gain access to the [Canonical Livepatch Service](https://ubuntu.com/security/livepatch), which provides livepatching for [certain kernel variants](https://ubuntu.com/security/livepatch/docs/livepatch/reference/kernels). Note that the [Hardware Enablement (HWE)](https://ubuntu.com/kernel/lifecycle) kernel is not supported.
 
-While livepatching is less than ideal and we still recommend regularly rebooting your computer, it is quite nice to have.
+While livepatching is less than ideal and I still recommend regularly rebooting your computer, it is quite nice to have.
 
 ### Umask 077
 
