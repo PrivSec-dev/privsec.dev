@@ -22,7 +22,7 @@ Randomizing the mac address only makes sense if you use a not-very-unique hostna
 
 Unfortunately, most of the guides I could find recommends randomizing the entire MAC address instead of the final 3 octets. Take the guides recommending `macchanger` for example, they fail to mention that the program does [this](https://github.com/acrogenesis/macchanger/blob/main/bin/macchanger#L37):
 
-```rust
+```ruby
 [format('%0.2x', rand(256) & ~1), (1..5).map { format('%0.2x', rand(256)) }].join(':')
 ```
 
