@@ -25,3 +25,9 @@ Unfortunately, most of the guides I could find recommends randomizing the entire
 ```rust
 [format('%0.2x', rand(256) & ~1), (1..5).map { format('%0.2x', rand(256)) }].join(':')
 ```
+
+This is a completely randomized MAC address, which is not what we want.
+
+Or this snippet from PrivacyGuides:
+
+![PrivacyGuides macOS MAC Randomization](/images/privacyguides-macos-mac-randomization.png) 
