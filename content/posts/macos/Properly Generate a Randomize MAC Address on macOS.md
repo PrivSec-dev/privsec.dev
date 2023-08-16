@@ -20,7 +20,7 @@ Randomizing the mac address only makes sense if you use a not-very-unique hostna
 
 ### Improper instructions
 
-Unfortunately, most of the guides I could find recommends randomizing the entire MAC address instead of the final 3 octets. Take guides recommending `macchanger` for example, they fail to mention that the program does [this](https://github.com/acrogenesis/macchanger/blob/main/bin/macchanger#L37):
+Unfortunately, most of the guides I could find recommends randomizing the entire MAC address instead of the final 3 octets. Take the guides recommending `macchanger` for example, they fail to mention that the program does [this](https://github.com/acrogenesis/macchanger/blob/main/bin/macchanger#L37):
 
 ```rust
 [format('%0.2x', rand(256) & ~1), (1..5).map { format('%0.2x', rand(256)) }].join(':')
@@ -33,3 +33,12 @@ Or this snippet from PrivacyGuides:
 These will give you completely randomized MAC addresses, which is not what we want.
 
 ### Doing it the Proper Way
+
+First, you need to get the name of your network interface and its MAC address. You can check this with
+
+```bash
+ifconfig
+```
+
+In most cases, your interface will be `en0`, the Wifi network interface on modern Macbooks.
+
