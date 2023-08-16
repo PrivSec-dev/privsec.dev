@@ -18,7 +18,7 @@ Consider the following:
 
 Randomizing the mac address only makes sense if you use a not-very-unique hostname (like Macbook-Pro), and that you only randomize the last 3 octets of your MAC address so that you actually look like a new Macbook on the network.
 
-### Improper instructions
+### Improper Instructions
 
 Unfortunately, most of the guides I could find recommends randomizing the entire MAC address instead of the final 3 octets. Take the guides recommending `macchanger` for example, they fail to mention that the program does [this](https://github.com/acrogenesis/macchanger/blob/main/bin/macchanger#L37):
 
@@ -42,3 +42,6 @@ ifconfig
 
 In most cases, your interface will be `en0`, the Wifi network interface on modern Macbooks.
 
+Next, take note of the MAC address of that interface. If you are unsure that this is the correct interface, check it's OUI with the [Wireshark OUI Lookup Tool](https://www.wireshark.org/tools/oui-lookup.html). It should say that the OUI is from Apple, Inc.
+
+On my Macbook, the OUI is `5C:E9:1E`.
