@@ -192,6 +192,22 @@ sntp 127.0.0.1
 
 Once you have verified that everything is working, you can optionally remove the port `22/TCP` forwarding since we will no longer need it.
 
+## Create a Synchronization Cron Job
+
+macOS synchronizes time with the NTP server around once every 20 minutes. This can cause the clock to be out of sync for quite awhile when the computer wakes up from sleep, as the NTP server may not have its time corrected by the time macOS makes the first synchronization request.
+
+To work around this, create a cron job to have macOS synchronize time every minute as `root`:
+
+```
+sudo crontab -e
+```
+
+Add the following:
+
+```
+* * * * * /usr/bin/sntp -Ss 127.0.0.1
+```
+
 ## Automatically start the NTP server at boot
 
 Finally, follow the [official documentation](https://docs.getutm.app/advanced/remote-control/) to automatically start the virtual machine at boot.
