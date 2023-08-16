@@ -1,6 +1,6 @@
 /*
   Strict-Transport-Security : max-age=63072000; includeSubDomains; preload
-  Content-Security-Policy : default-src 'none'; connect-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; form-action 'none'; frame-ancestors 'none'; block-all-mixed-content; base-uri 'none'
+  Content-Security-Policy : default-src 'none'; connect-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content; base-uri 'none'
   X-Content-Type-Options : nosniff
   Referrer-Policy : no-referrer
   X-Frame-Options : DENY
@@ -12,27 +12,27 @@
 
 /posts/knowledge/multi-factor-authentication/
   ! Content-Security-Policy
-  Content-Security-Policy : default-src 'none'; connect-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; frame-src https://www.youtube-nocookie.com https://www.google.com; form-action 'none'; frame-ancestors 'none'; block-all-mixed-content; base-uri 'none'
+  Content-Security-Policy : default-src 'none'; connect-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; frame-src https://www.youtube-nocookie.com https://www.google.com; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content; base-uri 'none'
   Cross-Origin-Embedder-Policy : unsafe-none
 
 /posts/android/android-tips/
   ! Content-Security-Policy
-  Content-Security-Policy : default-src 'none'; connect-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; frame-src https://www.youtube-nocookie.com https://www.google.com; form-action 'none'; frame-ancestors 'none'; block-all-mixed-content; base-uri 'none'
+  Content-Security-Policy : default-src 'none'; connect-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; frame-src https://www.youtube-nocookie.com https://www.google.com; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content; base-uri 'none'
   Cross-Origin-Embedder-Policy : unsafe-none
 
 /posts/android/choosing-your-android-based-operating-system/
   ! Content-Security-Policy
-  Content-Security-Policy : default-src 'none'; connect-src 'self'; img-src 'self' https://i.ytimg.com; script-src 'self'; style-src 'self'; frame-src https://www.youtube-nocookie.com https://www.google.com; form-action 'none'; frame-ancestors 'none'; block-all-mixed-content; base-uri 'none'
+  Content-Security-Policy : default-src 'none'; connect-src 'self'; img-src 'self' https://i.ytimg.com; script-src 'self'; style-src 'self'; frame-src https://www.youtube-nocookie.com https://www.google.com; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content; base-uri 'none'
   Cross-Origin-Embedder-Policy : unsafe-none
 
 /posts/linux/choosing-your-desktop-linux-distribution/
   ! Content-Security-Policy
-  Content-Security-Policy : default-src 'none'; connect-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; frame-src https://www.youtube-nocookie.com https://www.google.com; form-action 'none'; frame-ancestors 'none'; block-all-mixed-content; base-uri 'none'
+  Content-Security-Policy : default-src 'none'; connect-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; frame-src https://www.youtube-nocookie.com https://www.google.com; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content; base-uri 'none'
   Cross-Origin-Embedder-Policy : unsafe-none
 
 /posts/linux/desktop-linux-hardening/
   ! Content-Security-Policy
-  Content-Security-Policy : default-src 'none'; connect-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; frame-src https://www.youtube-nocookie.com https://www.google.com; form-action 'none'; frame-ancestors 'none'; block-all-mixed-content; base-uri 'none'
+  Content-Security-Policy : default-src 'none'; connect-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; frame-src https://www.youtube-nocookie.com https://www.google.com; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content; base-uri 'none'
   Cross-Origin-Embedder-Policy : unsafe-none
 
 /*.xml
