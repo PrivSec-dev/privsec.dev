@@ -184,7 +184,7 @@ Now, we can use our NTP server as the time server for your macOS. Set the time s
 
 Verify that NTP works on your macOS host:
 
-```
+```bash
 sntp 127.0.0.1
 ```
 
@@ -198,7 +198,7 @@ macOS synchronizes time with the NTP server around once every 20 minutes. This c
 
 To work around this, create a cron job to have macOS synchronize time every minute as `root`:
 
-```
+```bash
 sudo crontab -e
 ```
 
