@@ -153,10 +153,10 @@ chroot /mnt /bin/bash
 cat <<EOF > /etc/apt/sources.list
 # Uncomment the deb-src entries if you need source packages
 
-deb https://archive.ubuntu.com/ubuntu/ jammy main restricted universe multiverse
-deb https://archive.ubuntu.com/ubuntu/ jammy-updates main restricted universe multiverse
-deb https://archive.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse
-deb https://archive.ubuntu.com/ubuntu/ jammy-backports main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu/ jammy main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu/ jammy-updates main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu/ jammy-backports main restricted universe multiverse
 deb http://archive.canonical.com/ubuntu/ jammy partner
 EOF
 ```
