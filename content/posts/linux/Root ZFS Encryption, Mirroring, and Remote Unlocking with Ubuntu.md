@@ -123,6 +123,7 @@ We will deviate from the ZFSBootMenu's documentation here, as it only installs a
 ### Bootstrapping
 
 ```bash
+zgenhostid -f 0x00bab10c
 apt install -y debootstrap
 debootstrap jammy /mnt
 ```
