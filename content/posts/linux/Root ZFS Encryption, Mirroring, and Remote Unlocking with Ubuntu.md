@@ -168,6 +168,12 @@ apt update
 apt install --no-install-recommends linux-generic ubuntu-server-minimal
 ```
 
+### Configure packages to customize local and console properties
+
+```bash
+dpkg-reconfigure locales tzdata keyboard-configuration console-setup
+```
+
 ## ZFS Configuration
 
 ### Install required packages
