@@ -256,6 +256,7 @@ EOF
 ### Configure EFI boot entries
 
 ```bash
+mount -t efivarfs efivarfs /sys/firmware/efi/efivars
 apt install efibootmgr -y
 
 efibootmgr -c -d "/dev/nvme0n1" -p 1 \
