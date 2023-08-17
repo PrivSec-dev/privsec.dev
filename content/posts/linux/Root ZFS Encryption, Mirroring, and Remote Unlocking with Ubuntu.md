@@ -201,6 +201,8 @@ update-initramfs -c -k all
 
 ### Setup the EFI partition
 
+If you are doing mirroring:
+
 ```bash
 zfs set org.zfsbootmenu:commandline="quiet loglevel=4" zroot/ROOT
 zfs set org.zfsbootmenu:keysource="zroot/ROOT/ubuntu" zroot
@@ -212,6 +214,8 @@ EOF
 mkdir -p /boot/efi
 mount /boot/efi
 ```
+
+If you are not, just replace `md0` in the commands above with your efi partition.
 
 ### Install ZFSBootMenu
 
