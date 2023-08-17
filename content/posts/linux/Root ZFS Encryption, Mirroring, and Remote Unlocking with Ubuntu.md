@@ -104,9 +104,9 @@ zpool export zroot
 zpool import -N -R /mnt zroot
 zfs load-key -L prompt zroot
 zfs mount zroot/ROOT/ubuntu
-zfs mount zroot/ROOT/log
-zfs mount zroot/ROOT/cache
-zfs mount zroot/ROOT/spool
+zfs mount zroot/ROOT/ubuntu/log
+zfs mount zroot/ROOT/ubuntu/cache
+zfs mount zroot/ROOT/ubuntu/spool
 zfs mount zroot/home
 ```
 
