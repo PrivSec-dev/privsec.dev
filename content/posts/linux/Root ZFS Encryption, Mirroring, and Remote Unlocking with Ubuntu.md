@@ -285,6 +285,14 @@ efibootmgr -c -d /dev/nvme0n2 -p 1 \
 
 ```
 
+### Set the root password
+
+Set the root password:
+
+```
+passwd
+```
+
 ### Exit the environment
 ```
 exit
