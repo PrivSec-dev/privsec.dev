@@ -191,6 +191,11 @@ systemctl enable zfs-mount
 systemctl enable zfs-import.target
 ```
 
+### Enable systemd-networkd
+```bash
+systemctl enable systemd-networkd
+```
+
 ### Configure `initramfs-tools`
 
 ```bash
