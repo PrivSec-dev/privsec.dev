@@ -75,13 +75,13 @@ Use the following as your [Content Security Policy](https://developer.mozilla.or
 #### If you use Gravatar with SOGo
 
 ```
-add_header Content-Security-Policy "default-src 'none'; connect-src 'self' https://api.github.com https://www.gravatar.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.gravatar.com; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; frame-ancestors 'none'; block-all-mixed-content; base-uri 'none'";
+add_header Content-Security-Policy "default-src 'none'; connect-src 'self' https://api.github.com https://www.gravatar.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.gravatar.com; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content; base-uri 'none'";
 ```
 
 #### If you do not use Gravatar with SOGo
 
 ```
-add_header Content-Security-Policy "default-src 'none'; connect-src 'self' https://api.github.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; frame-ancestors 'none'; block-all-mixed-content; base-uri 'none'";
+add_header Content-Security-Policy "default-src 'none'; connect-src 'self' https://api.github.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content; base-uri 'none'";
 ```
 
 ### Cross-Origin Resource, Opener, and Embedder Policies

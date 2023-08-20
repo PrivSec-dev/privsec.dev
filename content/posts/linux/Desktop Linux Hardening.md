@@ -176,6 +176,22 @@ Another option is [Kata Containers](https://katacontainers.io/) which masquerade
 
 ![opensuse-computer.jpg](/images/opensuse-computer.jpg)
 
+### Ubuntu Pro
+
+If you are using Ubuntu LTS, consider subscribing to [Ubuntu Pro](https://ubuntu.com/pro). Canonical currently allows up to 5 machines with the free subscription.
+
+With Ubuntu Pro, you gain access to the [The Ubuntu Security Guide]([https://discourse.ubuntu.com/t/ubuntu-advantage-client/21788](https://ubuntu.com/security/certifications/docs/usg)), which allows for easy application of the CIS OpenSCAP profile:
+
+```bash
+sudo ua enable usg
+sudo apt install -y usg
+sudo usg fix cis_level2_workstation
+```
+
+You will also gain access to the [Canonical Livepatch Service](https://ubuntu.com/security/livepatch), which provides livepatching for [certain kernel variants](https://ubuntu.com/security/livepatch/docs/livepatch/reference/kernels). Note that the [Hardware Enablement (HWE)](https://ubuntu.com/kernel/lifecycle) kernel is not supported.
+
+While livepatching is less than ideal and I still recommend regularly rebooting your computer, it is quite nice to have.
+
 ### Umask 077
 
 On distributions besides openSUSE, consider changing the default [umask](https://wiki.archlinux.org/title/Umask) for both root and regular users to `077` (symbolically, `u=rwx,g=,o=`). _On openSUSE, a umask of 077 can break snapper and is thus not recommended._
@@ -387,6 +403,15 @@ Most Linux distributions by default use the unencrypted and unauthenticated [Net
 If decide on using NTS with chronyd, consider using multiple, independent time providers and setting [`minsources`](https://chrony.tuxfamily.org/doc/devel/chrony.conf#minsources) greater than 1.
 
 GrapheneOS uses a [quite nice chrony configuration](https://github.com/GrapheneOS/infrastructure/blob/main/chrony.conf) for their infrastructure. I recommend that you replicate their `chrony.conf` on your system.
+
+Next, enable the secommp filter for chronyd. On Fedora and Arch Linux, you will need to edit Chrony's environment file in `/etc/sysconfig/chronyd`:
+
+```
+# Command-line options for chronyd
+OPTIONS="-F 1"
+```
+
+On Ubuntu and Debian, the environment file is `/etc/default/chrony`, and the seccomp filter should already be enabled by default.
 
 ![Verifying NTS configuration](/images/nts.png)
 

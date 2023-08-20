@@ -103,6 +103,9 @@ server ptbtime1.ptb.de iburst nts
 minsources 2
 authselectmode require
 
+# EF
+dscp 46
+
 driftfile /var/lib/chrony/drift
 ntsdumpdir /var/lib/chrony
 
@@ -117,7 +120,14 @@ cmdport 0
 allow 10.0.2.2/32
 ```
 
-If you are confused about what this configuration is doing, here are some quick explanations:
+Optionally, you can enable the secommp filter for chronyd in `/etc/sysconfig/chronyd`:
+
+```
+# Command-line options for chronyd
+OPTIONS="-F 1"
+```
+
+If you are confused about what these configurations are doing, here are some quick explanations:
 
 * We get our time from 4 different sources:
 
@@ -174,13 +184,29 @@ Now, we can use our NTP server as the time server for your macOS. Set the time s
 
 Verify that NTP works on your macOS host:
 
-```
+```bash
 sntp 127.0.0.1
 ```
 
 ![macOS SNTP verification](/images/macos-sntp-verification.png)
 
 Once you have verified that everything is working, you can optionally remove the port `22/TCP` forwarding since we will no longer need it.
+
+## Create a Synchronization Cron Job
+
+macOS synchronizes time with the NTP server around once every 20 minutes. This can cause the clock to be out of sync for quite awhile when the computer wakes up from sleep, as the NTP server may not have its time corrected by the time macOS makes the first synchronization request.
+
+To work around this, create a cron job to have macOS synchronize time every minute as `root`:
+
+```bash
+sudo crontab -e
+```
+
+Add the following:
+
+```
+* * * * * /usr/bin/sntp -Ss 127.0.0.1
+```
 
 ## Automatically start the NTP server at boot
 
