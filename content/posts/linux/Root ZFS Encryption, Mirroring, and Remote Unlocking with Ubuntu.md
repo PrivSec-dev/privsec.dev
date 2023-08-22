@@ -95,8 +95,6 @@ zpool set bootfs=zroot/ROOT/ubuntu zroot
 
 Here, we deviate from the official guide by splitting out `/var/log`, `/var/spool`, `/var/cache` out into their own datasets. These are directories which are parts of Ubuntu that we do not want to be rolled back along with the system in case we need to boot into a prior snapshot.
 
-If you plan to dual boot with a different system and have shared directory dataset, then you need to make sure that dataset is not under `zroot/ROOT`. `zroot/home` is an example of this.
-
 ### Mounting the filesystem
 
 ```bash
