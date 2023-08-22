@@ -151,11 +151,57 @@ chroot /mnt /bin/bash
 cat <<EOF > /etc/apt/sources.list
 # Uncomment the deb-src entries if you need source packages
 
-deb http://archive.ubuntu.com/ubuntu/ jammy main restricted universe multiverse
-deb http://archive.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse
-deb http://archive.ubuntu.com/ubuntu/ jammy-updates main restricted universe multiverse
-deb http://archive.ubuntu.com/ubuntu/ jammy-backports main restricted universe multiverse
-#deb http://archive.canonical.com/ubuntu/ jammy partner
+deb http://archive.ubuntu.com/ubuntu jammy main restricted
+# deb-src http://archive.ubuntu.com/ubuntu jammy main restricted
+
+deb http://ubuntu.mirror.constant.com jammy main restricted
+# deb-src http://ubuntu.mirror.constant.com jammy main restricted
+
+deb http://archive.ubuntu.com/ubuntu jammy-updates main restricted
+# deb-src http://archive.ubuntu.com/ubuntu jammy-updates main restricted
+
+deb http://ubuntu.mirror.constant.com jammy-updates main restricted
+# deb-src http://ubuntu.mirror.constant.com jammy-updates main restricted
+
+deb http://archive.ubuntu.com/ubuntu jammy universe
+# deb-src http://archive.ubuntu.com/ubuntu jammy universe
+deb http://archive.ubuntu.com/ubuntu jammy-updates universe
+# deb-src http://archive.ubuntu.com/ubuntu jammy-updates universe
+
+deb http://ubuntu.mirror.constant.com jammy universe
+# deb-src http://ubuntu.mirror.constant.com jammy universe
+deb http://ubuntu.mirror.constant.com jammy-updates universe
+# deb-src http://ubuntu.mirror.constant.com jammy-updates universe
+
+deb http://archive.ubuntu.com/ubuntu jammy multiverse
+# deb-src http://archive.ubuntu.com/ubuntu jammy multiverse
+deb http://archive.ubuntu.com/ubuntu jammy-updates multiverse
+# deb-src http://archive.ubuntu.com/ubuntu jammy-updates multiverse
+
+deb http://ubuntu.mirror.constant.com jammy multiverse
+# deb-src http://ubuntu.mirror.constant.com jammy multiverse
+deb http://ubuntu.mirror.constant.com jammy-updates multiverse
+# deb-src http://ubuntu.mirror.constant.com jammy-updates multiverse
+
+deb http://archive.ubuntu.com/ubuntu jammy-backports main restricted universe multiverse
+# deb-src http://archive.ubuntu.com/ubuntu jammy-backports main restricted universe multiverse
+
+deb http://ubuntu.mirror.constant.com jammy-backports main restricted universe multiverse
+# deb-src http://ubuntu.mirror.constant.com jammy-backports main restricted universe multiverse
+
+deb http://archive.ubuntu.com/ubuntu jammy-security main restricted
+# deb-src http://archive.ubuntu.com/ubuntu jammy-security main restricted
+deb http://archive.ubuntu.com/ubuntu jammy-security universe
+# deb-src http://archive.ubuntu.com/ubuntu jammy-security universe
+deb http://archive.ubuntu.com/ubuntu jammy-security multiverse
+# deb-src http://archive.ubuntu.com/ubuntu jammy-security multiverse
+
+deb http://ubuntu.mirror.constant.com jammy-security main restricted
+# deb-src http://ubuntu.mirror.constant.com jammy-security main restricted
+deb http://ubuntu.mirror.constant.com jammy-security universe
+# deb-src http://ubuntu.mirror.constant.com jammy-security universe
+deb http://ubuntu.mirror.constant.com jammy-security multiverse
+# deb-src http://ubuntu.mirror.constant.com jammy-security multiverse
 EOF
 ```
 
