@@ -67,13 +67,13 @@ chmod 000 /etc/zfs/zroot.key
 #### For Non-Mirrored Setups
 
 ```bash
-sudo zpool create -o ashift=12 -O compression=zstd -O acltype=posixacl -O xattr=sa -O atime=off -O encryption=on -O keylocation=file:///etc/zfs/zroot.key -O keyformat=passphrase -o autotrim=on -o failmode=panic -m none zroot /dev/disk/by-id/nvme-SAMSUNG_MZQL21T9HCJR-00A07_XXXXXXX-part2 
+sudo zpool create -o ashift=12 -O compression=zstd -O acltype=posixacl -O xattr=sa -O atime=off -O encryption=on -O keylocation=file:///etc/zfs/zroot.key -O keyformat=passphrase -o autotrim=on -o failmode=panic compatibility=openzfs-2.1-linux -m none zroot /dev/disk/by-id/nvme-SAMSUNG_MZQL21T9HCJR-00A07_XXXXXXX-part2 
 ```
 
 #### For Mirrored Setups
 
 ```bash
-zpool create  -o ashift=12  -O compression=zstd  -O acltype=posixacl  -O xattr=sa  -O atime=off  -O encryption=on  -O keylocation=file:///etc/zfs/zroot.key  -O keyformat=passphrase  -o autotrim=on  -o failmode=panic -m none zroot mirror /dev/disk/by-id/nvme-SAMSUNG_MZQL21T9HCJR-00A07_XXXXXXX-part2 /dev/disk/by-id/nvme-SAMSUNG_MZQL21T9HCJR-00A07_YYYYYYY-part2
+zpool create  -o ashift=12  -O compression=zstd  -O acltype=posixacl  -O xattr=sa  -O atime=off  -O encryption=on  -O keylocation=file:///etc/zfs/zroot.key  -O keyformat=passphrase  -o autotrim=on  -o failmode=panic compatibility=openzfs-2.1-linux -m none zroot mirror /dev/disk/by-id/nvme-SAMSUNG_MZQL21T9HCJR-00A07_XXXXXXX-part2 /dev/disk/by-id/nvme-SAMSUNG_MZQL21T9HCJR-00A07_YYYYYYY-part2
 ```
 
 #### Notes
