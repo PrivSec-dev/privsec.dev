@@ -78,7 +78,7 @@ zpool create  -o ashift=12  -O compression=zstd  -O acltype=posixacl  -O xattr=s
 
 #### Notes
 
-We use slightly different options than the official guide. Most notably, `atime` is disabled as it has detrimental effect on performance and unnecessarily increases write operations. `compression` is changed from `lz4` to `zstd` as it has much better compression ratio than `lz4` while still maintaining good performance. We did not specify the encryption type here as `aes-256-gcm` is already the default with openZFS >= 0.8.4.
+We use slightly different options than the official guide. Most notably, `atime` is disabled as it has detrimental effect on performance and unnecessarily increases write operations. `compression` is changed from `lz4` to `zstd` as it has much better compression ratio than `lz4` while still maintaining good performance. We did not specify the encryption type here as `aes-256-gcm` is already the default with openZFS >= 0.8.4. failmode=panic makes sure that the kernel panics in case there is something wrong with the drive instead of taking risks with abnormal behavior. We specify compatibility=openzfs-2.1-linux to make sure that updates will not make the system unbootable in the future.
 
 ### Creating the filesystems
 
