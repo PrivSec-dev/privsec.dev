@@ -98,3 +98,7 @@ If you do not use Gravatar with SOGo, you can also set COEP to require-corp sinc
 ```
 add_header Cross-Origin-Embedder-Policy require-corp;
 ```
+
+### GZIP Compression
+
+Disable gzip compression to avoid the BREACH attack. Change `gzip on;` to `gzip off;`.
