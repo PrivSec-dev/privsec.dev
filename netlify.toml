@@ -1,5 +1,5 @@
 [build.environment]
-  HUGO_VERSION = "0.117.0"
+  HUGO_VERSION = "0.118.2"
 
 [context.deploy-preview]
   command = "sed -i 's/! Content-Security-Policy//g' static/_headers && hugo -b $DEPLOY_PRIME_URL"
