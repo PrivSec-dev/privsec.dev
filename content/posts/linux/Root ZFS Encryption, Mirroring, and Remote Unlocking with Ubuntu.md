@@ -214,7 +214,7 @@ dpkg-reconfigure locales tzdata keyboard-configuration console-setup
 ### Install required packages
 
 ```bash
-apt install dosfstools zfs-initramfs zfsutils-linux
+apt install dosfstools zfs-initramfs zfsutils-linux -y
 ```
 
 ### Enable systemd ZFS services
