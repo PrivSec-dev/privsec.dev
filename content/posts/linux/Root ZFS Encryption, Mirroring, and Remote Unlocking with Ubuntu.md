@@ -147,6 +147,8 @@ chroot /mnt /bin/bash
 
 ### Setup the repositories
 
+Use the source list from the Ubuntu live ISO:
+
 ```bash
 cat <<EOF > /etc/apt/sources.list
 # See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to
