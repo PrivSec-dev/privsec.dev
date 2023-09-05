@@ -282,6 +282,7 @@ echo 'omit_dracutmodules+=" crypt-ssh "' >> /etc/dracut-config-location-idk
 mkdir -p /etc/dropbear
 ssh-keygen -t rsa -m PEM -f /etc/dropbear/ssh_host_rsa_key
 ssh-keygen -t ecdsa -m PEM -f /etc/dropbear/ssh_host_ecdsa_key
+ssh-keygen -t ed25519 -m PEM -f /etc/dropbear/ssh_host_ed25519_key
 mkdir -p /etc/cmdline.d
 echo "ip=dhcp rd.neednet=1" > /etc/cmdline.d/dracut-network.conf
 
@@ -292,6 +293,7 @@ install_optional_items+=" /etc/cmdline.d/dracut-network.conf "
 # Copy system keys for consistent access
 dropbear_rsa_key=/etc/dropbear/ssh_host_rsa_key
 dropbear_ecdsa_key=/etc/dropbear/ssh_host_ecdsa_key
+dropbear_ed25519_key=/etc/dropbear/ssh_host_ed25519_key
 # User zbmuser is the authorized unlocker here
 dropbear_acl=/home/zbmuser/.ssh/authorized_keys
 EOF
