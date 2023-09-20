@@ -278,8 +278,11 @@ cp /boot/efi/EFI/ZBM/VMLINUZ.EFI /boot/efi/EFI/ZBM/VMLINUZ-BACKUP.EFI
 
 ```bash
 git clone https://github.com/dracut-crypt-ssh/dracut-crypt-ssh
-apt install -y blah blah blah dependency here I forgot
-some build command here
+apt install -y libblkid-dev
+cd dracut-crypt-ssh
+./configure
+make
+make install
 echo 'omit_dracutmodules+=" crypt-ssh "' >> /etc/dracut-config-location-idk
 mkdir -p /etc/dropbear
 ssh-keygen -t rsa -m PEM -f /etc/dropbear/ssh_host_rsa_key
@@ -299,6 +302,8 @@ dropbear_ed25519_key=/etc/dropbear/ssh_host_ed25519_key
 # User zbmuser is the authorized unlocker here
 dropbear_acl=/home/zbmuser/.ssh/authorized_keys
 EOF
+
+generate-zbm
 ```
 
 ### Configure EFI boot entries
