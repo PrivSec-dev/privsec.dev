@@ -237,7 +237,7 @@ systemctl enable systemd-networkd
 echo "UMASK=0077" > /etc/initramfs-tools/conf.d/umask.conf
 ```
 
-### Rebuild the initramfs
+### Rebuild the initramfs
 
 ```bash
 update-initramfs -c -k all
