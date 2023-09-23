@@ -18,11 +18,6 @@ Benevolent dictator for life @PrivSec.dev. System Administrator.
 **Matrix**: [@tommy:arcticfoxes.net](https://invite.arcticfoxes.net/#/@tommy:arcticfoxes.net)\
 **Email**: [contact@tommytran.io](mailto:contact@tommytran.io)
 
-### Randomhydrosol
-PrivSec.dev Administrator. Security Researcher. Friendliest Indian tech support on the planet Earth.
-
-**Matrix**: [@randomhydrosol:arcticfoxes.net](https://invite.arcticfoxes.net/#/@randomhydrosol:arcticfoxes.net)
-
 ### Madaidan
 Security Researcher. Whonix developer. Uses Firefox, Telegram, and Linux against his own advice like a hypocrite.
 
