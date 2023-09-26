@@ -340,6 +340,9 @@ Set the root password:
 passwd
 ```
 
+### Remove grub
+apt purge grub* -y
+
 ### Exit the environment
 ```
 exit
