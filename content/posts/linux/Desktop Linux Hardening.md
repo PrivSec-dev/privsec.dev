@@ -244,6 +244,13 @@ You could also set your default firewall zone to drop packets. To implement this
 firewall-cmd --set-default-zone=drop
 firewall-cmd --add-protocol=ipv6-icmp --permanent
 firewall-cmd --add-service=dhcpv6-client --permanent
+firewall-cmd --reload
+```
+
+On some distributions, `--set-default-zone` might be whitelisted by default which leads to bypasses. To disable this, turn on lockdown mode for `firewalld`:
+
+```
+sudo firewall-cmd --lockdown-on
 ```
 
 These firewalls use the [netfilter](https://netfilter.org/) framework and therefore cannot (without the help of strict [mandatory access control](#mandatory-access-control)) protect against malicious software running privileged on the system, which can insert their own routing rules that sidestep firewalld/ufw.
