@@ -132,8 +132,8 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Ecuador
 
-- [Banco del Pacífico](https://play.google.com/store/apps/details?id=com.bancodeguayaquil) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/226)
 - [Banco del Pacífico](https://play.google.com/store/apps/details?id=com.pacifico.movilmatico) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/225)
+- [Banco Guayaquil](https://play.google.com/store/apps/details?id=com.bancodeguayaquil) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/226)
 
 ### Finland
 
