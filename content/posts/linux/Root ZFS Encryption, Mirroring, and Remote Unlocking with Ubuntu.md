@@ -250,8 +250,6 @@ update-initramfs -c -k all
 If you are doing mirroring:
 
 ```bash
-zfs set org.zfsbootmenu:commandline="quiet loglevel=4" zroot/ROOT
-zfs set org.zfsbootmenu:keysource="zroot/ROOT/ubuntu" zroot
 
 cat << EOF >> /etc/fstab
 $( blkid | grep /dev/md0 | cut -d ' ' -f 2 ) /boot/efi vfat defaults 0 0
@@ -262,6 +260,15 @@ mount /boot/efi
 ```
 
 If you are not, just replace `md0` in the commands above with your efi partition.
+
+### Set ZFSBootMenu properties
+
+Next, we will set the kernel boot parameters and the encryption key source for ZFSBootMenu. Here, we will deviate from the official guide and use a  hardened boot parameter for better security:
+
+```bash
+zfs set org.zfsbootmenu:commandline="quiet loglevel=4 spectre_v2=on spec_store_bypass_disable=on l1tf=full,force mds=full,nosmt tsx=off tsx_async_abort=full,nosmt kvm.nx_huge_pages=force nosmt=force l1d_flush=on mmio_stale_data=full,nosmt random.trust_bootloader=off random.trust_cpu=off intel_iommu=on amd_iommu=on efi=disable_early_pci_dma iommu.passthrough=0 iommu.strict=1 slab_nomerge init_on_alloc=1 init_on_free=1 pti=on vsyscall=none page_alloc.shuffle=1 randomize_kstack_offset=on extra_latent_entropy debugfs=off" zroot/ROOT
+zfs set org.zfsbootmenu:keysource="zroot/ROOT/ubuntu" zroot
+```
 
 ### Install ZFSBootMenu
 
