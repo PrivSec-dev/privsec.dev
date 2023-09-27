@@ -190,9 +190,11 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [BHIM](https://play.google.com/store/apps/details?id=in.org.npci.upiapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/135)
 - [Cent Mobile](https://play.google.com/store/apps/details?id=com.infrasofttech.CentralBank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/142)
 - [HDFC Bank](https://play.google.com/store/apps/details?id=com.snapwork.hdfc) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/138)
+- [iMobile Pay-Banking,Cards,Loan](https://play.google.com/store/apps/details?id=com.csam.icici.bank.imobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/296)
+- [IndOASIS Indian Bank MobileApp](https://play.google.com/store/apps/details?id=com.IndianBank.IndOASIS) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/293)
 - [Kotak - 811 & Mobile Banking](https://play.google.com/store/apps/details?id=com.msf.kbank.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/137)
-- [PhonePe](https://play.google.com/store/apps/details?id=com.phonepe.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/134)
 - [Paytm](https://play.google.com/store/apps/details?id=net.one97.paytm) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/140)
+- [PhonePe](https://play.google.com/store/apps/details?id=com.phonepe.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/134)
 - [Union Bank of India - nxt](https://play.google.com/store/apps/details?id=com.infrasoft.uboi) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/141)
 - [YONO SBI](https://play.google.com/store/apps/details?id=com.sbi.lotusintouch) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/79)
 
@@ -269,6 +271,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Kantor Walutowy Alior Banku](https://play.google.com/store/apps/details?id=pl.alior.mobile.exchange.prd) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/172)
 - [mBank PL](https://play.google.com/store/apps/details?id=pl.mbank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/136)
 - [Moje ING mobile](https://play.google.com/store/apps/details?id=pl.ing.mojeing) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/169)
+- [PeoPay](https://play.google.com/store/apps/details?id=softax.pekao.powerpay) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/298)
 
 ### Portugal
 
@@ -341,7 +344,6 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [BCN Mobile banking](https://play.google.com/store/apps/details?id=com.bcn.android.mbanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/145)
 - [BCV Mobile](https://play.google.com/store/apps/details?id=ch.bcv.mobile.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/231)
 - [Credit Suisse](https://play.google.com/store/apps/details?id=com.csg.cs.dnmb) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/72)
-github.com/PrivSec-dev/banking-apps-compat-report/issues/145)
 - [debiX+](https://play.google.com/store/apps/details?id=com.sixgroup.debixplus) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/227)
 - [neon - your account app](https://play.google.com/store/apps/details?id=com.neonbanking.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/207)
 - [Prepaid TWINT & other banks](https://play.google.com/store/apps/details?id=ch.twint.payment) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/228)
@@ -384,7 +386,7 @@ github.com/PrivSec-dev/banking-apps-compat-report/issues/145)
 - [Lloyds Bank Mobile Banking](https://play.google.com/store/apps/details?id=com.grppl.android.shell.CMBlloydsTSB73) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/53)
 - [Marcus by Goldman Sachs](https://play.google.com/store/apps/details?id=com.marcus.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/212)
 - [Monzo Bank](https://play.google.com/store/apps/details?id=co.uk.getmondo) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/58)
-- [Metro Bank](https://play.google.com/store/apps/details?id=co.uk.getmondo) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/209)
+- [Metro Bank](https://play.google.com/store/apps/details?id=uk.co.metrobankonline.mobile.android.production) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/209)
 - [Paysend Money Transfer App](https://play.google.com/store/apps/details?id=com.paysend.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/222)
 - [Revolut](https://play.google.com/store/apps/details?id=com.revolut.revolut) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/90)
 - [Santander UK](https://play.google.com/store/apps/details?id=uk.co.santander.santanderUK) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/210)
@@ -444,14 +446,14 @@ There are several methods for GrapheneOS users to contribute their banking app r
 | :--- | :--- | :---: |
 | **GitHub** | Fill out form on [issue-tracker](https://github.com/PrivSec-dev/banking-apps-compat-report/issues) using your GitHub account | [`SUBMIT REPORT`](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/new?assignees=&labels=&template=app_report.yml) |
 | **Non-GitHub** | View gist → Raw → Save template markdown file to fill out. | [`Gist`](https://gist.github.com/akc3n/e845078ddbbb28ada0dd055c51ec45af) |
-| Curl | Terminal → `curl -O` → paste copied url (gist form `.md` template) ⟶ | [`Copy link address`](https://gist.githubusercontent.com/akc3n/e845078ddbbb28ada0dd055c51ec45af/raw/5fdacb267aad5fa95ebf576cdcbd319f80bf9d12/banking-app-report-issue-form.md) |
+| Curl | Terminal → `curl -O` → paste copied url (gist form `.md` template) ⟶ | [`Copy link address`](https://gist.githubusercontent.com/akc3n/e845078ddbbb28ada0dd055c51ec45af/raw/dad087a1bafb838555423f41517e1998b710d1b4/banking-app-report-issue-form.md) |
 | Google Form | N/A at the moment | N/A |
 | [OhMyForm](https://github.com/ohmyform/ohmyform) | N/A at the moment, need to test | N/A |
 
 Alternatively, curl and pipe the output directly into vi/vim/neovim for editing:
 
 ```bash
-curl https://gist.githubusercontent.com/akc3n/e845078ddbbb28ada0dd055c51ec45af/raw/5fdacb267aad5fa95ebf576cdcbd319f80bf9d12/banking-app-report-issue-form.md\?T | nvim -
+curl https://gist.githubusercontent.com/akc3n/e845078ddbbb28ada0dd055c51ec45af/raw/dad087a1bafb838555423f41517e1998b710d1b4/banking-app-report-issue-form.md\?T | nvim -
 ```
 
 ### Update status of app report
