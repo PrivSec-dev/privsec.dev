@@ -341,7 +341,6 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [BCN Mobile banking](https://play.google.com/store/apps/details?id=com.bcn.android.mbanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/145)
 - [BCV Mobile](https://play.google.com/store/apps/details?id=ch.bcv.mobile.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/231)
 - [Credit Suisse](https://play.google.com/store/apps/details?id=com.csg.cs.dnmb) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/72)
-github.com/PrivSec-dev/banking-apps-compat-report/issues/145)
 - [debiX+](https://play.google.com/store/apps/details?id=com.sixgroup.debixplus) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/227)
 - [neon - your account app](https://play.google.com/store/apps/details?id=com.neonbanking.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/207)
 - [Prepaid TWINT & other banks](https://play.google.com/store/apps/details?id=ch.twint.payment) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/228)
@@ -444,14 +443,14 @@ There are several methods for GrapheneOS users to contribute their banking app r
 | :--- | :--- | :---: |
 | **GitHub** | Fill out form on [issue-tracker](https://github.com/PrivSec-dev/banking-apps-compat-report/issues) using your GitHub account | [`SUBMIT REPORT`](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/new?assignees=&labels=&template=app_report.yml) |
 | **Non-GitHub** | View gist → Raw → Save template markdown file to fill out. | [`Gist`](https://gist.github.com/akc3n/e845078ddbbb28ada0dd055c51ec45af) |
-| Curl | Terminal → `curl -O` → paste copied url (gist form `.md` template) ⟶ | [`Copy link address`](https://gist.githubusercontent.com/akc3n/e845078ddbbb28ada0dd055c51ec45af/raw/5fdacb267aad5fa95ebf576cdcbd319f80bf9d12/banking-app-report-issue-form.md) |
+| Curl | Terminal → `curl -O` → paste copied url (gist form `.md` template) ⟶ | [`Copy link address`](https://gist.githubusercontent.com/akc3n/e845078ddbbb28ada0dd055c51ec45af/raw/dad087a1bafb838555423f41517e1998b710d1b4/banking-app-report-issue-form.md) |
 | Google Form | N/A at the moment | N/A |
 | [OhMyForm](https://github.com/ohmyform/ohmyform) | N/A at the moment, need to test | N/A |
 
 Alternatively, curl and pipe the output directly into vi/vim/neovim for editing:
 
 ```bash
-curl https://gist.githubusercontent.com/akc3n/e845078ddbbb28ada0dd055c51ec45af/raw/5fdacb267aad5fa95ebf576cdcbd319f80bf9d12/banking-app-report-issue-form.md\?T | nvim -
+curl https://gist.githubusercontent.com/akc3n/e845078ddbbb28ada0dd055c51ec45af/raw/dad087a1bafb838555423f41517e1998b710d1b4/banking-app-report-issue-form.md\?T | nvim -
 ```
 
 ### Update status of app report
