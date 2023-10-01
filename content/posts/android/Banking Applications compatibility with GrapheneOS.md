@@ -178,6 +178,11 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 - [SC Mobile Ghana](https://play.google.com/store/apps/details?id=com.breezeghana.ui) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/174)
 
+### Greece
+
+- [Eurobank Mobile App](https://play.google.com/store/apps/details?id=com.EurobankEFG) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/302)
+- [winbank app (Piraeus Bank S.A.)](https://play.google.com/store/apps/details?id=gr.winbank.mobile.redesign) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/301)
+
 ### Hungary
 
 - [OTP Bank HU](https://play.google.com/store/apps/details?id=hu.otpbank.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/245)
@@ -244,7 +249,6 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Netherlands
 
-<!-- FIXME: ASN Bank url -->
 - [ABN AMRO](https://play.google.com/store/apps/details?id=com.abnamro.nl.mobile.payments) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/108)
 - [ASN Bank (De Volksbank)](https://play.google.com/store/apps/details?id=nl.devolksbank.asn.bankieren) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/105)
 - [ASN Mobiel Betalen](https://play.google.com/store/apps/details?id=nl.asnbank.mobielbetalen) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/105)
@@ -280,6 +284,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Portugal
 
+- [ActivoBank](https://play.google.com/store/apps/details?id=wit.android.bcpBankingApp.activoBank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/300)
 - [Caixadirecta Empresas](https://play.google.com/store/apps/details?id=pt.cgd.caixadirectaempresas) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/214)
 - [Caixadirecta Particulares](https://play.google.com/store/apps/details?id=cgd.pt.caixadirectaparticulares) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/120)
 - [CA Mobile](https://play.google.com/store/apps/details?id=ca.mobile.explorer) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/288)
