@@ -248,7 +248,7 @@ If you have trouble connecting to RCS, try disabling your VPN and the VPN killsw
 
 ### Google Fi
 
-Google Fi provides [opportunistic end to end encryption](https://fi.google.com/about/end-to-end-encrypted-calls) for phone calls between Android Fi users. Google also includes [Fi VPN](https://support.google.com/fi/answer/9040000?visit_id=638021545722263144-1946671988&p=vpn_help&rd=1) in the subscription plan. On the Pixel 4 and above, Google Fi will take advantage of the [virtual carrier network](https://www.gstatic.com/fi/wormhole/whitepaper-a00cc4732620f382da5b7aac2bcb6905f970ba6b.pdf) to proxy hotspot, tethering and secondary user profiles traffic.
+Google Fi provides [opportunistic end&#8209;to&#8209;end encryption](https://fi.google.com/about/end-to-end-encrypted-calls) for phone calls between Fi users on Android and [includes a VPN service](https://support.google.com/fi/answer/9040000). Fi also implements a unique privacy&#8209;bolstering [virtual carrier network](https://www.gstatic.com/fi/wormhole/whitepaper-a00cc4732620f382da5b7aac2bcb6905f970ba6b.pdf) architecture on supported devices, but it is [temporarily disabled](https://support.google.com/fi/answer/9040000).
 
 This is not without its caveats:
 - Google Fi requires Play Services and the [Fi app](https://play.google.com/store/apps/details?id=com.google.android.apps.tycho&hl=en_US) to work properly. Without Play Services, all of the features mentioned above, along with visual voicemail will not work. SMS messages will have random strings added at the end of each of them.
