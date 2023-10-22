@@ -52,7 +52,7 @@ Pattern unlock is extremely insecure and should be avoided at all cost. This is 
 
 If you trust the hardware enforced rate limiting features (typically done by the [Secure Element](https://en.wikipedia.org/wiki/Secure_cryptoprocessor) or [Trusted Execution Environment](https://en.wikipedia.org/wiki/Trusted_execution_environment)) of your device, a 8+ digit PIN may be sufficient.
 
-Ideally, you should be using a 8-10 word [diceware passphrase](https://en.wikipedia.org/wiki/Diceware) to secure your phone. This would make your phone unlock practically impossible to bruteforce, regardless of whether there is proper rate limiting or not.
+Ideally, you should use a randomly generated passphrase of 8&nbsp;words or longer to secure your phone. These are practically impossible to bruteforce with current technology, regardless of the efficacy of any ratelimiting that may be present.
 
 ## Setup Auditor
 
@@ -107,9 +107,9 @@ On GrapheneOS, this feature is enabled by default. On DivestOS, it is not enable
 
 USB peripherals should be disabled or set to only be allowed when the device is unlocked if possible.
 
-On GrapheneOS, you can adjust this settings in **Settings** → **Security** → **USB accessories**. The OS defaults to "Allow new USB peripherals when unlocked".
+On GrapheneOS, you can adjust this setting in **Settings** → **Security** → **USB accessories**. The OS defaults to "Allow new USB peripherals when unlocked".
 
-On DivestOS, you can adjust this settings in **Settings** → **Privacy** → **Trust** → **Restrict USB**. The OS defaults to "Always allow USB connections", and you should change it to one of the two other options as mentioned above.
+On DivestOS, you can adjust this setting in **Settings** → **Privacy** → **Trust** → **Restrict USB**. The OS defaults to "Always allow USB connections", and you should change it to one of the two other options as mentioned above.
 
 ## Media Access
 Quite a few applications allow you to "share" a file with them for media upload. If you want to, for example, tweet a picture to Twitter, do not grant Twitter access to your "media and photos", because it will have access to all of your pictures then. Instead, go to your file manager (documentsUI), hold onto the picture, then share it with Twitter.
@@ -176,9 +176,9 @@ I do not recommend that you use F-Droid at all unless you have no other choice t
 
 ### GitHub
 
-You can also obtain your apps directly from their GitHub repositories. In most cases, there would be a pre-built APK for you to download. You can verify the signature of the downloaded using apksinger:
+You can also obtain your apps directly from their GitHub repositories. In most cases, there would be a pre-built APK for you to download. You can verify the signature of the downloaded using apksigner:
 
-- Install the [Android Studio](https://developer.android.com/studio) which includes `apksinger`. On macOS, `apksigner` can be found at `~/Library/Android/sdk/build-tools/<version>/apksigner`.
+- Install [Android Studio](https://developer.android.com/studio) which includes `apksigner`. On macOS, `apksigner` can be found at `~/Library/Android/sdk/build-tools/<version>/apksigner`.
 - Run `apksigner verify --print-certs --verbose myCoolApp.apk` to verify the certificate of the apk.
 
 After you have verified the signature of the apk and installed it on your phone, there are several strategies you can use to keep the application up-to-date.
@@ -248,7 +248,7 @@ If you have trouble connecting to RCS, try disabling your VPN and the VPN killsw
 
 ### Google Fi
 
-Google Fi provides [opportunistic end to end encryption](https://fi.google.com/about/end-to-end-encrypted-calls) for phone calls between Android Fi users. Google also includes [Fi VPN](https://support.google.com/fi/answer/9040000?visit_id=638021545722263144-1946671988&p=vpn_help&rd=1) in the subscription plan. On the Pixel 4 and above, Google Fi will take advatage of the [virtual carrier network](https://www.gstatic.com/fi/wormhole/whitepaper-a00cc4732620f382da5b7aac2bcb6905f970ba6b.pdf) to proxy hotspot, tetherting and secondary user profiles traffic.
+Google Fi provides [opportunistic end&#8209;to&#8209;end encryption](https://fi.google.com/about/end-to-end-encrypted-calls) for phone calls between Fi users on Android and [includes a VPN service](https://support.google.com/fi/answer/9040000). Fi also implements a unique privacy&#8209;bolstering [virtual carrier network](https://www.gstatic.com/fi/wormhole/whitepaper-a00cc4732620f382da5b7aac2bcb6905f970ba6b.pdf) architecture on supported devices, but it is [temporarily disabled](https://support.google.com/fi/answer/9040000).
 
 This is not without its caveats:
 - Google Fi requires Play Services and the [Fi app](https://play.google.com/store/apps/details?id=com.google.android.apps.tycho&hl=en_US) to work properly. Without Play Services, all of the features mentioned above, along with visual voicemail will not work. SMS messages will have random strings added at the end of each of them.
