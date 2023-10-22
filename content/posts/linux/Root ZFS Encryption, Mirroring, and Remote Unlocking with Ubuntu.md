@@ -284,6 +284,32 @@ cp /boot/efi/EFI/ZBM/VMLINUZ.EFI /boot/efi/EFI/ZBM/VMLINUZ-BACKUP.EFI
 #### To use it with remote unlocking, you have to compile the package:
 
 ```bash
+git clone https://github.com/zbm-dev/zfsbootmenu
+cd zfsbootmenu
+make
+make install
+
+echo 'Global:
+  ManageImages: true
+  BootMountPoint: /boot/efi
+  DracutConfDir: /etc/zfsbootmenu/dracut.conf.d
+  PreHooksDir: /etc/zfsbootmenu/generate-zbm.pre.d
+  PostHooksDir: /etc/zfsbootmenu/generate-zbm.post.d
+  InitCPIOConfig: /etc/zfsbootmenu/mkinitcpio.conf
+Components:
+  ImageDir: /boot/efi/EFI/zbm
+  Versions: 3
+  Enabled: false
+  syslinux:
+    Config: /boot/syslinux/syslinux.cfg
+    Enabled: false
+EFI:
+  ImageDir: /boot/efi/EFI/zbm
+  Versions: false
+  Enabled: true
+Kernel:
+  CommandLine: ro quiet loglevel=0 quiet loglevel=4 spectre_v2=on spec_store_bypass_disable=on l1tf=full,force mds=full,nosmt tsx=off tsx_async_abort=full,nosmt kvm.nx_huge_pages=force nosmt=force l1d_flush=on mmio_stale_data=full,nosmt random.trust_bootloader=off random.trust_cpu=off intel_iommu=on amd_iommu=on efi=disable_early_pci_dma iommu.passthrough=0 iommu.strict=1 slab_nomerge init_on_alloc=1 init_on_free=1 pti=on vsyscall=none page_alloc.shuffle=1 randomize_kstack_offset=on extra_latent_entropy debugfs=off' | tee /etc/zfsbootmenu/config.yaml
+
 git clone https://github.com/dracut-crypt-ssh/dracut-crypt-ssh
 apt install -y libblkid-dev
 cd dracut-crypt-ssh
