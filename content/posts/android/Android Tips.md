@@ -154,7 +154,7 @@ Carriers can track your coarse location through various means. In order to avoid
 
 - Turn on Airplane mode. This will turn off the baseband modem and your phone will no longer broadcast the IMEI/IMSI to the nearby towers. Note that your phone can still talk to the tower regardless of whether a SIM card inside - this is why `911` calls work. Simply removing the SIM cards is not enough.
 
-- Disable the eSIM management app after you have disabled all of the eSIMs. With certain carriers, the eSIM management app will connect to the provisioning server to check for eSIM update, even if the eSIM is disabled.
+- Disable the eSIM management app after you have disabled all of the eSIMs. With certain carriers, the eSIM management app will connect to the provisioning server to check for eSIM update, even if the eSIMs are disabled.
 
 **Note**: I have seen recommendations to use PGPP as a carrier to randomize the IMSI by regularly reprovisioning the eSIM. This is unlikely to be beneficial, as the IMEI broadcasted by the baseband modem would remain unchanged, allowing the carriers to track you anyways.
 
