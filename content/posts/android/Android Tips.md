@@ -146,7 +146,7 @@ If your Android-based operating system does not expose this setting in the Setti
 
 ## Carrier Tracking
 
-Carriers can track your coarse location through various means. In order to avoid this type of tracking, you need to do the followings:
+Carriers can track your coarse location through various means. In order to avoid this type of tracking, you need to do the following:
 
 - Disable Wifi-Calling. Wifi-calling connections do not go through the VPN tunnel, and thus will reveal your Wifi IP address to the carrier.
 
