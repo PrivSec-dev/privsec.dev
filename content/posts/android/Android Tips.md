@@ -152,7 +152,7 @@ Carriers can track your coarse location through various means. In order to avoid
 
 - Disable the SIMs/eSIMs in **Settings** → **Network & internet** → **SIMs**. On GrapheneOS, if you are using an eSIM, you will need to enable the privileged eSIM management app before doing so. With certain carriers, there will be an ePDG server defined which the operating system will connect to outside of a VPN tunnel. While unlikely, a malicious carrier can track a user by giving them a unique ePDG server. 
 
-- Turn on Airplane mode. This will turn off the baseband modem and your phone will no longer broadcast the IMEI/IMSI to the nearby towers. Note that your phone can still talk to the tower regardless of whether a SIM card inside - this is why `911` calls work. Simply removing the SIM cards is not enough.
+- Turn on airplane mode. This will turn off the modem and disable all transmission to cell towers. Note that simply removing SIM cards is not enough&nbsp;--- your phone will still connect to cellular networks to permit emergency calling.
 
 - Disable the eSIM management app after you have disabled all of the eSIMs. With certain carriers, the eSIM management app will connect to the provisioning server to check for eSIM update, even if the eSIMs are disabled.
 
