@@ -254,7 +254,7 @@ Google Fi provides [opportunistic end&#8209;to&#8209;end encryption](https://fi.
 
 This is not without its caveats:
 - Google Fi requires Play Services and the [Fi app](https://play.google.com/store/apps/details?id=com.google.android.apps.tycho&hl=en_US) to work properly. Without Play Services, all of the features mentioned above, along with visual voicemail will not work. SMS messages will have random strings added at the end of each of them.
-- On GrapheneOS, Fi VPN will not work. Fi VPN requires privileged integration with the operating system which GrapheneOS developers are not willing to bundle, so it will likely never work in the foreseeable future. 
+- On GrapheneOS, Fi&nbsp;VPN will not function. Fi&nbsp;VPN requires privileged integration with the operating system which is unlikely to be supported for the foreseeable future. 
 - Google Fi WiFi-Calling does not work behind a VPN.
 
 If you are living in the United States and use the stock operating system, I highly recommend using Google Fi as the carrier to take advantage of the end to end encrypted calls and Fi VPN. Pixel 4 and bove users will benefit the most from the VCN as mentioned.
