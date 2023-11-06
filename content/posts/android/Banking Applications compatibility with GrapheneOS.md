@@ -327,6 +327,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Grab - Taxi & Food Delivery](https://play.google.com/store/apps/details?id=com.grabtaxi.passenger) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/316)
 - [GXS Bank](https://play.google.com/store/apps/details?id=sg.com.gxs.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/315)
 - [HLF FA$TPAY](https://play.google.com/store/apps/details?id=com.hongleongfinance.hlf) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/269)
+- [iChange](https://play.google.com/store/apps/details?id=com.iapps.slide.userapp.ichange) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/320)
 - [Instarem: Send money overseas](https://play.google.com/store/apps/details?id=com.instarem.mobileapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/272)
 - [OCBC Digital - Mobile Banking](https://play.google.com/store/apps/details?id=com.ocbc.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/146)
 - [SFL Go](https://play.google.com/store/apps/details?id=sg.sfl.ib) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/273)
