@@ -163,6 +163,8 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Deutsche Bank Mobile](https://play.google.com/store/apps/details?id=com.db.pwcc.dbmobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/38)
 - [Digitales Bezahlen](https://play.google.com/store/apps/details?id=de.fiduciagad.android.wlwallet) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/160)
 - [DKB](https://play.google.com/store/apps/details?id=com.dkbcodefactory.banking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/106)
+- [finanzen.net zero Aktien & ETF](https://play.google.com/store/apps/details?id=de.gratisbroker.android.mobileapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/321)
+- [finanzen.net zero Secure TAN](https://play.google.com/store/apps/details?id=de.gratisbroker.android.securetan) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/322)
 - [flatex next: Aktien und ETF](https://play.google.com/store/apps/details?id=de.xcom.flatexde) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/59)
 - [ING Banking to go](https://play.google.com/store/apps/details?id=de.ingdiba.bankingapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/48)
 - [Klarna | Shop now. Pay later.](https://play.google.com/store/apps/details?id=com.myklarnamobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/314)
@@ -394,6 +396,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 ### Ukraine
 
 - [Privat24](https://play.google.com/store/apps/details?id=ua.privatbank.ap24) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/124)
+- [monobank — банк у телефоні](https://play.google.com/store/apps/details?id=com.ftband.mono) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/323)
 
 ### United Arab Emirates
 
