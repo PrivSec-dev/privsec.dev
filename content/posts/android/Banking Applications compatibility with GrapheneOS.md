@@ -359,6 +359,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 - [Avanza](https://play.google.com/store/apps/details?id=se.avanzabank.androidapplikation) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/11)
 - [BankID säkerhetsapp](https://play.google.com/store/apps/details?id=com.bankid.bus) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/8)
+- [Handelsbanken SE - Privat](https://play.google.com/store/apps/details?id=com.handelsbanken.mobile.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/324)
 - [Kivra Sweden](https://play.google.com/store/apps/details?id=com.kivra.Kivra) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/193)
 - [Länsförsäkringar](https://play.google.com/store/apps/details?id=se.lf.mobile.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/91)
 - [Mobilbank SE — Danske Bank](https://play.google.com/store/apps/details?id=com.danskebank.mobilebank3.se) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/4)
