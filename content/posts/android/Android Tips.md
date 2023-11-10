@@ -148,9 +148,9 @@ If your Android-based operating system does not expose this setting in the Setti
 
 Carriers can track your coarse location through various means. In order to avoid this type of tracking, you need to do the following:
 
-- Disable WiFi-Calling. WiFi-Calling connections do not go through the VPN tunnel, and thus will reveal your WiFi IP address to the carrier.
+- Disable Wi&#8209;Fi calling. Wi&#8209;Fi calling connections bypass the system VPN and thus reveal the local network's public IP&nbsp;address to the carrier.
 
-- Disable the SIMs/eSIMs in **Settings** → **Network & internet** → **SIMs**. On GrapheneOS, if you are using an eSIM, you will need to enable the privileged eSIM management app before doing so. With certain carriers, there will be an ePDG server defined which the operating system will connect to outside of a VPN tunnel. While unlikely, a malicious carrier can track a user by giving them a unique ePDG server. 
+- Disable the SIMs/eSIMs in **Settings** → **Network & internet** → **SIMs**. On GrapheneOS, if you are using an eSIM, you will need to enable the privileged eSIM management app before doing so. With certain carriers, there will be an ePDG server defined which the operating system will connect to outside of a VPN tunnel. While unlikely, a malicious carrier can track a user by giving them a unique ePDG server.
 
 - Turn on airplane mode. This will turn off the modem and disable all transmission to cell towers. Note that simply removing SIM cards is not enough&nbsp;--- your phone will still connect to cellular networks to permit emergency calling.
 
@@ -254,8 +254,8 @@ Google Fi provides [opportunistic end&#8209;to&#8209;end encryption](https://fi.
 
 This is not without its caveats:
 - Google Fi requires Play Services and the [Fi app](https://play.google.com/store/apps/details?id=com.google.android.apps.tycho&hl=en_US) to work properly. Without Play Services, all of the features mentioned above, along with visual voicemail will not work. SMS messages will have random strings added at the end of each of them.
-- On GrapheneOS, Fi&nbsp;VPN will not function. Fi&nbsp;VPN requires privileged integration with the operating system which is unlikely to be supported for the foreseeable future. 
-- Google Fi WiFi-Calling does not work behind a VPN.
+- On GrapheneOS, Fi&nbsp;VPN will not function. Fi&nbsp;VPN requires privileged integration with the operating system which is unlikely to be supported for the foreseeable future.
+- Google Fi Wi&#8209;Fi calling does not work behind a VPN.
 
 If you are living in the United States and use the stock operating system, I highly recommend using Google Fi as the carrier to take advantage of the end to end encrypted calls and Fi VPN. Pixel 4 and bove users will benefit the most from the VCN as mentioned.
 
