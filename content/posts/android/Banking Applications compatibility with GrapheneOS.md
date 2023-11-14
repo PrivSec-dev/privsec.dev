@@ -203,6 +203,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 - [Axis Mobile: Pay, Invest & UPI](https://play.google.com/store/apps/details?id=com.axis.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/139)
 - [BHIM - MAKING INDIA CASHLESS](https://play.google.com/store/apps/details?id=in.org.npci.upiapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/135)
+- ~~[BOI Mobile](https://play.google.com/store/apps/details?id=com.boi.ua.android)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/329)
 - [Cent Mobile](https://play.google.com/store/apps/details?id=com.infrasofttech.CentralBank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/142)
 - [HDFC Bank MobileBanking App](https://play.google.com/store/apps/details?id=com.snapwork.hdfc) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/138)
 - [iMobile Pay-Banking,Cards,Loan](https://play.google.com/store/apps/details?id=com.csam.icici.bank.imobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/296)
@@ -210,8 +211,10 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Kotak Mobile Banking App](https://play.google.com/store/apps/details?id=com.msf.kbank.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/137)
 - [Paytm: Secure UPI Payments](https://play.google.com/store/apps/details?id=net.one97.paytm) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/140)
 - [PhonePe UPI, Payment, Recharge](https://play.google.com/store/apps/details?id=com.phonepe.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/134)
+- [PNB ONE](https://play.google.com/store/apps/details?id=com.Version1) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/328)
 - [Vyom - Union Bank of India](https://play.google.com/store/apps/details?id=com.infrasoft.uboi) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/141)
 - [YONO SBI: Banking & Lifestyle](https://play.google.com/store/apps/details?id=com.sbi.lotusintouch) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/79)
+- [Yono Lite SBI - Mobile Banking](https://play.google.com/store/apps/details?id=com.sbi.SBIFreedomPlus) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/327)
 
 ### Indonesia
 
@@ -335,6 +338,11 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [SFL Go](https://play.google.com/store/apps/details?id=sg.sfl.ib) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/273)
 - [SIF Mobile](https://play.google.com/store/apps/details?id=com.sif.retailbanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/270)
 - [Wise](https://play.google.com/store/apps/details?id=com.transferwise.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/266)
+
+### Slovakia
+
+- ~~[365.bank](https://play.google.com/store/apps/details?id=bank.sk365.app)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/326)
+- [Tatra banka](https://play.google.com/store/apps/details?id=sk.tb.ib.tatraandroid) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/325)
 
 ### Slovenia
 
