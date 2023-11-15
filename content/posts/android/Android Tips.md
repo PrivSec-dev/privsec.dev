@@ -144,17 +144,19 @@ GrapheneOS has the LTE only mode exposed in settings. You can set this by going 
 
 If your Android-based operating system does not expose this setting in the Settings app, or if you want to set your baseband modem to a less restrictive mode, dial `*#*#4636#*#*` then hit **Phone information**. Here, you can set preferred network type to just the generations that you intend to use. For example, if you only want to use 5G and 4G, you can set it to `NR/LTE`.
 
-Depending on the carrier, you may need to enable additional network types for Wifi calling to work. For example, Google Fi requires WCDMA for this feature. Thus, if you want 5G, 4G, and Wifi calling for Google Fi, you need to set the network type as `NR/LTE/WCDMA`.
-
 ## Carrier Tracking
 
-Carriers can track your coarse location via cell towers using the IMSI and IMEI broadcasted by your baseband modem. In order to avoid this type of tracking, you have to enable the airplane mode which would disable the baseband modem. In addition, you will also need to disable Wifi calling to avoid IP based tracking by the carrier, as its connection will not go through your VPN tunnel.
+Carriers can track your coarse location through various means. In order to avoid this type of tracking, you need to do the following:
 
-I have seen several common suggestions in the privacy community to mitigate this problem which do not actually work:
+- Disable Wi&#8209;Fi calling. Wi&#8209;Fi calling connections bypass the system VPN and thus reveal the local network's public IP&nbsp;address to the carrier.
 
-- **Removing the SIM Card**: The baseband modem will continue to contact the cell towers with its IMEI to prepare for emergency calls. In fact, this is how you are able to call `911` even when you do not have a SIM card inserted.
+- Disable the SIMs/eSIMs in **Settings** → **Network & internet** → **SIMs**. On GrapheneOS, if you are using an eSIM, you will need to enable the privileged eSIM management app before doing so. With certain carriers, there will be an ePDG server defined which the operating system will connect to outside of a VPN tunnel. While unlikely, a malicious carrier can track a user by giving them a unique ePDG server.
 
-- **Using PGPP as a carrier**: The service randomizes your IMSI by regularly reprovisioning your eSIM. However, the IMEI broadcasted by the baseband modem would remain unchanged, allowing the carriers to track you anyways.
+- Turn on airplane mode. This will turn off the modem and disable all transmission to cell towers. Note that simply removing SIM cards is not enough&nbsp;--- your phone will still connect to cellular networks to permit emergency calling.
+
+- Disable the eSIM management app after you have disabled all of the eSIMs. With certain carriers, the eSIM management app will connect to the provisioning server to check for eSIM update, even if the eSIMs are disabled.
+
+On a related note, I have seen recommendations to use PGPP as a carrier to randomize the IMSI by regularly reprovisioning the eSIM. This is unlikely to be beneficial, as the IMEI baked into the modem would remain unchanged, allowing carriers to track you anyways.
 
 ## Where to Get Your Applications
 
@@ -252,7 +254,9 @@ Google Fi provides [opportunistic end&#8209;to&#8209;end encryption](https://fi.
 
 This is not without its caveats:
 - Google Fi requires Play Services and the [Fi app](https://play.google.com/store/apps/details?id=com.google.android.apps.tycho&hl=en_US) to work properly. Without Play Services, all of the features mentioned above, along with visual voicemail will not work. SMS messages will have random strings added at the end of each of them.
-- On GrapheneOS, Fi VPN and end to end encrypted calls with Fi will not work. Fi VPN requires privileged integration with the operating system which GrapheneOS developers are not willing to bundle, so it will likely never work in the foreseeable future. I am not entirely sure why end to end encrypted calls with FI are not working at the moment.
+- On GrapheneOS, Fi&nbsp;VPN will not function. Fi&nbsp;VPN requires privileged integration with the operating system which is unlikely to be supported for the foreseeable future.
+- The Google Fi app needs to be installed in the owner profile for SIM/eSIM activation.
+- Google Fi Wi&#8209;Fi calling does not work behind a VPN with the killswitch enabled in the owner profile.
 
 If you are living in the United States and use the stock operating system, I highly recommend using Google Fi as the carrier to take advantage of the end to end encrypted calls and Fi VPN. Pixel 4 and bove users will benefit the most from the VCN as mentioned.
 
