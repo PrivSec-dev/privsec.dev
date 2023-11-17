@@ -415,7 +415,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 ### United Kingdom
 
 - [Amex United Kingdom](https://play.google.com/store/apps/details?id=com.americanexpress.android.acctsvcs.uk) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/40)
-- [Bank of Scotland Mobile App](https://play.google.com/store/apps/details?id=com.grppl.android.shell.BOS) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/243)
+- ~~[Bank of Scotland Mobile App](https://play.google.com/store/apps/details?id=com.grppl.android.shell.BOS)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/243)
 - [Barclaycard](https://play.google.com/store/apps/details?id=com.barclays.bca) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/42)
 - [Chase UK](https://play.google.com/store/apps/details?id=com.chase.intl) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/69)
 - [The Co-operative Bank](https://play.google.com/store/apps/details?id=com.cooperativebank.bank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/205)
