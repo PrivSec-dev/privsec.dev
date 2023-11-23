@@ -17,7 +17,7 @@ First time visitors here should read the official usage guide on [banking apps](
 
 **Important**: [SafetyNet is being replaced by Play Integrity API](https://akc3n.page/posts/banking-app-issues/#safetynet-replaced-by-play-integrity-api) and may cause your banking app to suddenly stop working after an update.
 
-> _**If your newly installed banking app aborts at first launch or suddenly stops working after your app updates, then you should try one of these [possible solutions to resolve the compatibiity issue](https://akc3n.page/posts/banking-app-issues/#possible-solutions).**_
+> _**If your newly installed banking app aborts at first launch or suddenly stops working after your app updates, then you should try one of these [possible work around solutions to resolve the compatibiity issue](https://discuss.grapheneos.org/d/8330-app-compatibility-with-grapheneos).**_
 
 ---
 
@@ -490,14 +490,12 @@ There are several methods for GrapheneOS users to contribute their banking app r
 | :--- | :--- | :---: |
 | **GitHub** | Fill out form on [issue-tracker](https://github.com/PrivSec-dev/banking-apps-compat-report/issues) using your GitHub account | [`SUBMIT REPORT`](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/new?assignees=&labels=&template=app_report.yml) |
 | **Non-GitHub** | View gist → Raw → Save template markdown file to fill out. | [`Gist`](https://gist.github.com/akc3n/e845078ddbbb28ada0dd055c51ec45af) |
-| Curl | Terminal → `curl -O` → paste copied url (gist form `.md` template) ⟶ | [`Copy link address`](https://gist.githubusercontent.com/akc3n/e845078ddbbb28ada0dd055c51ec45af/raw/dad087a1bafb838555423f41517e1998b710d1b4/banking-app-report-issue-form.md) |
-| Google Form | N/A at the moment | N/A |
-| [OhMyForm](https://github.com/ohmyform/ohmyform) | N/A at the moment, need to test | N/A |
+| Curl | Terminal → `curl -O` → paste copied url (gist form `.md` template) ⟶ | [`Copy link address`](https://gist.githubusercontent.com/akc3n/e845078ddbbb28ada0dd055c51ec45af/raw/1b1b93fec9f14e934a39f27eff39f3c6792046db/banking-app-report-issue-form.md) |
 
 Alternatively, curl and pipe the output directly into vi/vim/neovim for editing:
 
 ```bash
-curl https://gist.githubusercontent.com/akc3n/e845078ddbbb28ada0dd055c51ec45af/raw/dad087a1bafb838555423f41517e1998b710d1b4/banking-app-report-issue-form.md\?T | nvim -
+curl https://gist.githubusercontent.com/akc3n/e845078ddbbb28ada0dd055c51ec45af/raw/1b1b93fec9f14e934a39f27eff39f3c6792046db/banking-app-report-issue-form.md\?T | nvim -
 ```
 
 ### Update status of app report
@@ -506,7 +504,7 @@ Please do not open a new issue to update the status of a banking app report!
 
 Use the [issue tracker to search](https://github.com/PrivSec-dev/banking-apps-compat-report/issues) for the banking app name listed above in the [International banking apps](#international-banking-apps) section and add a comment to that report. 
 
-If you are a non-github user and have tried every combination suggested for [possible solutions](https://akc3n.page/banking-issues) without being unable to resolving your specific banking app compatibiliity issue, then [contact me](https://privsec.dev/about#akc3n) afterwards please.
+If you are a non-github user and have tried every combination suggested in these [possible workaround solutions](https://discuss.grapheneos.org/d/8330-app-compatibility-with-grapheneos) without being unable to resolving your specific banking app compatibiliity issue, then [contact me](https://privsec.dev/about#akc3n) afterwards please.
 
 ---
 
