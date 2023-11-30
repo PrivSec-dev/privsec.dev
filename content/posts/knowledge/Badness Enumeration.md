@@ -33,7 +33,7 @@ The best way to do DNS filtering is to use a VPN provider which has this feature
 
 Antiviruses are highly privileged processes with access to virtually all of your files and data, parsing through them trying to find something that matches a known bad signature. Beyond the fact that you need to trust the Antivirus company to not exfiltrate your sensitive data and that the signature list will never have all of the malware in existence, a vulnerable parser could lead to a system compromise. The [Abusing File Processing in Malware Detectors for Fun and Profit](/researches/Abusing-File-Processing-in-Malware-Detectors-for-Fun-and-Profit.pdf) research paper by Suman Jana and Vitaly Shmatikov discusses this in detail.
 
-Here are some other examples of Anviruses being attack surfaces on their own:
+Here are some other examples of Antiviruses being attack surfaces on their own:
 - [Arbitrary Code Execution with Avast's Javascript Interpreter](https://github.com/taviso/avscript)
 - [Memory Corruption with Bitdefender](https://landave.io/2020/11/bitdefender-upx-unpacking-featuring-ten-memory-corruptions/)
 - [Kaspersky in the Middle](https://web.archive.org/web/20210729054039/https://palant.info/2019/08/19/kaspersky-in-the-middle-what-could-possibly-go-wrong/)
