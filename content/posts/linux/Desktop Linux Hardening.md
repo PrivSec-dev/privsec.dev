@@ -320,7 +320,7 @@ Further reading:
 ##### DMA mitigations
 
 ```
-intel_iommu=on amd_iommu=on efi=disable_early_pci_dma iommu.passthrough=0 iommu.strict=1
+intel_iommu=on amd_iommu=force_isolation efi=disable_early_pci_dma iommu=force iommu.passthrough=0 iommu.strict=1
 ```
 
 [Direct memory access (DMA) attacks](https://en.wikipedia.org/wiki/DMA_attack) can be mitigated via IOMMU and [disabling certain kernel modules](#kernel-modules). Furthermore, [strict enforcement of IOMMU TLB invalidation](https://github.com/Kicksecure/security-misc/blob/master/etc/default/grub.d/40_enable_iommu.cfg) should be applied so devices will never be able to access stale data contents.
