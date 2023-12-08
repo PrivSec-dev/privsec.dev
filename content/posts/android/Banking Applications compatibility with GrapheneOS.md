@@ -17,7 +17,7 @@ First time visitors here should read the official usage guide on [banking apps](
 
 **Important**: [SafetyNet is being replaced by Play Integrity API](https://akc3n.page/posts/banking-app-issues/#safetynet-replaced-by-play-integrity-api) and may cause your banking app to suddenly stop working after an update.
 
-> _**If your newly installed banking app aborts at first launch or suddenly stops working after your app updates, then you should try one of these [possible work around solutions to resolve the compatibiity issue](https://discuss.grapheneos.org/d/8330-app-compatibility-with-grapheneos).**_
+> _**If your newly installed banking app aborts at first launch or suddenly stops working after your app updates, then you should try one of these [possible work around solutions to resolve the compatibility issue](https://discuss.grapheneos.org/d/8330-app-compatibility-with-grapheneos).**_
 
 ---
 

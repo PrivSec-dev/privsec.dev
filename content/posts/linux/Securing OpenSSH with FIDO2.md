@@ -70,6 +70,6 @@ Adding `sk-ssh-ed25519@openssh.com` to `PubkeyAcceptedKeyTypes` should suffice. 
 Restart the `sshd` service and try to connect to your server using your key handle (by passing `-i ~/.ssh/id_ed25519_sk` to `ssh` for instance). If that works for you (your FIDO2 security key should be needed to derive the real secret), feel free to remove your previous keys from `.ssh/authorized_keys` on your server.
 
 ## That's cool, right?
-If you don't have a security key, you can buy one from [YubiKey](https://www.yubico.com/fr/store/) (I'm very happy with my 5C NFC by the way), [Nitrokey](https://www.nitrokey.com/), [SoloKeys](https://solokeys.com/) or [OnlyKey](https://onlykey.io/) (to name a few). If you have an Android device with a hardware security module (HSM), such as the Google Pixels equipped with Titan M (Pixel 3+), you could even use them as bluetooth security keys.
+If you don't have a security key, you can buy one from [YubiKey](https://www.yubico.com/fr/store/) (I'm very happy with my 5C NFC by the way), [Nitrokey](https://www.nitrokey.com/), [SoloKeys](https://solokeys.com/) or [OnlyKey](https://onlykey.io/) (to name a few). If you have an Android device with a hardware security module (HSM), such as the Google Pixels equipped with Titan M (Pixel 3+), you could even use them as Bluetooth security keys.
 
 *No reason to miss out on the party if you can afford it!*
