@@ -33,5 +33,5 @@ Direct or private messages with individuals are end to end encrypted by default.
 
 ## Email
 
-Our mail server is hosted by Tommy on his own Dedicated Server collocated in the United Kingdom. Many of us use our @privsec.dev email as an alias and forward it to another email provider. The privacy of your emails with us is the same as with any other person you communicate with using this protocol - the hosting providers can read all of your conversations with us unless you are using PGP, and even when you use PGP there is no metadata protection.
+Our mail server is hosted by Tommy on his own Dedicated Server colocated in the United Kingdom. Many of us use our @privsec.dev email as an alias and forward it to another email provider. The privacy of your emails with us is the same as with any other person you communicate with using this protocol - the hosting providers can read all of your conversations with us unless you are using PGP, and even when you use PGP there is no metadata protection.
 
