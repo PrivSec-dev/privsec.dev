@@ -29,7 +29,7 @@ TOTP is one of the most common forms of MFA available. When you set up TOTP, you
 
 The time-limited code is then derived from the shared secret and the current time. As the code is only valid for a short time, without access to the shared secret, an adversary cannot generate new codes.
 
-If you have a [Yubikey](https://www.yubico.com/), you should store the "shared secrets" on the key itself using the [Yubico Authenticator](https://www.yubico.com/products/yubico-authenticator/) app. After the initial setup, the Yubico Authenticator will only expose the 6 digit code to the machine it is running on, but not the shared secret. Additional security can be set up by requiring touch confirmation, protecting digit codes not in used from a compromised operating system.
+If you have a [YubiKey](https://www.yubico.com/), you should store the "shared secrets" on the key itself using the [Yubico Authenticator](https://www.yubico.com/products/yubico-authenticator/) app. After the initial setup, the Yubico Authenticator will only expose the 6 digit code to the machine it is running on, but not the shared secret. Additional security can be set up by requiring touch confirmation, protecting digit codes not in used from a compromised operating system.
 
 Unlike [WebAuthn](#fido2-fast-identity-online), TOTP offers no protection against [phishing](https://en.wikipedia.org/wiki/Phishing) or reuse attacks. If an adversary obtains a valid code from you, they may use it as many times as they like until it expires (generally 30 seconds + grace period).
 
@@ -47,7 +47,7 @@ The service will then forward the one-time password to the Yubico OTP server for
 
 The Yubico validation server is a cloud based service, and you're placing trust in Yubico that their server won't be used to bypass your MFA or profile you. The public ID associated with Yubico OTP is reused on every website and could be another avenue for third-parties to profile you. Like TOTP, Yubico OTP does not provide phishing resistance.
 
-Yubico OTP is an inferior protocol compared to TOTP since TOTP does not need trust in a third-party server and most security keys that support Yubico OTP (namely the Yubikey and OnlyKey) supports TOTP anyway. Yubico OTP is still better than Push Confirmation, however.
+Yubico OTP is an inferior protocol compared to TOTP since TOTP does not need trust in a third-party server and most security keys that support Yubico OTP (namely the YubiKey and OnlyKey) supports TOTP anyway. Yubico OTP is still better than Push Confirmation, however.
 
 ### FIDO2 (Fast IDentity Online)
 

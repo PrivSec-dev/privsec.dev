@@ -221,7 +221,7 @@ The Advanced Protection Program provides enhanced threat monitoring and enables:
 
 In the past, Android security updates had to be shipped by the operating system vendor. Android has become more modular beginning with [Android 10](https://www.android.com/android-10/), and Google [can push security updates](https://blog.google/products/android-enterprise/android-10-security/) for **some** system components via the privileged Play Services.
 
-If you have an EOL device shipped with Android 10 or above (shipped beginnning 2020), you may better off sticking with the stock OS in the short term as opposed to running an insecure alternative operating system. This will allow you to receive **some** security fixes from Google, while not violating the Android security model and increasing your attack surface. You should still upgrade to a supported device as soon as possible.
+If you have an EOL device shipped with Android 10 or above (shipped beginning 2020), you may better off sticking with the stock OS in the short term as opposed to running an insecure alternative operating system. This will allow you to receive **some** security fixes from Google, while not violating the Android security model and increasing your attack surface. You should still upgrade to a supported device as soon as possible.
 
 ### Disable Advertising ID
 
@@ -258,6 +258,6 @@ This is not without its caveats:
 - The Google Fi app needs to be installed in the owner profile for SIM/eSIM activation.
 - Google Fi Wi&#8209;Fi calling does not work behind a VPN with the killswitch enabled in the owner profile.
 
-If you are living in the United States and use the stock operating system, I highly recommend using Google Fi as the carrier to take advantage of the end to end encrypted calls and Fi VPN. Pixel 4 and bove users will benefit the most from the VCN as mentioned.
+If you are living in the United States and use the stock operating system, I highly recommend using Google Fi as the carrier to take advantage of the end to end encrypted calls and Fi VPN. Pixel 4 and above, users will benefit the most from the VCN as mentioned.
 
 If you are using GrapheneOS and do not mind installing Sandboxed Play Services, Fi is still a better option than to other providers thanks to Google's general good security practices and the fact that you can enroll in the Advanced Protection Program to have much better protection for your account. Some other provides do not even have multi-factor authentication support, and most will not let you enforce FIDO2 as the authentication method.
