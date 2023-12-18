@@ -5,19 +5,24 @@ tags: ['Applications', 'Android', 'Banking', 'Compatibility', 'GrapheneOS']
 author: akc3n, Tommy
 ---
   
-A maintained _compatibility_ list of _working_ international **banking apps** that are tested, submitted, reviewed and published below.
-
-**[View list](#international-banking-apps) | [Submit report](#submit-a-new-app-report) | [Update report](#update-status-of-app-report)**
+**Maintained Compatibility List for International Banking Apps**    
+   
+This list includes banking apps that have been tested, submitted, reviewed, and verified as compatible.   
+    
+**[LIST](#international-banking-apps) | [SUBMIT](#submit-a-new-app-report) | [UPDATE](#update-status-of-app-report) | [POSSIBLE WORKAROUND SOLUTIONS](https://discuss.grapheneos.org/d/8330-app-compatibility-with-grapheneos)**  
 
 ## Introduction
 
-This is a crowd-sourced project dataset for [GrapheneOS](https://grapheneos.org)'s users that are on currently [supported devices](https://grapheneos.org/faq#supported-devices).
+Welcome to the crowd-sourced dataset for [GrapheneOS](https://grapheneos.org) users on currently [supported devices](https://grapheneos.org/faq#supported-devices).   
+  
+New visitors are encouraged to read the [official usage guide on banking apps](https://grapheneos.org/usage#banking-apps) for comprehensive details about how these apps function on GrapheneOS.  
 
-First time visitors here should read the official usage guide on [banking apps](https://grapheneos.org/usage#banking-apps) for detailed information explaining how banking apps work on GrapheneOS. 
+### IMPORTANT 
 
-**Important**: [SafetyNet is being replaced by Play Integrity API](https://akc3n.page/posts/banking-app-issues/#safetynet-replaced-by-play-integrity-api) and may cause your banking app to suddenly stop working after an update.
-
-> _**If your newly installed banking app aborts at first launch or suddenly stops working after your app updates, then you should try one of these [possible work around solutions to resolve the compatibility issue](https://discuss.grapheneos.org/d/8330-app-compatibility-with-grapheneos).**_
+Please read GrapheneOS's important announcement, officially released on Dec 1, 2023:  
+[Twitter](https://twitter.com/GrapheneOS/status/1730491676760633426) / [Nitter](https://nitter.cz/GrapheneOS/status/1730491676760633426) | [Mastodon](https://grapheneos.social/@GrapheneOS/111504057316755618) | [Bluesky](https://bsky.app/profile/grapheneos.org/post/3kfhrujfcih2m)   
+   
+Also available as a [pinned issue](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/342), detailing the latest developments about [SafetyNet's replacement by Play Integrity API](https://akc3n.page/posts/banking-app-issues/#safetynet-replaced-by-play-integrity-api), which could impact _some_ banking app's [compatibility](https://discuss.grapheneos.org/d/8330-app-compatibility-with-grapheneos#:~:text=issuecomment%2D1766887298%29-,Not%20compatible,-Due%20to%20the) with GrapheneOS after the app updates.  
 
 ---
 
@@ -120,6 +125,10 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Tangerine Mobile Banking](https://play.google.com/store/apps/details?id=ca.tangerine.clients.banking.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/16)
 - [TD Canada](https://play.google.com/store/apps/details?id=com.td) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/199)
 - [Wealthsimple - Grow your money](https://play.google.com/store/apps/details?id=com.wealthsimple.trade) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/117)
+
+### Chile
+
+- [Santander Chile](https://play.google.com/store/apps/details?id=cl.santander.smartphone) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/360)
 
 ### Czech Republic
 
@@ -259,6 +268,10 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Intesa Sanpaolo Mobile](https://play.google.com/store/apps/details?id=com.latuabancaperandroid) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/197)
 - [Satispay](https://play.google.com/store/apps/details?id=com.satispay.customer) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/282)
 
+### Japan
+
+- [三菱ＵＦＪ銀行](https://play.google.com/store/apps/details?id=jp.mufg.bk.applisp.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/364)
+
 ### Kazakhstan
 
 - [Kaspi.kz суперприложение](https://play.google.com/store/apps/details?id=kz.kaspi.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/149)
@@ -388,10 +401,14 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Avanza](https://play.google.com/store/apps/details?id=se.avanzabank.androidapplikation) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/11)
 - [BankID säkerhetsapp](https://play.google.com/store/apps/details?id=com.bankid.bus) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/8)
 - [Handelsbanken SE - Privat](https://play.google.com/store/apps/details?id=com.handelsbanken.mobile.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/324)
+- [ICA Banken](https://play.google.com/store/apps/details?id=se.icabanken) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/365)
 - [Kivra Sweden](https://play.google.com/store/apps/details?id=com.kivra.Kivra) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/193)
 - [Länsförsäkringar](https://play.google.com/store/apps/details?id=se.lf.mobile.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/91)
 - [Mobilbank SE — Danske Bank](https://play.google.com/store/apps/details?id=com.danskebank.mobilebank3.se) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/4)
 - [Nordea Mobile — Sverige](https://play.google.com/store/apps/details?id=se.nordea.mobilebank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/9)
+- [Nordnet: Stocks & Funds](https://play.google.com/store/apps/details?id=com.nordnet) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/363)
+- [SBAB](https://play.google.com/store/apps/details?id=se.sbab.bankapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/362)
+- [SEB](https://play.google.com/store/apps/details?id=se.seb.privatkund) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/361)
 - [Swedbank private](https://play.google.com/store/apps/details?id=se.swedbank.mobil) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/12)
 - [Swish payments](https://play.google.com/store/apps/details?id=se.bankgirot.swish) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/6)
 
@@ -501,7 +518,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 ### Vietnam
 
 - [SHB Mobile Banking](https://play.google.com/store/apps/details?id=vn.shb.mbanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/254)
-
+  
 ---
 
 ## Prerequisites
@@ -510,27 +527,27 @@ This section covers how to submit or update a banking app report.
 
 ### Submit a new app report 
 
-There are several methods for GrapheneOS users to contribute their banking app report:
+There are several methods for GrapheneOS users to contribute their banking app report:  
 
 | Method | Description | Action |
 | :--- | :--- | :---: |
 | **GitHub** | Fill out form on [issue-tracker](https://github.com/PrivSec-dev/banking-apps-compat-report/issues) using your GitHub account | [`SUBMIT REPORT`](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/new?assignees=&labels=&template=app_report.yml) |
 | **Non-GitHub** | View gist → Raw → Save template markdown file to fill out. | [`Gist`](https://gist.github.com/akc3n/e845078ddbbb28ada0dd055c51ec45af) |
-| Curl | Terminal → `curl -O` → paste copied url (gist form `.md` template) ⟶ | [`Copy link address`](https://gist.githubusercontent.com/akc3n/e845078ddbbb28ada0dd055c51ec45af/raw/1b1b93fec9f14e934a39f27eff39f3c6792046db/banking-app-report-issue-form.md) |
-
-Alternatively, curl and pipe the output directly into vi/vim/neovim for editing:
-
+| Curl | Terminal → `curl -O` → paste copied url (gist form `.md` template) ⟶ | [`Copy link address`](https://gist.githubusercontent.com/akc3n/e845078ddbbb28ada0dd055c51ec45af/raw/c2bb563db726b80491a59c68d7f15c0897f563a0/banking-app-report-issue-form.md) |  
+  
+Alternatively, curl and pipe the output directly into vi/vim/neovim for editing, example:  
+  
 ```bash
-curl https://gist.githubusercontent.com/akc3n/e845078ddbbb28ada0dd055c51ec45af/raw/1b1b93fec9f14e934a39f27eff39f3c6792046db/banking-app-report-issue-form.md\?T | nvim -
+curl https://gist.githubusercontent.com/akc3n/e845078ddbbb28ada0dd055c51ec45af/raw/c2bb563db726b80491a59c68d7f15c0897f563a0/banking-app-report-issue-form.md\?T | nvim -
 ```
 
 ### Update status of app report
 
-Please do not open a new issue to update the status of a banking app report!
-
-Use the [issue tracker to search](https://github.com/PrivSec-dev/banking-apps-compat-report/issues) for the banking app name listed above in the [International banking apps](#international-banking-apps) section and add a comment to that report. 
-
-If you are a non-github user and have tried every combination suggested in these [possible workaround solutions](https://discuss.grapheneos.org/d/8330-app-compatibility-with-grapheneos) without being unable to resolving your specific banking app compatibiliity issue, then [contact me](https://privsec.dev/about#akc3n) afterwards please.
+Please avoid opening a new issue to update the status of a banking app report.  
+  
+Instead, use `CTRL` + `F` on this page or the [issue tracker to search](https://github.com/PrivSec-dev/banking-apps-compat-report/issues) for the app and open it's `Report`. Then, simply add your update as a comment to the existing report.  
+  
+For non-GitHub users, if you have tried all the combinations from these [possible workaround solutions](https://discuss.grapheneos.org/d/8330-app-compatibility-with-grapheneos) and still cannot resolve your specific banking app compatibility issue, feel free to [contact me](https://github.com/akc3n/akc3n?tab=readme-ov-file#connect) for further assistance.  
 
 ---
 
@@ -538,4 +555,7 @@ If you are a non-github user and have tried every combination suggested in these
 
 GrapheneOS has a [detailed guide](https://grapheneos.org/articles/attestation-compatibility-guide) for app developers on how to support GrapheneOS with the hardware attestation API. Direct use of the hardware attestation API provides much higher assurance than using SafetyNet so these apps have nothing to lose by using a more meaningful API and supporting a more secure OS.  
 
-> GrapheneOS users are strongly encouraged to share this documentation with app developers enforcing only being able to use the stock OS. Send an email to the developers and leave a review of the app with a link to this information. Share it with other users and create pressure to support GrapheneOS rather than locking users into the stock OS without a valid security reason. GrapheneOS not only upholds the app security model but substantially reinforces it, so it cannot be justified with reasoning based on security, anti-fraud, etc.
+> GrapheneOS users are strongly encouraged to share this documentation with app developers enforcing only being able to use the stock OS. Send an email to the developers and leave a review of the app with a link to this information. Share it with other users and create pressure to support GrapheneOS rather than locking users into the stock OS without a valid security reason. GrapheneOS not only upholds the app security model but substantially reinforces it, so it cannot be justified with reasoning based on security, anti-fraud, etc.  
+  
+Please read https://github.com/PrivSec-dev/banking-apps-compat-report/issues/342    
+[Twitter](https://twitter.com/GrapheneOS/status/1730491676760633426) / [Nitter](https://nitter.cz/GrapheneOS/status/1730491676760633426) | [Mastodon](https://grapheneos.social/@GrapheneOS/111504057316755618) | [Bluesky](https://bsky.app/profile/grapheneos.org/post/3kfhrujfcih2m)
