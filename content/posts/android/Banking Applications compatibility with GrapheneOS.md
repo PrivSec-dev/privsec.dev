@@ -270,6 +270,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Japan
 
+- [PayPay-ペイペイ](https://play.google.com/store/apps/details?id=jp.ne.paypay.android.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/367)
 - [三菱ＵＦＪ銀行](https://play.google.com/store/apps/details?id=jp.mufg.bk.applisp.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/364)
 
 ### Kazakhstan
@@ -490,6 +491,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Capital One Mobile](https://play.google.com/store/apps/details?id=com.konylabs.capitalone) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/107)
 - [Chase Mobile](https://play.google.com/store/apps/details?id=com.chase.sig.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/13)
 - [Chime – Mobile Banking](https://play.google.com/store/apps/details?id=com.onedebit.chime) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/46)
+- [Citi Mobile®](https://play.google.com/store/apps/details?id=com.citi.citimobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/366)
 - [Citizens Bank Mobile Banking](https://play.google.com/store/apps/details?id=com.citizensbank.androidapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/66)
 - [CommunityAmerica Mobile](https://play.google.com/store/apps/details?id=com.ifs.banking.fiid1454) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/154)
 - [DCU Digital Banking](https://play.google.com/store/apps/details?id=com.projectfinance.android.dcu) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/67)
