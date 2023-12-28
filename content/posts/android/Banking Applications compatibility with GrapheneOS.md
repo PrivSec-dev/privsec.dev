@@ -107,6 +107,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 ### Bulgaria
 
 - [KBC Mobile Bulgaria](https://play.google.com/store/apps/details?id=com.raiffeisen.online.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/357)
+- ~~[My Fibank](https://play.google.com/store/apps/details?id=com.bfs.fibank)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/359)
 
 ### Canada
 
@@ -129,6 +130,10 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 ### Chile
 
 - [Santander Chile](https://play.google.com/store/apps/details?id=cl.santander.smartphone) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/360)
+
+### Croatia
+
+- [George Croatia](https://play.google.com/store/apps/details?id=hr.erstebank.george) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/373)
 
 ### Czech Republic
 
@@ -273,6 +278,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 - [PayPay-ペイペイ](https://play.google.com/store/apps/details?id=jp.ne.paypay.android.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/367)
 - [三菱ＵＦＪ銀行](https://play.google.com/store/apps/details?id=jp.mufg.bk.applisp.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/364)
+- [三井住友銀行アプリ](https://play.google.com/store/apps/details?id=jp.co.smbc.direct) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/370)
 
 ### Kazakhstan
 
@@ -331,6 +337,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [mBank PL](https://play.google.com/store/apps/details?id=pl.mbank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/136)
 - [Moje ING mobile](https://play.google.com/store/apps/details?id=pl.ing.mojeing) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/169)
 - [PeoPay](https://play.google.com/store/apps/details?id=softax.pekao.powerpay) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/298)
+- [Santander mobile](https://play.google.com/store/apps/details?id=pl.bzwbk.bzwbk24) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/371)
 
 ### Portugal
 
@@ -495,6 +502,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Citi Mobile®](https://play.google.com/store/apps/details?id=com.citi.citimobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/366)
 - [Citizens Bank Mobile Banking](https://play.google.com/store/apps/details?id=com.citizensbank.androidapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/66)
 - [CommunityAmerica Mobile](https://play.google.com/store/apps/details?id=com.ifs.banking.fiid1454) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/154)
+- [CoreFirst Bank & Trust Mobile](https://play.google.com/store/apps/details?id=com.q2e.corefirst3104android.corefirst.uwnmobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/369)
 - [DCU Digital Banking](https://play.google.com/store/apps/details?id=com.projectfinance.android.dcu) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/67)
 - [Discover Mobile](https://play.google.com/store/apps/details?id=com.discoverfinancial.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/64)
 - [E*TRADE: Invest. Trade. Save.](https://play.google.com/store/apps/details?id=com.etrade.mobilepro.activity) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/334)
