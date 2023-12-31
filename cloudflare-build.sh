@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl -L -s https://api.github.com/repos/gohugoio/hugo/releases/0.119.0 | grep "browser_download_url.*extended.*linux-amd64.tar.gz" | cut -d : -f 2,3 | sed 's/"//g' | xargs wget
+curl -L -s https://api.github.com/repos/gohugoio/hugo/releases/latest | grep "browser_download_url.*extended.*linux-amd64.tar.gz" | cut -d : -f 2,3 | sed 's/"//g' | xargs wget
 
 tar xvf ./*.tar.gz
 chmod u+x ./hugo
