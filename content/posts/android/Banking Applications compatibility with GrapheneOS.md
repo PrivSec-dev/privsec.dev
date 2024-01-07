@@ -62,7 +62,6 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Australia
 
-- [Affinity Mobile](https://play.google.com/store/apps/details?id=ca.affinitycu.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/71)
 - [ANZ Australia](https://play.google.com/store/apps/details?id=com.anz.android.gomoney) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/157)
 - [ANZ Plus](https://play.google.com/store/apps/details?id=com.anz.lotus) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/313)
 - [Bank Australia App](https://play.google.com/store/apps/details?id=com.fusion.banking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/55)
@@ -111,7 +110,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Canada
 
-- [Affinity Credit Union](https://play.google.com/store/apps/details?id=ca.affinitycu.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/71)
+- [Affinity Mobile](https://play.google.com/store/apps/details?id=ca.affinitycu.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/71)
 - [Coast Capital Savings](https://play.google.com/store/apps/details?id=com.coastcapitalsavings.dcu) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/175)
 - [BMO Mobile Banking](https://play.google.com/store/apps/details?id=com.bmo.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/19)
 - [EQ Bank Mobile Banking](https://play.google.com/store/apps/details?id=com.eqbank.eqbank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/103)
