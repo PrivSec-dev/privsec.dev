@@ -99,7 +99,14 @@ Some sandboxing solutions for desktop Linux distributions do exist; however, the
 
 [Flatpak](https://flatpak.org) aims to be a distribution-agnostic package manager for Linux. One of its main goals is to provide a universal package format which can be used in most Linux distributions. It provides some [permission control](https://docs.flatpak.org/en/latest/sandbox-permissions.html). With that being said, [Flatpak sandboxing is quite weak](https://madaidans-insecurities.github.io/linux.html#flatpak).
 
-You can restrict applications further by setting [Flatpak overrides](https://docs.flatpak.org/en/latest/flatpak-command-reference.html#flatpak-override). This can be done with the command&nbsp;line or by using [Flatseal](https://github.com/tchx84/Flatseal). Some sample overrides are provided by [me](https://github.com/tommytran732/Flatpak-Overrides) and [rusty-snake](https://github.com/rusty-snake/kyst/tree/main/flatpak). Note that this only helps with lax high&#8209;level default permissions and cannot solve the low&#8209;level issues like `/proc` and `/sys` access or an insufficient seccomp blacklist.
+You can restrict applications further by setting [Flatpak overrides](https://docs.flatpak.org/en/latest/flatpak-command-reference.html#flatpak-override). This can be done with the command&nbsp;line or by using [Flatseal](https://github.com/tchx84/Flatseal). To deny common dangerous Flatpak permissions globally, run the following commands:
+
+```bash
+sudo flatpak override --system --nosocket=x11 --nosocket=fallback-x11 --nosocket=pulseaudio --unshare=network --unshare=ipc --nofilesystem=host:reset
+flatpak override --user --nosocket=x11 --nosocket=fallback-x11 --nosocket=pulseaudio --unshare=network --unshare=ipc --nofilesystem=host:reset
+```
+
+ Note that this only helps with lax high&#8209;level default permissions and cannot solve the low&#8209;level issues like `/proc` and `/sys` access or an insufficient seccomp blacklist.
 
 Some sensitive permissions of note:
 
