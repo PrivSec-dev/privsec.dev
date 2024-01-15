@@ -307,7 +307,7 @@ Note however that disabling SMT may have a significant performance impact&nbsp;-
 ##### Kernel
 
 ```
-slab_nomerge init_on_alloc=1 init_on_free=1 pti=on vsyscall=none page_alloc.shuffle=1 randomize_kstack_offset=on extra_latent_entropy debugfs=off oops=panic quiet loglevel=0
+slab_nomerge init_on_alloc=1 init_on_free=1 pti=on vsyscall=none ia32_emulation=0 page_alloc.shuffle=1 randomize_kstack_offset=on extra_latent_entropy debugfs=off oops=panic quiet loglevel=0
 ```
 
 Kicksecure does not enforce either `module.sig_enforce=1` or `lockdown=confidentiality` by default as they lead to a lot of hardware compatibility issues; consider enabling these if possible on your system. Additionally, [`mce=0` is no longer recommended](https://forums.whonix.org/t/kernel-hardening/7296/493).
