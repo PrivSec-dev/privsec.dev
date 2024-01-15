@@ -146,15 +146,17 @@ If your Android-based operating system does not expose this setting in the Setti
 
 ## Carrier Tracking
 
-Carriers can track your coarse location through various means. In order to avoid this type of tracking, you need to do the following:
+Carriers can track your coarse location through various means. At minimum, you need to use airplane mode to turn off the baseband modem, and turn off Wifi-calling which bypasses the system VPN. There may also be additional connections to the carrier's servers outside of the VPN tunnel, so you need to use Wireshark to verify this for your specific setup.
 
-- Disable Wi&#8209;Fi calling. Wi&#8209;Fi calling connections bypass the system VPN and thus reveal the local network's public IP&nbsp;address to the carrier.
+The behavior will differ across carriers and may also differ depending on the SoC, so I cannot give exact instructions for every setup. On a Google Pixel 7 Pro running GrapheneOS, you need to do the following:
 
-- Disable the SIMs/eSIMs in **Settings** → **Network & internet** → **SIMs**. On GrapheneOS, if you are using an eSIM, you will need to enable the privileged eSIM management app before doing so. With certain carriers, there will be an ePDG server defined which the operating system will connect to outside of a VPN tunnel. While unlikely, a malicious carrier can track a user by giving them a unique ePDG server.
+- Disable Wi&#8209;Fi calling.
+
+- Disable the SIMs/eSIMs in **Settings** → **Network & internet** → **SIMs**. On GrapheneOS, if you are using an eSIM, you will need to enable privileged eSIM management. With certain carriers, there will be an ePDG server defined which the operating system will connect to outside of a VPN tunnel. While unlikely, a malicious carrier can track a user by giving them a unique ePDG server.
 
 - Turn on airplane mode. This will turn off the modem and disable all transmission to cell towers. Note that simply removing SIM cards is not enough&nbsp;--- your phone will still connect to cellular networks to permit emergency calling.
 
-- Disable the eSIM management app after you have disabled all of the eSIMs. With certain carriers, the eSIM management app will connect to the provisioning server to check for eSIM update, even if the eSIMs are disabled.
+- Disable privileged eSIM management after you have disabled all of the eSIMs. With certain carriers, the eSIM management app will connect to the provisioning server to check for eSIM update, even if the eSIMs are disabled.
 
 On a related note, I have seen recommendations to use PGPP as a carrier to randomize the IMSI by regularly reprovisioning the eSIM. This is unlikely to be beneficial, as the IMEI baked into the modem would remain unchanged, allowing carriers to track you anyways.
 
