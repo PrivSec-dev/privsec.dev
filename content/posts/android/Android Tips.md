@@ -148,7 +148,7 @@ If your Android-based operating system does not expose this setting in the Setti
 
 Carriers can track your coarse location through various means. At minimum, you need to use airplane mode to turn off the baseband modem, and turn off Wifi-calling which bypasses the system VPN. There may also be additional connections to the carrier's servers outside of the VPN tunnel, so you need to use Wireshark to verify this for your specific setup.
 
-The behavior will differ across carriers and may also differ depending on the SoC, so I cannot give exact instructions for every setup. On a Google Pixel 7 Pro running GrapheneOS, you need to do the following:
+**Exact behavior does differ across SoCs and may vary between carriers as well**, so I cannot give exact instructions for every setup. On a Google Pixel 7 Pro running GrapheneOS, you need to do the following:
 
 - Disable Wi&#8209;Fi calling.
 
