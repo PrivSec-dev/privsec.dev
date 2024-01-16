@@ -21,9 +21,11 @@ Note that I am recommending UTM here over other solutions like [Parallels](https
 
 ## Choosing your Linux distribution
 
-Generally, any distribution with `chrony` 4.0 or above would work fine. I recommend using Fedora since it is easy to manage, generally up to date,  and has mostly sane defaults.
+Generally, any distribution with `chrony` 4.0 or above would work fine. I recommend using Fedora since it is easy to manage, generally up to date, and has mostly sane defaults.
 
 You can download Fedora Server from their [official website](https://fedoraproject.org/server/download/).
+
+If you want to use Fedora CoreOS, check out my Butane file [here](https://github.com/TommyTran732/Fedora-CoreOS-Ignition/blob/main/UTM.yml). Be sure to change the SSH Key and username before converting to your Ignition file! 😉
 
 ## Setting up the virtual machine
 
