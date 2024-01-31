@@ -65,7 +65,7 @@ ssh-copy-id -i ~/.ssh/id_ed25519_sk.pub user@server.domain.tld
 PubkeyAcceptedKeyTypes ssh-ed25519,sk-ssh-ed25519@openssh.com
 ```
 
-Adding `sk-ssh-ed25519@openssh.com` to `PubkeyAcceptedKeyTypes` should suffice. It's best practice to only use the cryptographic primitives that you need, and hopefully ones that are also modern. This isn't a full-on SSH hardening guide, but you should take a look at the [configuration file GrapheneOS uses](https://github.com/GrapheneOS/infrastructure/blob/main/sshd_config) for their servers to give you an idea on a few good practices.
+Adding `sk-ssh-ed25519@openssh.com` to `PubkeyAcceptedKeyTypes` should suffice. It's best practice to only use the cryptographic primitives that you need, and hopefully ones that are also modern. This isn't a full-on SSH hardening guide, but you should take a look at the [configuration file GrapheneOS uses](https://github.com/GrapheneOS/infrastructure/blob/main/ssh/sshd_config) for their servers to give you an idea on a few good practices.
 
 Restart the `sshd` service and try to connect to your server using your key handle (by passing `-i ~/.ssh/id_ed25519_sk` to `ssh` for instance). If that works for you (your FIDO2 security key should be needed to derive the real secret), feel free to remove your previous keys from `.ssh/authorized_keys` on your server.
 
