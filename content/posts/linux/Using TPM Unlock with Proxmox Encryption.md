@@ -40,3 +40,36 @@ Disable Secure Boot before installing Proxmox. By default, Proxmox installs with
 
 - In advanced configuration, reduce the `hdsize`. Proxmox on its own only takes up about 5-6 GB of storage, and I do not intend to store anything else like ISO files on it, so I will set the size as 32GB (the extra space is to account for future updates).
 
+## Setup LUKS Encryption
+
+This section is covered on [Oblivious Observer's Blog](https://oblivious.observer/posts/proxmoxve6-zfs-luks-systemdboot-dropbear/). We will adjust the commands a bit to include AEAD and update the instructions to be more inline with Proxmox 8.
+
+### Setup repositories
+
+Run the following commands:
+
+```bash
+curl https://raw.githubusercontent.com/TommyTran732/Linux-Setup-Scripts/main/etc/apt/apt.conf.d/99sane-upgrades | sudo tee /etc/apt/apt.conf.d/99sane-upgrades
+chmod 644 /etc/apt/apt.conf.d/99sane-upgrades
+sed -i '1 {s/^/#/}' /etc/apt/sources.list.d/pve-enterprise.list
+echo 'deb https://deb.debian.org/debian/ bookworm main contrib non-free non-free-firmware
+deb http://deb.debian.org/debian-security/ bookworm-security main contrib non-free non-free-firmware
+deb https://deb.debian.org/debian/ bookworm-updates main contrib non-free non-free-firmware
+deb https://deb.debian.org/debian/ bookworm-backports main contrib non-free non-free-firmware
+deb http://download.proxmox.com/debian/pve bookworm pve-no-subscription' | tee /etc/apt/sources.list
+echo 'deb http://download.proxmox.com/debian/ceph-quincy bookworm no-subscription' | tee /etc/apt/sources.list.d/ceph.list
+```
+
+### Upgrade packages
+
+```bash
+apt update
+apt full-upgrade
+```
+
+### Install cryptsetup
+
+```bash
+apt install cryptsetup
+```
+
