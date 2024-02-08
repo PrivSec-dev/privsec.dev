@@ -17,7 +17,7 @@ The virtualization software we are going to use for this setup is [UTM](https://
 
 Personally, I would recommend using the App Store, since you are getting automatic updates with it, and a small donation would really help out the developers.
 
-Note that I am recommending UTM here over other solutions like [Parallels](https://www.parallels.com/) here, specifically for the [Emulated VLAN](https://docs.getutm.app/settings-qemu/devices/network/network/#network-mode) network setup. Parallels only supports the [Shared Network mode](https://kb.parallels.com/4948) where all VMs and the host are connected to the same VLAN, which is less than ideal considering that we will still communicate with our Linux server using the insecure NTP protocol. I have not tried VMWare Fusion or VirtualBox yet, but the general idea is that you should be connecting to the NTP server using a private interface which only the host and the target VM have access to. Another nice thing about UTM is that it is a [sandboxed](https://developer.apple.com/documentation/xcode/configuring-the-macos-app-sandbox/) application and runs without any special privileges.
+Note that I am recommending UTM here over other solutions like [Parallels](https://www.parallels.com/) here, specifically for the [Emulated VLAN](https://docs.getutm.app/settings-qemu/devices/network/network/#network-mode) network setup. Parallels only supports the [Shared Network mode](https://kb.parallels.com/4948) where all VMs and the host are connected to the same VLAN, which is less than ideal considering that we will still communicate with our Linux server using the insecure NTP protocol. I have not tried VMWare Fusion or VirtualBox yet, but the gfeneral idea is that you should be connecting to the NTP server using a private interface which only the host and the target VM have access to. Another nice thing about UTM is that it is a [sandboxed](https://developer.apple.com/documentation/xcode/configuring-the-macos-app-sandbox/) application and runs without any special privileges.
 
 ## Choosing your Linux distribution
 
@@ -25,7 +25,7 @@ Generally, any distribution with `chrony` 4.0 or above would work fine. I recomm
 
 You can download Fedora Server from their [official website](https://fedoraproject.org/server/download/).
 
-If you want to use Fedora CoreOS, check out my Butane file [here](https://github.com/TommyTran732/Fedora-CoreOS-Ignition/blob/main/UTM.yml). Be sure to change the SSH Key and username before converting to your Ignition file! 😉
+If you want to use Fedora CoreOS, check out my Butane file [here](https://github.com/TommyTran732/Fedora-CoreOS-Ignition/blob/main/UTM-Chrony.yml). Be sure to change the SSH Key and username before converting to your Ignition file! 😉
 
 ## Setting up the virtual machine
 
