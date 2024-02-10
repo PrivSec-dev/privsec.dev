@@ -67,7 +67,7 @@ chmod 000 /etc/zfs/zroot.key
 #### For Non-Mirrored Setups
 
 ```bash
-sudo zpool create -o ashift=12 -O compression=zstd -O acltype=posixacl -O xattr=sa -O atime=off -O encryption=on -O keylocation=file:///etc/zfs/zroot.key -O keyformat=passphrase -o autotrim=on -o failmode=panic compatibility=openzfs-2.1-linux -m none zroot /dev/disk/by-id/nvme-SAMSUNG_MZQL21T9HCJR-00A07_XXXXXXX-part2 
+sudo zpool create -o ashift=12 -O compression=zstd -O acltype=posixacl -O xattr=sa -O atime=off -O encryption=on -O keylocation=file:///etc/zfs/zroot.key -O keyformat=passphrase -o autotrim=on -o failmode=panic compatibility=openzfs-2.1-linux -m none zroot /dev/disk/by-id/nvme-SAMSUNG_MZQL21T9HCJR-00A07_XXXXXXX-part2
 ```
 
 #### For Mirrored Setups
@@ -266,7 +266,7 @@ If you are not, just replace `md0` in the commands above with your efi partition
 Next, we will set the kernel boot parameters and the encryption key source for ZFSBootMenu. Here, we will deviate from the official guide and use a  hardened boot parameter for better security:
 
 ```bash
-zfs set org.zfsbootmenu:commandline="quiet loglevel=4 spectre_v2=on spec_store_bypass_disable=on l1tf=full,force mds=full,nosmt tsx=off tsx_async_abort=full,nosmt kvm.nx_huge_pages=force nosmt=force l1d_flush=on mmio_stale_data=full,nosmt random.trust_bootloader=off random.trust_cpu=off intel_iommu=on amd_iommu=force_isolation efi=disable_early_pci_dma iommu=force iommu.passthrough=0 iommu.strict=1 slab_nomerge init_on_alloc=1 init_on_free=1 pti=on vsyscall=none ia32_emulation=0 page_alloc.shuffle=1 randomize_kstack_offset=on extra_latent_entropy debugfs=off" zroot/ROOT
+zfs set org.zfsbootmenu:commandline="quiet loglevel=4 mitigations=auto,nosmt spectre_v2=on spec_store_bypass_disable=on tsx=off kvm.nx_huge_pages=force nosmt=force l1d_flush=on spec_rstack_overflow=safe-ret random.trust_bootloader=off random.trust_cpu=off intel_iommu=on amd_iommu=force_isolation efi=disable_early_pci_dma iommu=force iommu.passthrough=0 iommu.strict=1 slab_nomerge init_on_alloc=1 init_on_free=1 pti=on vsyscall=none ia32_emulation=0 page_alloc.shuffle=1 randomize_kstack_offset=on extra_latent_entropy debugfs=off" zroot/ROOT
 zfs set org.zfsbootmenu:keysource="zroot/ROOT/ubuntu" zroot
 ```
 
@@ -308,7 +308,7 @@ EFI:
   Versions: false
   Enabled: true
 Kernel:
-  CommandLine: ro quiet loglevel=0 quiet loglevel=4 spectre_v2=on spec_store_bypass_disable=on l1tf=full,force mds=full,nosmt tsx=off tsx_async_abort=full,nosmt kvm.nx_huge_pages=force nosmt=force l1d_flush=on mmio_stale_data=full,nosmt random.trust_bootloader=off random.trust_cpu=off intel_iommu=on amd_iommu=force_isolation efi=disable_early_pci_dma iommu=force iommu.passthrough=0 iommu.strict=1 slab_nomerge init_on_alloc=1 init_on_free=1 pti=on vsyscall=none ia32_emulation=0 page_alloc.shuffle=1 randomize_kstack_offset=on extra_latent_entropy debugfs=off' | tee /etc/zfsbootmenu/config.yaml
+  CommandLine: ro quiet loglevel=0 quiet loglevel=4 mitigations=auto,nosmt spectre_v2=on spec_store_bypass_disable=on tsx=off kvm.nx_huge_pages=force nosmt=force l1d_flush=on spec_rstack_overflow=safe-ret random.trust_bootloader=off random.trust_cpu=off intel_iommu=on amd_iommu=force_isolation efi=disable_early_pci_dma iommu=force iommu.passthrough=0 iommu.strict=1 slab_nomerge init_on_alloc=1 init_on_free=1 pti=on vsyscall=none ia32_emulation=0 page_alloc.shuffle=1 randomize_kstack_offset=on extra_latent_entropy debugfs=off' | tee /etc/zfsbootmenu/config.yaml
 
 git clone https://github.com/dracut-crypt-ssh/dracut-crypt-ssh
 apt install -y libblkid-dev
