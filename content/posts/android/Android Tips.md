@@ -15,7 +15,9 @@ Android is a very secure and robust operating system out of the box. This post w
 
 Google Pixel phones are the **only** devices I would recommend for purchase. Pixel phones have stronger hardware security than any other Android devices currently on the market, due to proper AVB support for third-party operating systems and Google's custom [Titan](https://security.googleblog.com/2021/10/pixel-6-setting-new-standard-for-mobile.html) security chips acting as the Secure Element.
 
-When purchasing a device, you should buy one as new as possible. The software and firmware of mobile devices are only supported for a limited time, so buying new extends that lifespan as much as possible. Also, beginning with the **Pixel 8** and **8 Pro**, Pixel devices receive a minimum of 7 years of guaranteed security updates, ensuring a much longer lifespan compared to the 2-4 years competing OEMs typically offer.
+When purchasing a device, you should buy one as new as possible. The software and firmware of mobile devices are only supported for a limited time, so buying new extends that lifespan as much as possible and brings many hardware security improvements found in each new generation. The Google **Pixel 8** & **8 Pro** have ARM Memory Tagging Extensions built into the hardware, a game changing hardware security feature defending against memory corruption as it happens when utilized. 
+
+Also, beginning with the **Pixel 8** and **8 Pro**, Pixel devices receive a minimum of 7 years of guaranteed security updates, ensuring a much longer lifespan compared to the 2-4 years competing OEMs typically offer. With the quality of support that is provided by competitors being much more weaker especially on lower-end devices. For example using a subset of security bulletin backports on an Android OS base that is months+ old instead of porting to newer releases with many security and privacy improvements and fixes built-in or shipping very untimely updates within the active support window.
 
 ### Phones to Avoid
 Avoid buying the Fairphone 4, which only has just over 2 years of full security updates since its release date despite them advertising 6 years of support. This is because the System on a Chip they use (Snapdragon 750G) only has 3 years of support from Qualcomm, and the SoC was already old when the phone came out. This is not to mention, the Fairphone 4 [uses the Android Verified Boot Test Key as their OEM keys](https://forum.fairphone.com/t/bootloader-avb-keys-used-in-roms-for-fairphone-3-4/83448/11), effectively making Verified Boot useless. In general, you should check for how long the SoC a phone uses is supported for and not blindly trust the phone manufacturer's claims.
@@ -165,6 +167,9 @@ On a related note, I have seen recommendations to use PGPP as a carrier to rando
 ### GrapheneOS App Store
 
 GrapheneOS's app store is available on [GitHub](https://github.com/GrapheneOS/Apps/releases). It supports Android 12 and above and is capable of updating itself. The app store has standalone applications built by the GrapheneOS project such as the [Auditor](https://attestation.app/), [Camera](https://github.com/GrapheneOS/Camera), and [PDF Viewer](https://github.com/GrapheneOS/PdfViewer). If you are looking for these applications, I highly recommend that you get them from GrapheneOS's app store instead of the Play Store, as the apps on their store are signed by the GrapheneOS's project own signature that Google does not have access to.
+
+### Accrescent App Store
+[Accrescent](https://accrescent.app/) is a newer modern app store with a focus on privacy and security and is compatible for those who do not want to rely on Google Services. However it is in early pre-alpha and in most cases won't have all the apps you want (yet). Consider using other secure storefronts such as the Google Play Store as a fallback option if available.
 
 ### Aurora Store
 
