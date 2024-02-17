@@ -56,6 +56,11 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 -->
 ## International banking apps
 
+- [PayPal - Send, Shop, Manage](https://play.google.com/store/apps/details?id=com.paypal.android.p2pmobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/127)
+- [Revolut - Mobile Finance](https://play.google.com/store/apps/details?id=com.revolut.revolut) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/90)
+
+## National banking apps
+
 ### Argentina
 
 - [Galicia - El banco en tu celu](https://play.google.com/store/apps/details?id=com.mosync.app_Banco_Galicia) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/216)
@@ -311,7 +316,6 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Lithuania
 
-- [Revolut](https://play.google.com/store/apps/details?id=com.revolut.revolut) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/90)
 - [Swedbank Lietuva](https://play.google.com/store/apps/details?id=lt.swedbank.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/244)
 
 ### Malaysia
@@ -513,7 +517,6 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Nationwide Banking App](https://play.google.com/store/apps/details?id=co.uk.Nationwide.Mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/332)
 - [NatWest Mobile Banking](https://play.google.com/store/apps/details?id=com.rbs.mobile.android.natwest) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/34)
 - [Paysend Money Transfer App](https://play.google.com/store/apps/details?id=com.paysend.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/222)
-- [Revolut](https://play.google.com/store/apps/details?id=com.revolut.revolut) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/90)
 - [Royal Bank of Scotland](https://play.google.com/store/apps/details?id=com.rbs.mobile.android.rbs) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/397)
 - [Santander Mobile Banking](https://play.google.com/store/apps/details?id=uk.co.santander.santanderUK) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/210)
 - [Starling Bank - Mobile Banking](https://play.google.com/store/apps/details?id=com.starlingbank.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/39)
@@ -554,7 +557,6 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Mainstreet Credit Union](https://play.google.com/store/apps/details?id=org.mainstreetcu.grip) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/111)
 - [MSUFCU](https://play.google.com/store/apps/details?id=org.msufcu.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/311)
 - ~~[Navy Federal Credit Union](https://play.google.com/store/apps/details?id=com.navyfederal.android)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/393)
-- [PayPal - Send, Shop, Manage](https://play.google.com/store/apps/details?id=com.paypal.android.p2pmobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/127)
 - [SchoolsFirst FCU Mobile](https://play.google.com/store/apps/details?id=org.schoolsfirstfcu.mobile.banking.isam) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/126)
 - [Schwab Mobile](https://play.google.com/store/apps/details?id=com.schwab.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/61)
 - [Service CU Mobile Banking](https://play.google.com/store/apps/details?id=com.ifs.mobilebanking.fiid9094) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/166)
