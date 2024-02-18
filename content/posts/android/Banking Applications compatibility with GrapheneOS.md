@@ -2,7 +2,7 @@
 title: "Banking Applications Compatibility with GrapheneOS"
 date: "2022-01-26"
 tags: ['Applications', 'Android', 'Banking', 'Compatibility', 'GrapheneOS']
-author: akc3n, Tommy
+author: akc3n, Tommy, spring-onion
 ---
   
 **Maintained Compatibility List for International Banking Apps**    
@@ -20,7 +20,7 @@ New visitors are encouraged to read the [official usage guide on banking apps](h
 ### IMPORTANT 
 
 Please read GrapheneOS's important announcement, officially released on Dec 1, 2023:  
-[Twitter](https://twitter.com/GrapheneOS/status/1730491676760633426) / [Nitter](https://nitter.cz/GrapheneOS/status/1730491676760633426) | [Mastodon](https://grapheneos.social/@GrapheneOS/111504057316755618) | [Bluesky](https://bsky.app/profile/grapheneos.org/post/3kfhrujfcih2m)   
+[Twitter](https://twitter.com/GrapheneOS/status/1730491676760633426) | [Mastodon](https://grapheneos.social/@GrapheneOS/111504057316755618) | [Bluesky](https://bsky.app/profile/grapheneos.org/post/3kfhrujfcih2m)   
    
 Also available as a [pinned issue](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/342), detailing the latest developments about [SafetyNet's replacement by Play Integrity API](https://akc3n.page/posts/banking-app-issues/#safetynet-replaced-by-play-integrity-api), which could impact _some_ banking app's [compatibility](https://discuss.grapheneos.org/d/8330-app-compatibility-with-grapheneos#:~:text=issuecomment%2D1766887298%29-,Not%20compatible,-Due%20to%20the) with GrapheneOS after the app updates.  
 
