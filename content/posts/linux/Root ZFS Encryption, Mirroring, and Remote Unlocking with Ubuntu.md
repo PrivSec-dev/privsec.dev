@@ -266,7 +266,7 @@ If you are not, just replace `md0` in the commands above with your efi partition
 Next, we will set the kernel boot parameters and the encryption key source for ZFSBootMenu. Here, we will deviate from the official guide and use a  hardened boot parameter for better security:
 
 ```bash
-zfs set org.zfsbootmenu:commandline="quiet loglevel=4 mitigations=auto,nosmt spectre_v2=on spec_store_bypass_disable=on tsx=off kvm.nx_huge_pages=force nosmt=force l1d_flush=on spec_rstack_overflow=safe-ret random.trust_bootloader=off random.trust_cpu=off intel_iommu=on amd_iommu=force_isolation efi=disable_early_pci_dma iommu=force iommu.passthrough=0 iommu.strict=1 slab_nomerge init_on_alloc=1 init_on_free=1 pti=on vsyscall=none ia32_emulation=0 page_alloc.shuffle=1 randomize_kstack_offset=on extra_latent_entropy debugfs=off" zroot/ROOT
+zfs set org.zfsbootmenu:commandline="quiet loglevel=4 mitigations=auto,nosmt spectre_v2=on spec_store_bypass_disable=on tsx=off kvm.nx_huge_pages=force nosmt=force l1d_flush=on spec_rstack_overflow=safe-ret random.trust_bootloader=off random.trust_cpu=off intel_iommu=on amd_iommu=force_isolation efi=disable_early_pci_dma iommu=force iommu.passthrough=0 iommu.strict=1 slab_nomerge init_on_alloc=1 init_on_free=1 pti=on vsyscall=none ia32_emulation=0 page_alloc.shuffle=1 randomize_kstack_offset=on debugfs=off" zroot/ROOT
 zfs set org.zfsbootmenu:keysource="zroot/ROOT/ubuntu" zroot
 ```
 
@@ -308,7 +308,7 @@ EFI:
   Versions: false
   Enabled: true
 Kernel:
-  CommandLine: ro quiet loglevel=0 quiet loglevel=4 mitigations=auto,nosmt spectre_v2=on spec_store_bypass_disable=on tsx=off kvm.nx_huge_pages=force nosmt=force l1d_flush=on spec_rstack_overflow=safe-ret random.trust_bootloader=off random.trust_cpu=off intel_iommu=on amd_iommu=force_isolation efi=disable_early_pci_dma iommu=force iommu.passthrough=0 iommu.strict=1 slab_nomerge init_on_alloc=1 init_on_free=1 pti=on vsyscall=none ia32_emulation=0 page_alloc.shuffle=1 randomize_kstack_offset=on extra_latent_entropy debugfs=off' | tee /etc/zfsbootmenu/config.yaml
+  CommandLine: ro quiet loglevel=0 quiet loglevel=4 mitigations=auto,nosmt spectre_v2=on spec_store_bypass_disable=on tsx=off kvm.nx_huge_pages=force nosmt=force l1d_flush=on spec_rstack_overflow=safe-ret random.trust_bootloader=off random.trust_cpu=off intel_iommu=on amd_iommu=force_isolation efi=disable_early_pci_dma iommu=force iommu.passthrough=0 iommu.strict=1 slab_nomerge init_on_alloc=1 init_on_free=1 pti=on vsyscall=none ia32_emulation=0 page_alloc.shuffle=1 randomize_kstack_offset=on debugfs=off' | tee /etc/zfsbootmenu/config.yaml
 
 git clone https://github.com/dracut-crypt-ssh/dracut-crypt-ssh
 apt install -y libblkid-dev
