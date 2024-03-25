@@ -256,7 +256,6 @@ Google Fi provides [opportunistic end&#8209;to&#8209;end encryption](https://fi.
 
 This is not without its caveats:
 - Google Fi requires Play Services and the [Fi app](https://play.google.com/store/apps/details?id=com.google.android.apps.tycho&hl=en_US) to work properly. Without Play Services, all of the features mentioned above, along with visual voicemail will not work. SMS messages will have random strings added at the end of each of them.
-- On GrapheneOS, Fi&nbsp;VPN will not function. Fi&nbsp;VPN requires privileged integration with the operating system which is unlikely to be supported for the foreseeable future.
 - The Google Fi app needs to be installed in the owner profile for SIM/eSIM activation.
 - Google Fi Wi&#8209;Fi calling does not work behind a VPN with the killswitch enabled in the owner profile.
 
