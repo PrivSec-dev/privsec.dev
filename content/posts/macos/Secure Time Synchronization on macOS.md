@@ -119,6 +119,7 @@ rtcsync
 
 cmdport 0
 
+noclientlog
 allow 10.0.2.2/32
 ```
 
