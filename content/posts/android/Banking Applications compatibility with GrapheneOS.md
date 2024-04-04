@@ -377,7 +377,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Philippines
 
-- ~~[GCash](https://play.google.com/store/apps/details?id=com.globe.gcash.android)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/382)
+- [GCash](https://play.google.com/store/apps/details?id=com.globe.gcash.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/382)
 
 
 ### Poland
@@ -523,6 +523,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - ~~[Bank of Scotland Mobile App](https://play.google.com/store/apps/details?id=com.grppl.android.shell.BOS)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/243)
 - [Barclaycard](https://play.google.com/store/apps/details?id=com.barclays.bca) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/42)
 - [Barclays](https://play.google.com/store/apps/details?id=com.barclays.android.barclaysmobilebanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/341)
+- [Capital On Tap](https://play.google.com/store/apps/details?id=com.cot.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/424)
 - [Chase UK](https://play.google.com/store/apps/details?id=com.chase.intl) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/69)
 - [Coventry Building Society](https://play.google.com/store/apps/details?id=com.cbs.prod) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/423)
 - [The Co-operative Bank](https://play.google.com/store/apps/details?id=com.cooperativebank.bank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/205)
