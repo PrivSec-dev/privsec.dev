@@ -311,6 +311,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Hype](https://play.google.com/store/apps/details?id=it.hype.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/264)
 - [illimity](https://play.google.com/store/apps/details?id=com.illimity.mobile.rtl) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/281)
 - [Intesa Sanpaolo Mobile](https://play.google.com/store/apps/details?id=com.latuabancaperandroid) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/197)
+- [Mobile Banking UniCredit](https://play.google.com/store/apps/details?id=com.unicredit) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/431)
 - [Satispay](https://play.google.com/store/apps/details?id=com.satispay.customer) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/282)
 
 ### Japan
@@ -506,7 +507,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 - [Bangkok Bank Mobile Banking](https://play.google.com/store/apps/details?id=com.bbl.mobilebanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/406)
 - [K PLUS](https://play.google.com/store/apps/details?id=com.kasikorn.retail.mbanking.wap) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/265)
-- [SCB Easy](https://play.google.com/store/apps/details?id=com.scb.phone) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/195)
+- ~~[SCB Easy](https://play.google.com/store/apps/details?id=com.scb.phone)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/195)
 - [ShopeePay](https://play.google.com/store/apps/details?id=com.beeasy.airpay) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/335)
 - [UOB TMRW Thailand](https://play.google.com/store/apps/details?id=com.uob.mightyth2) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/333)
 
@@ -557,6 +558,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Ally: Banking & Investing](https://play.google.com/store/apps/details?id=com.ally.MobileBanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/113)
 - [America First Mobile Banking](https://play.google.com/store/apps/details?id=com.afcu.mobilebanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/148)
 - [Amex](https://play.google.com/store/apps/details?id=com.americanexpress.android.acctsvcs.us) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/125)
+- [Axos All-In-One Mobile Banking](https://play.google.com/store/apps/details?id=com.axos.udb) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/430)
 - [Bank of America Mobile Banking](https://play.google.com/store/apps/details?id=com.infonow.bofa) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/242)
 - [BECU](https://play.google.com/store/apps/details?id=org.becu.androidapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/60)
 - [Capital One Mobile](https://play.google.com/store/apps/details?id=com.konylabs.capitalone) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/107)
