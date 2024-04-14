@@ -102,8 +102,8 @@ Some sandboxing solutions for desktop Linux distributions do exist; however, the
 You can restrict applications further by setting [Flatpak overrides](https://docs.flatpak.org/en/latest/flatpak-command-reference.html#flatpak-override). This can be done with the command&nbsp;line or by using [Flatseal](https://github.com/tchx84/Flatseal). To deny common dangerous Flatpak permissions globally, run the following commands:
 
 ```bash
-sudo flatpak override --system --nosocket=x11 --nosocket=fallback-x11 --nosocket=pulseaudio --unshare=network --unshare=ipc --nofilesystem=host:reset --nodevice=input --nodevice=shm --nodevice=all --no-talk-name=org.freedesktop.Flatpak --no-talk-name=org.freedesktop.systemd1
-flatpak override --user --nosocket=x11 --nosocket=fallback-x11 --nosocket=pulseaudio --unshare=network --unshare=ipc --nofilesystem=host:reset --nodevice=input --nodevice=shm --nodevice=all --no-talk-name=org.freedesktop.Flatpak --no-talk-name=org.freedesktop.systemd1
+sudo flatpak override --system --nosocket=x11 --nosocket=fallback-x11 --nosocket=pulseaudio --unshare=network --unshare=ipc --nofilesystem=host:reset --nodevice=input --nodevice=shm --nodevice=all --no-talk-name=org.freedesktop.Flatpak --no-talk-name=org.freedesktop.systemd1 --no-talk-name=org.gnome.Shell.Extensions
+flatpak override --user --nosocket=x11 --nosocket=fallback-x11 --nosocket=pulseaudio --unshare=network --unshare=ipc --nofilesystem=host:reset --nodevice=input --nodevice=shm --nodevice=all --no-talk-name=org.freedesktop.Flatpak --no-talk-name=org.freedesktop.systemd1 --no-talk-name=org.gnome.Shell.Extensions
 ```
 
 To allow Flatseal to function after applying the overrides above, run the following command:
@@ -122,6 +122,7 @@ Some sensitive permissions of note:
 - `--talk-name=org.freedesktop.secrets`: D&#8209;Bus access to secrets stored on your keychain
 - `--talk-name=org.freedesktop.Flatpak`: D&#8209;Bus access to run `flatpak run`. This D&#8209;Bus is a sandbox escape.
 - `talk-name=org.freedesktop.systemd1`: D&#8209;Bus access to systemd. The D&#8209;Bus can be used to load in systemd services with arbitary code and run them.
+- `--talk-name=org.gnome.Shell.Extensions`: D&#8209;Bus access to install and manage GNOME shell extensions
 
 If an application works natively with Wayland (*not* running through the [XWayland](https://wayland.freedesktop.org/xserver.html) compatibility layer), consider revoking its access to X11 (`--nosocket=x11`) and the [inter&#8209;process communications (IPC)](https://en.wikipedia.org/wiki/Unix_domain_socket) socket (`--unshare=ipc`) as well.
 
