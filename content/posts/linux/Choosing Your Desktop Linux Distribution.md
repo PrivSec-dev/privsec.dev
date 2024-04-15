@@ -88,11 +88,11 @@ While lacking transactional or atomic updates, Fedora's package manager, `dnf`, 
 
 You can refer to the video by [Adam Šamalík](https://twitter.com/adsamalik) linked [above](#traditional-and-atomic-updates) on how these distributions work.
 
-### openSUSE Tumbleweed and MicroOS
+### openSUSE Tumbleweed and Aeon
 
 Fedora Workstation and Silverblue's European counterpart. These are rolling release, fast updating distributions with [transactional update](https://kubic.opensuse.org/blog/2018-04-04-transactionalupdates/) using [Btrfs](https://en.wikipedia.org/wiki/Btrfs) and [Snapper](https://en.opensuse.org/openSUSE:Snapper_Tutorial).
 
-[MicroOS](https://microos.opensuse.org/) has a much smaller base system than [Tumbleweed](https://get.opensuse.org/tumbleweed) and mounts the running BTRFS subvomumes as read-only (hence its name and why it is considered an immutable distribution). Currently, it is still in Beta so bugs are to be expected. Nevertheless, it is an awesome project.
+[Aeon](https://microos.opensuse.org/) has a much smaller base system than [Tumbleweed](https://get.opensuse.org/tumbleweed) and mounts the running BTRFS subvomumes as read-only (hence its name and why it is considered an immutable distribution). Currently, it is still in RC so changes are to be expected. Nevertheless, it is an awesome project.
 
 {{< youtube id="jcl_4Vh6qP4">}}
 
