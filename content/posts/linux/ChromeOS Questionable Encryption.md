@@ -1,4 +1,9 @@
-# ChromeOS's Questionable Encryption
+---
+title: "ChromeOS's Questionable Encryption"
+date: 2024-04-15
+tags: ['Operating Systems', 'Linux', 'ChromeOS', 'Security']
+author: Tommy
+---
 
 ## How ChromeOS Encryption Works
 
