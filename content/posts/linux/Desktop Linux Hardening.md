@@ -387,6 +387,16 @@ The [hardened memory allocator (hardened_malloc)](https://github.com/GrapheneOS/
 
 Kicksecure installs it by default (though not enabled by default) and provides [in&#8209;depth usage instructions](https://www.kicksecure.com/wiki/Hardened_Malloc) relevant to all distributions. On Arch-based systems, hardened_malloc is [available through the AUR](https://wiki.archlinux.org/title/Security#Hardened_malloc). Divested Computing Group maintains an x86_64 [Fedora build](https://github.com/divestedcg/rpm-hardened_malloc) with micro-architecture optimized builds (x86_64_v3, x86_64_v4, etc). SecureBlue provides a [copr repository](https://copr.fedorainfracloud.org/coprs/secureblue/hardened_malloc/) for Fedora with both x86_64 and aarch64 builds, albeit without micro-architecture optimized builds like Divested Computing Group.
 
+### Disabling XWayland
+
+To disable XWayland with GNOME, create `/etc/systemd/user/org.gnome.Shell@wayland.service.d/override.conf` with the following content:
+
+```
+[Service]
+ExecStart=
+ExecStart=/usr/bin/gnome-shell --no-x11
+```
+
 ### Mountpoint Hardening
 
 Consider adding the [mount options](https://man7.org/linux/man-pages/man8/mount.8.html#FILESYSTEM-INDEPENDENT_MOUNT_OPTIONS) `nodev`, `noexec`, and `nosuid` to mountpoints which do not need the respective capabilities. Typically, these can be applied to `/boot`, `/boot/efi`, and `/var`. These flags could also be applied to `/home` and `/root`, however `noexec` will prevent applications that require binary execution in those locations from working (including Flatpak and Snap).
