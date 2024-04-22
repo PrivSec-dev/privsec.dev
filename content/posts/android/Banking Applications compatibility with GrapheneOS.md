@@ -210,6 +210,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 ### Germany
 
 - [1822direkt Banking](https://play.google.com/store/apps/details?id=de.direkt1822.banking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/167)
+- [1822direkt QRTAN+](https://play.google.com/store/apps/details?id=de.direkt1822.qrtanplus) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/438)
 - [1822TAN+](https://play.google.com/store/apps/details?id=de.direkt1822.tanplus) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/368)
 - [apoTAN](https://play.google.com/store/apps/details?id=com.apobank_apotanplus) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/428)
 - [C24 Bank](https://play.google.com/store/apps/details?id=de.c24.bankapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/380)
@@ -236,6 +237,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Penta — Business Banking App](https://play.google.com/store/apps/details?id=com.getpenta.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/24)
 - [PSD Banking](https://play.google.com/store/apps/details?id=de.psd.banking.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/159)
 - [Santander Banking](https://play.google.com/store/apps/details?id=de.santander.presentation) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/119)
+- [SecureGo+ Renault Bank direkt](https://play.google.com/store/apps/details?id=de.renaultbankdirekt.securego) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/439)
 - [SecureGo plus](https://play.google.com/store/apps/details?id=de.fiduciagad.securego.wl) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/161)
 - [SMARTBROKER+ Aktien & ETF](https://play.google.com/store/apps/details?id=de.smartbroker) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/394)
 - [Sparkasse Ihre mobile Filiale](https://play.google.com/store/apps/details?id=com.starfinanz.smob.android.sfinanzstatus) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/44)
@@ -294,12 +296,12 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Israel
 
-- [Bit ביט](https://play.google.com/store/apps/details?id=com.bnhp.payments.paymentsapp&hl=en&gl=US) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/221)
-- [כאל- הטבות, מידע, אשראי](https://play.google.com/store/apps/details?id=com.onoapps.cal4u&hl=he&gl=US) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/217)
-- [ישראכרט - ארנקים, אשראי והטבות](https://play.google.com/store/apps/details?id=com.isracard.hatavot&hl=he&gl=US) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/219)
-- [Max](https://play.google.com/store/apps/details?id=com.ideomobile.leumicard) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/218)
-- [פייבוקס ארנק דיגיטלי - PayBox](https://play.google.com/store/apps/details?id=com.payboxapp&hl=he&gl=US) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/220)
-- [בנק דיסקונט](https://play.google.com/store/apps/details?id=com.ideomobile.discount&hl=he&gl=US) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/223)
+- [Bit ביט](https://play.google.com/store/apps/details?id=com.bnhp.payments.paymentsapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/221)
+- [כאל- הטבות, מידע, אשראי](https://play.google.com/store/apps/details?id=com.onoapps.cal4u) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/217)
+- [ישראכרט - ארנקים, אשראי והטבות](https://play.google.com/store/apps/details?id=com.isracard.hatavot) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/219)
+- [max](https://play.google.com/store/apps/details?id=com.ideomobile.leumicard) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/218)
+- [פייבוקס ארנק דיגיטלי - PayBox](https://play.google.com/store/apps/details?id=com.payboxapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/220)
+- [בנק דיסקונט](https://play.google.com/store/apps/details?id=com.ideomobile.discount) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/223)
 
 ### Italy
 
@@ -451,6 +453,11 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [하나은행 - Hanabank](https://play.google.com/store/apps/details?id=com.kebhana.hanapush) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/259)
 - [웰컴디지털뱅크](https://play.google.com/store/apps/details?id=kr.co.welcomebank.omb) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/260)
 - [우리WON뱅킹](https://play.google.com/store/apps/details?id=com.wooribank.smart.npib) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/261)
+- ~~[토스](https://play.google.com/store/apps/details?id=viva.republica.toss)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/432)
+- [KB국민은행 스타뱅킹](https://play.google.com/store/apps/details?id=com.kbstar.kbbank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/433)
+- [신한 SOL뱅크-신한은행 스마트폰 뱅킹](https://play.google.com/store/apps/details?id=com.shinhan.sbanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/434)
+- [삼성카드](https://play.google.com/store/apps/details?id=kr.co.samsungcard.mpocket) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/435)
+- [네이버페이](https://play.google.com/store/apps/details?id=com.naverfin.payapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/436)
 - [PAYCO](https://play.google.com/store/apps/details?id=com.nhnent.payapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/262)
 
 ### Spain
