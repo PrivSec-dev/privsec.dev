@@ -9,7 +9,7 @@ author: Tommy
 
 ChromeOS encrypts user data on the disk by default. The encryption key is protected using a number of factors, which is documented in the [ChromeOS Documentation](https://www.chromium.org/developers/design-documents/tpm-usage/#TOC-Protecting-User-Data-Encryption-Keys).
 
-Essentially, the user's Google account password, when typed into a the Chromebook with the security chip intact (be it the TPM, Titan C, or some other chips), will give the encryption key to unlock their files. As such, for confidentiality, it is important that the user's Google account password is never exposed to an attacker. If the threat model requires protection against Google or an attacker who has compromised their servers, the password should be hashed client side before being sent to Google's server.
+Essentially, the user's Google account password, when typed into a the Chromebook (with the security chip intact - be it the TPM, Titan C, or some other chips), will give the encryption key to unlock their files. As such, for confidentiality, it is important that the user's Google account password is never exposed to an attacker. If the threat model requires protection against Google or an attacker who has compromised their servers, the password should be hashed client side before being sent to Google's server.
 
 ## What Happens in Practice
 
