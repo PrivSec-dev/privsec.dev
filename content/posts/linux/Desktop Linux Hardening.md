@@ -102,8 +102,8 @@ Some sandboxing solutions for desktop Linux distributions do exist; however, the
 You can restrict applications further by setting [Flatpak overrides](https://docs.flatpak.org/en/latest/flatpak-command-reference.html#flatpak-override). This can be done with the command&nbsp;line or by using [Flatseal](https://github.com/tchx84/Flatseal). To deny common dangerous Flatpak permissions globally, run the following commands:
 
 ```bash
-sudo flatpak override --system --nosocket=x11 --nosocket=fallback-x11 --nosocket=pulseaudio --unshare=network --unshare=ipc --nofilesystem=host:reset --nodevice=input --nodevice=shm --nodevice=all --no-talk-name=org.freedesktop.Flatpak --no-talk-name=org.freedesktop.systemd1 --no-talk-name=ca.desrt.dconf --no-talk-name=org.gnome.Shell.Extensions
-flatpak override --user --nosocket=x11 --nosocket=fallback-x11 --nosocket=pulseaudio --unshare=network --unshare=ipc --nofilesystem=host:reset --nodevice=input --nodevice=shm --nodevice=all --no-talk-name=org.freedesktop.Flatpak --no-talk-name=org.freedesktop.systemd1 --no-talk-name=ca.desrt.dconf --no-talk-name=org.gnome.Shell.Extensions
+sudo flatpak override --system --nosocket=x11 --nosocket=fallback-x11 --nosocket=pulseaudio --nosocket=session-bus --nosocket=system-bus --unshare=network --unshare=ipc --nofilesystem=host:reset --nodevice=input --nodevice=shm --nodevice=all --no-talk-name=org.freedesktop.Flatpak --no-talk-name=org.freedesktop.systemd1 --no-talk-name=ca.desrt.dconf --no-talk-name=org.gnome.Shell.Extensions
+flatpak override --user --nosocket=x11 --nosocket=fallback-x11 --nosocket=pulseaudio --nosocket=session-bus --nosocket=system-bus --unshare=network --unshare=ipc --nofilesystem=host:reset --nodevice=input --nodevice=shm --nodevice=all --no-talk-name=org.freedesktop.Flatpak --no-talk-name=org.freedesktop.systemd1 --no-talk-name=ca.desrt.dconf --no-talk-name=org.gnome.Shell.Extensions
 ```
 
 To allow Flatseal to function after applying the overrides above, run the following command:
@@ -118,6 +118,8 @@ Some sensitive permissions of note:
 
 - `--share=network`: network and internet access
 - `--socket=pulseaudio`: the PulseAudio socket, grants access to all audio devices (including inputs)
+- `--socket=session-bus`: access to the entire session bus, which can be used to break out of the sandbox by abusing dangerous D&#8209;Buses.
+- `--socket=system-bus`: access to the entire system bus, which can be used to break out of the sandbox by abusing dangerous D&#8209;Buses.
 - `--device=all`: access to all devices (including webcams)
 - `--talk-name=org.freedesktop.secrets`: D&#8209;Bus access to secrets stored on your keychain
 - `--talk-name=org.freedesktop.Flatpak`: D&#8209;Bus access to run `flatpak run`. This D&#8209;Bus is a sandbox escape.
