@@ -536,6 +536,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Barclays](https://play.google.com/store/apps/details?id=com.barclays.android.barclaysmobilebanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/341)
 - [Capital On Tap](https://play.google.com/store/apps/details?id=com.cot.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/424)
 - [Chase UK](https://play.google.com/store/apps/details?id=com.chase.intl) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/69)
+- [Chip - Savings and Investments](https://play.google.com/store/apps/details?id=to.chip.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/440)
 - [Coventry Building Society](https://play.google.com/store/apps/details?id=com.cbs.prod) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/423)
 - [The Co-operative Bank](https://play.google.com/store/apps/details?id=com.cooperativebank.bank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/205)
 - [first direct](https://play.google.com/store/apps/details?id=com.firstdirect.bankingonthego) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/128)
