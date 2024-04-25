@@ -7,7 +7,7 @@ author: Tommy
 
 ## Premise
 
-ChromeOS encrypts user data on the disk by default. The implementation details are [documented upstream]("TPM Usage — The Chromium Projects" https://www.chromium.org/developers/design-documents/tpm-usage/#TOC-Protecting-User-Data-Encryption-Keys) but not relevant within the scope of this post.
+ChromeOS encrypts user data on the disk by default. The implementation details are [documented upstream](https://www.chromium.org/developers/design-documents/tpm-usage/#TOC-Protecting-User-Data-Encryption-Keys "TPM Usage — The Chromium Projects") but not relevant within the scope of this post.
 
 It is well-known that ChromeOS uses Google account passwords as the primary login credentials. This necessarily means that anyone with knowledge of the Google account password is able to unlock and therefore decrypt a ChromeOS user profile.
 
