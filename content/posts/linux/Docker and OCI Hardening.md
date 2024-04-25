@@ -136,7 +136,7 @@ After ensuring root isn't used in your containers, you should look into setting 
 
 ```
     security_opt:
-        - no-new-privileges: true
+        - "no-new-privileges:true"
 ```
 
 Gaining privileges in the container will be much harder that way.
