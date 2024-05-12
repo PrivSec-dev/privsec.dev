@@ -11,7 +11,7 @@ Mullvad is a fairly popular and generally trustworthy VPN provider. In this post
 
 ## Preparing your TemplateVM
 
-I recommend that you make a new TemplateVM based on latest Fedora template and remove all unnecessary packages that you might not use. This way, you can minimize the attack surface while not having to deal with missing dependencies like on a minimal template. With that being said, if you do manage to get the minimal template to fully work with Mullvad, feel free to [open a discussion on GitHub](https://github.com/orgs/PrivSec-dev/discussions) or [contact me directly](https://tommytran.io/contact) and I will update the post accordingly.
+I recommend that you make a new TemplateVM based on latest Fedora GNOME template and remove all unnecessary packages that you might not use. This way, you can minimize the attack surface while not having to deal with missing dependencies like on a minimal template. With that being said, if you do manage to get the minimal template to fully work with Mullvad, feel free to [open a discussion on GitHub](https://github.com/orgs/PrivSec-dev/discussions) or [contact me directly](https://tommytran.io/contact) and I will update the post accordingly.
 
 I run [this script](https://github.com/TommyTran732/QubesOS-Scripts/blob/main/fedora-gnome/fedora-gnome.sh) on my template to trim it down.
 
