@@ -63,7 +63,7 @@ Next, enable the systemd path:
 sudo systemctl enable --now dnat-to-ns.path
 ```
 
-Shutdown the TemplateVM:
+Finally, shutdown the TemplateVM:
 
 ```bash
 sudo shutdown now
