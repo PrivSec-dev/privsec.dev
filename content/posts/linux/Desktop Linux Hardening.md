@@ -428,7 +428,7 @@ Most Linux distributions by default use the unencrypted and unauthenticated [Net
 - [Configure Network Time Security (NTS) with chronyd](https://fedoramagazine.org/secure-ntp-with-nts/)
 - Use Kicksecure's [sdwdate](https://github.com/Kicksecure/sdwdate) on Debian&#8209;based distributions.
 
-If you decide on using NTS with chronyd, consider using multiple, independent time providers and setting [`minsources`](https://chrony.tuxfamily.org/doc/devel/chrony.conf#minsources) to a value greater than 1.
+If you decide on using NTS with chronyd, consider using multiple, independent time providers and setting [`minsources`](https://chrony-project.org/doc/4.4/chrony.conf.html#minsources) to a value greater than 1.
 
 GrapheneOS uses a [quite nice chrony configuration](https://github.com/GrapheneOS/infrastructure/blob/main/chrony.conf) for their infrastructure. I recommend that you replicate their `chrony.conf` on your system.
 
