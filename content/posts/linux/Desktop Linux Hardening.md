@@ -19,7 +19,7 @@ Some of the sections will include mentions of unofficial builds of packages like
 
 Most Linux distributions have an option within its installer for enabling LUKS full disk encryption. If this option isn't set at installation time, you will have to backup your data and re-install, as encryption is applied after [disk partitioning](https://en.wikipedia.org/wiki/Disk_partitioning) but before [filesystem](https://en.wikipedia.org/wiki/File_system) creation.
 
-By default, `cryptsetup` does not setup authenticated encryption. If you are configuring partitioning using the command line, you can enable integrity with the `--integrity` argument.
+By default, `cryptsetup` does not set up authenticated encryption. If you are configuring partitioning using the command line, you can enable integrity with the `--integrity` argument.
 
 ### Encrypted Swap
 
@@ -71,7 +71,7 @@ Machine ID
 
 #### System Counting
 
-Many Linux distributions sends some telemetry data by default to count how many systems are using their software. Consider disabling this depending on your threat model.
+Many Linux distributions sends some telemetry by default to count how many systems are using their software. Consider disabling this depending on your threat model.
 
 The Fedora Project offers a ["countme" variable](https://dnf.readthedocs.io/en/latest/conf_ref.html#countme-label) to much more accurately [count unique systems accessing its mirrors](https://fedoraproject.org/wiki/Changes/DNF_Better_Counting) without involving unique IDs. While currently disabled by default, you could add `countme=false` to `/etc/dnf/dnf.conf` in case the default changes in the future. On rpm&#8209;ostree systems such as Fedora Silverblue and Kinoite, the `countme` option can be disabled by [masking the rpm-ostree-countme timer](https://coreos.github.io/rpm-ostree/countme/).
 
@@ -112,7 +112,7 @@ To allow Flatseal to function after applying the overrides above, run the follow
 flatpak --user override com.github.tchx84.Flatseal --filesystem=/var/lib/flatpak/app:ro --filesystem=xdg-data/flatpak/app:ro --filesystem=xdg-data/flatpak/overrides:create
 ```
 
-Note that this only helps with lax high&#8209;level default permissions and cannot solve the low&#8209;level issues like `/proc` and `/sys` access or an insufficient seccomp blacklist.
+Note that this only helps with lax, high&#8209;level default permissions and cannot solve the low&#8209;level issues like `/proc` and `/sys` access or an insufficient seccomp blacklist.
 
 Some sensitive permissions of note:
 
@@ -123,16 +123,16 @@ Some sensitive permissions of note:
 - `--device=all`: access to all devices (including webcams)
 - `--talk-name=org.freedesktop.secrets`: D&#8209;Bus access to secrets stored on your keychain
 - `--talk-name=org.freedesktop.Flatpak`: D&#8209;Bus access to run `flatpak run`. This D&#8209;Bus is a sandbox escape.
-- `talk-name=org.freedesktop.systemd1`: D&#8209;Bus access to systemd. The D&#8209;Bus can be used to load in systemd services with arbitary code and run them.
-- `--talk-name=ca.desrt.dconf`: D&#8209;Bus access to dconf. It can be abused to run arbitary commands by changing key bindings.
-- `--talk-name=org.gnome.Shell.Extensions`: D&#8209;Bus access to install and manage GNOME shell extensions. It can be abused to add malicious extensions to GNOME.
+- `talk-name=org.freedesktop.systemd1`: D&#8209;Bus access to systemd. This D&#8209;Bus can be used to load in systemd services with arbitary code and run them.
+- `--talk-name=ca.desrt.dconf`: D&#8209;Bus access to dconf. This D&#8209;Bus can be abused to run arbitary commands by changing key bindings.
+- `--talk-name=org.gnome.Shell.Extensions`: D&#8209;Bus access to install and manage GNOME shell extensions. This D&#8209;Bus can be abused to add malicious extensions to GNOME.
 If an application works natively with Wayland (*not* running through the [XWayland](https://wayland.freedesktop.org/xserver.html) compatibility layer), consider revoking its access to X11 (`--nosocket=x11`) and the [inter&#8209;process communications (IPC)](https://en.wikipedia.org/wiki/Unix_domain_socket) socket (`--unshare=ipc`) as well.
 
 Many Flatpak apps ship with broad filesystem permissions such as `--filesystem=home` and `--filesystem=host`. Some applications implement the [Portal API](https://docs.flatpak.org/en/latest/portal-api-reference.html), which allows a file manager to pass files to the Flatpak application (e.g. VLC) without specific filesystem access privileges. Despite this, many of them [still declare `--filesystem=host`](https://github.com/flathub/org.videolan.VLC/blob/master/org.videolan.VLC.json).
 
 My strategy to deal with this is to revoke all filesystem access first, then test if an application works without it. If it does, it means the app is already using portals and no further action is needed. If it doesn't, then I start granting permission to specific directories.
 
-As odd as this may sound, **you should not enable (blind) unattended updates of Flatpak packages**. If you or a Flatpak frontend (app store) simply executes `flatpak update -y`, Flatpaks will be automatically granted any new permissions declared upstream without notifying you. Using automatic update with GNOME Software is fine, as it does not automatically update Flatpaks with permission changes and notifies the user instead.
+As odd as this may sound, **you should not enable (blind) unattended updates of Flatpak packages**. If you or a Flatpak frontend (app store) simply executes `flatpak update -y`, Flatpaks will be automatically granted any new permissions declared upstream without notifying you. Enabling automatic updates with GNOME Software is fine, as it does not automatically update Flatpaks with permission changes and notifies the user instead.
 
 ### Snap
 
@@ -246,7 +246,7 @@ fwupdmgr update
 
 Some distributions like Debian do not have fwupd installed by default, so you should check for its existence on your system and install it if needed.
 
-Several graphical frontends integrate with fwupd to offer firmware updates (GNOME Software, KDE Discover, Snap Store, [GNOME Firmware](https://gitlab.gnome.org/World/gnome-firmware), Pop!\_OS Settings app). However, not all distributions offer this integration by default, so you should check your specific system and setup scheduled update notifications using [systemd timers](https://wiki.archlinux.org/title/systemd/Timers) or [cron](https://wiki.archlinux.org/title/Cron) if needed.
+Several graphical frontends integrate with fwupd to offer firmware updates (GNOME Software, KDE Discover, Snap Store, [GNOME Firmware](https://gitlab.gnome.org/World/gnome-firmware), Pop!\_OS Settings app). However, not all distributions offer this integration by default, so you should check your specific system and set up scheduled update notifications using [systemd timers](https://wiki.archlinux.org/title/systemd/Timers) or [cron](https://wiki.archlinux.org/title/Cron) if needed.
 
 ### Firewall
 
@@ -377,7 +377,7 @@ Disabling access to `/sys` without a proper whitelist will lead to various appli
 
 Some distributions like Arch Linux offer the [linux&#8209;hardened](https://github.com/anthraxx/linux-hardened) kernel package. It includes [hardening patches](https://wiki.archlinux.org/title/security#Kernel_hardening) and more security-conscious defaults.
 
-linux&#8209;hardened has unprivileged user namespaces (`kernel.unprivileged_userns_clone`) disabled by default. [This may impact some software.](#runtime-kernel-parameters-sysctl)
+linux&#8209;hardened disables unprivileged user namespaces (`kernel.unprivileged_userns_clone`) by default. [This may impact some software.](#runtime-kernel-parameters-sysctl)
 
 #### grsecurity
 
@@ -419,7 +419,7 @@ Kicksecure, and by extension Whonix, has an experimental [permission hardening s
 
 Most Linux distributions do not enable [DNSSEC](https://www.icann.org/resources/pages/dnssec-what-is-it-why-important-2019-03-05-en) by default. I recommend that you enable it to make sure that the responses to your DNS queries are authentic. You will need a DNS provider that supports DNSSEC. Ideally, you should use a VPN which provides this feature with its DNS servers so that you can also blend in with other people.
 
-On systems with `systemd-resolved`, you can edit the `/etc/systemd/resolved.conf` file and add `DNSSEC=yes` to enable it. Do `systemctl restart systemd-resolved` after you are done editing to apply your configuration.
+On systems with `systemd-resolved`, you can edit the `/etc/systemd/resolved.conf` file and add `DNSSEC=yes` to enable it. Run `systemctl restart systemd-resolved` after you are done editing to apply your configuration.
 
 If you are a Whonix or Tails user, you can disregard setting up DNSSEC, as Tor DNS resolution does not support it. Alternatively, you can [use a non-Tor resolver](https://www.whonix.org/wiki/Alternative_DNS_Resolver), though it is not recommended that you do this for an extended amount of time.
 
@@ -430,7 +430,7 @@ Most Linux distributions by default use the unencrypted and unauthenticated [Net
 - [Configure Network Time Security (NTS) with chronyd](https://fedoramagazine.org/secure-ntp-with-nts/)
 - Use Kicksecure's [sdwdate](https://github.com/Kicksecure/sdwdate) on Debian&#8209;based distributions.
 
-If decide on using NTS with chronyd, consider using multiple, independent time providers and setting [`minsources`](https://chrony.tuxfamily.org/doc/devel/chrony.conf#minsources) greater than 1.
+If you decide on using NTS with chronyd, consider using multiple, independent time providers and setting [`minsources`](https://chrony.tuxfamily.org/doc/devel/chrony.conf#minsources) to a value greater than 1.
 
 GrapheneOS uses a [quite nice chrony configuration](https://github.com/GrapheneOS/infrastructure/blob/main/chrony.conf) for their infrastructure. I recommend that you replicate their `chrony.conf` on your system.
 
@@ -457,7 +457,7 @@ sudo authselect select <profile_id, default: sssd> with-faillock without-nullok 
 
 On systems where `pam_faillock` is not available, consider using [`pam_tally2`](https://www.man7.org/linux/man-pages/man8/pam_tally2.8.html) instead.
 
-If you have a YubiKey or other U2F/FIDO2 authenticator, you can use [pam-u2f](https://github.com/Yubico/pam-u2f) to implement two&#8209;factor authentication for login. **Make sure to use a hardcoded `origin` and `appid` as [indicated in the ArchWiki](https://wiki.archlinux.org/title/Universal_2nd_Factor#Authentication_for_Arch_Linux). Do not use the default identifier `pam://$HOSTNAME` which will break if your hostname changes.**
+If you have a YubiKey or another U2F/FIDO2 authenticator, you can use [pam-u2f](https://github.com/Yubico/pam-u2f) to implement two&#8209;factor authentication for login. **Make sure to use a hardcoded `origin` and `appid` as [indicated in the ArchWiki](https://wiki.archlinux.org/title/Universal_2nd_Factor#Authentication_for_Arch_Linux). Do not use the default identifier `pam://$HOSTNAME` which will break if your hostname changes.**
 
 ### Storage Media Handling
 
@@ -492,7 +492,7 @@ On older systems where `autofs` is used, you should mask the `autofs` service to
 
 To better protect your USB ports from attacks such as [BadUSB](https://www.srlabs.de/bites/usb-peripherals-turn) and the infamous [Hak5 USB Rubber Ducky](https://hak5.org/products/usb-rubber-ducky), I recommend [USBGuard](https://usbguard.github.io). Documentation is available on the [USBGuard website](https://usbguard.github.io) and [ArchWiki](https://wiki.archlinux.org/title/USBGuard).
 
-If you are using [linux&#8209;hardened](#linux-hardened), you can alternatively use the `deny_new_usb` kernel parameter&nbsp;--- see ["Preventing USB Attacks with `linux&#8209;hardened`"](https://blog.lizzie.io/preventing-usb-attacks-with-linux-hardened.html).
+If you are using [linux&#8209;hardened](#linux-hardened), you can alternatively use the `deny_new_usb` kernel parameter&nbsp;--- see ["Preventing USB Attacks with `linux-hardened`"](https://blog.lizzie.io/preventing-usb-attacks-with-linux-hardened.html).
 
 ## Secure Boot
 
@@ -500,7 +500,7 @@ If you are using [linux&#8209;hardened](#linux-hardened), you can alternatively 
 
 One of the problems with Secure Boot, particularly on Linux, is that [only the chainloader (shim), bootloader (GRUB), and kernel are verified in a typical setup](https://wiki.ubuntu.com/UEFI/SecureBoot#How_UEFI_Secure_Boot_works_on_Ubuntu). The [initramfs](https://wiki.ubuntu.com/Initramfs#Detailed_Description) is often left unverified and unencrypted, leaving the door open for an [evil maid attack](https://en.wikipedia.org/wiki/Evil_maid_attack).
 
-The firmware on most devices is also preconfigured to trust Microsoft's keys for both Windows and third&#8209;parties, leading to a [large attacks surface](https://github.com/ventoy/Ventoy/issues/135).
+The firmware on most devices is also preconfigured to trust Microsoft's keys for both Windows and third&#8209;parties, leading to a [large attack surface](https://github.com/ventoy/Ventoy/issues/135).
 
 ### Enrolling your own keys
 
