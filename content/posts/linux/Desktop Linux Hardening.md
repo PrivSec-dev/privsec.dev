@@ -362,7 +362,7 @@ There are a few things in this config to keep in mind:
 - Bluetooth is disabled. Comment out the `install bluetooth` and `install btusb` lines to use Bluetooth.
 - Thunderbolt is disabled. Comment out the `install thunderbolt` line to use Thunderbolt devices.
 - The `cdrom` and `sr_mod` modules are merely _blacklisted_ (can still be loaded at runtime with `modprobe`). If you have no intention to ever use CD&#8209;ROM devices, they should be _disabled_ by *un*commenting the respective `install` lines. ([More about how this works on the ArchWiki](https://wiki.archlinux.org/title/Kernel_module#Using_files_in_/etc/modprobe.d/_2))
-- Apple filesystems are disabled. This is generally fine on non-Apple systems; however, if you are using an Apple device, you **must** check what filesystem your EFI partition uses. For example, if your EFI filesystem is HFS+, you need to comment out `install hfsplus /bin/disabled-filesys-by-security-misc`, otherwise your computer will not be able to boot Linux.
+- Apple filesystems are disabled. While generally fine on non&#8209;Apple systems, if you are using an Apple device you **must** check the filesystem of your EFI partition and comment out the relevant `install` line, otherwise your Linux install will not boot. For example, comment out the `install hfsplus` line if your ESP filesystem is HFS+.
 - To produce informative errors when utilising the configuration file, all 10 of the corresponding [debugging scripts](https://github.com/Kicksecure/security-misc/tree/master/usr/bin) should be copied into `/bin/`.
 
 #### Restricting access to /proc and /sys
