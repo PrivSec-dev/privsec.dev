@@ -81,7 +81,7 @@ The Fedora Project offers a ["countme" variable](https://dnf.readthedocs.io/en/l
 
 [snapd (Snap) assigns a unique ID to your installation and uses it for telemetry.](https://snapcraft.io/docs/snap-store-metrics) While this is generally not a problem, if your threat model calls for anonymity, you should avoid using Snap packages and uninstall snapd. Accidental reinstallation on Ubuntu can be prevented with `sudo apt-mark hold snapd`.
 
-_Of course, this is a non&#8209;exhaustive list of telemetry on different Linux distributions. If you are aware of other tracking mechanisms used by these or other distributions, feel free to make a [pull request](https://github.com/PrivSec-dev/privsec.dev/blob/main/content/posts/linux/Linux-Desktop-Hardening.md) or [discussion post](https://github.com/PrivSec-dev/privsec.dev/discussions) detailing them!_
+_Of course, this is a non&#8209;exhaustive list of telemetry on different Linux distributions. If you are aware of other tracking mechanisms used by these or other distributions, feel free to make a [pull request](https://github.com/PrivSec-dev/privsec.dev/blob/main/content/posts/linux/Desktop%20Linux%20Hardening.md) or [discussion post](https://github.com/PrivSec-dev/privsec.dev/discussions) detailing them!_
 
 ### Keystroke Anonymization
 
@@ -128,7 +128,7 @@ Some sensitive permissions of note:
 - `--talk-name=org.gnome.Shell.Extensions`: D&#8209;Bus access to install and manage GNOME shell extensions. This D&#8209;Bus can be abused to add malicious extensions to GNOME.
 If an application works natively with Wayland (*not* running through the [XWayland](https://wayland.freedesktop.org/xserver.html) compatibility layer), consider revoking its access to X11 (`--nosocket=x11`) and the [inter&#8209;process communications (IPC)](https://en.wikipedia.org/wiki/Unix_domain_socket) socket (`--unshare=ipc`) as well.
 
-Many Flatpak apps ship with broad filesystem permissions such as `--filesystem=home` and `--filesystem=host`. Some applications implement the [Portal API](https://docs.flatpak.org/en/latest/portal-api-reference.html), which allows a file manager to pass files to the Flatpak application (e.g. VLC) without specific filesystem access privileges. Despite this, many of them [still declare `--filesystem=host`](https://github.com/flathub/org.videolan.VLC/blob/master/org.videolan.VLC.json).
+Many Flatpak apps ship with broad filesystem permissions such as `--filesystem=home` and `--filesystem=host`. Some applications implement the [Portal API](https://docs.flatpak.org/en/latest/portal-api-reference.html), which allows a file manager to pass files to the Flatpak application (e.g. VLC) without specific filesystem access privileges. Despite this, many of them [still declare `--filesystem=host`](https://github.com/flathub/org.videolan.VLC/blob/master/org.videolan.VLC.yaml).
 
 My strategy to deal with this is to revoke all filesystem access first, then test if an application works without it. If it does, it means the app is already using portals and no further action is needed. If it doesn't, then I start granting permission to specific directories.
 
@@ -369,7 +369,7 @@ There are a few things in this config to keep in mind:
 
 _See ["2.4&nbsp;hidepid"](https://madaidans-insecurities.github.io/guides/linux-hardening.html#hidepid) and ["2.7&nbsp;Restricting access to sysfs"](https://madaidans-insecurities.github.io/guides/linux-hardening.html#restricting-sysfs) in Madaidan's guide._
 
-Disabling access to `/sys` without a proper whitelist will lead to various applications breaking. Developing such a whitelist will unfortunately be extremely tedious for most users. Kicksecure, and by extension Whonix, has the experimental [proc-hidepid](https://github.com/Kicksecure/security-misc/blob/master/lib/systemd/system/proc-hidepid.service) and [hide-hardware-info](https://github.com/Kicksecure/security-misc/blob/master/lib/systemd/system/hide-hardware-info.service) services which do just this. From my testing, these work perfectly fine on minimal Kicksecure installations and both Qubes-Whonix-Workstation and Qubes-Whonix-Gateway.
+Disabling access to `/sys` without a proper whitelist will lead to various applications breaking. Developing such a whitelist will unfortunately be extremely tedious for most users. Kicksecure, and by extension Whonix, has the experimental [proc-hidepid](https://github.com/Kicksecure/security-misc/blob/master/usr/lib/systemd/system/proc-hidepid.service) and [hide-hardware-info](https://github.com/Kicksecure/security-misc/blob/master/usr/lib/systemd/system/hide-hardware-info.service) services which do just this. From my testing, these work perfectly fine on minimal Kicksecure installations and both Qubes-Whonix-Workstation and Qubes-Whonix-Gateway.
 
 #### linux-hardened
 
@@ -401,7 +401,7 @@ ExecStart=/usr/bin/gnome-shell --no-x11
 
 Consider adding the [mount options](https://man7.org/linux/man-pages/man8/mount.8.html#FILESYSTEM-INDEPENDENT_MOUNT_OPTIONS) `nodev`, `noexec`, and `nosuid` to mountpoints which do not need the respective capabilities. Typically, these can be applied to `/boot`, `/boot/efi`, and `/var`. These flags could also be applied to `/home` and `/root`, however `noexec` will prevent applications that require binary execution in those locations from working (including Flatpak and Snap).
 
-It should be noted that `noexec` is not foolproof and actually [quite easy to bypass](https://chromium.googlesource.com/chromiumos/docs/+/HEAD/security/noexec_shell_scripts.md#what-about-interpreted-code).
+It should be noted that `noexec` is not foolproof and actually [quite easy to bypass](https://www.chromium.org/chromium-os/developer-library/guides/security/noexec-shell-scripts/).
 
 If you use [Toolbox](https://docs.fedoraproject.org/en-US/fedora-silverblue/toolbox/), do not set any of these mount options on `/var/log/journal`. From my testing, the Toolbox container will fail to start if you have `nodev`, `nosuid`, or `noexec` on said directory. If you are on Arch&nbsp;Linux, you probably do not want to set `noexec` on `/var/tmp`, as some AUR packages will then fail to build.
 
@@ -411,7 +411,7 @@ SUID allows a user to execute an application as the owner of that application, w
 
 It is desirable to remove SUID from as many binaries as possible; however, this takes substantial effort and trial and error on the user's part, as some applications require SUID to function.
 
-Kicksecure, and by extension Whonix, has an experimental [permission hardening service](https://github.com/Kicksecure/security-misc/blob/master/lib/systemd/system/permission-hardening.service) and [application whitelist](https://github.com/Kicksecure/security-misc/tree/master/etc/permission-hardening.d) to automate SUID removal from most binaries and libraries on the system. From my testing, these work perfectly fine on minimal Kicksecure installations and both Qubes-Whonix-Workstation and Qubes-Whonix-Gateway.
+Kicksecure, and by extension Whonix, has an experimental [permission hardening service](https://github.com/Kicksecure/security-misc/blob/master/usr/lib/systemd/system/permission-hardener.service) and [application whitelist](https://github.com/Kicksecure/security-misc/tree/master/etc/permission-hardener.d) to automate SUID removal from most binaries and libraries on the system. From my testing, these work perfectly fine on minimal Kicksecure installations and both Qubes-Whonix-Workstation and Qubes-Whonix-Gateway.
 
 ### DNSSEC
 
