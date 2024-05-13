@@ -71,7 +71,7 @@ Machine ID
 
 #### System Counting
 
-Many Linux distributions sends some telemetry by default to count how many systems are using their software. Consider disabling this depending on your threat model.
+Many Linux distributions send some telemetry by default to count how many systems are using their software. Consider disabling this depending on your threat model.
 
 The Fedora Project offers a ["countme" variable](https://dnf.readthedocs.io/en/latest/conf_ref.html#countme-label) to much more accurately [count unique systems accessing its mirrors](https://fedoraproject.org/wiki/Changes/DNF_Better_Counting) without involving unique IDs. While currently disabled by default, you could add `countme=false` to `/etc/dnf/dnf.conf` in case the default changes in the future. On rpm&#8209;ostree systems such as Fedora Silverblue and Kinoite, the `countme` option can be disabled by [masking the rpm-ostree-countme timer](https://coreos.github.io/rpm-ostree/countme/).
 
