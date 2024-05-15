@@ -455,7 +455,7 @@ sudo authselect select <profile_id, default: sssd> with-faillock without-nullok 
 
 On systems where `pam_faillock` is not available, consider using [`pam_tally2`](https://www.man7.org/linux/man-pages/man8/pam_tally2.8.html) instead.
 
-If you have a YubiKey or another U2F/FIDO2 authenticator, you can use [pam-u2f](https://github.com/Yubico/pam-u2f) to implement two&#8209;factor authentication for login. **Make sure to use a hardcoded `origin` and `appid` as [indicated in the ArchWiki](https://wiki.archlinux.org/title/Universal_2nd_Factor#Authentication_for_Arch_Linux). Do not use the default identifier `pam://$HOSTNAME` which will break if your hostname changes.**
+If you have a YubiKey or another U2F/FIDO2 authenticator, you can use [pam-u2f](https://github.com/Yubico/pam-u2f) to implement two&#8209;factor authentication for login. **Make sure to use a hardcoded `origin` and `appid` as [indicated in the ArchWiki](https://wiki.archlinux.org/title/Universal_2nd_Factor#Authentication_for_user_sessions). Do not use the default identifier `pam://$HOSTNAME` which will break if your hostname changes.**
 
 ### Storage Media Handling
 
