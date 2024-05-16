@@ -19,7 +19,7 @@ Some of the sections will include mentions of unofficial builds of packages like
 
 Most Linux distributions have an option within its installer for enabling LUKS full disk encryption. If this option isn't set at installation time, you will have to backup your data and re-install, as encryption is applied after [disk partitioning](https://en.wikipedia.org/wiki/Disk_partitioning) but before [filesystem](https://en.wikipedia.org/wiki/File_system) creation.
 
-By default, `cryptsetup` does not setup authenticated encryption. If you are configuring partitioning using the command line, you can enable integrity with the `--integrity` argument.
+By default, `cryptsetup` does not set up authenticated encryption. If you are configuring partitioning using the command line, you can enable integrity with the `--integrity` argument.
 
 ### Encrypted Swap
 
@@ -71,7 +71,7 @@ Machine ID
 
 #### System Counting
 
-Many Linux distributions sends some telemetry data by default to count how many systems are using their software. Consider disabling this depending on your threat model.
+Many Linux distributions send some telemetry by default to count how many systems are using their software. Consider disabling this depending on your threat model.
 
 The Fedora Project offers a ["countme" variable](https://dnf.readthedocs.io/en/latest/conf_ref.html#countme-label) to much more accurately [count unique systems accessing its mirrors](https://fedoraproject.org/wiki/Changes/DNF_Better_Counting) without involving unique IDs. While currently disabled by default, you could add `countme=false` to `/etc/dnf/dnf.conf` in case the default changes in the future. On rpm&#8209;ostree systems such as Fedora Silverblue and Kinoite, the `countme` option can be disabled by [masking the rpm-ostree-countme timer](https://coreos.github.io/rpm-ostree/countme/).
 
@@ -81,7 +81,7 @@ The Fedora Project offers a ["countme" variable](https://dnf.readthedocs.io/en/l
 
 [snapd (Snap) assigns a unique ID to your installation and uses it for telemetry.](https://snapcraft.io/docs/snap-store-metrics) While this is generally not a problem, if your threat model calls for anonymity, you should avoid using Snap packages and uninstall snapd. Accidental reinstallation on Ubuntu can be prevented with `sudo apt-mark hold snapd`.
 
-_Of course, this is a non&#8209;exhaustive list of telemetry on different Linux distributions. If you are aware of other tracking mechanisms used by these or other distributions, feel free to make a [pull request](https://github.com/PrivSec-dev/privsec.dev/blob/main/content/posts/linux/Linux-Desktop-Hardening.md) or [discussion post](https://github.com/PrivSec-dev/privsec.dev/discussions) detailing them!_
+_Of course, this is a non&#8209;exhaustive list of telemetry on different Linux distributions. If you are aware of other tracking mechanisms used by these or other distributions, feel free to make a [pull request](https://github.com/PrivSec-dev/privsec.dev/blob/main/content/posts/linux/Desktop%20Linux%20Hardening.md) or [discussion post](https://github.com/PrivSec-dev/privsec.dev/discussions) detailing them!_
 
 ### Keystroke Anonymization
 
@@ -112,7 +112,7 @@ To allow Flatseal to function after applying the overrides above, run the follow
 flatpak --user override com.github.tchx84.Flatseal --filesystem=/var/lib/flatpak/app:ro --filesystem=xdg-data/flatpak/app:ro --filesystem=xdg-data/flatpak/overrides:create
 ```
 
-Note that this only helps with lax high&#8209;level default permissions and cannot solve the low&#8209;level issues like `/proc` and `/sys` access or an insufficient seccomp blacklist.
+Note that this only helps with lax, high&#8209;level default permissions and cannot solve the low&#8209;level issues like `/proc` and `/sys` access or an insufficient seccomp blacklist.
 
 Some sensitive permissions of note:
 
@@ -123,16 +123,16 @@ Some sensitive permissions of note:
 - `--device=all`: access to all devices (including webcams)
 - `--talk-name=org.freedesktop.secrets`: D&#8209;Bus access to secrets stored on your keychain
 - `--talk-name=org.freedesktop.Flatpak`: D&#8209;Bus access to run `flatpak run`. This D&#8209;Bus is a sandbox escape.
-- `talk-name=org.freedesktop.systemd1`: D&#8209;Bus access to systemd. The D&#8209;Bus can be used to load in systemd services with arbitary code and run them.
-- `--talk-name=ca.desrt.dconf`: D&#8209;Bus access to dconf. It can be abused to run arbitary commands by changing key bindings.
-- `--talk-name=org.gnome.Shell.Extensions`: D&#8209;Bus access to install and manage GNOME shell extensions. It can be abused to add malicious extensions to GNOME.
+- `talk-name=org.freedesktop.systemd1`: D&#8209;Bus access to systemd. This D&#8209;Bus can be used to load in systemd services with arbitary code and run them.
+- `--talk-name=ca.desrt.dconf`: D&#8209;Bus access to dconf. This D&#8209;Bus can be abused to run arbitary commands by changing key bindings.
+- `--talk-name=org.gnome.Shell.Extensions`: D&#8209;Bus access to install and manage GNOME shell extensions. This D&#8209;Bus can be abused to add malicious extensions to GNOME.
 If an application works natively with Wayland (*not* running through the [XWayland](https://wayland.freedesktop.org/xserver.html) compatibility layer), consider revoking its access to X11 (`--nosocket=x11`) and the [inter&#8209;process communications (IPC)](https://en.wikipedia.org/wiki/Unix_domain_socket) socket (`--unshare=ipc`) as well.
 
-Many Flatpak apps ship with broad filesystem permissions such as `--filesystem=home` and `--filesystem=host`. Some applications implement the [Portal API](https://docs.flatpak.org/en/latest/portal-api-reference.html), which allows a file manager to pass files to the Flatpak application (e.g. VLC) without specific filesystem access privileges. Despite this, many of them [still declare `--filesystem=host`](https://github.com/flathub/org.videolan.VLC/blob/master/org.videolan.VLC.json).
+Many Flatpak apps ship with broad filesystem permissions such as `--filesystem=home` and `--filesystem=host`. Some applications implement the [Portal API](https://docs.flatpak.org/en/latest/portal-api-reference.html), which allows a file manager to pass files to the Flatpak application (e.g. VLC) without specific filesystem access privileges. Despite this, many of them [still declare `--filesystem=host`](https://github.com/flathub/org.videolan.VLC/blob/master/org.videolan.VLC.yaml).
 
 My strategy to deal with this is to revoke all filesystem access first, then test if an application works without it. If it does, it means the app is already using portals and no further action is needed. If it doesn't, then I start granting permission to specific directories.
 
-As odd as this may sound, **you should not enable (blind) unattended updates of Flatpak packages**. If you or a Flatpak frontend (app store) simply executes `flatpak update -y`, Flatpaks will be automatically granted any new permissions declared upstream without notifying you. Using automatic update with GNOME Software is fine, as it does not automatically update Flatpaks with permission changes and notifies the user instead.
+As odd as this may sound, **you should not enable (blind) unattended updates of Flatpak packages**. If you or a Flatpak frontend (app store) simply executes `flatpak update -y`, Flatpaks will be automatically granted any new permissions declared upstream without notifying you. Enabling automatic updates with GNOME Software is fine, as it does not automatically update Flatpaks with permission changes and notifies the user instead.
 
 ### Snap
 
@@ -246,7 +246,7 @@ fwupdmgr update
 
 Some distributions like Debian do not have fwupd installed by default, so you should check for its existence on your system and install it if needed.
 
-Several graphical frontends integrate with fwupd to offer firmware updates (GNOME Software, KDE Discover, Snap Store, [GNOME Firmware](https://gitlab.gnome.org/World/gnome-firmware), Pop!\_OS Settings app). However, not all distributions offer this integration by default, so you should check your specific system and setup scheduled update notifications using [systemd timers](https://wiki.archlinux.org/title/systemd/Timers) or [cron](https://wiki.archlinux.org/title/Cron) if needed.
+Several graphical frontends integrate with fwupd to offer firmware updates (GNOME Software, KDE Discover, Snap Store, [GNOME Firmware](https://gitlab.gnome.org/World/gnome-firmware), Pop!\_OS Settings app). However, not all distributions offer this integration by default, so you should check your specific system and set up scheduled update notifications using [systemd timers](https://wiki.archlinux.org/title/systemd/Timers) or [cron](https://wiki.archlinux.org/title/Cron) if needed.
 
 ### Firewall
 
@@ -287,11 +287,7 @@ _See ["2.2&nbsp;Sysctl"](https://madaidans-insecurities.github.io/guides/linux-h
 
 Madaidan recommends that you disable [unprivileged user namespaces](https://www.containerlabs.kubedaily.com/LXC/Linux%20Containers/User_namespaces.html) due to the [significant attack surface for privilege escalation](https://madaidans-insecurities.github.io/linux.html#kernel). However, some software such as Podman and LXC relies on unprivileged user namespaces. If you wish to use such software, do not disable `kernel.unprivileged_userns_clone`.
 
-If you are using Kicksecure or Whonix, most of this hardening is included by default. If you are using Debian, you should consider [morphing it into Kicksecure](https://www.kicksecure.com/wiki/Debian). On other distributions, you can copy the [configuration files from Kicksecure](https://github.com/Kicksecure/security-misc/tree/master/etc/sysctl.d) into `/etc/sysctl.d/` (but note that these configurations do not disable unprivileged user namespaces). There are also a few things in `30_security-misc.conf` to keep in mind:
-
-- Apple filesystems are disabled. This is generally fine on non-Apple systems; however, if you are using an Apple device, you **must** check what filesystem your EFI partition uses. For example, if your EFI filesystem is HFS+, you need to comment out `install hfsplus /bin/disabled-filesys-by-security-misc`, otherwise your computer will not be able to boot Linux.
-- The `cdrom` and `sr_mod` modules are merely _blacklisted_ (can still be loaded at runtime with `modprobe`). If you have no intention to ever use CD&#8209;ROM devices, they should be _disabled_ by *un*commenting the respective `install` lines. ([More about how this works on the ArchWiki](https://wiki.archlinux.org/title/Kernel_module#Using_files_in_/etc/modprobe.d/_2))
-- To produce informative errors when utilising the configuration file, all 10 of the corresponding [debugging scripts](https://github.com/Kicksecure/security-misc/tree/master/bin) should be copied into `/bin/`.
+If you are using Kicksecure or Whonix, most of this hardening is included by default. If you are using Debian, you should consider [morphing it into Kicksecure](https://www.kicksecure.com/wiki/Debian). On other distributions, you can copy the [configuration files from Kicksecure](https://github.com/Kicksecure/security-misc/tree/master/usr/lib/sysctl.d) into `/etc/sysctl.d/` (but note that these configurations do not disable unprivileged user namespaces).
 
 #### Boot Parameters
 
@@ -365,19 +361,21 @@ There are a few things in this config to keep in mind:
 
 - Bluetooth is disabled. Comment out the `install bluetooth` and `install btusb` lines to use Bluetooth.
 - Thunderbolt is disabled. Comment out the `install thunderbolt` line to use Thunderbolt devices.
+- The `cdrom` and `sr_mod` modules are merely _blacklisted_ (can still be loaded at runtime with `modprobe`). If you have no intention to ever use CD&#8209;ROM devices, they should be _disabled_ by *un*commenting the respective `install` lines. ([More about how this works on the ArchWiki](https://wiki.archlinux.org/title/Kernel_module#Using_files_in_/etc/modprobe.d/_2))
 - Apple filesystems are disabled. While generally fine on non&#8209;Apple systems, if you are using an Apple device you **must** check the filesystem of your EFI partition and comment out the relevant `install` line, otherwise your Linux install will not boot. For example, comment out the `install hfsplus` line if your ESP filesystem is HFS+.
+- To produce informative errors when utilising the configuration file, all 10 of the corresponding [debugging scripts](https://github.com/Kicksecure/security-misc/tree/master/usr/bin) should be copied into `/bin/`.
 
 #### Restricting access to /proc and /sys
 
 _See ["2.4&nbsp;hidepid"](https://madaidans-insecurities.github.io/guides/linux-hardening.html#hidepid) and ["2.7&nbsp;Restricting access to sysfs"](https://madaidans-insecurities.github.io/guides/linux-hardening.html#restricting-sysfs) in Madaidan's guide._
 
-Disabling access to `/sys` without a proper whitelist will lead to various applications breaking. Developing such a whitelist will unfortunately be extremely tedious for most users. Kicksecure, and by extension Whonix, has the experimental [proc-hidepid](https://github.com/Kicksecure/security-misc/blob/master/lib/systemd/system/proc-hidepid.service) and [hide-hardware-info](https://github.com/Kicksecure/security-misc/blob/master/lib/systemd/system/hide-hardware-info.service) services which do just this. From my testing, these work perfectly fine on minimal Kicksecure installations and both Qubes-Whonix-Workstation and Qubes-Whonix-Gateway.
+Disabling access to `/sys` without a proper whitelist will lead to various applications breaking. Developing such a whitelist will unfortunately be extremely tedious for most users. Kicksecure, and by extension Whonix, has the experimental [proc-hidepid](https://github.com/Kicksecure/security-misc/blob/master/usr/lib/systemd/system/proc-hidepid.service) and [hide-hardware-info](https://github.com/Kicksecure/security-misc/blob/master/usr/lib/systemd/system/hide-hardware-info.service) services which do just this. From my testing, these work perfectly fine on minimal Kicksecure installations and both Qubes-Whonix-Workstation and Qubes-Whonix-Gateway.
 
 #### linux-hardened
 
 Some distributions like Arch Linux offer the [linux&#8209;hardened](https://github.com/anthraxx/linux-hardened) kernel package. It includes [hardening patches](https://wiki.archlinux.org/title/security#Kernel_hardening) and more security-conscious defaults.
 
-linux&#8209;hardened has unprivileged user namespaces (`kernel.unprivileged_userns_clone`) disabled by default. [This may impact some software.](#runtime-kernel-parameters-sysctl)
+linux&#8209;hardened disables unprivileged user namespaces (`kernel.unprivileged_userns_clone`) by default. [This may impact some software.](#runtime-kernel-parameters-sysctl)
 
 #### grsecurity
 
@@ -403,7 +401,7 @@ ExecStart=/usr/bin/gnome-shell --no-x11
 
 Consider adding the [mount options](https://man7.org/linux/man-pages/man8/mount.8.html#FILESYSTEM-INDEPENDENT_MOUNT_OPTIONS) `nodev`, `noexec`, and `nosuid` to mountpoints which do not need the respective capabilities. Typically, these can be applied to `/boot`, `/boot/efi`, and `/var`. These flags could also be applied to `/home` and `/root`, however `noexec` will prevent applications that require binary execution in those locations from working (including Flatpak and Snap).
 
-It should be noted that `noexec` is not foolproof and actually [quite easy to bypass](https://chromium.googlesource.com/chromiumos/docs/+/HEAD/security/noexec_shell_scripts.md#what-about-interpreted-code).
+It should be noted that `noexec` is not foolproof and actually [quite easy to bypass](https://www.chromium.org/chromium-os/developer-library/guides/security/noexec-shell-scripts/#what-about-interpreted-code).
 
 If you use [Toolbox](https://docs.fedoraproject.org/en-US/fedora-silverblue/toolbox/), do not set any of these mount options on `/var/log/journal`. From my testing, the Toolbox container will fail to start if you have `nodev`, `nosuid`, or `noexec` on said directory. If you are on Arch&nbsp;Linux, you probably do not want to set `noexec` on `/var/tmp`, as some AUR packages will then fail to build.
 
@@ -413,13 +411,13 @@ SUID allows a user to execute an application as the owner of that application, w
 
 It is desirable to remove SUID from as many binaries as possible; however, this takes substantial effort and trial and error on the user's part, as some applications require SUID to function.
 
-Kicksecure, and by extension Whonix, has an experimental [permission hardening service](https://github.com/Kicksecure/security-misc/blob/master/lib/systemd/system/permission-hardening.service) and [application whitelist](https://github.com/Kicksecure/security-misc/tree/master/etc/permission-hardening.d) to automate SUID removal from most binaries and libraries on the system. From my testing, these work perfectly fine on minimal Kicksecure installations and both Qubes-Whonix-Workstation and Qubes-Whonix-Gateway.
+Kicksecure, and by extension Whonix, has an experimental [permission hardening service](https://github.com/Kicksecure/security-misc/blob/master/usr/lib/systemd/system/permission-hardener.service) and [application whitelist](https://github.com/Kicksecure/security-misc/tree/master/etc/permission-hardener.d) to automate SUID removal from most binaries and libraries on the system. From my testing, these work perfectly fine on minimal Kicksecure installations and both Qubes-Whonix-Workstation and Qubes-Whonix-Gateway.
 
 ### DNSSEC
 
 Most Linux distributions do not enable [DNSSEC](https://www.icann.org/resources/pages/dnssec-what-is-it-why-important-2019-03-05-en) by default. I recommend that you enable it to make sure that the responses to your DNS queries are authentic. You will need a DNS provider that supports DNSSEC. Ideally, you should use a VPN which provides this feature with its DNS servers so that you can also blend in with other people.
 
-On systems with `systemd-resolved`, you can edit the `/etc/systemd/resolved.conf` file and add `DNSSEC=yes` to enable it. Do `systemctl restart systemd-resolved` after you are done editing to apply your configuration.
+On systems with `systemd-resolved`, you can edit the `/etc/systemd/resolved.conf` file and add `DNSSEC=yes` to enable it. Run `systemctl restart systemd-resolved` after you are done editing to apply your configuration.
 
 If you are a Whonix or Tails user, you can disregard setting up DNSSEC, as Tor DNS resolution does not support it. Alternatively, you can [use a non-Tor resolver](https://www.whonix.org/wiki/Alternative_DNS_Resolver), though it is not recommended that you do this for an extended amount of time.
 
@@ -430,7 +428,7 @@ Most Linux distributions by default use the unencrypted and unauthenticated [Net
 - [Configure Network Time Security (NTS) with chronyd](https://fedoramagazine.org/secure-ntp-with-nts/)
 - Use Kicksecure's [sdwdate](https://github.com/Kicksecure/sdwdate) on Debian&#8209;based distributions.
 
-If decide on using NTS with chronyd, consider using multiple, independent time providers and setting [`minsources`](https://chrony.tuxfamily.org/doc/devel/chrony.conf#minsources) greater than 1.
+If you decide on using NTS with chronyd, consider using multiple, independent time providers and setting [`minsources`](https://chrony-project.org/doc/4.4/chrony.conf.html#minsources) to a value greater than 1.
 
 GrapheneOS uses a [quite nice chrony configuration](https://github.com/GrapheneOS/infrastructure/blob/main/chrony.conf) for their infrastructure. I recommend that you replicate their `chrony.conf` on your system.
 
@@ -457,7 +455,7 @@ sudo authselect select <profile_id, default: sssd> with-faillock without-nullok 
 
 On systems where `pam_faillock` is not available, consider using [`pam_tally2`](https://www.man7.org/linux/man-pages/man8/pam_tally2.8.html) instead.
 
-If you have a YubiKey or other U2F/FIDO2 authenticator, you can use [pam-u2f](https://github.com/Yubico/pam-u2f) to implement two&#8209;factor authentication for login. **Make sure to use a hardcoded `origin` and `appid` as [indicated in the ArchWiki](https://wiki.archlinux.org/title/Universal_2nd_Factor#Authentication_for_Arch_Linux). Do not use the default identifier `pam://$HOSTNAME` which will break if your hostname changes.**
+If you have a YubiKey or another U2F/FIDO2 authenticator, you can use [pam-u2f](https://github.com/Yubico/pam-u2f) to implement two&#8209;factor authentication for login. **Make sure to use a hardcoded `origin` and `appid` as [indicated in the ArchWiki](https://wiki.archlinux.org/title/Universal_2nd_Factor#Authentication_for_user_sessions). Do not use the default identifier `pam://$HOSTNAME` which will break if your hostname changes.**
 
 ### Storage Media Handling
 
@@ -492,7 +490,7 @@ On older systems where `autofs` is used, you should mask the `autofs` service to
 
 To better protect your USB ports from attacks such as [BadUSB](https://www.srlabs.de/bites/usb-peripherals-turn) and the infamous [Hak5 USB Rubber Ducky](https://hak5.org/products/usb-rubber-ducky), I recommend [USBGuard](https://usbguard.github.io). Documentation is available on the [USBGuard website](https://usbguard.github.io) and [ArchWiki](https://wiki.archlinux.org/title/USBGuard).
 
-If you are using [linux&#8209;hardened](#linux-hardened), you can alternatively use the `deny_new_usb` kernel parameter&nbsp;--- see ["Preventing USB Attacks with `linux&#8209;hardened`"](https://blog.lizzie.io/preventing-usb-attacks-with-linux-hardened.html).
+If you are using [linux&#8209;hardened](#linux-hardened), you can alternatively use the `deny_new_usb` kernel parameter&nbsp;--- see ["Preventing USB Attacks with `linux-hardened`"](https://blog.lizzie.io/preventing-usb-attacks-with-linux-hardened.html).
 
 ## Secure Boot
 
@@ -500,7 +498,7 @@ If you are using [linux&#8209;hardened](#linux-hardened), you can alternatively 
 
 One of the problems with Secure Boot, particularly on Linux, is that [only the chainloader (shim), bootloader (GRUB), and kernel are verified in a typical setup](https://wiki.ubuntu.com/UEFI/SecureBoot#How_UEFI_Secure_Boot_works_on_Ubuntu). The [initramfs](https://wiki.ubuntu.com/Initramfs#Detailed_Description) is often left unverified and unencrypted, leaving the door open for an [evil maid attack](https://en.wikipedia.org/wiki/Evil_maid_attack).
 
-The firmware on most devices is also preconfigured to trust Microsoft's keys for both Windows and third&#8209;parties, leading to a [large attacks surface](https://github.com/ventoy/Ventoy/issues/135).
+The firmware on most devices is also preconfigured to trust Microsoft's keys for both Windows and third&#8209;parties, leading to a [large attack surface](https://github.com/ventoy/Ventoy/issues/135).
 
 ### Enrolling your own keys
 
