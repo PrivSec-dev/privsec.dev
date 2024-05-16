@@ -401,7 +401,7 @@ ExecStart=/usr/bin/gnome-shell --no-x11
 
 Consider adding the [mount options](https://man7.org/linux/man-pages/man8/mount.8.html#FILESYSTEM-INDEPENDENT_MOUNT_OPTIONS) `nodev`, `noexec`, and `nosuid` to mountpoints which do not need the respective capabilities. Typically, these can be applied to `/boot`, `/boot/efi`, and `/var`. These flags could also be applied to `/home` and `/root`, however `noexec` will prevent applications that require binary execution in those locations from working (including Flatpak and Snap).
 
-It should be noted that `noexec` is not foolproof and actually [quite easy to bypass](https://www.chromium.org/chromium-os/developer-library/guides/security/noexec-shell-scripts/).
+It should be noted that `noexec` is not foolproof and actually [quite easy to bypass](https://www.chromium.org/chromium-os/developer-library/guides/security/noexec-shell-scripts/#what-about-interpreted-code).
 
 If you use [Toolbox](https://docs.fedoraproject.org/en-US/fedora-silverblue/toolbox/), do not set any of these mount options on `/var/log/journal`. From my testing, the Toolbox container will fail to start if you have `nodev`, `nosuid`, or `noexec` on said directory. If you are on Arch&nbsp;Linux, you probably do not want to set `noexec` on `/var/tmp`, as some AUR packages will then fail to build.
 
