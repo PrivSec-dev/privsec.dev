@@ -31,7 +31,7 @@ sudo dnf config-manager --add-repo https://repo.ivpn.net/stable/fedora/generic/i
 sudo dnf install -y ivpn-ui
 ```
 
-To workaround [issue 3803](https://github.com/mullvad/mullvadvpn-app/issues/3803), we will using systemd path to run `/usr/lib/qubes/qubes-setup-dnat-to-ns` every time Mullvad modifies `/etc/resolv.conf`. Create the following files:
+IVPN needs `/usr/lib/qubes/qubes-setup-dnat-to-ns` to be run at boot and when the daemon changes `/etc/resolv.conf`. Create the following files:
 
 - `/etc/systemd/system/dnat-to-ns.service`
 ```
@@ -41,6 +41,9 @@ Description=Run /usr/lib/qubes/qubes-setup-dnat-to-ns
 [Service]
 Type=oneshot
 ExecStart=/usr/lib/qubes/qubes-setup-dnat-to-ns
+
+[Install]
+WantedBy=multi-user.target
 ```
 
 - `/etc/systemd/system/dnat-to-ns.path`
@@ -57,10 +60,11 @@ Unit=dnat-to-ns.service
 WantedBy=multi-user.target
 ```
 
-Next, enable the systemd path:
+Next, enable both the systemd service and the systemd path:
 
 ```bash
-sudo systemctl enable --now dnat-to-ns.path
+sudo systemctl enable dnat-to-ns.service
+sudo systemctl enable dnat-to-ns.path
 ```
 
 Finally, shutdown the TemplateVM:
