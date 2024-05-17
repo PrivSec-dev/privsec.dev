@@ -56,6 +56,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 -->
 ## International banking apps
 
+- [Payoneer](https://play.google.com/store/apps/details?id=com.payoneer.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/445)
 - [PayPal - Send, Shop, Manage](https://play.google.com/store/apps/details?id=com.paypal.android.p2pmobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/127)
 - [Revolut - Mobile Finance](https://play.google.com/store/apps/details?id=com.revolut.revolut) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/90)
 - [UnionPay APP](https://play.google.com/store/apps/details?id=com.unionpay) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/421)
@@ -168,6 +169,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 - [CREDITAS Banking](https://play.google.com/store/apps/details?id=cz.creditas.richee) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/78)
 - [ČSOB Smart Key](https://play.google.com/store/apps/details?id=cz.csob.smartklic) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/258)
+- [Fio Smartbanking CZ](https://play.google.com/store/apps/details?id=cz.fio.sb2) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/446)
 - [George Česko](https://play.google.com/store/apps/details?id=cz.csas.georgego) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/251)
 - [George klíč](https://play.google.com/store/apps/details?id=cz.csas.app.georgeklic) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/251)
 - [KB Klíč](https://play.google.com/store/apps/details?id=cz.kb.paatproduction) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/377)
@@ -553,7 +555,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Paysend Money Transfer App](https://play.google.com/store/apps/details?id=com.paysend.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/222)
 - [Royal Bank of Scotland](https://play.google.com/store/apps/details?id=com.rbs.mobile.android.rbs) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/397)
 - [Santander Mobile Banking](https://play.google.com/store/apps/details?id=uk.co.santander.santanderUK) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/210)
-- ~~[Starling Bank - Mobile Banking](https://play.google.com/store/apps/details?id=com.starlingbank.android)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/39)
+- [Starling Bank - Mobile Banking](https://play.google.com/store/apps/details?id=com.starlingbank.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/39)
 - [Tesco Bank and Clubcard Pay+](https://play.google.com/store/apps/details?id=com.tescobank.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/129)
 - [Tide - Business Bank Account](https://play.google.com/store/apps/details?id=com.tideplatform.banking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/206)
 - [Triodos Bank UK](https://play.google.com/store/apps/details?id=com.triodos.bankinguk) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/132)
