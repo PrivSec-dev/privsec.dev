@@ -198,7 +198,7 @@ Another option is [Kata Containers](https://katacontainers.io/) which masquerade
 
 If you are using Ubuntu LTS, consider subscribing to [Ubuntu Pro](https://ubuntu.com/pro). Canonical currently allows up to 5 machines with the free subscription.
 
-With Ubuntu Pro, you gain access to the [The Ubuntu Security Guide]([https://discourse.ubuntu.com/t/ubuntu-advantage-client/21788](https://ubuntu.com/security/certifications/docs/usg)), which allows for easy application of the CIS OpenSCAP profile:
+With Ubuntu Pro, you gain access to the [The Ubuntu Security Guide](https://ubuntu.com/security/certifications/docs/usg), which allows for easy application of the CIS OpenSCAP profile:
 
 ```bash
 sudo ua enable usg
@@ -285,7 +285,7 @@ _This section extensively references [Madaidan's Linux Hardening Guide](https://
 
 _See ["2.2&nbsp;Sysctl"](https://madaidans-insecurities.github.io/guides/linux-hardening.html#sysctl) in Madaidan's guide._
 
-Madaidan recommends that you disable [unprivileged user namespaces](https://www.containerlabs.kubedaily.com/LXC/Linux%20Containers/User_namespaces.html) due to the [significant attack surface for privilege escalation](https://madaidans-insecurities.github.io/linux.html#kernel). However, some software such as Podman and LXC relies on unprivileged user namespaces. If you wish to use such software, do not disable `kernel.unprivileged_userns_clone`.
+Madaidan recommends that you disable [unprivileged user namespaces](https://github.com/sangam14/CloudNativeLab/blob/master/LXC/Linux%20Containers/User_namespaces.md) due to the [significant attack surface for privilege escalation](https://madaidans-insecurities.github.io/linux.html#kernel). However, some software such as Podman and LXC relies on unprivileged user namespaces. If you wish to use such software, do not disable `kernel.unprivileged_userns_clone`.
 
 If you are using Kicksecure or Whonix, most of this hardening is included by default. If you are using Debian, you should consider [morphing it into Kicksecure](https://www.kicksecure.com/wiki/Debian). On other distributions, you can copy the [configuration files from Kicksecure](https://github.com/Kicksecure/security-misc/tree/master/usr/lib/sysctl.d) into `/etc/sysctl.d/` (but note that these configurations do not disable unprivileged user namespaces).
 
