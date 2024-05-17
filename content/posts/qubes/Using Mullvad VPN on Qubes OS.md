@@ -60,7 +60,7 @@ WantedBy=multi-user.target
 Next, enable the systemd path:
 
 ```bash
-sudo systemctl enable --now dnat-to-ns.path
+sudo systemctl enable dnat-to-ns.path
 ```
 
 Finally, shutdown the TemplateVM:
