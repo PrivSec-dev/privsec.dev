@@ -75,6 +75,21 @@ Create an AppVM based on the TemplateVM you have just created. Set `sys-firewall
 
 ![Provides Network](/images/provides-network.png)
 
+Open the Mullvad VPN app. Go to `Settings` → `VPN settings` and toggle `Local network sharing`. Due to some strange interaction between qubes services and Mullvad VPN, certain apps will get internet connections while others do not if this toggle is not enabled. This toggle will **not** actually allow AppVMs connected to the ProxyVM to connect to the local network.
+
+Enable `Lockdown mode` to ensure that the killswitch stays on even when the tunnel is disconnected.
+
+## Additional Assurances
+
+For additional assurances against VPN leaks, you can optionally add these 2 lines to `/rw/config/qubes-firewall-user-script`:
+
+```bash
+nft add rule qubes custom-forward oifname eth0 counter drop
+nft add rule ip6 qubes custom-forward oifname eth0 counter drop
+```
+
+This is not strictly necessary, as I have not observed any leaks with the VPN killswitch provided by the app.
+
 ## Notes
 
 With this current setup, the ProxyVM you have just created will be responsible for handling Firewall rules for the qubes behind it. This is not ideal, as this is still a fairly large VM, and there is a risk that Mullvad or some other apps may interfere with its firewall handling.
