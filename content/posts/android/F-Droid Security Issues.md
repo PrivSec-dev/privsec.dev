@@ -148,9 +148,11 @@ A [discussion about this](https://gitlab.com/fdroid/fdroid-website/-/merge_reque
 
 *To clear up any confusion, even apps targeting an API level below 23 (Android 5.1 or older) do not have permissions granted at install time on modern Android; instead, these apps display a legacy permission grant dialog. Whether or not permissions are granted at install time does not just depend on the app's `targetSdkVersion`. And even if this were the case, the OS package installer on modern Android would've been designed to show the requested permissions for those legacy apps.*
 
-For example, the low-level permission `RECEIVE_BOOT_COMPLETED` is referred to in F-Droid as the *run at startup* permission. In fact, this permission is not needed to start at boot, is not about background usage (though power usage may be a valid concern), and just refers to a specific time broadcasted by the system once it finishes booting. To be fair, these short summaries were previously provided by the official Android documentation years ago, but the permission model has drastically evolved since then and most of them aren't accurate anymore.
+For example, the low-level permission `RECEIVE_BOOT_COMPLETED` is referred to in F-Droid as the *run at startup* permission: 
 
 > *Allows the app to have itself started as soon as the system has finished booting. This can make it take longer to start the phone and allow the app to slow down the overall phone by always running.*
+
+In fact, this permission is not needed to start at boot, is not about background usage (though power usage may be a valid concern), and just refers to a specific time broadcasted by the system once it finishes booting. To be fair, these short summaries were previously provided by the official Android documentation years ago, but the permission model has drastically evolved since then and most of them aren't accurate anymore.
 
 In modern Android, the background restriction toggle is what really provides the ability for apps to run in the background. Some low-level permissions don't even have a security/privacy impact and shouldn't be misinterpreted as having one. Anyhow, you can be sure that each dangerous low-level permission has a **high-level representation** that is **disabled by default** and needs to be **granted dynamically** to the app (by a toggle or explicit user consent in general).
 
