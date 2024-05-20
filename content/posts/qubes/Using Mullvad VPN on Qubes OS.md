@@ -37,6 +37,7 @@ To workaround [issue 3803](https://github.com/mullvad/mullvadvpn-app/issues/3803
 ```
 [Unit]
 Description=Run /usr/lib/qubes/qubes-setup-dnat-to-ns
+StartLimitIntervalSec=0
 
 [Service]
 Type=oneshot

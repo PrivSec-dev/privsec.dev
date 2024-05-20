@@ -52,6 +52,7 @@ WantedBy=multi-user.target
 ```
 [Unit]
 Description=Run /usr/lib/qubes/qubes-setup-dnat-to-ns
+StartLimitIntervalSec=0
 
 [Service]
 Type=oneshot
