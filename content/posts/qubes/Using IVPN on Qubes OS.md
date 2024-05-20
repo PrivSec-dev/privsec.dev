@@ -56,6 +56,7 @@ StartLimitIntervalSec=0
 
 [Service]
 Type=oneshot
+ExecStart=/usr/bin/systemctl restart systemd-resolved
 ExecStart=/usr/lib/qubes/qubes-setup-dnat-to-ns
 ```
 
