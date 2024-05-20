@@ -130,8 +130,8 @@ There is little practical reason for developers not to increase the target SDK v
 Keeping the **app ecosystem modern and healthy** is necessary, though it may seem bothersome. As shown above, F-Droid's lack of enforcement on this front sends the wrong message to developers (and even users). They should care about an modern and healthy app ecosystem, and this is why many of us think F-Droid's [relegation of this upkeep](https://gitlab.com/fdroid/fdroiddata/-/issues/2210#note_440967209) to individual app developers may be even harmful to the FOSS ecosystem. Backward compatibility is often the enemy of security, and while there's a middle-ground for convenience and obsolescence, it shouldn't be exaggerated. As a result of this philosophy, the main repository of F-Droid is filled with obsolete apps from another era, just for these apps to be able to run on the more than ten years old Android 4.0 "Ice Cream Sandwich". Let's not make the same mistake as the desktop platforms: instead, complain to your vendors for selling devices with no decent OS/firmware support.
 
 At the time of writing:
-- Android 12 is the oldest Android version that is [receiving security updates](https://endoflife.date/android).
-- [~80% of the Android devices](https://developer.android.com/about/dashboards) used in the world are running **at least** 8.0 Oreo.
+- Android 12 is the oldest Android version that is [receiving security updates](https://endoflife.date/android). (Last updated on May 20, 2024)
+- [~80% of the Android devices](https://developer.android.com/about/dashboards) in the world are running **at least** 8.0 "Oreo".
 
 *Overall statistics do not reflect real-world usage of a given app (people using old devices are not necessarily using your app). If anything, it should be viewed as an underestimation.*
 
