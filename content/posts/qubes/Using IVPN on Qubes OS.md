@@ -31,22 +31,7 @@ sudo dnf config-manager --add-repo https://repo.ivpn.net/stable/fedora/generic/i
 sudo dnf install -y ivpn-ui
 ```
 
-IVPN needs to restart `systemd-resolved` and run `/usr/lib/qubes/qubes-setup-dnat-to-ns` at boot to work properly, especially if you want to chain ProxyVMs. `/usr/lib/qubes/qubes-setup-dnat-to-ns` also needs to be run every time IVPN modifies `/etc/resolv.conf`. Create the following files:
-
-- `/etc/systemd/system/dnat-to-ns-boot.service`
-```
-[Unit]
-Description=Run /usr/lib/qubes/qubes-setup-dnat-to-ns 10 seconds after boot
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/sleep 10
-ExecStart=/usr/bin/systemctl restart systemd-resolved
-ExecStart=/usr/lib/qubes/qubes-setup-dnat-to-ns
-
-[Install]
-WantedBy=multi-user.target
-```
+IVPN needs to restart `systemd-resolved` and run `/usr/lib/qubes/qubes-setup-dnat-to-ns` every time IVPN modifies `/etc/resolv.conf`. Create the following files:
 
 - `/etc/systemd/system/dnat-to-ns.service`
 ```
@@ -74,10 +59,16 @@ Unit=dnat-to-ns.service
 WantedBy=multi-user.target
 ```
 
-Next, enable both the systemd service and the systemd path:
+Create `/etc/systemd/system/systemd-resolved.conf.d/override.conf` to disable rate limiting on systemd-resolved restarting:
+
+```
+[Unit]
+StartLimitIntervalSec=0
+```
+
+Next, enable the systemd path:
 
 ```bash
-sudo systemctl enable dnat-to-ns-boot.service
 sudo systemctl enable dnat-to-ns.path
 ```
 

@@ -59,6 +59,13 @@ Unit=dnat-to-ns.service
 WantedBy=multi-user.target
 ```
 
+Create `/etc/systemd/system/systemd-resolved.conf.d/override.conf` to disable rate limiting on systemd-resolved restarting:
+
+```
+[Unit]
+StartLimitIntervalSec=0
+```
+
 Next, enable the systemd path:
 
 ```bash
