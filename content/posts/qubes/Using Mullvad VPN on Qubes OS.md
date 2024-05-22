@@ -11,7 +11,7 @@ Mullvad is a fairly popular and generally trustworthy VPN provider. In this post
 
 ## Preparing your TemplateVM
 
-I recommend that you make a new TemplateVM based on latest Fedora GNOME template and remove all unnecessary packages that you might not use. This way, you can minimize the attack surface while not having to deal with missing dependencies like on a minimal template. With that being said, if you do manage to get the minimal template to fully work with Mullvad, feel free to [open a discussion on GitHub](https://github.com/orgs/PrivSec-dev/discussions) or [contact me directly](https://tommytran.io/contact) and I will update the post accordingly.
+I recommend that you make a new TemplateVM based on the latest Fedora GNOME template and remove all unnecessary packages that you might not use. This way, you can minimize the attack surface while not having to deal with missing dependencies like on a minimal template. With that being said, if you do manage to get the minimal template to fully work with Mullvad, feel free to [open a discussion on GitHub](https://github.com/orgs/PrivSec-dev/discussions) or [contact me directly](https://tommytran.io/contact) and I will update the post accordingly.
 
 I run [this script](https://github.com/TommyTran732/QubesOS-Scripts/blob/main/fedora-gnome/fedora-gnome.sh) on my template to trim it down.
 
@@ -31,7 +31,7 @@ sudo dnf config-manager --add-repo https://repository.mullvad.net/rpm/stable/mul
 sudo dnf install -y mullvad-vpn
 ```
 
-To workaround [issue 3803](https://github.com/mullvad/mullvadvpn-app/issues/3803), we will using systemd path to run `/usr/lib/qubes/qubes-setup-dnat-to-ns` every time Mullvad modifies `/etc/resolv.conf`. Create the following files:
+To work around [issue 3803](https://github.com/mullvad/mullvadvpn-app/issues/3803), we will be using systemd path to run `/usr/lib/qubes/qubes-setup-dnat-to-ns` every time Mullvad modifies `/etc/resolv.conf`. Create the following files:
 
 - `/etc/systemd/system/dnat-to-ns.service`
 ```
@@ -72,7 +72,7 @@ Next, enable the systemd path:
 sudo systemctl enable dnat-to-ns.path
 ```
 
-Finally, shutdown the TemplateVM:
+Finally, shut down the TemplateVM:
 
 ```bash
 sudo shutdown now
