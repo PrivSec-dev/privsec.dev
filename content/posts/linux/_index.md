@@ -4,4 +4,4 @@ ShowReadingTime: false
 ShowWordCount: false
 ---
 
-A collection of posts about Linux and related applications. Desktop Linux, OCI, OpenSSH hardening guides can be found here.
+A collection of posts about Linux and related applications. Guides for hardening desktop Linux, OCI, and OpenSSH can be found here.
