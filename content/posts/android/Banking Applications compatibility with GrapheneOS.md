@@ -349,13 +349,10 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 - [ABN AMRO](https://play.google.com/store/apps/details?id=com.abnamro.nl.mobile.payments) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/108)
 - [ASN Bank (De Volksbank)](https://play.google.com/store/apps/details?id=nl.devolksbank.asn.bankieren) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/105)
-- [ASN Mobiel Betalen](https://play.google.com/store/apps/details?id=nl.asnbank.mobielbetalen) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/105)
 - [ING Bankieren](https://play.google.com/store/apps/details?id=com.ing.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/182)
 - [Rabobank](https://play.google.com/store/apps/details?id=nl.rabomobiel) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/47)
 - [Regio Bank (De Volksbank)](https://play.google.com/store/apps/details?id=nl.devolksbank.regio.bankieren) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/105)
-- [RegioBank - Mobiel Betalen](https://play.google.com/store/apps/details?id=nl.regiobank.mobielbetalen) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/105)
 - [SNS Bank (De Volksbank)](https://play.google.com/store/apps/details?id=nl.devolksbank.sns.bankieren) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/105)
-- [SNS Mobiel Betalen](https://play.google.com/store/apps/details?id=nl.snsbank.mobielbetalen) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/105)
 - [Triodos Bankieren NL](https://play.google.com/store/apps/details?id=com.triodos.bankingnl) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/133)
 
 ### New Zealand
@@ -387,7 +384,6 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 ### Philippines
 
 - [GCash](https://play.google.com/store/apps/details?id=com.globe.gcash.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/382)
-
 
 ### Poland
 
