@@ -7,68 +7,70 @@ author: Tommy
 
 ![Lokinet](/images/lokinet.png)
 
-[Lokinet](https://lokinet.org) is an Internet overlay network utilizing onion routing to provide anonymity for its users, similar to Tor network. This post will provide a quick (and non exhaustive) list of its [pros](#advantages) and [cons](#disadvantages) from an end user perspective and go over how to set it up on Qubes OS.
+[Lokinet](https://lokinet.org) is an Internet overlay network utilizing onion routing to provide anonymity for its users, similar to Tor network. This post will go over how to set it up on Qubes OS.
 
-## Advantages
+**Before we start...**
 
-- Provides anonymity by removing trust in a service provider (as opposed to a traditional VPN)
-- Better versatility than Tor by supporting any IP based protocols (Tor only supports TCP)
-- Generally faster speed than the Tor Network
-
-## Disadvantages
-
-- Only works well on Debian-based distributions. The client for Windows has DNS Leaks, and support for macOS, Android, and other Linux distributions is experimental. It should be noted that this is a problem with the official client, not the protocol itself.
-- Does not have a killswitch which could lead to accidental leaks (as opposed to common commercial VPN clients which lock the connections to just the provider's servers).
-- The official client requires a user to manually define an exit node, or to set certain IP ranges to be routed through certain exit nodes. While this makes it possible to setup some form of Steam Isolation, it is not as good as Tor's `isolateDestinationAddr` and `isolateDestinationPort`. which automatically use a random exit node for every destination/port you visit.
-- DNS does not work when used as a ProxyVM on Qubes OS
+This post should not be considered an endorsement of Lokinet in any shape or form. In fact, Lokinet is currently not in a good state - it has not has a public release since 2022, and most free public exit nodes have gone offline. According to the developers, they are doing major rewrites of the code, and it should not be used in production at the moment.
 
 ## Creating the TemplateVM
 
-As mentioned [above](#disadvantages), the Lokinet client only works well with Debian-based distributions. This means that our template will have to be one of the Debian-based ones, and I would highly recommend that you convert the official Debian template by the Qubes OS team into a KickSecure template to use as a base. KickSecure reduces the attack surface of Debian with a substantial set of hardening configurations, and a nice feature to go with an anonymity network like Lokinet is [Boot Clock Randomization](https://www.kicksecure.com/wiki/Boot_Clock_Randomization) which helps defend against [time-based denonymization attacks](https://www.whonix.org/wiki/Time_Attacks). You will only need the `kicksecure-cli` meta package (`kicksecure-gui` is unnecessary), and experimental services like `proc-hidepid`, `hide-hardware-info` and `permission-hardening` work just fine with the Lokinet client. [Hardened Malloc](https://www.kicksecure.com/wiki/Hardened_Malloc) and [LKRG](https://www.kicksecure.com/wiki/Linux_Kernel_Runtime_Guard_LKRG) do not cause any problem with Lokinet, either.
+Currently, the Lokinet client only seem to work well with Debian-based distributions. This means that our template will have to be one of the Debian-based ones. Personally, I use [this script](https://github.com/TommyTran732/QubesOS-Scripts/blob/main/debian-gnome/debian-gnome.sh) to trim down the Debian GNOME template and convert it to KickSecure. KickSecure reduces the attack surface of Debian with a substantial set of hardening configurations, and a nice feature to go with an anonymity network like Lokinet is [Boot Clock Randomization](https://www.kicksecure.com/wiki/Boot_Clock_Randomization) which helps defend against [time-based denonymization attacks](https://www.whonix.org/wiki/Time_Attacks).
 
-Since DNS with Lokinet does not work if it is installed inside of a ProxyVM, we will need to have Lokinet running inside the same AppVM as the applications you intend to run. This is less than ideal, as a compromised AppVM could reveal your IP address. Beyond that, accidental leaks can happen, too.
+Start by creating the bind directories for Lokinet's configurations:
 
-A potential solution to this problem is to set up an unbound server or firewall script redirecting all DNS traffic to the ProxyVM to its Lokinet DNS server at `127.3.2.1:53`; however, I have been unable to get it working. Another solution is to simply override the DNS server inside the AppVM to a custom DNS server, but this will make you stand out out and break `.loki` DNS resolution. Websites like [DNS leak test](https://dnsleaktest.com) can observe which DNS server you are actually using and potentially fingerprint you. For the same reason that you should not use custom DNS servers when connected to the Tor network, you really should not use a custom DNS server when connected to Lokinet.
+```bash
+sudo mkdir -p /etc/qubes-bind-dirs.d
+echo 'binds+=( '\'''/etc/loki''\'' )' | sudo tee /etc/qubes-bind-dirs.d/50_user.conf 
+```
 
-Start by importing the Oxen's PGP key:
+Next, add the Oxen PGP key and the Lokinet template. We will deviate from the [official documentation](https://github.com/oxen-io/lokinet/blob/dev/docs/install.md#linux-install) and pin the PGP key to only be used for this repository:
 
-`sudo curl --proxy http://127.0.0.1:8082 -so /etc/apt/trusted.gpg.d/oxen.gpg https://deb.oxen.io/pub.gpg`
+```bash
+curl --proxy http://127.0.0.1:8082 https://deb.oxen.io/pub.gpg | sudo tee /usr/share/keyrings/oxen.gpg
+echo "deb [signed-by=/usr/share/keyrings/oxen.gpg] https://deb.oxen.io $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/oxen.list
+```
 
-Then, add Oxen's Debian repository:
+Next, `lokinet` and `resolvconf`. `lokinet-gui` has been very buggy when I test it inside my VM, so I recommend only installing the daemon. `resolvconf` is used by the Lokinet init script but for is not declared as a dependency for some reason, so you have to manually install it as well:
 
-`echo "deb https://deb.oxen.io $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/oxen.list`
+```bash
+sudo apt update
+sudo apt install lokinet-gui resolvconf
+```
 
-Next, update the repositories:
+To work around the problem where Qubes override the DNS configuration at boot, create `/etc/systemd/system/lokinet-dns-fix.service` with the following content:
 
-`sudo apt update`
+```
+[Unit]
+Description=Fix DNS for Lokinet
+After=qubes-network-uplink.service
 
-If updates for your packages are found, **DO NOT** attempt to upgrade them directly. Instead, use the Qubes Updater to update the TemplateVM.
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/rm /etc/resolv.conf
+ExecStart=/usr/bin/ln -s /run/resolvconf/resolv.conf /etc/resolv.conf
 
-When you are done, install `lokinet-gui` and `resolvconf`:
+[Install]
+WantedBy=multi-user.target
+```
 
-`sudo apt install lokinet-gui resolvconf`
 
-Note that you **must** install `resolveconf` to get DNS working.
 
-Next, edit `/var/lib/lokinet/lokinet.ini` and add the exit server you want to use:
+Enable the `lokinet-dns-fix` service:
 
-`exit-node=exit.loki`
+```bash
+systemctl enable lokinet-dns-fix
+```
 
-Note that I am using `exit.loki` here, as it is the one mentioned in the [Lokinet documentation](https://docs.oxen.io/products-built-on-oxen/lokinet/exit-nodes).
-There are some other exit servers listed on [probably.loki](http://probably.loki/wiki/index.php?title=Exit_Nodes) as well, and for your convenience, I will just copy-paste them here:
-
-- `exit.loki` (USA, run by Jeff)
-- `exit2.loki` (USA, run by Jeff, same ip as exit.loki)
-- `xite.loki` (Iceland, run by Loutchi)
-- `peter.loki` (USA, run by peter)
-- `secret.loki` (Netherlands, run by Secret)
-
-Finally, enable the `lokinet` service:
-
-`systemctl enable lokinet`
+Finally, install any .deb app you want to use with Lokinet in the TemplateVM. I have been unable to get DNS working properly with Lokinet as a network VM, so for now we will have to use a Lokinet in each individual AppVM. 
 
 ## Creating the AppVM
 
-Just create the AppVM as usual, and you would be good to go. There are a few things to keep in mind though:
-- You should probably set networking to use `sys-firewall`. I have tested using my ProtonVPN ProxyVM for networking, and DNS was not working. Besides, it makes little sense to attempt such setup anyways, unless you are worried about accidental leaks or a compromised AppVM.
-- You should give the AppVM the `network-manager` service so that Lokinet can set up networking properly and get DNS working.
+Create an AppVM based on the TemplateVM you have just created. Set `sys-firewall` (or whatever FirewallVM you have connected to your `sys-net`) as the net qube. If you do not have such FirewallVM, use `sys-net` as the net qube.
+
+Edit the `/etc/loki/loki.net` and add the exit node you want to use. At the moment, the only free exit node that I am aware of is `euroexit.loki`:
+
+```
+[network]
+exit-node=euroexit.loki
+```
