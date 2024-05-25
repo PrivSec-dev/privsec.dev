@@ -11,7 +11,7 @@ author: Tommy
 
 **Before we start...**
 
-This post should not be considered an endorsement of Lokinet in any shape or form. In fact, Lokinet is currently not in a good state - it has not has a public release since 2022, and most free public exit nodes have gone offline. According to the developers, they are doing major rewrites of the code, and it should not be used in production at the moment.
+This post should not be considered an endorsement of Lokinet in any shape or form. Lokinet is currently not in a good state - it has not had a public release since 2022, and most free public exit nodes have gone offline. According to the developers, they are doing major rewrites of the code, and it should not be used in production at the moment.
 
 ## Creating the TemplateVM
 
