@@ -13,15 +13,15 @@ This post will go over setting up Split GPG, then setting up Split SSH with the 
 
 Follow the official Qubes OS [documentation](https://www.qubes-os.org/doc/split-gpg/) to set this up.
 
-Note that if you already have a PGP key with a passphrase, you can remove it by installing `pinentry-gtk` to `vault`'s TemplateVM, then do `gpg2 --edit-key <key_id>` and `passwd` to set an empty passphrase. The default non-graphical pinentry will just make an infinite loop and will not allow you to set an empty passphrase.
+Note that if you already have a PGP key with a passphrase, you can remove it by installing `pinentry-gtk` to `vault`'s TemplateVM, then run `gpg2 --edit-key <key_id>` and `passwd` to set an empty passphrase. The default non-graphical pinentry will just make an infinite loop and will not allow you to set an empty passphrase.
 
 ## Split SSH
 
-This part is based on the Qubes Community's [guide](https://github.com/Qubes-Community/Contents/blob/master/docs/configuration/split-ssh.md); however, I will deviate from it to use the PGP keys for SSH instead of generating a new key pair.
+This part is based on the Qubes Community's [guide](https://forum.qubes-os.org/t/split-ssh/19060); however, I will deviate from it to use the PGP keys for SSH instead of generating a new key pair.
 
 ### In `dom0`
 
-- Create `/etc/qubes-rpc/policy/qubes.SshAgent` with `@anyvm @anyvm ask,default_target=vault` as the content. Since the keys ar not passphrase protected, you should **not** set the policy to allow.
+- Create `/etc/qubes-rpc/policy/qubes.SshAgent` with `@anyvm @anyvm ask,default_target=vault` as the content. Since the keys are not passphrase protected, you should **not** set the policy to allow.
 
 ### In `vault` AppVM
 - Add `enable-ssh-support` to the end of `~/.gnupg/gpg-agent.conf`
