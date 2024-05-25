@@ -13,15 +13,15 @@ In this post, I will go over how to leverage virtualization to setup a local Lin
 
 ## Installing UTM
 
-The virtualization software we are going to use for this setup is [UTM](https://mac.getutm.app/). You can obtain it through [App Store](https://apps.apple.com/us/app/utm-virtual-machines/id1538878817) for $10 USD or directly through [GitHub](https://github.com/utmapp/UTM/releases) free of charge.
+The virtualization software we are going to use for this setup is [UTM](https://mac.getutm.app/). You can obtain it through the [App Store](https://apps.apple.com/us/app/utm-virtual-machines/id1538878817) for $10 USD or directly through [GitHub](https://github.com/utmapp/UTM/releases) free of charge.
 
 Personally, I would recommend using the App Store, since you are getting automatic updates with it, and a small donation would really help out the developers.
 
-Note that I am recommending UTM here over other solutions like [Parallels](https://www.parallels.com/) here, specifically for the [Emulated VLAN](https://docs.getutm.app/settings-qemu/devices/network/network/#network-mode) network setup. Parallels only supports the [Shared Network mode](https://kb.parallels.com/4948) where all VMs and the host are connected to the same VLAN, which is less than ideal considering that we will still communicate with our Linux server using the insecure NTP protocol. I have not tried VMWare Fusion or VirtualBox yet, but the gfeneral idea is that you should be connecting to the NTP server using a private interface which only the host and the target VM have access to. Another nice thing about UTM is that it is a [sandboxed](https://developer.apple.com/documentation/xcode/configuring-the-macos-app-sandbox/) application and runs without any special privileges.
+Note that I am recommending UTM here over other solutions like [Parallels](https://www.parallels.com/), specifically for the [Emulated VLAN](https://docs.getutm.app/settings-qemu/devices/network/network/#network-mode) network setup. Parallels only supports the [Shared Network mode](https://kb.parallels.com/4948) where all VMs and the host are connected to the same VLAN, which is less than ideal considering that we will still communicate with our Linux server using the insecure NTP protocol. I have not tried VMWare Fusion or VirtualBox yet, but the general idea is that you should be connecting to the NTP server using a private interface which only the host and the target VM have access to. Another nice thing about UTM is that it is a [sandboxed](https://developer.apple.com/documentation/xcode/configuring-the-macos-app-sandbox/) application and runs without any special privileges.
 
 ## Choosing your Linux distribution
 
-Generally, any distribution with `chrony` 4.0 or above would work fine. I recommend using Fedora since it is easy to manage, generally up to date, and has mostly sane defaults.
+Generally, any distribution with `chrony` 4.0 or above would work fine. I recommend using Fedora since it is easy to manage, is generally up to date, and has mostly sane defaults.
 
 You can download Fedora Server from their [official website](https://fedoraproject.org/server/download/).
 
@@ -215,7 +215,7 @@ Add the following:
 
 Finally, follow the [official documentation](https://docs.getutm.app/advanced/remote-control/) to automatically start the virtual machine at boot.
 
-Note that for some reason, adding the shortcut to "Login Items" alone is not enough - UTM will launch but it will not start the VM. UTM also needs to be added to the list of "Login Items" for this to work properly. You can follow the discussion regarding this on [GitHub](https://github.com/utmapp/UTM/issues/4179#issuecomment-1606041021).
+Note that, for some reason, adding the shortcut to "Login Items" alone is not enough: UTM will launch but it will not start the VM. UTM also needs to be added to the list of "Login Items" for this to work properly. You can follow the discussion regarding this on [GitHub](https://github.com/utmapp/UTM/issues/4179#issuecomment-1606041021).
 
 
 ![macOS login items](/images/macos-login-items.png)

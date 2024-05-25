@@ -7,11 +7,11 @@ author: Tommy
 
 ![IVPN](/images/ivpn.png)
 
-IVPN is a fairly popular and generally trustworthy VPN provider. In this post, I will walk you through how to use the official IVPN client in a ProxyVM on Qubes OS. We will deviate from the [official guide](https://www.ivpn.net/knowledgebase/linux/ivpn-on-qubes-os/) by using systemd path to handle DNAT. This will provide the same robustness their approach to modify `/opt/ivpn/etc/firewall.sh`, while avoiding the risk that the modifications will be overwritten by a future app update. We will also be using a TemplateVM for IVPN ProxyVMs instead of using Standalone VMs.
+IVPN is a fairly popular and generally trustworthy VPN provider. In this post, I will walk you through how to use the official IVPN client in a ProxyVM on Qubes OS. We will deviate from the [official guide](https://www.ivpn.net/knowledgebase/linux/ivpn-on-qubes-os/) by using systemd path to handle DNAT. This will provide the same robustness as their approach to modify `/opt/ivpn/etc/firewall.sh`, while avoiding the risk that the modifications will be overwritten by a future app update. We will also be using a TemplateVM for IVPN ProxyVMs instead of using Standalone VMs.
 
 ## Preparing your TemplateVM
 
-I recommend that you make a new TemplateVM based on latest Fedora GNOME template and remove all unnecessary packages that you might not use. This way, you can minimize the attack surface while not having to deal with missing dependencies like on a minimal template. With that being said, if you do manage to get the minimal template to fully work with IVPN, feel free to [open a discussion on GitHub](https://github.com/orgs/PrivSec-dev/discussions) or [contact me directly](https://tommytran.io/contact) and I will update the post accordingly.
+I recommend that you make a new TemplateVM based on the latest Fedora GNOME template and remove all unnecessary packages that you might not use. This way, you can minimize the attack surface while not having to deal with missing dependencies like on a minimal template. With that being said, if you do manage to get the minimal template to fully work with IVPN, feel free to [open a discussion on GitHub](https://github.com/orgs/PrivSec-dev/discussions) or [contact me directly](https://tommytran.io/contact) and I will update the post accordingly.
 
 I run [this script](https://github.com/TommyTran732/QubesOS-Scripts/blob/main/fedora-gnome/fedora-gnome.sh) on my template to trim it down.
 
@@ -72,7 +72,7 @@ Next, enable the systemd path:
 sudo systemctl enable dnat-to-ns.path
 ```
 
-Finally, shutdown the TemplateVM:
+Finally, shut down the TemplateVM:
 
 ```bash
 sudo shutdown now
