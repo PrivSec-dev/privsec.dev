@@ -31,7 +31,7 @@ curl --proxy http://127.0.0.1:8082 https://deb.oxen.io/pub.gpg | sudo tee /usr/s
 echo "deb [signed-by=/usr/share/keyrings/oxen.gpg] https://deb.oxen.io $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/oxen.list
 ```
 
-Next, `lokinet` and `resolvconf`. `lokinet-gui` has been very buggy when I test it inside my VM, so I recommend only installing the daemon. `resolvconf` is used by the Lokinet init script but for is not declared as a dependency for some reason, so you have to manually install it as well:
+Next, `lokinet` and `resolvconf`. `lokinet-gui` has was very buggy when I tested it inside my VM, so I recommend only installing the daemon. `resolvconf` is used by the Lokinet init script but for is not declared as a dependency for some reason, so you have to manually install it as well:
 
 ```bash
 sudo apt update
