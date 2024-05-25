@@ -62,7 +62,13 @@ Enable the `lokinet-dns-fix` service:
 systemctl enable lokinet-dns-fix
 ```
 
-Finally, install any .deb app you want to use with Lokinet in the TemplateVM. I have been unable to get DNS working properly with Lokinet as a network VM, so for now we will have to use a Lokinet in each individual AppVM. 
+At this stage, you can install any .deb app you want to use with Lokinet in the TemplateVM. I have been unable to get DNS working properly with Lokinet as a network VM, so for now we will have to use a Lokinet in each individual AppVM. 
+
+Finally, shut down the TemplateVM:
+
+```bash
+sudo shutdown now
+```
 
 ## Creating the AppVM
 
