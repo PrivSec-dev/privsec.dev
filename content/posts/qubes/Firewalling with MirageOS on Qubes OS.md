@@ -39,7 +39,7 @@ qvm-create \
   your_template_name
 ``` 
 
-Don't worry if the TemplateVM doesn't launch - we don't need it to.
+Don't worry if the TemplateVM doesn't launch --- we don't need it to.
 
 ### Disposable Template
 
@@ -58,7 +58,7 @@ qvm-features your_disposable_template_name qubes-firewall 1
 qvm-features your_disposable_template_name no-default-kernelopts 1
 ``` 
 
-Your disposable templates should now launch and shutdown properly.
+Your disposable templates should now launch and shut down properly.
 
 ### Disposable FirewallVMs
 

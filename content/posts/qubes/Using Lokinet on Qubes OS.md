@@ -11,11 +11,11 @@ author: Tommy
 
 **Before we start...**
 
-This post should not be considered an endorsement of Lokinet in any shape or form. Lokinet is currently not in a good state - it has not had a public release since 2022, and most free public exit nodes have gone offline. According to the developers, they are doing major rewrites of the code, and it should not be used in production at the moment.
+This post should not be considered an endorsement of Lokinet in any shape or form. Lokinet is currently not in a good state --- it has not had a public release since 2022, and most free public exit nodes have gone offline. According to the developers, they are doing major rewrites of the code, and it should not be used in production at the moment.
 
 ## Creating the TemplateVM
 
-Currently, the Lokinet client only seem to work well with Debian-based distributions. This means that our template will have to be one of the Debian-based ones. Personally, I use [this script](https://github.com/TommyTran732/QubesOS-Scripts/blob/main/debian-gnome/debian-gnome.sh) to trim down the Debian GNOME template and convert it to KickSecure. KickSecure reduces the attack surface of Debian with a substantial set of hardening configurations, and a nice feature to go with an anonymity network like Lokinet is [Boot Clock Randomization](https://www.kicksecure.com/wiki/Boot_Clock_Randomization) which helps defend against [time-based denonymization attacks](https://www.whonix.org/wiki/Time_Attacks).
+Currently, the Lokinet client seems to work well with only Debian-based distributions. This means that our template will have to be one of the Debian-based ones. Personally, I use [this script](https://github.com/TommyTran732/QubesOS-Scripts/blob/main/debian-gnome/debian-gnome.sh) to trim down the Debian GNOME template and convert it to Kicksecure. Kicksecure reduces the attack surface of Debian with a substantial set of hardening configurations, and a nice feature to go with an anonymity network like Lokinet is [Boot Clock Randomization](https://www.kicksecure.com/wiki/Boot_Clock_Randomization) which helps defend against [time-based denonymization attacks](https://www.whonix.org/wiki/Time_Attacks).
 
 Start by creating the bind directories for Lokinet's configurations:
 
@@ -31,14 +31,14 @@ curl --proxy http://127.0.0.1:8082 https://deb.oxen.io/pub.gpg | sudo tee /usr/s
 echo "deb [signed-by=/usr/share/keyrings/oxen.gpg] https://deb.oxen.io $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/oxen.list
 ```
 
-Next, `lokinet` and `resolvconf`. `lokinet-gui` has was very buggy when I tested it inside my VM, so I recommend only installing the daemon. `resolvconf` is used by the Lokinet init script but for is not declared as a dependency for some reason, so you have to manually install it as well:
+Next, `lokinet` and `resolvconf`. `lokinet-gui` was very buggy when I tested it inside my VM, so I recommend installing only the daemon. `resolvconf` is used by the Lokinet init script but is not declared as a dependency for some reason, so you have to manually install it as well:
 
 ```bash
 sudo apt update
 sudo apt install lokinet-gui resolvconf
 ```
 
-To work around the problem where Qubes override the DNS configuration at boot, create `/etc/systemd/system/lokinet-dns-fix.service` with the following content:
+To work around the problem where Qubes overrides the DNS configuration at boot, create `/etc/systemd/system/lokinet-dns-fix.service` with the following content:
 
 ```
 [Unit]
@@ -74,7 +74,7 @@ sudo shutdown now
 
 Create an AppVM based on the TemplateVM you have just created. Set `sys-firewall` (or whatever FirewallVM you have connected to your `sys-net`) as the net qube. If you do not have such FirewallVM, use `sys-net` as the net qube.
 
-Edit the `/etc/loki/loki.net` and add the exit node you want to use. At the moment, the only free exit node that I am aware of is `euroexit.loki`:
+Edit `/etc/loki/loki.net` and add the exit node you want to use. At the moment, the only free exit node that I am aware of is `euroexit.loki`:
 
 ```
 [network]
