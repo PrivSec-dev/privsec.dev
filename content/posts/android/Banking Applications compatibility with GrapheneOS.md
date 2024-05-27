@@ -264,6 +264,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Hungary
 
+- [K&H mobilbank](https://play.google.com/store/apps/details?id=hu.khb) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/448)
 - [OTP Bank HU](https://play.google.com/store/apps/details?id=hu.otpbank.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/245)
 - [Simple Classic #MakeItEasy](https://play.google.com/store/apps/details?id=com.otpmobil.simple) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/263)
 - [UniCredit mBanking](https://play.google.com/store/apps/details?id=hr.asseco.android.jimba.mUCI.hu) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/87)
@@ -351,8 +352,8 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [ASN Bank (De Volksbank)](https://play.google.com/store/apps/details?id=nl.devolksbank.asn.bankieren) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/105)
 - [ING Bankieren](https://play.google.com/store/apps/details?id=com.ing.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/182)
 - [Rabobank](https://play.google.com/store/apps/details?id=nl.rabomobiel) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/47)
-- [Regio Bank (De Volksbank)](https://play.google.com/store/apps/details?id=nl.devolksbank.regio.bankieren) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/105)
-- [SNS Bank (De Volksbank)](https://play.google.com/store/apps/details?id=nl.devolksbank.sns.bankieren) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/105)
+- [Regio Bank (De Volksbank)](https://play.google.com/store/apps/details?id=nl.devolksbank.regio.bankieren) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/450)
+- [SNS Bank (De Volksbank)](https://play.google.com/store/apps/details?id=nl.devolksbank.sns.bankieren) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/451)
 - [Triodos Bankieren NL](https://play.google.com/store/apps/details?id=com.triodos.bankingnl) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/133)
 
 ### New Zealand
@@ -541,6 +542,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [first direct](https://play.google.com/store/apps/details?id=com.firstdirect.bankingonthego) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/128)
 - ~~[Halifax Mobile Banking](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/309)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/309)
 - [HSBC UK Mobile Banking](https://play.google.com/store/apps/details?id=uk.co.hsbc.hsbcukmobilebanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/33)
+- [Kroo Bank - Mobile Banking](https://play.google.com/store/apps/details?id=hu.khb) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/449)
 - ~~[Lloyds Bank Mobile Banking](https://play.google.com/store/apps/details?id=com.grppl.android.shell.CMBlloydsTSB73)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/53)
 - [Marcus by Goldman Sachs®](https://play.google.com/store/apps/details?id=com.marcus.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/212)
 - [Monzo Bank - Mobile Banking](https://play.google.com/store/apps/details?id=co.uk.getmondo) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/58)
