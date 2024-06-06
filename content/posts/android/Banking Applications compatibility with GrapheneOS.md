@@ -93,6 +93,10 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Mein ELBA-App](https://play.google.com/store/apps/details?id=at.rsg.pfp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/62)
 - [s Identity](https://play.google.com/store/apps/details?id=at.erstebank.securityapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/278)
 
+### Bangladesh
+
+- [bKash](https://play.google.com/store/apps/details?id=com.bKash.customerapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/454)
+
 ### Belgium
 
 - [Argenta Banking](https://play.google.com/store/apps/details?id=be.argenta.bankieren) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/274)
@@ -268,6 +272,10 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [OTP Bank HU](https://play.google.com/store/apps/details?id=hu.otpbank.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/245)
 - [Simple Classic #MakeItEasy](https://play.google.com/store/apps/details?id=com.otpmobil.simple) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/263)
 - [UniCredit mBanking](https://play.google.com/store/apps/details?id=hr.asseco.android.jimba.mUCI.hu) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/87)
+
+### Iceland
+
+- [Landsbankinn](https://play.google.com/store/apps/details?id=is.landsbankinn.personal) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/456)
 
 ### India
 
@@ -594,6 +602,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Mainstreet Credit Union](https://play.google.com/store/apps/details?id=org.mainstreetcu.grip) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/111)
 - [MSUFCU Mobile](https://play.google.com/store/apps/details?id=org.msufcu.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/311)
 - ~~[Navy Federal Credit Union](https://play.google.com/store/apps/details?id=com.navyfederal.android)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/393)
+- [NB|AZ Mobile Banking](https://play.google.com/store/apps/details?id=com.mfoundry.mb.android.mb_nba_pb) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/455)
 - [Old Glory Bank](https://play.google.com/store/apps/details?id=com.oldgloryholdingcompany4930.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/429)
 - [SchoolsFirst FCU Mobile](https://play.google.com/store/apps/details?id=org.schoolsfirstfcu.mobile.banking.isam) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/126)
 - [Schwab Mobile](https://play.google.com/store/apps/details?id=com.schwab.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/61)
