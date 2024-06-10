@@ -96,9 +96,11 @@ Here are some facts about it:
 - It is detectable. An easy way is to just go visit port 16992/tcp on your device.
 - To be extra sure, you can also run `nmap` to scan the port from a different device.
 
-This is not something hidden, people have accidentally [run into it](https://mastodon.lilysthings.org/@i_lost_my_bagel/112228352384742242) on social media.
+This is not something hidden, people have accidentally [run into AMT](https://mastodon.lilysthings.org/@i_lost_my_bagel/112228352384742242) on social media.
 
-For attack surface reduction, you should absolutely disable it. With that said, don't let the scary claims about "remote management" by the Free Software Foundation spook you - if some sort of hypothetical backdoor actually implemented this way, it is not hard to detect. There are better ways to implement a backdoor as discussed above, and if you don't trust the CPU vendor you should avoid them as a whole, not just the vPro model.
+For attack surface reduction, you should absolutely disable it. If you do not have a vPro laptop and are wondering what it looks like, have a look at the [BIOS Simulator for the Thinkpad T14 Gen 5](https://download.lenovo.com/bsco/#/graphicalsimulator/ThinkPad%20T14%20Gen%205%20(21ML,21MM)).
+
+With that said, don't let the scary claims about "remote management" by the Free Software Foundation spook you - if some sort of hypothetical backdoor actually implemented this way, it is not hard to detect. There are better ways to implement a backdoor as discussed above, and if you don't trust the CPU vendor you should avoid them as a whole, not just the vPro model.
 
 Some people recommend buying AMD instead of Intel to avoid the possibility of having Intel AMT. However, they also miss a very simple fact that AMD has an equivalent technology for their Ryzen Pro CPU - AMD DASH.
 
