@@ -181,6 +181,8 @@ Some laptop brands may set up Boot Guard correctly and meet a high HSI level, bu
 
 ### Ancient laptops
 
+![Stallman and his Thinkpad](stallma-thinkpad.webp)
+
 ### RYF and the Illusion of Freedom
 
 Ariadne Conill has a great [blog post](https://ariadne.space/2022/01/22/the-fsfs-relationship-with-firmware-is-harmful-to-free-software-users/) on how the Free Software Foundation handle firmware updates and blobs.
