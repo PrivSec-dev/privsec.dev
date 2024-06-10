@@ -139,7 +139,7 @@ The problem with this design is that everything hinges on the boot block doing i
 
 #### PureBoot & Purism
 
-![Librem 14](librem-14.png)
+![Purism](purism.png)
 
 Purism sells their laptops with PureBoot, a fork of Heads. It works in pretty much the same way, with a few extra features.
 
@@ -147,7 +147,7 @@ Let's go through some of their claims and contrast that agains reality.
 
 > PureBoot can protect against firmware tampering.
 
-It cannot protect against firmware tampering as discussed in the [Heads](#heads) section.
+It cannot protect against firmware tampering as discussed in the [Heads](#heads) section. It does not even work conceptually, and the bypass will always be there. Just to be clear, this is not a vulnerability - this is an inherent flaw in the design that cannot be fixed.
 
 > [The ME is disabled (HAP set to 1), and mostly wiped with `me_cleaner`](https://puri.sm/learn/intel-me/).
 
@@ -181,7 +181,7 @@ Some laptop brands may set up Boot Guard correctly and meet a high HSI level, bu
 
 ### Ancient laptops
 
-![Stallman and his Thinkpad](stallma-thinkpad.webp)
+![Stallman and his Thinkpad](stallman-thinkpad.webp)
 
 ### RYF and the Illusion of Freedom
 
