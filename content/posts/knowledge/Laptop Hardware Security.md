@@ -58,7 +58,7 @@ It is important to note that DRTM technologies can be bypassed via the System Ma
 
 ### Intel CSME and AMD PSP
 
-A very common misinformation among privacy communities is that the Intel Management Engine (ME), its sucessor - Intel Converged Security and Management Engine (CSME), and AMD Platform Security Processor (PSP) are some sort of evil backdoor. Some may go so far as to tell the user to "disable the ME", either out of paranoia or for attack surface reduction:
+A very common misinformation among privacy communities is that the Intel Management Engine (ME), its sucessor - Intel Converged Security and Management Engine (CSME), and AMD Platform Security Processor (PSP) are some sort of evil backdoor. Some may go so far as to tell the user to "disable the ME", either out of [paranoia](https://www.whonix.org/wiki/System_Hardening_Checklist#Disable_Intel_ME_Functionality) or for ["attack surface reduction"](https://discuss.privacyguides.net/t/linux-laptops-system76-other-options/16557/19):
 
 ![Intel ME Misinformation](/images/intel-me-misinfo-1.png)
 
@@ -82,7 +82,7 @@ This excercise also achieves nothing to protect against a hypothetical scenario 
 
 ### Intel AMT and AMD DASH
 
-Another misinformation regarding CSME is that it is provides some kind of shady "remote management" system for your computer. In reality, this is the AMT component which only exists on Intel vPro CPUs. It is meant for IT teams to manage systems with technologies like Serial over LAN, Solarwind, etc.
+Another misinformation regarding CSME is that it is provides some kind of [shady "remote management" system](https://www.fsf.org/blogs/community/active-management-technology) for your computer. In reality, this is the AMT component which only exists on Intel vPro CPUs. It is meant for IT teams to manage systems with technologies like Serial over LAN, Solarwind, etc.
 
 ![Intel AMT Misinformation](/images/intel-amt-misinfo.png)
 
@@ -94,11 +94,21 @@ Here are some facts about it:
 
 This is not a hidden thing at all, people have accidentally [run into it on social media]().
 
-For attack surface reduction, you should absolutely disable it. With that said, don't let the scary claims about "remote management" spook you - if some sort of hypothetical backdoor actually implemented this way, it is not hard to detect. There are better ways to implement a backdoor as discussed above, and if you don't trust the CPU vendor you should avoid them as a whole, not just the vPro model.
+For attack surface reduction, you should absolutely disable it. With that said, don't let the scary claims about "remote management" by the Free Software Foundation spook you - if some sort of hypothetical backdoor actually implemented this way, it is not hard to detect. There are better ways to implement a backdoor as discussed above, and if you don't trust the CPU vendor you should avoid them as a whole, not just the vPro model.
 
 Some people recommend buying AMD instead of Intel to avoid the possibility of having Intel AMT. However, they also miss a very simple fact that AMD has an equivalent technology for their Ryzen Pro CPU - AMD DASH.
 
 ### Restricted Boot
+
+Another false claim regarding Secure Boot by the Free Software Foundation is that UEFI Secure Boot is somehow Microsoft's evil attempt to lock users out of their computer by [only allowing it to run Microsoft approved software](https://www.fsf.org/campaigns/secure-boot-vs-restricted-boot/whitepaper-web):
+
+![UEFI Secure Boot misinformation](/images/uefi-secure-boot-misinfo.png)
+
+In reality, most if not all laptops with UEFI Secure Boot allows you to disable it - you can run whichever operating system you want. While it is true that certain lines of laptops like Razer do not allow custom key enrollment, proper business laptops like Dell Latitude/Precision and Lenovo Thinkpads do. You can enroll your own Secure Boot key and tell your laptop to boot only the system you trust.
+
+Another benefit of laptops certified with Microsoft's Secure-cored certification is that you can have the **Freedom** to disable the Microsoft Secure Boot Third-Party Certificate Authority and still have the laptop function normally. This is especially handy if you plan to run Windows as your operating system.
+
+UEFI Secure Boot is not Restricted Boot. It is a building block of SRTM and how you can build a secure boot environment.
 
 ## Insecure Products
 
