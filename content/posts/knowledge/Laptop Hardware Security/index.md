@@ -148,6 +148,7 @@ They claim that:
 - PureBoot is somehow better than other laptops which have real protection
 - They disable the ME (setting the HAP field to 1), then wiping most of it with `me_cleaner`
 - They ship the CPU unfused
+- They are not vulnerable to UEFI firmware vulnerabilities which lead to Boot Guard bypasses
 - They have developed a special "blob jail" for their Wifi card
 
 
