@@ -183,7 +183,7 @@ As a result, any pie
 
 ### Lenovo ThinkPad
 
-vPro Enterprise Thinkpad laptops security are generally acceptable for the product class. However, there is a big gotcha with their firmware: the "prevent BIOS downgrade" toggle does not actually work. This toggle only nicely asks Windows to not downgrade the firmware, but if a tool like fwupd tries to downgrade the firmware, the firmware will allow it anyways.
+vPro Enterprise Thinkpad laptops security are generally acceptable for the product class. However, there is a big gotcha with their firmware: the "prevent BIOS downgrade" toggle does not actually work. This toggle only nicely asks Windows to not downgrade the firmware, but if a tool like fwupd tries to downgrade it, the firmware will allow the downgrade.
 
 The implication of this is that if you have the UEFI update capsule enabled, a compromised OS can downgrade your firmware to a version vulnerable with something like LogoFail, then gain persistence by exploiting the firmware. The problem can theoratically be solved if Lenovo blows Boot Guard fuses to prevent downgrade, but in reality they do it even less often than Dell.
 
