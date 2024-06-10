@@ -104,7 +104,7 @@ Another false claim regarding Secure Boot by the Free Software Foundation is tha
 
 ![UEFI Secure Boot misinformation](/images/uefi-secure-boot-misinfo.png)
 
-In reality, most if not all laptops with UEFI Secure Boot allows you to disable it - you can run whichever operating system you want. While it is true that certain lines of laptops like Razer do not allow custom key enrollment, proper business laptops like Dell Latitude/Precision and Lenovo Thinkpads do. You can enroll your own Secure Boot key and tell your laptop to boot only the system you trust.
+In reality, most if not all laptops with UEFI Secure Boot allows you to disable it - you can run whichever operating system you want. While it is true that certain lines of laptops like Razer do not allow custom key enrollment, proper business laptops like Dell Latitude/Precision and Lenovo Thinkpad do. You can enroll your own Secure Boot key and tell your laptop to boot only the system you trust.
 
 Another benefit of laptops with Microsoft's Secure-cored certification is that you can have the **Freedom** to disable the Microsoft Secure Boot Third-Party Certificate Authority and still have the laptop function normally. This is especially handy if you plan to run Windows as your operating system.
 
