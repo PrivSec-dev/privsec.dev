@@ -167,13 +167,17 @@ The harshest reality of all, is that because of how much they have crippled hard
 
 Unfortunately, much like Purism, a lot of "Linux-focused" laptop vendors either do not set up Boot Guard, or set it up incorrectly. These include, but not limited to:
 
-- [StarLabs](https://www.fwupd.org/lvfs/hsireports/device?host_vendor=Star+Labs&host_family=I3&host_product=Lite).
-- [System76](https://www.fwupd.org/lvfs/hsireports/device?host_vendor=System76&host_family=&host_product=Darter+Pro)
+- [StarLabs](https://www.fwupd.org/lvfs/hsireports/device?host_vendor=Star+Labs&host_family=I3&host_product=Lite)
+- [System76](https://www.fwupd.org/lvfs/hsireports/device?host_vendor=System76&host_family=&host_product=Darter+Pro). They also say that their UEFI Secure Boot [is only intended for Windows installation checks to pass and not proper](https://github.com/system76/firmware-open/blob/3e19b73397c27cf88b048902a3f080f584d0f851/docs/uefi.md#secure-boot).
 - [Tuxedo](https://www.fwupd.org/lvfs/hsireports/device?host_vendor=TUXEDO&host_family=&host_product=TUXEDO+InfinityBook+Pro+14+Gen6)
 
 You should avoid buying from these vendors as well, as it is impossible to have any kind of firmware security without Boot Guard. They all have HSI level 0.
 
 ### Laptops with Insufficient Firmware Updates
+
+Some laptop brands may set up Boot Guard correctly and meet a high HSI level, but do not ship firmware frequently enough to fix critical vulnerabilities. These include, but not limited to:
+
+- Framework. vPro Enterprise Framework devices actually meet [HSI level 4](https://www.fwupd.org/lvfs/hsireports/device?host_vendor=Framework&host_family=13in+Laptop&host_product=Laptop+(13th+Gen+Intel+Core)), but they unfortunately do not handle firmware updates properly. They have not shipped a single firmware for their 13th generation over a year since its release date, and over 6 months since the disclosure of LogoFail. While they do ship some updates for other devices, how they have been handling so far is not acceptable if you need a secure device.
 
 ### Ancient laptops
 
