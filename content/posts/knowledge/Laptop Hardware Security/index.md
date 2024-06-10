@@ -169,6 +169,8 @@ Ariadne Conill has a great [blog post](https://ariadne.space/2022/01/22/the-fsfs
 
 In short, they consider a piece of hardware "blob free" if it containers proprietary firmware that cannot be updated, but anything with updatable firmware is not "blob free".
 
+As a result, any pie
+
 ### Laptops without Firmware Protection
 
 ### Laptops with Insufficient Firmware Updates
@@ -177,7 +179,12 @@ In short, they consider a piece of hardware "blob free" if it containers proprie
 
 ## Better Products
 
-### Dell
+### Dell Latitude/Precision
 
-### Lenovo
+### Lenovo ThinkPad
 
+vPro Enterprise Thinkpad laptops security are generally acceptable for the product class. However, there is a big gotcha with their firmware: the "prevent BIOS downgrade" toggle does not actually work. This toggle only nicely asks Windows to not downgrade the firmware, but if a tool like fwupd tries to downgrade the firmware, the firmware will allow it anyways.
+
+The implication of this is that if you have the UEFI update capsule enabled, a compromised OS can downgrade your firmware to a version vulnerable with something like LogoFail, then gain persistence by exploiting the firmware. The problem can theoratically be solved if Lenovo blows Boot Guard fuses to prevent downgrade, but in reality they do it even less often than Dell.
+
+For this reason, I recommend buying Dell Latitude/Precision over Lenovo products. If you have to use a Lenovo laptop anyways, consider disabling the UEFI capsule, and use a different, trusted computer to create a USB stick for firmware updates.
