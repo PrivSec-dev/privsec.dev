@@ -183,14 +183,6 @@ There are a few generation of hardware that you should avoid as well:
 - AMD Zen 2. These are vulnerable to FaultTPM. You shouldn't buy them unless you know you have a dedicated TPM that comes with the laptop.
 - MSI generation before 11th gen. Generally you should not buy MSI for security as they are a gaming brand and does not focus on security, but you should really avoid 11th gen MSI and earlier. These have leaked Boot Guard keys which makes any kind of firmware security impossible.
 
-### RYF and the Illusion of Freedom
-
-Ariadne Conill has a great [blog post](https://ariadne.space/2022/01/22/the-fsfs-relationship-with-firmware-is-harmful-to-free-software-users/) on how the Free Software Foundation handle firmware updates and blobs.
-
-In short, they consider a piece of hardware "blob free" if it containers proprietary firmware that cannot be updated, but anything with updatable firmware is not "blob free".
-
-As a result, any pie
-
 ## Better Products
 
 ![Thinkpad](thinkpad.jpg)
