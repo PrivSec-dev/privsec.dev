@@ -147,11 +147,11 @@ Let's go through some of their claims and contrast that agains reality.
 
 > PureBoot can protect against firmware tampering.
 
-It cannot protect against firmware tampering as discussed in the [Heads](/#heads) section.
+It cannot protect against firmware tampering as discussed in the [Heads](#heads) section.
 
 > [The ME is disabled (HAP set to 1), and mostly wiped with `me_cleaner`](https://puri.sm/learn/intel-me/).
 
-They only set the HAP field now, but you have to find that out through a [forum post](https://forums.puri.sm/t/librem-14s-me-disabled-but-not-neutralized/12238). Regardless, they crippled critical security features including the ones described in the [Intel CSME and AMD PSP](/#intel-csme-and-amd-psp) section.
+They only set the HAP field now, but you have to find that out through a [forum post](https://forums.puri.sm/t/librem-14s-me-disabled-but-not-neutralized/12238). Regardless, they crippled critical security features including the ones described in the [Intel CSME and AMD PSP](#intel-csme-and-amd-psp) section.
 
 > PureBoot is [not vulnerable](https://puri.sm/posts/pureboot-not-vulnerable-to-uefi-exploits-again/) to UEFI firmware vulnerabilities which lead to Boot Guard bypasses.
 
