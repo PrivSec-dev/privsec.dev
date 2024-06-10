@@ -60,9 +60,9 @@ It is important to note that DRTM technologies can be bypassed via the System Ma
 
 A very common misinformation among privacy communities is that the Intel Management Engine (ME), its sucessor - Intel Converged Security and Management Engine (CSME), and AMD Platform Security Processor (PSP) are some sort of evil backdoor. Some may go so far as to tell the user to "disable the ME", either out of [paranoia](https://www.whonix.org/wiki/System_Hardening_Checklist#Disable_Intel_ME_Functionality) or for ["attack surface reduction"](https://discuss.privacyguides.net/t/linux-laptops-system76-other-options/16557/19):
 
-![Intel ME Misinformation](/images/intel-me-misinfo-1.png)
+![Intel ME Misinformation](intel-me-misinfo-1.png)
 
-![Intel ME Misinformation](/images/intel-me-misinfo-2.png)
+![Intel ME Misinformation](intel-me-misinfo-2.png)
 
 The problem with these recommendations are as follows:
 
