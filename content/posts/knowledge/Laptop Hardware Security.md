@@ -118,7 +118,7 @@ Now that we have covered SRTM and common misconceptions, let's discuss some inse
 
 #### Heads
 
-Heads is built around the desire for the signing key for the firmware to be in the posession of the user instead of the OEM. It generally works as follows:
+Heads is built around the desire for the signing key for the firmware to be in the posession of the user instead of the OEM. They also want the user to be able to change the key in case they lose access to it. In general, this is how Heads works:
 
 - The user enrolls their GPG public key into the firmware.
 - The user signs the files /boot with their GPG key.
@@ -129,13 +129,15 @@ Heads is built around the desire for the signing key for the firmware to be in t
 - The firmware checks if the files in /boot are signed by the GPG key.
 - If everything is as expected, the system will boot normally.
 
-The problem with this design is that everything hinges on the boot block doing its initial measurements truthfully. However, nothing is actually protecting the boot block, because there is no Boot Guard. There is nothing stopping an attacker from flashing a piece of malicious firmware with a programmer that will just lie about the measurements.
-
-To recap: On a normal set up, you have Boot Guard which has the signature of the OEM fused into the PCH. If an attacker tampers with the boot block which is protected by Boot Guard, the CPU will notice that the OEM doesn’t have the signature of the vendor and refuse to boot. But with Heads, the user is supposed to control the keys and be able to rotate the key, so there is no Boot Guard, resulting in there being no protection at all.
-
-At best, Heads can detect tampering against the disk. However, it cannot protect against tampering of the firmware like Boot Guard does.
+The problem with this design is that everything hinges on the boot block doing its initial measurements truthfully. Since the user is supposed be able to change the key, no key can be set up with Boot Guard to protect the boot block. The result is that there is nothing stopping an attacker from flashing a piece of malicious firmware that will just lie about the measurements. This is anagolous to asking a potential liar of they are being truthful. At best, Heads can protect against tampering of the disk, but it cannot protect against firmware tampering.
 
 #### PureBoot & Purism
+
+Purism sells their laptops with PureBoot, a fork of Heads. It works in pretty much the same way, with a few extra features.
+
+Here is what Purism claims in their marketing material:
+
+
 
 ### RYF and the Illusion of Freedom
 
