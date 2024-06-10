@@ -56,7 +56,7 @@ One important thing here is that DRTM technologies can be bypassed via SMM, so y
 
 ## Common misinformation
 
-### Intel TSME and AMD PSP
+### Intel CSME and AMD PSP
 
 ### Intel AMT
 
