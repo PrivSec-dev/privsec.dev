@@ -71,6 +71,12 @@ Intel CSME provides critical security features, including but not limited to:
 - Memory Encryption (on Intel vPro Enterprise systems)
 - Intel Locker (A nice mechanism to purge the encryption key from memory after early boot - not widely used on Linux yet, but is implemented on ChromeOS)
 
+AMD PSP provides similar security features:
+- Firmware TPM
+- Memory Encryption (on Ryzen Pro and EPYC systems)
+
+By disabling Intel CSME, you are **increasing the attack surface** by crippling security features. Additionally, if you buy hardware so old that you can run me_cleaner to disable the ME yourself, it means that these hardware do not have Boot Guard and it is impossible to implement any kind of boot security.
+
 ### Intel AMT and AMD DASH
 
 ### Restricted Boot
