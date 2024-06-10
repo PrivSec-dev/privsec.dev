@@ -149,15 +149,15 @@ Let's go through some of their claims and contrast that agains reality.
 
 It cannot protect against firmware tampering as discussed in the [Heads](/#heads) section.
 
-> They [disable the ME (setting the HAP field to 1), then wiping most of it with `me_cleaner`](https://puri.sm/learn/intel-me/).
+> [The ME is disabled (HAP set to 1), and mostly wiped with `me_cleaner`](https://puri.sm/learn/intel-me/).
 
 They only set the HAP field now, but you have to find that out through a [forum post](https://forums.puri.sm/t/librem-14s-me-disabled-but-not-neutralized/12238). Regardless, they crippled critical security features including the ones described in the [Intel CSME and AMD PSP](/#intel-csme-and-amd-psp) section.
 
-> They are [not vulnerable](https://puri.sm/posts/pureboot-not-vulnerable-to-uefi-exploits-again/) to UEFI firmware vulnerabilities which lead to Boot Guard bypasses.
+> PureBoot is [not vulnerable](https://puri.sm/posts/pureboot-not-vulnerable-to-uefi-exploits-again/) to UEFI firmware vulnerabilities which lead to Boot Guard bypasses.
 
 They referenced the LogoFail vulnerability where the firmware's image parser can be exploited to make the firmware run arbitary code despite of being verified by Boot Guard. In Purism's case, they do not even use Boot Guard to begin with, so there is no basic protection to even bypass. They are just vulnerable by design.
 
-> They have developed a special ["blob jail"](https://puri.sm/posts/intel-ax200-wi-fi-bluetooth-shipping-for-new-orders/) for their Wifi card.
+> There is a special ["blob jail"](https://puri.sm/posts/intel-ax200-wi-fi-bluetooth-shipping-for-new-orders/) for the Wifi card.
 
 The "blob jail" is not special. It is an imitation of how the `linux-firmware` package works, and it only exists because they are refusing to ship firmware updates through PureOS. The blobs inside of the "blob jail" are not any more isolated than the blobs provided by `linux-firmware`. It is much more proper to just ship firmware for peripherals through the OS like normal distributions than shipping it through a boot firmware that requires manual updates.
 
