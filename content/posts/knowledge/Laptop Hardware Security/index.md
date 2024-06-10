@@ -16,7 +16,7 @@ In this post, I will walk you through a quick overview of how hardware security 
 To start off, the best laptops I have found are modern the Dell Latitude/Precision laptops with an Intel vPro Enterprise CPU. The second best group of laptops I have found are modern Lenovo Thinkpads with Intel vPro Enterprise or AMD Ryzen Pro CPUs. These are relatively easy to acquire and share these common security properties:
 
 - Have Intel Boot Guard or AMD Platform Secure Boot to protect the firmware
-- Have regular firmware updates (Monthly updates for Dell, and Bi-monthly updates for Thinkpads)
+- Have regular firmware updates ([monthly updates for Dell](https://www.dell.com/support/kbdoc/en-us/000197092/dell-drivers-and-downloads-update-release-schedule), and [bi-monthly updates for Thinkpads](https://support.lenovo.com/us/en/solutions/ht515365-thinkpad-driver-and-firmware-update-release-schedule))
 - Support firmware updates via the [Linux Vendor Firmware Service](https://www.fwupd.org/)
 - Support custom Secure Boot key enrollment
 - Support disabling Microsoft third-party certificate authoritity
