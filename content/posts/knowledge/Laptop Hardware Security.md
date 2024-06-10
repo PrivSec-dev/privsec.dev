@@ -92,7 +92,7 @@ Here are some facts about it:
 - It is detectable. An easy way is to just go visit port 16992/tcp on your device.
 - To be extra sure, you can also run `nmap` to scan the port from a different device.
 
-This is not something hidden, people have accidentally [run into it on social media](https://mastodon.lilysthings.org/@i_lost_my_bagel/112228352384742242).
+This is not something hidden, people have accidentally [run into it](https://mastodon.lilysthings.org/@i_lost_my_bagel/112228352384742242) on social media.
 
 For attack surface reduction, you should absolutely disable it. With that said, don't let the scary claims about "remote management" by the Free Software Foundation spook you - if some sort of hypothetical backdoor actually implemented this way, it is not hard to detect. There are better ways to implement a backdoor as discussed above, and if you don't trust the CPU vendor you should avoid them as a whole, not just the vPro model.
 
