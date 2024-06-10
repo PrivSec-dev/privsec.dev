@@ -48,15 +48,17 @@ This is not perfect, and the user still needs to set up additional protection fo
 
 ### DRTM
 
-In general, DRTM works by loading in an ACM binary signed by the CPU vendor along what the system is trying to boot. The ACM binary will perform measurements of the environment and submit the results to certain PCRs. In the case of Intel TXT, PCR 17 and 18 are used. The measurements then can be used to for remote attestation or to release a secret in the TPM if it matches the TPM policy.
+In general, DRTM works by loading in an ACM binary signed by the CPU vendor along what the system is trying to boot. The ACM binary will perform measurements of the environment and submit the results to certain PCRs. In the case of Intel TXT, PCR 17 and 18 are used. The measurements then can be used to for remote attestation or to release a secret stored in the TPM if it matches the TPM policy.
 
-On Windows, DRTM is implemented with [System Guard](https://learn.microsoft.com/en-us/windows/security/hardware-security/how-hardware-based-root-of-trust-helps-protect-windows). On Linux, [TrenchBoot](https://trenchboot.org/) is being developed. One application of it would be to provide the Anti Evil Maid setup with Qubes OS.
+On Windows, DRTM is implemented with [System Guard](https://learn.microsoft.com/en-us/windows/security/hardware-security/how-hardware-based-root-of-trust-helps-protect-windows) for remote attestation. On Linux, DRTM is not widely used yet, but [TrenchBoot](https://trenchboot.org/) is being developed to address that.
 
-One important thing here is that DRTM technologies can be bypassed via SMM, so you still need to have some level of trust in your firmware to implement SMM mitigations.
+It is important to note that DRTM technologies can be bypassed via the System Management Mode (SMM), so you still need to have some level of trust in your firmware to implement SMM mitigations. In essence, you still need to rely on SRTM to some extent.
 
-## Common misinformation
+## Common Misinformation
 
 ### Intel CSME and AMD PSP
+
+
 
 ### Intel AMT
 
