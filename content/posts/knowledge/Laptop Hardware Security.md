@@ -58,9 +58,20 @@ It is important to note that DRTM technologies can be bypassed via the System Ma
 
 ### Intel CSME and AMD PSP
 
+A very common misinformation among privacy communities is that the Intel Management Engine (ME), its sucessor - Intel Converged Security and Management Engine (CSME), and AMD Platform Security Processor (PSP) are some sort of evil backdoor. Some may go so far as to tell the user to "disable the ME", either out of paranoia or for attack surface reduction:
+
+![Intel ME Misinformation](/images/intel-me-misinfo.png)
 
 
-### Intel AMT
+The problem with these recommendations are as follows:
+
+Intel CSME provides critical security features, including but not limited to:
+- Boot Guard (The basis of SRTM, as discussed above)
+- Firmware TPM (Generally better than dedicated TPMs by being not being vulnerable to bus sniffing)
+- Memory Encryption (on Intel vPro Enterprise systems)
+- Intel Locker (A nice mechanism to purge the encryption key from memory after early boot - not widely used on Linux yet, but is implemented on ChromeOS)
+
+### Intel AMT and AMD DASH
 
 ### Restricted Boot
 
