@@ -9,7 +9,7 @@ While browsing privacy forums, I often see a lot discussions regarding laptop ha
 
 In this post, I will walk you through a quick overview of how hardware security is generally implemented for laptops, what to look for, and what to avoid. We will not discuss MacBooks or Chromebooks, as they are vastly different from normal x86 Windows/Linux hardware.
 
-![Precision 5490](dell.png)
+![Dell Laptop](dell.png)
 
 ## The Benchmark
 
@@ -84,8 +84,6 @@ This excercise also achieves nothing to protect against a hypothetical scenario 
 
 Another misinformation regarding CSME is that it is provides some kind of [shady "remote management" system](https://www.fsf.org/blogs/community/active-management-technology) for your computer. In reality, this is the AMT component which only exists on Intel vPro CPUs. It is meant for IT teams to manage systems with technologies like Serial over LAN, Solarwind, etc.
 
-![Intel AMT Misinformation](intel-amt-misinfo.png)
-
 Here are some facts about it:
 - You can disable it firmware settings.
 - Certain firmware allows you to permanently disable it by blowing an eFuse.
@@ -102,9 +100,7 @@ Some people recommend buying AMD instead of Intel to avoid the possibility of ha
 
 ### Restricted Boot
 
-Another false claim regarding Secure Boot by the Free Software Foundation is that UEFI Secure Boot is somehow Microsoft's evil attempt to lock users out of their computer by [only allowing it to run Microsoft approved software](https://www.fsf.org/campaigns/secure-boot-vs-restricted-boot/whitepaper-web):
-
-![UEFI Secure Boot misinformation](uefi-secure-boot-misinfo.png)
+Another false claim regarding Secure Boot by the Free Software Foundation is that UEFI Secure Boot is somehow Microsoft's evil attempt to lock users out of their computer by [only allowing it to run Microsoft approved software](https://www.fsf.org/campaigns/secure-boot-vs-restricted-boot/whitepaper-web).
 
 In reality, most if not all laptops with UEFI Secure Boot allows you to disable it - you can run whichever operating system you want. While it is true that certain lines of laptops like Razer do not allow custom key enrollment, proper business laptops like Dell Latitude/Precision and Lenovo Thinkpad do. You can enroll your own Secure Boot key and tell your laptop to boot only the system you trust.
 
@@ -134,8 +130,6 @@ Heads is built around the desire for the signing key for the firmware to be in t
 The problem with this design is that everything hinges on the boot block doing its initial measurements truthfully. Since the user is supposed be able to change the key, no key can be set up with Boot Guard to protect the boot block. The result is that there is nothing stopping an attacker from flashing a piece of malicious firmware that will just lie about the measurements. At best, Heads can protect against tampering of the disk, but it cannot protect against tampering of the firmware.
 
 #### PureBoot & Purism
-
-![Purism](purism.png)
 
 Purism sells their laptops with PureBoot, a fork of Heads. It works in pretty much the same way, with a few extra features.
 
