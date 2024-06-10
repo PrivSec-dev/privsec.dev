@@ -163,6 +163,20 @@ The "blob jail" is not special. It is an imitation of how the `linux-firmware` p
 
 The harshest reality of all, is that because of how much they have crippled hardware security, [Librem laptops are at HSI level 0](https://www.fwupd.org/lvfs/hsireports/device?host_vendor=Purism&host_family=Librem+14&host_product=Librem+14). You should avoid all Heads laptops and Purism products.
 
+### Laptops without Firmware Protection
+
+Unfortunately, much like Purism, a lot of "Linux-focused" laptop vendors either do not set up Boot Guard, or set it up incorrectly. These include, but not limited to:
+
+- [StarLabs](https://www.fwupd.org/lvfs/hsireports/device?host_vendor=Star+Labs&host_family=I3&host_product=Lite).
+- [System76](https://www.fwupd.org/lvfs/hsireports/device?host_vendor=System76&host_family=&host_product=Darter+Pro)
+- [Tuxedo](https://www.fwupd.org/lvfs/hsireports/device?host_vendor=TUXEDO&host_family=&host_product=TUXEDO+InfinityBook+Pro+14+Gen6)
+
+You should avoid buying from these vendors as well, as it is impossible to have any kind of firmware security without Boot Guard. They all have HSI level 0.
+
+### Laptops with Insufficient Firmware Updates
+
+### Ancient laptops
+
 ### RYF and the Illusion of Freedom
 
 Ariadne Conill has a great [blog post](https://ariadne.space/2022/01/22/the-fsfs-relationship-with-firmware-is-harmful-to-free-software-users/) on how the Free Software Foundation handle firmware updates and blobs.
@@ -171,19 +185,13 @@ In short, they consider a piece of hardware "blob free" if it containers proprie
 
 As a result, any pie
 
-### Laptops without Firmware Protection
-
-### Laptops with Insufficient Firmware Updates
-
-### Ancient laptops
-
 ## Better Products
 
 ![Thinkpad](thinkpad.jpg)
 
 ### Dell Latitude/Precision
 
-Dell business laptops have the best firmware among all laptops I have personally evaluated. However, they are not without faults that you should be aware of:
+Dell business laptops have the best firmware security among all laptops I have personally evaluated. However, they are not without faults that you should be aware of:
 
 - There is a default BIOS recovery password tied to the device serial number. You can disable this by enabling the [Master Password Lockout](https://www.dell.com/support/kbdoc/en-us/000180749/dell-client-products-unauthorized-bios-password-reset-tools) setting.
 - Dell sometimes forget to update the firmware for certain products like the Latitude 9440 and Latitude 9450 to LVFS. Be sure to check your device [update history](https://www.fwupd.org/lvfs/devices/) before purchasing any device, especially from Dell.
@@ -192,7 +200,7 @@ Dell business laptops have the best firmware among all laptops I have personally
 
 ### Lenovo ThinkPad
 
-In my opinion, vPro Enterprise Thinkpad laptops security are generally acceptable for the product class. However, there is a big gotcha with their firmware: the "prevent BIOS downgrade" toggle does not actually work. This toggle only nicely asks Windows to not downgrade the firmware, but if a tool like fwupd tries to downgrade it, the firmware will allow the downgrade.
+In my opinion, vPro Enterprise Thinkpad laptops security are generally acceptable for the product class. However, there is a big gotcha with their firmware: **the "prevent BIOS downgrade" toggle does not actually work**. This toggle only nicely asks Windows to not downgrade the firmware, but if a tool like fwupd tries to downgrade it, the firmware will allow the downgrade.
 
 The implication of this is that if you have the UEFI update capsule enabled, a compromised OS can downgrade your firmware to a version vulnerable with something like LogoFail, and the malware can then gain persistent in the firmware. The problem can theoratically be solved if Lenovo blows Boot Guard fuses to prevent downgrade, but in reality they do it even less often than Dell.
 
