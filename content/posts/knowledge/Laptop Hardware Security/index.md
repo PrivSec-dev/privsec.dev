@@ -166,7 +166,7 @@ Claim: They have developed a special ["blob jail"](https://puri.sm/posts/intel-a
 Reality: The "blob jail" is not special. It is an imitation of how the `linux-firmware` package works, and it only exists because they are refusing to ship firmware updates through PureOS. The blobs inside of the "blob jail" are not any more isolated than the blobs provided by `linux-firmware`. It is much more proper to just ship firmware for peripherals through the OS like normal distributions than shipping it through a boot firmware that requires manual updates.
 
 ---
-The harshest reality of all, is that because of how much they have crippled hardware security, [Librem laptops are at HSI level 0](https://www.fwupd.org/lvfs/hsireports/device?host_vendor=Purism&host_family=Librem+14&host_product=Librem+14).
+The harshest reality of all, is that because of how much they have crippled hardware security, [Librem laptops are at HSI level 0](https://www.fwupd.org/lvfs/hsireports/device?host_vendor=Purism&host_family=Librem+14&host_product=Librem+14). You should avoid all Heads laptops and Purism products.
 
 ### RYF and the Illusion of Freedom
 
