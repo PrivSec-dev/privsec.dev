@@ -21,11 +21,11 @@ To start off, the best laptops I have found are modern the Dell Latitude/Precisi
 - Support custom Secure Boot key enrollment
 - Support disabling Microsoft third-party certificate authoritity
 - Support memory encryption
-- Support kernel DMA protection
+- Support [kernel DMA protection](https://learn.microsoft.com/en-us/windows/security/hardware-security/kernel-dma-protection-for-thunderbolt)
 - Support SMM Mitigation
 - Support DRTM technologies
-- Meet Secure-cored requirements for Windows
-- Meet HSI-4 for Linux
+- Meet [Secure-cored requirements](https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-highly-secure-11) for Windows
+- Meet [HSI-4](https://fwupd.github.io/libfwupdplugin/hsi.html#hsi-level4) for Linux
 - Still recieve Microcode updates from Intel and AMD
 
 As such, I will be comparing everything else in this post against these laptops, 
