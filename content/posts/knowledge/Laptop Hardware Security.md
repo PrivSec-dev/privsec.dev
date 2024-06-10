@@ -84,15 +84,15 @@ This excercise also achieves nothing to protect against a hypothetical scenario 
 
 Another misinformation regarding CSME is that it is provides some kind of shady "remote management" system for your computer. In reality, this is the AMT component which only exists on Intel vPro CPUs. It is meant for IT teams to manage systems with technologies like Serial over LAN, Solarwind, etc.
 
+![Intel AMT Misinformation](/images/intel-amt-misinfo.png)
+
 Here are some facts about it:
 - You can disable it firmware settings.
 - Certain firmware allows you to permanently disable it by blowing an eFuse.
 - It is detectable. An easy way is to just go visit port 16992/tcp on your device.
 - To be extra sure, you can also run nmap to scan the port from a different device.
 
-This is not a hidden thing at all, people have accidentally run into it on social media:
-
-![Intel AMT](/images/intel-amt.png)
+This is not a hidden thing at all, people have accidentally [run into it on social media]().
 
 For attack surface reduction, you should absolutely disable it. With that said, don't let the scary claims about "remote management" spook you - if some sort of hypothetical backdoor actually implemented this way, it is not hard to detect. There are better ways to implement a backdoor as discussed above, and if you don't trust the CPU vendor you should avoid them as a whole, not just the vPro model.
 
