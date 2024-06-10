@@ -7,7 +7,7 @@ author: Tommy
 
 While browsing privacy forums, I often see a lot discussions regarding laptop hardware security, especially in regards to resistance against physical attacks. Unfortunately, most of the advice given on these forums are incorrect, recommending people to buy overpriced products that are significantly less secure than standard laptops.
 
-In this post, I will walk you through a quick overview of how hardware security is generally implemented for laptops, what to look for, and what to avoid. We will not discuss Macbooks or Chromebooks, as they are vastly different from normal x86 Windows/Linux hardware.
+In this post, I will walk you through a quick overview of how hardware security is generally implemented for laptops, what to look for, and what to avoid. We will not discuss MacBooks or Chromebooks, as they are vastly different from normal x86 Windows/Linux hardware.
 
 ![Latitude 9440](/images/latitude-9440.jpg)
 
