@@ -133,7 +133,7 @@ The problem with this design is that everything hinges on the boot block doing i
 
 #### PureBoot & Purism
 
-![Librem 14](/image/librem-14.png)
+![Librem 14](/image/librem14.png)
 
 Purism sells their laptops with PureBoot, a fork of Heads. It works in pretty much the same way, with a few extra features.
 
