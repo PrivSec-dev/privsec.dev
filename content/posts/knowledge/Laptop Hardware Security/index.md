@@ -151,14 +151,9 @@ Claim: PureBoot can protect against firmware tampering.
 Reality: It cannot protect against firmware tampering as discussed in the [Heads](/#heads) section.
 
 ---
-Claim: Librem laptops have better firmware than other laptops.
-
-Reality: Other laptops like Dell Latitude/Precision and Lenovo Thinkpad have protect against firmware tampering with Boot Guard. Librems do not.
-
----
 Claim: They [disable the ME (setting the HAP field to 1), then wiping most of it with `me_cleaner`](https://puri.sm/learn/intel-me/).
 
-Reality: They only set the HAP field now, but you have to find that out through a [forum post](https://forums.puri.sm/t/librem-14s-me-disabled-but-not-neutralized/12238).
+Reality: They only set the HAP field now, but you have to find that out through a [forum post](https://forums.puri.sm/t/librem-14s-me-disabled-but-not-neutralized/12238). Regardless, they crippled critical security features including the ones described in the [Intel CSME and AMD PSP](/#intel-csme-and-amd-psp) section.
 
 ---
 Claim: They are [not vulnerable](https://puri.sm/posts/pureboot-not-vulnerable-to-uefi-exploits-again/) to UEFI firmware vulnerabilities which lead to Boot Guard bypasses.
