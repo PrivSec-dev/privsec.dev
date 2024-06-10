@@ -129,7 +129,7 @@ Heads is built around the desire for the signing key for the firmware to be in t
 - The firmware checks if the files in /boot are signed by the GPG key.
 - If everything is as expected, the system will boot normally.
 
-The problem with this design is that everything hinges on the boot block doing its initial measurements truthfully. Since the user is supposed be able to change the key, no key can be set up with Boot Guard to protect the boot block. The result is that there is nothing stopping an attacker from flashing a piece of malicious firmware that will just lie about the measurements. This is anagolous to asking a potential liar of they are being truthful. At best, Heads can protect against tampering of the disk, but it cannot protect against firmware tampering.
+The problem with this design is that everything hinges on the boot block doing its initial measurements truthfully. Since the user is supposed be able to change the key, no key can be set up with Boot Guard to protect the boot block. The result is that there is nothing stopping an attacker from flashing a piece of malicious firmware that will just lie about the measurements. At best, Heads can protect against tampering of the disk, but it cannot protect against firmware tampering.
 
 #### PureBoot & Purism
 
