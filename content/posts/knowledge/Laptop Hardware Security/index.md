@@ -143,21 +143,25 @@ The problem with this design is that everything hinges on the boot block doing i
 
 Purism sells their laptops with PureBoot, a fork of Heads. It works in pretty much the same way, with a few extra features.
 
-They claim that:
-- It can protect against firmware tampering.
-- PureBoot is somehow better than other laptops.
-- They [disable the ME (setting the HAP field to 1), then wiping most of it with `me_cleaner`](https://puri.sm/learn/intel-me/).
-- They ship the CPU unfused.
-- They are [not vulnerable](https://puri.sm/posts/pureboot-not-vulnerable-to-uefi-exploits-again/) to UEFI firmware vulnerabilities which lead to Boot Guard bypasses.
-- They have developed a special "blob jail" for their Wifi card.
+Let's go through some of their claims and contrast that agains reality.
 
-This is a far cry from reality, however:
-- It cannot protect against firmware tampering as discussed in the Heads(/#heads) section
-- Other laptops can protect against firmware tampering with Boot Guard
-- They only set the HAP field now, but you have to find that out through a [forum post](https://forums.puri.sm/t/librem-14s-me-disabled-but-not-neutralized/12238).
-- The "blob jail" is not special. It is an imitation of how the `linux-firmware` package works, and it only exists because they are refusing to ship firmware updates through the distribution. The blobs inside of the "blob jail" are not any more isolated than the blobs provided by `linux-firmware`. It is much more proper to just ship firmware for peripherals through the OS than shipping it through a boot firmware that requires manual updates.
-- They referenced the LogoFail vulnerability where the firmware's image parser can be exploited to make the firmware run arbitary code despite of being verified by Boot Guard. In Purism's case, they do not even use Boot Guard to begin with, so there is no basic protection to even bypass. They are just vulnerable by design.
-- Because of how much they have crippled hardware security, [Librem laptops are at HSI level 0](https://www.fwupd.org/lvfs/hsireports/device?host_vendor=Purism&host_family=Librem+14&host_product=Librem+14).
+Claim: PureBoot can protect against firmware tampering.
+Reality: It cannot protect against firmware tampering as discussed in the Heads(/#heads) section.
+
+Claim: Librem laptops have better firmware than other laptops.
+Reality: Other laptops like Dell Latitude/Precision and Lenovo Thinkpad have protect against firmware tampering with Boot Guard. Librems do not.
+
+Claim: They [disable the ME (setting the HAP field to 1), then wiping most of it with `me_cleaner`](https://puri.sm/learn/intel-me/).
+Reality: They only set the HAP field now, but you have to find that out through a [forum post](https://forums.puri.sm/t/librem-14s-me-disabled-but-not-neutralized/12238).
+
+Claim: They are [not vulnerable](https://puri.sm/posts/pureboot-not-vulnerable-to-uefi-exploits-again/) to UEFI firmware vulnerabilities which lead to Boot Guard bypasses.
+Reality: They referenced the LogoFail vulnerability where the firmware's image parser can be exploited to make the firmware run arbitary code despite of being verified by Boot Guard. In Purism's case, they do not even use Boot Guard to begin with, so there is no basic protection to even bypass. They are just vulnerable by design.
+
+
+Claim: They have developed a special "blob jail" for their Wifi card.
+Reality: The "blob jail" is not special. It is an imitation of how the `linux-firmware` package works, and it only exists because they are refusing to ship firmware updates through the distribution. The blobs inside of the "blob jail" are not any more isolated than the blobs provided by `linux-firmware`. It is much more proper to just ship firmware for peripherals through the OS than shipping it through a boot firmware that requires manual updates.
+
+The harshest reality of all, is that because of how much they have crippled hardware security, [Librem laptops are at HSI level 0](https://www.fwupd.org/lvfs/hsireports/device?host_vendor=Purism&host_family=Librem+14&host_product=Librem+14).
 
 ### RYF and the Illusion of Freedom
 
