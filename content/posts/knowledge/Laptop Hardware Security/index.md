@@ -143,16 +143,20 @@ The problem with this design is that everything hinges on the boot block doing i
 
 Purism sells their laptops with PureBoot, a fork of Heads. It works in pretty much the same way, with a few extra features.
 
-Here is a quick sample of Purism's marketing material:
-
 They claim that:
 - It can protect against firmware tampering
-- PureBoot is somehow better than other laptops which have real protection
-- They disable the ME (setting the HAP field to 1), then wiping most of it with `me_cleaner`
+- PureBoot is somehow better than other laptops
+- They [disable the ME (setting the HAP field to 1), then wiping most of it with `me_cleaner`]()
 - They ship the CPU unfused
 - They are not vulnerable to UEFI firmware vulnerabilities which lead to Boot Guard bypasses
 - They have developed a special "blob jail" for their Wifi card
 
+This is a far cry from reality, however:
+- It cannot protect against firmware tampering as discussed in the Heads(/#heads) section
+- Other laptops can protect against firmware tampering with Boot Guard
+- They only set the HAP field now, but you have to find that out through a [forum post](https://forums.puri.sm/t/librem-14s-me-disabled-but-not-neutralized/12238)
+- The "blob jail" is not special. It is an imitation of how the `linux-firmware` package works, and its sole existence is only because they are refusing to ship `linux-firmware` through the distribution because of ideology. The blobs inside of the "blob jail" are not any more isolated than the blobs provided by `linux-firmware`.
+- Because of how much they have crippled hardware security, [Librem laptops are at HSI level 0](https://www.fwupd.org/lvfs/hsireports/device?host_vendor=Purism&host_family=Librem+14&host_product=Librem+14)
 
 ### RYF and the Illusion of Freedom
 
