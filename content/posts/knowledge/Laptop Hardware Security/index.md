@@ -133,7 +133,7 @@ The problem with this design is that everything hinges on the boot block doing i
 
 Purism sells their laptops with PureBoot, a fork of Heads. It works in pretty much the same way, with a few extra features.
 
-Let's go through some of their claims and contrast that agains reality.
+Let's go through some of their claims and contrast that against reality.
 
 > PureBoot can protect against firmware tampering.
 
