@@ -60,8 +60,9 @@ It is important to note that DRTM technologies can be bypassed via the System Ma
 
 A very common misinformation among privacy communities is that the Intel Management Engine (ME), its sucessor - Intel Converged Security and Management Engine (CSME), and AMD Platform Security Processor (PSP) are some sort of evil backdoor. Some may go so far as to tell the user to "disable the ME", either out of paranoia or for attack surface reduction:
 
-![Intel ME Misinformation](/images/intel-me-misinfo.png)
+![Intel ME Misinformation](/images/intel-me-misinfo-1.png)
 
+![Intel ME Misinformation](/images/intel-me-misinfo-2.png)
 
 The problem with these recommendations are as follows:
 
@@ -75,7 +76,9 @@ AMD PSP provides similar security features:
 - Firmware TPM
 - Memory Encryption (on Ryzen Pro and EPYC systems)
 
-By disabling Intel CSME, you are **increasing the attack surface** by crippling security features. Additionally, if you buy hardware so old that you can run me_cleaner to disable the ME yourself, it means that these hardware do not have Boot Guard and it is impossible to implement any kind of boot security.
+By disabling Intel CSME, you are **increasing the attack surface** by crippling security features. Additionally, if you buy hardware so old that you can run `me_cleaner` to disable the ME yourself, it means that these hardware do not have Boot Guard and it is impossible to implement any kind of boot security.
+
+This excercise also achieves nothing to protect against a hypothetical scenario where Intel and AMD are malicious. Intel and AMD do not need the co-processor to implement a backdoor - they can simply introduce CPU vulnerabilities like Spectre and Meltdown if they want to. If you do not trust a CPU vendor, the only mitigation is to not use said vendor.
 
 ### Intel AMT and AMD DASH
 
