@@ -70,7 +70,7 @@ Intel CSME provides critical security features, including but not limited to:
 - Boot Guard (The basis of SRTM, as discussed above)
 - Firmware TPM (Generally better than dedicated TPMs by being not being vulnerable to bus sniffing)
 - Memory Encryption (on Intel vPro Enterprise systems)
-- Intel Locker (A nice mechanism to purge the encryption key from memory after early boot - not widely used on Linux yet, but is implemented on ChromeOS)
+- Intel Locker (A nice vPro Enterprise mechanism to purge the encryption key from memory after early boot - not widely used on Linux yet, but is implemented on ChromeOS)
 
 AMD PSP provides similar security features:
 - Firmware TPM
