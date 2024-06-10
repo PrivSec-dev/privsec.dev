@@ -64,9 +64,15 @@ One important thing here is that DRTM technologies can be bypassed via SMM, so y
 
 ## Insecure Products
 
-### Heads and PureBoot
+### Heads, PureBoot, and Purism
 
-### Lack of Intel Boot Guard
+### Illusion of Freedom
+
+### Laptops without Firmware Protection
+
+### Laptops with Insufficient Firmware Updates
+
+### Ancient laptops
 
 ## Better Products
 
