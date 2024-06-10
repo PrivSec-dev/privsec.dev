@@ -9,7 +9,7 @@ While browsing privacy forums, I often see a lot discussions regarding laptop ha
 
 In this post, I will walk you through a quick overview of how hardware security is generally implemented for laptops, what to look for, and what to avoid. We will not discuss MacBooks or Chromebooks, as they are vastly different from normal x86 Windows/Linux hardware.
 
-![Latitude 9440](/images/latitude-9440.jpg)
+![Precision 5490](dell.png)
 
 ## The Benchmark
 
@@ -84,7 +84,7 @@ This excercise also achieves nothing to protect against a hypothetical scenario 
 
 Another misinformation regarding CSME is that it is provides some kind of [shady "remote management" system](https://www.fsf.org/blogs/community/active-management-technology) for your computer. In reality, this is the AMT component which only exists on Intel vPro CPUs. It is meant for IT teams to manage systems with technologies like Serial over LAN, Solarwind, etc.
 
-![Intel AMT Misinformation](/images/intel-amt-misinfo.png)
+![Intel AMT Misinformation](intel-amt-misinfo.png)
 
 Here are some facts about it:
 - You can disable it firmware settings.
@@ -102,7 +102,7 @@ Some people recommend buying AMD instead of Intel to avoid the possibility of ha
 
 Another false claim regarding Secure Boot by the Free Software Foundation is that UEFI Secure Boot is somehow Microsoft's evil attempt to lock users out of their computer by [only allowing it to run Microsoft approved software](https://www.fsf.org/campaigns/secure-boot-vs-restricted-boot/whitepaper-web):
 
-![UEFI Secure Boot misinformation](/images/uefi-secure-boot-misinfo.png)
+![UEFI Secure Boot misinformation](uefi-secure-boot-misinfo.png)
 
 In reality, most if not all laptops with UEFI Secure Boot allows you to disable it - you can run whichever operating system you want. While it is true that certain lines of laptops like Razer do not allow custom key enrollment, proper business laptops like Dell Latitude/Precision and Lenovo Thinkpad do. You can enroll your own Secure Boot key and tell your laptop to boot only the system you trust.
 
@@ -133,12 +133,22 @@ The problem with this design is that everything hinges on the boot block doing i
 
 #### PureBoot & Purism
 
-![Librem 14](/image/librem14.png)
+![Librem 14](librem14.png)
 
 Purism sells their laptops with PureBoot, a fork of Heads. It works in pretty much the same way, with a few extra features.
 
-Here is what Purism claims in their marketing material:
+Here is a quick sample of Purism's marketing material:
 
+They claim that:
+- It can protect against firmware tampering
+- PureBoot is somehow better than other laptops which have real protection
+- The Intel ME is a backdoor
+
+
+
+blah
+
+As we have discussed above, this does not work, cannot work, has never worked, and will never work.
 
 
 ### RYF and the Illusion of Freedom
