@@ -62,11 +62,7 @@ It is important to note that DRTM technologies can be bypassed via the System Ma
 
 ### Intel CSME and AMD PSP
 
-A very common misinformation among privacy communities is that the Intel Management Engine (ME), its sucessor - Intel Converged Security and Management Engine (CSME), and AMD Platform Security Processor (PSP) are some sort of evil backdoor. Some may go so far as to tell the user to "disable the ME", either out of [paranoia](https://www.whonix.org/wiki/System_Hardening_Checklist#Disable_Intel_ME_Functionality) or for ["attack surface reduction"](https://discuss.privacyguides.net/t/linux-laptops-system76-other-options/16557/19):
-
-![Intel ME Misinformation](intel-me-misinfo-1.png)
-
-![Intel ME Misinformation](intel-me-misinfo-2.png)
+A very common misinformation among privacy communities is that the Intel Management Engine (ME), its sucessor - Intel Converged Security and Management Engine (CSME), and AMD Platform Security Processor (PSP) are some sort of evil backdoor. Some may go so far as to tell the user to "disable the ME", either out of paranoia or for "attack surface reduction".
 
 The problem with these recommendations are as follows:
 
@@ -179,9 +175,13 @@ Some laptop brands may set up Boot Guard correctly and meet a high HSI level, bu
 
 - Framework. vPro Enterprise Framework devices actually meet [HSI level 4](https://www.fwupd.org/lvfs/hsireports/device?host_vendor=Framework&host_family=13in+Laptop&host_product=Laptop+(13th+Gen+Intel+Core)), but they unfortunately do not handle firmware updates properly. They have not shipped a single firmware for their 13th generation over a year since its release date, and over 6 months since the disclosure of LogoFail. While they do ship some updates for other devices, how they have been handling so far is not acceptable if you need a secure device.
 
-### Ancient laptops
+### Older Generation Laptops
 
-![Stallman and his Thinkpad](stallman-thinkpad.webp)
+In general, you should avoid buying laptops with end of life CPUs. They do not get microcode updates from the CPU vendor, and it is impossible to keep them secure even if you install alternative firmware. Currently, this means that you should not buy any laptops older than Intel Coffee Lake or AMD Zen 1.
+
+There are a few generation of hardware that you should avoid as well:
+- AMD Zen 2. These are vulnerable to FaultTPM. You shouldn't buy them unless you know you have a dedicated TPM that comes with the laptop.
+- MSI generation before 11th gen. Generally you should not buy MSI for security as they are a gaming brand and does not focus on security, but you should really avoid 11th gen MSI and earlier. These have leaked Boot Guard keys which makes any kind of firmware security impossible.
 
 ### RYF and the Illusion of Freedom
 
