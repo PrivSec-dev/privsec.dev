@@ -112,7 +112,30 @@ UEFI Secure Boot is not Restricted Boot. It is a building block of SRTM and how 
 
 ## Insecure Products
 
+Now that we have covered SRTM and common misconceptions, let's discuss some insecure products.
+
 ### Heads, PureBoot, and Purism
+
+#### Heads
+
+Heads is built around the desire for the signing key for the firmware to be in the posession of the user instead of the OEM. It generally works as follows:
+
+- The user enrolls their GPG public key into the firmware.
+- The user signs the files /boot with their GPG key.
+- The firmware performs measurements of itself and seal HOTP and TOTP secrets into the TPM against certain PCRs.
+- When the system boots, the firmware measures itself, starting with the boot block doing measurements.
+- If the measurements match what the TPM expects, the HOTP or TOTP secret will be released.
+- The HOTP secret can be checked against a NitroKey, or the TOTP secret can be checked against an authenticator app on the user's phone.
+- The firmware checks if the files in /boot are signed by the GPG key.
+- If everything is as expected, the system will boot normally.
+
+The problem with this design is that everything hinges on the boot block doing its initial measurements truthfully. However, nothing is actually protecting the boot block, because there is no Boot Guard. There is nothing stopping an attacker from flashing a piece of malicious firmware with a programmer that will just lie about the measurements.
+
+To recap: On a normal set up, you have Boot Guard which has the signature of the OEM fused into the PCH. If an attacker tampers with the boot block which is protected by Boot Guard, the CPU will notice that the OEM doesn’t have the signature of the vendor and refuse to boot. But with Heads, the user is supposed to control the keys and be able to rotate the key, so there is no Boot Guard, resulting in there being no protection at all.
+
+At best, Heads can detect tampering against the disk. However, it cannot protect against tampering of the firmware like Boot Guard does.
+
+#### PureBoot & Purism
 
 ### RYF and the Illusion of Freedom
 
