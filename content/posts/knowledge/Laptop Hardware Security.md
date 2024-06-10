@@ -66,7 +66,7 @@ One important thing here is that DRTM technologies can be bypassed via SMM, so y
 
 ### Heads, PureBoot, and Purism
 
-### Illusion of Freedom
+### RYF and the Illusion of Freedom
 
 ### Laptops without Firmware Protection
 
