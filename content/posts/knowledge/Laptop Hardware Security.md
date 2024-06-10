@@ -53,3 +53,23 @@ In general, DRTM works by loading in an ACM binary signed by the CPU vendor alon
 On Windows, DRTM is implemented with [System Guard](https://learn.microsoft.com/en-us/windows/security/hardware-security/how-hardware-based-root-of-trust-helps-protect-windows). On Linux, [TrenchBoot](https://trenchboot.org/) is being developed. One application of it would be to provide the Anti Evil Maid setup with Qubes OS.
 
 One important thing here is that DRTM technologies can be bypassed via SMM, so you still need to have some level of trust in your firmware to implement SMM mitigations.
+
+## Common misinformation
+
+### Intel TSME and AMD PSP
+
+### Intel AMT
+
+### Restricted Boot
+
+## Insecure Products
+
+### Heads and PureBoot
+
+### Lack of Intel Boot Guard
+
+## Better Products
+
+### Dell
+
+### Lenovo
