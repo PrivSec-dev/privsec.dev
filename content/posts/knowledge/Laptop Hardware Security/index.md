@@ -148,7 +148,7 @@ Let's go through some of their claims and contrast that agains reality.
 ---
 Claim: PureBoot can protect against firmware tampering.
 
-Reality: It cannot protect against firmware tampering as discussed in the Heads(/#heads) section.
+Reality: It cannot protect against firmware tampering as discussed in the [Heads](/#heads) section.
 
 ---
 Claim: Librem laptops have better firmware than other laptops.
@@ -166,14 +166,18 @@ Claim: They are [not vulnerable](https://puri.sm/posts/pureboot-not-vulnerable-t
 Reality: They referenced the LogoFail vulnerability where the firmware's image parser can be exploited to make the firmware run arbitary code despite of being verified by Boot Guard. In Purism's case, they do not even use Boot Guard to begin with, so there is no basic protection to even bypass. They are just vulnerable by design.
 
 ---
-Claim: They have developed a special "blob jail" for their Wifi card.
+Claim: They have developed a special ["blob jail"](https://puri.sm/posts/intel-ax200-wi-fi-bluetooth-shipping-for-new-orders/) for their Wifi card.
 
-Reality: The "blob jail" is not special. It is an imitation of how the `linux-firmware` package works, and it only exists because they are refusing to ship firmware updates through the distribution. The blobs inside of the "blob jail" are not any more isolated than the blobs provided by `linux-firmware`. It is much more proper to just ship firmware for peripherals through the OS than shipping it through a boot firmware that requires manual updates.
+Reality: The "blob jail" is not special. It is an imitation of how the `linux-firmware` package works, and it only exists because they are refusing to ship firmware updates through PureOS. The blobs inside of the "blob jail" are not any more isolated than the blobs provided by `linux-firmware`. It is much more proper to just ship firmware for peripherals through the OS like normal distributions than shipping it through a boot firmware that requires manual updates.
 
 ---
 The harshest reality of all, is that because of how much they have crippled hardware security, [Librem laptops are at HSI level 0](https://www.fwupd.org/lvfs/hsireports/device?host_vendor=Purism&host_family=Librem+14&host_product=Librem+14).
 
 ### RYF and the Illusion of Freedom
+
+Ariadne Conill has a great [blog post](https://ariadne.space/2022/01/22/the-fsfs-relationship-with-firmware-is-harmful-to-free-software-users/) on how the Free Software Foundation handle firmware updates and blobs.
+
+In short, they consider a piece of hardware "blob free" if it containers proprietary firmware that cannot be updated, but anything with updatable firmware is not "blob free".
 
 ### Laptops without Firmware Protection
 
