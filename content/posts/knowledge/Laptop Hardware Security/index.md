@@ -179,6 +179,8 @@ As a result, any pie
 
 ## Better Products
 
+![Thinkpad](thinkpad.jpg)
+
 ### Dell Latitude/Precision
 
 Dell business laptops have the best firmware among all laptops I have personally evaluated. However, they are not without faults that you should be aware of:
@@ -186,7 +188,7 @@ Dell business laptops have the best firmware among all laptops I have personally
 - There is a default BIOS recovery password tied to the device serial number. You can disable this by enabling the [Master Password Lockout](https://www.dell.com/support/kbdoc/en-us/000180749/dell-client-products-unauthorized-bios-password-reset-tools) setting.
 - Dell sometimes forget to update the firmware for certain products like the Latitude 9440 and Latitude 9450 to LVFS. Be sure to check your device [update history](https://www.fwupd.org/lvfs/devices/) before purchasing any device, especially from Dell.
 - The microphone toggle in the firmware does not actually turn off the mic. I have verified that this is the case by booting into a fresh Linux installation and recorded myself despite of the mic being set to off.
-- Some settings like Hyper Threading do not have their value measured by the firmware.
+- Some settings like Hyper Threading do not have their values measured by the firmware.
 
 ### Lenovo ThinkPad
 
