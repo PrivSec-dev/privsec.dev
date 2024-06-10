@@ -181,10 +181,17 @@ As a result, any pie
 
 ### Dell Latitude/Precision
 
+Dell business laptops have the best firmware among all laptops I have personally evaluated. However, they are not without faults that you should be aware of:
+
+- There is a default BIOS recovery password tied to the device serial number. You can disable this by enabling the [Master Password Lockout](https://www.dell.com/support/kbdoc/en-us/000180749/dell-client-products-unauthorized-bios-password-reset-tools) setting.
+- Dell sometimes forget to update the firmware for certain products like the Latitude 9440 and Latitude 9450 to LVFS. Be sure to check your device [update history](https://www.fwupd.org/lvfs/devices/) before purchasing any device, especially from Dell.
+- The microphone toggle in the firmware does not actually turn off the mic. I have verified that this is the case by booting into a fresh Linux installation and recorded myself despite of the mic being set to off.
+- Some settings like Hyper Threading do not have their value measured by the firmware.
+
 ### Lenovo ThinkPad
 
-vPro Enterprise Thinkpad laptops security are generally acceptable for the product class. However, there is a big gotcha with their firmware: the "prevent BIOS downgrade" toggle does not actually work. This toggle only nicely asks Windows to not downgrade the firmware, but if a tool like fwupd tries to downgrade it, the firmware will allow the downgrade.
+In my opinion, vPro Enterprise Thinkpad laptops security are generally acceptable for the product class. However, there is a big gotcha with their firmware: the "prevent BIOS downgrade" toggle does not actually work. This toggle only nicely asks Windows to not downgrade the firmware, but if a tool like fwupd tries to downgrade it, the firmware will allow the downgrade.
 
-The implication of this is that if you have the UEFI update capsule enabled, a compromised OS can downgrade your firmware to a version vulnerable with something like LogoFail, then gain persistence by exploiting the firmware. The problem can theoratically be solved if Lenovo blows Boot Guard fuses to prevent downgrade, but in reality they do it even less often than Dell.
+The implication of this is that if you have the UEFI update capsule enabled, a compromised OS can downgrade your firmware to a version vulnerable with something like LogoFail, and the malware can then gain persistent in the firmware. The problem can theoratically be solved if Lenovo blows Boot Guard fuses to prevent downgrade, but in reality they do it even less often than Dell.
 
 For this reason, I recommend buying Dell Latitude/Precision over Lenovo products. If you have to use a Lenovo laptop anyways, consider disabling the UEFI capsule, and use a different, trusted computer to create a USB stick for firmware updates.
