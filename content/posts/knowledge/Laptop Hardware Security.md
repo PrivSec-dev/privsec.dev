@@ -13,7 +13,7 @@ In this post, I will walk you through a quick overview of how hardware security 
 
 ## The Benchmark
 
-To start off, the best laptops I have found are modern the Dell Latitude/Precision laptops with an Intel vPRO Enterprise CPU. The second best group of laptops I have found are modern Lenovo Thinkpads with Intel vPRO Enterprise or AMD Ryzen Pro CPUs. These are relatively easy to acquire and share these common security properties:
+To start off, the best laptops I have found are modern the Dell Latitude/Precision laptops with an Intel vPro Enterprise CPU. The second best group of laptops I have found are modern Lenovo Thinkpads with Intel vPro Enterprise or AMD Ryzen Pro CPUs. These are relatively easy to acquire and share these common security properties:
 
 - Have Intel Boot Guard or AMD Platform Secure Boot to protect the firmware
 - Have regular firmware updates (Monthly updates for Dell, and Bi-monthly updates for Thinkpads)
