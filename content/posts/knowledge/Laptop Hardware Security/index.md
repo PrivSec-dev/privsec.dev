@@ -21,10 +21,14 @@ To start off, the best laptops I have found are modern the Dell Latitude/Precisi
 - Support custom Secure Boot key enrollment
 - Support disabling Microsoft third-party certificate authoritity
 - Support memory encryption
+- Support kernel DMA protection
+- Support SMM Mitigation
 - Support DRTM technologies
 - Meet Secure-cored requirements for Windows
 - Meet HSI-4 for Linux
 - Still recieve Microcode updates from Intel and AMD
+
+As such, I will be comparing everything else in this post against these laptops, 
 
 ## Boot Security
 
@@ -50,7 +54,7 @@ This is not perfect, and the user still needs to set up additional protection fo
 
 In general, DRTM works by loading in an ACM binary signed by the CPU vendor along what the system is trying to boot. The ACM binary will perform measurements of the environment and submit the results to certain PCRs. In the case of Intel TXT, PCR 17 and 18 are used. The measurements then can be used to for remote attestation or to release a secret stored in the TPM if it matches the TPM policy.
 
-On Windows, DRTM is implemented with [System Guard](https://learn.microsoft.com/en-us/windows/security/hardware-security/how-hardware-based-root-of-trust-helps-protect-windows) for remote attestation. On Linux, DRTM is not widely used yet, but [TrenchBoot](https://trenchboot.org/) is being developed to address that.
+On Windows, DRTM is implemented with [System Guard](https://learn.microsoft.com/en-us/windows/security/hardware-security/how-hardware-based-root-of-trust-helps-protect-windows) for attestation and reducing trust in the UEFI firmware. On Linux, DRTM is not widely used yet, but [TrenchBoot](https://trenchboot.org/) is being developed to address that.
 
 It is important to note that DRTM technologies can be bypassed via the System Management Mode (SMM), so you still need to have some level of trust in your firmware to implement SMM mitigations. In essence, you still need to rely on SRTM to some extent.
 
@@ -142,13 +146,9 @@ Here is a quick sample of Purism's marketing material:
 They claim that:
 - It can protect against firmware tampering
 - PureBoot is somehow better than other laptops which have real protection
-- The Intel ME is a backdoor
-
-
-
-blah
-
-As we have discussed above, this does not work, cannot work, has never worked, and will never work.
+- They disable the ME (setting the HAP field to 1), then wiping most of it with `me_cleaner`
+- They ship the CPU unfused
+- They have developed a special "blob jail" for their Wifi card
 
 
 ### RYF and the Illusion of Freedom
