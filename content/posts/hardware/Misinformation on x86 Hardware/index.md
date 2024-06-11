@@ -20,7 +20,7 @@ Intel CSME provides critical security features, including:
 
 AMD PSP provides its own set of secrity features:
 - Firmware TPM - serving the same role as Intel's Platform Trust Technology.
-- Secure Encryption Virtualization (on Ryzen Pro and EPYC CPUs). SEV protects both the hypervisor from cold boot attacks and making VM break outs much more difficult.
+- [Secure Encryption Virtualization](https://www.amd.com/en/developer/sev.html) (on Ryzen Pro and EPYC CPUs). SEV protects both the hypervisor from cold boot attacks and making VM break outs much more difficult.
 
 By buying hardware with Intel CSME disabled, you are **increasing the attack surface** by not having Boot Guard to protect your firmware. Additionally, if you buy hardware so old that you can run `me_cleaner` to disable the ME yourself, it means that these hardware do not have Boot Guard to begin with. In both cases, you will end up with a piece of hardware with no root of trust, and any attempt to implement firmware security will be futile.
 
@@ -30,7 +30,7 @@ This excercise also achieves absolutely nothing to protect against a hypothetica
 
 ### Intel AMT and AMD DASH
 
-Another misinformation regarding CSME is that it is provides some kind of [shady "remote management" system](https://www.fsf.org/blogs/community/active-management-technology) for your computer. In reality, this is the AMT component which only exists on Intel vPro CPUs. It is meant for IT teams to manage systems with technologies like Serial over LAN, Solarwind, etc.
+Another piece of misinformation regarding CSME is that it is provides some kind of [shady "remote management" system](https://www.fsf.org/blogs/community/active-management-technology) for your computer. In reality, this is the AMT component which only exists on Intel vPro CPUs. It is meant for IT teams to manage systems with technologies like Serial over LAN, Solarwind, etc.
 
 Here are some facts about it:
 - You can disable it firmware settings.
@@ -54,14 +54,14 @@ On the topic of AMT, a lot of people seem to think that vPro is all about AMT an
 - Intel Key Locker - This feature makes it possible to encrypt and decrypt data with an AES key using a key handle instead of the actual encryption key. A key handle can be revoked when the system state changes, such as with a reboot. This feature is not widely used on Linux, although it is already available on Chromebooks with vPro Enterprise.
 - Intel Trusted Execution Technology (TXT). This feature implements Dynamic Root of Trust Measurement (DRTM) and is necessary for [System Guard](https://learn.microsoft.com/en-us/windows/security/hardware-security/how-hardware-based-root-of-trust-helps-protect-windows) on Windows. It is a pre-requisite for the Secure-cored certification. On Linux, DRTM is not widely used, but Trenchboot is being developed to address that.
 
-It is always best to buy a vPro Enterprise CPU to enjoy all of the security features that Intel has to offer. AMT comes with vPro and is attack surface, but it can easily be disabled as I discussed above.
+It is always best to buy a vPro Enterprise CPU to enjoy all of the security features that Intel has to offer. AMT comes with vPro and is attack surface, but it can easily be disabled as discussed above.
 
 ### Restricted Boot
 
-Another false claim regarding Secure Boot is that UEFI Secure Boot is somehow Microsoft's evil attempt to lock users out of their computer by only allowing it to run Microsoft approved software.
+A false claim popularized by the Free Software Foundation is that Secure Boot is somehow [Microsoft's evil attempt to lock users out of their computer by only allowing it to run Microsoft approved software](https://www.fsf.org/campaigns/secure-boot-vs-restricted-boot/whitepaper-web).
 
 In reality, most if not all laptops with UEFI Secure Boot allows you to disable it - you can run whichever operating system you want. While it is true that certain lines of laptops like Razer do not allow custom key enrollment, proper business laptops like Dell Latitude/Precision and Lenovo Thinkpad do. You can enroll your own Secure Boot key and tell your laptop to boot only the system you trust.
 
-Another benefit of laptops with Microsoft's Secure-cored certification is that you can have the **Freedom** to disable the Microsoft Secure Boot Third-Party Certificate Authority and still have the laptop function normally. This is especially handy if you plan to run Windows as your operating system.
+Microsoft even went further to make sure that Secure Boot better for end users. Computers with their Secure-Cored certification provides users with the **Freedom** to disable the Microsoft Secure Boot Third Party Certificate Authority and still have the computers function normally. They protect the users from having to sign and trust random proprietary OptionRoms. It is great for both users who want to use Windows as their primary system and users who plan to set up a proper Secure Boot system with Linux.
 
-UEFI Secure Boot is not [Restricted Boot](https://www.fsf.org/campaigns/secure-boot-vs-restricted-boot/whitepaper-web). It is a building block of SRTM and how you can build a secure boot environment.
+UEFI Secure Boot is not Restricted Boot. It is a building block of Static Root of Trust Measurememnt and step towards building a secure boot environment.
