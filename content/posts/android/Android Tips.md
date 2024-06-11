@@ -180,7 +180,7 @@ I do not recommend that you use F-Droid at all unless you have no other choice t
 
 ### GitHub
 
-You can also obtain your apps directly from their GitHub repositories. In most cases, there would be a pre-built APK for you to download. You can verify the signature of the downloaded using apksigner:
+You can also obtain your apps directly from their GitHub repositories. In most cases, there would be a pre-built APK for you to download. You can verify the signature of the downloaded using `apksigner`:
 
 - Install [Android Studio](https://developer.android.com/studio) which includes `apksigner`. On macOS, `apksigner` can be found at `~/Library/Android/sdk/build-tools/<version>/apksigner`.
 - Run `apksigner verify --print-certs --verbose myCoolApp.apk` to verify the certificate of the apk.
@@ -193,11 +193,11 @@ The first strategy is to add the atom feed of the application's release page to 
 
 The second strategy is to use the [IzzyOnDroid](https://apt.izzysoft.de/fdroid/) F-Droid repository with a modern F-Droid client like [NeoStore](https://github.com/NeoApplications/Neo-Store), as mentioned [above](#f-droid). The IzzyOnDroid repository pulls new releases from various GitHub repositories to their server, which can then be automatically downloaded and installed by NeoStore. The downside of this strategy is that not every application on GitHub is on IzzyOnDroid, and sometimes IzzyOnDroid fails to pull a new release, resulting in you not getting any updates at all.
 
-It should be noted that since Android has automatic signature checking for existing applications on the system, you only need to manually check the signature of the apk the first time you install an application. If you do use IzzyOnDroid to update the applications, you will need to manually confirm the first update of an application to authorize the NeoStore as the installation source. After that, future updates will be seamless.
+It should be noted that since Android has automatic signature checking for existing applications on the system; that is, you only need to manually check the signature of the apk the first time you install an application. If you do use IzzyOnDroid to update applications, you will need to manually confirm the first update of an application to authorize the NeoStore as the installation source. After that, future updates will be seamless.
 
 ## Google
 
-If you are using a device with Google services, either your stock operating system or an operating system that safely sandboxes Google Play Services like GrapheneOS, there are a number of additional changes you can make to improve your privacy.
+If you are using a device with Google services, either with the stock operating system or an operating system that safely sandboxes Google Play Services like GrapheneOS, there are a number of additional changes you can make to improve your privacy.
 
 ### Enroll in the Advanced Protection Program
 
@@ -207,7 +207,7 @@ If you have a Google account we suggest enrolling in the [Advanced Protection Pr
 
 The Advanced Protection Program provides enhanced threat monitoring and enables:
 
-- Stricter two factor authentication; e.g. that [FIDO2](/posts/knowledge/multi-factor-authentication/#fido2-fast-identity-online) **must** be used and disallows the use of [SMS OTP](/posts/knowledge/multi-factor-authentication/#fido2-fast-identity-online), [TOTP](/posts/knowledge/multi-factor-authentication/#time-based-one-time-password-totp) and [OAuth](https://en.wikipedia.org/wiki/OAuth)
+- Stricter two factor authentication; e.g. that [FIDO2](/posts/knowledge/multi-factor-authentication/#fido2-fast-identity-online) **must** be used and disallows the use of [SMS OTP](/posts/knowledge/multi-factor-authentication/#email-and-sms-mfa), [TOTP](/posts/knowledge/multi-factor-authentication/#time-based-one-time-password-totp) and [OAuth](https://en.wikipedia.org/wiki/OAuth)
 - Only Google and verified third-party apps can access account data
 - Scanning of incoming emails on Gmail accounts for [phishing](https://en.wikipedia.org/wiki/Phishing#Email_phishing) attempts
 - Stricter [safe browser scanning](https://www.google.com/chrome/privacy/whitepaper.html#malware) with Google Chrome
@@ -223,7 +223,7 @@ The Advanced Protection Program provides enhanced threat monitoring and enables:
 
 In the past, Android security updates had to be shipped by the operating system vendor. Android has become more modular beginning with [Android 10](https://www.android.com/android-10/), and Google [can push security updates](https://blog.google/products/android-enterprise/android-10-security/) for **some** system components via the privileged Play Services.
 
-If you have an EOL device shipped with Android 10 or above (shipped beginning 2020), you may better off sticking with the stock OS in the short term as opposed to running an insecure alternative operating system. This will allow you to receive **some** security fixes from Google, while not violating the Android security model and increasing your attack surface. You should still upgrade to a supported device as soon as possible.
+If you have an EOL device shipped with Android 10 or above (shipped beginning 2020), you may be better off sticking with the stock OS in the short term as opposed to running an insecure alternative operating system. This will allow you to receive **some** security fixes from Google, while not violating the Android security model and increasing your attack surface. You should still upgrade to a supported device as soon as possible.
 
 ### Disable Advertising ID
 
@@ -231,14 +231,14 @@ All devices with Google Play Services installed automatically generate an [adver
 
 On Android distributions with [Sandboxed Google Play](https://grapheneos.org/usage#sandboxed-google-play), go to **Settings** → **Apps** → **Sandboxed Google Play** → **Google Settings** → **Ads**, and select *Delete advertising ID*.
 
-On Android distributions with privileged Google Play Services (such as stock OSes), the setting may be in one of several locations. Check
+On Android distributions with privileged Google Play Services (such as stock OSes), the setting may be in one of several locations:
 
 - **Settings** → **Google** → **Ads**
 - **Settings** → **Privacy** → **Ads**
 
 ![Ads id](/images/ads-id.png)
 
-You will either be given the option to delete your advertising ID or to *Opt out of interest-based ads*, this varies between OEM distributions of Android. If presented with the option to delete the advertising ID that is preferred. If not, then make sure to opt out and reset your advertising ID.
+You will be given the option to either delete your advertising ID or *Opt out of interest-based ads* --- this varies between OEM distributions of Android. If presented with the option to delete the advertising ID, choosing that is preferred. If not, then make sure to opt out and reset your advertising ID.
 
 ### Google Messages
 
@@ -246,19 +246,19 @@ Google is currently pushing for the adoption of [RCS with end to end encryption]
 
 If you are on an OS with Play Services installed, I highly recommend that you use Google Messages as the SMS app to get opportunistic end to end encryption with your contacts. It works fairly well on GrapheneOS with Sandboxed Play Services, too.
 
-You can disable telemetry in Google Messages by going to **⋮** → **Settings** → **General** → **Help Improve Messages** and toggling it off. There are also some other configurations in **⋮** → **Settings** → **General** → **Chat features** that you might want to go over such as sending typing indicator or read receipt.
+You can disable telemetry in Google Messages by tapping the profile in the top right → **Messages settings** → **Help Improve Messages** and toggling it off. There are also some other configurations in **Messages settings** → **RCS chats** that you might want to go over, such as **Show typing indicators** or **Send read receipts**.
 
-If you have trouble connecting to RCS, try disabling your VPN and the VPN killswitch first, then reconnect to RCS. Once you have connected to the server, you can re-enable your VPN and the killswitch and it should work just fine across reboots. I am not sure what is causing this issue, but it might be related to [this bug](https://issuetracker.google.com/issues/189577131).
+If you have trouble connecting to RCS, try disabling your VPN and the VPN killswitch first, then reconnect to RCS. Once you have connected to the server, you can re-enable your VPN and the killswitch, and it should work just fine across reboots. I am not sure what is causing this issue, but it might be related to [this bug](https://issuetracker.google.com/issues/189577131).
 
 ### Google Fi
 
-Google Fi provides [opportunistic end&#8209;to&#8209;end encryption](https://fi.google.com/about/end-to-end-encrypted-calls) for phone calls between Fi users on Android and [includes a VPN service](https://support.google.com/fi/answer/9040000). Fi also implements a unique privacy&#8209;bolstering [virtual carrier network](https://www.gstatic.com/fi/wormhole/whitepaper-a00cc4732620f382da5b7aac2bcb6905f970ba6b.pdf) architecture on supported devices, but it is [temporarily disabled](https://support.google.com/fi/answer/9040000).
+Google Fi provides [opportunistic end&#8209;to&#8209;end encryption](https://fi.google.com/about/end-to-end-encrypted-calls) for phone calls between Fi users on Android and [includes a VPN service](https://support.google.com/fi/answer/9040000). Fi also implements a unique privacy&#8209;bolstering [virtual carrier network](https://www.gstatic.com/fi/wormhole/whitepaper-a00cc4732620f382da5b7aac2bcb6905f970ba6b.pdf) (VCN) architecture on supported devices, but it is [temporarily disabled](https://support.google.com/fi/answer/9040000).
 
 This is not without its caveats:
-- Google Fi requires Play Services and the [Fi app](https://play.google.com/store/apps/details?id=com.google.android.apps.tycho&hl=en_US) to work properly. Without Play Services, all of the features mentioned above, along with visual voicemail will not work. SMS messages will have random strings added at the end of each of them.
+- Google Fi requires Play Services and the [Fi app](https://play.google.com/store/apps/details?id=com.google.android.apps.tycho&hl=en_US) to work properly. Without Play Services, all of the features mentioned above, along with visual voicemail, will not work. SMS messages will have random strings added at the end of each of them.
 - The Google Fi app needs to be installed in the owner profile for SIM/eSIM activation.
 - Google Fi Wi&#8209;Fi calling does not work behind a VPN with the killswitch enabled in the owner profile.
 
-If you are living in the United States and use the stock operating system, I highly recommend using Google Fi as the carrier to take advantage of the end to end encrypted calls and Fi VPN. Pixel 4 and above, users will benefit the most from the VCN as mentioned.
+If you live in the United States and use the stock operating system, I highly recommend using Google Fi as your carrier to take advantage of the end to end encrypted calls and Fi VPN. People using a Pixel 4 and above will benefit the most from the VCN as mentioned.
 
-If you are using GrapheneOS and do not mind installing Sandboxed Play Services, Fi is still a better option than to other providers thanks to Google's general good security practices and the fact that you can enroll in the Advanced Protection Program to have much better protection for your account. Some other provides do not even have multi-factor authentication support, and most will not let you enforce FIDO2 as the authentication method.
+If you use GrapheneOS and do not mind installing Sandboxed Play Services, Fi is still a better option than other providers thanks to Google's general good security practices and the fact that you can enroll in the Advanced Protection Program to have much better protection for your account. Some other providers do not even have multi-factor authentication support, and most will not let you enforce FIDO2 as the authentication method.
