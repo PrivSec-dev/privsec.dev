@@ -176,7 +176,7 @@ My recommendation is to stick with the Google Play Store unless your threat mode
 
 F-Droid, despite being often recommended in the privacy community, has various security deficiencies. You can read more about them [here](/posts/android/f-droid-security-issues/).
 
-I do not recommend that you use F-Droid at all unless you have no other choice to obtain certain apps. In some rare cases, there may be some apps which require the F-Droid version to work properly without Google Play Services. If you do end up using F-Droid, I highly recommend that you avoid the official F-Droid client (which is extremely outdated and targets API level 25) and use a more modern client with seamless updates such as [NeoStore](https://github.com/NeoApplications/Neo-Store). You should also avoid using the official F-Droid repository as much as possible and stick to the F-Droid repositories hosted by the app developers instead.
+I do not recommend that you use F-Droid at all unless you have no other choice to obtain certain apps. In some rare cases, there may be some apps which require the F-Droid version to work properly without Google Play Services. If you do end up using F-Droid, I highly recommend that you avoid the official F-Droid client (which is extremely outdated and targets API level 29) and instead use [F-Droid Basic](https://f-droid.org/en/packages/org.fdroid.basic). You should also avoid using the official F-Droid repository as much as possible and stick to the F-Droid repositories hosted by the app developers instead.
 
 ### GitHub
 
