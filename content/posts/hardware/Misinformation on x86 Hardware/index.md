@@ -10,7 +10,7 @@ While browsing privacy forums, I often see a lot discussions regarding x86 hardw
 
 ### Intel CSME and AMD PSP
 
-A very common misinformation among privacy communities is that the Intel Management Engine (ME), its sucessor - [Intel Converged Security and Management Engine (CSME)](https://www.intel.com/content/dam/www/public/us/en/security-advisory/documents/intel-csme-security-white-paper.pdf), and the AMD Platform Security Processor (PSP) are some sort of evil backdoor. Some may go so far as to tell other users to "disable the ME" or to "buy hardware with the ME disabled".
+A very common piece of misinformation among privacy communities is that the Intel Management Engine (ME), its sucessor - [Intel Converged Security and Management Engine (CSME)](https://www.intel.com/content/dam/www/public/us/en/security-advisory/documents/intel-csme-security-white-paper.pdf), and the AMD Platform Security Processor (PSP) are some sort of evil backdoor. Some may go so far as to tell other users to "disable the ME" or to "buy hardware with the ME disabled".
 
 The problem with these recommendations are as follows:
 
