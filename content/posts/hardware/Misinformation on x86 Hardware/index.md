@@ -12,7 +12,7 @@ While browsing privacy forums, I often see a lot discussions regarding x86 hardw
 
 A very common piece of misinformation among privacy communities is that the Intel Management Engine (ME), its sucessor - [Intel Converged Security and Management Engine (CSME)](https://www.intel.com/content/dam/www/public/us/en/security-advisory/documents/intel-csme-security-white-paper.pdf), and the AMD Platform Security Processor (PSP) are some sort of evil backdoor. Some may go so far as to tell other users to "disable the ME" or to "buy hardware with the ME disabled".
 
-The problem with these recommendations are as follows:
+The problems with these recommendations are as follows:
 
 Intel CSME provides critical security features, including:
 - [Boot Guard](https://networkbuilders.intel.com/docs/networkbuilders/secure-the-network-infrastructure-secure-boot-methodologies.pdf) - The basis of Static Root of Trust Measurement. It verifies that a significant portion of your EEPROM is signed by your OEM, and provides fuses to prevent downgrade attacks to old, vulnerable versions.
