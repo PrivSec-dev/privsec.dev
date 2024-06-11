@@ -52,7 +52,7 @@ On the topic of AMT, a lot of people seem to think that vPro is all about AMT an
 
 - Total Memory Encryption - Multi Key. This is AMD SEV's Intel counterpart - it provides memory encryption to protect the host from cold boot attacks and make VM break outs harder. This is a mandatory requirement to meet HSI level 4 on Linux.
 - Intel Key Locker - This feature makes it possible to encrypt and decrypt data with an AES key using a key handle instead of the actual encryption key. A key handle can be revoked when the system state changes, such as with a reboot. This feature is not widely used on Linux, although it is already available on Chromebooks with vPro Enterprise.
-- Intel Trusted Execution Technology (TXT). This feature implements Dynamic Root of Trust Measurement (DRTM) and is necessary for [System Guard](https://learn.microsoft.com/en-us/windows/security/hardware-security/how-hardware-based-root-of-trust-helps-protect-windows) on Windows. It is a pre-requisite for the Secure-cored certification. On Linux, DRTM is not widely used, but Trenchboot is being developed to address that.
+- Intel Trusted Execution Technology (TXT). This feature implements Dynamic Root of Trust Measurement (DRTM) and is necessary for [System Guard](https://learn.microsoft.com/en-us/windows/security/hardware-security/how-hardware-based-root-of-trust-helps-protect-windows) on Windows. It is a pre-requisite for the Secured-core certification. On Linux, DRTM is not widely used, but Trenchboot is being developed to address that.
 
 It is always best to buy a vPro Enterprise CPU to enjoy all of the security features that Intel has to offer. AMT comes with vPro and is attack surface, but it can easily be disabled as discussed above.
 
