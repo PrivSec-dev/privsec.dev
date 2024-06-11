@@ -42,7 +42,7 @@ This is not something hidden, people have accidentally [run into AMT](https://ma
 
 For attack surface reduction, you should absolutely disable it. If you do not have a vPro laptop and are curious what this looks like, have a look at the [BIOS Simulator for the Thinkpad T14 Gen 5](https://download.lenovo.com/bsco/#/graphicalsimulator/ThinkPad%20T14%20Gen%205%20(21ML,21MM)).
 
-With that said, don't let the scary claims about "remote management" by the spook you - if some sort of hypothetical backdoor is actually implemented this way, it will not be hard to detect it. There are better ways to implement a backdoor as discussed above, and if you don't trust the CPU vendor you should avoid them as a whole, not just the vPro model.
+With that said, don't let the scary claims about "remote management" spook you --- if some sort of hypothetical backdoor is actually implemented this way, it will not be hard to detect. There are better ways to implement a backdoor as discussed above, and if you don't trust the CPU vendor you should avoid them as a whole, not just the vPro models.
 
 Some people recommend buying AMD instead of Intel to avoid the possibility of having Intel AMT. However, they also miss a very simple fact that AMD has an equivalent technology for their Ryzen Pro CPU - [AMD DASH](https://www.amd.com/system/files/documents/out-of-band-client-management-overview.pdf).
 
