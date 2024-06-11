@@ -20,9 +20,9 @@ When purchasing a device, you should buy one as new as possible. The software an
 ### Phones to Avoid
 Avoid buying the Fairphone 4, which only has just over 2 years of full security updates since its release date despite them advertising 6 years of support. This is because the System on a Chip they use (Snapdragon 750G) only has 3 years of support from Qualcomm, and the SoC was already old when the phone came out. This is not to mention, the Fairphone 4 [uses the Android Verified Boot Test Key as their OEM keys](https://forum.fairphone.com/t/bootloader-avb-keys-used-in-roms-for-fairphone-3-4/83448/11), effectively making Verified Boot useless. In general, you should check for how long the SoC a phone uses is supported for and not blindly trust the phone manufacturer's claims.
 
-You should also avoid buying the /e/ OS phones (sometimes branded as the Murena phones). /e/ OS in itself extremely insecure, not supporting verified boot, shipping userdebug build, [shipping months old version of Chromium, bundling years old version Orbot into their operating system then marketing it as "Advanced Privacy"](https://divestos.org/misc/e.txt), etc. They have recently also had an incident where their cloud service mishandled session keys and give users access to each other's files, then proceeded to [mislead the users that the server cannot see their files](https://community.e.foundation/t/service-announcement-26-may/41252/30) despite there being no end-to-end encryption.
+You should also avoid buying phones preloaded with /e/ OS (sometimes branded as the Murena phones). /e/ OS in itself is extremely insecure, engaging in security bad practices that include, but are not limited to, not supporting verified boot; shipping userdebug build; [shipping months-old version of Chromium; and bundling years-old version of Orbot into their operating system, then marketing it as "Advanced Privacy"](https://divestos.org/misc/e.txt). There was also a recent incident where their cloud service mishandled session keys and gave users access to other's files, then proceeded to [mislead users that the server cannot see their files](https://community.e.foundation/t/service-announcement-26-may/41252/30), despite there being no end-to-end encryption.
 
-You should also be very wary of low quality privacy branded phones like the Freedom Phone, BraX2 Phone, Volta Phone, and the like. These are cheap Chinese phones with the [Mediatek Helio P60](https://i.mediatek.com/p60) from 2018, which has already reached end-of-life or is near end-of-life. Needless to say, you should also avoid any vendor who claims they are Zero-day proof like this:
+You should also be very wary of low quality privacy branded phones like the Freedom Phone, BraX2 Phone, Volta Phone, and the like. These are cheap Chinese phones with the [Mediatek Helio P60](https://i.mediatek.com/p60) from 2018, which has already reached or is near end-of-life. Needless to say, you should also avoid any vendor who claims they are Zero-day proof like this:
 
 ![Volta phone](/images/volta-phone.png)
 
@@ -30,15 +30,15 @@ You should also be very wary of low quality privacy branded phones like the Free
 
 ![GrapheneOS Aurora](/images/grapheneos-aurora.jpg)
 
-In certain cases, installing a custom Android-based operating system can help increase your privacy and security. This is rather tricky; however, as the vast majority of these operating systems (a.k.a. "custom ROMs") do exactly the opposite - breaking the Android security model, ruining your security while providing no or dubious privacy benefits.
+In certain cases, installing a custom Android-based operating system can help increase your privacy and security. This is rather tricky, however, as the vast majority of these operating systems (a.k.a. "custom ROMs") do exactly the opposite: break the Android security model, thereby ruining your security while providing no or dubious privacy benefits.
 
-I have written a detailed post on selecting your Android-based operating system, which you can find [here](/posts/os/choosing-your-android-based-operating-system).
+I have written a detailed post on selecting your Android-based operating system, which you can find [here](/posts/android/choosing-your-android-based-operating-system).
 
-**TLDR**: If you are using a modern Pixel, use [GrapheneOS](https://grapheneos.org). If you are on a device supported by [DivestOS](https://divestos.org), use DivestOS. Otherwise, stick to your stock operating system. Do not blindly use an OS just because it is advertised as "degoogled".
+**TLDR**: If you are using a modern Pixel, install [GrapheneOS](https://grapheneos.org). If you are using a device supported by [DivestOS](https://divestos.org), install DivestOS. Otherwise, stick to your stock operating system. Do not blindly use an OS just because it is advertised as "degoogled".
 
 ## Use New Android Versions
 
-It's important to not use an [end-of-life](https://endoflife.date/android) version of Android. Newer versions of Android not only receive security updates for the operating system but also important privacy enhancing updates too. For example, [prior to Android 10](https://developer.android.com/about/versions/10/privacy/changes), any apps with the [`READ_PHONE_STATE`](https://developer.android.com/reference/android/Manifest.permission#READ_PHONE_STATE) permission could access sensitive and unique serial numbers of your phone such as [IMEI](https://en.wikipedia.org/wiki/International_Mobile_Equipment_Identity), [MEID](https://en.wikipedia.org/wiki/Mobile_equipment_identifier), your SIM card's [IMSI](https://en.wikipedia.org/wiki/International_mobile_subscriber_identity), whereas now they must be system apps to do so. System apps are only provided by the OEM or Android distribution.
+It's important to not use an [end-of-life](https://endoflife.date/android) version of Android. Newer versions of Android receive not only security updates for the operating system but also important privacy enhancing updates too. For example, [prior to Android 10](https://developer.android.com/about/versions/10/privacy/changes), any apps with the [`READ_PHONE_STATE`](https://developer.android.com/reference/android/Manifest.permission#READ_PHONE_STATE) permission could access sensitive and unique serial numbers of your phone such as [IMEI](https://en.wikipedia.org/wiki/International_Mobile_Equipment_Identity), [MEID](https://en.wikipedia.org/wiki/Mobile_equipment_identifier), your SIM card's [IMSI](https://en.wikipedia.org/wiki/International_mobile_subscriber_identity), whereas now they must be system apps to do so. System apps are only provided by the OEM or Android distribution.
 
 ## Do Not Root Your Phone
 
@@ -48,7 +48,7 @@ It's important to not use an [end-of-life](https://endoflife.date/android) versi
 
 On Android, the phone unlock (Password, Pin, Pattern) is used to protect the encryption key for your device. Thus, it is vital that your unlock secret is secure and can withstand Bruteforce attacks.
 
-Pattern unlock is extremely insecure and should be avoided at all cost. This is discussed in detail in the [Cracking Android Pattern Lock in Five Attempts](/researches/Cracking-Android-Pattern-Lock-in-Five-Attempts.pdf) research paper.
+Pattern unlock is extremely insecure and should be avoided at all costs. This is discussed in detail in the [Cracking Android Pattern Lock in Five Attempts](/researches/Cracking-Android-Pattern-Lock-in-Five-Attempts.pdf) research paper.
 
 If you trust the hardware enforced rate limiting features (typically done by the [Secure Element](https://en.wikipedia.org/wiki/Secure_cryptoprocessor) or [Trusted Execution Environment](https://en.wikipedia.org/wiki/Trusted_execution_environment)) of your device, a 8+ digit PIN may be sufficient.
 
@@ -58,11 +58,11 @@ Ideally, you should use a randomly generated passphrase of 8&nbsp;words or longe
 
 [Auditor](https://github.com/GrapheneOS/Auditor) provides attestation for GrapheneOS phones and the stock operating systems on [a number of devices](https://attestation.app/about). It uses hardware security features to make sure that the firmware and operating system have not been downgraded or tampered with.
 
-Attestation can be done [locally](https://grapheneos.org/install/web#verifying-installation) by pairing with another Android 8+ device or remotely using [the remote attestation service](https://attestation.app/about). To make sure that your hardware and operating system is genuine, perform local attestation immediately after the device has been setup and prior to any internet connection.
+Attestation can be done [locally](https://grapheneos.org/install/web#verifying-installation) by pairing with another Android 8+ device or remotely using [the remote attestation service](https://attestation.app/tutorial#scheduled-remote-verification). To make sure that your hardware and operating system is genuine, perform local attestation immediately after the device has been set up and before connecting to the internet.
 
 ## Use Global Toggles
 
-Modern Android devices have global toggles for disabling Bluetooth and location services. Android 12 introduced toggles for the camera and microphone. When not in use, you should disable these features. Apps cannot use disabled features (even if granted individual permission) until re-enabled.
+Modern Android devices have global toggles for disabling Bluetooth and location services. Android 12 introduced toggles for the camera and microphone. When not in use, you should disable these features. Apps cannot use disabled features (even if granted individual permissions) until re-enabled.
 
 ## Manage Android Permissions
 
@@ -80,9 +80,9 @@ Connectivity checks on Android [do not go through the VPN tunnel](https://mullva
 
 On GrapheneOS, connectivity checks by default are done with GrapheneOS's own servers, instead of with Google ones. A network observer on your ISP’s network can see that you are using a GrapheneOS device. If you are using a VPN and want to appear like a regular Android device to your ISP, go to **Settings** → **Network & internet** → **Internet connectivity check** and select **Standard (Google)** instead. Note that this will not stop a determined adversarial ISP from finding out you are not using stock OS [through your DNS fallback](https://grapheneos.org/faq#default-dns).
 
-If you want to, you can disable connectivity check altogether. Note that this will stop captive portal from working.
+If you want to, you can disable connectivity check altogether. Note that this will stop captive portals from working.
 
-- On GrapheneOS and DivestOS, go to **Settings** → **Network & internet** → **Internet connectivity check** and select **Disabled**
+- On GrapheneOS and DivestOS, go to **Settings** → **Network & internet** → **Internet connectivity check** and select **Disabled**.
 - On other Android-based operating systems, you can [disable captive portal via ADB](https://gitlab.com/CalyxOS/calyxos/-/issues/1226#note_1130393164).
 
 To disable:
@@ -136,9 +136,9 @@ This method is generally less secure than a secondary user profile; however, it 
 
 ## Baseband Modem Attack Surface Reduction
 
-By default, your baseband modem will typically set to support just about every generation of mobile cellular technology, from 2G to 5G. This gives a large attack surface.
+By default, your baseband modem will typically be set to support just about every generation of mobile cellular technology, from 2G to 5G. This exposes a large attack surface.
 
-You can reduce this attack surface by limiting the baseband modem to just using the generation that in needs. In most cases, this would be 4G/LTE.
+You can reduce this attack surface by limiting the baseband modem to using just the generation that it needs. In most cases, this would be 4G/LTE.
 
 GrapheneOS has the LTE only mode exposed in settings. You can set this by going to **Settings** → **Internet** → **Your carrier name** → **Preferred network type** → **LTE Only**.
 
@@ -168,7 +168,7 @@ GrapheneOS's app store is available on [GitHub](https://github.com/GrapheneOS/Ap
 
 ### Aurora Store
 
-The [Aurora Store](https://auroraoss.com/download/AuroraStore/) is a proxy for the Google Play Store. It is great for privacy in the sense that it automatically gives you a disposable account to download apps, and it works on Android-based distributions that do not support Google Play Services. That being said, it lacks security features like certificate pinning and does not support Play Asset Delivery.
+The [Aurora Store](https://auroraoss.com/downloads/AuroraStore/) is a proxy for the Google Play Store. It is great for privacy in the sense that it automatically gives you a disposable account to download apps, and it works on Android-based distributions that do not support Google Play Services. That being said, it lacks security features like certificate pinning and does not support Play Asset Delivery.
 
 My recommendation is to stick with the Google Play Store unless your threat model calls for not logging into Google Services at all.
 
@@ -180,7 +180,7 @@ I do not recommend that you use F-Droid at all unless you have no other choice t
 
 ### GitHub
 
-You can also obtain your apps directly from their GitHub repositories. In most cases, there would be a pre-built APK for you to download. You can verify the signature of the downloaded using apksigner:
+You can also obtain your apps directly from their GitHub repositories. In most cases, there would be a pre-built APK for you to download. You can verify the signature of the downloaded using `apksigner`:
 
 - Install [Android Studio](https://developer.android.com/studio) which includes `apksigner`. On macOS, `apksigner` can be found at `~/Library/Android/sdk/build-tools/<version>/apksigner`.
 - Run `apksigner verify --print-certs --verbose myCoolApp.apk` to verify the certificate of the apk.
@@ -193,11 +193,11 @@ The first strategy is to add the atom feed of the application's release page to 
 
 The second strategy is to use the [IzzyOnDroid](https://apt.izzysoft.de/fdroid/) F-Droid repository with a modern F-Droid client like [NeoStore](https://github.com/NeoApplications/Neo-Store), as mentioned [above](#f-droid). The IzzyOnDroid repository pulls new releases from various GitHub repositories to their server, which can then be automatically downloaded and installed by NeoStore. The downside of this strategy is that not every application on GitHub is on IzzyOnDroid, and sometimes IzzyOnDroid fails to pull a new release, resulting in you not getting any updates at all.
 
-It should be noted that since Android has automatic signature checking for existing applications on the system, you only need to manually check the signature of the apk the first time you install an application. If you do use IzzyOnDroid to update the applications, you will need to manually confirm the first update of an application to authorize the NeoStore as the installation source. After that, future updates will be seamless.
+It should be noted that since Android has automatic signature checking for existing applications on the system; that is, you only need to manually check the signature of the apk the first time you install an application. If you do use IzzyOnDroid to update applications, you will need to manually confirm the first update of an application to authorize the NeoStore as the installation source. After that, future updates will be seamless.
 
 ## Google
 
-If you are using a device with Google services, either your stock operating system or an operating system that safely sandboxes Google Play Services like GrapheneOS, there are a number of additional changes you can make to improve your privacy.
+If you are using a device with Google services, either with the stock operating system or an operating system that safely sandboxes Google Play Services like GrapheneOS, there are a number of additional changes you can make to improve your privacy.
 
 ### Enroll in the Advanced Protection Program
 
@@ -207,7 +207,7 @@ If you have a Google account we suggest enrolling in the [Advanced Protection Pr
 
 The Advanced Protection Program provides enhanced threat monitoring and enables:
 
-- Stricter two factor authentication; e.g. that [FIDO2](/posts/knowledge/multi-factor-authentication/#fido2-fast-identity-online) **must** be used and disallows the use of [SMS OTP](/posts/knowledge/multi-factor-authentication/#fido2-fast-identity-online), [TOTP](/posts/knowledge/multi-factor-authentication/#time-based-one-time-password-totp) and [OAuth](https://en.wikipedia.org/wiki/OAuth)
+- Stricter two factor authentication; e.g. that [FIDO2](/posts/knowledge/multi-factor-authentication/#fido2-fast-identity-online) **must** be used and disallows the use of [SMS OTP](/posts/knowledge/multi-factor-authentication/#email-and-sms-mfa), [TOTP](/posts/knowledge/multi-factor-authentication/#time-based-one-time-password-totp) and [OAuth](https://en.wikipedia.org/wiki/OAuth)
 - Only Google and verified third-party apps can access account data
 - Scanning of incoming emails on Gmail accounts for [phishing](https://en.wikipedia.org/wiki/Phishing#Email_phishing) attempts
 - Stricter [safe browser scanning](https://www.google.com/chrome/privacy/whitepaper.html#malware) with Google Chrome
@@ -223,7 +223,7 @@ The Advanced Protection Program provides enhanced threat monitoring and enables:
 
 In the past, Android security updates had to be shipped by the operating system vendor. Android has become more modular beginning with [Android 10](https://www.android.com/android-10/), and Google [can push security updates](https://blog.google/products/android-enterprise/android-10-security/) for **some** system components via the privileged Play Services.
 
-If you have an EOL device shipped with Android 10 or above (shipped beginning 2020), you may better off sticking with the stock OS in the short term as opposed to running an insecure alternative operating system. This will allow you to receive **some** security fixes from Google, while not violating the Android security model and increasing your attack surface. You should still upgrade to a supported device as soon as possible.
+If you have an EOL device shipped with Android 10 or above (shipped beginning 2020), you may be better off sticking with the stock OS in the short term as opposed to running an insecure alternative operating system. This will allow you to receive **some** security fixes from Google, while not violating the Android security model and increasing your attack surface. You should still upgrade to a supported device as soon as possible.
 
 ### Disable Advertising ID
 
@@ -231,14 +231,14 @@ All devices with Google Play Services installed automatically generate an [adver
 
 On Android distributions with [Sandboxed Google Play](https://grapheneos.org/usage#sandboxed-google-play), go to **Settings** → **Apps** → **Sandboxed Google Play** → **Google Settings** → **Ads**, and select *Delete advertising ID*.
 
-On Android distributions with privileged Google Play Services (such as stock OSes), the setting may be in one of several locations. Check
+On Android distributions with privileged Google Play Services (such as stock OSes), the setting may be in one of several locations:
 
 - **Settings** → **Google** → **Ads**
 - **Settings** → **Privacy** → **Ads**
 
 ![Ads id](/images/ads-id.png)
 
-You will either be given the option to delete your advertising ID or to *Opt out of interest-based ads*, this varies between OEM distributions of Android. If presented with the option to delete the advertising ID that is preferred. If not, then make sure to opt out and reset your advertising ID.
+You will be given the option to either delete your advertising ID or *Opt out of interest-based ads* --- this varies between OEM distributions of Android. If presented with the option to delete the advertising ID, choosing that is preferred. If not, then make sure to opt out and reset your advertising ID.
 
 ### Google Messages
 
@@ -246,19 +246,19 @@ Google is currently pushing for the adoption of [RCS with end to end encryption]
 
 If you are on an OS with Play Services installed, I highly recommend that you use Google Messages as the SMS app to get opportunistic end to end encryption with your contacts. It works fairly well on GrapheneOS with Sandboxed Play Services, too.
 
-You can disable telemetry in Google Messages by going to **⋮** → **Settings** → **General** → **Help Improve Messages** and toggling it off. There are also some other configurations in **⋮** → **Settings** → **General** → **Chat features** that you might want to go over such as sending typing indicator or read receipt.
+You can disable telemetry in Google Messages by tapping the profile in the top right → **Messages settings** → **Help Improve Messages** and toggling it off. There are also some other configurations in **Messages settings** → **RCS chats** that you might want to go over, such as **Show typing indicators** or **Send read receipts**.
 
-If you have trouble connecting to RCS, try disabling your VPN and the VPN killswitch first, then reconnect to RCS. Once you have connected to the server, you can re-enable your VPN and the killswitch and it should work just fine across reboots. I am not sure what is causing this issue, but it might be related to [this bug](https://issuetracker.google.com/issues/189577131).
+If you have trouble connecting to RCS, try disabling your VPN and the VPN killswitch first, then reconnect to RCS. Once you have connected to the server, you can re-enable your VPN and the killswitch, and it should work just fine across reboots. I am not sure what is causing this issue, but it might be related to [this bug](https://issuetracker.google.com/issues/189577131).
 
 ### Google Fi
 
-Google Fi provides [opportunistic end&#8209;to&#8209;end encryption](https://fi.google.com/about/end-to-end-encrypted-calls) for phone calls between Fi users on Android and [includes a VPN service](https://support.google.com/fi/answer/9040000). Fi also implements a unique privacy&#8209;bolstering [virtual carrier network](https://www.gstatic.com/fi/wormhole/whitepaper-a00cc4732620f382da5b7aac2bcb6905f970ba6b.pdf) architecture on supported devices, but it is [temporarily disabled](https://support.google.com/fi/answer/9040000).
+Google Fi provides [opportunistic end&#8209;to&#8209;end encryption](https://fi.google.com/about/end-to-end-encrypted-calls) for phone calls between Fi users on Android and [includes a VPN service](https://support.google.com/fi/answer/9040000). Fi also implements a unique privacy&#8209;bolstering [virtual carrier network](https://www.gstatic.com/fi/wormhole/whitepaper-a00cc4732620f382da5b7aac2bcb6905f970ba6b.pdf) (VCN) architecture on supported devices, but it is [temporarily disabled](https://support.google.com/fi/answer/9040000).
 
 This is not without its caveats:
-- Google Fi requires Play Services and the [Fi app](https://play.google.com/store/apps/details?id=com.google.android.apps.tycho&hl=en_US) to work properly. Without Play Services, all of the features mentioned above, along with visual voicemail will not work. SMS messages will have random strings added at the end of each of them.
+- Google Fi requires Play Services and the [Fi app](https://play.google.com/store/apps/details?id=com.google.android.apps.tycho&hl=en_US) to work properly. Without Play Services, all of the features mentioned above, along with visual voicemail, will not work. SMS messages will have random strings added at the end of each of them.
 - The Google Fi app needs to be installed in the owner profile for SIM/eSIM activation.
 - Google Fi Wi&#8209;Fi calling does not work behind a VPN with the killswitch enabled in the owner profile.
 
-If you are living in the United States and use the stock operating system, I highly recommend using Google Fi as the carrier to take advantage of the end to end encrypted calls and Fi VPN. Pixel 4 and above, users will benefit the most from the VCN as mentioned.
+If you live in the United States and use the stock operating system, I highly recommend using Google Fi as your carrier to take advantage of the end to end encrypted calls and Fi VPN. People using a Pixel 4 and above will benefit the most from the VCN as mentioned.
 
-If you are using GrapheneOS and do not mind installing Sandboxed Play Services, Fi is still a better option than to other providers thanks to Google's general good security practices and the fact that you can enroll in the Advanced Protection Program to have much better protection for your account. Some other provides do not even have multi-factor authentication support, and most will not let you enforce FIDO2 as the authentication method.
+If you use GrapheneOS and do not mind installing Sandboxed Play Services, Fi is still a better option than other providers thanks to Google's general good security practices and the fact that you can enroll in the Advanced Protection Program to have much better protection for your account. Some other providers do not even have multi-factor authentication support, and most will not let you enforce FIDO2 as the authentication method.
