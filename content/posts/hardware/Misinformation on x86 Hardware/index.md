@@ -44,7 +44,7 @@ For attack surface reduction, you should absolutely disable it. If you do not ha
 
 With that said, don't let the scary claims about "remote management" spook you --- if some sort of hypothetical backdoor is actually implemented this way, it will not be hard to detect. There are better ways to implement a backdoor as discussed above, and if you don't trust the CPU vendor you should avoid them as a whole, not just the vPro models.
 
-Some people recommend buying AMD instead of Intel to avoid the possibility of having Intel AMT. However, they also miss a very simple fact that AMD has an equivalent technology for their Ryzen Pro CPU - [AMD DASH](https://www.amd.com/system/files/documents/out-of-band-client-management-overview.pdf).
+Some people recommend buying AMD instead of Intel to avoid the possibility of having Intel AMT. However, they also overlook the very simple fact that AMD has an equivalent technology for their Ryzen Pro CPU: [AMD DASH](https://www.amd.com/system/files/documents/out-of-band-client-management-overview.pdf).
 
 ### Intel vPro
 
