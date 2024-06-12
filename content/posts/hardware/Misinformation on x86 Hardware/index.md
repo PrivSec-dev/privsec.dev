@@ -20,7 +20,7 @@ Intel CSME provides critical security features, including:
 
 AMD PSP provides its own set of security features:
 - Firmware TPM - serving the same role as Intel's Platform Trust Technology.
-- [Secure Encryption Virtualization](https://www.amd.com/en/developer/sev.html) (on Ryzen Pro and EPYC CPUs). SEV protects both the hypervisor from cold boot attacks and making VM break outs much more difficult.
+- [Secure Encryption Virtualization](https://www.amd.com/en/developer/sev.html) (on Ryzen Pro and EPYC CPUs). SEV both protects the hypervisor from cold boot attacks and makes VM break outs much more difficult.
 
 By buying hardware with Intel CSME disabled, you are **increasing the attack surface** by not having Boot Guard to protect your firmware. Additionally, if you buy hardware so old that you can run `me_cleaner` to disable the ME yourself, it means that these hardware do not have Boot Guard to begin with. In both cases, you will end up with a piece of hardware with no root of trust, and any attempt to implement firmware security will be futile.
 
