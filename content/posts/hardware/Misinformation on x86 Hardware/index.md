@@ -24,7 +24,7 @@ AMD PSP provides its own set of security features:
 
 By buying hardware with Intel CSME disabled, you are **increasing the attack surface** by not having Boot Guard to protect your firmware. Additionally, if you buy hardware so old that you can run `me_cleaner` to disable the ME yourself, it means that these hardware do not have Boot Guard to begin with. In both cases, you will end up with a piece of hardware with no root of trust, and any attempt to implement firmware security will be futile.
 
-I am not aware of any way to disable AMD PSP, but even if this was possible, all that it does is to deprive you of useful security features.
+I am not aware of any way to disable AMD PSP, but even if this was possible, all that it does is deprive you of useful security features.
 
 This excercise also achieves absolutely nothing to protect against a hypothetical scenario where Intel and AMD are malicious. Intel and AMD do not need the co-processor to implement a backdoor - they can simply introduce CPU vulnerabilities like Spectre and Meltdown if they want to. If you do not trust a CPU vendor, the only mitigation is to not use said vendor.
 
