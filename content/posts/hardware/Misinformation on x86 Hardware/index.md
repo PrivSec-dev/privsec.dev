@@ -26,7 +26,7 @@ By buying hardware with Intel CSME disabled, you are **increasing the attack sur
 
 I am not aware of any way to disable AMD PSP, but even if this was possible, all that it does is deprive you of useful security features.
 
-This excercise also achieves absolutely nothing to protect against a hypothetical scenario where Intel and AMD are malicious. Intel and AMD do not need the co-processor to implement a backdoor - they can simply introduce CPU vulnerabilities like Spectre and Meltdown if they want to. If you do not trust a CPU vendor, the only mitigation is to not use said vendor.
+This exercise also achieves absolutely nothing to protect against a hypothetical scenario where Intel and AMD are malicious. Intel and AMD do not need the co-processor to implement a backdoor --- they can simply introduce CPU vulnerabilities like Spectre and Meltdown if they want to. If you do not trust a CPU vendor, the only mitigation is to not use said vendor.
 
 ### Intel AMT and AMD DASH
 
