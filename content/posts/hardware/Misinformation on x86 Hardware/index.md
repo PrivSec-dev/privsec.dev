@@ -64,4 +64,4 @@ In reality, most if not all laptops with UEFI Secure Boot allows you to disable 
 
 Microsoft even went further to make Secure Boot better for end users. Computers with their Secured-core certification provides users with the **Freedom** to disable the Microsoft Secure Boot Third Party Certificate Authority and still have the computers function normally. They **protect** the users from having to sign and trust random **proprietary Option ROMS**. It is great for both users who want to use Windows as their primary system and users who plan to set up a proper Secure Boot system with Linux.
 
-UEFI Secure Boot is not Restricted Boot. It is a building block of Static Root of Trust Measurememnt and step towards building a secure boot environment.
+UEFI Secure Boot is not Restricted Boot. It is a building block of Static Root of Trust Measurement and a step towards building a secure boot environment.
