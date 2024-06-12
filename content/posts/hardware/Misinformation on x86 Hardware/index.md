@@ -18,7 +18,7 @@ Intel CSME provides critical security features, including:
 - [Boot Guard](https://networkbuilders.intel.com/docs/networkbuilders/secure-the-network-infrastructure-secure-boot-methodologies.pdf) - The basis of Static Root of Trust Measurement. It verifies that a significant portion of your EEPROM is signed by your OEM, and provides fuses to prevent downgrade attacks to old, vulnerable versions.
 - [Platform Trust Technology](https://www.intel.com/content/www/us/en/support/articles/000094205/processors/intel-core-processors.html) - An firmware TPM implementation. Generally, fTPMs have better security properties when compared to dTPMs, as they stay on the same die as the CPU and are immune to bus sniffing attacks.
 
-AMD PSP provides its own set of secrity features:
+AMD PSP provides its own set of security features:
 - Firmware TPM - serving the same role as Intel's Platform Trust Technology.
 - [Secure Encryption Virtualization](https://www.amd.com/en/developer/sev.html) (on Ryzen Pro and EPYC CPUs). SEV protects both the hypervisor from cold boot attacks and making VM break outs much more difficult.
 
