@@ -17,6 +17,7 @@ The problems with these recommendations are as follows:
 Intel CSME provides critical security features, including:
 - [Boot Guard](https://networkbuilders.intel.com/docs/networkbuilders/secure-the-network-infrastructure-secure-boot-methodologies.pdf) - The basis of Static Root of Trust Measurement. It verifies that a significant portion of your EEPROM is signed by your OEM, and provides fuses to prevent downgrade attacks to old, vulnerable versions.
 - [Platform Trust Technology](https://www.intel.com/content/www/us/en/support/articles/000094205/processors/intel-core-processors.html) - An firmware TPM implementation. Generally, fTPMs have better security properties when compared to dTPMs, as they stay on the same die as the CPU and are immune to bus sniffing attacks.
+- [Modern Standby](https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/modern-standby) - This is not necessarily a security feature, but Windows does use modern standby to download critical updates even when the computer is in sleep mode.
 
 AMD PSP provides its own set of security features:
 - Firmware TPM - serving the same role as Intel's Platform Trust Technology.
