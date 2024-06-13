@@ -14,9 +14,9 @@ A very common piece of misinformation among privacy communities is that the Inte
 
 The problems with these recommendations are as follows:
 
-Intel CSME provides critical security features, including:
-- [Boot Guard](https://networkbuilders.intel.com/docs/networkbuilders/secure-the-network-infrastructure-secure-boot-methodologies.pdf) - The basis of Static Root of Trust Measurement. It verifies that a significant portion of your EEPROM is signed by your OEM, and provides fuses to prevent downgrade attacks to old, vulnerable versions.
-- [Platform Trust Technology](https://www.intel.com/content/www/us/en/support/articles/000094205/processors/intel-core-processors.html) - An firmware TPM implementation. Generally, fTPMs have better security properties when compared to dTPMs, as they stay on the same die as the CPU and are immune to bus sniffing attacks.
+Intel CSME provides security features, including:
+- [Boot Guard](https://networkbuilders.intel.com/docs/networkbuilders/secure-the-network-infrastructure-secure-boot-methodologies.pdf) - The basis of Static Root of Trust Measurement (SRTM). It verifies that a significant portion of your EEPROM is signed by your OEM, and provides fuses to prevent downgrade attacks to old, vulnerable versions.
+- [Platform Trust Technology](https://www.intel.com/content/www/us/en/support/articles/000094205/processors/intel-core-processors.html) - A firmware TPM implementation. Generally, fTPMs have better security properties when compared to dTPMs, as they stay on the same die as the CPU and are immune to bus sniffing attacks.
 - [Modern Standby](https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/modern-standby) - This is not necessarily a security feature, but Windows does use modern standby to download critical updates even when the computer is in sleep mode.
 
 AMD PSP provides its own set of security features:
@@ -66,3 +66,11 @@ In reality, most if not all laptops with UEFI Secure Boot allows you to disable 
 Microsoft even went further to make Secure Boot better for end users. Computers with their Secured-core certification provides users with the **Freedom** to disable the Microsoft Secure Boot Third Party Certificate Authority and still have the computers function normally. They **protect** the users from having to sign and trust random **proprietary Option ROMS**. It is great for both users who want to use Windows as their primary system and users who plan to set up a proper Secure Boot system with Linux.
 
 UEFI Secure Boot is not Restricted Boot. It is a building block of Static Root of Trust Measurement and a step towards building a secure boot environment.
+
+### Trusted Platform Module
+
+The Trusted Platform Module (TPM) is very often misunderstood, and there have been plenty of inaccurate claims regarding its capabilities. The reality is this:
+
+- It is a passive chip. It does not have the capability to measure what is going on on a system - it only receive measurements given to it by the firmware, Trusted Execution Technology, bootloader, and so on. It cannot serve as a root of trust, and it cannot verify the integrity of the firmware, firmware settings, operating system status, etc on its own.
+
+- It does not weaken disk encryption when used properly. The TPM provides 2 important properties: it enforces rate limiting, and it pinning a secret against certain PCRs. Rate limiting is useful if the user does not have a sufficiently strong encryption password, however it is not strictly necessary when a diceware encryption passphrase is used. Pinning secrets against PCRs on the other hand are critical, as SRTM and DRTM technologies rely on it to be useful. The general idea is that 
