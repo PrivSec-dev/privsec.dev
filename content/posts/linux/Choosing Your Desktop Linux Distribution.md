@@ -70,13 +70,13 @@ Try **not** to use desktop environments or window managers that do not have Wayl
 
 ## Recommended Distributions
 
-Here is a quick, non-authoritative list of distributions that are generally better than others:
+Here is a quick, non-authoritative list of distributions we recommend over others:
 
 ### Fedora Workstation
 
 ![Fedora](/images/fedora-screenshot.png)
 
-[Fedora Workstation](https://getfedora.org/en/workstation/) is a great general purpose Linux distribution, especially for those who are new to Linux. It is a semi-rolling release distribution. While some packages like GNOME are frozen until the next Fedora release, most packages (including the kernel) are updated frequently throughout the lifespan of the release. Each Fedora release is supported for one year, with a new version released every 6 months.
+[Fedora Workstation](https://getfedora.org/en/workstation/) is a great general-purpose Linux distribution, especially for those who are new to Linux. It is a semi-rolling release distribution. While some packages like GNOME are frozen until the next Fedora release, most packages (including the kernel) are updated frequently throughout the lifespan of the release. Each Fedora release is supported for one year, with a new version released every 6 months.
 
 With that, Fedora generally adopts newer technologies before other distributions e.g., [Wayland](https://wayland.freedesktop.org/) and [PipeWire](https://pipewire.org/). These new technologies often come with improvements in security, privacy, and usability in general.
 
@@ -90,9 +90,9 @@ You can refer to the video by [Adam Šamalík](https://twitter.com/adsamalik) li
 
 ### openSUSE Tumbleweed and Aeon
 
-Fedora Workstation and Silverblue's European counterpart. These are rolling release, fast updating distributions with [transactional update](https://kubic.opensuse.org/blog/2018-04-04-transactionalupdates/) using [Btrfs](https://en.wikipedia.org/wiki/Btrfs) and [Snapper](https://en.opensuse.org/openSUSE:Snapper_Tutorial).
+Fedora Workstation and Silverblue's European counterpart. These are rolling release, fast updating distributions with [transactional updates](https://kubic.opensuse.org/blog/2018-04-04-transactionalupdates/) using [Btrfs](https://en.wikipedia.org/wiki/Btrfs) and [Snapper](https://en.opensuse.org/openSUSE:Snapper_Tutorial).
 
-[Aeon](https://microos.opensuse.org/) has a much smaller base system than [Tumbleweed](https://get.opensuse.org/tumbleweed) and mounts the running BTRFS subvolumes as read-only (hence its name and why it is considered an immutable distribution). Currently, it is still in RC so changes are to be expected. Nevertheless, it is an awesome project.
+[Aeon](https://microos.opensuse.org/) has a much smaller base system than [Tumbleweed](https://get.opensuse.org/tumbleweed) and mounts the running BTRFS subvolumes as read-only (hence its name and why it is considered an immutable distribution). Currently, it is still in a [Release Candidate (RC) stage](https://en.opensuse.org/Portal:Aeon), so changes are to be expected. Nevertheless, it is an awesome project.
 
 {{< youtube id="jcl_4Vh6qP4">}}
 
@@ -100,7 +100,7 @@ Fedora Workstation and Silverblue's European counterpart. These are rolling rele
 
 [Whonix](https://www.whonix.org/) is a distribution focused on anonymity based on [Kicksecure](https://www.whonix.org/wiki/Kicksecure). It is meant to run as two virtual machines: a “Workstation” and a Tor “Gateway.” All communications from the Workstation must go through the Tor gateway. This means that even if the Workstation is compromised by malware of some kind, the true IP address remains hidden. It is currently the best solution that I know of if your threat model requires anonymity.
 
-Some of its features include Tor Stream Isolation, [keystroke anonymization](https://www.whonix.org/wiki/Keystroke_Deanonymization#Kloak), [boot clock ranomization](https://www.kicksecure.com/wiki/Boot_Clock_Randomization), [encrypted swap](https://github.com/Whonix/swap-file-creator), hardened boot parameters, hardened kernel settings, and a [hardened memory allocator](https://www.kicksecure.com/wiki/Hardened_Malloc). One downside of Whonix is that it still inherits outdated packages with lots of downstream patching from Debian.
+Some of its features include Tor Stream Isolation, [keystroke anonymization](https://www.whonix.org/wiki/Keystroke_Deanonymization#Kloak), [boot clock randomization](https://www.kicksecure.com/wiki/Boot_Clock_Randomization), [encrypted swap](https://github.com/Whonix/swap-file-creator), hardened boot parameters, and hardened kernel settings. One downside of Whonix is that it still inherits outdated packages with lots of downstream patching from Debian.
 
 Future versions of Whonix will likely include [full system AppArmor policies](https://github.com/Whonix/apparmor-profile-everything) and a [sandbox app launcher](https://www.whonix.org/wiki/Sandbox-app-launcher) to fully confine all processes on the system.
 
