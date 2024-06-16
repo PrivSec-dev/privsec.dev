@@ -2,7 +2,7 @@
 title: "Desktop Linux Hardening"
 date: 2022-08-17
 tags: ['Operating Systems', 'Linux', 'Privacy', 'Security']
-author: Tommy
+author: Tommy, wj25czxj47bu6q
 ---
 
 Linux is [not a secure desktop operating system](/posts/linux/linux-insecurities/). However, there are steps you can take to harden it, reduce its attack surface, and improve its privacy.
@@ -33,7 +33,7 @@ Depending on your distribution, encrypted swap may be automatically set up if yo
 
 Most desktop Linux distributions including Fedora, openSUSE, Ubuntu, and so on come with [NetworkManager](https://en.wikipedia.org/wiki/NetworkManager) by default to configure Ethernet and Wi-Fi settings.
 
-WfKe9vLwSvv7rN has detailed guide on [trackability reduction with NetworkManager](/posts/linux/networkmanager-trackability-reduction/) which I highly recommend you check out.
+wj25czxj47bu6q has detailed guide on [trackability reduction with NetworkManager](/posts/linux/networkmanager-trackability-reduction/) which I highly recommend you check out.
 
 In short, if you use NetworkManager, add the following to your `/etc/NetworkManager/conf.d/00-macrandomize.conf`:
 ```
