@@ -287,7 +287,7 @@ _See ["2.2&nbsp;Sysctl"](https://madaidans-insecurities.github.io/guides/linux-h
 
 Madaidan recommends that you disable [unprivileged user namespaces](https://github.com/sangam14/CloudNativeLab/blob/master/LXC/Linux%20Containers/User_namespaces.md) due to the [significant attack surface for privilege escalation](https://madaidans-insecurities.github.io/linux.html#kernel). However, some software such as Podman and LXC relies on unprivileged user namespaces. If you wish to use such software, do not disable `kernel.unprivileged_userns_clone`. Note that this setting does not exist in the upstream kernel and is added downstream by some distributions.
 
-If you are using Kicksecure or Whonix, most of this hardening is included by default. If you are using Debian, you should consider [morphing it into Kicksecure](https://www.kicksecure.com/wiki/Debian). On other distributions, you can copy the configuration file from [my repository](https://github.com/TommyTran732/Linux-Setup-Scripts/blob/main/etc/sysctl.d/99-workstation.conf).
+If you are using Kicksecure or Whonix, most of this hardening is included by default. If you are using Debian, you should consider [morphing it into Kicksecure](https://www.kicksecure.com/wiki/Debian). On other distributions, you can copy the configuration file from [Tommy's repository](https://github.com/TommyTran732/Linux-Setup-Scripts/blob/main/etc/sysctl.d/99-workstation.conf).
 
 #### Boot Parameters
 
