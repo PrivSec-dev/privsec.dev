@@ -2,7 +2,7 @@
 title: "Desktop Linux Hardening"
 date: 2022-08-17
 tags: ['Operating Systems', 'Linux', 'Privacy', 'Security']
-author: Tommy
+author: Tommy, wj25czxj47bu6q
 ---
 
 Linux is [not a secure desktop operating system](/posts/linux/linux-insecurities/). However, there are steps you can take to harden it, reduce its attack surface, and improve its privacy.
@@ -33,7 +33,7 @@ Depending on your distribution, encrypted swap may be automatically set up if yo
 
 Most desktop Linux distributions including Fedora, openSUSE, Ubuntu, and so on come with [NetworkManager](https://en.wikipedia.org/wiki/NetworkManager) by default to configure Ethernet and Wi-Fi settings.
 
-WfKe9vLwSvv7rN has detailed guide on [trackability reduction with NetworkManager](/posts/linux/networkmanager-trackability-reduction/) which I highly recommend you check out.
+wj25czxj47bu6q has detailed guide on [trackability reduction with NetworkManager](/posts/linux/networkmanager-trackability-reduction/) which I highly recommend you check out.
 
 In short, if you use NetworkManager, add the following to your `/etc/NetworkManager/conf.d/00-macrandomize.conf`:
 ```
@@ -285,9 +285,9 @@ _This section extensively references [Madaidan's Linux Hardening Guide](https://
 
 _See ["2.2&nbsp;Sysctl"](https://madaidans-insecurities.github.io/guides/linux-hardening.html#sysctl) in Madaidan's guide._
 
-Madaidan recommends that you disable [unprivileged user namespaces](https://github.com/sangam14/CloudNativeLab/blob/master/LXC/Linux%20Containers/User_namespaces.md) due to the [significant attack surface for privilege escalation](https://madaidans-insecurities.github.io/linux.html#kernel). However, some software such as Podman and LXC relies on unprivileged user namespaces. If you wish to use such software, do not disable `kernel.unprivileged_userns_clone`.
+Madaidan recommends that you disable [unprivileged user namespaces](https://github.com/sangam14/CloudNativeLab/blob/master/LXC/Linux%20Containers/User_namespaces.md) due to the [significant attack surface for privilege escalation](https://madaidans-insecurities.github.io/linux.html#kernel). However, some software such as Podman and LXC relies on unprivileged user namespaces. If you wish to use such software, do not disable `kernel.unprivileged_userns_clone`. Note that this setting does not exist in the upstream kernel and is added downstream by some distributions.
 
-If you are using Kicksecure or Whonix, most of this hardening is included by default. If you are using Debian, you should consider [morphing it into Kicksecure](https://www.kicksecure.com/wiki/Debian). On other distributions, you can copy the [configuration files from Kicksecure](https://github.com/Kicksecure/security-misc/tree/master/usr/lib/sysctl.d) into `/etc/sysctl.d/` (but note that these configurations do not disable unprivileged user namespaces).
+If you are using Kicksecure or Whonix, most of this hardening is included by default. If you are using Debian, you should consider [morphing it into Kicksecure](https://www.kicksecure.com/wiki/Debian). On other distributions, you can copy the configuration file from [Tommy's repository](https://github.com/TommyTran732/Linux-Setup-Scripts/blob/main/etc/sysctl.d/99-workstation.conf).
 
 #### Boot Parameters
 
