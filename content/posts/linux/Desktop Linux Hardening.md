@@ -194,22 +194,6 @@ Another option is [Kata Containers](https://katacontainers.io/) which masquerade
 
 ![opensuse-computer.jpg](/images/opensuse-computer.jpg)
 
-### Ubuntu Pro
-
-If you are using Ubuntu LTS, consider subscribing to [Ubuntu Pro](https://ubuntu.com/pro). Canonical currently allows up to 5 machines with the free subscription.
-
-With Ubuntu Pro, you gain access to the [The Ubuntu Security Guide](https://ubuntu.com/security/certifications/docs/usg), which allows for easy application of the CIS OpenSCAP profile:
-
-```bash
-sudo ua enable usg
-sudo apt install -y usg
-sudo usg fix cis_level2_workstation
-```
-
-You will also gain access to the [Canonical Livepatch Service](https://ubuntu.com/security/livepatch), which provides livepatching for [certain kernel variants](https://ubuntu.com/security/livepatch/docs/livepatch/reference/kernels). Note that the [Hardware Enablement (HWE)](https://ubuntu.com/kernel/lifecycle) kernel is not supported.
-
-While livepatching is less than ideal and I still recommend regularly rebooting your computer, it is quite nice to have.
-
 ### Umask 077
 
 On distributions besides openSUSE, consider changing the default [umask](https://wiki.archlinux.org/title/Umask) for both root and regular users to `077` (symbolically, `u=rwx,g=,o=`). _On openSUSE, a umask of 077 can break snapper and is thus not recommended._
