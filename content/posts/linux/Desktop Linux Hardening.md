@@ -385,7 +385,7 @@ linux&#8209;hardened disables unprivileged user namespaces (`kernel.unprivileged
 The [hardened memory allocator (hardened_malloc)](https://github.com/GrapheneOS/hardened_malloc) from GrapheneOS can be used on general Linux distributions, though [only for some programs](https://www.kicksecure.com/wiki/Hardened_Malloc).
 
 
-On Fedora and Red Hat Enterprise Linux, SecureBlue provides a [copr repository](https://copr.fedorainfracloud.org/coprs/secureblue/hardened_malloc/) with both `x86_64` and `aarch64` architecture support. Divested Computing Group has a [similar build](https://github.com/divestedcg/rpm-hardened_malloc) for Fedora, but with only `x86_64` support. Using SecureBlue's repository is preferable, the Divested repo is known to [block certain IP addresses](https://grapheneos.social/@Tommy/112274772803550392).
+On Fedora and Red Hat Enterprise Linux, SecureBlue provides a [copr repository](https://copr.fedorainfracloud.org/coprs/secureblue/hardened_malloc/) with both `x86_64` and `aarch64` architecture support. Divested Computing Group has a [similar build](https://github.com/divestedcg/rpm-hardened_malloc) for Fedora, but with only `x86_64` support. Using SecureBlue's repository is preferable, the Divested repository is known to [block certain IP addresses](https://grapheneos.social/@Tommy/112274772803550392).
 
 On Arch-based systems, hardened_malloc is [available through the AUR](https://wiki.archlinux.org/title/Security#Hardened_malloc).
 
