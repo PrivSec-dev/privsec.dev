@@ -178,6 +178,7 @@ Note that, unlike Android, traditional desktop Linux distributions typically do 
 You can make your own AppArmor profiles, SELinux policies, [bubblewrap](https://github.com/containers/bubblewrap) profiles, and [seccomp](https://docs.kernel.org/userspace-api/seccomp_filter.html) blacklists to have better confinement of applications. This is an advanced and sometimes tedious task, but there are various projects you could use as reference:
 
 - [Krathalan’s AppArmor profiles](https://github.com/krathalan/apparmor-profiles)
+- [roddhjav's AppArmor profiles](https://github.com/roddhjav/apparmor.d)
 - [noatsecure’s SELinux templates](https://github.com/noatsecure/hardhat-selinux-templates)
 - [Seirdy’s bubblewrap scripts](https://sr.ht/~seirdy/bwrap-scripts)
 
