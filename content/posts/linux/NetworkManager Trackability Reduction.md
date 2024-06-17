@@ -2,7 +2,7 @@
 title: "NetworkManager Trackability Reduction"
 tags: ['Operating Systems', 'Linux', 'Privacy']
 date: 2022-09-04
-author: WfKe9vLwSvv7rN
+author: wj25czxj47bu6q
 canonicalURL: https://wanderingcomputerer.gitlab.io/guides/tips/nm-hardening/
 ShowCanonicalLink: true
 ---
@@ -73,7 +73,7 @@ Look for "Cloned MAC address" under the "Wi-Fi" or "Ethernet" section:
 
 In addition to the four mode keywords, you can input an exact MAC address to be used for that connection.
 
-For a home or other trusted network, it can be helpful to use `stable` or even `permanent`, as MAC address stability can help avoid being repeatedly served a new IP address and DHCP lease (though not all DHCP servers work this way).
+For a home or another trusted network, it can be helpful to use `stable` or even `permanent`, as MAC address stability can help avoid being repeatedly served a new IP address and DHCP lease (though not all DHCP servers work this way).
 
 For public networks with captive portals (webpages that must be accessed to gain network access), the `stable` setting can help prevent redirection back to the captive portal after a brief disconnection or roaming to a different access point.
 
