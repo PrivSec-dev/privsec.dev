@@ -359,6 +359,7 @@ On distributions other than Whonix and Kicksecure, you can copy the configuratio
 
 There are a few things in this config to keep in mind:
 
+- Bluetooth is disabled. Comment out the `install bluetooth` and `install btusb` lines to use Bluetooth.
 - Thunderbolt is disabled. Comment out the `install thunderbolt` line to use Thunderbolt devices.
 - Apple filesystems are disabled. While generally fine on non&#8209;Apple systems, if you are using an Apple device you **must** check the filesystem of your EFI partition and comment out the relevant `install` line, otherwise your Linux install will not boot. For example, comment out the `install hfsplus` line if your ESP filesystem is HFS+.
 
