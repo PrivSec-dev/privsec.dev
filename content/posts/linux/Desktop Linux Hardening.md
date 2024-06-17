@@ -277,7 +277,7 @@ If you are using non&#8209;classic Snap packages on a system that [supports prop
 
 ### Kernel Hardening
 
-There are several things you can do to harden the Linux kernel, including setting appropriate [kernel parameters](https://wiki.archlinux.org/title/Kernel_parameters) and blacklisting unnecessary kernel modules.
+There are several things you can do to harden the Linux kernel, including setting appropriate [kernel parameters](https://wiki.archlinux.org/title/Kernel_parameters) and blacklisting unnecessary kernel modules. If you are using Kicksecure or Whonix, most of this hardening is included by default. If you are using Debian, you should consider [morphing it into Kicksecure](https://www.kicksecure.com/wiki/Debian).
 
 _This section extensively references [Madaidan's Linux Hardening Guide](https://madaidans-insecurities.github.io/guides/linux-hardening.html) and in the interest of brevity does not repeat all the information contained there. You are strongly encouraged to read through the relevant sections of Madaidan's guide (linked for convenience)._
 
@@ -287,11 +287,11 @@ _See ["2.2&nbsp;Sysctl"](https://madaidans-insecurities.github.io/guides/linux-h
 
 Madaidan recommends that you disable [unprivileged user namespaces](https://github.com/sangam14/CloudNativeLab/blob/master/LXC/Linux%20Containers/User_namespaces.md) due to the [significant attack surface for privilege escalation](https://madaidans-insecurities.github.io/linux.html#kernel). However, some software such as Podman and LXC relies on unprivileged user namespaces. If you wish to use such software, do not disable `kernel.unprivileged_userns_clone`. Note that this setting does not exist in the upstream kernel and is added downstream by some distributions.
 
-If you are using Kicksecure or Whonix, most of this hardening is included by default. If you are using Debian, you should consider [morphing it into Kicksecure](https://www.kicksecure.com/wiki/Debian). On other distributions, you can copy the configuration file from [Tommy's repository](https://github.com/TommyTran732/Linux-Setup-Scripts/blob/main/etc/sysctl.d/99-workstation.conf).
+On distributions other than Whonix and Kicksecure, you can copy the configuration file from [Tommy's repository](https://github.com/TommyTran732/Linux-Setup-Scripts/blob/main/etc/sysctl.d/99-workstation.conf).
 
 #### Boot Parameters
 
-_See ["2.3&nbsp;Boot parameters"](https://madaidans-insecurities.github.io/guides/linux-hardening.html#boot-parameters) in Madaidan's guide and [Kicksecure boot parameters](https://github.com/Kicksecure/security-misc/tree/master/etc/default/grub.d). If desired, [formal documentation of boot parameters](https://www.kernel.org/doc/html/latest/admin-guide/kernel-parameters.html) is available upstream._
+_See ["2.3&nbsp;Boot parameters"](https://madaidans-insecurities.github.io/guides/linux-hardening.html#boot-parameters) in Madaidan's guide. If desired, [formal documentation of boot parameters](https://www.kernel.org/doc/html/latest/admin-guide/kernel-parameters.html) is available upstream._
 
 Copy these parameters into [your bootloader's configuration](https://wiki.archlinux.org/title/Kernel_parameters#Configuration). On rpm&#8209;ostree distributions, make sure to use `rpm-ostree kargs` rather than editing GRUB configuration directly.
 
@@ -355,14 +355,12 @@ Further reading:
 
 _See ["2.5.2&nbsp;Blacklisting kernel modules"](https://madaidans-insecurities.github.io/guides/linux-hardening.html#kasr-kernel-modules) in Madaidan's guide._
 
-Once again, Kicksecure includes this hardening by default and provides a config file which can be used on other distros: [`/etc/modprobe.d/30_security-misc.conf`](https://github.com/Kicksecure/security-misc/blob/master/etc/modprobe.d/30_security-misc.conf)
+On distributions other than Whonix and Kicksecure, you can copy the configuration file from [secureblue's repository](https://github.com/secureblue/secureblue/blob/live/config/files/usr/etc/modprobe.d/blacklist.conf) into `/etc/modprobe.d/`.
 
 There are a few things in this config to keep in mind:
 
 - Thunderbolt is disabled. Comment out the `install thunderbolt` line to use Thunderbolt devices.
-- The `cdrom` and `sr_mod` modules are merely _blacklisted_ (can still be loaded at runtime with `modprobe`). If you have no intention to ever use CD&#8209;ROM devices, they should be _disabled_ by *un*commenting the respective `install` lines. ([More about how this works on the ArchWiki](https://wiki.archlinux.org/title/Kernel_module#Using_files_in_/etc/modprobe.d/_2))
 - Apple filesystems are disabled. While generally fine on non&#8209;Apple systems, if you are using an Apple device you **must** check the filesystem of your EFI partition and comment out the relevant `install` line, otherwise your Linux install will not boot. For example, comment out the `install hfsplus` line if your ESP filesystem is HFS+.
-- To produce informative errors when utilising the configuration file, all 10 of the corresponding [debugging scripts](https://github.com/Kicksecure/security-misc/tree/master/usr/bin) should be copied into `/bin/`.
 
 #### Restricting access to /proc and /sys
 
