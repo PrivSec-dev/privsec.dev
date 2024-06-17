@@ -151,6 +151,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Chile
 
+- ~~[Mi Banco Edwards](https://play.google.com/store/apps/details?id=cl.bancochile.mi_edwards)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/457)
 - [Santander Chile](https://play.google.com/store/apps/details?id=cl.santander.smartphone) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/360)
 
 ### China
@@ -168,6 +169,8 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 - [George Croatia](https://play.google.com/store/apps/details?id=hr.erstebank.george) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/373)
 - [KEKS Pay](https://play.google.com/store/apps/details?id=agency.sevenofnine.erstewallet.production) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/402)
+- [m-zaba](https://play.google.com/store/apps/details?id=hr.asseco.android.zaba.new) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/461)
+- [m-zabaPS](https://play.google.com/store/apps/details?id=hr.asseco.android.mtoken.zabaPS) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/462)
 - [PBZ mobile banking application](https://play.google.com/store/apps/details?id=hr.asseco.android.intesa.isbd.pbz) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/403)
 
 ### Czech Republic
@@ -194,6 +197,11 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 - [Banco del Pacífico](https://play.google.com/store/apps/details?id=com.pacifico.movilmatico) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/225)
 - [Banco Guayaquil](https://play.google.com/store/apps/details?id=com.bancodeguayaquil) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/226)
+
+### Egypt
+
+- ~~[CIB Egypt Mobile Banking](https://play.google.com/store/apps/details?id=com.CIB.Digital.MB)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/458)
+- ~~[NBE Mobile](https://play.google.com/store/apps/details?id=com.ofss.obdx.and.nbe.com.eg)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/459)
 
 ### Finland
 
@@ -421,6 +429,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [George Romania](https://play.google.com/store/apps/details?id=ro.bcr.georgego) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/179)
 - [ING HomeBank](https://play.google.com/store/apps/details?id=ro.ing.mobile.banking.android.activity) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/356)
 - ~~[Libra Mobile Banking](https://play.google.com/store/apps/details?id=libra.mobile.banking)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/404)
+- [NeoBT](https://play.google.com/store/apps/details?id=com.ebankit.com.bt) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/460)
 - [Raiffeisen Smart Mobile PI](https://play.google.com/store/apps/details?id=ro.raiffeisen.smartmobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/86)
 
 ### Russia
