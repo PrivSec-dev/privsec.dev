@@ -2,7 +2,7 @@
 title: "NetworkManager Trackability Reduction"
 tags: ['Operating Systems', 'Linux', 'Privacy']
 date: 2022-09-04
-author: WfKe9vLwSvv7rN
+author: wj25czxj47bu6q
 canonicalURL: https://wanderingcomputerer.gitlab.io/guides/tips/nm-hardening/
 ShowCanonicalLink: true
 ---
