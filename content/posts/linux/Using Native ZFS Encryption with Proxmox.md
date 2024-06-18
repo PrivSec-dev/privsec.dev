@@ -75,7 +75,7 @@ Note that the encryption key will be stored inside of the `rpool/ROOT` dataset. 
 zfs destroy -r rpool/data
 
 # Create a new encryption key
-dd if=/dev/urandom bs=32 count=1 of=/.data.key
+dd if=/dev/random bs=32 count=1 of=/.data.key
 
 # Set the approprieate permission
 chmod 400 /.data.key
