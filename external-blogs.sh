@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 #Docker and OCI Hardening
 echo "Fetching and Modifying the Docker and OCI Hardening post"
