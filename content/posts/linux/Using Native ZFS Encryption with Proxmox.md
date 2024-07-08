@@ -13,7 +13,7 @@ _The post also assumes that the Proxmox installation is new and does not have an
 
 ## Encrypting the `rpool/ROOT` dataset
 
-Proxmox installs its system inside of the `rpool/ROOT` dataset. This is what we will encrypt first.
+Proxmox installs its system inside the `rpool/ROOT` dataset. This is what we will encrypt first.
 
 First, boot into the initramfs. On the startup menu, press `e` to edit the boot argument. Remove `root=ZFS=rpool/ROOT/pve-1 boot=zfs` from the argument and press `enter`.
 
@@ -25,7 +25,7 @@ Load in the `zfs` kernel module:
 modprobe zfs
 ```
 
-Next, follow [this gist](https://gist.github.com/yvesh/ae77a68414484c8c79da03c4a4f6fd55) to encrypt the dataset. You do not need to use any sort of live USB or rescue mode, as the initramfs has all what we need. In case it gets moved or deleted, I will copy and paste it here (we will make a few changes to better suite our purposes as well):
+Next, follow [this gist](https://gist.github.com/yvesh/ae77a68414484c8c79da03c4a4f6fd55) to encrypt the dataset. You do not need to use any sort of live USB or rescue mode, as the initramfs has all that we need. In case it gets moved or deleted, I will copy and paste it here (we will make a few changes to better suit our purposes as well):
 
 ```sh
 # Import the old
@@ -82,7 +82,7 @@ Create a diceware passphrase, and save it to `/.data.key`. Then, continue with:
 # Remove all but ASCII characters 
 perl -i -pe 's/[^ -~]//g' /.data.key
 
-# Set the approprieate permission
+# Set the appropriate permission
 chmod 400 /.data.key
 
 # Make the key immutable
@@ -92,7 +92,7 @@ chattr +i /.data.key
 zfs create acltype=posix -o atime=off -o compression=zstd-3 -o checksum=blake3 -o dnodesize=auto -o encryption=on -o keyformat=passphrase -o keylocation=file:///.data.key -o overlay=off -o xattr=sa rpool/data
 ```
 
-Next, we need to setup a systemd service for automatic unlocking. Put the following inside of `/etc/systemd/system/zfs-load-key.service`
+Next, we need to set up a systemd service for automatic unlocking. Put the following inside `/etc/systemd/system/zfs-load-key.service`:
 
 ```
 [Unit]
@@ -118,7 +118,7 @@ systemctl enable zfs-load-key
 
 ## Setting Dropbear for remote unlocking (optional)
 
-It is not convenient to type in the encryption password on the console. You might want to setup Dropbear inside of the initramfs to unlock the drive over SSH instead.
+It is not convenient to type in the encryption password on the console. You might want to set up Dropbear inside of the initramfs to unlock the drive over SSH instead.
 
 First, install the `dropbear-initramfs` package. Note that we are passing the `--no-install-recommends` argument here, as we don't want it to install `cryptsetup` and give annoying warnings on every initramfs generation.
 
