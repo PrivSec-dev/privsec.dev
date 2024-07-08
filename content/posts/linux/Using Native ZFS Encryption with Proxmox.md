@@ -25,7 +25,7 @@ Load in the `zfs` kernel module:
 modprobe zfs
 ```
 
-Next, follow [this gist](https://gist.github.com/yvesh/ae77a68414484c8c79da03c4a4f6fd55) to encrypt the dataset. You do not need to use any sort of live USB or rescue mode, as the initramfs has all what we need. In case it gets moved or deleted, I will copy and paste it here:
+Next, follow [this gist](https://gist.github.com/yvesh/ae77a68414484c8c79da03c4a4f6fd55) to encrypt the dataset. You do not need to use any sort of live USB or rescue mode, as the initramfs has all what we need. In case it gets moved or deleted, I will copy and paste it here (we will make a few changes to better suite our purposes as well):
 
 ```sh
 # Import the old
@@ -40,9 +40,12 @@ zfs send -R rpool/ROOT@copy | zfs receive rpool/copyroot
 # Destroy the old unencrypted root
 zfs destroy -r rpool/ROOT
 
+# Set better ZFS properties
+zpool set autoexpand=on autotrim=on failmode=wait rpool
+
 # Create a new zfs root, with encryption turned on
 # OR -o encryption=aes-256-gcm - aes-256-ccm vs aes-256-gcm
-zfs create -o encryption=on -o keyformat=passphrase rpool/ROOT
+zfs create -o acltype=posix -o atime=off -o compression=zstd-3 -o checksum=blake3 -o dnodesize=auto -o encryption=on -o keyformat=passphrase -o overlay=off -o xattr=sa rpool/ROOT
 
 # Copy the files from the copy to the new encrypted zfs root
 zfs send -R rpool/copyroot/pve-1@copy | zfs receive -o encryption=on rpool/ROOT/pve-1
@@ -67,15 +70,17 @@ reboot -f
 
 Next, we need to encrypt the `rpool/data` dataset. This is where Proxmox stores virtual machine disks.
 
-Note that the encryption key will be stored inside of the `rpool/ROOT` dataset. Since `rpool/ROOT` is already encrypted, we can safely store it there. The key also has to be exactly 32 bytes.
-
 
 ```bash
 # Destroy the original dataset
 zfs destroy -r rpool/data
+```
 
-# Create a new encryption key
-dd if=/dev/random bs=32 count=1 of=/.data.key
+Create a diceware passphrase, and save it to `/.data.key`. Then, continue with:
+
+```bash
+# Remove all but ASCII characters 
+perl -i -pe 's/[^ -~]//g' /.data.key
 
 # Set the approprieate permission
 chmod 400 /.data.key
@@ -84,7 +89,7 @@ chmod 400 /.data.key
 chattr +i /.data.key
 
 # Create a new dataset with encryption enabled
-zfs create -o encryption=on -o keylocation=file:///.data.key -o keyformat=raw rpool/data
+zfs create acltype=posix -o atime=off -o compression=zstd-3 -o checksum=blake3 -o dnodesize=auto -o encryption=on -o keyformat=passphrase -o keylocation=file:///.data.key -o overlay=off -o xattr=sa rpool/data
 ```
 
 Next, we need to setup a systemd service for automatic unlocking. Put the following inside of `/etc/systemd/system/zfs-load-key.service`
