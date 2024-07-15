@@ -91,7 +91,7 @@ chmod 400 /.data.key
 chattr +i /.data.key
 
 # Create a new dataset with encryption enabled
-zfs create acltype=posix -o atime=off -o compression=zstd-3 -o checksum=blake3 -o dnodesize=auto -o encryption=on -o keyformat=passphrase -o keylocation=file:///.data.key -o overlay=off -o xattr=sa rpool/data
+zfs create -o acltype=posix -o atime=off -o compression=zstd-3 -o checksum=blake3 -o dnodesize=auto -o encryption=on -o keyformat=passphrase -o keylocation=file:///.data.key -o overlay=off -o xattr=sa rpool/data
 ```
 
 Next, we need to set up a systemd service for automatic unlocking. Put the following inside `/etc/systemd/system/zfs-load-key.service`:
