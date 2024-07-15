@@ -41,7 +41,9 @@ zfs send -R rpool/ROOT@copy | zfs receive rpool/copyroot
 zfs destroy -r rpool/ROOT
 
 # Set better ZFS properties
-zpool set autoexpand=on autotrim=on failmode=wait rpool
+zpool set autoexpand=on rpool
+zpool set autotrim=on rpool
+zpool set failmode=wait rpool
 
 # Create a new zfs root, with encryption turned on
 # OR -o encryption=aes-256-gcm - aes-256-ccm vs aes-256-gcm
