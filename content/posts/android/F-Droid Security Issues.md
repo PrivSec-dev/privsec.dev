@@ -81,7 +81,7 @@ It is also worth noting that the repository metadata format for F-Droid isn't pr
 
 F-Droid's official client also lacks **TLS certificate pinning**. Certificate pinning is a way for apps to increase the security of their connection to services [by providing a set of public key hashes](https://developer.android.com/training/articles/security-config#CertificatePinning) of known-good certificates for these services instead of trusting pre-installed CAs. This can avoid some cases where an interception (*man-in-the-middle* attack) could be possible and lead to various security issues, considering you're trusting an app to deliver you other apps.
 
-Certificate pinning is an important security feature that is also straightforward to implement using the [declarative network security configuration](https://developer.android.com/training/articles/security-config) available since Android 7.0 (API level 24). The Play Store uses this feature, which improves security for all connections to Google (they generally use a limited set of root CAs including [their own](https://pki.goog/)). Likewise, see how GrapheneOS pins both root and CA certificates in their [app repository client](https://github.com/GrapheneOS/Apps):
+Certificate pinning is an important security feature that is also straightforward to implement using the [declarative network security configuration](https://developer.android.com/training/articles/security-config) available since Android 7.0 (API level 24). The [GrapheneOS App Store](https://github.com/GrapheneOS/AppStore) uses this feature; see how GrapheneOS pins both root and CA certificates in their app repository client:
 
 ```xml
 <!-- res/xml/network_security_config.xml -->
@@ -103,6 +103,8 @@ Certificate pinning is an important security feature that is also straightforwar
     </domain-config>
 </network-security-config>
 ```
+
+The Play Store does not use certificate pinning exactly, but achieves a similar level of security for all connections to Google by using a limited set of root CAs, including [their own](https://pki.goog/)). This practice, alongside the Play Store's use of [package signing](https://source.android.com/docs/security/features/apksigning), guarantees that the apps you download from the Play Store are obtained securely and not tampered with. F-Droid does **not** provide the same guarantee.
 
 To be fair, the F-Droid team has considered several times about adding certificate pinning to their client [at least for the default repositories](https://gitlab.com/fdroid/fdroidclient/-/issues/105). [Relics of preliminary work](https://gitlab.com/fdroid/fdroidclient/-/blob/1.14-alpha4/app/src/main/java/org/fdroid/fdroid/FDroidCertPins.java) can even be found in their current codebase, but it's unfortunate that they haven't been able to find [any working implementation](https://github.com/f-droid/fdroidclient/commit/7f78b46664981b9b73cadbfdda6391f6fe939c77) so far. Given the overly complex nature of F-Droid, that's largely understandable.
 
