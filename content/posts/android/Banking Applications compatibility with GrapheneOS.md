@@ -81,7 +81,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [ME Bank](https://play.google.com/store/apps/details?id=au.com.mebank.banking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/203)
 - [MyState: The human way to bank](https://play.google.com/store/apps/details?id=com.mystate.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/345)
 - [NAB Mobile Banking](https://play.google.com/store/apps/details?id=au.com.nab.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/76)
-- [Ubank Money App](https://play.google.com/store/apps/details?id=au.com.bank86400) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/156)
+- ~~[Ubank Money App](https://play.google.com/store/apps/details?id=au.com.bank86400)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/156)
 - [Up — Easy Money](https://play.google.com/store/apps/details?id=au.com.up.money) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/102)
 - [Westpac](https://play.google.com/store/apps/details?id=org.westpac.bank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/77)
 
@@ -210,6 +210,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### France
 
+- [Banque Populaire](https://play.google.com/store/apps/details?id=fr.banquepopulaire.cyberplus) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/473)
 - [Banxo](https://play.google.com/store/apps/details?id=com.caisseepargne.android.mobilebanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/215)
 - [BoursoBank](https://play.google.com/store/apps/details?id=com.boursorama.android.clients) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/147)
 - [Credit Coopératif](https://play.google.com/store/apps/details?id=com.credit_coop.android.mobilebanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/232)
@@ -593,6 +594,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Bank of America Mobile Banking](https://play.google.com/store/apps/details?id=com.infonow.bofa) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/242)
 - [BECU](https://play.google.com/store/apps/details?id=org.becu.androidapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/60)
 - [Capital One Mobile](https://play.google.com/store/apps/details?id=com.konylabs.capitalone) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/107)
+- [Cash App](https://play.google.com/store/apps/details?id=com.squareup.cash) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/453)
 - [Chase Mobile](https://play.google.com/store/apps/details?id=com.chase.sig.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/13)
 - [Chime – Mobile Banking](https://play.google.com/store/apps/details?id=com.onedebit.chime) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/46)
 - [Citi Mobile®](https://play.google.com/store/apps/details?id=com.citi.citimobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/366)
