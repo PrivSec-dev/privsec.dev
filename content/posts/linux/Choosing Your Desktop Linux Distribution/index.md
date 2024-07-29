@@ -72,7 +72,7 @@ Here is a quick, non-authoritative list of distributions we recommend over other
 
 ### Fedora Workstation
 
-![Fedora](/images/fedora-screenshot.png)
+![Fedora](fedora-screenshot.png)
 
 [Fedora Workstation](https://getfedora.org/en/workstation/) is a great general-purpose Linux distribution, especially for those who are new to Linux. It is a semi-rolling release distribution. While some packages like GNOME are frozen until the next Fedora release, most packages (including the kernel) are updated frequently throughout the lifespan of the release. Each Fedora release is supported for one year, with a new version released every 6 months.
 
