@@ -520,10 +520,14 @@ For Fedora Workstation, you can follow [H&aring;vard Moen's guide](https://haava
 
 On Arch, the process is very similar, though sbctl is already included in the official repositories and you will need to switch from [mkinitcpio](https://wiki.archlinux.org/title/Mkinitcpio) to dracut. Arch with linux&#8209;hardened works well with sbctl, but some level of tedious pacman hooks are required for appropriately timing the re&#8209;signing of all relevant files every time the kernel or bootloader is updated.
 
-Afterwards, you need to use `systemd-cryptenoll` and pin your encryption key against certain PCRs to detect tampering against the firmware. At minimum, you should pin PCR 7 for Secure Boot polices. Personally, I pin PCR 0+1+2+3+5+7+14.
+Afterwards, you need to use `systemd-cryptenoll` and pin your encryption key against [certain PCRs](https://uapi-group.org/specifications/specs/linux_tpm_pcr_registry/) to detect tampering against the firmware. At minimum, you should pin PCR 7 for Secure Boot polices. Personally, I pin PCR 0,1,2,3,5,7, and 14.
+
+Whenever you manually generate a UKI, make sure that the kernel is from the distribution vendor, and make sure that initramfs is freshly generated. Reinstall the kernel package if you have to.
 
 In my opinion, this is the most straightforward setup. However, it does not appear to work well with specialized setups such as Fedora Silverblue/Kinoite. More testing is needed to see if they can be made to work.
 
 ### Notes on Secure Boot
+
+After setting up Secure Boot, you should password-protect your UEFI settings (sometimes called 'supervisor' or 'administrator' password) as it is good security practice. This does not protect against an attacker with a programmer however - you need to pin PCRs to detect tampering as mentioned above.
 
 These recommendations can make you a little more resistant to evil maid attacks, but they [do not constitute a proper verified boot process](https://madaidans-insecurities.github.io/guides/linux-hardening.html#verified-boot) as found on [Android](https://source.android.com/security/verifiedboot), [ChromeOS](https://support.google.com/chromebook/answer/3438631), or [Windows](https://docs.microsoft.com/en-us/windows/security/information-protection/secure-the-windows-10-boot-process).
