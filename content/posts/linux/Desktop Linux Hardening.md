@@ -522,7 +522,7 @@ On Arch, the process is very similar, though sbctl is already included in the of
 
 Afterwards, you need to use `systemd-cryptenoll` and pin your encryption key against [certain PCRs](https://uapi-group.org/specifications/specs/linux_tpm_pcr_registry/) to detect tampering against the firmware. At minimum, you should pin PCR 7 for Secure Boot polices. Personally, I pin PCR 0,1,2,3,5,7, and 14.
 
-Whenever you manually generate a UKI, make sure that the kernel is from the distribution vendor, and make sure that initramfs is freshly generated. Reinstall the kernel package if you have to.
+Whenever you manually generate a UKI, make sure that the kernel is from the distribution vendor, and that initramfs is freshly generated. Reinstall the kernel package if you have to.
 
 In my opinion, this is the most straightforward setup. However, it does not appear to work well with specialized setups such as Fedora Silverblue/Kinoite. More testing is needed to see if they can be made to work.
 
