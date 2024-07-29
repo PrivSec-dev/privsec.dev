@@ -62,7 +62,7 @@ If you want to use one of these distributions for reasons other than ideology, y
 
 ## Desktop Environments
 
-You should use GNOME as your desktop environment. It supports [Wayland](https://en.wikipedia.org/wiki/Wayland_(display_server_protocol)) and implements permission control for privileged Wayland protocols like screencopy. There are other desktop environments and window managers with Wayland support, but we are not aware of any permission control implmeneted by them.
+You should use GNOME as your desktop environment. It supports [Wayland](https://en.wikipedia.org/wiki/Wayland_(display_server_protocol)) and implements permission control for privileged Wayland protocols like screencopy. There are other desktop environments and window managers with Wayland support, but I am not aware of any permission control implemeneted by them.
 
 Wayland's predecessor, [X11](https://en.wikipedia.org/wiki/X_Window_System), does not support GUI isolation, allowing all windows to [record screen, log and inject inputs in other windows](https://blog.invisiblethings.org/2011/04/23/linux-security-circus-on-gui-isolation.html), making any attempt at sandboxing futile. While there are options to do nested X11 such as [Xpra](https://en.wikipedia.org/wiki/Xpra) or [Xephyr](https://en.wikipedia.org/wiki/Xephyr), they often come with negative performance consequences, are not convenient to set up, and are not preferable to Wayland. Desktop environments and window managers which only support X11 should be avoided.
 
