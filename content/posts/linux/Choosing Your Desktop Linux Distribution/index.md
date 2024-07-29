@@ -82,7 +82,7 @@ While lacking transactional or atomic updates, Fedora's package manager, `dnf`, 
 
 ### Fedora Silverblue
 
-[Fedora Silverblue](https://silverblue.fedoraproject.org/) is an immutable variants of Fedora with a strong focus on container workflows. Silverblue comes with the It follows the same release schedule as Fedora Workstation, benefiting from the same fast updates and staying very close to upstream.
+[Fedora Silverblue](https://silverblue.fedoraproject.org/) is an immutable variants of Fedora with a strong focus on container workflows. It follows the same release schedule as Fedora Workstation, benefiting from the same fast updates and staying very close to upstream.
 
 You can refer to the video by [Adam Šamalík](https://twitter.com/adsamalik) linked [above](#traditional-and-atomic-updates) on how these distributions work.
 
