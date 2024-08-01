@@ -15,7 +15,7 @@ For frozen distributions, package maintainers are expected to backport patches t
 
 In fact, in certain cases, there have been vulnerabilities introduced by Debian because of their patching process. [Bug 1633467](https://bugzilla.mozilla.org/show_bug.cgi?id=1633467) and [DSA-1571](https://www.debian.org/security/2008/dsa-1571) are examples of this.
 
-![Upstream / Distros Gap](/images/upstream-distros-gap.png)
+![Upstream / Distros Gap](upstream-distros-gap.png)
 
 The practice of holding packages back and applying interim patches is generally not a good idea, as it diverges from the way the developer might have intended the software to work. [Richard Brown](https://rootco.de/aboutme/) has a presentation about this:
 
@@ -60,13 +60,11 @@ There is often some confusion about “security-focused” distributions and “
 
 If you want to use one of these distributions for reasons other than ideology, you should make sure that they there is a way to easily obtain, install, and update a proper kernel and missing firmware. For example, if you are looking to use [GUIX](https://guix.gnu.org/en/download/), you should absolutely use something like the [Nonguix](https://gitlab.com/nonguix/nonguix) repository and get all of the fixes as mentioned above.
 
-## Wayland
+## Desktop Environments
 
-You should use a desktop environment that supports the [Wayland](https://en.wikipedia.org/wiki/Wayland_(display_server_protocol)) display protocol as it developed with security [in mind](https://lwn.net/Articles/589147/). Its predecessor, [X11](https://en.wikipedia.org/wiki/X_Window_System), does not support GUI isolation, allowing all windows to [record screen, log and inject inputs in other windows](https://blog.invisiblethings.org/2011/04/23/linux-security-circus-on-gui-isolation.html), making any attempt at sandboxing futile. While there are options to do nested X11 such as [Xpra](https://en.wikipedia.org/wiki/Xpra) or [Xephyr](https://en.wikipedia.org/wiki/Xephyr), they often come with negative performance consequences, are not convenient to set up, and are not preferable to Wayland.
+You should use GNOME as your desktop environment. It supports [Wayland](https://en.wikipedia.org/wiki/Wayland_(display_server_protocol)), a display protocol developed with security [in mind](https://lwn.net/Articles/589147), and implements permission control for privileged Wayland protocols like screencopy. There are other desktop environments and window managers with Wayland support, but I am not aware of any permission control implemented by them.
 
-Fortunately, common environments such as [GNOME](https://www.gnome.org) and [KDE](https://kde.org) have support for Wayland. Some distributions like Fedora and Tumbleweed use it by default, and some others may do so in the future as X11 is in [hard maintenance mode](https://www.phoronix.com/scan.php?page=news_item&px=X.Org-Maintenance-Mode-Quickly). If you’re using one of those environments it is as easy as selecting the “Wayland” session at the desktop display manager ([GDM](https://en.wikipedia.org/wiki/GNOME_Display_Manager), [SDDM](https://en.wikipedia.org/wiki/Simple_Desktop_Display_Manager)).
-
-Try **not** to use desktop environments or window managers that do not have Wayland support such as Cinnamon (default on Linux Mint), Pantheon (default on Elementary OS), MATE, Xfce, and i3. You should also avoid Wayland environments which use wlroots as the compositor such as Sway, since wlroots adds many of X11 weaknesses back, including the ability for apps to record each other without prompting for permission.
+Wayland's predecessor, [X11](https://en.wikipedia.org/wiki/X_Window_System), does not support GUI isolation, allowing all windows to [record screen, log and inject inputs in other windows](https://blog.invisiblethings.org/2011/04/23/linux-security-circus-on-gui-isolation.html), making any attempt at sandboxing futile. While there are options to run nested X11 sessions such as [Xpra](https://en.wikipedia.org/wiki/Xpra) or [Xephyr](https://en.wikipedia.org/wiki/Xephyr), they often come with negative performance consequences, are not convenient to set up, and are not preferable to Wayland. You should avoid desktop environments and window managers which only support X11.
 
 ## Recommended Distributions
 
@@ -74,7 +72,7 @@ Here is a quick, non-authoritative list of distributions we recommend over other
 
 ### Fedora Workstation
 
-![Fedora](/images/fedora-screenshot.png)
+![Fedora](fedora-screenshot.png)
 
 [Fedora Workstation](https://getfedora.org/en/workstation/) is a great general-purpose Linux distribution, especially for those who are new to Linux. It is a semi-rolling release distribution. While some packages like GNOME are frozen until the next Fedora release, most packages (including the kernel) are updated frequently throughout the lifespan of the release. Each Fedora release is supported for one year, with a new version released every 6 months.
 
@@ -82,9 +80,9 @@ With that, Fedora generally adopts newer technologies before other distributions
 
 While lacking transactional or atomic updates, Fedora's package manager, `dnf`, has a great rollback and undo feature that is generally missing from other package managers. You can read more about it on [Red Hat's documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/managing_software_with_the_dnf_tool/assembly_handling-package-management-history_managing-software-with-the-dnf-tool).
 
-### Fedora Silverblue & Kinoite
+### Fedora Silverblue
 
-[Fedora Silverblue](https://silverblue.fedoraproject.org/) and [Fedora Kinoite](https://kinoite.fedoraproject.org/) are immutable variants of Fedora with a strong focus on container workflows. Silverblue comes with the [GNOME](https://www.gnome.org/) desktop environment while Kinoite comes with [KDE](https://kde.org/). Silverblue and Kinoite follow the same release schedule as Fedora Workstation, benefiting from the same fast updates and staying very close to upstream.
+[Fedora Silverblue](https://silverblue.fedoraproject.org/) is an immutable variant of Fedora with a strong focus on container workflows. It follows the same release schedule as Fedora Workstation, benefiting from the same fast updates and staying very close to upstream.
 
 You can refer to the video by [Adam Šamalík](https://twitter.com/adsamalik) linked [above](#traditional-and-atomic-updates) on how these distributions work.
 
