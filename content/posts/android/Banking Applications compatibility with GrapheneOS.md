@@ -188,6 +188,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 ### Denmark
 
 - [Jyske Bank](https://play.google.com/store/apps/details?id=dk.jyskebank.drb) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/307)
+- [Lunar](https://play.google.com/store/apps/details?id=com.lunarway.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/476)
 - [MitID](https://play.google.com/store/apps/details?id=dk.mitid.app.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/286)
 - [Mobilbank DK – Danske Bank](https://play.google.com/store/apps/details?id=com.danskebank.mobilebank3.dk) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/5)
 - [MobilePay](https://play.google.com/store/apps/details?id=dk.danskebank.mobilepay) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/7)
@@ -206,7 +207,11 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 ### Finland
 
 - [Nordea ID](https://play.google.com/store/apps/details?id=com.nordea.mobiletoken) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/280)
+- [OP-mobiili](https://play.google.com/store/apps/details?id=fi.op.android.opmobiili) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/479)
+- [POP Mobiili](https://play.google.com/store/apps/details?id=fi.poppankki.popmobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/480)
+- [POP Avain -tunnuslukusovellus](https://play.google.com/store/apps/details?id=fi.poppankki.avain) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/481)
 - [S-mobiili](https://play.google.com/store/apps/details?id=fi.spankki) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/43)
+
 
 ### France
 
@@ -261,6 +266,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Tomorrow: Mobile Banking](https://play.google.com/store/apps/details?id=one.tomorrow.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/20)
 - [Trade Republic: Broker & Bank](https://play.google.com/store/apps/details?id=de.traderepublic.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/395)
 - [VR Banking - einfach sicher](https://play.google.com/store/apps/details?id=de.fiduciagad.banking.vr) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/36)
+- [VR SecureGo plus](https://play.google.com/store/apps/details?id=de.fiduciagad.securego.vr) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/477)
 
 ### Ghana
 
@@ -273,7 +279,9 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Hong Kong
 
+- [BOCHK中銀香港](https://play.google.com/store/apps/details?id=com.bochk.app.aos) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/482)
 - [HSBC HK Mobile Banking](https://play.google.com/store/apps/details?id=hk.com.hsbc.hsbchkmobilebanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/303)
+- [inMotion by CNCBI](https://play.google.com/store/apps/details?id=com.citic.inmotion) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/483)
 
 ### Hungary
 
