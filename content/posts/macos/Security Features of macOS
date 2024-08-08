@@ -29,3 +29,17 @@ If the app is sandboxed, you will see
     [Value]
         [Bool] true
 ```
+
+## Hardened Runtime
+
+The [Hardened Runtime](https://developer.apple.com/documentation/security/hardened_runtime) is an optional security feature that developers can enable that makes an app more resistant to exploitation. It prevents certain classes of exploits, like code injection, dynamically linked library (DLL) hijacking, and process memory space tampering.
+
+Unlike the App Sandbox, the Hardened Runtime is required in order for an app to be notarized and so you'll be warned by Gatekeeper if an app doesn't use it. While this warning is bypassable, you should be cautious and investigate a bit more before running it.
+
+Check if an app is using the Hardened Runtime before running it with the command
+
+``` zsh
+codesign --display --verbose /path/to/bundle.app
+```
+
+You will see `flags=0x10000(runtime)` if it's enabled.
