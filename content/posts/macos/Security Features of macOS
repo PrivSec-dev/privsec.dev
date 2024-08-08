@@ -3,3 +3,29 @@ macOS comes equipped with many security features to keep you safe.
 ## FileVault
 
 By default, your macOS install is encrypted, but it will automatically unlock on boot. Turning on [FileVault](https://support.apple.com/guide/mac-help/protect-data-on-your-mac-with-filevault-mh11785/mac) will require a user password to unlock the volume. It also makes it so that you need to enter a user password to enter recovery mode.
+
+## App Sandbox
+
+The [App Sandbox](https://developer.apple.com/documentation/security/app_sandbox/protecting_user_data_with_app_sandbox) is a feature that limits the access an app has to the rest of your system. Developers enable it when they sign their app, so it's not possible for you to enable it or modify the entitlements since they are defined in the signature. 
+
+The App Sandbox is designed to limit the damage to your system in the event an app is exploited, however it can't protect against malicious developers since they can just disable or weaken the sandbox in a future update if they want. For protection against malicious developers, you'll need to install apps from the App Store where the sandbox is enforced.
+
+There are a few ways to check whether an app is sandboxed:
+
+You can check whether running processes are sandboxed in the Activity Monitor. Right click on the columns and check "Sandbox"
+
+![Activity Monitor](https://docs-assets.developer.apple.com/published/67f023afa2/renderedDark2x-1667920132.png)
+
+You can check whether an app is sandboxed and what entitlements it has by running the command
+
+``` zsh
+% codesign -dvvv --entitlements - <path to your app>
+```
+
+If the app is sandboxed, you will see
+
+``` zsh
+    [Key] com.apple.security.app-sandbox
+    [Value]
+        [Bool] true
+```
