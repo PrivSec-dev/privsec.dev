@@ -1,0 +1,59 @@
+macOS comes equipped with many security features to keep you safe.
+
+## FileVault
+
+By default, your macOS install is encrypted, but it will automatically unlock on boot. Turning on [FileVault](https://support.apple.com/guide/mac-help/protect-data-on-your-mac-with-filevault-mh11785/mac) will require a user password to unlock the volume. It also makes it so that you need to enter a user password to enter recovery mode.
+
+## App Sandbox
+
+The [App Sandbox](https://developer.apple.com/documentation/security/app_sandbox/protecting_user_data_with_app_sandbox) is a feature that limits the access an app has to the rest of your system. Developers enable it when they sign their app, so it's not possible for you to enable it or modify the entitlements since they are defined in the signature. 
+
+The App Sandbox is designed to limit the damage to your system in the event an app is exploited, however it can't protect against malicious developers since they can just disable or weaken the sandbox in a future update if they want. For protection against malicious developers, you'll need to install apps from the App Store where the sandbox is enforced.
+
+There are a few ways to check whether an app is sandboxed:
+
+You can check whether running processes are sandboxed in the Activity Monitor. Right click on the columns and check "Sandbox"
+
+![Activity Monitor](https://docs-assets.developer.apple.com/published/67f023afa2/renderedDark2x-1667920132.png)
+
+You can check whether an app is sandboxed and what entitlements it has by running the command
+
+``` zsh
+% codesign -dvvv --entitlements - <path to your app>
+```
+
+If the app is sandboxed, you will see
+
+``` zsh
+    [Key] com.apple.security.app-sandbox
+    [Value]
+        [Bool] true
+```
+
+## Hardened Runtime
+
+The [Hardened Runtime](https://developer.apple.com/documentation/security/hardened_runtime) is an optional security feature that developers can enable that makes an app more resistant to exploitation. It prevents certain classes of exploits, like code injection, dynamically linked library (DLL) hijacking, and process memory space tampering.
+
+Unlike the App Sandbox, the Hardened Runtime is required in order for an app to be notarized and so you'll be warned by Gatekeeper if an app doesn't use it. While this warning is bypassable, you should be cautious and investigate a bit more before running it.
+
+Check if an app is using the Hardened Runtime before running it with the command
+
+``` zsh
+codesign --display --verbose /path/to/bundle.app
+```
+
+You will see `flags=0x10000(runtime)` if it's enabled.
+
+## Gatekeeper
+
+[Gatekeeper](https://support.apple.com/guide/security/gatekeeper-and-runtime-protection-sec5599b66df/web) stops you from running apps that aren't notarized. Notarization is a process by which app developers submit their app to Apple to scan for malware and ensure it meets certain requirements. Among these are that it is signed with a key provided by Apple to the developer and that the Hardened Runtime is enabled. It's also scanned for malware. Gatekeeper also prevents the loading of unwanted plugins with benign apps by opening apps from randomized, read-only locations.
+
+While the Gatekeeper warning can be easily bypassed by control + clicking on the app and clicking open, it's useful since it presents an unavoidable warning when you try to run an app for the first time that's not downloaded from the App Store.
+
+## XProtect
+
+XProtect is the built-in antivirus software in macOS. Like all AV, it's a last line of defense after all others have been bypassed.
+
+XProtect uses of YARA signatures and is updated frequently, independent of OS updates. This is one of the many reasons you should be cautious about blocking connections to Apple servers; many of them serve a security purpose, so make sure you know what you're blocking. It can also detect unknown malware using heuristics. When it detects unkown malware, it will send information about that software to Apple so that they can update the signatures in XProtect.
+
+Apple also issues revocations for notarization tickets, these are detected with online OCSP checks. Blocking these checks will make you more vulnerable to malicious apps.
