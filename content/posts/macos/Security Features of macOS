@@ -94,3 +94,11 @@ To prevent other apps from detecting what you type in Terminal, enable [Secure K
 ## Standard User Account
 
 When you first set up your Mac, you will create an Administrator account that has powerful access to the OS. [Apple recommends](https://support.apple.com/guide/mac-help/set-up-your-mac-to-be-secure-flvlt003/mac) limiting the number of Administrator accounts on your machine and using a Standard user account when Aministrator prvileges aren't needed.
+
+You can [hide an administrator account](https://support.apple.com/en-us/102099) so you don't accidentally log into it.
+
+Also make sure to set a strong password for any accounts you make and set a time after which a user will [automatically be logged out](https://support.apple.com/guide/mac-help/set-your-mac-to-log-out-when-not-in-use-mchlp2443/14.0/mac/14.0).
+
+## Prevent Windows from Reopening
+
+When you restart your Mac, you'll get a dialog box that asks if you want to reopen windows when you restart. It's best to [turn this off](https://support.apple.com/en-ca/102318) to prevent data from previous sessions from being retained.
