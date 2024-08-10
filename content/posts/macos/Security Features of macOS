@@ -83,3 +83,7 @@ macOS is a Unix-like, so certain security practices carry over from other system
 ## Terminal Secure Keyboard Entry
 
 To prevent other apps from detecting what you type in Terminal, enable [Secure Keyboard Entry](https://support.apple.com/guide/terminal/use-secure-keyboard-entry-trml109/mac).
+
+## Standard User Account
+
+When you first set up your Mac, you will create an Administrator account that has powerful access to the OS. [Apple recommends](https://support.apple.com/guide/mac-help/set-up-your-mac-to-be-secure-flvlt003/mac) limiting the number of Administrator accounts on your machine and using a Standard user account when Aministrator prvileges aren't needed.
