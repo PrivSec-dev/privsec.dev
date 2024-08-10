@@ -99,6 +99,10 @@ You can [hide an administrator account](https://support.apple.com/en-us/102099) 
 
 Also make sure to set a strong password for any accounts you make and set a time after which a user will [automatically be logged out](https://support.apple.com/guide/mac-help/set-your-mac-to-log-out-when-not-in-use-mchlp2443/14.0/mac/14.0).
 
+## Lock Screen Security
+
+Make sure you [require users to login](https://support.apple.com/guide/mac-help/set-up-your-mac-to-be-secure-flvlt003/mac#mchlpf5777a4) and set your Mac to [require a password](https://support.apple.com/guide/mac-help/require-a-password-after-waking-your-mac-mchlp2270/14.0/mac/14.0) after waking up.
+
 ## Prevent Windows from Reopening
 
 When you restart your Mac, you'll get a dialog box that asks if you want to reopen windows when you restart. It's best to [turn this off](https://support.apple.com/en-ca/102318) to prevent data from previous sessions from being retained.
