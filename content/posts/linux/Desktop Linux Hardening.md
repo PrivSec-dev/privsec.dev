@@ -347,7 +347,7 @@ Further reading:
 
 _See ["2.5.2&nbsp;Blacklisting kernel modules"](https://madaidans-insecurities.github.io/guides/linux-hardening.html#kasr-kernel-modules) in Madaidan's guide._
 
-On distributions other than Whonix and Kicksecure, you can copy the configuration file from [secureblue's repository](https://github.com/secureblue/secureblue/blob/live/files/system/usr/etc/modprobe.d/blacklist.conf) into `/etc/modprobe.d/`.
+On distributions other than Whonix and Kicksecure, you can copy the configuration file from [secureblue's repository](https://github.com/secureblue/secureblue/blob/live/files/system/etc/modprobe.d/blacklist.conf) into `/etc/modprobe.d/`.
 
 There are a few things in this config to keep in mind:
 
