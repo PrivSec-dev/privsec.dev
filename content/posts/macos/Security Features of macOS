@@ -57,3 +57,13 @@ XProtect is the built-in antivirus software in macOS. Like all AV, it's a last l
 XProtect uses of YARA signatures and is updated frequently, independent of OS updates. This is one of the many reasons you should be cautious about blocking connections to Apple servers; many of them serve a security purpose, so make sure you know what you're blocking. It can also detect unknown malware using heuristics. When it detects unkown malware, it will send information about that software to Apple so that they can update the signatures in XProtect.
 
 Apple also issues revocations for notarization tickets, these are detected with online OCSP checks. Blocking these checks will make you more vulnerable to malicious apps.
+
+## System Integrity Protection
+
+[SIP](https://support.apple.com/guide/security/system-integrity-protection-secb7ea06b49/web) protects [system files](https://support.apple.com/en-us/102149) from being changed, even by the root user. Since it's protecting your base system files, you should **never** disable it even temporarily if you want the best security. 
+
+## Secure Boot
+
+Mac computers ensure that only Apple-signed code runs from the lowest levels of the firmware to macOS itself. It accomplishes this with a [chain of trust](https://support.apple.com/guide/security/boot-process-secac71d5623/web) that starts with the Boot ROM burned into the Secure Enclave at the factory as the first step.
+
+A unique feature of Mac computers is that you can set a different LocalPolicy for different installs, so you could have your main macOS with Full Security set and also an Asahi Linux install set to Permissive Security and it won't affect the security of your macOS.
