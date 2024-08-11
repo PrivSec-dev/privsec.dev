@@ -133,4 +133,4 @@ Be careful installing apps that require Administrator privileges to run, you're 
 
 ## Firewall
 
-macOS comes with a built-in [firewall](https://support.apple.com/guide/mac-help/change-firewall-settings-on-mac-mh11783/mac). Make sure it's eanbled at the very least, but you can block all incoming connections for the best security/privacy.
+macOS comes with a built-in [firewall](https://support.apple.com/guide/mac-help/change-firewall-settings-on-mac-mh11783/mac). Make sure it's enabled at the very least, but you can block all incoming connections for the best security/privacy.
