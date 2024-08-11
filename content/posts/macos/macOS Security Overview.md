@@ -61,7 +61,7 @@ While the Gatekeeper warning can be easily bypassed by control + clicking on the
 
 XProtect is the built-in antivirus software in macOS. Like all AV, it's a last line of defense after all others have been bypassed.
 
-XProtect uses of YARA signatures and is updated frequently, independent of OS updates. This is one of the many reasons you should be cautious about blocking connections to Apple servers; many of them serve a security purpose, so make sure you know what you're blocking. It can also detect unknown malware using heuristics. When it detects unkown malware, it will send information about that software to Apple so that they can update the signatures in XProtect.
+XProtect uses YARA signatures and is updated frequently, independent of OS updates. This is one of the many reasons you should be cautious about blocking connections to Apple servers; many of them serve a security purpose, so make sure you know what you're blocking. It can also detect unknown malware using heuristics. When it detects unkown malware, it will send information about that software to Apple so that they can update the signatures in XProtect.
 
 Apple also issues revocations for notarization tickets, these are detected with online OCSP checks. Blocking these checks will make you more vulnerable to malicious apps.
 
