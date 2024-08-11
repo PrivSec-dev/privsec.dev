@@ -138,3 +138,7 @@ macOS comes with a built-in [firewall](https://support.apple.com/guide/mac-help/
 ## Disable AirDrop and Handoff
 
 You can disable [AirDrop and Handoff](https://support.apple.com/guide/mac-help/change-airdrop-handoff-settings-mchl6a407f99/mac) to better protect yourself against nearby threats. Turn off "Allow Handoff between this Mac and your iCloud devices," change "Airdrop" to "No one," turn off "AirPlay Receiver," and turn on "Require password."
+
+## Disable Bluetooth
+
+Bluetooth adds extra attack surface for nearby adversaries, so if that fits your threat model then you should [disable it](https://support.apple.com/guide/mac-help/turn-bluetooth-on-or-off-blth1008/mac).
