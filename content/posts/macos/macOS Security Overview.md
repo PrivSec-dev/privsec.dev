@@ -5,7 +5,7 @@ tags: ['macOS', 'Security']
 author: kimg45
 ---
 
-macOS comes equipped with many security features to keep you safe. Check out the [Apple Platform Security](https://support.apple.com/guide/security/welcome/web) page for more detail about the security features in a Mac. This guide assumes you're running on official Apple hardware that's officially supported by the latest version of macOS.
+macOS comes equipped with many security features to keep you safe. Check out the [Apple Platform Security](https://support.apple.com/guide/security/welcome/web) page for more detail about the security features in a Mac. This guide assumes you're running on official Apple hardware that's officially supported by the latest stable version of macOS.
 
 ## FileVault
 
