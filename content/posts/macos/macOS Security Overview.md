@@ -93,7 +93,7 @@ To prevent other apps from detecting what you type in Terminal, enable [Secure K
 
 ## Standard User Account
 
-When you first set up your Mac, you will create an Administrator account that has powerful access to the OS. [Apple recommends](https://support.apple.com/guide/mac-help/set-up-your-mac-to-be-secure-flvlt003/mac) limiting the number of Administrator accounts on your machine and using a Standard user account when Aministrator prvileges aren't needed.
+When you first set up your Mac, you will create an Administrator account that has powerful access to the OS. [Apple recommends](https://support.apple.com/guide/mac-help/set-up-your-mac-to-be-secure-flvlt003/mac) limiting the number of Administrator accounts on your machine and using a Standard user account when Aministrator privileges aren't needed.
 
 You can [hide an administrator account](https://support.apple.com/en-us/102099) so you don't accidentally log into it.
 
