@@ -142,3 +142,7 @@ You can disable [AirDrop and Handoff](https://support.apple.com/guide/mac-help/c
 ## Disable Bluetooth
 
 Bluetooth adds extra attack surface for nearby adversaries, so if that fits your threat model then you should [disable it](https://support.apple.com/guide/mac-help/turn-bluetooth-on-or-off-blth1008/mac).
+
+## Hardware Microphone Disconnect
+
+Macs feature a [hardware disconnect](https://support.apple.com/en-gb/guide/security/secbbd20b00b/1/web/1) for the microphone when you close the lid. There is no such feature for the camera as it's blocked when the lid is closed anyway.
