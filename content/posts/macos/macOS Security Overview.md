@@ -134,3 +134,7 @@ Be careful installing apps that require Administrator privileges to run, you're 
 ## Firewall
 
 macOS comes with a built-in [firewall](https://support.apple.com/guide/mac-help/change-firewall-settings-on-mac-mh11783/mac). Make sure it's enabled at the very least, but you can block all incoming connections for the best security/privacy.
+
+## Disable AirDrop and Handoff
+
+You can disable [AirDrop and Handoff](https://support.apple.com/guide/mac-help/change-airdrop-handoff-settings-mchl6a407f99/mac) to better protect yourself against nearby threats. Turn off "Allow Handoff between this Mac and your iCloud devices," change "Airdrop" to "No one," turn off "AirPlay Receiver," and turn on "Require password."
