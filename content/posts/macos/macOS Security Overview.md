@@ -21,7 +21,7 @@ There are a few ways to check whether an app is sandboxed:
 
 You can check whether running processes are sandboxed in the Activity Monitor. Right click on the columns and check "Sandbox"
 
-![Activity Monitor](https://docs-assets.developer.apple.com/published/67f023afa2/renderedDark2x-1667920132.png)
+![Activity Monitor](../../../static/images/activity-monitor.png)
 
 You can check whether an app is sandboxed and what entitlements it has by running the command
 
