@@ -87,7 +87,7 @@ Mac computers have an [IOMMU](https://support.apple.com/guide/security/direct-me
 
 ## Custom umask
 
-macOS is a Unix-like, so certain security practices carry over from other systems. Consider setting a [custom umask](https://support.apple.com/en-us/101914).
+macOS is a Unix-like, so certain security practices carry over from other systems. Consider setting a [stricter umask](https://support.apple.com/en-us/101914).
 
 ## Terminal Secure Keyboard Entry
 
