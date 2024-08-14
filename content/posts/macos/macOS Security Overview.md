@@ -154,3 +154,9 @@ Bluetooth adds extra attack surface for nearby adversaries, so if that fits your
 ## Hardware Microphone Disconnect
 
 Macs feature a [hardware disconnect](https://support.apple.com/en-gb/guide/security/secbbd20b00b/1/web/1) for the microphone when you close the lid. There is no such feature for the camera as it's blocked when the lid is closed anyway.
+
+## Automatic Updates
+
+One of the most important things you can do to secure your Mac is keep it up-to-date. On macOS it's especially important since most preinstalled software like Safari updates along with the OS itself. Enable [automatic updates](https://support.apple.com/en-ca/guide/mac-help/mchlpx1065/mac).
+
+Apps installed through the App Store can be set to [automatically update](https://support.apple.com/en-ca/guide/app-store/fir9b01adda3/mac) themselves as well.
