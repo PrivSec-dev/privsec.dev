@@ -11,6 +11,10 @@ macOS comes equipped with many security features to keep you safe. Check out the
 
 By default, your macOS install is encrypted, but it will automatically unlock on boot. Turning on [FileVault](https://support.apple.com/guide/mac-help/protect-data-on-your-mac-with-filevault-mh11785/mac) will require a user password to unlock the volume. It also makes it so that you need to enter a user password to enter recovery mode.
 
+FileVault works with two encryption keys: the volume key and the class key. The volume key encrypts the data in your drive and with FileVualt turned on, the class key encrypts the volume key. The class key is protected by a combination of the user’s password and the hardware UID when FileVault is turned on, meaning that the user password is required and the key is tied to the device and can't be decrypted outside the actual hardware.
+
+All encryption keys are handled by the Secure Enclave and are never exposed to the CPU or anything outside of the Secure Enclave itself.
+
 ## App Sandbox
 
 The [App Sandbox](https://developer.apple.com/documentation/security/app_sandbox/protecting_user_data_with_app_sandbox) is a feature that limits the access an app has to the rest of your system. Developers enable it when they sign their app, so it's not possible for you to enable it or modify the entitlements since they are defined in the signature. 
