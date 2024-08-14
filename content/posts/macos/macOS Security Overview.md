@@ -59,6 +59,10 @@ You will see `flags=0x10000(runtime)` if it's enabled.
 
 While the Gatekeeper warning can be easily bypassed by control + clicking on the app and clicking open, it's useful since it presents an unavoidable warning when you try to run an app for the first time that's not downloaded from the App Store.
 
+## Apps vs Other Executables
+
+Gatekeeper, the App Sandbox, and the Hardened Runtime only apply to apps and not other types of executable files, so when installing non-apps, you should be extremely careful. If possible, avoid installing non-app software altogether or install it in a virtual machine.
+
 ## XProtect
 
 XProtect is the built-in antivirus software in macOS. Like all AV, it's a last line of defense after all others have been bypassed.
