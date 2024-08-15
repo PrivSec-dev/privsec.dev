@@ -173,6 +173,8 @@ One of the most important things you can do to secure your Mac is keep it up-to-
 
 Apps installed through the App Store can be set to [automatically update](https://support.apple.com/en-ca/guide/app-store/fir9b01adda3/mac) themselves as well.
 
+Apple makes beta updates available, however you should avoid installing them in your main system as they add extra telemetry, can be unstable, and can potentially have undiscovered security vulnerabilities.
+
 ## Encrypted Backups
 
 If you choose to backup your Mac, you should do so with [Time Machine](https://support.apple.com/en-us/104984) and not a third party program. You should [encrypt your backups](https://support.apple.com/guide/mac-help/keep-your-time-machine-backup-disk-secure-mh21241/mac) for added security.
