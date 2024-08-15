@@ -15,6 +15,8 @@ FileVault works with two encryption keys: the volume key and the class key. The 
 
 All encryption keys are handled by the Secure Enclave and are never exposed to the CPU.
 
+Your Mac is at its most secure when it's fully off and the data is at rest. Depending on your threat model, it might behoove you to turn your Mac off completely whenever you're not using it.
+
 ## App Sandbox
 
 The [App Sandbox](https://developer.apple.com/documentation/security/app_sandbox/protecting_user_data_with_app_sandbox) is a feature that limits the access an app has to the rest of your system. Developers enable it when they sign their app, so it's not possible for you to enable it or modify the entitlements since they are defined in the signature. 
