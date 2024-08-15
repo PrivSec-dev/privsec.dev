@@ -214,3 +214,7 @@ Apple silicon Macs offer [Rosetta 2](https://support.apple.com/en-us/102527), a 
 ## Keychain
 
 [Keychain](https://support.apple.com/guide/security/keychain-data-protection-secb0694df1a/1/web/1) is the secure keystore in macOS. There's also a built-in [password manager](https://support.apple.com/en-us/105115) that can securely keep track of your passwords and generate new secure passwords.
+
+## iCloud Private Relay
+
+With an iCloud+ subscription you will have access to [Private Relay](https://developer.apple.com/icloud/prepare-your-network-for-icloud-private-relay/). Private Relay uses the QUIC protocol and routes your traffic through two nodes: one run by Apple and one run by a third party so that your real IP address and your destination can't be easily correlated. Private Relay covers Safari traffic, DNS queries, and all unencrypted traffic leaving your device.
