@@ -161,7 +161,7 @@ You can disable [AirDrop and Handoff](https://support.apple.com/guide/mac-help/c
 
 Bluetooth adds extra attack surface for nearby adversaries, so if that fits your threat model then you should [disable it](https://support.apple.com/guide/mac-help/turn-bluetooth-on-or-off-blth1008/mac).
 
-Note that Macs support [BLE Privacy](https://support.apple.com/guide/security/bluetooth-security-sec82597d97e/web#sec18ee64d9d) to protect you against bluetooth hardware address tracking.
+Note that Macs support [BLE Privacy](https://support.apple.com/guide/security/bluetooth-security-sec82597d97e/web#sec18ee64d9d) to protect you against bluetooth hardware address tracking. You'll need to check with the OEM of the bluetooth accessory you're using to see if it supports this feature as well. Apple bluetooth accessories support it.
 
 ## Hardware Microphone Disconnect
 
