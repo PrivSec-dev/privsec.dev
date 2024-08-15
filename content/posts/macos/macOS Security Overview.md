@@ -177,4 +177,4 @@ If you choose to backup your Mac, you should do so with [Time Machine](https://s
 
 ## Encrypted Disk Image
 
-In macOS, if you want to encrypt some files you should create an [encrypted disk image](https://support.apple.com/guide/disk-utility/create-a-disk-image-dskutl11888/mac#dsku7bb3d28c) to store them in.
+In macOS, if you want to encrypt some files you should create an [encrypted disk image](https://support.apple.com/guide/disk-utility/create-a-disk-image-dskutl11888/mac#dsku7bb3d28c) to store them in using Disk Utility.
