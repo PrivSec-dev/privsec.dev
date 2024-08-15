@@ -67,6 +67,10 @@ While the Gatekeeper warning can be easily bypassed by control + clicking on the
 
 Gatekeeper, the App Sandbox, and the Hardened Runtime only apply to apps and not other types of executable files, so when installing non-apps, you should be extremely careful. If possible, avoid installing non-app software altogether or install it in a virtual machine.
 
+## Systemwide Permissions
+
+macOS has certain permissions that apply to all software across the system. These can be found under [Privacy & Security](https://support.apple.com/guide/mac-help/change-privacy-security-settings-on-mac-mchl211c911f/mac) in the Settings.
+
 ## XProtect
 
 XProtect is the built-in antivirus software in macOS. Like all AV, it's a last line of defense after all others have been bypassed.
