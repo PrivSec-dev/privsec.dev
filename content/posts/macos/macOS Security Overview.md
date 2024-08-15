@@ -191,4 +191,4 @@ You can also add a [security key](https://support.apple.com/en-us/102637) to you
 
 ## Touch ID
 
-Macs support [Touch ID](https://support.apple.com/guide/mac-help/use-touch-id-mchl16fbf90a/mac) for secure authentication without having to enter your password. This can protect against shoulder surfing or someone recording your keystrokes.
+Macs support [Touch ID](https://support.apple.com/guide/mac-help/use-touch-id-mchl16fbf90a/mac) for secure authentication without having to enter your password. This can protect against shoulder surfing or someone recording your keystrokes. The fingerprint data never leaves the device.
