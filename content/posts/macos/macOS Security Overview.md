@@ -210,3 +210,7 @@ To completely wipe your Mac securely, use the [Erase All Content and Settings](h
 ## Rosetta 2
 
 Apple silicon Macs offer [Rosetta 2](https://support.apple.com/en-us/102527), a translation layer that lets you run Intel apps on an ARM Mac. Since it allows you to run more software than you could otherwise run, installing Rosetta 2 increases your attack surface and should be avoided unless you absolutely need it.
+
+## Keychain
+
+[Keychain](https://support.apple.com/guide/security/keychain-data-protection-secb0694df1a/1/web/1) is the secure keystore in macOS. There's also a built-in [password manager](https://support.apple.com/en-us/105115) that can securely keep track of your passwords and generate new secure passwords.
