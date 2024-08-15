@@ -174,3 +174,7 @@ Apps installed through the App Store can be set to [automatically update](https:
 ## Encrypted Backups
 
 If you choose to backup your Mac, you should do so with [Time Machine](https://support.apple.com/en-us/104984) and not a third party program. You should [encrypt your backups](https://support.apple.com/guide/mac-help/keep-your-time-machine-backup-disk-secure-mh21241/mac) for added security.
+
+## Encrypted Disk Image
+
+In macOS, if you want to encrypt some files you should create an [encrypted disk image](https://support.apple.com/guide/disk-utility/create-a-disk-image-dskutl11888/mac#dsku7bb3d28c) to store them in.
