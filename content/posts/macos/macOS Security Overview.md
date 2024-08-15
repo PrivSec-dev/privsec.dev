@@ -188,3 +188,7 @@ You can also [add a checksum](https://support.apple.com/guide/disk-utility/add-a
 If you use iCloud, you should enable [Advanced Data Protection](https://support.apple.com/en-us/108756) so that your files are E2EE.
 
 You can also add a [security key](https://support.apple.com/en-us/102637) to your Apple ID for extra protection.
+
+## Touch ID
+
+Macs support [Touch ID](https://support.apple.com/guide/mac-help/use-touch-id-mchl16fbf90a/mac) for secure authentication without having to enter your password. This can protect against shoulder surfing or someone recording your keystrokes.
