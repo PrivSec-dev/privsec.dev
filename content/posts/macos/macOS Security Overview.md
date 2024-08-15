@@ -13,7 +13,7 @@ By default, your macOS install is encrypted, but it will automatically unlock on
 
 FileVault works with two encryption keys: the volume key and the class key. The volume key encrypts the data in your drive and with FileVualt turned on, the class key encrypts the volume key. The class key is protected by a combination of the user’s password and the hardware UID when FileVault is turned on, meaning that the user password is required and the key is tied to the device and can't be decrypted outside the actual hardware.
 
-All encryption keys are handled by the Secure Enclave and are never exposed to the CPU or anything outside of the Secure Enclave itself.
+All encryption keys are handled by the Secure Enclave and are never exposed to the CPU.
 
 ## App Sandbox
 
