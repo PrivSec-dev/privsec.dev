@@ -170,3 +170,7 @@ Macs feature a [hardware disconnect](https://support.apple.com/en-gb/guide/secur
 One of the most important things you can do to secure your Mac is keep it up-to-date. On macOS it's especially important since most preinstalled software like Safari updates along with the OS itself. Enable [automatic updates](https://support.apple.com/en-ca/guide/mac-help/mchlpx1065/mac).
 
 Apps installed through the App Store can be set to [automatically update](https://support.apple.com/en-ca/guide/app-store/fir9b01adda3/mac) themselves as well.
+
+## Encrypted Backups
+
+If you choose to backup your Mac, you should do so with [Time Machine](https://support.apple.com/en-us/104984) and not a third party program. You should [encrypt your backups](https://support.apple.com/guide/mac-help/keep-your-time-machine-backup-disk-secure-mh21241/mac) for added security.
