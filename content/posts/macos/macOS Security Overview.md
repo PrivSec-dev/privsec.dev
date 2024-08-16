@@ -93,6 +93,8 @@ On Apple Silicon Macs, it's combined with [Kernel Integrity Protection](https://
 
 Mac computers ensure that only Apple-signed code runs from the lowest levels of the firmware to macOS itself. It accomplishes this with a [chain of trust](https://support.apple.com/guide/security/boot-process-secac71d5623/web) that starts with the Boot ROM burned into the Secure Enclave at the factory as the first step.
 
+Macs let you reduce your boot security by setting a [security policy](https://support.apple.com/guide/security/startup-disk-security-policy-control-sec7d92dc49f/web). It's best to leave it set to Full Security.
+
 A unique feature of Mac computers is that you can set a different [security policy](https://support.apple.com/guide/security/startup-disk-security-policy-control-sec7d92dc49f/web) for different installs, so you could have your main macOS with Full Security set and also an Asahi Linux install set to Permissive Security and it won't affect the security of your macOS. Avoid lowering the security policy below Full Security for any operating system you require to be secure, even temporarily.
 
 ## DMA Protection
