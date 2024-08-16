@@ -129,6 +129,8 @@ Use the Control + Command + Q keyboard shortcut to lock your screen any time you
 
 When you restart your Mac, you'll get a dialog box that asks if you want to reopen windows when you restart. It's best to [turn this off](https://support.apple.com/en-ca/102318) to prevent data from previous sessions from being retained.
 
+There have also been [vulnerabilities](https://sector7.computest.nl/post/2022-08-process-injection-breaking-all-macos-security-layers-with-a-single-vulnerability/) discovered with this feature in the past.
+
 ## Automatically Empty Trash
 
 You can set the trash to [automatically empty](https://support.apple.com/en-ca/guide/mac-help/mchlp1093/14.0/mac/14.0#mchl0deca7f1) every 30 days to prevent old unwanted files from sticking around.
