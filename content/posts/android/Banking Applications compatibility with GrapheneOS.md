@@ -81,7 +81,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [ME Bank](https://play.google.com/store/apps/details?id=au.com.mebank.banking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/203)
 - [MyState: The human way to bank](https://play.google.com/store/apps/details?id=com.mystate.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/345)
 - [NAB Mobile Banking](https://play.google.com/store/apps/details?id=au.com.nab.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/76)
-- ~~[Ubank Money App](https://play.google.com/store/apps/details?id=au.com.bank86400)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/156)
+- [Ubank Money App](https://play.google.com/store/apps/details?id=au.com.bank86400) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/156)
 - [Up — Easy Money](https://play.google.com/store/apps/details?id=au.com.up.money) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/102)
 - [Westpac](https://play.google.com/store/apps/details?id=org.westpac.bank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/77)
 
@@ -158,6 +158,8 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 - [中国银行](https://www.bankofchina.com/ebanking/service/cs1/201009/t20100921_1151946.html) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/398)
 - [招商银行 China Merchants Bank](https://play.google.com/store/apps/details?id=cmb.pb) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/420)
+- [中信银行 Citic Bank](https://www.citicbank.com/personal/ebank/personal/) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/487)
+- [兴业银行 Industrial Bank](https://www.cib.com.cn/common/download/client.html) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/486)
 
 ### Colombia
 
@@ -282,6 +284,8 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [BOCHK中銀香港](https://play.google.com/store/apps/details?id=com.bochk.app.aos) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/482)
 - [HSBC HK Mobile Banking](https://play.google.com/store/apps/details?id=hk.com.hsbc.hsbchkmobilebanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/303)
 - [inMotion by CNCBI](https://play.google.com/store/apps/details?id=com.citic.inmotion) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/483)
+- [OCBC Hong Kong](https://play.google.com/store/apps/details?id=com.winghang) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/484)
+- ~~[Octopus](https://play.google.com/store/apps/details?id=com.octopuscards.nfc_reader)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/485)
 
 ### Hungary
 
