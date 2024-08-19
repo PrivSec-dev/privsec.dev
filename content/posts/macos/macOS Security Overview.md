@@ -73,7 +73,7 @@ Gatekeeper, the App Sandbox, and the Hardened Runtime only apply to apps and not
 
 ## Systemwide Permissions
 
-macOS has certain permissions that apply to all software across the system. These can be found under [Privacy & Security](https://support.apple.com/guide/mac-help/change-privacy-security-settings-on-mac-mchl211c911f/mac) in the Settings.
+macOS has permissions that apply to all software across the system. These can be found under [Privacy & Security](https://support.apple.com/guide/mac-help/change-privacy-security-settings-on-mac-mchl211c911f/mac) in the Settings.
 
 ## XProtect
 
