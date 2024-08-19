@@ -169,6 +169,8 @@ Bluetooth adds extra attack surface for nearby adversaries, so if that fits your
 
 Note that Macs support [BLE Privacy](https://support.apple.com/guide/security/bluetooth-security-sec82597d97e/web#sec18ee64d9d) to protect you against bluetooth hardware address tracking. You'll need to check with the OEM of the bluetooth accessory you're using to see if it supports this feature as well. Apple bluetooth accessories support it.
 
+Apple Bluetooth accessories update their firmware automatically without the need for third party software.
+
 ## Hardware Microphone Disconnect
 
 Macs feature a [hardware disconnect](https://support.apple.com/en-gb/guide/security/secbbd20b00b/1/web/1) for the microphone when you close the lid. There is no such feature for the camera as it's blocked when the lid is closed anyway.
