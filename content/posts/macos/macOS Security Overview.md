@@ -175,6 +175,14 @@ Apple Bluetooth accessories update their firmware automatically without the need
 
 Macs feature a [hardware disconnect](https://support.apple.com/en-gb/guide/security/secbbd20b00b/1/web/1) for the microphone when you close the lid. There is no such feature for the camera as it's blocked when the lid is closed anyway.
 
+## Camera
+
+The built-in camera in Macs uses an indicator light that shows when the camera is on. According to [Apple](https://support.apple.com/en-us/102177):
+
+>The camera is engineered so that it can’t activate without the camera indicator light also turning on. This is how you can tell if your camera is on.
+
+Make sure not to use a camera cover on your Mac or it might damage the screen. Only use something no thicker than a standard piece of printer paper, such as part of a sticky note, to cover the camera.
+
 ## Automatic Updates
 
 One of the most important things you can do to secure your Mac is keep it up-to-date. On macOS it's especially important since most preinstalled software like Safari updates along with the OS itself. Enable [automatic updates](https://support.apple.com/en-ca/guide/mac-help/mchlpx1065/mac).
