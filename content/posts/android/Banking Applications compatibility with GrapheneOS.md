@@ -90,7 +90,10 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [bank99 | Online Banking ex-ING](https://play.google.com/store/apps/details?id=at.ing.diba.client.onlinebanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/275)
 - [Bank Austria MobileBanking](https://play.google.com/store/apps/details?id=com.bankaustria.android.olb) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/15)
 - [complete Control](https://play.google.com/store/apps/details?id=com.cardcomplete.completecontrol) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/408)
+- [flatex next AT: Aktien und ETF](https://play.google.com/store/apps/details?id=de.xcom.flatexat) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/491)
+- [George Österreich](https://play.google.com/store/apps/details?id=at.erstebank.george) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/490)
 - [Mein ELBA-App](https://play.google.com/store/apps/details?id=at.rsg.pfp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/62)
+- [Renault Bank direkt](https://play.google.com/store/apps/details?id=at.plot.banking.mobile.rci) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/492)
 - [s Identity](https://play.google.com/store/apps/details?id=at.erstebank.securityapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/278)
 
 ### Bangladesh
@@ -135,6 +138,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 - [Affinity Mobile](https://play.google.com/store/apps/details?id=ca.affinitycu.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/71)
 - [ATB Personal - Mobile Banking](https://play.google.com/store/apps/details?id=com.atb.ATBMobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/415)
+- [CIBC Mobile Banking®](https://play.google.com/store/apps/details?id=com.cibc.android.mobi) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/489)
 - [Coast Capital Savings](https://play.google.com/store/apps/details?id=com.coastcapitalsavings.dcu) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/175)
 - [BMO Mobile Banking](https://play.google.com/store/apps/details?id=com.bmo.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/19)
 - [EQ Bank Mobile Banking](https://play.google.com/store/apps/details?id=com.eqbank.eqbank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/103)
