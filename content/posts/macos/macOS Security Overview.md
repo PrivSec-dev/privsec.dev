@@ -226,3 +226,9 @@ Apple silicon Macs offer [Rosetta 2](https://support.apple.com/en-us/102527), a 
 ## iCloud Private Relay
 
 With an iCloud+ subscription, you will have access to [Private Relay](https://developer.apple.com/icloud/prepare-your-network-for-icloud-private-relay/). Private Relay uses the QUIC protocol and routes your traffic through two nodes: one run by Apple and one run by a third party so that your real IP address and your destination can't be easily correlated. Private Relay covers Safari traffic, DNS queries, and insecure http app traffic leaving your device.
+
+## Command Line Tools
+
+If you need developer tools like Python and git, you can install Xcode and get them with automatic updates without having to install any third-party software. Alternatively, you can use the command `xcode-select --install` to install the tools without Xcode.
+
+This adds a lot of attack surface to your machine, so it's best to avoid installing developer tools unless you absolutely need them.
