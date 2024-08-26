@@ -91,7 +91,7 @@ On Apple Silicon Macs, it's combined with [Kernel Integrity Protection](https://
 
 ## Secure Boot
 
-Mac computers ensure that only Apple-signed code runs from the lowest levels of the firmware to macOS itself. It accomplishes this with a [chain of trust](https://support.apple.com/guide/security/boot-process-secac71d5623/web) that starts with the Boot ROM burned into the Secure Enclave at the factory as the first step.
+Mac computers ensure that only Apple-signed code runs from the lowest levels of the firmware to macOS itself (assuming Full Security is enabled). It accomplishes this with a [chain of trust](https://support.apple.com/guide/security/boot-process-secac71d5623/web) that starts with the Boot ROM burned into the Secure Enclave at the factory as the first step.
 
 Macs let you reduce your boot security by setting a [security policy](https://support.apple.com/guide/security/startup-disk-security-policy-control-sec7d92dc49f/web). It's best to leave it set to Full Security.
 
