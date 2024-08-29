@@ -147,7 +147,9 @@ Be careful installing apps that require Administrator privileges to run, you're 
 
 **Note**: When mounting a .dmg file, usually a graphic will come up asking you to move the app to your Applications folder, which will trigger an Administrator popup. The app isn't actually running, you're just moving it to the systemwide Applications folder so that all users on the system can run it. If you're not comfortable with this, you can simply drag the app anywhere else and run it.
 
-.dmg files are just a disk image that you're mounting, similar to a virtual flash drive. These won't run any scripts on your machine, they simply allow you to copy the app to wherever you want on your machine and then run it. .pkg files are a bit different in that they will typically run some kind of install script, which most of the time requires Administrator privileges. You should favor .dmg over .pkg format when downloading apps from the internet.
+.dmg files are just a disk image that you're mounting, similar to a virtual flash drive. These won't run any scripts on your machine, they simply allow you to copy the app to wherever you want on your machine and then run it. 
+
+.pkg files are a bit different in that they will typically run some kind of install script, which most of the time requires Administrator privileges. You should avoid .pkg files and favor apps that just give you the .app file itself.
 
 ## Firewall
 
