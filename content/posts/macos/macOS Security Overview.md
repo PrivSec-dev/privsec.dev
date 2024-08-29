@@ -109,9 +109,11 @@ Mac computers have an [IOMMU](https://support.apple.com/guide/security/direct-me
 
 macOS is a Unix-like, so certain security practices carry over from other systems. Consider setting a [stricter umask](https://support.apple.com/en-us/101914).
 
-## Terminal Secure Keyboard Entry
+## Terminal Security
 
 To prevent other apps from detecting what you type in Terminal, enable [Secure Keyboard Entry](https://support.apple.com/guide/terminal/use-secure-keyboard-entry-trml109/mac).
+
+Avoid giving the Terminal full disk access so that unsandboxed apps can't abuse it to gain unauthorized access.
 
 ## Standard User Account
 
