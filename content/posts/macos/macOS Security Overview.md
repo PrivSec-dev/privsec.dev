@@ -123,6 +123,14 @@ You can [hide an administrator account](https://support.apple.com/en-us/102099) 
 
 Also make sure to set a strong password for any accounts you make and set a time after which a user will [automatically be logged out](https://support.apple.com/guide/mac-help/set-your-mac-to-log-out-when-not-in-use-mchlp2443/14.0/mac/14.0).
 
+By default, users can read folders and files in other users' home directories, other than the Desktop, Downloads, Movies, Music, and Pictures folders. To fix this, run this in the Terminal:
+
+``` zsh
+for user in $(ls /Users | grep -v 'Shared'); do
+sudo chmod 700 /Users/"$user"
+done
+```
+
 ## Lock Screen Security
 
 Make sure you [require users to login](https://support.apple.com/guide/mac-help/set-up-your-mac-to-be-secure-flvlt003/mac#mchlpf5777a4) and set your Mac to [require a password](https://support.apple.com/guide/mac-help/require-a-password-after-waking-your-mac-mchlp2270/14.0/mac/14.0) after waking up.
