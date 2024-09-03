@@ -75,6 +75,8 @@ Gatekeeper, the App Sandbox, and the Hardened Runtime only apply to apps and not
 
 macOS has permissions that apply to all software across the system. These can be found under [Privacy & Security](https://support.apple.com/guide/mac-help/change-privacy-security-settings-on-mac-mchl211c911f/mac) in the Settings.
 
+The Downloads, Desktop, Documents, Movies, Music, and Pictures folders for each user in particular are protected by permissions and thus are more secure than other places you might save your files. Consider using these folders for particularly sensitive data.
+
 ## XProtect
 
 XProtect is the built-in antivirus software in macOS. Like all AV, it's a last line of defense after all others have been bypassed.
