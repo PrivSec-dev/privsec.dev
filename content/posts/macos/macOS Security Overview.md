@@ -248,3 +248,7 @@ With an iCloud+ subscription, you will have access to [Private Relay](https://de
 If you need developer tools like Python and git, you can install Xcode and get them with automatic updates without having to install any third-party software. Alternatively, you can use the command `xcode-select --install` to install the tools without Xcode.
 
 This adds a lot of attack surface to your machine, so it's best to avoid installing developer tools unless you absolutely need them.
+
+## Accessibility
+
+Never give software [accessibility permissions](https://support.apple.com/en-my/guide/mac-help/mh43185/mac) unless you absolutely need them for genuine accessibility reasons. It's not uncommon for apps to ask for these permissions for eroneous things.
