@@ -29,7 +29,7 @@ You can check whether running processes are sandboxed in the Activity Monitor. R
 
 ![Activity Monitor](/images/activity-monitor.png)
 
-You can check whether an app is sandboxed and what entitlements it has by running the command
+You can check whether an app is sandboxed and what entitlements it has *before* running it by running the command
 
 ``` zsh
 % codesign -dvvv --entitlements - <path to your app>
