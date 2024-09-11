@@ -316,7 +316,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [iMobile Pay: Banking, UPI](https://play.google.com/store/apps/details?id=com.csam.icici.bank.imobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/296)
 - [IndOASIS Indian Bank MobileApp](https://play.google.com/store/apps/details?id=com.IndianBank.IndOASIS) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/293)
 - [Kotak Mobile Banking App](https://play.google.com/store/apps/details?id=com.msf.kbank.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/137)
-- [Paytm: Secure UPI Payments](https://play.google.com/store/apps/details?id=net.one97.paytm) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/140)
+- ~~[Paytm: Secure UPI Payments](https://play.google.com/store/apps/details?id=net.one97.paytm)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/140)
 - [PhonePe UPI, Payment, Recharge](https://play.google.com/store/apps/details?id=com.phonepe.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/134)
 - [PNB ONE](https://play.google.com/store/apps/details?id=com.Version1) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/328)
 - [Vyom - Union Bank of India](https://play.google.com/store/apps/details?id=com.infrasoft.uboi) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/141)
@@ -505,6 +505,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [BBVA Spain | Online Banking](https://play.google.com/store/apps/details?id=com.bbva.bbvacontigo) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/213)
 - [CaixaBankNow](https://play.google.com/store/apps/details?id=es.lacaixa.mobile.android.newwapicon) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/355)
 - [CaixaBank Sign - Digital sign](https://play.google.com/store/apps/details?id=es.caixabank.caixabanksign) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/354)
+- [Caja Ingenieros Banca MÓVIL](https://play.google.com/store/apps/details?id=com.cajaingenieros.android.bancamovil) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/496)
 - [EVO Banco móvil](https://play.google.com/store/apps/details?id=es.evobanco.bancamovil) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/112)
 - [Openbank – banca móvil](https://play.google.com/store/apps/details?id=es.openbank.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/240)
 
