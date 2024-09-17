@@ -227,6 +227,8 @@ Prefer networks that support [WPA3](https://support.apple.com/en-us/102766#secur
 
 Avoid connecting to [hidden networks](https://support.apple.com/en-us/102766#hiddennetwork) as they require your device to broadcast the network SSID which could be used to fingerprint you and identify the networks you connect to.
 
+You can [randomize your MAC address](https://support.apple.com/en-gb/guide/mac-help/mh11935/15.0/mac/15.0#mchldb2b7302) in Network settings. Set it to rotating and you'll periodically get a new one.
+
 ## Securely Erase Your Mac
 
 To completely wipe your Mac securely, use the [Erase All Content and Settings](https://support.apple.com/en-us/102664) option. This will ensure all data is securely wiped and no traces of your ownership are left on the Mac. This is important so that the next owner is able to set it up without running into issues with verification. You'll need to know an Administrator password and Apple ID password to turn off Find My if you've enabled it previously.
