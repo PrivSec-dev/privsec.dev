@@ -63,7 +63,7 @@ You will see `flags=0x10000(runtime)` if it's enabled.
 
 [Gatekeeper](https://support.apple.com/guide/security/gatekeeper-and-runtime-protection-sec5599b66df/web) stops you from running apps that aren't notarized. Notarization is a process by which app developers submit their app to Apple to scan for malware and ensure it meets certain requirements. Among these are that it is signed with a key provided by Apple to the developer and that the Hardened Runtime is enabled. Gatekeeper also prevents the loading of unwanted plugins with benign apps by opening apps from randomized, read-only locations.
 
-While the Gatekeeper warning can be easily bypassed by control + clicking on the app and clicking open, it's useful since it presents an unavoidable warning when you try to run an app for the first time that's not downloaded from the App Store.
+While the Gatekeeper warning can be easily bypassed by going to **Privacy & Security** in the settings and clicking open, it's useful since it presents an unavoidable warning when you try to run an app for the first time that's not downloaded from the App Store.
 
 You can change [Gatekeeper settings](https://support.apple.com/en-us/102445) to only allow apps downloaded from the App Store if you choose. It will still be bypassable but it will stop apps from being run that aren't from the app store without you explicitly allowing it.
 
