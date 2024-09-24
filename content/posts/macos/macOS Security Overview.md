@@ -215,7 +215,7 @@ You can also [add a checksum](https://support.apple.com/guide/disk-utility/add-a
 
 If you use iCloud, you should enable [Advanced Data Protection](https://support.apple.com/en-us/108756) so that your files are E2EE.
 
-You can also add a [security key](https://support.apple.com/en-us/102637) to your Apple ID for extra protection.
+You can also add a [security key](https://support.apple.com/en-us/102637) to your Apple Account for extra protection.
 
 ## Touch ID
 
@@ -231,7 +231,7 @@ You can [randomize your MAC address](https://support.apple.com/en-gb/guide/mac-h
 
 ## Securely Erase Your Mac
 
-To completely wipe your Mac securely, use the [Erase All Content and Settings](https://support.apple.com/en-us/102664) option. This will ensure all data is securely wiped and no traces of your ownership are left on the Mac. This is important so that the next owner is able to set it up without running into issues with verification. You'll need to know an Administrator password and Apple ID password to turn off Find My if you've enabled it previously.
+To completely wipe your Mac securely, use the [Erase All Content and Settings](https://support.apple.com/en-us/102664) option. This will ensure all data is securely wiped and no traces of your ownership are left on the Mac. This is important so that the next owner is able to set it up without running into issues with verification. You'll need to know an Administrator password and Apple Account password to turn off Find My if you've enabled it previously.
 
 ## Rosetta 2
 
