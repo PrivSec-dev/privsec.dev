@@ -105,7 +105,7 @@ Mac computers have an [IOMMU](https://support.apple.com/guide/security/direct-me
 
 ## Lockdown Mode
 
-[Lockdown Mode](https://support.apple.com/en-us/105120) is an optional security feature that disables lots of attack surface in your Mac. It may break certain things like websites or apps, but you can disable it for individual apps or websites if you need to.
+[Lockdown Mode](https://support.apple.com/en-us/105120) is an optional security feature that disables lots of attack surface in your Mac. It may break certain things like websites or apps, but you can disable it for individual websites if you need to.
 
 ## Custom umask
 
