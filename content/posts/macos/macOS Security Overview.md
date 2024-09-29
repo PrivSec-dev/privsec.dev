@@ -32,7 +32,7 @@ You can check whether running processes are sandboxed in the Activity Monitor. R
 You can check whether an app is sandboxed and what entitlements it has *before* running it by running the command
 
 ``` zsh
-% codesign -dvvv --entitlements - <path to your app>
+codesign -dvvv --entitlements - <path to your app>
 ```
 
 If the app is sandboxed, you will see
@@ -54,7 +54,7 @@ Unlike the App Sandbox, the Hardened Runtime is required in order for an app to 
 Check if an app is using the Hardened Runtime before running it with the command
 
 ``` zsh
-codesign --display --verbose /path/to/bundle.app
+codesign --display --verbose <path to your app>
 ```
 
 You will see `flags=0x10000(runtime)` if it's enabled.
