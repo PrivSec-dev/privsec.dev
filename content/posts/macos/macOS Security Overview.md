@@ -254,3 +254,7 @@ This adds a lot of attack surface to your machine, so it's best to avoid install
 ## Accessibility
 
 Never give software [accessibility permissions](https://support.apple.com/en-my/guide/mac-help/mh43185/mac) unless you absolutely need them for genuine accessibility reasons. It's not uncommon for apps to ask for these permissions for eroneous things.
+
+## Remote Management
+
+If you don't need ssh, [turn it off](https://support.apple.com/en-gb/guide/mac-help/mchlp1066/15.0/mac/15.0). The same goes for [remote desktop](https://support.apple.com/en-gb/guide/mac-help/mh11851/15.0/mac/15.0).
