@@ -169,6 +169,14 @@ macOS comes with a built-in [firewall](https://support.apple.com/guide/mac-help/
 
 Avoid third-party firewalls like LittleSnitch or LuLu that require you to install a system extension. They don't cover DNS so data exfiltration is still possible.
 
+To block an app from the Terminal, run the command
+
+```zsh
+/usr/libexec/ApplicationFirewall/socketfilterfw --blockapp <path to your app>
+```
+
+Some software might not allow you to block it in the UI, you can use this command to bypass it.
+
 ## Disable AirDrop and Handoff
 
 You can disable [AirDrop and Handoff](https://support.apple.com/guide/mac-help/change-airdrop-handoff-settings-mchl6a407f99/mac) to better protect yourself against nearby threats. Turn off "Allow Handoff between this Mac and your iCloud devices," change "Airdrop" to "No one," turn off "AirPlay Receiver," and turn on "Require password."
