@@ -45,7 +45,7 @@ It would be much better if you just stick to the stock operating system (which g
 
 ### Chromium Webview Updates
 
-Android comes with a system [webview](https://developer.android.com/reference/android/webkit/WebView), a component that many apps rely on to use as part of their activity layout. It effectively behaves like a minimal browser, opening random websites with arbitrary code the internet. Thus, it is very important that this component is consistently kept up to dater.
+Android comes with a system [webview](https://developer.android.com/reference/android/webkit/WebView), a component that many apps rely on to use as part of their activity layout. It effectively behaves like a minimal browser, opening random websites with arbitrary code the internet. Thus, it is very important that this component is consistently kept up to date.
 
 Some Android-based operating systems, including ones like CalyxOS, often fall behind on security updates for this component. Particularly, this has gotten so bad that they actually fell behind for [3 months](https://github.com/privacyguides/privacyguides.org/pull/548#issuecomment-1018245074) back in January 2022 and [2 months](https://github.com/privacyguides/privacyguides.org/pull/1378) in June 2022. It is a good indication that these operating systems cannot keep up with security updates and should not be used.
 
