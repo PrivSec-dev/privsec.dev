@@ -95,7 +95,7 @@ Being a soft-fork of [LineageOS](https://lineageos.org/), DivestOS inherits many
 
 It comes with substantial hardening over AOSP. DivestOS has automated kernel vulnerability ([CVE](https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures)) [patching](https://gitlab.com/divested-mobile/cve_checker), fewer proprietary blobs, a custom [hosts](https://divested.dev/index.php?page=dnsbl) file, and various security features ported from GrapheneOS. A non-exhaustive list of this includes:
 
-- A hardened webview. [Mulch](https://gitlab.com/divested-mobile/mulch) comes with *some* patches from GrapheneOS's Vanadium browser and the [Bromite](https://github.com/bromite/bromite) project. It gets updated fairly quickly and do not fall behind nearly as much as Bromite.
+- A hardened webview. [Mulch](https://gitlab.com/divested-mobile/mulch) comes with *some* patches from GrapheneOS's Vanadium browser and the [Bromite](https://github.com/bromite/bromite) project. It gets updated fairly quickly and does not fall behind nearly as much as Bromite did.
 - Kernel patches from GrapheneOS and enables all available kernel security features via [defconfig hardening](https://github.com/Divested-Mobile/DivestOS-Build/blob/master/Scripts/Common/Functions.sh#L758). All kernels newer than version 3.4 include full page [sanitization](https://lwn.net/Articles/334747/) and all ~22 Clang-compiled kernels have [`-ftrivial-auto-var-init=zero`](https://reviews.llvm.org/D54604?id=174471) enabled.
 -  GrapheneOS's [`INTERNET`](https://developer.android.com/training/basics/network-ops/connecting) and SENSORS permission toggle.
 - [Hardened memory allocator](https://github.com/GrapheneOS/hardened_malloc)
