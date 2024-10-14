@@ -437,6 +437,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 ### Philippines
 
 - [GCash](https://play.google.com/store/apps/details?id=com.globe.gcash.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/382)
+- ~~[GoTyme Bank](https://play.google.com/store/apps/details?id=ph.com.gotyme)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/510)
 
 ### Poland
 
@@ -631,9 +632,10 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Bank of America Mobile Banking](https://play.google.com/store/apps/details?id=com.infonow.bofa) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/242)
 - [BECU](https://play.google.com/store/apps/details?id=org.becu.androidapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/60)
 - [Capital One Mobile](https://play.google.com/store/apps/details?id=com.konylabs.capitalone) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/107)
-- [Cash App](https://play.google.com/store/apps/details?id=com.squareup.cash) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/453)
+- ~~[Cash App](https://play.google.com/store/apps/details?id=com.squareup.cash)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/453)
 - [Chase Mobile](https://play.google.com/store/apps/details?id=com.chase.sig.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/13)
 - [Chime – Mobile Banking](https://play.google.com/store/apps/details?id=com.onedebit.chime) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/46)
+- [CitiManager – Corporate Cards](https://play.google.com/store/apps/details?id=com.citi.mobile.ccc) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/511)
 - [Citi Mobile®](https://play.google.com/store/apps/details?id=com.citi.citimobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/366)
 - [Citizens Bank Mobile Banking](https://play.google.com/store/apps/details?id=com.citizensbank.androidapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/66)
 - [CommunityAmerica Mobile](https://play.google.com/store/apps/details?id=com.ifs.banking.fiid1454) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/154)
