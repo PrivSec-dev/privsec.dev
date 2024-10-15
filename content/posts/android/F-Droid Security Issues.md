@@ -166,13 +166,7 @@ So far, you have been presented with referenced facts that are easily verifiable
 
 While some improvements could easily be made, I don't think F-Droid is in an ideal situation to solve all of these issues because some of them are **inherent flaws** in their architecture. I'd also argue that their core philosophy is not aligned with some security principles expressed in this article. In any case, I can only wish for them to improve since they're one of the most popular alternatives to commercial app repositories, and are therefore trusted by a large userbase.
 
-F-Droid is often seen as the only way to get and support open-source apps: that is not the case. Sure, F-Droid could help you in finding FOSS apps that you wouldn't otherwise have known existed. Many developers also publish their FOSS apps on the **Play Store** or their website directly. Most of the time, releases are available on **GitHub**, which is great since each GitHub releases page has an Atom feed. If downloading APKs from regular websites, you can use `apksigner` to validate the authenticity by comparing the certificate fingerprint against the fingerprint from another source (it wouldn't matter otherwise).
-
-This is how you may proceed to get the app certificate:
-
-```
-apksigner verify --print-certs --verbose myCoolApp.apk
-```
+F-Droid is often seen as the only way to get and support open-source apps: that is not the case. Sure, F-Droid could help you in finding FOSS apps that you wouldn't otherwise have known existed. Many developers also publish their FOSS apps on the **Play Store** or their website directly. Most of the time, releases are available on **GitHub**, which is great because you can use [Obtainium](https://github.com/ImranR98/Obtainium) to track and install app updates. If downloading APKs from regular websites, you can use [AppVerifier](https://github.com/soupslurpr/AppVerifier) to validate the authenticity by comparing the certificate fingerprint against the fingerprint from another source (it wouldn't matter otherwise). Obtainium will automatically open the share menu and encourage you to share it with AppVerifier if you've got it installed (and haven't turned off that feature in Obtainium).
 
 Also, as written above: the OS pins the app signature (for all profiles) upon installation, and enforces signature check for app updates. In practice, this means the source doesn't matter as much after the initial installation.
 
