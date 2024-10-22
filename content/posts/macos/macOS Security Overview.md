@@ -179,7 +179,7 @@ Some software might not allow you to block it in the UI, you can use this comman
 
 ## Disable AirDrop and Handoff
 
-You can disable [AirDrop and Handoff](https://support.apple.com/guide/mac-help/change-airdrop-handoff-settings-mchl6a407f99/mac) to better protect yourself against nearby threats. Turn off "Allow Handoff between this Mac and your iCloud devices," change "Airdrop" to "No one," turn off "AirPlay Receiver," and turn on "Require password."
+You can disable AirDrop and Handoff to better protect yourself against nearby threats. Go to General > AirDrop and Handoff. Turn off "Allow Handoff between this Mac and your iCloud devices," change "Airdrop" to "No one," turn off "AirPlay Receiver," and turn on "Require password."
 
 ## Bluetooth
 
