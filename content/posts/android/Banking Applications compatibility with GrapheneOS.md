@@ -101,6 +101,12 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 - [bKash](https://play.google.com/store/apps/details?id=com.bKash.customerapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/454)
 
+### Belarus
+
+- [BELKART PAY](https://play.google.com/store/apps/details?id=com.belkartpay.belkartpay) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/521)
+- [iParitet](https://play.google.com/store/apps/details?id=by.iparitet) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/520)
+- [МТБанк Moby (MTBank)](https://play.google.com/store/apps/details?id=by.mtbank.Moby) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/519)
+
 ### Belgium
 
 - [Argenta Banking](https://play.google.com/store/apps/details?id=be.argenta.bankieren) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/274)
@@ -471,6 +477,11 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 ### Russia
 
 - [Mir Pay](https://appgallery.huawei.com/app/C103191567) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/495)
+- [VTB](https://www.vtb.ru/personal/online-servisy/vtb-online-android/) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/516)
+- [Сбербанк (Sberbank)](https://appgallery.cloud.huawei.com/appdl/C100994843) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/517)
+- [T-Bank](https://www.tbank.ru/apps/android-bank/) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/522)
+- [Yandex Pay](https://play.google.com/store/apps/details?id=com.yandex.bank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/518)
+
 
 ### Serbia
 
