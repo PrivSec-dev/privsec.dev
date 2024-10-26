@@ -272,3 +272,7 @@ If you don't need ssh, [turn it off](https://support.apple.com/en-gb/guide/mac-h
 ## Encrypted Swap
 
 macOS encrypts its [virtual memory](https://support.apple.com/en-euro/guide/mac-help/mh11852/mac). Note that regular RAM is not encrypted, only virtual memory.
+
+## Configuration Profiles and Shortcuts
+
+Configuration Profiles and Shortcuts are very powerful, so you should avoid installing or running ones made by other people. Make sure you understand everything it's doing before you install a profile or run a Shortcut.
