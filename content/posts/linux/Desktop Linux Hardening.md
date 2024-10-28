@@ -347,7 +347,7 @@ Further reading:
 
 _See ["2.5.2&nbsp;Blacklisting kernel modules"](https://madaidans-insecurities.github.io/guides/linux-hardening.html#kasr-kernel-modules) in Madaidan's guide._
 
-On distributions other than Whonix and Kicksecure, you can copy the configuration file from [secureblue's repository](https://github.com/secureblue/secureblue/blob/live/files/system/usr/etc/modprobe.d/blacklist.conf) into `/etc/modprobe.d/`.
+On distributions other than Whonix and Kicksecure, you can copy the configuration file from [secureblue's repository](https://github.com/secureblue/secureblue/blob/live/files/system/etc/modprobe.d/blacklist.conf) into `/etc/modprobe.d/`.
 
 There are a few things in this config to keep in mind:
 
@@ -520,46 +520,14 @@ For Fedora Workstation, you can follow [H&aring;vard Moen's guide](https://haava
 
 On Arch, the process is very similar, though sbctl is already included in the official repositories and you will need to switch from [mkinitcpio](https://wiki.archlinux.org/title/Mkinitcpio) to dracut. Arch with linux&#8209;hardened works well with sbctl, but some level of tedious pacman hooks are required for appropriately timing the re&#8209;signing of all relevant files every time the kernel or bootloader is updated.
 
-In my opinion, this is the most straightforward setup, with a lot of potential such as [systemd's future UKI plans including support for early&#8209;boot attestation](https://0pointer.de/blog/brave-new-trusted-boot-world.html). With that being said, it does not appear to work well with specialized setups such as Fedora Silverblue/Kinoite or Ubuntu with [ZSys](https://github.com/ubuntu/zsys). More testing is needed to see if they can be made to work.
+Afterwards, you need to use `systemd-cryptenoll` and pin your encryption key against [certain PCRs](https://uapi-group.org/specifications/specs/linux_tpm_pcr_registry/) to detect tampering against the firmware. At minimum, you should pin PCR 7 for Secure Boot polices. Personally, I pin PCR 0,1,2,3,5,7, and 14.
 
-### Encrypted /boot
+Whenever you manually generate a UKI, make sure that the kernel is from the distribution vendor, and that initramfs is freshly generated. Reinstall the kernel package if you have to.
 
-#### openSUSE
-
-openSUSE and its derivatives come with encrypted /boot out of the box (as part of the root partition). This setup does work, using encryption to sidestep the unverified initramfs problem.
-
-However, there are some caveats:
-
-- openSUSE uses LUKS1 instead of LUKS2 for encryption.
-- GRUB supports PBKDF2 key derivation only, not Argon2 (the LUKS2 default).
-- Some extra steps are necessary to [avoid typing the encryption password twice](https://en.opensuse.org/SDB:Encrypted_root_file_system#Avoiding_to_type_the_passphrase_twice_in_Leap_and_Tumbleweed).
-- Though rather tedious, you could potentially improve security by:
-  - [Enrolling your own Secure Boot keys](#enrolling-your-own-keys)
-  - Reinstalling GRUB with `--no-shim-lock`
-  - Signing GRUB and the kernel with your own keys
-  - Removing shim and MOK from the boot chain
-  - Setting up hooks to automate these tasks for every update
-
-#### Other Distributions
-
-On systems which use [grub&#8209;btrfs](https://github.com/Antynea/grub-btrfs) to mimic openSUSE (such as [my old Arch setup](https://github.com/tommytran732/Arch-Setup-Script)), there are a few things to keep in mind:
-
-- It will be easier to use LUKS1 than LUKS2 with PBKDF2 for this setup.
-  - I have run into issues where GRUB will detect a LUKS1 partition converted to LUKS2 with PBKDF2 but not a pre&#8209;existing LUKS2 partition.
-- Include /boot in your root partition instead of as a seperate partition.
-  - With a seperate /boot partition, an evil maid attack can theoretically replace it with a malicious /boot partition. Unlocking the drive through a fake decryption prompt on the malicious partition will subsequently compromise the rest of the system.
-- [Enroll your own Secure Boot keys](#enrolling-your-own-keys)
-- Install GRUB with the `--no-shim-lock` option. The full command I use on Arch is:
-  ```
-  grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB --modules="normal test efi_gop efi_uga search echo linux all_video gfxmenu gfxterm_background gfxterm_menu gfxterm loadenv configfile gzio part_gpt cryptodisk luks gcry_rijndael gcry_sha256 btrfs tpm" --disable-shim-lock
-  ```
-- Sign GRUB and the kernel with your own keys
-- Remove shim and MOK from the boot chain (if applicable)
-- Set up hooks to automate these tasks for every update ([pacman hooks for Arch](https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#Signing_the_kernel_with_a_pacman_hook))
-- Disable the TPM from your firmware to prevent GRUB attempting [measured boot](https://www.gnu.org/software/grub/manual/grub/html_node/Measured-Boot.html), which [does not work with grub-btrfs](https://github.com/Antynea/grub-btrfs/issues/156).
+In my opinion, this is the most straightforward setup. However, it does not appear to work well with specialized setups such as Fedora Silverblue/Kinoite. More testing is needed to see if they can be made to work.
 
 ### Notes on Secure Boot
 
-After setting up Secure Boot, it is crucial that you password-protect your UEFI settings (sometimes called 'supervisor' or 'administrator' password)&nbsp;--- otherwise an adversary can simply disable Secure Boot.
+After setting up Secure Boot, you should password-protect your UEFI settings (sometimes called 'supervisor' or 'administrator' password) as it is good security practice. This does not protect against an attacker with a programmer however - you need to pin PCRs to detect tampering as mentioned above.
 
 These recommendations can make you a little more resistant to evil maid attacks, but they [do not constitute a proper verified boot process](https://madaidans-insecurities.github.io/guides/linux-hardening.html#verified-boot) as found on [Android](https://source.android.com/security/verifiedboot), [ChromeOS](https://support.google.com/chromebook/answer/3438631), or [Windows](https://docs.microsoft.com/en-us/windows/security/information-protection/secure-the-windows-10-boot-process).

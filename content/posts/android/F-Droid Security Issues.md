@@ -232,7 +232,7 @@ If you don't have Play services installed, you can use a third-party Play Store 
 
 **[Accrescent](https://accrescent.app/)** is an up-and-coming app repository which strives to tackle the issues discussed here [and more](https://accrescent.app/features). Hopefully Accrescent or a project like it can flourish as a secure and open ecosystem for app delivery.
 
-It's also worth keeping an eye on the great work **GrapheneOS** does on [their future app repository](https://github.com/GrapheneOS/Apps). It will serve as a simple, secure, modern app repository, albeit only for a curated list of high-quality apps, some of which will have their own builds (for instance, Signal still uses their [original 1024-bits RSA key](https://github.com/signalapp/Signal-Android/issues/9362) that has never been rotated since then).
+It's also worth keeping an eye on the great work **GrapheneOS** does on [their future app repository](https://github.com/GrapheneOS/Apps). It will serve as a simple, secure, modern app repository, albeit only for a curated list of high-quality apps, some of which will have their own builds.
 
 ---
 
