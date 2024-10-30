@@ -166,7 +166,18 @@ So far, you have been presented with referenced facts that are easily verifiable
 
 While some improvements could easily be made, I don't think F-Droid is in an ideal situation to solve all of these issues because some of them are **inherent flaws** in their architecture. I'd also argue that their core philosophy is not aligned with some security principles expressed in this article. In any case, I can only wish for them to improve since they're one of the most popular alternatives to commercial app repositories, and are therefore trusted by a large userbase.
 
-F-Droid is often seen as the only way to get and support open-source apps: that is not the case. Sure, F-Droid could help you in finding FOSS apps that you wouldn't otherwise have known existed. Many developers also publish their FOSS apps on the **Play Store** or their website directly. Most of the time, releases are available on **GitHub**, which is great because you can use [Obtainium](https://github.com/ImranR98/Obtainium) to track and install app updates. If downloading APKs from regular websites, you can use [AppVerifier](https://github.com/soupslurpr/AppVerifier) to validate the authenticity by comparing the certificate fingerprint against the fingerprint from another source (it wouldn't matter otherwise). Obtainium will automatically open the share menu and encourage you to share it with AppVerifier if you've got it installed (and haven't turned off that feature in Obtainium).
+F-Droid is often seen as the only way to get and support open-source apps, but that is not the case. While F-Droid can help you discover FOSS apps that you might not have known existed, many developers also publish their FOSS apps on the Play Store or directly on their websites. Additionally, most releases are available on GitHub, which is beneficial since each GitHub releases page has an Atom feed that you can use to stay updated. You can also use [Obtainium](https://github.com/ImranR98/Obtainium) to track and install app updates. 
+
+If you choose to download APKs from regular websites, you can use [AppVerifier](https://github.com/soupslurpr/AppVerifier) to validate the authenticity of the app by comparing the certificate fingerprint against the fingerprint from another source. Obtainium will automatically open the share menu and encourage you to share the app with AppVerifier if you have it installed and haven't turned off that feature in Obtainium. 
+
+Alternatively, you can use 'apksigner' for the same purpose. 
+
+To obtain the app certificate, you can use the following command:
+
+```
+apksigner verify --print-certs --verbose myCoolApp.apk
+```
+Overall, there are multiple avenues to access and support open-source applications beyond just F-Droid.
 
 Also, as written above: the OS pins the app signature (for all profiles) upon installation, and enforces signature check for app updates. In practice, this means the source doesn't matter as much after the initial installation.
 
