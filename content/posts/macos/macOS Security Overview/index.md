@@ -271,7 +271,7 @@ If you don't need ssh, [turn it off](https://support.apple.com/en-gb/guide/mac-h
 
 ## Encrypted Swap
 
-macOS encrypts its [virtual memory](https://support.apple.com/en-euro/guide/mac-help/mh11852/mac). Note that regular RAM is not encrypted, only virtual memory.
+macOS encrypts its [virtual memory](https://support.apple.com/en-euro/guide/mac-help/mh11852/mac).
 
 ## Configuration Profiles and Shortcuts
 
