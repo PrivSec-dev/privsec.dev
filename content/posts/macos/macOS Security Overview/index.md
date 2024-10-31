@@ -123,7 +123,7 @@ When you first set up your Mac, you will create an Administrator account that ha
 
 You can [hide an administrator account](https://support.apple.com/en-us/102099) so you don't accidentally log into it.
 
-Also make sure to set a strong password for any accounts you make and set a time after which a user will [automatically be logged out](https://support.apple.com/guide/mac-help/set-your-mac-to-log-out-when-not-in-use-mchlp2443/14.0/mac/14.0).
+Also make sure to set a strong password for any accounts you make and set a time after which a user will [automatically be logged out](https://support.apple.com/guide/mac-help/set-your-mac-to-log-out-when-not-in-use-mchlp2443/15.0/mac/15.0).
 
 By default, users can read folders and files in other users' home directories, other than the Desktop, Downloads, Movies, Music, and Pictures folders. To fix this, run this in the Terminal:
 
@@ -135,13 +135,13 @@ done
 
 ## Lock Screen Security
 
-Make sure you [require users to login](https://support.apple.com/guide/mac-help/set-up-your-mac-to-be-secure-flvlt003/mac#mchlpf5777a4) and set your Mac to [require a password](https://support.apple.com/guide/mac-help/require-a-password-after-waking-your-mac-mchlp2270/14.0/mac/14.0) after waking up.
+Make sure you [require users to login](https://support.apple.com/guide/mac-help/set-up-your-mac-to-be-secure-flvlt003/mac#mchlpf5777a4) and set your Mac to [require a password](https://support.apple.com/guide/mac-help/require-a-password-after-waking-your-mac-mchlp2270/15.0/mac/15.0) after waking up.
 
 Use the Control + Command + Q keyboard shortcut to lock your screen any time you leave your computer.
 
 ## Automatically Empty Trash
 
-You can set the trash to [automatically empty](https://support.apple.com/en-ca/guide/mac-help/mchlp1093/14.0/mac/14.0#mchl0deca7f1) every 30 days to prevent old unwanted files from sticking around.
+You can set the trash to [automatically empty](https://support.apple.com/en-ca/guide/mac-help/mchlp1093/15.0/mac/15.0#mchl0deca7f1) every 30 days to prevent old unwanted files from sticking around.
 
 ## Show File Extensions
 
@@ -217,7 +217,7 @@ If you choose to backup your Mac, you should do so with [Time Machine](https://s
 
 In macOS, if you want to encrypt some files you should create an [encrypted disk image](https://support.apple.com/guide/disk-utility/create-a-disk-image-dskutl11888/mac#dsku7bb3d28c) to store them in using Disk Utility.
 
-You can also [add a checksum](https://support.apple.com/guide/disk-utility/add-a-checksum-to-a-disk-image-dskutl1019/22..6/mac/14.0) and [verify it later](https://support.apple.com/guide/disk-utility/verify-a-disk-images-data-corrupted-utility-dskutl15186/22..6/mac/14.0) to ensure data integrity.
+You can also [add a checksum](https://support.apple.com/guide/disk-utility/add-a-checksum-to-a-disk-image-dskutl1019/22.6/mac/15.0) and [verify it later](https://support.apple.com/guide/disk-utility/verify-a-disk-images-data-isnt-corrupted-dskutl15186/22.6/mac/15.0) to ensure data integrity.
 
 ## iCloud Security
 
