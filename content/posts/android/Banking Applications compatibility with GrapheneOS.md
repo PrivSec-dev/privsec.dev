@@ -176,6 +176,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 - [Banco Falabella Colombia](https://play.google.com/store/apps/details?id=co.com.bancofalabella.mobile.omc) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/387)
 - [BBVA Colombia](https://play.google.com/store/apps/details?id=co.com.bbva.mb) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/386)
+- [Davivienda](https://play.google.com/store/apps/details?id=com.davivienda.daviviendaapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/528)
 - [Nequi Colombia](https://play.google.com/store/apps/details?id=com.nequi.MobileApp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/388)
 
 ### Croatia
@@ -231,6 +232,8 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Banque Populaire](https://play.google.com/store/apps/details?id=fr.banquepopulaire.cyberplus) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/473)
 - [Banxo](https://play.google.com/store/apps/details?id=com.caisseepargne.android.mobilebanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/215)
 - [BoursoBank](https://play.google.com/store/apps/details?id=com.boursorama.android.clients) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/147)
+- [CIC banque: Compte & Assurance](https://play.google.com/store/apps/details?id=com.cic_prod.bad) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/526)
+- [CIC Pay : paiement mobile](https://play.google.com/store/apps/details?id=com.ei.payment.app.cic) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/527)
 - [Credit Coopératif](https://play.google.com/store/apps/details?id=com.credit_coop.android.mobilebanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/232)
 - [Crédit Mutuel de Bretagne](https://play.google.com/store/apps/details?id=com.arkea.android.application.cmb) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/150)
 - [Fortuneo, ma Banque & Bourse](https://play.google.com/store/apps/details?id=com.fortuneo.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/208)
