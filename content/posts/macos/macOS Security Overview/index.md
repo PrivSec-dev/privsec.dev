@@ -80,11 +80,13 @@ You can change [Gatekeeper settings](https://support.apple.com/en-us/102445) to 
 
 Gatekeeper, the App Sandbox, and the Hardened Runtime only apply to apps and not other types of executable files, so when installing non-apps, you should be extremely careful. If possible, avoid installing non-app software altogether or install it in a virtual machine.
 
-## Systemwide Permissions
+## TCC
 
 macOS has permissions that apply to all software across the system, called Transparency, Consent and Control (TCC). These can be found under [Privacy & Security](https://support.apple.com/guide/mac-help/change-privacy-security-settings-on-mac-mchl211c911f/mac) in the Settings.
 
 The Downloads, Desktop, Documents, Movies, Music, and Pictures folders for each user in particular are protected by permissions and thus are more secure than other places you might save your files. Consider using these folders for particularly sensitive data.
+
+Be very careful about granting permissions even to default macOS apps since it might have unintended consequences. For example, granting the Terminal full disk access can allow unsandboxed apps to cause it to run commands by tampering with the `~/.zshrc` file which is executed by the Terminal every time it opens.
 
 TCC doesn't have temporary permissions, so it can be useful to reset all premissions for an app at once. To do this, first find the app's bundle ID by running the command:
 
