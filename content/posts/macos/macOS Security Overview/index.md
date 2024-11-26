@@ -264,10 +264,6 @@ You can [randomize your MAC address](https://support.apple.com/en-gb/guide/mac-h
 
 To completely wipe your Mac securely, use the [Erase All Content and Settings](https://support.apple.com/en-us/102664) option. This will ensure all data is securely wiped and no traces of your ownership are left on the Mac. This is important so that the next owner is able to set it up without running into issues with verification. You'll need to know an Administrator password and Apple Account password to turn off Find My if you've enabled it previously.
 
-## Rosetta 2
-
-Apple silicon Macs offer [Rosetta 2](https://support.apple.com/en-us/102527), a translation layer that lets you run Intel apps on an ARM Mac. Since it allows you to run more software than you could otherwise run, installing Rosetta 2 increases your attack surface and should be avoided unless you absolutely need it.
-
 ## Keychain
 
 [Keychain](https://support.apple.com/guide/security/keychain-data-protection-secb0694df1a/1/web/1) is the secure keystore in macOS. There's also a built-in [password manager](https://support.apple.com/en-us/105115) that can securely keep track of your passwords and generate new secure passwords.
