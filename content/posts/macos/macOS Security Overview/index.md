@@ -70,7 +70,9 @@ You will see `flags=0x10000(runtime)` if it's enabled.
 
 ## Gatekeeper
 
-[Gatekeeper](https://support.apple.com/guide/security/gatekeeper-and-runtime-protection-sec5599b66df/web) stops you from running apps that aren't notarized. Notarization is a process by which app developers submit their app to Apple to scan for malware and ensure it meets certain requirements. Among these are that it is signed with a key provided by Apple to the developer and that the Hardened Runtime is enabled. Gatekeeper also prevents the loading of unwanted plugins with benign apps by opening apps from randomized, read-only locations.
+[Gatekeeper](https://support.apple.com/guide/security/gatekeeper-and-runtime-protection-sec5599b66df/web) is meant to warn you about running apps that aren't notarized, however it relies on the quarantine attribute being added which won't work on filesystems that don't support it like FAT32. Gatekeeper shouldn't be relied on since it doesn't cover all software and there are ways of bypassing it.
+
+Notarization is a process by which app developers submit their app to Apple to scan for malware and ensure it meets certain requirements. Among these are that it is signed with a key provided by Apple to the developer and that the Hardened Runtime is enabled. Gatekeeper also prevents the loading of unwanted plugins with benign apps by opening apps from randomized, read-only locations.
 
 The Gatekeeper warning can be easily bypassed by going to **Privacy & Security** in the settings and clicking open.
 
