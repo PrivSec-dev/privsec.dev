@@ -108,7 +108,7 @@ Apple also issues revocations for notarization tickets, which are detected with 
 
 ## System Integrity Protection
 
-[SIP](https://support.apple.com/guide/security/system-integrity-protection-secb7ea06b49/web) protects [system files](https://support.apple.com/en-us/102149) from being changed, even by the root user. Since it's protecting your base system files, you should **never** disable it even temporarily if you want the best security.
+[SIP](https://support.apple.com/guide/security/system-integrity-protection-secb7ea06b49/web) protects [system files](https://support.apple.com/en-us/102149) from being changed, even by the root user.
 
 On Apple Silicon Macs, it's combined with [Kernel Integrity Protection](https://support.apple.com/guide/security/operating-system-integrity-sec8b776536b/web#sec41bf3cd61) to protect kernel memory from being exploited.
 
