@@ -250,7 +250,9 @@ You can also [add a checksum](https://support.apple.com/guide/disk-utility/add-a
 
 If you use iCloud, you should enable [Advanced Data Protection](https://support.apple.com/en-us/108756) so that your files are E2EE.
 
-Notethat your [calendar, email, and contacts](https://support.apple.com/en-us/102651) are not E2EE due to protocol limitations.
+Note that your [calendar, email, and contacts](https://support.apple.com/en-us/102651) are not E2EE due to protocol limitations.
+
+Third party apps can use E2EE, but they must[ explicitly opt-in](https://support.apple.com/guide/security/advanced-data-protection-for-icloud-sec973254c5f/web#sec184c512e7) to it.
 
 If you want to be able to install apps from the App Store without enabling iCloud, you can sign in to your Apple Account from the App Store instead of **System Settings**.
 
