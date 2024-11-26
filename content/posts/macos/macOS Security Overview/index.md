@@ -178,6 +178,8 @@ There are two types of [system extensions](https://support.apple.com/en-us/12036
 
 Newer system extensions don't directly modify the kernel, but they use APIs that give them lower level access to your system than regular apps. You should be very cautious with these as well and only allow them when **absolutely necessary**.
 
+Removing an app doesn't remove the system extensions associated with it. You can use the `systemextensionctl` command to list and manage extensions. You may need to disable SIP before you can remove extensions.
+
 ## Apps Requiring Admin
 
 Be careful installing apps that require Administrator privileges to run, you're giving them a lot of power in your system.
