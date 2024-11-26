@@ -256,13 +256,15 @@ You can also add a [security key](https://support.apple.com/en-us/102637) to you
 
 Macs support [Touch ID](https://support.apple.com/guide/mac-help/use-touch-id-mchl16fbf90a/mac) for secure authentication without having to enter your password. This can protect against shoulder surfing or someone recording your keystrokes. The fingerprint data never leaves the device.
 
+You can 
+
 ## Network Security
 
 Prefer networks that support [WPA3](https://support.apple.com/en-us/102766#security) and avoid networks that use deprecated protocols.
 
 Avoid connecting to [hidden networks](https://support.apple.com/en-us/102766#hiddennetwork) as they require your device to broadcast the network SSID which could be used to fingerprint you and identify the networks you connect to.
 
-You can [randomize your MAC address](https://support.apple.com/en-gb/guide/mac-help/mh11935/15.0/mac/15.0#mchldb2b7302) in Network settings. Set it to rotating and you'll periodically get a new one.
+You can [randomize your MAC address](https://support.apple.com/en-gb/guide/mac-help/mh11935/15.0/mac/15.0#mchldb2b7302) in Network settings. Set it to rotating and you'll periodically get a new one. By default, it's set to Fixed which will give you a different MAC address for every network, but when you reconnect to the same network it will be the same.
 
 ## Securely Erase Your Mac
 
