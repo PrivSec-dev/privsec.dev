@@ -15,7 +15,7 @@ FileVault works with two encryption keys: the volume key and the class key. The 
 
 All encryption keys are handled by the Secure Enclave and are never exposed to the CPU.
 
-Your Mac is at its most secure when it's fully off and the data is at rest. Depending on your threat model, it might behoove you to turn your Mac off completely whenever you're not using it, especially since Macs don't have memory encryption, 
+Your Mac is at its most secure when it's fully off and the data is at rest. Depending on your threat model, it might behoove you to turn your Mac off completely whenever you're not using it, especially since Macs don't have memory encryption.
 
 ## App Sandbox
 
