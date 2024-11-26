@@ -74,7 +74,7 @@ You will see `flags=0x10000(runtime)` if it's enabled.
 
 The Gatekeeper warning can be easily bypassed by going to **Privacy & Security** in the settings and clicking open.
 
-You can change [Gatekeeper settings](https://support.apple.com/en-us/102445) to only allow apps downloaded from the App Store if you choose. It will still be bypassable but it will stop apps from being run that aren't from the app store without you explicitly allowing it.
+You can change [Gatekeeper settings](https://support.apple.com/en-us/102445) to only allow apps downloaded from the App Store if you choose. It will still be bypassable but it will stop apps from being run that aren't from the App Store without you explicitly allowing it.
 
 ## Apps vs Other Executables
 
