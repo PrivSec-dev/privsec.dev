@@ -89,13 +89,13 @@ macOS has permissions that apply to all software across the system, called Trans
 
 The Downloads, Desktop, Documents, Movies, Music, and Pictures folders for each user in particular are protected by permissions and thus are more secure than other places you might save your files. Consider using these folders for particularly sensitive data.
 
-TCC doesn't have temporary permissions, so it can be useful to reset all premissions for an app at once. To do this, first find the app's bundle ID by running the command:
+TCC doesn't have temporary permissions, so it can be useful to reset all premissions for an app at once. To do this, first find the app's bundle ID by running the command
 
 ```zsh
 osascript -e 'id of app "[name of app]"'
 ```
 
-Reset the permissions with the command:
+Reset the permissions with the command
 
 ```zsh
 sudo tccutil reset All [app.bundle.id]
