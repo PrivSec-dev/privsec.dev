@@ -7,33 +7,35 @@ author: oppressor1761
 
 ## Hardware and Firmware Security
 
-### Choosing a Secure Hardware
+### Hardware Security
 
-*   Choose a secured-core PC that has long-term lifetime support. The Microsoft Surface for Business series is the best option in this regard.
+[Secured-Core PCs](https://www.microsoft.com/en-us/windows/business/windows-11-secured-core-computers) ensure the hardwares have some essential security [features](https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-highly-secure-11#what-makes-a-secured-core-pc) including Secure Boot, Trusted Platform Module 2.0 (TPM), Direct Memory Access (DMA) Protection, Enhanced Sign-in Security (ESS), Virtualization-based Security (VBS) and System Guard Secure Launch with System Management Mode (SMM) isolation/Firmware Attack Surface Reduction (FASR). Microsoft Pluton and Total Memory Encryption are also good to have.
 
-*   Choose a PC with Microsoft Pluton and Total Memory Encryption.
+[Secure Boot](https://learn.microsoft.com/en-us/windows/security/operating-system-security/system-security/trusted-boot) makes a safe and trusted path from the firmware to the Windows bootloader. Trusted Boot, which is not a hardware feature, picks up the process that started with Secure Boot. The Windows bootloader verifies the digital signature of the Windows kernel before loading it. The Windows kernel, in turn, verifies every other component of the Windows startup process, including boot drivers, startup files, and your anti-malware product's early-launch anti-malware (ELAM) driver. These mechanism does not protect the firmware itself.
 
-TBC
+[Trusted Platform Module 2.0 (TPM)](https://learn.microsoft.com/en-us/windows/security/hardware-security/tpm/trusted-platform-module-overview) is a secure crypto-processor that is designed to carry out cryptographic operations. Some features rely on TPM such as BitLocker, Windows Hello, and System Guard Secure Launch.
 
-### Firmware Settings
+[Direct Memory Access (DMA) Protection](https://learn.microsoft.com/en-us/windows/security/hardware-security/kernel-dma-protection-for-thunderbolt) Protection protects against external peripherals from gaining unauthorized access to memory.
 
-*   Enable Secure Boot and, if applicable, disable the third-party Microsoft UEFI CA.
+[Enhanced Sign-in Security (ESS)](https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/windows-hello-enhanced-sign-in-security) provides an additional level of security to biometric data with the use of specialized hardware and software components.
 
-*   Enable Virtualization settings.
+Memory Integrity is a [Virtualization-based Security (VBS)](https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity) feature that uses the Windows hypervisor to create an isolated virtual environment that becomes the root of trust of the OS that assumes the kernel can be compromised.
 
-*   Enable Dynamic Root of Trust for Measurement (DRTM).
+[System Guard Secure Launch with SMM isolation](https://learn.microsoft.com/en-us/windows/security/hardware-security/how-hardware-based-root-of-trust-helps-protect-windows) leverage Dynamic Root of Trust for Measurement (DRTM) to protect the firmware. It depends on CPU to function. Its equivalent without CPU dependency is [FASR](https://learn.microsoft.com/en-us/windows-hardware/drivers/bringup/firmware-attack-surface-reduction) which leverage Static Root of Trust for Measurement (SRTM) and Standalone Management Mode (MM) with MM Supervisor.
 
-*   If available, set Thunderbolt Security Settings to the highest level.
+[Microsoft Pluton](https://learn.microsoft.com/en-us/windows/security/hardware-security/pluton/microsoft-pluton-security-processor) is a secure crypto-processor built into the CPU to provide the functionality of the TPM and deliver other security functionality beyond what is possible with the TPM 2.0 specification, and allows for other Pluton firmware and OS features to be delivered over time via Windows Update.
 
-*   Be sure to set a firmware password.
+Total Memory Encryption encrypts all data passing to and from a computer's CPU.
 
-*   Configure Boot Sequence to exclusively boot from your hard drive while disabling all other items, if accessible.
+### Firmware Security
 
-*   Enable Trusted Platform Module (TPM) and designate Microsoft Pluton as default if applicable.
+Hardware security features often requires related settings in firmware. For example, VBS requires [virtualization](https://support.microsoft.com/en-us/windows/enable-virtualization-on-windows-c5578302-6e43-4b4b-a449-8ced115f58e1) to be enabled.
+
+You should also choose a computer that has a long lifecycle of driver and firmware updates. You may find the lifecycle policy in Product Security and Telecommunication Infrastructure (PSTI) compliance report from OEM.
 
 ## Operating System Security
 
-### Choose the Correct Version and Edition
+### Version and Edition
 
 Use Windows 11 Enterprise, version 23H2 as your operating system.
 
