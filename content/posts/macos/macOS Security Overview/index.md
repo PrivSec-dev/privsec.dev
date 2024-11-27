@@ -11,9 +11,7 @@ macOS comes equipped with many security features to keep you safe. Check out the
 
 By default, your macOS install is encrypted, but it will automatically unlock on boot. Turning on [FileVault](https://support.apple.com/guide/mac-help/protect-data-on-your-mac-with-filevault-mh11785/mac) will require a user password to unlock the volume. It also makes it so that you need to enter a user password to enter recovery mode.
 
-FileVault works with two encryption keys: the volume key and the class key. The volume key encrypts the data in your drive and with FileVualt turned on, the class key encrypts the volume key. The class key is protected by a combination of the user’s password and the hardware UID when FileVault is turned on, meaning that the user password is required and the key is tied to the device and can't be decrypted outside the actual hardware.
-
-All encryption keys are handled by the Secure Enclave and are never exposed to the CPU. Swap space is also [encrypted](https://support.apple.com/en-euro/guide/mac-help/mh11852/mac).
+All encryption keys are handled by the Secure Enclave. Swap space is also [encrypted](https://support.apple.com/en-euro/guide/mac-help/mh11852/mac).
 
 Your Mac is at its most secure when it's fully off and the data is at rest. Depending on your threat model, it might behoove you to turn your Mac off completely whenever you're not using it, especially since Macs do not have memory encryption.
 
