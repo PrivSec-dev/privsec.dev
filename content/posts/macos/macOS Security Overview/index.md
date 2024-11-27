@@ -109,7 +109,7 @@ XProtect is the built-in antivirus software in macOS. Like all AV, it's a last l
 
 XProtect uses YARA signatures and is updated frequently, independent of OS updates. This is one of the many reasons you should be cautious about blocking connections to Apple servers; many of them serve a security purpose, so make sure you know what you're blocking. It can also detect unknown malware using heuristics. When it detects unkown malware, it will send information about that software to Apple so that they can update the signatures in XProtect.
 
-Apple also issues revocations for notarization tickets, which are detected with OCSP checks over https. While OCSP checks may reveal to Apple which type of apps a user on an IP address is using, it is not recommended that you this check as it will break a very important security feature. Instead, you are better off using a commercial VPN to blend in with other Mac users.
+Apple also issues revocations for notarization tickets, which are detected with OCSP checks over https. While OCSP checks may reveal to Apple which type of apps a user on an IP address is using, it is not recommended that you disable this check as it will break a very important security feature. Instead, you are better off using a commercial VPN to blend in with other Mac users.
 
 ## Verified Boot
 
