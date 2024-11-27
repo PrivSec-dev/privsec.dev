@@ -276,6 +276,45 @@ Avoid connecting to [hidden networks](https://support.apple.com/en-us/102766#hid
 
 By default, macOS uses a random MAC address for each SSID. However, it also defaults to using the "Fixed" randomization mode, re-using the same MAC address for SSID instead of changing it on every connection. Essentially, this allows network operators to recognize that you are the same user that has previously connected to the network. Consider changing the randomization mode to "Rotating" depending on your threat model.
 
+## Secure Time Synchronization
+
+macOS uses NTP for time synchronization, which is insecure and unauthenticated. You should setup NTS for secure time synchronization. You can do so by:
+
+- Using a local virtual machine as the NTP server. The local virtual machine can then get its time safely using NTS and chrony. Check out [our guide](/posts/macos/secure-time-synchronization-on-macos/).
+- Using [ChronyControl](https://www.whatroute.net/chronycontrol.html). A sample Chrony configuration derived from GrapheneOS's is as follows:
+
+```
+user daemon
+
+server time.cloudflare.com iburst nts
+server ntppool1.time.nl iburst nts
+server nts.netnod.se iburst nts
+server ptbtime1.ptb.de iburst nts
+server time.dfm.dk iburst nts
+server time.cifelli.xyz iburst nts
+
+minsources 3
+authselectmode require
+
+# EF
+dscp 46
+
+driftfile /var/db/chrony/chrony.drift
+
+bindcmdaddress /var/run/chrony/chronyd.sock
+
+log tracking measurements statistics
+logdir /var/log/chrony
+
+ntsdumpdir /var/db/chrony/
+
+leapsectz right/UTC
+makestep 1.0 3
+
+rtconutc
+rtcsync
+```
+
 ## Securely Erase Your Mac
 
 To completely wipe your Mac securely, use the [Erase All Content and Settings](https://support.apple.com/en-us/102664) option. This will ensure all data is securely wiped and no traces of your ownership are left on the Mac. This is important so that the next owner is able to set it up without running into issues with verification. You'll need to know an Administrator password and Apple Account password to turn off Find My if you've enabled it previously.
