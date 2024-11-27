@@ -2,35 +2,28 @@
 title: "macOS Security Overview"
 date: 2024-08-09
 tags: ['macOS', 'Security']
-author: kimg45
+author: kimg45, Tommy
 ---
 
-macOS comes equipped with many security features to keep you safe. Check out the [Apple Platform Security](https://support.apple.com/guide/security/welcome/web) page for more detail about the security features in a Mac. This guide assumes you're running on official Apple hardware that's officially supported by the latest stable version of macOS.
+macOS comes equipped with many security features to keep you safe. Check out the [Apple Platform Security](https://support.apple.com/guide/security/welcome/web) page for more detail about the security features in a Mac. This post assumes you're running on official Apple hardware that's officially supported by the latest stable version of macOS.
 
-## FileVault
+## Encryption
 
 By default, your macOS install is encrypted, but it will automatically unlock on boot. Turning on [FileVault](https://support.apple.com/guide/mac-help/protect-data-on-your-mac-with-filevault-mh11785/mac) will require a user password to unlock the volume. It also makes it so that you need to enter a user password to enter recovery mode.
 
 FileVault works with two encryption keys: the volume key and the class key. The volume key encrypts the data in your drive and with FileVualt turned on, the class key encrypts the volume key. The class key is protected by a combination of the user’s password and the hardware UID when FileVault is turned on, meaning that the user password is required and the key is tied to the device and can't be decrypted outside the actual hardware.
 
-All encryption keys are handled by the Secure Enclave and are never exposed to the CPU.
+All encryption keys are handled by the Secure Enclave and are never exposed to the CPU. Swap space is also [encrypted](https://support.apple.com/en-euro/guide/mac-help/mh11852/mac).
 
-Your Mac is at its most secure when it's fully off and the data is at rest. Depending on your threat model, it might behoove you to turn your Mac off completely whenever you're not using it, especially since Macs don't have memory encryption.
-
-macOS keeps the encryption key in memory when sleeping so that you can quickly resume what you were doing. You can set the Mac to hiberate after a certain amount of time and destroy the FileVault key, leaving your data in a much more secure state. To set your Mac to hibernate destroy the key on hibernating:
-
-```zsh
-sudo pmset -a destroyfvkeyonstandby 1
-sudo pmset -a hibernatemode 25
-```
+Your Mac is at its most secure when it's fully off and the data is at rest. Depending on your threat model, it might behoove you to turn your Mac off completely whenever you're not using it, especially since Macs do not have memory encryption.
 
 ## App Sandbox
 
-The [App Sandbox](https://developer.apple.com/documentation/security/app_sandbox/protecting_user_data_with_app_sandbox) is a feature that limits the access an app has to the rest of your system. Developers enable it when they sign their app, so it's not possible for you to enable it or modify the entitlements since they are defined in the signature.
+The [App Sandbox](https://developer.apple.com/documentation/security/app_sandbox/protecting_user_data_with_app_sandbox) is a feature that limits the access an app has to the rest of your system. Developers enable it when they sign their app.
 
-Sandboxed apps are given their own container in `~/Library/Containers` that they have exclusive read/write access to. Unsandboxed apps can't access it unless they have root privileges.
+Sandboxed apps are given their own directories in `~/Library/Containers` that they have exclusive read/write access to. Unsandboxed apps can't access them unless they have root privileges.
 
-The App Sandbox is designed to limit the damage to your system in the event an app is exploited, however it can't protect against malicious developers since they can just disable or weaken the sandbox in a future update if they want. For protection against malicious developers, you'll need to install apps from the App Store where the sandbox is enforced.
+The App Sandbox is designed to limit the damage to your system in the event an app is exploited, however it cannot protect against malicious developers since they can just disable the sandbox in a future update. For protection against malicious developers, you'll need to install apps from the App Store where having the sandbox enabled is enforced.
 
 There are a few ways to check whether an app is sandboxed:
 
@@ -56,9 +49,9 @@ You can enable a column in Activity Monitor called "Restricted" which is a flag 
 
 ## Hardened Runtime
 
-The [Hardened Runtime](https://developer.apple.com/documentation/security/hardened_runtime) is an optional security feature that developers can enable that makes an app more resistant to exploitation. Like the App Sandbox, it's enabled through a flag when the developers sign it so you aren't able to control it for apps you run. It prevents certain classes of exploits, like code injection, dynamically linked library (DLL) hijacking, and process memory space tampering.
+The [Hardened Runtime](https://developer.apple.com/documentation/security/hardened_runtime) is an optional security feature that developers can enable that makes an app more resistant to exploitation. Like the App Sandbox, it's enabled through an entitlement when the developers sign it so you aren't able to control it for apps you run. It prevents certain classes of exploits, like code injection, dynamically linked library (DLL) hijacking, and process memory space tampering.
 
-Unlike the App Sandbox, the Hardened Runtime is required in order for an app to be notarized and so you'll be warned by Gatekeeper if an app doesn't use it. While this warning is bypassable, you should be cautious and investigate a bit more before running it.
+Unlike the App Sandbox, the Hardened Runtime is required in order for an app to be notarized and so you will be warned by Gatekeeper if an app doesn't use it. While this warning is dismissable, you should be cautious and investigate a bit more before running the app.
 
 Check if an app is using the Hardened Runtime before running it with the command
 
@@ -70,25 +63,31 @@ You will see `flags=0x10000(runtime)` if it's enabled.
 
 ## Gatekeeper
 
-[Gatekeeper](https://support.apple.com/guide/security/gatekeeper-and-runtime-protection-sec5599b66df/web) is meant to warn you about running apps that aren't notarized, however it relies on the quarantine attribute being added which won't work on filesystems that don't support it like FAT32. Gatekeeper shouldn't be relied on since it doesn't cover all software and there are ways of bypassing it.
+[Gatekeeper](https://support.apple.com/guide/security/gatekeeper-and-runtime-protection-sec5599b66df/web) is a security protection which serves two purposes:
+- To warn the user about apps that aren't notarized.
+- To notify the user that you are running an app downloaded outside of the App Store the first time you run it.
 
-Notarization is a process by which app developers submit their app to Apple to scan for malware and ensure it meets certain requirements. Among these are that it is signed with a key provided by Apple to the developer and that the Hardened Runtime is enabled. Gatekeeper also prevents the loading of unwanted plugins with benign apps by opening apps from randomized, read-only locations.
+Notarization is a process by which app developers submit their app to Apple to scan for malware and ensure it meets certain requirements. Among these are that it is signed with a key provided by Apple to the developer and that the Hardened Runtime is enabled. Gatekeeper also prevents the loading of unwanted plugins with benign apps by opening apps from randomized, read-only locations. Warnings about notarization can be dismissed by going to **Privacy & Security** in the settings and clicking open.
 
-The Gatekeeper warning can be easily bypassed by going to **Privacy & Security** in the settings and clicking open.
+To prompt the user that they are running an app downloaded outside of the app store for the first time, Gatekeeper checks for the quarantine extended attribute. This attribute, however, requires filesystem support and the tool used to download the application to set it. As such, it is trivially bypassable and **should not be relied upon**. For example, Gatekeeper will not prompt a user if they try to run an app for the first time on a FAT32 flash drive.
 
-You can change [Gatekeeper settings](https://support.apple.com/en-us/102445) to only allow apps downloaded from the App Store if you choose. It will still be bypassable but it will stop apps from being run that aren't from the App Store without you explicitly allowing it.
+Another thing to note is that when changed to [only allow apps downloaded from the App Store](https://support.apple.com/en-us/102445), Gatekeeper will not warn you about apps that have been previously launched on the system and is still bypassable.
 
-## Apps vs Other Executables
+## Other Executables
 
-Gatekeeper, the App Sandbox, and the Hardened Runtime only apply to apps and not other types of executable files, so when installing non-apps, you should be extremely careful. If possible, avoid installing non-app software altogether or install it in a virtual machine.
+Gatekeeper, the App Sandbox, and the Hardened Runtime only apply to apps (packaged with the .app extension) and not other types of executables. They also do not apply to CLI utils shipped inside an app if you invoke them directly using the terminal.
+
+## Command Line Tools
+
+If you need developer tools like Python and git, you can install Xcode and get them with automatic updates without having to install any third-party software. Alternatively, you can use the command `xcode-select --install` to install the tools without Xcode.
+
+This adds a lot of attack surface to your machine, so it's best to avoid installing developer tools unless you absolutely need them.
 
 ## TCC
 
 macOS has permissions that apply to all software across the system, called Transparency, Consent and Control (TCC). These can be found under [Privacy & Security](https://support.apple.com/guide/mac-help/change-privacy-security-settings-on-mac-mchl211c911f/mac) in the Settings.
 
 The Downloads, Desktop, Documents, Movies, Music, and Pictures folders for each user in particular are protected by permissions and thus are more secure than other places you might save your files. Consider using these folders for particularly sensitive data.
-
-Be very careful about granting permissions even to default macOS apps since it might have unintended consequences. For example, granting the Terminal full disk access can allow unsandboxed apps to cause it to run commands by tampering with the `~/.zshrc` file which is executed by the Terminal every time it opens.
 
 TCC doesn't have temporary permissions, so it can be useful to reset all premissions for an app at once. To do this, first find the app's bundle ID by running the command:
 
@@ -102,27 +101,37 @@ Reset the permissions with the command:
 sudo tccutil reset All [app.bundle.id]
 ```
 
+It is important to note that TCC is not a panacea, especially with unsandboxed app. TCC only protects a very limited number of directories, and unsandboxed apps can abuse their file system access to attack each other. For example, TCC does not protect `~/.zshrc`, allowing unsandboxed apps to inject their own commands to the file, which the Terminal app will execute at launch. If the user grants the terminal to all files on the system, then a malicious unsandboxed app can also gain access to all files on the system through the Terminal app. As such, it is crucial that you only give the minimum amount of privileges to apps, including ones written by Apple.
+
 ## XProtect
 
 XProtect is the built-in antivirus software in macOS. Like all AV, it's a last line of defense after all others have been bypassed.
 
 XProtect uses YARA signatures and is updated frequently, independent of OS updates. This is one of the many reasons you should be cautious about blocking connections to Apple servers; many of them serve a security purpose, so make sure you know what you're blocking. It can also detect unknown malware using heuristics. When it detects unkown malware, it will send information about that software to Apple so that they can update the signatures in XProtect.
 
-Apple also issues revocations for notarization tickets, which are detected with encrypted online OCSP checks. Blocking these checks will make you more vulnerable to malicious apps.
+Apple also issues revocations for notarization tickets, which are detected with OCSP checks over https. While OCSP checks may reveal to Apple which type of apps a user on an IP address is using, it is not recommended that you this check as it will break a very important security feature. Instead, you are better off using a commercial VPN to blend in with other Mac users.
 
-## System Integrity Protection
-
-[SIP](https://support.apple.com/guide/security/system-integrity-protection-secb7ea06b49/web) protects [system files](https://support.apple.com/en-us/102149) from being changed, even by the root user.
-
-On Apple Silicon Macs, it's combined with [Kernel Integrity Protection](https://support.apple.com/guide/security/operating-system-integrity-sec8b776536b/web#sec41bf3cd61) to protect kernel memory from being exploited.
-
-## Secure Boot
+## Verified Boot
 
 Mac computers ensure that only Apple-signed code runs from the lowest levels of the firmware to macOS itself (assuming Full Security is enabled). It accomplishes this with a [chain of trust](https://support.apple.com/guide/security/boot-process-secac71d5623/web) that starts with the Boot ROM burned into the Secure Enclave at the factory as the first step.
 
 Macs let you reduce your boot security by setting a [security policy](https://support.apple.com/guide/security/startup-disk-security-policy-control-sec7d92dc49f/web). It's best to leave it set to Full Security.
 
 A unique feature of Mac computers is that you can set a different [security policy](https://support.apple.com/guide/security/startup-disk-security-policy-control-sec7d92dc49f/web) for different installs, so you could have your main macOS with Full Security set and also an Asahi Linux install set to Permissive Security and it won't affect the security of your macOS. Avoid lowering the security policy below Full Security for any operating system you require to be secure, even temporarily.
+
+## System Integrity Protection
+
+[SIP](https://support.apple.com/guide/security/system-integrity-protection-secb7ea06b49/web) protects certain [system files](https://support.apple.com/en-us/102149) from being changed, even by the root user. This protection goes beyond what is provided by verified boot.
+
+On Apple Silicon Macs, SIP is combined with [Kernel Integrity Protection](https://support.apple.com/guide/security/operating-system-integrity-sec8b776536b/web#sec41bf3cd61) to protect kernel memory from being exploited.
+
+## System Extensions
+
+There are two types of [system extensions](https://support.apple.com/en-us/120363) on macOS: legacy system extensions (also known as kernel extensions) and system extensions. Kernel extensions modify the actual kernel, giving the software extremely low-level access to your system. These are very dangerous and in fact you need to lower your security policy to even load them. They're being phased out more and more with every version of macOS.
+
+Newer system extensions don't directly modify the kernel, but they use APIs that give them lower level access to your system than regular apps. You should be very cautious with these as well and only allow them when **absolutely necessary**.
+
+Removing an app doesn't automatically remove the system extensions associated with it. You can use the `systemextensionctl` command to list and manage extensions. You may need to disable SIP before you can remove extensions.
 
 ## DMA Protection
 
@@ -171,14 +180,6 @@ You can set the trash to [automatically empty](https://support.apple.com/en-ca/g
 ## Show File Extensions
 
 You should set Finder to always [show all file extensions](https://support.apple.com/en-ca/guide/mac-help/mchlp2304/mac) to help you see when a file is masquerading as another filetype.
-
-## System Extensions
-
-There are two types of [system extensions](https://support.apple.com/en-us/120363) on macOS: legacy system extensions (also known as kernel extensions) and system extensions. Kernel extensions modify the actual kernel, giving the software extremely low-level access to your system. These are very dangerous and in fact you need to lower your security policy to even load them. They're being phased out more and more with every version of macOS.
-
-Newer system extensions don't directly modify the kernel, but they use APIs that give them lower level access to your system than regular apps. You should be very cautious with these as well and only allow them when **absolutely necessary**.
-
-Removing an app doesn't remove the system extensions associated with it. You can use the `systemextensionctl` command to list and manage extensions. You may need to disable SIP before you can remove extensions.
 
 ## Apps Requiring Admin
 
@@ -238,7 +239,7 @@ Apple makes beta updates available, however you should avoid installing them in 
 
 ## Encrypted Backups
 
-If you choose to backup your Mac, you should do so with [Time Machine](https://support.apple.com/en-us/104984) and not a third party program. You should [encrypt your backups](https://support.apple.com/guide/mac-help/keep-your-time-machine-backup-disk-secure-mh21241/mac) for added security.
+If you choose to backup your Mac, you should do so with [Time Machine](https://support.apple.com/en-us/104984) and not a third party program. You should [encrypt your backups](https://support.apple.com/guide/mac-help/keep-your-time-machine-backup-disk-secure-mh21241/mac).
 
 ## Encrypted Disk Image
 
@@ -262,7 +263,12 @@ You can also add a [security key](https://support.apple.com/en-us/102637) to you
 
 Macs support [Touch ID](https://support.apple.com/guide/mac-help/use-touch-id-mchl16fbf90a/mac) for secure authentication without having to enter your password. This can protect against shoulder surfing or someone recording your keystrokes. The fingerprint data never leaves the device.
 
-You can 
+You can enable `sudo` with Touch ID by adding the following above lines with "required" in `/etc/pam.d/sudo`:
+
+```
+auth       sufficient     pam_tid.so
+```
+
 
 ## Network Security
 
@@ -270,7 +276,7 @@ Prefer networks that support [WPA3](https://support.apple.com/en-us/102766#secur
 
 Avoid connecting to [hidden networks](https://support.apple.com/en-us/102766#hiddennetwork) as they require your device to broadcast the network SSID which could be used to fingerprint you and identify the networks you connect to.
 
-You can [randomize your MAC address](https://support.apple.com/en-gb/guide/mac-help/mh11935/15.0/mac/15.0#mchldb2b7302) in Network settings. Set it to rotating and you'll periodically get a new one. By default, it's set to Fixed which will give you a different MAC address for every network, but when you reconnect to the same network it will be the same.
+By default, macOS uses a random MAC address for each SSID. However, it also defaults to using the "Fixed" randomization mode, re-using the same MAC address for SSID instead of changing it on every connection. Essentially, this allows network operators to recognize that you are the same user that has previously connected to the network. Consider changing the randomization mode to "Rotating" depending on your threat model.
 
 ## Securely Erase Your Mac
 
@@ -278,17 +284,19 @@ To completely wipe your Mac securely, use the [Erase All Content and Settings](h
 
 ## Keychain
 
-[Keychain](https://support.apple.com/guide/security/keychain-data-protection-secb0694df1a/1/web/1) is the secure keystore in macOS. There's also a built-in [password manager](https://support.apple.com/en-us/105115) that can securely keep track of your passwords and generate new secure passwords.
+[Keychain](https://support.apple.com/guide/security/keychain-data-protection-secb0694df1a/1/web/1) is the secure keystore in macOS. Unlike the `org.freedesktop.Secrets` dbus implementation found in most Linux distributions, macOS's Keychain supports scoped access, allowing secrets to only be accessible by applications associated with it.
+
+On macOS Sequoia, the Keychain Access app is hidden from launchpad. However, it still exists on the system. You can access it by running the following in the Terminal:
+
+```bash
+open /System/Library/CoreServices/Applications/Keychain Access.app
+```
+
+There's also a built-in [password manager](https://support.apple.com/en-us/105115) that can securely keep track of your passwords and generate new secure passwords.
 
 ## iCloud Private Relay
 
 With an iCloud+ subscription, you will have access to [Private Relay](https://developer.apple.com/icloud/prepare-your-network-for-icloud-private-relay/). Private Relay uses the QUIC protocol and routes your traffic through two nodes: one run by Apple and one run by a third party so that your real IP address and your destination can't be easily correlated. Private Relay covers Safari traffic, DNS queries, and insecure http app traffic leaving your device.
-
-## Command Line Tools
-
-If you need developer tools like Python and git, you can install Xcode and get them with automatic updates without having to install any third-party software. Alternatively, you can use the command `xcode-select --install` to install the tools without Xcode.
-
-This adds a lot of attack surface to your machine, so it's best to avoid installing developer tools unless you absolutely need them.
 
 ## Accessibility
 
@@ -297,10 +305,6 @@ Never give software [accessibility permissions](https://support.apple.com/en-my/
 ## Remote Management
 
 If you don't need ssh, [turn it off](https://support.apple.com/en-gb/guide/mac-help/mchlp1066/15.0/mac/15.0). The same goes for [remote desktop](https://support.apple.com/en-gb/guide/mac-help/mh11851/15.0/mac/15.0) and [remote application scripting](https://support.apple.com/en-mide/guide/mac-help/mchlp1398/mac).
-
-## Encrypted Swap
-
-macOS encrypts its [virtual memory](https://support.apple.com/en-euro/guide/mac-help/mh11852/mac).
 
 ## Configuration Profiles and Shortcuts
 
