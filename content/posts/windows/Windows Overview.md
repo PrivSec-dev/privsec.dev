@@ -37,45 +37,9 @@ You should also choose a computer that has a long lifecycle of driver and firmwa
 
 ### Version and Edition
 
-Use Windows 11 Enterprise, version 23H2 as your operating system.
+You should use the [latest version](https://learn.microsoft.com/en-us/windows/release-health/windows11-release-information) of Windows Enterprise edition as it provides the most complete security and privacy features.
 
-### Out-of-Box-Experience (OOBE)
-
-*   Select your region to European Union (EU) and allow optional diagnostic data.
-
-*   Use a local account instead of a Microsoft account. Use a provisioning package to do this.
-
-*   After OOBE, enable Smart App Control in Start → Windows Security → App & Browser Control → Smart App Control.
-
-*   [Codecs](https://support.microsoft.com/en-us/windows/codecs-in-media-player-d5c2cdcd-83a2-4805-abb0-c6888138e456)
-
-For Key Management Service (KMS) activation, execute the following command from an elevated command prompt:
-
-```null
-cd "c:\windows\system32"
-cscript slmgr.vbs /skms input.your.kms.server.here
-cscript slmgr.vbs /ato
-```
-
-For Multiple Activation Key (MAK) activation, execute the following command from an elevated command prompt:
-
-    cd "c:\windows\system32"
-    cscript slmgr.vbs /ipk input-your-mak-key-here
-    cscript slmgr.vbs /ato
-
-To upgrade from Windows Home to Windows Pro, enter your product key in Sttings → System → Activation → Change product key.
-
-To upgrade from Windows Pro to Windows Enterprise, execute the following command from an elevated command prompt:
-
-    cd "c:\windows\system32"
-    cscript slmgr.vbs /ipk NPPR9-FWDCX-D2C8J-H872K-2YT43
-    cscript slmgr.vbs /ato
-
-Please note that the above command will not activate Windows Enterprise.
-
-TBC
-
-### Install Updates
+### Updates
 
 Installing updates is crucial. Windows Update delivers updates to Windows automatically. You can also manually check for updates in Start → Settings → Windows Update → Check for Updates. You should [update](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/add-update-to-winre?view=windows-11#apply-the-update-to-a-running-pc) Windows Recovery Environment (Windows RE) by yourself. If you have other Windows installation media, such as Windows Preinstallation Environment (Windows PE) or Windows RE that is not recognized by the current Windows operating system, you should [update](https://learn.microsoft.com/en-us/windows/deployment/update/media-dynamic-update) them manually.
 
@@ -89,7 +53,7 @@ You should also enable automatic updates in Microsoft Store in Start → Microso
 
 ### Security Baselines
 
-A security baseline is a group of Microsoft-recommended configuration settings that explains their security implication.
+A [security baseline](https://learn.microsoft.com/en-us/windows/security/operating-system-security/device-management/windows-security-configuration-framework/windows-security-baselines) is a group of Microsoft-recommended configuration settings that explains their security implication.
 
 *   [Download](https://www.microsoft.com/en-us/download/details.aspx?id=55319) the following files: `Windows 11 v23H2 Security Baseline.zip` and `LGPO.zip`.
 
