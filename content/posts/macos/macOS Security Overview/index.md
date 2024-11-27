@@ -267,7 +267,6 @@ You can enable `sudo` with Touch ID by adding the following above lines with "re
 auth       sufficient     pam_tid.so
 ```
 
-
 ## Network Security
 
 Prefer networks that support [WPA3](https://support.apple.com/en-us/102766#security) and avoid networks that use deprecated protocols.
