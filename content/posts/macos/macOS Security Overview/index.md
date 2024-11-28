@@ -340,7 +340,7 @@ Never give software [accessibility permissions](https://support.apple.com/en-my/
 
 ## Remote Management
 
-If you don't need ssh, [turn it off](https://support.apple.com/en-gb/guide/mac-help/mchlp1066/15.0/mac/15.0). The same goes for [remote desktop](https://support.apple.com/en-gb/guide/mac-help/mh11851/15.0/mac/15.0) and [remote application scripting](https://support.apple.com/en-mide/guide/mac-help/mchlp1398/mac).
+If you don't need SSH, [turn it off](https://support.apple.com/en-gb/guide/mac-help/mchlp1066/15.0/mac/15.0). The same goes for [remote desktop](https://support.apple.com/en-gb/guide/mac-help/mh11851/15.0/mac/15.0) and [remote application scripting](https://support.apple.com/en-mide/guide/mac-help/mchlp1398/mac).
 
 ## Configuration Profiles and Shortcuts
 
