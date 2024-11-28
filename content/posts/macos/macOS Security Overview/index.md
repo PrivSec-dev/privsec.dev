@@ -109,7 +109,7 @@ XProtect uses YARA signatures and is updated frequently, independent of OS updat
 
 Apple also issues revocations for notarization tickets, which are detected with OCSP checks over HTTPS. While OCSP checks may reveal to Apple which type of apps a user on an IP address is using, it is not recommended that you disable this check as it will break a very important security feature. Instead, you are better off using a commercial VPN to blend in with other Mac users.
 
-## Verified Boot
+## Secure Boot
 
 Mac computers ensure that only Apple-signed code runs from the lowest levels of the firmware to macOS itself (assuming Full Security is enabled). It accomplishes this with a [chain of trust](https://support.apple.com/guide/security/boot-process-secac71d5623/web) that starts with the Boot ROM burned into the Secure Enclave at the factory as the first step.
 
