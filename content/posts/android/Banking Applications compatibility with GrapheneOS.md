@@ -64,6 +64,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Paysend Money Transfer App](https://play.google.com/store/apps/details?id=com.paysend.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/222)
 - ~~[Revolut - Mobile Finance](https://play.google.com/store/apps/details?id=com.revolut.revolut)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/90)
 - [UnionPay APP](https://play.google.com/store/apps/details?id=com.unionpay) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/421)
+- [Wise](https://play.google.com/store/apps/details?id=com.transferwise.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/266)
 
 ## National banking apps
 
@@ -521,7 +522,6 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [OCBC Digital - Mobile Banking](https://play.google.com/store/apps/details?id=com.ocbc.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/146)
 - [SFL Go](https://play.google.com/store/apps/details?id=sg.sfl.ib) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/273)
 - [SIF Mobile](https://play.google.com/store/apps/details?id=com.sif.retailbanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/270)
-- [Wise](https://play.google.com/store/apps/details?id=com.transferwise.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/266)
 
 ### Slovakia
 
