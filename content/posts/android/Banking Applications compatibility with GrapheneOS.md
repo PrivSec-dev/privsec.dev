@@ -76,7 +76,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 - [ANZ Australia](https://play.google.com/store/apps/details?id=com.anz.android.gomoney) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/157)
 - [ANZ Plus](https://play.google.com/store/apps/details?id=com.anz.lotus) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/313)
-- ~~[Bank Australia App](https://play.google.com/store/apps/details?id=com.fusion.banking)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/55)
+- [Bank Australia App](https://play.google.com/store/apps/details?id=com.fusion.banking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/55)
 - [Bendigo Bank](https://play.google.com/store/apps/details?id=com.bendigobank.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/88)
 - [CommBank](https://play.google.com/store/apps/details?id=com.commbank.netbank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/75)
 - [HSBC Australia](https://play.google.com/store/apps/details?id=au.com.hsbc.hsbcaustralia) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/375)
@@ -250,6 +250,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Ma Banque](https://play.google.com/store/apps/details?id=fr.creditagricole.androidapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/73)
 - [Mes Comptes BNP Paribas](https://play.google.com/store/apps/details?id=net.bnpparibas.mescomptes) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/165)
 - [Mes Comptes - LCL](https://play.google.com/store/apps/details?id=fr.lcl.android.customerarea) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/196)
+- [Qonto - Business Finance App](https://play.google.com/store/apps/details?id=eu.qonto.qonto) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/548)
 
 ### Germany
 
@@ -488,7 +489,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 ### Romania
 
 - [Banca Transilvania](https://play.google.com/store/apps/details?id=ro.btrl.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/427)
-- [BT Pay](https://play.google.com/store/apps/details?id=ro.btrl.pay) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/83)
+- ~~[BT Pay](https://play.google.com/store/apps/details?id=ro.btrl.pay)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/83)
 - [George Romania](https://play.google.com/store/apps/details?id=ro.bcr.georgego) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/179)
 - [ING HomeBank](https://play.google.com/store/apps/details?id=ro.ing.mobile.banking.android.activity) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/356)
 - ~~[Libra Mobile Banking](https://play.google.com/store/apps/details?id=libra.mobile.banking)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/404)
