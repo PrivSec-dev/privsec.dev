@@ -64,11 +64,11 @@ WantedBy=multi-user.target
 ```
 [Unit]
 Description=Run /usr/lib/qubes/qubes-setup-dnat-to-ns
-StartLimitIntervalSec=0
+After=qubes-network-uplink.service
 
 [Service]
 Type=oneshot
-ExecStart=sleep 10
+ExecStart=sleep 15
 ExecStart=/usr/lib/qubes/qubes-setup-dnat-to-ns
 
 [Install]
