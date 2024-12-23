@@ -59,6 +59,22 @@ Unit=dnat-to-ns.service
 WantedBy=multi-user.target
 ```
 
+- `/etc/systemd/system/dnat-to-ns-boot.service`
+
+```
+[Unit]
+Description=Run /usr/lib/qubes/qubes-setup-dnat-to-ns
+StartLimitIntervalSec=0
+
+[Service]
+Type=oneshot
+ExecStart=sleep 10
+ExecStart=/usr/lib/qubes/qubes-setup-dnat-to-ns
+
+[Install]
+WantedBy=multi-user.target
+```
+
 Create `/etc/systemd/system/systemd-resolved.conf.d/override.conf` to disable rate limiting on systemd-resolved restarting:
 
 ```
@@ -66,10 +82,11 @@ Create `/etc/systemd/system/systemd-resolved.conf.d/override.conf` to disable ra
 StartLimitIntervalSec=0
 ```
 
-Next, enable the systemd path:
+Next, enable the systemd path and service to run at boot:
 
 ```bash
 sudo systemctl enable dnat-to-ns.path
+sudo systemctl enable dnat-to-ns-boot.service
 ```
 
 Finally, shut down the TemplateVM:
