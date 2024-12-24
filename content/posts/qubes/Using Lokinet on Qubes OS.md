@@ -74,7 +74,7 @@ sudo shutdown now
 
 Create an AppVM based on the TemplateVM you have just created. Set `sys-firewall` (or whatever FirewallVM you have connected to your `sys-net`) as the net qube. If you do not have such FirewallVM, use `sys-net` as the net qube.
 
-Edit `/etc/loki/loki.net` and add the exit node you want to use. At the moment, the only free exit node that I am aware of is `euroexit.loki`:
+Edit `/etc/loki/lokinet.ini` and add the exit node you want to use. At the moment, the only free exit node that I am aware of is `euroexit.loki`:
 
 ```
 [network]
