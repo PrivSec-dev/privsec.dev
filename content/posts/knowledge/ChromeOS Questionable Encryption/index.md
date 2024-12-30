@@ -27,9 +27,9 @@ As a result, someone with sufficient access to Google's servers would theoretica
 
 This differs from how encryption passwords are handled by other services like cloud&#8209;based password managers&nbsp;&mdash; they use _client&#8209;side hashing_ to deliberately blind the server from the actual password. As the name suggests, the browser locally executes a cryptographic hash function on the actual password and only transmits the _resultant hash_ to the server for authentication.
 
-The user should be able to avoid this issue with the local password. While we have not done in-depth analysis to confirm that Google never has access to the local encryption password, this is likely the case since an account recovery using the Google password will require a Power Wash:
+The user should be able to avoid this issue with the local password. While we have not done in-depth analysis to confirm that Google never has access to the local encryption password, this is likely the case since an account recovery using the Google password will require a Powerwash:
 
-![Power Wash](power-wash.jpg)
+![Powerwash](power-wash.jpg)
 
 ## Takeaways
 
