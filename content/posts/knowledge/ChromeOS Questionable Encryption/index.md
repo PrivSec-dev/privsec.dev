@@ -13,7 +13,7 @@ It is well-known that ChromeOS uses Google account passwords as the primary logi
 
 Recent versions of ChromeOS also allows users to use a separare login password instead of the Google account password.
 
-![Local Password](local-password.jpeg)
+![Local Password](local-password.png)
 
 ## Practical Implications
 
@@ -29,7 +29,7 @@ This differs from how encryption passwords are handled by other services like cl
 
 The user should be able to avoid this issue with the local password. While we have not done in-depth analysis to confirm that Google never has access to the local encryption password, this is likely the case since an account recovery using the Google password will require a Powerwash:
 
-![Powerwash](power-wash.jpg)
+![Account Recovery](account-recovery.png)
 
 ## Takeaways
 
