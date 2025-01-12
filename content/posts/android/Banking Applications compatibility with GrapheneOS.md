@@ -89,6 +89,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [ME Bank](https://play.google.com/store/apps/details?id=au.com.mebank.banking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/203)
 - [MyState: The human way to bank](https://play.google.com/store/apps/details?id=com.mystate.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/345)
 - [NAB Mobile Banking](https://play.google.com/store/apps/details?id=au.com.nab.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/76)
+- [St.George Mobile Banking](https://play.google.com/store/apps/details?id=org.stgeorge.bank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/570)
 - [Ubank Money App](https://play.google.com/store/apps/details?id=au.com.bank86400) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/156)
 - [Up — Easy Money](https://play.google.com/store/apps/details?id=au.com.up.money) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/102)
 - [Westpac](https://play.google.com/store/apps/details?id=org.westpac.bank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/77)
@@ -182,9 +183,11 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Colombia
 
+- [Bancolombia Personas](https://play.google.com/store/apps/details?id=com.todo1.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/568)
 - [Banco Falabella Colombia](https://play.google.com/store/apps/details?id=co.com.bancofalabella.mobile.omc) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/387)
 - [BBVA Colombia](https://play.google.com/store/apps/details?id=co.com.bbva.mb) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/386)
 - [Davivienda](https://play.google.com/store/apps/details?id=com.davivienda.daviviendaapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/528)
+- [Mi Bancolombia](https://play.google.com/store/apps/details?id=co.com.bancolombia.personas.superapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/571)
 - [Nequi Colombia](https://play.google.com/store/apps/details?id=com.nequi.MobileApp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/388)
 
 ### Croatia
@@ -289,6 +292,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Penta — Business Banking App](https://play.google.com/store/apps/details?id=com.getpenta.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/24)
 - [PSD Banking](https://play.google.com/store/apps/details?id=de.psd.banking.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/159)
 - [Santander Banking](https://play.google.com/store/apps/details?id=de.santander.presentation) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/119)
+- [Scalable Capital: ETF & Stocks](https://play.google.com/store/apps/details?id=capital.scalable.droid) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/567)
 - [SecureGo+ Renault Bank direkt](https://play.google.com/store/apps/details?id=de.renaultbankdirekt.securego) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/439)
 - [SecureGo plus](https://play.google.com/store/apps/details?id=de.fiduciagad.securego.wl) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/161)
 - [SMARTBROKER+ Aktien & ETF](https://play.google.com/store/apps/details?id=de.smartbroker) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/394)
@@ -597,6 +601,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 ### Switzerland
 
 - [ABS Mobile Banking](https://play.google.com/store/apps/details?id=com.abs.android.mbanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/233)
+- [ABS TWINT](https://play.google.com/store/apps/details?id=ch.abs.twint) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/569)
 - [Airlock 2FA](https://play.google.com/store/apps/details?id=com.airlock.iam.a2fa) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/229)
 - [Alpian - Banking & Investing](https://play.google.com/store/apps/details?id=com.alpian.alpian) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/515)
 - [BCN Mobile banking](https://play.google.com/store/apps/details?id=com.bcn.android.mbanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/145)
