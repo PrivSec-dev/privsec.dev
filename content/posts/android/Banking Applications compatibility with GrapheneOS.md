@@ -143,6 +143,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Santander Way: App de cartões](https://play.google.com/store/apps/details?id=br.com.santander.way) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/152)
 - [Sicoob](https://play.google.com/store/apps/details?id=br.com.sicoobnet) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/239)
 - [Sicredi X](https://play.google.com/store/apps/details?id=br.com.sicredi.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/412)
+- [XP Investimentos](https://play.google.com/store/apps/details?id=br.com.xp.carteira) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/572)
 
 ### Bulgaria
 
@@ -290,6 +291,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [norisbank App](https://play.google.com/store/apps/details?id=com.db.mm.norisbank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/425)
 - [Pay – Die Bezahl-App](https://play.google.com/store/apps/details?id=de.fiduciagad.android.vrwallet) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/35)
 - [Penta — Business Banking App](https://play.google.com/store/apps/details?id=com.getpenta.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/24)
+- [Postbank](https://play.google.com/store/apps/details?id=de.postbank.banking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/575)
 - [PSD Banking](https://play.google.com/store/apps/details?id=de.psd.banking.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/159)
 - [Santander Banking](https://play.google.com/store/apps/details?id=de.santander.presentation) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/119)
 - [Scalable Capital: ETF & Stocks](https://play.google.com/store/apps/details?id=capital.scalable.droid) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/567)
@@ -693,6 +695,8 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Axos All-In-One Mobile Banking](https://play.google.com/store/apps/details?id=com.axos.udb) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/430)
 - [Bank of America Mobile Banking](https://play.google.com/store/apps/details?id=com.infonow.bofa) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/242)
 - [BECU](https://play.google.com/store/apps/details?id=org.becu.androidapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/60)
+- [Beneficial State Bank Mobile](https://play.google.com/store/apps/details?id=com.beneficialstatebank.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/574)
+- [Betterment Invest & Save Money](https://play.google.com/store/apps/details?id=com.betterment) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/573)
 - [Capital One Mobile](https://play.google.com/store/apps/details?id=com.konylabs.capitalone) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/107)
 - ~~[Cash App](https://play.google.com/store/apps/details?id=com.squareup.cash)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/453)
 - [Chase Mobile](https://play.google.com/store/apps/details?id=com.chase.sig.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/13)
