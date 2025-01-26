@@ -489,7 +489,9 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Kantor Walutowy Alior Banku](https://play.google.com/store/apps/details?id=pl.alior.mobile.exchange.prd) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/172)
 - [mBank PL](https://play.google.com/store/apps/details?id=pl.mbank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/136)
 - [Moje ING mobile](https://play.google.com/store/apps/details?id=pl.ing.mojeing) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/169)
+- [Nest Bank](https://play.google.com/store/apps/details?id=pl.nestbank.nestbank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/576)
 - [PeoPay](https://play.google.com/store/apps/details?id=softax.pekao.powerpay) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/298)
+- [Santander Consumer Bank](https://play.google.com/store/apps/details?id=pl.santanderconsumer) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/577)
 - [Santander mobile](https://play.google.com/store/apps/details?id=pl.bzwbk.bzwbk24) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/371)
 
 ### Portugal
