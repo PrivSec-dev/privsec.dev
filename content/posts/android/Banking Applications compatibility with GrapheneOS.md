@@ -63,7 +63,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Payoneer](https://play.google.com/store/apps/details?id=com.payoneer.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/445)
 - [PayPal - Send, Shop, Manage](https://play.google.com/store/apps/details?id=com.paypal.android.p2pmobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/127)
 - [Paysend Money Transfer App](https://play.google.com/store/apps/details?id=com.paysend.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/222)
-- ~~[Revolut - Mobile Finance](https://play.google.com/store/apps/details?id=com.revolut.revolut)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/90)
+- [Revolut - Mobile Finance](https://play.google.com/store/apps/details?id=com.revolut.revolut) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/90)
 - [UnionPay APP](https://play.google.com/store/apps/details?id=com.unionpay) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/421)
 - [Wise](https://play.google.com/store/apps/details?id=com.transferwise.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/266)
 
@@ -235,6 +235,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Finland
 
+- [Holvi – Business banking](https://play.google.com/store/apps/details?id=com.holvi.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/578)
 - [Nordea ID](https://play.google.com/store/apps/details?id=com.nordea.mobiletoken) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/280)
 - [OP-mobiili](https://play.google.com/store/apps/details?id=fi.op.android.opmobiili) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/479)
 - [POP Mobiili](https://play.google.com/store/apps/details?id=fi.poppankki.popmobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/480)
