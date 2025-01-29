@@ -99,6 +99,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [bank99 | Online Banking ex-ING](https://play.google.com/store/apps/details?id=at.ing.diba.client.onlinebanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/275)
 - [Bank Austria MobileBanking](https://play.google.com/store/apps/details?id=com.bankaustria.android.olb) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/15)
 - [complete Control](https://play.google.com/store/apps/details?id=com.cardcomplete.completecontrol) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/408)
+- [easybank App](https://play.google.com/store/apps/details?id=com.easybank.easybank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/597)
 - [flatex next AT: Aktien und ETF](https://play.google.com/store/apps/details?id=de.xcom.flatexat) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/491)
 - [George Österreich](https://play.google.com/store/apps/details?id=at.erstebank.george) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/490)
 - [Mein ELBA-App](https://play.google.com/store/apps/details?id=at.rsg.pfp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/62)
@@ -327,7 +328,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [HSBC HK Mobile Banking](https://play.google.com/store/apps/details?id=hk.com.hsbc.hsbchkmobilebanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/303)
 - [inMotion by CNCBI](https://play.google.com/store/apps/details?id=com.citic.inmotion) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/483)
 - [OCBC Hong Kong](https://play.google.com/store/apps/details?id=com.winghang) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/484)
-- ~~[Octopus](https://play.google.com/store/apps/details?id=com.octopuscards.nfc_reader)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/485)
+- [Octopus](https://play.google.com/store/apps/details?id=com.octopuscards.nfc_reader) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/485)
 
 ### Hungary
 
@@ -531,18 +532,24 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Singapore
 
+- [Amex Singapore](https://play.google.com/store/apps/details?id=com.americanexpress.android.acctsvcs.sg) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/590)
 - [BigPay – financial services](https://play.google.com/store/apps/details?id=com.tpaay.bigpay) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/271)
+- [Chocolate Finance](https://play.google.com/store/apps/details?id=com.chocolatefinance.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/585)
 - [CIMB Clicks Singapore](https://play.google.com/store/apps/details?id=com.cimb.sg.clicksMobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/268)
 - [Citibank SG](https://play.google.com/store/apps/details?id=com.citibank.mobile.sg) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/267)
 - [DBS digibank - wealth](https://play.google.com/store/apps/details?id=com.dbs.sg.iwealth) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/183)
+- [DBS IDEAL Mobile](https://play.google.com/store/apps/details?id=com.dbs.ideal) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/494)
 - [Grab - Taxi & Food Delivery](https://play.google.com/store/apps/details?id=com.grabtaxi.passenger) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/316)
 - [GXS Bank](https://play.google.com/store/apps/details?id=sg.com.gxs.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/315)
 - [HLF FASTPAY](https://play.google.com/store/apps/details?id=com.hongleongfinance.hlf) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/269)
 - [iChange](https://play.google.com/store/apps/details?id=com.iapps.slide.userapp.ichange) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/320)
 - [Instarem: Send money overseas](https://play.google.com/store/apps/details?id=com.instarem.mobileapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/272)
+- [MariBank](https://play.google.com/store/apps/details?id=sg.com.maribankmobile.digitalbank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/586)
+- [OCBC Business](https://play.google.com/store/apps/details?id=com.ocbc.mobilebv) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/587)
 - [OCBC Digital - Mobile Banking](https://play.google.com/store/apps/details?id=com.ocbc.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/146)
 - [SFL Go](https://play.google.com/store/apps/details?id=sg.sfl.ib) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/273)
 - [SIF Mobile](https://play.google.com/store/apps/details?id=com.sif.retailbanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/270)
+- [Trust Bank SG](https://play.google.com/store/apps/details?id=sg.trust) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/589)
 
 ### Slovakia
 
@@ -554,7 +561,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Slovenia
 
-- ~~[DH Denarnik](https://play.google.com/store/apps/details?id=si.delavskahranilnica.dhdenarnik)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/178)
+- [DH Denarnik](https://play.google.com/store/apps/details?id=si.delavskahranilnica.dhdenarnik) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/178)
 - [DH Mobilni](https://play.google.com/store/apps/details?id=com.hrc.eb.mobile.android.hibismobiledh) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/177)
 
 ### South Korea
@@ -744,8 +751,14 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Vietnam
 
+- [AB Ditizen](https://play.google.com/store/apps/details?id=com.vnpay.abbank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/592)
+- [MB Bank](https://play.google.com/store/apps/details?id=com.mbmobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/594)
+- [MoMo -Trợ thủ Tài chính với AI](https://play.google.com/store/apps/details?id=com.mservice.momotransfer) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/595)
+- [OCB OMNI 4.0](https://play.google.com/store/apps/details?id=vn.com.ocb.awe) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/596)
 - [SHB Mobile Banking](https://play.google.com/store/apps/details?id=vn.shb.mbanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/254)
-  
+- [VietinBank iPay](https://play.google.com/store/apps/details?id=com.vietinbank.ipay) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/593)
+
+
 ---
 
 ## Prerequisites
