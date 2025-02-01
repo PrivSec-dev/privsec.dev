@@ -27,7 +27,7 @@ echo 'binds+=( '\'''/etc/mullvad-vpn''\'' )' | sudo tee /etc/qubes-bind-dirs.d/5
 Inside of the TemplateVM you have just created, do the following:
 
 ```bash
-sudo dnf config-manager --add-repo https://repository.mullvad.net/rpm/stable/mullvad.repo
+sudo dnf config-manager addrepo --from-repofile=https://repository.mullvad.net/rpm/stable/mullvad.repo
 sudo dnf install -y mullvad-vpn
 ```
 

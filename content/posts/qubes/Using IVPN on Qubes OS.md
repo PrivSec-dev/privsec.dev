@@ -27,7 +27,7 @@ echo 'binds+=( '\'''/etc/opt/ivpn/mutable''\'' )' | sudo tee /etc/qubes-bind-dir
 Inside of the TemplateVM you have just created, do the following:
 
 ```bash
-sudo dnf config-manager --add-repo https://repo.ivpn.net/stable/fedora/generic/ivpn.repo
+sudo dnf config-manager addrepo --from-repofile=https://repo.ivpn.net/stable/fedora/generic/ivpn.repo
 sudo dnf install -y ivpn-ui
 ```
 
