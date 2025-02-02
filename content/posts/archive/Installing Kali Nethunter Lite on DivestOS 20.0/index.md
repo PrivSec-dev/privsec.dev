@@ -5,11 +5,13 @@ tags: ['Operating Systems', 'Android', 'Offensive Security']
 author: Tommy
 ---
 
+**Update**: DivestOS has been discontinued and downloads are no longer available.
+
 **This will turn your device into a purely penetration testing device, and it will be very insecure for any other purpose. Please do not do this on your daily driver.**
 
 _This procedure should work without modification on many devices using the standard Android bootloader (not Samsung). However, every device has unique quirks that may require special attention._
 
-![Kali NetHunter Lite on a OnePlus 7T](/images/kali-nethunter-op7t.jpg)
+![Kali NetHunter Lite on a OnePlus 7T](kali-nethunter-op7t.jpg)
 
 Originally, I just needed a device to run packet capture on my other devices. I have a OnePlus 7T laying around which I am not using for anything (since it has already reached its end-of-life), so I thought it would be cool to give it a new purpose. I am using DivestOS here since it is my go&#8209;to Android distribution, but you can use LineageOS or any other distribution if you want to.
 
@@ -24,7 +26,7 @@ fastboot reboot /path/to/the/divestos/recovery.img
 fastboot reboot recovery
 ```
 
-![DivestOS Recovery](/images/divestos-recovery.jpg)
+![DivestOS Recovery](divestos-recovery.jpg)
 
 Select Apply Update and Apply Update from ADB:
 
@@ -54,7 +56,7 @@ Next, you just need to do ADB sideload for Disable Force Encryption NEO. It will
 
 Reboot into your OS and set it up normally. Make sure that encryption is disabled:
 
-![Kali Nethunter Encryption](/images/kali-nethunter-encryption.jpg)
+![Kali Nethunter Encryption](kali-nethunter-encryption.jpg)
 
 Finally, [download](https://www.kali.org/get-kali/#kali-mobile) the appropriate build for Nethunter and flash it as a Magisk module in the Magisk Manager.
 
