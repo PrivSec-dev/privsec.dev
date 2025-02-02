@@ -66,7 +66,7 @@ Fedora's package manager, `dnf`, has a great rollback and undo feature that is g
 {{< youtube id="-hpV5l-gJnQ">}}
 
 
-### Secure Blue
+### SecureBlue
 
 [SecureBlue](https://github.com/secureblue/secureblue) provides hardened operating system images based on Fedora Atomic Desktops. While they do add another party of trust, their images are substantially hardened and not easily replicated by hand.
 
