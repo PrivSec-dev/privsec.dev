@@ -15,25 +15,9 @@ For frozen distributions, package maintainers are expected to backport patches t
 
 In fact, in certain cases, there have been vulnerabilities introduced by Debian because of their patching process. [Bug 1633467](https://bugzilla.mozilla.org/show_bug.cgi?id=1633467) and [DSA-1571](https://www.debian.org/security/2008/dsa-1571) are examples of this.
 
-![Upstream / Distros Gap](upstream-distros-gap.png)
-
 The practice of holding packages back and applying interim patches is generally not a good idea, as it diverges from the way the developer might have intended the software to work. [Richard Brown](https://rootco.de/aboutme/) has a presentation about this:
 
 {{< youtube id="i8c0mg_mS7U">}}
-
-## Traditional and Atomic updates
-
-Traditionally, Linux distributions update by sequentially updating the desired packages. Traditional updates such as those used in Fedora, Arch Linux, and Debian based distributions can be less reliable if an error occurs while updating.
-
-Distributions that use atomic updates apply updates in full or not at all. Typically, transactional update systems are also atomic.
-
-A transactional update system creates a snapshot that is made before and after an update is applied. If an update fails at any time (perhaps due to a power failure), the update can be easily rolled back to a “last known good state."
-
-[Adam Šamalík](https://twitter.com/adsamalik) has a presentation with `rpm-ostree` in action:
-
-{{< youtube id="-hpV5l-gJnQ">}}
-
-Even if you are worried about the stability of the system because of regularly updated packages (which you shouldn't be), it makes more sense to use a system which you can safely update and rollback instead of an outdated distribution partially made up of unreliable backport packages without an easy rollback mechanism in case something goes wrong like Debian.
 
 ## Arch-based Distributions
 
@@ -41,10 +25,7 @@ Arch Linux has very up-to-date packages with minimal downstream patching. That b
 
 For a secure system, you are also expected to have sufficient Linux knowledge to properly set up security for your system such as adopting a [mandatory access control](https://en.wikipedia.org/wiki/Mandatory_access_control) system, setting up [kernel module](https://en.wikipedia.org/wiki/Loadable_kernel_module#Security) blacklists, hardening boot parameters, manipulating [sysctl](https://en.wikipedia.org/wiki/Sysctl) parameters, and knowing what components you need such as [Polkit](https://en.wikipedia.org/wiki/Polkit).
 
-If you are experienced with Linux and wish to use an Arch-based distribution, you should use Arch Linux proper, not any of its derivatives. Here are some examples of why that is the case:
-
-- **Manjaro**: This distribution holds packages back for 2 weeks to make sure that their own changes do not break, not to make sure that upstream is stable. When AUR packages are used, they are often built against the latest [libraries](https://en.wikipedia.org/wiki/Library_(computing)) from Arch’s repositories.
-- **Garuda**: They use [Chaotic-AUR](https://aur.chaotic.cx/) which automatically and blindly compiles packages from the AUR. There is no verification process to make sure that the AUR packages don’t suffer from supply chain attacks. Beyond that, they promote incredibly bad advice in their official communication channels such as to [keep Secure Boot off](https://t.me/garudalinux/292499) because it is somehow bad and evil.
+If you are experienced with Linux and wish to use an Arch-based distribution, you should use Arch Linux proper, not any of its derivatives. Downstream distributions may come with bad practices like holding back packages (as is the case with Manjaro), blindly building packages from the AUR (as is the case with Garuda and its [Chaotic-AUR](https://aur.chaotic.cx/) repository), or just not setting up the basics such as mandatory access control or firewalls.
 
 ## “Security-focused” Distributions
 
@@ -58,7 +39,7 @@ If you want to use one of these distributions for reasons other than ideology, y
 
 ## Desktop Environments
 
-You should use GNOME as your desktop environment. It supports [Wayland](https://en.wikipedia.org/wiki/Wayland_(display_server_protocol)), a display protocol developed with security [in mind](https://lwn.net/Articles/589147), and implements permission control for privileged Wayland protocols like screencopy. There are other desktop environments and window managers with Wayland support, but I am not aware of any permission control implemented by them.
+You should use GNOME as your desktop environment. It supports [Wayland](https://en.wikipedia.org/wiki/Wayland_(display_server_protocol)), a display protocol developed with security [in mind](https://lwn.net/Articles/589147), and implements permission control for privileged Wayland protocols like `screencopy`. There are other desktop environments and window managers with Wayland support, but I am not aware of any permission control implemented by them.
 
 Wayland's predecessor, [X11](https://en.wikipedia.org/wiki/X_Window_System), does not support GUI isolation, allowing all windows to [record screen, log and inject inputs in other windows](https://blog.invisiblethings.org/2011/04/23/linux-security-circus-on-gui-isolation.html), making any attempt at sandboxing futile. While there are options to run nested X11 sessions such as [Xpra](https://en.wikipedia.org/wiki/Xpra) or [Xephyr](https://en.wikipedia.org/wiki/Xephyr), they often come with negative performance consequences, are not convenient to set up, and are not preferable to Wayland. You should avoid desktop environments and window managers which only support X11.
 
@@ -74,19 +55,27 @@ Here is a quick, non-authoritative list of distributions we recommend over other
 
 With that, Fedora generally adopts newer technologies before other distributions e.g., [Wayland](https://wayland.freedesktop.org/) and [PipeWire](https://pipewire.org/). These new technologies often come with improvements in security, privacy, and usability in general.
 
-While lacking transactional or atomic updates, Fedora's package manager, `dnf`, has a great rollback and undo feature that is generally missing from other package managers. You can read more about it on [Red Hat's documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/managing_software_with_the_dnf_tool/assembly_handling-package-management-history_managing-software-with-the-dnf-tool).
+Fedora's package manager, `dnf`, has a great rollback and undo feature that is generally missing from other package managers. You can read more about it on [Red Hat's documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/managing_software_with_the_dnf_tool/assembly_handling-package-management-history_managing-software-with-the-dnf-tool). It should give you the peace of mind when applying package updates.
 
-### Fedora Silverblue
+### Fedora Atomic Desktops
 
-[Fedora Silverblue](https://silverblue.fedoraproject.org/) is an immutable variant of Fedora with a strong focus on container workflows. It follows the same release schedule as Fedora Workstation, benefiting from the same fast updates and staying very close to upstream.
+[Fedora Atomic Desktops](https://fedoraproject.org/atomic-desktops/) are immutable variants of Fedora with a strong focus on container workflows. While they do not provide security benefits over Fedora, they have a much more reliable update mechanism. Unlike traditional Linux where packages are updated one by one, Atomic Desktops will download a whole new OS image first before rebooting to switch over to the new image. The system cannot fail in the middle of an update, and should something be wrong with the new image, it only takes one reboot to return the system to its previous state.
 
-You can refer to the video by [Adam Šamalík](https://twitter.com/adsamalik) linked [above](#traditional-and-atomic-updates) on how these distributions work.
+[Adam Šamalík](https://twitter.com/adsamalik) has a presentation with `rpm-ostree` in action:
 
-### openSUSE Tumbleweed and Aeon
+{{< youtube id="-hpV5l-gJnQ">}}
 
-Fedora Workstation and Silverblue's European counterpart. These are rolling release, fast updating distributions with [transactional updates](https://kubic.opensuse.org/blog/2018-04-04-transactionalupdates/) using [Btrfs](https://en.wikipedia.org/wiki/Btrfs) and [Snapper](https://en.opensuse.org/openSUSE:Snapper_Tutorial).
 
-[Aeon](https://microos.opensuse.org/) has a much smaller base system than [Tumbleweed](https://get.opensuse.org/tumbleweed) and mounts the running BTRFS subvolumes as read-only (hence its name and why it is considered an immutable distribution). Currently, it is still in a [Release Candidate (RC) stage](https://en.opensuse.org/Portal:Aeon), so changes are to be expected. Nevertheless, it is an awesome project.
+### Secure Blue
+
+[SecureBlue](https://github.com/secureblue/secureblue) provides hardened operating system images based on Fedora Atomic Desktops. While they do add another party of trust, their images are substantially hardened and not easily replicated by hand.
+
+
+### openSUSE Aeon
+
+Fedora Atomic Desktop's European counterpart. openSUSE Aeon is a rolling release, fast updating distributions with [transactional updates](https://kubic.opensuse.org/blog/2018-04-04-transactionalupdates/) using [Btrfs](https://en.wikipedia.org/wiki/Btrfs) and [Snapper](https://en.opensuse.org/openSUSE:Snapper_Tutorial).
+
+[Aeon](https://microos.opensuse.org/) has a relatively small set of base packages and mounts the running BTRFS subvolume as read-only. Updates are applied package by package to a new BTRFS snapshot before the system is rebooted to the new subvolume.
 
 {{< youtube id="jcl_4Vh6qP4">}}
 
