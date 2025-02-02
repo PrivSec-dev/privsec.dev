@@ -35,7 +35,7 @@ VPNs cannot provide anonymity. Your VPN provider will still see your real IP add
 
 ## Should I use Tor over VPN?
 
-By using Tor over VPN, you are creating essentially adding an extra node in the beginning of the circuit. This provides zero additional benefits to you, while increasing the latency of your connection dramatically. If you wish to hide your Tor usage from your ISP or your government, Tor has a built-in solution for that: Tor bridges. 
+By using Tor over VPN, you are creating essentially adding an extra node in the beginning of the circuit. This provides zero additional benefits to you, while increasing the latency of your connection dramatically. If you wish to hide your Tor usage from your ISP or your government, consider using Tor bridges with obfuscation methods.
 
 ## What about VPN over Tor?
 
