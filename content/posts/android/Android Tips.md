@@ -158,8 +158,6 @@ Carriers can track your coarse location through various means. At minimum, you n
 
 - Disable privileged eSIM management after you have disabled all of the eSIMs. With certain carriers, the eSIM management app will connect to the provisioning server to check for eSIM update, even if the eSIMs are disabled.
 
-On a related note, I have seen recommendations to use PGPP as a carrier to randomize the IMSI by regularly reprovisioning the eSIM. This is unlikely to be beneficial, as the IMEI baked into the modem would remain unchanged, allowing carriers to track you anyways.
-
 ## Where to Get Your Applications
 
 ### GrapheneOS App Store
