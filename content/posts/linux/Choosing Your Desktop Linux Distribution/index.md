@@ -51,7 +51,7 @@ Here is a quick, non-authoritative list of distributions we recommend over other
 
 ![Fedora](fedora-screenshot.png)
 
-[Fedora Workstation](https://getfedora.org/en/workstation/) is a great general-purpose Linux distribution, especially for those who are new to Linux. It is a semi-rolling release distribution. While some packages like GNOME are frozen until the next Fedora release, most packages (including the kernel) are updated frequently throughout the lifespan of the release. Each Fedora release is supported for one year, with a new version released every 6 months.
+[Fedora Workstation](https://getfedora.org/en/workstation/) is a great general-purpose Linux distribution, especially for those who are new to Linux. It is a semi-rolling release distribution. While some packages like GNOME are frozen until the next Fedora release, most packages (including the kernel) are updated frequently throughout the lifespan of the release. Each Fedora release is supported for one year, with a new version released every 6 months. The distribution takes an "upstream first" approach and ship packages with minimal downstream patching, and the patches are done in a sensible manner which does not break functionality [like Debian](https://github.com/keepassxreboot/keepassxc/issues/10725).
 
 With that, Fedora generally adopts newer technologies before other distributions e.g., [Wayland](https://wayland.freedesktop.org/) and [PipeWire](https://pipewire.org/). These new technologies often come with improvements in security, privacy, and usability in general.
 
@@ -75,7 +75,7 @@ Fedora's package manager, `dnf`, has a great rollback and undo feature that is g
 
 Fedora Atomic Desktop's European counterpart. openSUSE Aeon is a rolling release, fast updating distributions with [transactional updates](https://kubic.opensuse.org/blog/2018-04-04-transactionalupdates/) using [Btrfs](https://en.wikipedia.org/wiki/Btrfs) and [Snapper](https://en.opensuse.org/openSUSE:Snapper_Tutorial).
 
-[Aeon](https://microos.opensuse.org/) has a relatively small set of base packages and mounts the running BTRFS subvolume as read-only. Updates are applied package by package to a new BTRFS snapshot before the system is rebooted to the new subvolume.
+[Aeon](https://microos.opensuse.org/) has a relatively small set of base packages (thus lowering the attack surface) and mounts the running BTRFS subvolume as read-only. Updates are applied package by package to a new BTRFS snapshot before the system is rebooted to the new subvolume. This allows the rollback process to be relatively easy just like on Fedora Atomic Desktops.
 
 {{< youtube id="jcl_4Vh6qP4">}}
 
