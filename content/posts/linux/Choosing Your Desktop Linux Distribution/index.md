@@ -65,6 +65,7 @@ Fedora's package manager, `dnf`, has a great rollback and undo feature that is g
 
 {{< youtube id="-hpV5l-gJnQ">}}
 
+One caveat with Fedora Atomic Desktop is that `rpm-ostree` currently have a hard dependency on `grub` and does not support Unified Kernel Images at the moment.
 
 ### SecureBlue
 
