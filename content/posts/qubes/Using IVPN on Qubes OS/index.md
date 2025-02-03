@@ -99,7 +99,7 @@ sudo shutdown now
 
 Create an AppVM based on the TemplateVM you have just created. Set `sys-firewall` (or whatever FirewallVM you have connected to your `sys-net`) as the net qube. If you do not have such FirewallVM, use `sys-net` as the net qube. Next, go to the advanced tab and tick the `provides network access to other qubes` box.
 
-![Provides Network](/images/provides-network.png)
+![Provides Network](provides-network.png)
 
 Open the IVPN and select `Settings` → `DNS` → `Force management of DNS using resolv.conf`.
 

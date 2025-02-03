@@ -82,7 +82,7 @@ sudo shutdown now
 
 Create an AppVM based on the TemplateVM you have just created. Set `sys-firewall` (or whatever FirewallVM you have connected to your `sys-net`) as the net qube. If you do not have such FirewallVM, use `sys-net` as the net qube. Next, go to the advanced tab and tick the `provides network access to other qubes` box.
 
-![Provides Network](/images/provides-network.png)
+![Provides Network](provides-network.png)
 
 Open the Mullvad VPN app. Go to `Settings` → `VPN settings` and toggle `Local network sharing`. Due to some strange interaction between qubes services and Mullvad VPN, certain apps will get internet connections while others do not if this toggle is not enabled. This toggle will **not** actually allow AppVMs connected to the ProxyVM to connect to the local network.
 
