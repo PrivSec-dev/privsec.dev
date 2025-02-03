@@ -5,7 +5,7 @@ tags: ['Applications', 'Qubes OS', 'Privacy']
 author: Tommy
 ---
 
-![IVPN](/images/ivpn.png)
+![IVPN](ivpn.png)
 
 IVPN is a fairly popular and generally trustworthy VPN provider. In this post, I will walk you through how to use the official IVPN client in a ProxyVM on Qubes OS. We will deviate from the [official guide](https://www.ivpn.net/knowledgebase/linux/ivpn-on-qubes-os/) by using systemd path to handle DNAT. This will provide the same robustness as their approach to modify `/opt/ivpn/etc/firewall.sh`, while avoiding the risk that the modifications will be overwritten by a future app update. We will also be using a TemplateVM for IVPN ProxyVMs instead of using Standalone VMs.
 
@@ -99,7 +99,7 @@ sudo shutdown now
 
 Create an AppVM based on the TemplateVM you have just created. Set `sys-firewall` (or whatever FirewallVM you have connected to your `sys-net`) as the net qube. If you do not have such FirewallVM, use `sys-net` as the net qube. Next, go to the advanced tab and tick the `provides network access to other qubes` box.
 
-![Provides Network](/images/provides-network.png)
+![Provides Network](provides-network.png)
 
 Open the IVPN and select `Settings` → `DNS` → `Force management of DNS using resolv.conf`.
 
@@ -123,5 +123,3 @@ This is not strictly necessary, as I have not observed any leaks with the VPN ki
 With this current setup, the ProxyVM you have just created will be responsible for handling Firewall rules for the qubes behind it. This is not ideal, as this is still a fairly large VM, and there is a risk that IVPN or some other apps may interfere with its firewall handling.
 
 Instead, I highly recommend that you [create a minimal Mirage FirewallVM](/posts/qubes/firewalling-with-mirageos-on-qubes-os/) and use it as a firewall **behind** the IVPN ProxyVM. Other AppVMs then should use the Mirage Firewall as the net qube instead. This way, you can make sure that firewall rules are properly enforced.
-
-![MirageOS](/images/mirageos.png)
