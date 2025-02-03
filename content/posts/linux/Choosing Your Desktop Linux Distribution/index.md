@@ -51,7 +51,7 @@ Here is a quick, non-authoritative list of distributions we recommend over other
 
 ![Fedora](fedora-screenshot.png)
 
-[Fedora Workstation](https://getfedora.org/en/workstation/) is a great general-purpose Linux distribution, especially for those who are new to Linux. It is a semi-rolling release distribution. While some packages like GNOME are frozen until the next Fedora release, most packages (including the kernel) are updated frequently throughout the lifespan of the release. Each Fedora release is supported for one year, with a new version released every 6 months. The distribution takes an "upstream first" approach and ship packages with minimal downstream patching, and the patches are done in a sensible manner which does not unexpectedly break functionality [like Debian](https://github.com/keepassxreboot/keepassxc/issues/10725).
+[Fedora Workstation](https://getfedora.org/en/workstation/) is a great general-purpose Linux distribution, especially for those who are new to Linux. It is a semi-rolling release distribution. While some packages like GNOME are frozen until the next Fedora release, most packages (including the kernel) are updated frequently throughout the lifespan of the release. Each Fedora release is supported for one year, with a new version released every 6 months. The distribution takes an "upstream first" approach and ship packages with minimal downstream patching, and the patches are done in a sensible manner which does not unexpectedly break functionality [unlike Debian](https://github.com/keepassxreboot/keepassxc/issues/10725).
 
 With that, Fedora generally adopts newer technologies before other distributions e.g., [Wayland](https://wayland.freedesktop.org/) and [PipeWire](https://pipewire.org/). These new technologies often come with improvements in security, privacy, and usability in general.
 
@@ -68,7 +68,9 @@ Fedora's package manager, `dnf`, has a great rollback and undo feature that is g
 
 ### SecureBlue
 
-[SecureBlue](https://github.com/secureblue/secureblue) provides hardened operating system images based on Fedora Atomic Desktops. While they do add another party of trust, their images are substantially hardened and not easily replicated by hand.
+[SecureBlue](https://github.com/secureblue/secureblue) provides hardened operating system images based on Fedora Atomic Desktops. While they do add another party of trust, their images are substantially hardened and not easily replicated by hand. There are several very interesting packages maintained by SecureBlue as well:
+- [Trivalent](https://github.com/secureblue/Trivalent), a hardened chromium desktop build with patches from GrapheneOS's [Vanadium](https://github.com/GrapheneOS/Vanadium).
+- [Hardened Malloc](https://github.com/secureblue/fedora-extras/tree/live/hardened_malloc). SecureBlue packages GrapheneOS's memory allocator and enforce it system wide, including for Flatpak applications.
 
 
 ### openSUSE Aeon
