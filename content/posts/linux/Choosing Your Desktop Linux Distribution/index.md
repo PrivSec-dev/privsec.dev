@@ -67,7 +67,7 @@ Fedora's package manager, `dnf`, has a great rollback and undo feature that is g
 
 {{< youtube id="-hpV5l-gJnQ">}}
 
-One caveat with Fedora Atomic Desktops is that `rpm-ostree` currently has a hard dependency on `grub` and does not support Unified Kernel Images. The consequence of this is that unlike Fedora Workstation, it is not possible to set up a Fedora Atomic with meaningful Secure Boot to resist physical tampering.
+One caveat with Fedora Atomic Desktops is that `rpm-ostree` currently has a hard dependency on `grub` and does not support Unified Kernel Images. The consequence of this is that unlike Fedora Workstation, it is not possible to set up a Fedora Atomic system with meaningful Secure Boot to resist physical tampering.
 
 ### SecureBlue
 
