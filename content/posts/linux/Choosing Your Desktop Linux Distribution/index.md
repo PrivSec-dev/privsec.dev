@@ -19,6 +19,8 @@ The practice of holding packages back and applying interim patches is generally 
 
 {{< youtube id="i8c0mg_mS7U">}}
 
+Even if you are worried about the stability of the system because of regularly updated packages (which you shouldn't be), it makes more sense to use a system which you can safely update and rollback instead of an outdated distribution partially made up of unreliable backport packages without an easy rollback mechanism in case something goes wrong like Debian.
+
 ## Arch-based Distributions
 
 Arch Linux has very up-to-date packages with minimal downstream patching. That being said, Arch-based distributions are not recommended for those new to Linux, regardless of the distribution. Arch does not have an distribution update mechanism for the underlying software choices. As a result, you have to stay aware with current trends and adopt technologies as they supersede older practices on your own.
