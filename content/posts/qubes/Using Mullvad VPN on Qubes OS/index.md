@@ -5,7 +5,7 @@ tags: ['Applications', 'Qubes OS', 'Privacy']
 author: Tommy
 ---
 
-![Mullvad VPN](/images/mullvad-vpn.png)
+![Mullvad VPN](mullvad-vpn.png)
 
 Mullvad is a fairly popular and generally trustworthy VPN provider. In this post, I will walk you through how to use the official Mullvad client in a ProxyVM on Qubes OS. This method is a lot more convenient than the [official guide](https://mullvad.net/en/help/qubes-os-4-and-mullvad-vpn/) from Mullvad (which recommends that you manually load in OpenVPN or Wireguard profiles) and will let you seamlessly switch between different location and network setups just as you would on a normal Linux installation.
 
@@ -104,5 +104,3 @@ This is not strictly necessary, as I have not observed any leaks with the VPN ki
 With this current setup, the ProxyVM you have just created will be responsible for handling Firewall rules for the qubes behind it. This is not ideal, as this is still a fairly large VM, and there is a risk that Mullvad or some other apps may interfere with its firewall handling.
 
 Instead, I highly recommend that you [create a minimal Mirage FirewallVM](/posts/qubes/firewalling-with-mirageos-on-qubes-os/) and use it as a firewall **behind** the Mullvad ProxyVM. Other AppVMs then should use the Mirage Firewall as the net qube instead. This way, you can make sure that firewall rules are properly enforced.
-
-![MirageOS](/images/mirageos.png)

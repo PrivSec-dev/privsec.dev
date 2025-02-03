@@ -5,7 +5,7 @@ tags: ['Applications', 'Qubes OS', 'Anonymity', 'Privacy']
 author: Tommy
 ---
 
-![Lokinet](/images/lokinet.png)
+![Lokinet](lokinet.png)
 
 [Lokinet](https://lokinet.org) is an Internet overlay network utilizing onion routing to provide anonymity for its users, similar to Tor network. This post will go over how to set it up on Qubes OS.
 

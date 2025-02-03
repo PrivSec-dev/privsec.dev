@@ -5,7 +5,7 @@ tags: ['Operating Systems', 'MirageOS', 'Qubes OS', 'Security']
 author: Tommy
 ---
 
-![MirageOS](/images/mirageos.png)
+![MirageOS](mirageos.png)
 
 [MirageOS](https://mirage.io/) is a library operating system with which you can create a unikernel for the sole purpose of acting as Qubes OS's firewall. In this post, I will walk you through how to set this up.
 
