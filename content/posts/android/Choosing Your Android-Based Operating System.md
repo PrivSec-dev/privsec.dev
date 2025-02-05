@@ -86,24 +86,3 @@ Recently, GrapheneOS has also added the [Storage Scopes](https://grapheneos.org/
 
 
 Currently, Google Pixel phones are the only devices that meet GrapheneOS's [hardware security requirements](https://grapheneos.org/faq#device-support).
-
-### DivestOS
-
-[DivestOS](https://divestos.org/) is a great aftermarket operating system for devices that have gone end-of-life or are near end-of-life. Note that this is a harm reduction project, ran by one developer on the best effort basis, and you should not buy a new device just to run DivestOS.
-
-Being a soft-fork of [LineageOS](https://lineageos.org/), DivestOS inherits many [supported devices](https://divestos.org/index.php?page=devices&base=LineageOS) from LineageOS. It has signed builds, making it possible to have [verified boot](https://source.android.com/security/verifiedboot) on some non-Pixel devices. Unlike its upstream, it does ship `user` builds.
-
-It comes with substantial hardening over AOSP. DivestOS has automated kernel vulnerability ([CVE](https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures)) [patching](https://gitlab.com/divested-mobile/cve_checker), fewer proprietary blobs, a custom [hosts](https://divested.dev/index.php?page=dnsbl) file, and various security features ported from GrapheneOS. A non-exhaustive list of this includes:
-
-- A hardened webview. [Mulch](https://gitlab.com/divested-mobile/mulch) comes with *some* patches from GrapheneOS's Vanadium browser and the [Bromite](https://github.com/bromite/bromite) project. It gets updated fairly quickly and does not fall behind nearly as much as Bromite did.
-- Kernel patches from GrapheneOS and enables all available kernel security features via [defconfig hardening](https://github.com/Divested-Mobile/DivestOS-Build/blob/master/Scripts/Common/Functions.sh#L758). All kernels newer than version 3.4 include full page [sanitization](https://lwn.net/Articles/334747/) and all ~22 Clang-compiled kernels have [`-ftrivial-auto-var-init=zero`](https://reviews.llvm.org/D54604?id=174471) enabled.
--  GrapheneOS's [`INTERNET`](https://developer.android.com/training/basics/network-ops/connecting) and SENSORS permission toggle.
-- [Hardened memory allocator](https://github.com/GrapheneOS/hardened_malloc)
-- [Secure Exec-Spawning](https://grapheneos.org/usage#exec-spawning)
-- Partial [bionic](https://en.wikipedia.org/wiki/Bionic_(software)) hardening patchsets from GrapheneOS
-- GrapheneOS's per-network full [MAC randomization](https://en.wikipedia.org/wiki/MAC_address#Randomization) option on version 17.1 and higher
-- Automatic reboot/Wi-Fi/Bluetooth [timeout options](https://grapheneos.org/features)
-
-With that being said, DivestOS is not without its faults. The developer does not have all of the devices he is building for, and for a lot of them he simply publishes the builds blind without actually testing them. Firmware update support [varies](https://gitlab.com/divested-mobile/firmware-empty/-/blob/master/STATUS) across devices. DivestOS also takes a very long time to update to a new major Android, and actually took longer than CalyxOS did as mentioned [above](#firmware-updates). It does not tend to fall behind on Chromium updates like CalyxOS, however.
-
-Also, please note that I am only recommending DivestOS here, and not any of its related apps. For instance, I would not recommend using Mull, since it is just a Firefox Android fork with better defaults and still inherits many security deficiencies from its upstream, including the lack of support for [site isolation](https://wiki.mozilla.org/Project_Fission) and [isolatedProcess](https://bugzilla.mozilla.org/show_bug.cgi?id=1565196).
