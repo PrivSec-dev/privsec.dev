@@ -171,7 +171,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Chile
 
-- ~~[Mi Banco Edwards](https://play.google.com/store/apps/details?id=cl.bancochile.mi_edwards)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/457)
+- [Mi Banco Edwards](https://play.google.com/store/apps/details?id=cl.bancochile.mi_edwards) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/457)
 - [Santander Chile](https://play.google.com/store/apps/details?id=cl.santander.smartphone) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/360)
 
 ### China
@@ -228,6 +228,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Egypt
 
+- [CIB Mobile Banking App](https://play.google.com/store/apps/details?id=com.cibeg.ddc1.digitalbanking.live) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/591)
 - ~~[NBE Mobile](https://play.google.com/store/apps/details?id=com.ofss.obdx.and.nbe.com.eg)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/459)
 
 ### Estonia
@@ -486,6 +487,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 - [GCash](https://play.google.com/store/apps/details?id=com.globe.gcash.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/382)
 - [GoTyme Bank](https://play.google.com/store/apps/details?id=ph.com.gotyme) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/510)
+- [Security Bank App](https://play.google.com/store/apps/details?id=com.securitybank.bbx) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/598)
 
 ### Poland
 
@@ -581,7 +583,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [네이버페이](https://play.google.com/store/apps/details?id=com.naverfin.payapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/436)
 - [우체국뱅킹](https://play.google.com/store/apps/details?id=com.epost.psf.sdsi) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/544)
 - [미래에셋증권 M-STOCK](https://play.google.com/store/apps/details?id=com.miraeasset.trade) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/545)
-- ~~[현대카드](https://play.google.com/store/apps/details?id=com.hyundaicard.appcard)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/546)
+- [현대카드](https://play.google.com/store/apps/details?id=com.hyundaicard.appcard) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/546)
 
 ### Spain
 
