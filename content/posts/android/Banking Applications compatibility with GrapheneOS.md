@@ -269,6 +269,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [1822direkt QRTAN+](https://play.google.com/store/apps/details?id=de.direkt1822.qrtanplus) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/438)
 - [1822TAN+](https://play.google.com/store/apps/details?id=de.direkt1822.tanplus) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/368)
 - [apoTAN](https://play.google.com/store/apps/details?id=com.apobank_apotanplus) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/428)
+- [BISON - Buy Bitcoin & Co](https://play.google.com/store/apps/details?id=de.bisonapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/605)
 - [BW Mobilbanking Phone + Tablet](https://play.google.com/store/apps/details?id=com.starfinanz.smob.android.bwmobilbanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/523)
 - [BW pushTAN pushTAN der BW-Bank](https://play.google.com/store/apps/details?id=com.starfinanz.mobile.android.bwpushtan) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/524)
 - [C24 Bank](https://play.google.com/store/apps/details?id=de.c24.bankapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/380)
@@ -304,6 +305,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [SpardaBanking App](https://play.google.com/store/apps/details?id=de.sparda.banking.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/552)
 - [SpardaSecureGo+](https://play.google.com/store/apps/details?id=de.sparda.securego) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/553)
 - [Sparkasse Ihre mobile Filiale](https://play.google.com/store/apps/details?id=com.starfinanz.smob.android.sfinanzstatus) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/44)
+- [S-pushTAN - sichere Freigaben](https://play.google.com/store/apps/details?id=com.starfinanz.mobile.android.pushtan) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/604)
 - [TARGOBANK Mobile Banking](https://play.google.com/store/apps/details?id=com.targo_prod.bad) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/444)
 - [Tomorrow: Mobile Banking](https://play.google.com/store/apps/details?id=one.tomorrow.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/20)
 - [Trade Republic: Broker & Bank](https://play.google.com/store/apps/details?id=de.traderepublic.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/395)
@@ -436,6 +438,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 - [Klar: Crédito, Cuenta y Ahorro](https://play.google.com/store/apps/details?id=mx.klar.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/498)
 - [Mercado Pago: cuenta digital](https://play.google.com/store/apps/details?id=com.mercadopago.wallet) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/503)
+- [Nu](https://play.google.com/store/apps/details?id=com.nu.production) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/92)
 
 ### Netherlands
 
@@ -485,8 +488,10 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Philippines
 
+- [BPI](https://play.google.com/store/apps/details?id=com.bpi.ng.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/601)
 - [GCash](https://play.google.com/store/apps/details?id=com.globe.gcash.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/382)
 - [GoTyme Bank](https://play.google.com/store/apps/details?id=ph.com.gotyme) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/510)
+- [RCBCpulz](https://play.google.com/store/apps/details?id=com.rcbc.pulz) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/602)
 - [Security Bank App](https://play.google.com/store/apps/details?id=com.securitybank.bbx) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/598)
 
 ### Poland
@@ -500,6 +505,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [PeoPay](https://play.google.com/store/apps/details?id=softax.pekao.powerpay) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/298)
 - [Santander Consumer Bank](https://play.google.com/store/apps/details?id=pl.santanderconsumer) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/577)
 - [Santander mobile](https://play.google.com/store/apps/details?id=pl.bzwbk.bzwbk24) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/371)
+- [VeloBank](https://play.google.com/store/apps/details?id=com.getingroup.mobilebanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/606)
 
 ### Portugal
 
@@ -517,7 +523,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [BT Pay](https://play.google.com/store/apps/details?id=ro.btrl.pay) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/83)
 - [George Romania](https://play.google.com/store/apps/details?id=ro.bcr.georgego) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/179)
 - [ING HomeBank](https://play.google.com/store/apps/details?id=ro.ing.mobile.banking.android.activity) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/356)
-- ~~[Libra Mobile Banking](https://play.google.com/store/apps/details?id=libra.mobile.banking)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/404)
+- [Libra Mobile Banking](https://play.google.com/store/apps/details?id=libra.mobile.banking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/404)
 - [NeoBT](https://play.google.com/store/apps/details?id=com.ebankit.com.bt) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/460)
 - [Raiffeisen Smart Mobile PI](https://play.google.com/store/apps/details?id=ro.raiffeisen.smartmobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/86)
 
