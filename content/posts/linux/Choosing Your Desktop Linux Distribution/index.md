@@ -71,9 +71,9 @@ One caveat with Fedora Atomic Desktops is that `rpm-ostree` currently has a hard
 
 ### SecureBlue
 
-[SecureBlue](https://github.com/secureblue/secureblue) provides hardened operating system images based on Fedora Atomic Desktops. While they do additional parties of trust (SecureBlue, GitHub infrastructure, BlueBuild, Negativo, etc), their images are substantially hardened and not easily replicated by hand. There are several very interesting packages maintained by SecureBlue as well:
+[SecureBlue](https://secureblue.dev/) provides hardened operating system images based on Fedora Atomic Desktops. While they do additional parties of trust (SecureBlue, GitHub infrastructure, BlueBuild, Negativo, etc), their images are substantially hardened and not easily replicated by hand. There are several very interesting packages maintained by SecureBlue as well:
 - [Trivalent](https://github.com/secureblue/Trivalent), a hardened chromium desktop build with patches from GrapheneOS's [Vanadium](https://github.com/GrapheneOS/Vanadium).
-- [Hardened Malloc](https://github.com/secureblue/fedora-extras/tree/live/hardened_malloc). SecureBlue packages GrapheneOS's memory allocator and enforce it system wide, including for Flatpak applications.
+- [Hardened Malloc](https://github.com/secureblue/fedora-extras/tree/live/hardened_malloc). SecureBlue packages GrapheneOS's memory allocator and enables it system wide, including for Flatpak applications.
 
 
 ### openSUSE Aeon
