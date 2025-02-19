@@ -436,9 +436,11 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Mexico
 
+- [BBVA México](https://play.google.com/store/apps/details?id=com.bancomer.mbanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/607)
 - [Klar: Crédito, Cuenta y Ahorro](https://play.google.com/store/apps/details?id=mx.klar.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/498)
 - [Mercado Pago: cuenta digital](https://play.google.com/store/apps/details?id=com.mercadopago.wallet) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/503)
 - [Nu](https://play.google.com/store/apps/details?id=com.nu.production) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/92)
+- [Vexi](https://play.google.com/store/apps/details?id=mx.vexi.appmovil) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/608)
 
 ### Netherlands
 
