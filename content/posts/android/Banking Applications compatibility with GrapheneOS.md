@@ -437,6 +437,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 ### Mexico
 
 - [BBVA México](https://play.google.com/store/apps/details?id=com.bancomer.mbanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/607)
+- [Citibanamex Móvil](https://play.google.com/store/apps/details?id=com.citibanamex.banamexmobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/612)
 - [Klar: Crédito, Cuenta y Ahorro](https://play.google.com/store/apps/details?id=mx.klar.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/498)
 - [Mercado Pago: cuenta digital](https://play.google.com/store/apps/details?id=com.mercadopago.wallet) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/503)
 - [Nu](https://play.google.com/store/apps/details?id=com.nu.production) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/92)
@@ -663,6 +664,10 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [ShopeePay](https://play.google.com/store/apps/details?id=com.beeasy.airpay) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/335)
 - [UOB TMRW Thailand](https://play.google.com/store/apps/details?id=com.uob.mightyth2) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/333)
 
+### Turkey
+
+- [İşCep: Banking & Finance](https://play.google.com/store/apps/details?id=com.pozitron.iscep) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/611)
+
 ### Ukraine
 
 - [Ощад](https://play.google.com/store/apps/details?id=ua.oschadbank.flumo) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/539)
@@ -751,6 +756,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Old Glory Bank](https://play.google.com/store/apps/details?id=com.oldgloryholdingcompany4930.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/429)
 - [OnPoint Mobile](https://play.google.com/store/apps/details/OnPoint_Mobile?id=com.onpointcommunitycreditunion5123.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/501)
 - [Pentagon Federal Credit Union](https://play.google.com/store/apps/details?id=org.penfed.mobile.banking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/466)
+- [PSECU Mobile](https://play.google.com/store/apps/details?id=com.PSECUMobilePlus.com) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/610)
 - [SchoolsFirst FCU Mobile](https://play.google.com/store/apps/details?id=org.schoolsfirstfcu.mobile.banking.isam) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/126)
 - [Schwab Mobile](https://play.google.com/store/apps/details?id=com.schwab.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/61)
 - [Service CU Mobile Banking](https://play.google.com/store/apps/details?id=com.ifs.mobilebanking.fiid9094) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/166)
