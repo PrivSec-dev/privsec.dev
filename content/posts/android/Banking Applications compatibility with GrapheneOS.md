@@ -171,6 +171,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Chile
 
+- [BancoEstado](https://play.google.com/store/apps/details?id=net.veritran.becl.prod) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/609)
 - [Mi Banco Edwards](https://play.google.com/store/apps/details?id=cl.bancochile.mi_edwards) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/457)
 - [Santander Chile](https://play.google.com/store/apps/details?id=cl.santander.smartphone) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/360)
 
@@ -243,7 +244,6 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [POP Mobiili](https://play.google.com/store/apps/details?id=fi.poppankki.popmobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/480)
 - [POP Avain -tunnuslukusovellus](https://play.google.com/store/apps/details?id=fi.poppankki.avain) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/481)
 - [S-mobiili](https://play.google.com/store/apps/details?id=fi.spankki) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/43)
-
 
 ### France
 
