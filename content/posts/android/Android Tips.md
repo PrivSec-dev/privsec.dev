@@ -34,7 +34,7 @@ In certain cases, installing a custom Android-based operating system can help in
 
 I have written a detailed post on selecting your Android-based operating system, which you can find [here](/posts/android/choosing-your-android-based-operating-system).
 
-**TLDR**: If you are using a modern Pixel, install [GrapheneOS](https://grapheneos.org). If you are using a device supported by [DivestOS](https://divestos.org), install DivestOS. Otherwise, stick to your stock operating system. Do not blindly use an OS just because it is advertised as "degoogled".
+**TLDR**: If you are using a modern Pixel, install [GrapheneOS](https://grapheneos.org). Otherwise, stick to your stock operating system. Do not blindly use an OS just because it is advertised as "degoogled".
 
 ## Use New Android Versions
 
@@ -82,7 +82,7 @@ On GrapheneOS, connectivity checks by default are done with GrapheneOS's own ser
 
 If you want to, you can disable connectivity check altogether. Note that this will stop captive portals from working.
 
-- On GrapheneOS and DivestOS, go to **Settings** → **Network & internet** → **Internet connectivity check** and select **Disabled**.
+- On GrapheneOS, go to **Settings** → **Network & internet** → **Internet connectivity check** and select **Disabled**.
 - On other Android-based operating systems, you can [disable captive portal via ADB](https://gitlab.com/CalyxOS/calyxos/-/issues/1226#note_1130393164).
 
 To disable:
@@ -97,19 +97,11 @@ To re-enable:
 adb shell settings delete global captive_portal_mode
 ```
 
-## Enable Secure Exec Spawning
-
-GrapheneOS and DivestOS have the option to spawn fresh processes when launching applications instead of using the traditional Zygote spawning model. You can read more about this [here](https://grapheneos.org/usage#exec-spawning).
-
-On GrapheneOS, this feature is enabled by default. On DivestOS, it is not enabled by default, and you should enable it in **Settings** → **Security** → **Enable secure app spawning**.
-
 ## Restrict USB Peripherals
 
 USB peripherals should be disabled or set to only be allowed when the device is unlocked if possible.
 
 On GrapheneOS, you can adjust this setting in **Settings** → **Security** → **USB accessories**. The OS defaults to "Allow new USB peripherals when unlocked".
-
-On DivestOS, you can adjust this setting in **Settings** → **Privacy** → **Trust** → **Restrict USB**. The OS defaults to "Always allow USB connections", and you should change it to one of the two other options as mentioned above.
 
 ## Media Access
 Quite a few applications allow you to "share" a file with them for media upload. If you want to, for example, tweet a picture to Twitter, do not grant Twitter access to your "media and photos", because it will have access to all of your pictures then. Instead, go to your file manager (documentsUI), hold onto the picture, then share it with Twitter.
@@ -157,8 +149,6 @@ Carriers can track your coarse location through various means. At minimum, you n
 - Turn on airplane mode. This will turn off the modem and disable all transmission to cell towers. Note that simply removing SIM cards is not enough&nbsp;--- your phone will still connect to cellular networks to permit emergency calling.
 
 - Disable privileged eSIM management after you have disabled all of the eSIMs. With certain carriers, the eSIM management app will connect to the provisioning server to check for eSIM update, even if the eSIMs are disabled.
-
-On a related note, I have seen recommendations to use PGPP as a carrier to randomize the IMSI by regularly reprovisioning the eSIM. This is unlikely to be beneficial, as the IMEI baked into the modem would remain unchanged, allowing carriers to track you anyways.
 
 ## Where to Get Your Applications
 
