@@ -530,7 +530,6 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [George Romania](https://play.google.com/store/apps/details?id=ro.bcr.georgego) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/179)
 - [ING HomeBank](https://play.google.com/store/apps/details?id=ro.ing.mobile.banking.android.activity) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/356)
 - [Libra Mobile Banking](https://play.google.com/store/apps/details?id=libra.mobile.banking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/404)
-- [NeoBT](https://play.google.com/store/apps/details?id=com.ebankit.com.bt) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/460)
 - [Raiffeisen Smart Mobile PI](https://play.google.com/store/apps/details?id=ro.raiffeisen.smartmobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/86)
 
 ### Russia
@@ -697,6 +696,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [first direct](https://play.google.com/store/apps/details?id=com.firstdirect.bankingonthego) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/128)
 - [Halifax Mobile Banking](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/309) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/309)
 - [HSBC UK Mobile Banking](https://play.google.com/store/apps/details?id=uk.co.hsbc.hsbcukmobilebanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/33)
+- [InvestEngine: ETF Investing](https://play.google.com/store/apps/details?id=com.investengine.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/620)
 - [Kroo Bank - Mobile Banking](https://play.google.com/store/apps/details?id=com.bsocial) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/449)
 - ~~[Lloyds Bank Mobile Banking](https://play.google.com/store/apps/details?id=com.grppl.android.shell.CMBlloydsTSB73)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/53)
 - [Marcus by Goldman Sachs®](https://play.google.com/store/apps/details?id=com.marcus.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/212)
