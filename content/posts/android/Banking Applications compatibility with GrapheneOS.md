@@ -793,12 +793,12 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 ### Vietnam
 
 - [AB Ditizen](https://play.google.com/store/apps/details?id=com.vnpay.abbank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/592)
+- [Agribank](https://play.google.com/store/apps/details?id=com.vnpay.Agribank3g) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/637)
 - [MB Bank](https://play.google.com/store/apps/details?id=com.mbmobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/594)
 - [MoMo -Trợ thủ Tài chính với AI](https://play.google.com/store/apps/details?id=com.mservice.momotransfer) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/595)
 - [OCB OMNI 4.0](https://play.google.com/store/apps/details?id=vn.com.ocb.awe) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/596)
 - [SHB Mobile Banking](https://play.google.com/store/apps/details?id=vn.shb.mbanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/254)
 - [VietinBank iPay](https://play.google.com/store/apps/details?id=com.vietinbank.ipay) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/593)
-
 
 ---
 
