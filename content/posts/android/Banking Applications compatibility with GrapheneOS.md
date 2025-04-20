@@ -648,6 +648,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Alpian - Banking & Investing](https://play.google.com/store/apps/details?id=com.alpian.alpian) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/515)
 - [BCN Mobile banking](https://play.google.com/store/apps/details?id=com.bcn.android.mbanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/145)
 - [BCV Mobile](https://play.google.com/store/apps/details?id=ch.bcv.mobile.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/231)
+- [Cembra App](https://play.google.com/store/apps/details?id=ch.cembra.cmf) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/639)
 - [Credit Suisse – CSX](https://play.google.com/store/apps/details?id=com.csg.cs.dnmb) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/72)
 - [debiX+](https://play.google.com/store/apps/details?id=com.sixgroup.debixplus) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/227)
 - [Migros Bank E-Banking](https://play.google.com/store/apps/details?id=ch.migrosbank.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/582)
