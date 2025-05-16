@@ -187,12 +187,16 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### China
 
+- [中国农业银行 (Agricultural Bank of China)](https://download.abchina.com.cn/#/) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/648)
 - [支付宝 (Alipay)](https://play.google.com/store/apps/details?id=com.eg.android.AlipayGphone) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/562)
+- [交通银行 (Bank of Communications)](https://mbank.95559.com.cn:8888/mobs6/downloadApp/DA0/NDA0001.html) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/646)
 - [中国工商银行中国工商银行 (Industrial and Commercial Bank of China)](https://sj.qq.com/appdetail/com.icbc) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/561)
 - [中国银行](https://www.bankofchina.com/ebanking/service/cs1/201009/t20100921_1151946.html) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/398)
 - [招商银行 (China Merchants Bank)](https://play.google.com/store/apps/details?id=cmb.pb) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/420)
 - [中信银行 (Citic Bank)](https://www.citicbank.com/personal/ebank/personal/) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/487)
 - [兴业银行 (Industrial Bank)](https://www.cib.com.cn/common/download/client.html) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/486)
+- [中国邮政储蓄银行 (Postal Savings Bank of China)](https://phone.psbc.com/) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/647)
+- [上海浦东发展银行 (Shanghai Pudong Development Bank)](https://per.spdb.com.cn/personal_electronic_bank/tools_download/201701/t20170116_316975.shtml) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/649)
 
 ### Colombia
 
@@ -236,6 +240,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 - [Banco del Pacífico](https://play.google.com/store/apps/details?id=com.pacifico.movilmatico) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/225)
 - [Banco Guayaquil](https://play.google.com/store/apps/details?id=com.bancodeguayaquil) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/226)
+- [PICHINCHA BANCA MÓVIL](https://play.google.com/store/apps/details?id=com.yellowpepper.pichincha) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/645)
 
 ### Egypt
 
@@ -298,7 +303,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [finanzen.net zero Secure TAN](https://play.google.com/store/apps/details?id=de.gratisbroker.android.securetan) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/322)
 - [flatex next: Aktien und ETF](https://play.google.com/store/apps/details?id=de.xcom.flatexde) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/59)
 - [FNZbanking](https://play.google.com/store/apps/details?id=com.ebase.banking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/381)
-- [GLS Banking](https://play.google.com/store/apps/details?id=de.gls.banking.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/344)
+- [GLS Banking](https://play.google.com/store/apps/details?id=de.gls.banking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/344)
 - [GLS mBank Classic](https://play.google.com/store/apps/details?id=de.gls.mbank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/352)
 - [ING Banking to go](https://play.google.com/store/apps/details?id=de.ingdiba.bankingapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/48)
 - [Kontist](https://play.google.com/store/apps/details?id=com.kontist) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/23)
@@ -319,6 +324,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Sparkasse Ihre mobile Filiale](https://play.google.com/store/apps/details?id=com.starfinanz.smob.android.sfinanzstatus) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/44)
 - [S-pushTAN - sichere Freigaben](https://play.google.com/store/apps/details?id=com.starfinanz.mobile.android.pushtan) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/604)
 - [TARGOBANK Mobile Banking](https://play.google.com/store/apps/details?id=com.targo_prod.bad) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/444)
+- [TEO - Das neue Multibanking](https://play.google.com/store/apps/details?id=com.comeco.teo) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/650)
 - [Tomorrow: Mobile Banking](https://play.google.com/store/apps/details?id=one.tomorrow.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/20)
 - [Trade Republic: Broker & Bank](https://play.google.com/store/apps/details?id=de.traderepublic.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/395)
 - [VR Banking - einfach sicher](https://play.google.com/store/apps/details?id=de.fiduciagad.banking.vr) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/36)
