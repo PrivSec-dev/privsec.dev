@@ -495,7 +495,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Norway
 
-- ~~[BankID](https://play.google.com/store/apps/details?id=no.vipps.bankid)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/255)
+- [BankID](https://play.google.com/store/apps/details?id=no.vipps.bankid) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/255)
 - [Bank Norwegian](https://play.google.com/store/apps/details?id=com.banknorwegian) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/95)
 - [DNB](https://play.google.com/store/apps/details?id=no.apps.dnbnor) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/630)
 - [Eika Mobilbank](https://play.google.com/store/apps/details?id=no.eika.mobilbank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/256)
