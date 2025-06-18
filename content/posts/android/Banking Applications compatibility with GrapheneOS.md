@@ -93,6 +93,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [ING Australia Banking](https://play.google.com/store/apps/details?id=au.com.ingdirect.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/500)
 - [Macquarie Mobile Banking](https://play.google.com/store/apps/details?id=au.com.macquarie.banking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/409)
 - [ME Bank](https://play.google.com/store/apps/details?id=au.com.mebank.banking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/203)
+- [ME Go](https://play.google.com/store/apps/details?id=au.com.mebank.mobilebanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/667)
 - [MyState: The human way to bank](https://play.google.com/store/apps/details?id=com.mystate.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/345)
 - [NAB Mobile Banking](https://play.google.com/store/apps/details?id=au.com.nab.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/76)
 - [St.George Mobile Banking](https://play.google.com/store/apps/details?id=org.stgeorge.bank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/570)
@@ -362,6 +363,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Hungary
 
+- [George Magyarország](https://play.google.com/store/apps/details?id=pegasus.project.ebh.mobile.android.bundle.mobilebank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/673)
 - [K&H mobilbank](https://play.google.com/store/apps/details?id=hu.khb) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/448)
 - [my Raiffeisen mobile app](https://play.google.com/store/apps/details?id=com.rbinternational.retail.mobileapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/668)
 - [OTP Bank HU](https://play.google.com/store/apps/details?id=hu.otpbank.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/245)
@@ -378,7 +380,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 - [Axis Mobile: Pay, Invest & UPI](https://play.google.com/store/apps/details?id=com.axis.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/139)
 - [Bajaj Finserv: UPI,Loan,FD,MF](https://play.google.com/store/apps/details?id=org.altruist.BajajExperia) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/340)
-- [BHIM - MAKING INDIA CASHLESS](https://play.google.com/store/apps/details?id=in.org.npci.upiapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/135)
+- ~~[BHIM - MAKING INDIA CASHLESS](https://play.google.com/store/apps/details?id=in.org.npci.upiapp)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/135)
 - [BHIM PNB](https://play.google.com/store/apps/details?id=com.mgs.pnbupi) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/337)
 - [BHIM SBI Pay:Retail & Business](https://play.google.com/store/apps/details?id=com.sbi.upi) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/338)
 - ~~[BOI Mobile](https://play.google.com/store/apps/details?id=com.boi.ua.android)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/329)
