@@ -163,6 +163,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 ### Canada
 
 - [Affinity Mobile](https://play.google.com/store/apps/details?id=ca.affinitycu.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/71)
+- [Amex Canada](https://play.google.com/store/apps/details?id=com.americanexpress.android.acctsvcs.ca) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/683)
 - [ATB Personal - Mobile Banking](https://play.google.com/store/apps/details?id=com.atb.ATBMobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/415)
 - [BMO Mobile Banking](https://play.google.com/store/apps/details?id=com.bmo.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/19)
 - [CIBC Mobile Banking®](https://play.google.com/store/apps/details?id=com.cibc.android.mobi) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/489)
@@ -339,7 +340,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [SpardaSecureApp](https://play.google.com/store/apps/details?id=de.sdvrz.ihb.mobile.secureapp.sparda.produktion) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/651)
 - [SpardaSecureGo+](https://play.google.com/store/apps/details?id=de.sparda.securego) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/553)
 - [Sparkasse Ihre mobile Filiale](https://play.google.com/store/apps/details?id=com.starfinanz.smob.android.sfinanzstatus) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/44)
-- [S-pushTAN - sichere Freigaben](https://play.google.com/store/apps/details?id=com.starfinanz.mobile.android.pushtan) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/604)
+- ~~[S-pushTAN - sichere Freigaben](https://play.google.com/store/apps/details?id=com.starfinanz.mobile.android.pushtan)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/604)
 - [TARGOBANK Mobile Banking](https://play.google.com/store/apps/details?id=com.targo_prod.bad) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/444)
 - [TEO - Das neue Multibanking](https://play.google.com/store/apps/details?id=com.comeco.teo) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/650)
 - [Tomorrow: Mobile Banking](https://play.google.com/store/apps/details?id=one.tomorrow.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/20)
@@ -826,6 +827,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [USAA Mobile](https://play.google.com/store/apps/details?id=com.usaa.mobile.android.usaa) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/80)
 - [U.S. Bank Mobile Banking](https://play.google.com/store/apps/details?id=com.usbank.mobilebanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/84)
 - [Venmo](https://play.google.com/store/apps/details?id=com.venmo) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/512)
+- [WECU Mobile](https://play.google.com/store/apps/details?id=com.wecu.mobilebanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/681)
 - [Wells Fargo Mobile](https://play.google.com/store/apps/details?id=com.wf.wellsfargomobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/63)
 - [Westerra Credit Union](https://play.google.com/store/apps/details?id=com.westerra.release.prod.release) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/642)
 - [WSECU Mobile Banking](https://play.google.com/store/apps/details?id=org.wsecu.n) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/614)
