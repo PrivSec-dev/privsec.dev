@@ -187,7 +187,7 @@ The first strategy is to add the atom feed of the application's release page to 
 
 - On GitLab, using Aurora Store as an example, you would navigate to its project repository and append /-/tags?format=atom to the URL: `https://gitlab.com/AuroraOSS/AuroraStore/-/tags?format=atom`
 
-The second strategy is to use the [IzzyOnDroid](https://apt.izzysoft.de/fdroid/) F-Droid repository with an F-Droid client like [F-Droid Basic](https://f-droid.org/en/packages/org.fdroid.basic), as mentioned [above](#f-droid). The IzzyOnDroid repository pulls new releases from various GitHub repositories to their server, which can then be automatically downloaded and installed by NeoStore. The downside of this strategy is that not every application on GitHub is on IzzyOnDroid, and sometimes IzzyOnDroid fails to pull a new release, resulting in you not getting any updates at all.
+The second strategy is to use the [IzzyOnDroid](https://apt.izzysoft.de/fdroid/) F-Droid repository with an F-Droid client like [F-Droid Basic](https://f-droid.org/en/packages/org.fdroid.basic), as mentioned [above](#f-droid). The IzzyOnDroid repository pulls new releases from various GitHub repositories to their server, which can then be automatically downloaded and installed. The downside of this strategy is that not every application on GitHub is on IzzyOnDroid, and sometimes IzzyOnDroid fails to pull a new release, resulting in you not getting any updates at all.
 
 It should be noted that since Android has automatic signature checking for existing applications on the system; that is, you only need to manually check the signature of the apk the first time you install an application.
 
