@@ -156,6 +156,10 @@ Carriers can track your coarse location through various means. At minimum, you n
 
 GrapheneOS's app store is available on [GitHub](https://github.com/GrapheneOS/Apps/releases). It supports Android 12 and above and is capable of updating itself. The app store has standalone applications built by the GrapheneOS project such as the [Auditor](https://attestation.app/), [Camera](https://github.com/GrapheneOS/Camera), and [PDF Viewer](https://github.com/GrapheneOS/PdfViewer). If you are looking for these applications, I highly recommend that you get them from GrapheneOS's app store instead of the Play Store, as the apps on their store are signed by the GrapheneOS's project own signature that Google does not have access to.
 
+### Accrescent
+
+[Accrescent](https://accrescent.app/) is a private and secure Android app store built with modern features in mind. It is currently in early-alpha and lacks many features one would expect for a modern app store. However, its security issues are much less severe than other private Android app stores.
+
 ### Aurora Store
 
 The [Aurora Store](https://auroraoss.com/downloads/AuroraStore/) is a proxy for the Google Play Store. It is great for privacy in the sense that it automatically gives you a disposable account to download apps, and it works on Android-based distributions that do not support Google Play Services. That being said, it lacks security features like certificate pinning and does not support Play Asset Delivery.
@@ -166,24 +170,32 @@ My recommendation is to stick with the Google Play Store unless your threat mode
 
 F-Droid, despite being often recommended in the privacy community, has various security deficiencies. You can read more about them [here](/posts/android/f-droid-security-issues/).
 
-I do not recommend that you use F-Droid at all unless you have no other choice to obtain certain apps. In some rare cases, there may be some apps which require the F-Droid version to work properly without Google Play Services. If you do end up using F-Droid, I highly recommend that you avoid the official F-Droid client (which is extremely outdated and targets API level 25) and use a more modern client with seamless updates such as [NeoStore](https://github.com/NeoApplications/Neo-Store). You should also avoid using the official F-Droid repository as much as possible and stick to the F-Droid repositories hosted by the app developers instead.
+I do not recommend that you use F-Droid at all unless you have no other choice to obtain certain apps. In some rare cases, there may be some apps which require the F-Droid version to work properly without Google Play Services. If you do end up using F-Droid, I highly recommend that you avoid the official F-Droid client (which is extremely outdated and targets API level 25) and use a client with seamless updates such as [F-Droid Basic](https://f-droid.org/en/packages/org.fdroid.basic). You should also avoid using the official F-Droid repository as much as possible and stick to the F-Droid repositories hosted by the app developers instead.
 
-### GitHub
+### Manually
 
-You can also obtain your apps directly from their GitHub repositories. In most cases, there would be a pre-built APK for you to download. You can verify the signature of the downloaded using `apksigner`:
+You can also obtain your apps directly from the developer's own releases page (i.e. GitHub, GitLab, the developer's website, etc.). In most cases, there would be a pre-built APK for you to download. You can verify the signature of the downloaded using either [AppVerifier](https://github.com/soupslurpr/AppVerifier) or `apksigner`:
 
 - Install [Android Studio](https://developer.android.com/studio) which includes `apksigner`. On macOS, `apksigner` can be found at `~/Library/Android/sdk/build-tools/<version>/apksigner`.
 - Run `apksigner verify --print-certs --verbose myCoolApp.apk` to verify the certificate of the apk.
 
 After you have verified the signature of the apk and installed it on your phone, there are several strategies you can use to keep the application up-to-date.
 
-The first strategy is to add the atom feed of the application's release page to an RSS Reader like [ReadYou](https://github.com/Ashinch/ReadYou) to get notified of new releases. You will still need to download and install the new releases manually. If you are confused, here is a video that could help with this process:
+The first strategy is to add the atom feed of the application's release page to an RSS Reader like [ReadYou](https://github.com/Ashinch/ReadYou) to get notified of new releases. You will still need to download and install the new releases manually.
 
-{{< youtube id="FFz57zNR_M0">}}
+- On GitHub, using Secure Camera as an example, you would navigate to its releases page and append .atom to the URL: `https://github.com/GrapheneOS/Camera/releases.atom`
 
-The second strategy is to use the [IzzyOnDroid](https://apt.izzysoft.de/fdroid/) F-Droid repository with a modern F-Droid client like [NeoStore](https://github.com/NeoApplications/Neo-Store), as mentioned [above](#f-droid). The IzzyOnDroid repository pulls new releases from various GitHub repositories to their server, which can then be automatically downloaded and installed by NeoStore. The downside of this strategy is that not every application on GitHub is on IzzyOnDroid, and sometimes IzzyOnDroid fails to pull a new release, resulting in you not getting any updates at all.
+- On GitLab, using Aurora Store as an example, you would navigate to its project repository and append /-/tags?format=atom to the URL: `https://gitlab.com/AuroraOSS/AuroraStore/-/tags?format=atom`
+
+The second strategy is to use the [IzzyOnDroid](https://apt.izzysoft.de/fdroid/) F-Droid repository with an F-Droid client like [F-Droid Basic](https://f-droid.org/en/packages/org.fdroid.basic), as mentioned [above](#f-droid). The IzzyOnDroid repository pulls new releases from various GitHub repositories to their server, which can then be automatically downloaded and installed by NeoStore. The downside of this strategy is that not every application on GitHub is on IzzyOnDroid, and sometimes IzzyOnDroid fails to pull a new release, resulting in you not getting any updates at all.
 
 It should be noted that since Android has automatic signature checking for existing applications on the system; that is, you only need to manually check the signature of the apk the first time you install an application. If you do use IzzyOnDroid to update applications, you will need to manually confirm the first update of an application to authorize the NeoStore as the installation source. After that, future updates will be seamless.
+
+### Obtainium
+
+[Obtainium](https://obtainium.imranr.dev/) is an app manager which allows you to install and update apps directly from the developer's own releases page, rather than a centralized app store/repository.
+
+Obtainium allows you to download APK installer files from a wide variety of sources, and it is up to you to ensure those sources and apps are legitimate. For example, using Obtainium to install Signal from Signal's APK landing page and verifying it with AppVerifier should be fine, but installing from third-party APK repositories like Aptoide or APKPure may pose additional risks.
 
 ## Google
 
