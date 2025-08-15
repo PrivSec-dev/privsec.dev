@@ -106,6 +106,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 - [bank99 | Online Banking ex-ING](https://play.google.com/store/apps/details?id=at.ing.diba.client.onlinebanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/275)
 - [Bank Austria MobileBanking](https://play.google.com/store/apps/details?id=com.bankaustria.android.olb) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/15)
+- [BAWAG Banking App](https://play.google.com/store/apps/details?id=com.bawagpsk.bawagpsk) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/722)
 - [complete Control](https://play.google.com/store/apps/details?id=com.cardcomplete.completecontrol) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/408)
 - [easybank App](https://play.google.com/store/apps/details?id=com.easybank.easybank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/597)
 - [flatex next AT: Aktien und ETF](https://play.google.com/store/apps/details?id=de.xcom.flatexat) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/491)
@@ -406,8 +407,10 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - ~~[BHIM - MAKING INDIA CASHLESS](https://play.google.com/store/apps/details?id=in.org.npci.upiapp)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/135)
 - [BHIM PNB](https://play.google.com/store/apps/details?id=com.mgs.pnbupi) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/337)
 - [BHIM SBI Pay:Retail & Business](https://play.google.com/store/apps/details?id=com.sbi.upi) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/338)
+- [bob World:Banking & Experience](https://play.google.com/store/apps/details?id=com.bankofbaroda.mconnect) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/724)
 - ~~[BOI Mobile](https://play.google.com/store/apps/details?id=com.boi.ua.android)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/329)
 - [Cent Mobile](https://play.google.com/store/apps/details?id=com.infrasofttech.CentralBank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/142)
+- [HDFC Bank Digital Rupee](https://play.google.com/store/apps/details?id=org.npci.token.hdfc) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/723)]
 - [HDFC Bank MobileBanking App](https://play.google.com/store/apps/details?id=com.snapwork.hdfc) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/138)
 - [IDFC FIRST Bank: MobileBanking](https://play.google.com/store/apps/details?id=com.idfcfirstbank.optimus) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/339)
 - [iMobile Pay: Banking, UPI](https://play.google.com/store/apps/details?id=com.csam.icici.bank.imobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/296)
@@ -527,7 +530,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 - [BankID](https://play.google.com/store/apps/details?id=no.vipps.bankid) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/255)
 - [Bank Norwegian](https://play.google.com/store/apps/details?id=com.banknorwegian) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/95)
-- [DNB](https://play.google.com/store/apps/details?id=no.apps.dnbnor) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/630)
+- ~~[DNB](https://play.google.com/store/apps/details?id=no.apps.dnbnor)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/630)
 - [Eika Mobilbank](https://play.google.com/store/apps/details?id=no.eika.mobilbank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/256)
 - [KLP Mobilbank](https://play.google.com/store/apps/details?id=com.evry.mobile.android.smartbankmobile.klpbank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/385)
 - [Kron - Investering for alle](https://play.google.com/store/apps/details?id=com.kronmobilapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/97)
