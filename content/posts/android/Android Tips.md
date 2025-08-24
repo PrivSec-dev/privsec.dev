@@ -26,12 +26,6 @@ You should also be very wary of low quality privacy branded phones like the Free
 
 ![Volta phone](/images/volta-phone.png)
 
-When you buy an Android phone, the device's default operating system often comes with invasive integration with apps and services that are not part of the [Android Open-Source Project](https://source.android.com/). An example of such is Google Play Services, which has irrevocable privileges to access your files, contacts storage, call logs, SMS messages, location, camera, microphone, hardware identifiers, and so on. These apps and services increase the attack surface of your device and are the source of various privacy concerns with Android.
-
-This problem could be solved by using a Android distribution that does not come with such invasive integration. Unfortunately, many Android-based operating systems often violate the Android security model by not supporting critical security features such as AVB, rollback protection, firmware updates, and so on. Some of them also ship [`userdebug`](https://source.android.com/setup/build/building#choose-a-target) builds which expose root over [ADB](https://developer.android.com/studio/command-line/adb) and require [more permissive](https://github.com/LineageOS/android_system_sepolicy/search?q=userdebug&type=code) SELinux policies to accommodate debugging features, resulting in a further increased attack surface and weakened security model.
-
-When choosing a custom Android-based operating system, you should make sure that it upholds the Android security model. Ideally, the custom operating system should have substantial privacy and security improvements to justify adding yet another party to trust.
-
 ## Baseline Security
 
 ### Verified Boot
@@ -85,6 +79,10 @@ Unfortunately, many custom Android-based operating system builds (especially uno
 ![ADB SELinux](/images/adb-selinux.png)
 
 ## Recommended Android-Based Operating Systems
+
+When you buy an Android phone, the device's default operating system often comes with invasive integration with apps and services that are not part of the [Android Open-Source Project](https://source.android.com/). An example of such is Google Play Services, which has irrevocable privileges to access your files, contacts storage, call logs, SMS messages, location, camera, microphone, hardware identifiers, and so on. These apps and services increase the attack surface of your device and are the source of various privacy concerns with Android.
+
+This problem could be solved by using a Android distribution that does not come with such invasive integration. Unfortunately, many Android-based operating systems often violate the Android security model by not supporting critical security features such as AVB, rollback protection, firmware updates, and so on. Some of them also ship [`userdebug`](https://source.android.com/setup/build/building#choose-a-target) builds which expose root over [ADB](https://developer.android.com/studio/command-line/adb) and require [more permissive](https://github.com/LineageOS/android_system_sepolicy/search?q=userdebug&type=code) SELinux policies to accommodate debugging features, resulting in a further increased attack surface and weakened security model.
 
 Currently, I am only aware of one Android-based operating system that should be used over the stock operating systems:
 
