@@ -20,25 +20,97 @@ When purchasing a device, you should buy one as new as possible. The software an
 ### Phones to Avoid
 Avoid buying the Fairphone 4, which only has just over 2 years of full security updates since its release date despite them advertising 6 years of support. This is because the System on a Chip they use (Snapdragon 750G) only has 3 years of support from Qualcomm, and the SoC was already old when the phone came out. This is not to mention, the Fairphone 4 [uses the Android Verified Boot Test Key as their OEM keys](https://forum.fairphone.com/t/bootloader-avb-keys-used-in-roms-for-fairphone-3-4/83448/11), effectively making Verified Boot useless. In general, you should check for how long the SoC a phone uses is supported for and not blindly trust the phone manufacturer's claims.
 
-You should also avoid buying phones preloaded with /e/ OS (sometimes branded as the Murena phones). /e/ OS in itself is extremely insecure, engaging in security bad practices that include, but are not limited to, not supporting verified boot; shipping userdebug build; [shipping months-old version of Chromium; and bundling years-old version of Orbot into their operating system, then marketing it as "Advanced Privacy"](https://divestos.org/misc/e.txt). There was also a recent incident where their cloud service mishandled session keys and gave users access to other's files, then proceeded to [mislead users that the server cannot see their files](https://community.e.foundation/t/service-announcement-26-may/41252/30), despite there being no end-to-end encryption.
+You should also avoid buying phones preloaded with /e/OS (sometimes branded as the Murena phones). /e/OS in itself is extremely insecure, engaging in security bad practices that include, but are not limited to, not supporting verified boot; shipping userdebug build; [shipping months-old version of Chromium; and bundling years-old version of Orbot into their operating system, then marketing it as "Advanced Privacy"](https://divestos.org/misc/e.txt). There was also a recent incident where their cloud service mishandled session keys and gave users access to other's files, then proceeded to [mislead users that the server cannot see their files](https://community.e.foundation/t/service-announcement-26-may/41252/30), despite there being no end-to-end encryption.
 
 You should also be very wary of low quality privacy branded phones like the Freedom Phone, BraX2 Phone, Volta Phone, and the like. These are cheap Chinese phones with the [Mediatek Helio P60](https://i.mediatek.com/p60) from 2018, which has already reached or is near end-of-life. Needless to say, you should also avoid any vendor who claims they are Zero-day proof like this:
 
 ![Volta phone](/images/volta-phone.png)
 
-## Android-based Operating Systems
+When you buy an Android phone, the device's default operating system often comes with invasive integration with apps and services that are not part of the [Android Open-Source Project](https://source.android.com/). An example of such is Google Play Services, which has irrevocable privileges to access your files, contacts storage, call logs, SMS messages, location, camera, microphone, hardware identifiers, and so on. These apps and services increase the attack surface of your device and are the source of various privacy concerns with Android.
 
+This problem could be solved by using a Android distribution that does not come with such invasive integration. Unfortunately, many Android-based operating systems often violate the Android security model by not supporting critical security features such as AVB, rollback protection, firmware updates, and so on. Some of them also ship [`userdebug`](https://source.android.com/setup/build/building#choose-a-target) builds which expose root over [ADB](https://developer.android.com/studio/command-line/adb) and require [more permissive](https://github.com/LineageOS/android_system_sepolicy/search?q=userdebug&type=code) SELinux policies to accommodate debugging features, resulting in a further increased attack surface and weakened security model.
+
+When choosing a custom Android-based operating system, you should make sure that it upholds the Android security model. Ideally, the custom operating system should have substantial privacy and security improvements to justify adding yet another party to trust.
+
+## Baseline Security
+
+### Verified Boot
+
+![Verified Boot](/images/verified-boot.png)
+
+[Verified Boot](https://source.android.com/security/verifiedboot) is an important part of the Android security model. It provides protection against [evil maid](https://en.wikipedia.org/wiki/Evil_maid_attack) attacks, malware persistence, and ensures security updates cannot be downgraded with [rollback protection](https://source.android.com/security/verifiedboot/verified-boot#rollback-protection).
+
+On Android, only your data (inside of the /data partition) is encrypted, and the operating system files are left unencrypted. Verified Boot ensures the integrity of the operating system files, thereby preventing an adversary with physical access from tampering or installing malware on the device. In the unlikely case that malware is able to exploit other parts of the system and gain higher privileged access, Verified Boot will prevent and revert changes to the system partition upon rebooting the device.
+
+Unfortunately, OEMs are only obliged to support Verified Boot on their stock Android distribution. Only a few OEMs such as Google support custom AVB key enrollment on their devices. Additionally, some AOSP derivatives such as LineageOS or /e/OS do not support Verified Boot even on hardware with Verified Boot support for third-party operating systems. In most cases, trading off verified boot for simply not having Play Services is not worth it.
+
+### Firmware Updates
+
+Firmware updates are critical for maintaining security and without them your device cannot be secure. OEMs have support agreements with their partners to provide the closed-source components for a limited support period. These are detailed in the monthly [Android Security Bulletins](https://source.android.com/security/bulletin).
+
+On a custom Android distribution, it is the responsibility of the operating system vendor to extract the firmware from the stock operating system, test it against their Android builds, then ship them to the user.
+
+Unfortunately, many custom Android distributions, including extremely popular ones like LineageOS and /e/OS do not ship firmware updates for most of their supported device. Instead, they expect the user to keep track of stock OS updates, extract and flash the firmware themselves. Beyond the lack of testing, this is extremely burdensome and not feasible for most end users and is yet another reason to not use these distributions.
+
+### Patch Levels
+
+As the [Android Security Bulletins](https://source.android.com/security/bulletin) is updated every month, Android-Based operating systems are expected to apply all security fixes before the next bulletin update comes out. Beside extracting the firmware, testing it and shipping it to the end user as described [above](#firmware-updates), the AOSP based system also need to be updated.
+
+This is a particularly challenging thing to do, especially around the time of a new major Android release since there are a lot of changes. Sometimes, newer firmware versions require newer major versions of AOSP, and if the developer takes too long to update their base operating system to the next major AOSP version, they cannot ship firmware updates either, leaving users vulnerable.
+
+This has happened to CalyxOS during the Android 11 to Android 12 transition. It took them [4 months](https://github.com/privacyguides/privacyguides.org/pull/578#issue-1112002737) to update to Android 12; and during those 4 months, they could not ship any firmware updates at all, leaving the user vulnerable during that time period. 
+
+It would be much better if you just stick to the stock operating system (which got updated to Android 12 shortly after the AOSP 12 release) instead of using a custom operating system which could not keep up with updates as described.
+
+### Chromium Webview Updates
+
+Android comes with a system [webview](https://developer.android.com/reference/android/webkit/WebView), a component that many apps rely on to use as part of their activity layout. It effectively behaves like a minimal browser, opening random websites with arbitrary code the internet. Thus, it is very important that this component is consistently kept up to date.
+
+Some Android-based operating systems, including ones like CalyxOS, often fall behind on security updates for this component. Particularly, this has gotten so bad that they actually fell behind for [3 months](https://github.com/privacyguides/privacyguides.org/pull/548#issuecomment-1018245074) back in January 2022 and [2 months](https://github.com/privacyguides/privacyguides.org/pull/1378) in June 2022. It is a good indication that these operating systems cannot keep up with security updates and should not be used. 
+
+### User Builds
+
+As mentioned [above](/posts/os/choosing-your-android-based-operating-system/), `userdebug` builds expose root over ADB and require more permissive SELinux policies to accommodate debugging features. They violate the Android security model and are really only meant for developers to test out their android builds during development.
+
+End users should be using the production `user` builds. Distributions which do not ship `user` builds like LineageOS or /e/OS should be avoided, especially if your device has not reached end of life.
+
+### SELinux in Enforcing Mode
+
+[SELinux](https://source.android.com/security/selinux) is a critical part of the Android security model, having the Linux kernel enforcing confinement for all processes, including system processes running as root.
+
+In order for a system to be secure, it must have SELinux in Enforcing mode, accompanied by fine-grained SELinux policies.
+
+Unfortunately, many custom Android-based operating system builds (especially unofficial LineageOS builds) disables SELinux or set it into Permissive mode. You can check whether SELinux is in enforcing mode or not by executing `getenforce` in the ADB shell (the expected output is `Enforcing`). You should avoid any Android-based operating system builds that do not have SELinux in enforcing mode at all cost.
+
+![ADB SELinux](/images/adb-selinux.png)
+
+## Recommended Android-Based Operating Systems
+
+Currently, I am only aware of one Android-based operating system that should be used over the stock operating systems:
+
+### GrapheneOS
 ![GrapheneOS Aurora](/images/grapheneos-aurora.jpg)
 
-In certain cases, installing a custom Android-based operating system can help increase your privacy and security. This is rather tricky, however, as the vast majority of these operating systems (a.k.a. "custom ROMs") do exactly the opposite: break the Android security model, thereby ruining your security while providing no or dubious privacy benefits.
+[GrapheneOS](https://grapheneos.org) is the **only** custom Android-based operating system you should buy a new phone for. It provides additional [security hardening](https://en.wikipedia.org/wiki/Hardening_(computing)) and privacy improvements over the stock operating system from Google. It has a [hardened memory allocator](https://github.com/GrapheneOS/hardened_malloc), network and sensor permissions, and various other [security feature](https://grapheneos.org/features). GrapheneOS also comes with full firmware updates and signed builds, so verified boot is fully supported. Here is a quick video demonstrating the network and sensors permissions:
 
-I have written a detailed post on selecting your Android-based operating system, which you can find [here](/posts/android/choosing-your-android-based-operating-system).
+{{< youtube id="0ic6QK0xUMY">}}
 
-**TLDR**: If you are using a modern Pixel, install [GrapheneOS](https://grapheneos.org). Otherwise, stick to your stock operating system. Do not blindly use an OS just because it is advertised as "degoogled".
+For usability purposes, GrapheneOS supports [Sandboxed Google Play](https://grapheneos.org/usage#sandboxed-google-play), which runs Google Play Services fully sandboxed like any other regular app. This means you can take advantage of most Google Play Services, such as [push notifications](https://firebase.google.com/docs/cloud-messaging/), while giving you full control over their permissions and access, and while containing them to a specific work profile or user profile of your choice. Most interestingly, the [In-app Billing API](https://android-doc.github.io/google/play/billing/api.html), [Google Play Games](https://play.google.com/googleplaygames), [Play Asset Delivery](https://developer.android.com/guide/playcore/asset-delivery), [FIDO2](/posts/knowledge/multi-factor-authentication/#fido2-fast-identity-online) all work exceptionally well. Most [Advanced Protection Program](https://landing.google.com/advancedprotection/) features, except for [Play Protect](https://support.google.com/googleplay/answer/2812853?hl=en) and restricted app installation, also work.
+
+Because GrapheneOS does not grant any Google Apps and Services apart from the opt-in eSIM action app privileged access to the system, Play Protect cannot disable or uninstall known malicious applications when it detects them. As for restricted app installation, this feature is not that useful on stock operating system anyways, since it is bypassable with `adb push`.
+
+Recently, GrapheneOS has also added the [Storage Scopes](https://grapheneos.org/usage#storage-access) feature, allowing you to force apps that request broad storage access permission to function with scoped storage. With this new feature, you no longer have to grant certain apps access to all of your media or files to use them anymore. You can watch a video of Storage Scope in action here:
+
+{{< youtube id="WjrANjvrSzw">}}
+
+
+Currently, Google Pixel phones are the only devices that meet GrapheneOS's [hardware security requirements](https://grapheneos.org/faq#device-support).
 
 ## Use New Android Versions
 
 It's important to not use an [end-of-life](https://endoflife.date/android) version of Android. Newer versions of Android receive not only security updates for the operating system but also important privacy enhancing updates too. For example, [prior to Android 10](https://developer.android.com/about/versions/10/privacy/changes), any apps with the [`READ_PHONE_STATE`](https://developer.android.com/reference/android/Manifest.permission#READ_PHONE_STATE) permission could access sensitive and unique serial numbers of your phone such as [IMEI](https://en.wikipedia.org/wiki/International_Mobile_Equipment_Identity), [MEID](https://en.wikipedia.org/wiki/Mobile_equipment_identifier), your SIM card's [IMSI](https://en.wikipedia.org/wiki/International_mobile_subscriber_identity), whereas now they must be system apps to do so. System apps are only provided by the OEM or Android distribution.
+
+As of August 2025, CalyxOS has not only not updated to Android 16 yet, but [they've paused updates entirely](https://calyxos.org/news/2025/08/01/a-letter-to-our-community/) and recommend against migrating to their OS. 
 
 ## Do Not Root Your Phone
 
