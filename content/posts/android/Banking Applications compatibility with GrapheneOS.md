@@ -446,6 +446,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Italy
 
+- [Banca Etica](https://play.google.com/store/apps/details?id=it.bancaetica.bank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/739)
 - [BancoPosta](https://play.google.com/store/apps/details?id=posteitaliane.posteapp.appbpol) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/181)
 - [BBVA Italia | Banca Online](https://play.google.com/store/apps/details?id=com.bbva.italy) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/374)
 - [BNL](https://play.google.com/store/apps/details?id=it.bnl.apps.banking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/144)
@@ -458,6 +459,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Mediolanum](https://play.google.com/store/apps/details?id=com.mediolanum.android.fullbanca) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/720)
 - [Mobile Banking UniCredit](https://play.google.com/store/apps/details?id=com.unicredit) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/431)
 - [Satispay](https://play.google.com/store/apps/details?id=com.satispay.customer) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/282)
+- [Sella](https://play.google.com/store/apps/details?id=com.sella.BancaSella) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/741)
 - [YouApp – Banco BPM Mobile](https://play.google.com/store/apps/details?id=com.lynxspa.bancopopolare) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/284)
 
 ### Japan
@@ -476,6 +478,10 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 ### Kazakhstan
 
 - [Kaspi.kz суперприложение](https://play.google.com/store/apps/details?id=kz.kaspi.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/149)
+
+### Latvia
+
+- [Swedbank Latvia](https://play.google.com/store/apps/details?id=lv.swedbank.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/742)
 
 ### Luxembourg
 
@@ -657,6 +663,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 - [DH Denarnik](https://play.google.com/store/apps/details?id=si.delavskahranilnica.dhdenarnik) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/178)
 - [DH Mobilni](https://play.google.com/store/apps/details?id=com.hrc.eb.mobile.android.hibismobiledh) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/177)
+- [INTESA SANPAOLO BANK MOBILE](https://play.google.com/store/apps/details?id=hr.asseco.android.intesa.isbd.isps) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/747)
 
 ### South Korea
 
@@ -869,7 +876,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Old Glory Bank](https://play.google.com/store/apps/details?id=com.oldgloryholdingcompany4930.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/429)
 - [OnPoint Mobile](https://play.google.com/store/apps/details/OnPoint_Mobile?id=com.onpointcommunitycreditunion5123.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/501)
 - [Pentagon Federal Credit Union](https://play.google.com/store/apps/details?id=org.penfed.mobile.banking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/466)
-- [PSECU Mobile](https://play.google.com/store/apps/details?id=com.PSECUMobilePlus.com) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/610)
+- ~~[PSECU Mobile](https://play.google.com/store/apps/details?id=com.PSECUMobilePlus.com)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/610)
 - [SchoolsFirst FCU Mobile](https://play.google.com/store/apps/details?id=org.schoolsfirstfcu.mobile.banking.isam) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/126)
 - [Schwab Mobile](https://play.google.com/store/apps/details?id=com.schwab.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/61)
 - [Service CU Mobile Banking](https://play.google.com/store/apps/details?id=com.ifs.mobilebanking.fiid9094) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/166)
