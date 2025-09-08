@@ -1,5 +1,5 @@
 ---
-title: "Update your Signal TLS Proxy"
+title: "Signal TLS Proxy warning"
 date: 2022-10-15
 tags: ['Proxies', 'Containers', 'Security']
 author: Tommy
@@ -18,3 +18,5 @@ My Docker Compose setup can be found [here](https://github.com/ArcticFoxes-net/S
 - [Drop capabilities](https://github.com/signalapp/Signal-TLS-Proxy/pull/24)
 - [Use upstream NGINX image](https://github.com/signalapp/Signal-TLS-Proxy/pull/23)
 - [Add :Z for SELinux](https://github.com/signalapp/Signal-TLS-Proxy/pull/22)
+
+Currently, we believe Signal’s TLS Proxies are an incomplete solution to the problems they try to solve. Instead, we recommend using Orbot in conjunction with [Molly](https://molly.im), an alternative Signal client which natively supports SOCKS proxies, to fully tunnel your Signal traffic over the Tor network.
