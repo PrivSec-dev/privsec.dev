@@ -86,6 +86,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - ~~[ANZ Plus](https://play.google.com/store/apps/details?id=com.anz.lotus)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/313)
 - [Bank Australia App](https://play.google.com/store/apps/details?id=com.fusion.banking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/55)
 - [BankVic Mobile Banking](https://play.google.com/store/apps/details?id=com.bankvic.androidsmartapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/557)
+- [Bankwest](https://play.google.com/store/apps/details?id=au.com.bankwest.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/757)
 - [Bendigo Bank](https://play.google.com/store/apps/details?id=com.bendigobank.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/88)
 - [CoinSpot - Buy & Sell Bitcoin](https://play.google.com/store/apps/details?id=com.coinspot.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/566)
 - [CommBank](https://play.google.com/store/apps/details?id=com.commbank.netbank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/75)
@@ -198,6 +199,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Chile
 
+- [App Scotia](https://play.google.com/store/apps/details?id=cl.scotiabank.go) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/756)
 - [BancoEstado](https://play.google.com/store/apps/details?id=net.veritran.becl.prod) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/609)
 - [Mi Banco Edwards](https://play.google.com/store/apps/details?id=cl.bancochile.mi_edwards) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/457)
 - [Santander Chile](https://play.google.com/store/apps/details?id=cl.santander.smartphone) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/360)
@@ -815,7 +817,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - ~~[Halifax Mobile Banking](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/309)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/309)
 - [HSBC UK Mobile Banking](https://play.google.com/store/apps/details?id=uk.co.hsbc.hsbcukmobilebanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/33)
 - [InvestEngine: ETF Investing](https://play.google.com/store/apps/details?id=com.investengine.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/620)
-- ~~[Kroo Bank - Mobile Banking](https://play.google.com/store/apps/details?id=com.bsocial)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/449)
+- [Kroo Bank - Mobile Banking](https://play.google.com/store/apps/details?id=com.bsocial) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/449)
 - ~~[Lloyds Bank Mobile Banking](https://play.google.com/store/apps/details?id=com.grppl.android.shell.CMBlloydsTSB73)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/53)
 - [Marcus by Goldman Sachs®](https://play.google.com/store/apps/details?id=com.marcus.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/212)
 - ~~[MBNA Mobile App](https://play.google.com/store/apps/details?id=uk.co.mbna.cardservices.android)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/537)
