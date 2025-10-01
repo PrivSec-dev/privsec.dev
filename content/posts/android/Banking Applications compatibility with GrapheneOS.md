@@ -410,7 +410,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 - [Axis Mobile: Pay, Invest & UPI](https://play.google.com/store/apps/details?id=com.axis.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/139)
 - [Bajaj Finserv: UPI,Loan,FD,MF](https://play.google.com/store/apps/details?id=org.altruist.BajajExperia) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/340)
-- ~~[BHIM - MAKING INDIA CASHLESS](https://play.google.com/store/apps/details?id=in.org.npci.upiapp)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/135)
+- [BHIM - MAKING INDIA CASHLESS](https://play.google.com/store/apps/details?id=in.org.npci.upiapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/135)
 - [BHIM PNB](https://play.google.com/store/apps/details?id=com.mgs.pnbupi) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/337)
 - [BHIM SBI Pay:Retail & Business](https://play.google.com/store/apps/details?id=com.sbi.upi) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/338)
 - [bob World:Banking & Experience](https://play.google.com/store/apps/details?id=com.bankofbaroda.mconnect) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/724)
@@ -496,6 +496,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 ### Lithuania
 
 - [Artea](https://play.google.com/store/apps/details?id=lt.sb.mobileapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/711)
+- ~~[Paysera Super App](https://play.google.com/store/apps/details?id=lt.lemonlabs.android.paysera)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/758)
 - [Swedbank Lietuva](https://play.google.com/store/apps/details?id=lt.swedbank.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/244)
 
 ### Macau
