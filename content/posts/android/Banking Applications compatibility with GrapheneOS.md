@@ -189,6 +189,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Rogers Bank](https://play.google.com/store/apps/details?id=com.rogers.banking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/622)
 - [Scotiabank Mobile Banking](https://play.google.com/store/apps/details?id=com.scotiabank.banking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/176)
 - [Services mobiles Desjardins](https://play.google.com/store/apps/details?id=com.desjardins.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/550)
+- [Servus Mobile Banking](https://play.google.com/store/apps/details?id=ca.servus.mbanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/760)
 - [Simplii Financial](https://play.google.com/store/apps/details?id=com.pcfinancial.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/17)
 - [Tangerine Mobile Banking](https://play.google.com/store/apps/details?id=ca.tangerine.clients.banking.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/16)
 - ~~[TD Authenticate](https://play.google.com/store/apps/details?id=com.td.softtoken)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/628)
@@ -654,6 +655,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [MariBank](https://play.google.com/store/apps/details?id=sg.com.maribankmobile.digitalbank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/586)
 - [OCBC Business](https://play.google.com/store/apps/details?id=com.ocbc.mobilebv) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/587)
 - [OCBC Digital - Mobile Banking](https://play.google.com/store/apps/details?id=com.ocbc.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/146)
+- [SC Mobile Singapore](https://play.google.com/store/apps/details?id=air.app.scb.breeze.android.main.sg.prod) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/762)
 - [SFL Go](https://play.google.com/store/apps/details?id=sg.sfl.ib) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/273)
 - [SIF Mobile](https://play.google.com/store/apps/details?id=com.sif.retailbanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/270)
 - [Trust Bank SG](https://play.google.com/store/apps/details?id=sg.trust) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/589)
@@ -692,6 +694,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
   - Secure app spawning must be disabled for this app to run!
 - [현대카드](https://play.google.com/store/apps/details?id=com.hyundaicard.appcard) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/546)
   - Secure app spawning must be disabled for this app to run!
+- [카카오뱅크](https://play.google.com/store/apps/details?id=com.kakaobank.channel) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/763)
   
 ### Spain
 
@@ -879,6 +882,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Grow Mobile Banking](https://play.google.com/store/apps/details?id=com.growfinancialfcu.growfinancialfcu) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/68)
 - [GTE Mobile](https://play.google.com/store/apps/details?id=org.gtefinancial.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/81)
 - [GTE Cards](https://play.google.com/store/apps/details?id=com.a84102934.wallet.cardcontrol) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/82)
+- [Huntington Mobile Banking](https://play.google.com/store/apps/details?id=com.huntington.m) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/761)
 - [Logix Banking](https://play.google.com/store/apps/details?id=com.logixbanking.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/676)
 - [M&T Mobile Banking](https://play.google.com/store/apps/details?id=com.mtb.mbanking.sc.retail.prod) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/305)
 - [Mainstreet Credit Union](https://play.google.com/store/apps/details?id=org.mainstreetcu.grip) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/111)
