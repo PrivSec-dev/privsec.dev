@@ -21,4 +21,4 @@ Benevolent dictator for life @PrivSec.dev. System Administrator.
 ### akc3n
 Just an ordinary human that loves to learn, solve puzzles, and eat food.
 
-**Website**: [akc3n.page](https://akc3n.page)
+**Website**: [github.com/akc3n](https://github.com/akc3n)
