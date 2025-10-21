@@ -179,6 +179,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [BMO Mobile Banking](https://play.google.com/store/apps/details?id=com.bmo.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/19)
 - [CIBC Mobile Banking®](https://play.google.com/store/apps/details?id=com.cibc.android.mobi) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/489)
 - [Coast Capital Savings](https://play.google.com/store/apps/details?id=com.coastcapitalsavings.dcu) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/175)
+- [connectFirst](https://play.google.com/store/apps/details?id=com.celero.connectfirst) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/769)
 - ~~[EQ Bank Mobile Banking](https://play.google.com/store/apps/details?id=com.eqbank.eqbank)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/621)
 - [HSBC Canada](https://play.google.com/store/apps/details?id=ca.hsbc.hsbccanada) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/304)
 - [IBKR Mobile](https://play.google.com/store/apps/details?id=atws.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/241)
@@ -282,6 +283,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Finland
 
+- [Aktia Mobile Bank](https://play.google.com/store/apps/details?id=com.aktia.mobilebank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/775)
 - [Holvi – Business banking](https://play.google.com/store/apps/details?id=com.holvi.app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/578)
 - [Morrow Bank](https://play.google.com/store/apps/details?id=com.komplettbank.mobile_app) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/755)
 - [MyEdenred](https://play.google.com/store/apps/details?id=com.edenred.eq.myedenred) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/652)
@@ -415,7 +417,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [BHIM PNB](https://play.google.com/store/apps/details?id=com.mgs.pnbupi) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/337)
 - [BHIM SBI Pay:Retail & Business](https://play.google.com/store/apps/details?id=com.sbi.upi) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/338)
 - [bob World:Banking & Experience](https://play.google.com/store/apps/details?id=com.bankofbaroda.mconnect) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/724)
-- ~~[BOI Mobile](https://play.google.com/store/apps/details?id=com.boi.ua.android)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/329)
+- [BOI Mobile](https://play.google.com/store/apps/details?id=com.boi.ua.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/329)
 - [Cent Mobile](https://play.google.com/store/apps/details?id=com.infrasofttech.CentralBank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/142)
 - [HDFC Bank Digital Rupee](https://play.google.com/store/apps/details?id=org.npci.token.hdfc) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/723)]
 - [HDFC Bank MobileBanking App](https://play.google.com/store/apps/details?id=com.snapwork.hdfc) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/138)
@@ -434,6 +436,8 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 ### Indonesia
 
 - [BCA Mobile](https://play.google.com/store/apps/details?id=com.bca) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/306)
+- [OCBC mobile Indonesia](https://play.google.com/store/apps/details?id=com.ocbcnisp.onemobileapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/765)
+- [Permata ME](https://play.google.com/store/apps/details?id=net.myinfosys.PermataMobileX) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/764)
 
 ### Ireland
 
@@ -778,6 +782,8 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Bangkok Bank Mobile Banking](https://play.google.com/store/apps/details?id=com.bbl.mobilebanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/406)
   - Secure app spawning must be disabled for this app to run!
 - [K PLUS](https://play.google.com/store/apps/details?id=com.kasikorn.retail.mbanking.wap) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/265)
+- ~~[krungsri](https://play.google.com/store/apps/details?id=com.krungsri.kma)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/771)
+- ~~[Krungthai NEXT](https://play.google.com/store/apps/details?id=ktbcs.netbank)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/770)
 - ~~[SCB Easy](https://play.google.com/store/apps/details?id=com.scb.phone)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/195)
 - [ShopeePay](https://play.google.com/store/apps/details?id=com.beeasy.airpay) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/335)
 - [UOB TMRW Thailand](https://play.google.com/store/apps/details?id=com.uob.mightyth2) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/333)
@@ -840,6 +846,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Trading 212: Stocks, ETFs, ISA](https://play.google.com/store/apps/details?id=com.avuscapital.trading212) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/703)
 - [Triodos Bank UK](https://play.google.com/store/apps/details?id=com.triodos.bankinguk) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/132)
 - [TSB Mobile Banking](https://play.google.com/store/apps/details?id=uk.co.tsb.newmobilebank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/143)
+- [Ulster Bank NI Mobile Banking](https://play.google.com/store/apps/details?id=com.rbs.mobile.android.ubn) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/766)
 - [Virgin Money Mobile Banking](https://play.google.com/store/apps/details?id=com.virginmoney.uk.mobile.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/54)
 - [Zopa Bank](https://play.google.com/store/apps/details?id=com.zopa.zeos) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/442)
 
@@ -849,6 +856,8 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Alliant Mobile Banking](https://play.google.com/store/apps/details?id=org.alliant.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/85)
 - [Ally: Banking & Investing](https://play.google.com/store/apps/details?id=com.ally.MobileBanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/113)
 - [America First Mobile Banking](https://play.google.com/store/apps/details?id=com.afcu.mobilebanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/148)
+- [AmeriCU Credit Union](https://play.google.com/store/apps/details?id=com.ifs.banking.fiid1561) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/767)
+  - This app officially supports GrapheneOS!
 - [Amex](https://play.google.com/store/apps/details?id=com.americanexpress.android.acctsvcs.us) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/125)
   - You can't mark your device as trusted so you will have to authenticate yourself with 2FA every time you open this app.
 - [Axos All-In-One Mobile Banking](https://play.google.com/store/apps/details?id=com.axos.udb) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/430)
@@ -861,6 +870,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [CEFCU Mobile Banking](https://play.google.com/store/apps/details?id=com.cefcu5095.mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/641)
 - [Chase Mobile](https://play.google.com/store/apps/details?id=com.chase.sig.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/13)
 - [Chime – Mobile Banking](https://play.google.com/store/apps/details?id=com.onedebit.chime) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/46)
+- [Citadel Mobile Banking](https://play.google.com/store/apps/details?id=com.q2e.citadel5012android.citadelmobile.uwnmobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/773)
 - [CitiManager – Corporate Cards](https://play.google.com/store/apps/details?id=com.citi.mobile.ccc) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/511)
 - [Citi Mobile®](https://play.google.com/store/apps/details?id=com.citi.citimobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/366)
 - ~~[Citizens Bank Mobile Banking](https://play.google.com/store/apps/details?id=com.citizensbank.androidapp)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/66)
