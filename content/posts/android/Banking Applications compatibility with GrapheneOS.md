@@ -419,7 +419,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [bob World:Banking & Experience](https://play.google.com/store/apps/details?id=com.bankofbaroda.mconnect) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/724)
 - [BOI Mobile](https://play.google.com/store/apps/details?id=com.boi.ua.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/329)
 - [Cent Mobile](https://play.google.com/store/apps/details?id=com.infrasofttech.CentralBank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/142)
-- [HDFC Bank Digital Rupee](https://play.google.com/store/apps/details?id=org.npci.token.hdfc) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/723)]
+- [HDFC Bank Digital Rupee](https://play.google.com/store/apps/details?id=org.npci.token.hdfc) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/723)
 - [HDFC Bank MobileBanking App](https://play.google.com/store/apps/details?id=com.snapwork.hdfc) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/138)
 - [IDFC FIRST Bank: MobileBanking](https://play.google.com/store/apps/details?id=com.idfcfirstbank.optimus) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/339)
 - [iMobile Pay: Banking, UPI](https://play.google.com/store/apps/details?id=com.csam.icici.bank.imobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/296)
