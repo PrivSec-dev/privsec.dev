@@ -71,6 +71,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [UnionPay APP](https://play.google.com/store/apps/details?id=com.unionpay) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/421)
 - [Wero](https://play.google.com/store/apps/details?id=eu.epicompany.wero.wallet) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/663)
 - [Wise](https://play.google.com/store/apps/details?id=com.transferwise.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/266)
+- [ZEN.COM for peaceful payments](https://play.google.com/store/apps/details?id=com.zen.application) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/785)
 
 ## National banking apps
 
@@ -527,6 +528,10 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Nu](https://play.google.com/store/apps/details?id=com.nu.production) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/92)
 - [Vexi](https://play.google.com/store/apps/details?id=mx.vexi.appmovil) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/608)
 
+### Moldova
+
+- [maibank](https://play.google.com/store/apps/details?id=md.maib.maibank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/786)
+
 ### Netherlands
 
 - [ABN AMRO](https://play.google.com/store/apps/details?id=com.abnamro.nl.mobile.payments) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/108)
@@ -785,7 +790,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Thailand
 
-- ~~[Bangkok Bank Mobile Banking](https://play.google.com/store/apps/details?id=com.bbl.mobilebanking)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/406)
+- [Bangkok Bank Mobile Banking](https://play.google.com/store/apps/details?id=com.bbl.mobilebanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/406)
 - [K PLUS](https://play.google.com/store/apps/details?id=com.kasikorn.retail.mbanking.wap) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/265)
 - ~~[krungsri](https://play.google.com/store/apps/details?id=com.krungsri.kma)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/771)
 - ~~[Krungthai NEXT](https://play.google.com/store/apps/details?id=ktbcs.netbank)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/770)
