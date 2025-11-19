@@ -20,3 +20,7 @@ My Docker Compose setup can be found [here](https://github.com/ArcticFoxes-net/S
 - [Add :Z for SELinux](https://github.com/signalapp/Signal-TLS-Proxy/pull/22)
 
 Currently, we believe Signal’s TLS Proxies are an incomplete solution to the problems they try to solve. Instead, we recommend using Orbot in conjunction with [Molly](https://molly.im), an alternative Signal client which natively supports SOCKS proxies, to fully tunnel your Signal traffic over the Tor network.
+
+## Sources
+
+- [A Warning About Signal Proxies in Iran and Other Oppressive Countries - Privacy Guides](https://www.privacyguides.org/articles/2022/10/15/warning-about-signal-proxies/)
