@@ -61,7 +61,7 @@ params:
     - name: gitea
       url: "https://git.tommytran.io/privsec-dev"
     - name: matrix
-      url: "https://invite.arcticfoxes.net/#/#PrivSec.dev:arcticfoxes.net"
+      url: "https://matrix.to/#/#PrivSec.dev:metropolis.nexus"
     - name: twitter
       url: "https://twitter.com/privsec_dev"
     - name: reddit
