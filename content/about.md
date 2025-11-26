@@ -15,7 +15,7 @@ Also, to avoid any confusion, we are not affiliated, associated or in any way co
 Benevolent dictator for life @PrivSec.dev. System Administrator.
 
 **Website**: [tommytran.io](https://tommytran.io)\
-**Matrix**: [@tommy:metropolis.nexus](https://matrix.to/#/@tommy:metropolis.nexus)\
+**Matrix**: [@tommy:metropolis.nexus](https://metropolis.nexus/#/@tommy:metropolis.nexus)\
 **Email**: [contact@tommytran.io](mailto:contact@tommytran.io)
 
 ### akc3n
