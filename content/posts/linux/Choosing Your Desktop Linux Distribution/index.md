@@ -83,11 +83,3 @@ Fedora Atomic Desktop's European counterpart. openSUSE Aeon is a rolling release
 [Aeon](https://microos.opensuse.org/) has a relatively small set of base packages (thus lowering the attack surface) and mounts the running BTRFS subvolume as read-only. Updates are applied package by package to a new BTRFS snapshot before the system is rebooted to the new subvolume. This allows the rollback process to be relatively easy just like on Fedora Atomic Desktops.
 
 {{< youtube id="jcl_4Vh6qP4">}}
-
-### Whonix
-
-[Whonix](https://www.whonix.org/) is a distribution focused on anonymity based on [Kicksecure](https://www.whonix.org/wiki/Kicksecure). It is meant to run as two virtual machines: a “Workstation” and a Tor “Gateway.” All communications from the Workstation must go through the Tor gateway. This means that even if the Workstation is compromised by malware of some kind, the true IP address remains hidden. It is currently the best solution that I know of if your threat model requires anonymity.
-
-Some of its features include Tor Stream Isolation, [keystroke anonymization](https://www.whonix.org/wiki/Keystroke_Deanonymization#Kloak), [boot clock randomization](https://www.kicksecure.com/wiki/Boot_Clock_Randomization), [encrypted swap](https://github.com/Whonix/swap-file-creator), hardened boot parameters, and hardened kernel settings. One downside of Whonix is that it still inherits outdated packages with lots of downstream patching from Debian. It would be better if Whonix gets reimplemented on top of a more sensible base like SecureBlue, although no such system publicly exists yet.
-
-Although Whonix is best used [in conjunction with Qubes](https://www.whonix.org/wiki/Qubes/Why_use_Qubes_over_other_Virtualizers), Qubes-Whonix has [various disadvantages](https://forums.whonix.org/t/qubes-whonix-security-disadvantages-help-wanted/8581) when compared to other hypervisors.
