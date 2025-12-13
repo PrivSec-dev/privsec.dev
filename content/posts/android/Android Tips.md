@@ -158,7 +158,7 @@ GrapheneOS's app store is available on [GitHub](https://github.com/GrapheneOS/Ap
 
 ### Accrescent
 
-[Accrescent](https://accrescent.app/) is a private and secure Android app store built with modern features in mind. It is currently in early-alpha and lacks many features one would expect for a modern app store. However, its security issues are much less severe than other private Android app stores.
+[Accrescent](https://accrescent.app/) is a private and secure Android app store built with modern features in mind. Features include [signed repository metadata](https://accrescent.app/features#signed-metadata), [unattended updates](https://accrescent.app/features#unattended-updates), and [split APK support](https://accrescent.app/features#split-apks). However, it is currently in alpha and lacks many features one would expect for a modern app store. 
 
 ### Aurora Store
 
