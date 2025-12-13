@@ -18,13 +18,7 @@ Benevolent dictator for life @PrivSec.dev. System Administrator.
 **Matrix**: [@tommy:arcticfoxes.net](https://invite.arcticfoxes.net/#/@tommy:arcticfoxes.net)\
 **Email**: [contact@tommytran.io](mailto:contact@tommytran.io)
 
-### wj25czxj47bu6q
-A nerd who can't stop going down rabbit holes. Very much a perfectionist.
-
-**Website:** [Wandering Computerer](https://wanderingcomputerer.gitlab.io)\
-**Matrix:** [@wj25czxj47bu6q:arcticfoxes.net](https://invite.arcticfoxes.net/#/@wj25czxj47bu6q:arcticfoxes.net)
-
 ### akc3n
 Just an ordinary human that loves to learn, solve puzzles, and eat food.
 
-**Website**: [akc3n.page](https://akc3n.page)
+**Website**: [github.com/akc3n](https://github.com/akc3n)
