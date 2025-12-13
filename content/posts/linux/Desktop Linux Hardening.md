@@ -87,8 +87,6 @@ _Of course, this is a non&#8209;exhaustive list of telemetry on different Linux 
 
 You could be [fingerprinted based on soft biometric traits](https://www.whonix.org/wiki/Keystroke_Deanonymization) when you use the keyboard. The [Kloak](https://github.com/vmonaco/kloak) package could help you mitigate this threat. It is available as a .deb package from [Kicksecure's repository](https://www.kicksecure.com/wiki/Packages_for_Debian_Hosts) and an [AUR package](https://aur.archlinux.org/packages/kloak-git).
 
-With that being said, if your threat model calls for using something like Kloak, you are probably better off just using Whonix.
-
 ## Application Confinement
 
 Some sandboxing solutions for desktop Linux distributions do exist; however, they are not as strict as those found in macOS or ChromeOS. Software installed with distro package managers (DNF, APT, etc.) typically have **no** sandboxing or confinement whatsoever. Several projects which aim to tackle this problem are discussed here.
@@ -194,6 +192,10 @@ Another option is [Kata Containers](https://katacontainers.io/) which masquerade
 
 ![opensuse-computer.jpg](/images/opensuse-computer.jpg)
 
+### SecureBlue Patches
+
+SecureBlue has a [features page](https://secureblue.dev/features) and has [hardening scripts](https://github.com/secureblue/secureblue/tree/live/files/scripts) for SecureBlue that you can use as a reference for further security hardening. 
+
 ### Ubuntu Pro
 
 If you are using Ubuntu LTS, consider subscribing to [Ubuntu Pro](https://ubuntu.com/pro). Canonical currently allows up to 5 machines with the free subscription.
@@ -269,7 +271,7 @@ If you are using non&#8209;classic Snap packages on a system that [supports prop
 
 ### Kernel Hardening
 
-There are several things you can do to harden the Linux kernel, including setting appropriate [kernel parameters](https://wiki.archlinux.org/title/Kernel_parameters) and blacklisting unnecessary kernel modules. If you are using Kicksecure or Whonix, most of this hardening is included by default. If you are using Debian, you should consider [morphing it into Kicksecure](https://www.kicksecure.com/wiki/Debian).
+There are several things you can do to harden the Linux kernel, including setting appropriate [kernel parameters](https://wiki.archlinux.org/title/Kernel_parameters) and blacklisting unnecessary kernel modules. If you are using SecureBlue, most of this hardening is included by default. 
 
 _This section extensively references [Madaidan's Linux Hardening Guide](https://madaidans-insecurities.github.io/guides/linux-hardening.html) and in the interest of brevity does not repeat all the information contained there. You are strongly encouraged to read through the relevant sections of Madaidan's guide (linked for convenience)._
 
@@ -279,7 +281,7 @@ _See ["2.2&nbsp;Sysctl"](https://madaidans-insecurities.github.io/guides/linux-h
 
 Madaidan recommends that you disable [unprivileged user namespaces](https://github.com/sangam14/CloudNativeLab/blob/master/LXC/Linux%20Containers/User_namespaces.md) due to the [significant attack surface for privilege escalation](https://madaidans-insecurities.github.io/linux.html#kernel). However, some software such as Podman and LXC relies on unprivileged user namespaces. If you wish to use such software, do not disable `kernel.unprivileged_userns_clone`. Note that this setting does not exist in the upstream kernel and is added downstream by some distributions.
 
-On distributions other than Whonix and Kicksecure, you can copy the configuration file from [Tommy's repository](https://github.com/TommyTran732/Linux-Setup-Scripts/blob/main/etc/sysctl.d/99-workstation.conf).
+On distributions other than SecureBlue, you can copy the configuration file from [Tommy's repository](https://github.com/TommyTran732/Linux-Setup-Scripts/blob/main/etc/sysctl.d/99-workstation.conf).
 
 #### Boot Parameters
 
@@ -300,10 +302,8 @@ Note however that disabling SMT may have a significant performance impact&nbsp;-
 ##### Kernel
 
 ```
-slab_nomerge init_on_alloc=1 init_on_free=1 pti=on vsyscall=none ia32_emulation=0 page_alloc.shuffle=1 randomize_kstack_offset=on debugfs=off oops=panic quiet loglevel=0
+slab_nomerge init_on_alloc=1 init_on_free=1 pti=on vsyscall=none ia32_emulation=0 page_alloc.shuffle=1 randomize_kstack_offset=on debugfs=off oops=panic quiet loglevel=0 mce=0
 ```
-
-Kicksecure does not enforce either `module.sig_enforce=1` or `lockdown=confidentiality` by default as they lead to a lot of hardware compatibility issues; consider enabling these if possible on your system. Additionally, [`mce=0` is no longer recommended](https://forums.whonix.org/t/kernel-hardening/7296/493).
 
 ##### Entropy generation
 
@@ -329,7 +329,7 @@ Further reading:
 intel_iommu=on amd_iommu=force_isolation efi=disable_early_pci_dma iommu=force iommu.passthrough=0 iommu.strict=1
 ```
 
-[Direct memory access (DMA) attacks](https://en.wikipedia.org/wiki/DMA_attack) can be mitigated via IOMMU and [disabling certain kernel modules](#kernel-modules). Furthermore, [strict enforcement of IOMMU TLB invalidation](https://github.com/Kicksecure/security-misc/blob/master/etc/default/grub.d/40_enable_iommu.cfg) should be applied so devices will never be able to access stale data contents.
+[Direct memory access (DMA) attacks](https://en.wikipedia.org/wiki/DMA_attack) can be mitigated via IOMMU and [disabling certain kernel modules](#kernel-modules). Furthermore, strict enforcement of IOMMU TLB invalidation should be applied so devices will never be able to access stale data contents.
 
 [These parameters **do not provide comprehensive DMA protection**.](https://github.com/PrivSec-dev/privsec.dev/pull/81#issuecomment-1367511126) In early boot (before the kernel has loaded), only the system firmware can enforce IOMMU and thus provide DMA protection. A DMA attack in early boot can patch the kernel in memory to completely undermine these parameters.
 
@@ -347,7 +347,7 @@ Further reading:
 
 _See ["2.5.2&nbsp;Blacklisting kernel modules"](https://madaidans-insecurities.github.io/guides/linux-hardening.html#kasr-kernel-modules) in Madaidan's guide._
 
-On distributions other than Whonix and Kicksecure, you can copy the configuration file from [secureblue's repository](https://github.com/secureblue/secureblue/blob/live/files/system/etc/modprobe.d/blacklist.conf) into `/etc/modprobe.d/`.
+On distributions other than SecureBlue, you can copy the configuration file from [secureblue's repository](https://github.com/secureblue/secureblue/blob/live/files/system/etc/modprobe.d/blacklist.conf) into `/etc/modprobe.d/`.
 
 There are a few things in this config to keep in mind:
 
@@ -360,7 +360,7 @@ There are a few things in this config to keep in mind:
 
 _See ["2.4&nbsp;hidepid"](https://madaidans-insecurities.github.io/guides/linux-hardening.html#hidepid) and ["2.7&nbsp;Restricting access to sysfs"](https://madaidans-insecurities.github.io/guides/linux-hardening.html#restricting-sysfs) in Madaidan's guide._
 
-Disabling access to `/sys` without a proper whitelist will lead to various applications breaking. Developing such a whitelist will unfortunately be extremely tedious for most users. Kicksecure, and by extension Whonix, has the experimental [proc-hidepid](https://github.com/Kicksecure/security-misc/blob/master/usr/lib/systemd/system/proc-hidepid.service) and [hide-hardware-info](https://github.com/Kicksecure/security-misc/blob/master/usr/lib/systemd/system/hide-hardware-info.service) services which do just this. From my testing, these work perfectly fine on minimal Kicksecure installations and both Qubes-Whonix-Workstation and Qubes-Whonix-Gateway.
+Disabling access to `/sys` without a proper whitelist will lead to various applications breaking. Developing such a whitelist will unfortunately be extremely tedious for most users.
 
 #### linux-hardened
 
@@ -374,7 +374,7 @@ linux&#8209;hardened disables unprivileged user namespaces (`kernel.unprivileged
 
 ### Hardened Memory Allocator
 
-The [hardened memory allocator (hardened_malloc)](https://github.com/GrapheneOS/hardened_malloc) from GrapheneOS can be used on general Linux distributions, though [only for some programs](https://www.kicksecure.com/wiki/Hardened_Malloc).
+The [hardened memory allocator (hardened_malloc)](https://github.com/GrapheneOS/hardened_malloc) from GrapheneOS can be used on general Linux distributions, though only for some programs.
 
 
 On Fedora and Red Hat Enterprise Linux, secureblue provides a [Copr repository](https://copr.fedorainfracloud.org/coprs/secureblue/hardened_malloc/) with both x86_64 and aarch64 architecture support. Divested Computing Group has a [similar build](https://github.com/divestedcg/rpm-hardened_malloc) for Fedora, but with only x86_64 support. Using secureblue's repository is recommended, as the Divested repository is known to [block certain IP addresses](https://grapheneos.social/@Tommy/112274772803550392).
@@ -405,7 +405,7 @@ SUID allows a user to execute an application as the owner of that application, w
 
 It is desirable to remove SUID from as many binaries as possible; however, this takes substantial effort and trial and error on the user's part, as some applications require SUID to function.
 
-Kicksecure, and by extension Whonix, has an experimental [permission hardening service](https://github.com/Kicksecure/security-misc/blob/master/usr/lib/systemd/system/permission-hardener.service) and [application whitelist](https://github.com/Kicksecure/security-misc/tree/master/etc/permission-hardener.d) to automate SUID removal from most binaries and libraries on the system. From my testing, these work perfectly fine on minimal Kicksecure installations and both Qubes-Whonix-Workstation and Qubes-Whonix-Gateway.
+[SecureBlue has a script](https://github.com/secureblue/secureblue/blob/live/files/scripts/removesuid.sh) for Fedora-based distributions to remove SUID. They also remove sudo, su, and pkexec in favor of systemd's run0. On Debian based distributions, you can also remove runuser.
 
 ### DNSSEC
 
@@ -454,8 +454,6 @@ If you have a YubiKey or another U2F/FIDO2 authenticator, you can use [pam-u2f](
 ### Storage Media Handling
 
 Some Linux distributions and desktop environments automatically mount arbitary filesystems upon storage media insertion. This is a security risk, as an adversary can attach a malicious storage device to your computer to exploit vulnerable filesystem drivers.
-
-_This behavior is disabled by default on Whonix._
 
 #### UDisks
 
