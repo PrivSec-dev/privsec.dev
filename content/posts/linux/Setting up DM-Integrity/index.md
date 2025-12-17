@@ -9,7 +9,7 @@ author: Purpleseaotter
 
 ---
 
-DM-Integrity is a Linux kernel device-mapper target that provides block-level data integrity checking. To detect unauthorized changes or corruption on a block device. Unlike encryption, dm-integrity ensures data hasn’t been tampered with. When paired with LUKS, which uses dm-crypt for encryption, it can enhance security by adding authenticated encryption combining confidentiality and integrity.
+DM-Integrity is a Linux kernel device-mapper target that provides block-level data integrity checking. This is to detect unauthorized changes or corruption on a block device. Unlike encryption, dm-integrity ensures data hasn’t been tampered with. When paired with LUKS, which uses dm-crypt for encryption, it can enhance security by adding authenticated encryption to combine confidentiality and integrity.
 
 ### Limitations
 
