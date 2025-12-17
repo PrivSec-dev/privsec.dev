@@ -31,7 +31,7 @@ When you're setting up your Arch Linux machine and you want to make use of dm-in
 cryptsetup luksFormat --type luks2 /dev/sdX --integrity hmac-sha256 --sector-size 4096
 ```
 
-We are setting a sane default of using hmac-sha256 for the integrity checking. Alternatively if you have very weak hardware that would struggle with hmac-sha256, you can also use crc32c. However this is non cryptographic and probably significantly weaker.
+We are setting a sane default of using hmac-sha256 for the integrity checking. Alternatively, if you have very weak hardware that would struggle with hmac-sha256, you can also use crc32c. However, this is non cryptographic and likely significantly weaker.
 
 When pacstrapping the system make sure you add in the cryptsetup package to install LUKS and by extension dm-integrity. The following command is a minimal base install example of what that would look like:
 
