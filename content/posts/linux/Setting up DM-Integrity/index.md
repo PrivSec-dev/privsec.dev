@@ -55,4 +55,4 @@ If you want to install Fedora you will also have to bootstrap the system manuall
 dnf --releasever=41 --installroot=/mnt/fedora groupinstall core
 ```
 
-For additional information you should read other blog posts or instruction videos because bootstrapping a Linux distro is out of scope for this blog post.
+For additional information, you should read other blog posts or instruction videos. Bootstrapping a Linux distro is out of scope for this blog post.
