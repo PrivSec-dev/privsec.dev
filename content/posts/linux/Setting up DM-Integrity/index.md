@@ -15,7 +15,7 @@ DM-Integrity is a Linux kernel device-mapper target that provides block-level da
 
 ---
 
-However dm-integrity is limited to only protecting the data when it is at rest, any data written to the disk when the dm-integrity target is active (meaning the system has booted) will be picked up by dm-integrity and written immediately without validation.
+However, dm-integrity is limited to only protecting the data when it is at rest, so any data written to the disk when the dm-integrity target is active (meaning the system has booted) will be picked up by dm-integrity and written immediately without validation.
 
 Another limitation of dm-integrity is it's inability to prevent rollback attacks. Imagine this scenario, someone steals your disk today, `February 24th 2025`. Now the attacker in `March 13th 2027` knows that there was a critical CVE in the OpenSSH daemon that allows unauthenticated remote code execution that was discovered a month prior, he can simply revert the disk of the victim, and when the non suspecting system boots their machine. The attacker can gain immediate access to the victim's machine because the old image still contains the vulnerable OpenSSH daemon version. Dm-integrity will happily verify that old data because it has been at rest, not corrupted or tampered with.
 
