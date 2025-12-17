@@ -49,7 +49,7 @@ For Debian I the steps are the same, apart from the fact you specifically need t
 debootstrap --variant=minbase stable /mnt/debian-minbase http://deb.debian.org/debian/
 ```
 
-If you want to install Fedora you will also have to bootstrap the system manually using `dnf`. You will have to load the module in the initramfs in `/etc/dracut.conf.d/dm-integrity.conf` and add `add_drivers+=" dm-integrity "`. An example for the DNF command would be:
+If you want to install Fedora, you will also have to bootstrap the system manually using `dnf`. You will have to load the module in the initramfs in `/etc/dracut.conf.d/dm-integrity.conf` and add `add_drivers+=" dm-integrity "`. An example for the DNF command would be:
 
 ```bash
 dnf --releasever=41 --installroot=/mnt/fedora groupinstall core
