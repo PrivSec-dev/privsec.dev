@@ -83,10 +83,6 @@ The Fedora Project offers a ["countme" variable](https://dnf.readthedocs.io/en/l
 
 _Of course, this is a non&#8209;exhaustive list of telemetry on different Linux distributions. If you are aware of other tracking mechanisms used by these or other distributions, feel free to make a [pull request](https://github.com/PrivSec-dev/privsec.dev/blob/main/content/posts/linux/Desktop%20Linux%20Hardening.md) or [discussion post](https://github.com/PrivSec-dev/privsec.dev/discussions) detailing them!_
 
-### Keystroke Anonymization
-
-You could be [fingerprinted based on soft biometric traits](https://www.whonix.org/wiki/Keystroke_Deanonymization) when you use the keyboard. The [Kloak](https://github.com/vmonaco/kloak) package could help you mitigate this threat. It is available as a .deb package from [Kicksecure's repository](https://www.kicksecure.com/wiki/Packages_for_Debian_Hosts) and an [AUR package](https://aur.archlinux.org/packages/kloak-git).
-
 ## Application Confinement
 
 Some sandboxing solutions for desktop Linux distributions do exist; however, they are not as strict as those found in macOS or ChromeOS. Software installed with distro package managers (DNF, APT, etc.) typically have **no** sandboxing or confinement whatsoever. Several projects which aim to tackle this problem are discussed here.
@@ -417,12 +413,9 @@ If you are a Whonix or Tails user, you can disregard setting up DNSSEC, as Tor D
 
 ### Time Synchronization
 
-Most Linux distributions by default use the unencrypted and unauthenticated [Network Time Protocol (NTP)](https://en.wikipedia.org/wiki/Network_Time_Protocol) for time synchronization. There are two ways to easily solve this problem:
+Most Linux distributions by default use the unencrypted and unauthenticated [Network Time Protocol (NTP)](https://en.wikipedia.org/wiki/Network_Time_Protocol) for time synchronization. This problem can easily be solved by [configuring Network Time Security (NTS) with chronyd](https://fedoramagazine.org/secure-ntp-with-nts/)
 
-- [Configure Network Time Security (NTS) with chronyd](https://fedoramagazine.org/secure-ntp-with-nts/)
-- Use Kicksecure's [sdwdate](https://github.com/Kicksecure/sdwdate) on Debian&#8209;based distributions.
-
-If you decide on using NTS with chronyd, consider using multiple, independent time providers and setting [`minsources`](https://chrony-project.org/doc/4.4/chrony.conf.html#minsources) to a value greater than 1.
+Consider using multiple, independent time providers and setting [`minsources`](https://chrony-project.org/doc/4.4/chrony.conf.html#minsources) to a value greater than 1.
 
 GrapheneOS uses a [quite nice chrony configuration](https://github.com/GrapheneOS/infrastructure/blob/main/etc/chrony.conf) for their infrastructure. I recommend that you replicate their `chrony.conf` on your system.
 
