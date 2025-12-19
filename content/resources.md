@@ -12,3 +12,4 @@ NAME | NOTES |
 [Wonderfall's Lab](https://wonderfall.dev) | Thoughts and research on security, privacy, and pharmacology.
 [Wonderfall's Space](https://wonderfall.space/) | Blog posts about privacy and security in French.
 [Seirdy's Blog](https://seirdy.one) | Thoughts on security, privacy, and software freedom.
+[Eylenburg's Tech Website](https://eylenburg.github.io) | Website with comprehensive comparisons, histories, and other information across many areas of computing and technology.
