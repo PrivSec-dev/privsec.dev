@@ -58,4 +58,4 @@ SimpleX is a messenger that does not require user IDs to sign up. Some metadata 
 Note that SimpleX describes itself as decentralized, even though only [two entities are in charge of servers by default](https://simplex.chat/blog/20241125-servers-operated-by-flux-true-privacy-and-decentralization-for-all-users.html). SimpleX also claims to have some of the strongest metadata leakage protections, however [they do not see leaking IP addresses to the server as a problem](https://discuss.privacyguides.net/t/simplex-vs-cwtch-who-is-right/19256/112). Most messengers like Signal don't bother to hide your IP address from them, but IP addresses are metadata that SimpleX fails to recognize in importance.
 
 ## Attributions (not endorsements)
-- https://www.privacyguides.org/en/real-time-communication
+- [Privacy Guides - Real Time Communication](https://www.privacyguides.org/en/real-time-communication)
