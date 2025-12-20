@@ -262,6 +262,6 @@ If you live in the United States and use the stock operating system, I highly re
 
 If you use GrapheneOS and do not mind installing Sandboxed Play Services, Fi is still a better option than other providers thanks to Google's general good security practices and the fact that you can enroll in the Advanced Protection Program to have much better protection for your account. Some other providers do not even have multi-factor authentication support, and most will not let you enforce FIDO2 as the authentication method.
 
-## Sources
+## Attributions (not endorsements)
 
 - [Android Overview - Privacy Guides](https://www.privacyguides.org/en/os/android-overview)
