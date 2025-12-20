@@ -1,5 +1,5 @@
 ---
-title: "Linux Insecurities"
+title: "Linux Phones"
 date: 2022-03-06
 tags: ['Operating Systems', 'Linux', 'Security']
 author: madaidan
