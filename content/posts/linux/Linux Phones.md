@@ -7,6 +7,8 @@ author: madaidan
 
 Linux phones, such as the Librem 5 or Pinephone, are a major degradation from traditional mobile operating systems, such as Android or iOS. A few of the points in this article do apply to the Librem 5 specifically, but the majority applies to any Linux phone unless specified otherwise.
 
+Note that by Linux phones, we mean phones with OSs that rely on more traditional types of Linux distributions (for example, using systemd + polkit + glibc + GNOME, etc). Android phones use the Linux kernel and are technically just as much Linux phones as the phones mentioned above, but we are not referring to them that way for the sake of this article. Services presenting their products as "Linux phones" are using marketing to make consumers think that their phones are somehow more Linux than Android.
+
 Linux phones lack any significant security model, and most desktop Linux security issues apply to Linux phones fully. There is not yet a single Linux phone with a sane security model. They do not have modern security features, such as full system MAC policies, verified boot, strong app sandboxing, modern exploit mitigations and so on, which modern Android phones already deploy.
     
 Distributions like PureOS are not particularly secure. They are mostly a reskinned Debian and do not include substantial hardening. While AppArmor is enabled, the majority of processes still run unconfined, so that is mostly negligible. PureOS [changes a few security-relevant settings](https://source.puri.sm/pureos/packages/pureos-security-hardening), but these are also mostly negligible:
