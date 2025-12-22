@@ -51,7 +51,7 @@ Here is a quick, non-authoritative list of distributions we recommend over other
 
 ### SecureBlue
 
-[SecureBlue](https://secureblue.dev/) is the best traditional desktop Linux distribution for privacy and security. It provides hardened operating system images based on Fedora Atomic Desktops. While they do additional parties of trust (SecureBlue, GitHub infrastructure, BlueBuild, Negativo, etc), their images are substantially hardened and not easily replicated by hand. There are several very interesting packages maintained by SecureBlue as well:
+[SecureBlue](https://secureblue.dev/) is the best traditional desktop Linux operating system for privacy and security. It provides hardened operating system images based on Fedora Atomic Desktops. While they do additional parties of trust (SecureBlue, GitHub infrastructure, BlueBuild, Negativo, etc), their images are substantially hardened and not easily replicated by hand. There are several very interesting packages maintained by SecureBlue as well:
 - [Trivalent](https://github.com/secureblue/Trivalent), a hardened chromium desktop build with patches from GrapheneOS's [Vanadium](https://github.com/GrapheneOS/Vanadium).
 - [Hardened Malloc](https://github.com/secureblue/fedora-extras/tree/live/hardened_malloc). SecureBlue packages GrapheneOS's memory allocator and enables it system wide, including for Flatpak applications.
 
