@@ -1,5 +1,5 @@
 ---
-title: "Banking Applications Compatibility with GrapheneOS"
+title: "Banking Applications' Compatibility with GrapheneOS"
 date: "2022-01-26"
 tags: ['Applications', 'Android', 'Banking', 'Compatibility', 'GrapheneOS']
 author: akc3n, Tommy, spring-onion
@@ -74,7 +74,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Wise](https://play.google.com/store/apps/details?id=com.transferwise.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/266)
 - [ZEN.COM for peaceful payments](https://play.google.com/store/apps/details?id=com.zen.application) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/785)
 
-## National banking apps
+## Country/region-specific banking apps
 
 ### Algeria
 
