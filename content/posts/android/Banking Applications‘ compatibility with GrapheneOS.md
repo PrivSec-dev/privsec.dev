@@ -1,5 +1,5 @@
 ---
-title: "Banking Applications Compatibility with GrapheneOS"
+title: "Banking Applications' Compatibility with GrapheneOS"
 date: "2022-01-26"
 tags: ['Applications', 'Android', 'Banking', 'Compatibility', 'GrapheneOS']
 author: akc3n, Tommy, spring-onion
