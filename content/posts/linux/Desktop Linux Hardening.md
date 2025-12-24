@@ -126,7 +126,7 @@ Some sensitive permissions of note:
 - `talk-name=org.freedesktop.systemd1`: D&#8209;Bus access to systemd. This D&#8209;Bus can be used to load in systemd services with arbitary code and run them.
 - `--talk-name=ca.desrt.dconf`: D&#8209;Bus access to dconf. This D&#8209;Bus can be abused to run arbitary commands by changing key bindings.
 - `--talk-name=org.gnome.Shell.Extensions`: D&#8209;Bus access to install and manage GNOME shell extensions. This D&#8209;Bus can be abused to add malicious extensions to GNOME.
-If an application works natively with Wayland (*not* running through the [XWayland](https://wayland.freedesktop.org/xserver.html) compatibility layer), consider revoking its access to X11 (`--nosocket=x11`) and the [inter&#8209;process communications (IPC)](https://en.wikipedia.org/wiki/Unix_domain_socket) socket (`--unshare=ipc`) as well.
+If an application works natively with Wayland (*not* running through the [XWayland](https://wayland.freedesktop.org/docs/html/ch05.html) compatibility layer), consider revoking its access to X11 (`--nosocket=x11`) and the [inter&#8209;process communications (IPC)](https://en.wikipedia.org/wiki/Unix_domain_socket) socket (`--unshare=ipc`) as well.
 
 Many Flatpak apps ship with broad filesystem permissions such as `--filesystem=home` and `--filesystem=host`. Some applications implement the [Portal API](https://docs.flatpak.org/en/latest/portal-api-reference.html), which allows a file manager to pass files to the Flatpak application (e.g. VLC) without specific filesystem access privileges. Despite this, many of them [still declare `--filesystem=host`](https://github.com/flathub/org.videolan.VLC/blob/master/org.videolan.VLC.yaml).
 
