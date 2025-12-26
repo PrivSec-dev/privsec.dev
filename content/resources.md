@@ -13,3 +13,5 @@ NAME | NOTES |
 [Wonderfall's Space](https://wonderfall.space/) | Blog posts about privacy and security in French.
 [Seirdy's Blog](https://seirdy.one) | Thoughts on security, privacy, and software freedom.
 [Eylenburg's Tech Website](https://eylenburg.github.io) | Website with comprehensive comparisons, histories, and other information across many areas of computing and technology.
+[Side of Burritos](https://sideofburritos.com) | Website and YouTube channel discussing privacy and security.
+
