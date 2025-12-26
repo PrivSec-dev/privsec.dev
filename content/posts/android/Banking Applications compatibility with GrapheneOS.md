@@ -20,9 +20,9 @@ New visitors are encouraged to read the [official usage guide on banking apps](h
 ### IMPORTANT 
 
 Please read GrapheneOS's important announcement, officially released on Dec 1, 2023:  
-[Twitter](https://twitter.com/GrapheneOS/status/1730491676760633426) | [Mastodon](https://grapheneos.social/@GrapheneOS/111504057316755618) | [Bluesky](https://bsky.app/profile/grapheneos.org/post/3kfhrujfcih2m)   
+[X](https://x.com/GrapheneOS/status/1730491676760633426) | [Mastodon](https://grapheneos.social/@GrapheneOS/111504057316755618) | [Bluesky](https://bsky.app/profile/grapheneos.org/post/3kfhrujfcih2m)   
    
-Also available as a [pinned issue](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/342), detailing the latest developments about [SafetyNet's replacement by Play Integrity API](https://akc3n.page/posts/banking-app-issues/#safetynet-replaced-by-play-integrity-api), which could impact _some_ banking app's [compatibility](https://discuss.grapheneos.org/d/8330-app-compatibility-with-grapheneos#:~:text=issuecomment%2D1766887298%29-,Not%20compatible,-Due%20to%20the) with GrapheneOS after the app updates.  
+Also available as a [pinned issue](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/342), detailing the latest developments about [SafetyNet's replacement by Play Integrity API](https://developer.android.com/privacy-and-security/safetynet/deprecation-timeline), which could impact _some_ banking apps' [compatibility](https://discuss.grapheneos.org/d/8330-app-compatibility-with-grapheneos#:~:text=issuecomment%2D1766887298%29-,Not%20compatible,-Due%20to%20the) with GrapheneOS after the app updates.  
 
 ---
 
@@ -1011,11 +1011,11 @@ There are several methods for GrapheneOS users to contribute their banking app r
 
 | Method | Description | Action |
 | :--- | :--- | :---: |
-| **GitHub** | Fill out form on [issue-tracker](https://github.com/PrivSec-dev/banking-apps-compat-report/issues) using your GitHub account | [`SUBMIT REPORT`](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/new?assignees=&labels=&template=app_report.yml) |
+| **GitHub** | Fill out the form on the [issue tracker](https://github.com/PrivSec-dev/banking-apps-compat-report/issues) using your GitHub account | [`SUBMIT REPORT`](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/new?assignees=&labels=&template=app_report.yml) |
 | **Non-GitHub** | View gist → Raw → Save template markdown file to fill out. | [`Gist`](https://gist.github.com/akc3n/e845078ddbbb28ada0dd055c51ec45af) |
 | Curl | Terminal → `curl -O` → paste copied url (gist form `.md` template) ⟶ | [`Copy link address`](https://gist.githubusercontent.com/akc3n/e845078ddbbb28ada0dd055c51ec45af/raw/c2bb563db726b80491a59c68d7f15c0897f563a0/banking-app-report-issue-form.md) |  
   
-Alternatively, curl and pipe the output directly into vi/vim/neovim for editing, example:  
+Alternatively, curl and pipe the output directly into your preferred text editor for editing, for example:  
   
 ```bash
 curl https://gist.githubusercontent.com/akc3n/e845078ddbbb28ada0dd055c51ec45af/raw/c2bb563db726b80491a59c68d7f15c0897f563a0/banking-app-report-issue-form.md\?T | nvim -
@@ -1025,7 +1025,7 @@ curl https://gist.githubusercontent.com/akc3n/e845078ddbbb28ada0dd055c51ec45af/r
 
 Please avoid opening a new issue to update the status of a banking app report.  
   
-Instead, use `CTRL` + `F` on this page or the [issue tracker to search](https://github.com/PrivSec-dev/banking-apps-compat-report/issues) for the app and open it's `Report`. Then, simply add your update as a comment to the existing report.  
+Instead, use `CTRL` + `F` on this page or search on the [issue tracker](https://github.com/PrivSec-dev/banking-apps-compat-report/issues) for the app and open its `Report`. Then, simply add your update as a comment to the existing report.  
   
 For non-GitHub users, if you have tried all the combinations from these [possible workaround solutions](https://discuss.grapheneos.org/d/8330-app-compatibility-with-grapheneos) and still cannot resolve your specific banking app compatibility issue, feel free to [contact me](https://github.com/akc3n/akc3n?tab=readme-ov-file#connect) for further assistance.  
 
@@ -1035,6 +1035,6 @@ For non-GitHub users, if you have tried all the combinations from these [possibl
 
 GrapheneOS has a [detailed guide](https://grapheneos.org/articles/attestation-compatibility-guide) for app developers on how to support GrapheneOS with the hardware attestation API. Direct use of the hardware attestation API provides much higher assurance than using SafetyNet so these apps have nothing to lose by using a more meaningful API and supporting a more secure OS.  
 
-> GrapheneOS users are strongly encouraged to share this documentation with app developers enforcing only being able to use the stock OS. Send an email to the developers and leave a review of the app with a link to this information. Share it with other users and create pressure to support GrapheneOS rather than locking users into the stock OS without a valid security reason. GrapheneOS not only upholds the app security model but substantially reinforces it, so it cannot be justified with reasoning based on security, anti-fraud, etc.  
+> GrapheneOS users are strongly encouraged to share this documentation with app developers who enforce only being able to use the stock OS. Send an email to the developers and leave a review of the app with a link to this information. Share it with other users and create pressure to support GrapheneOS rather than locking users into the stock OS without a valid security reason. GrapheneOS not only upholds the app security model but substantially reinforces it, so it cannot be justified with reasoning based on security, anti-fraud, etc.  
   
-Refer to https://github.com/PrivSec-dev/banking-apps-compat-report/issues/342 or the official GrapheneOS announcement on [Mastodon](https://grapheneos.social/@GrapheneOS/111504057316755618)/[Twitter](https://twitter.com/GrapheneOS/status/1730491676760633426)/[Bluesky](https://bsky.app/profile/grapheneos.org/post/3kfhrujfcih2m) for more information.
+Refer to https://github.com/PrivSec-dev/banking-apps-compat-report/issues/342 or the official GrapheneOS announcement on [Mastodon](https://grapheneos.social/@GrapheneOS/111504057316755618)/[X](https://x.com/GrapheneOS/status/1730491676760633426)/[Bluesky](https://bsky.app/profile/grapheneos.org/post/3kfhrujfcih2m) for more information.
