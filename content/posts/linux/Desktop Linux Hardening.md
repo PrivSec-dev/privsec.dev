@@ -424,7 +424,7 @@ Most Linux distributions by default use the unencrypted and unauthenticated [Net
 
 If you decide on using NTS with chronyd, consider using multiple, independent time providers and setting [`minsources`](https://chrony-project.org/doc/4.4/chrony.conf.html#minsources) to a value greater than 1.
 
-GrapheneOS uses a [quite nice chrony configuration](https://github.com/GrapheneOS/infrastructure/blob/main/chrony.conf) for their infrastructure. I recommend that you replicate their `chrony.conf` on your system.
+GrapheneOS uses a [quite nice chrony configuration](https://github.com/GrapheneOS/infrastructure/blob/main/etc/chrony.conf) for their infrastructure. I recommend that you replicate their `chrony.conf` on your system.
 
 Next, enable the secommp filter for chronyd. On Fedora and Arch Linux, you will need to edit Chrony's environment file in `/etc/sysconfig/chronyd`:
 
