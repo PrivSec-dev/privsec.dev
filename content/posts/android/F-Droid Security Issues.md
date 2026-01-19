@@ -9,10 +9,10 @@ F-Droid is a popular alternative app repository for Android, especially known fo
 
 Before we start, a few things to keep in mind:
 
-- The main goal of this write-up was to inform users so they can make responsible choices, not to trash someone else's work. I have respect for any work done in the name of good intentions. Likewise, please don't misinterpret the intentions of this article.
+- The main goal of this write-up was to inform users so they can make responsible choices, not to trash someone else's work. We have respect for any work done in the name of good intentions. Likewise, please don't misinterpret the intentions of this article.
 - You have your own reasons for using open-source or free/libre/whatever software which won't be discussed here. A development model shouldn't be an excuse for bad practices and shouldn't lure you into believing that it can provide strong guarantees it cannot.
 - A lot of information in this article is sourced from official and trusted sources, but you're welcome to do your own research.
-- These analyses do not account for threat models and personal preferences. As the author of this article, I'm only interested in facts and not ideologies.
+- These analyses do not account for threat models and personal preferences. This article focuses on facts and not ideologies.
 
 *This is not an in-depth security review, nor is it exhaustive.*
 
@@ -29,7 +29,7 @@ F-Droid requires that the source code of the app is exempt from any proprietary 
 
 > But... can't I just trust F-Droid and be done with it?
 
-[You don't have to take my word for it](https://forum.f-droid.org/t/is-it-as-safe-as-it-is-from-fdroid-official-repo/15956/12): they openly admit themselves it's a [very basic process](https://forum.f-droid.org/t/is-it-as-safe-as-it-is-from-fdroid-official-repo/15956/2) relying on badness enumeration (this doesn't work by the way) which consists in a few scripts scanning the code for proprietary blobs and known trackers. You are therefore not exempted from trusting upstream developers and it goes for any repository.
+[You don't have to take our word for it](https://forum.f-droid.org/t/is-it-as-safe-as-it-is-from-fdroid-official-repo/15956/12): they openly admit themselves it's a [very basic process](https://forum.f-droid.org/t/is-it-as-safe-as-it-is-from-fdroid-official-repo/15956/2) relying on badness enumeration (this doesn't work by the way) which consists in a few scripts scanning the code for proprietary blobs and known trackers. You are therefore not exempted from trusting upstream developers and it goes for any repository.
 
 *A tempting idea would be to compare F-Droid to the desktop Linux model where users trust their distribution maintainers out-of-the-box (this can be sane if you're already trusting the OS anyway), but the desktop platform is intrinsically chaotic and heterogeneous for better and for worse. It really shouldn't be compared to the Android platform in any way.*
 
@@ -43,7 +43,7 @@ Google's approach is [code transparency for app bundles](https://developer.andro
 
 > What about other app repositories such as Amazon?
 
-[To my current knowledge](https://developer.amazon.com/docs/app-submission/understanding-submission.html#code_wrapper), the Amazon Appstore has always been wrapping APKs with their own code (including their own trackers), and this means they were effectively resigning submitted APKs.
+[To our current knowledge](https://developer.amazon.com/docs/app-submission/understanding-submission.html#code_wrapper), the Amazon Appstore has always been wrapping APKs with their own code (including their own trackers), and this means they were effectively resigning submitted APKs.
 
 If you understood correctly the information above, Google can't do this for apps that haven't opted in Play App Signing. As for apps concerned by Play App Signing, while Google could technically introduce their own code like Amazon, they wouldn't do that without telling about it since this will be easily noticeable by the developer and more globally researchers. They have other means on the Android app development platform to do so. Believing they won't do that based on this principle is not a strong guarantee, however: hence the above paragraph about code transparency for app bundles.
 
@@ -62,7 +62,7 @@ Indeed, as the first blog post by the Snikket project details, the WebRTC compon
 Overall, this case study highlights how F-Droid's inclusion policy ultimately harms end users by forcing app developers to adopt potentially decrepit development tools and build processes in service of its regnant FOSS ideology.
 
 ## 3. Slow and irregular updates
-Since you're adding one more party to the mix, that party is now responsible for delivering proper builds of the app: it's a common thing among traditional Linux distributions and their packaging system. They have to catch up with *upstream* on a regular basis, but very few do it well (Arch Linux comes to my mind). Others, like Debian, prefer making extensive *downstream* changes and delivering security fixes for a subset of vulnerabilities assigned to a CVE (yeah, it's as bad as it sounds, but that's another topic).
+Since you're adding one more party to the mix, that party is now responsible for delivering proper builds of the app: it's a common thing among traditional Linux distributions and their packaging system. They have to catch up with *upstream* on a regular basis, but very few do it well (Arch Linux comes to mind). Others, like Debian, prefer making extensive *downstream* changes and delivering security fixes for a subset of vulnerabilities assigned to a CVE (yeah, it's as bad as it sounds, but that's another topic).
 
 Not only does F-Droid require specific changes for the app to comply with its inclusion policy, which often leads to more maintenance work, it also has a rather strange way of triggering new builds. Part of its build process seems to be [automated](https://f-droid.org/en/docs/FAQ_-_App_Developers/), which is the least you could expect. Now here's the thing: app signing keys are on an **air-gapped server** (meaning it's disconnected from any network, at least that's what they claim: see [their recommendations](https://f-droid.org/docs/Building_a_Signing_Server/) for reference), which forces an irregular update cycle where a human has to manually trigger the signing process. It is far from an ideal situation, and you may argue it's the least to be expected since by entrusting all the signing keys to one party, you could also introduce a single point of failure. Should their system be compromised (whether from the inside or the outside), this could lead to serious security issues affecting plenty of users.
 
@@ -176,9 +176,9 @@ Play Store for instance conveys the permissions in a way less misleading way: th
 Moreover, [Play Store restricts the use of highly invasive permissions](https://support.google.com/googleplay/android-developer/answer/9888170) such as `MANAGE_EXTERNAL_STORAGE` which allows apps to opt out of scoped storage if they can't work with [more privacy friendly approaches](https://developer.android.com/guide/topics/providers/document-provider) (like a file explorer). Apps that can't justify their use of this permission (which again has to be granted dynamically) may be removed from Play Store. This is where an app repository can actually be useful in their review process to protect end-users from installing poorly made apps that might compromise their privacy. Not that it matters much if these apps target very old API levels that are inclined to require invasive permissions in the first place...
 
 ## Conclusion: what should you do?
-So far, you have been presented with referenced facts that are easily verifiable. In the next part, I'll allow myself to express my own thoughts and opinions. You're free to disagree with them, but don't let that overshadow the rest.
+So far, you have been presented with referenced facts that are easily verifiable. In the next part, we'll include some more personal thoughts and opinions. You're free to disagree with them, but don't let that overshadow the rest.
 
-While some improvements could easily be made, I don't think F-Droid is in an ideal situation to solve all of these issues because some of them are **inherent flaws** in their architecture. I'd also argue that their core philosophy is not aligned with some security principles expressed in this article. In any case, I can only wish for them to improve since they're one of the most popular alternatives to commercial app repositories, and are therefore trusted by a large userbase.
+While some improvements could easily be made, we don't think F-Droid is in an ideal situation to solve all of these issues because some of them are **inherent flaws** in their architecture. I'd also argue that their core philosophy is not aligned with some security principles expressed in this article. In any case, we can only wish for them to improve since they're one of the most popular alternatives to commercial app repositories, and are therefore trusted by a large userbase.
 
 F-Droid is often seen as the only way to get and support open-source apps: that is not the case. Sure, F-Droid could help you in finding FOSS apps that you wouldn't otherwise have known existed. Many developers also publish their FOSS apps on the **Play Store** or their website directly. Most of the time, releases are available on **GitHub**, which is great since each GitHub releases page has an Atom feed. If downloading APKs from regular websites, you can use `apksigner` to validate the authenticity by comparing the certificate fingerprint against the fingerprint from another source (it wouldn't matter otherwise).
 
@@ -196,7 +196,7 @@ For most people, I'd recommend just **sticking with Play Store**. Play Store isn
 
 > Should I really care?
 
-**It's up to your threat model**, and of course your personal preferences. Most likely, your phone won't turn into a nuclear weapon if you install F-Droid on it - and this is far from the point that this article is trying to make. Still, I believe the information presented will be valuable for anyone who values a **practical approach to privacy** (rather than an ideological one). Such an approach is partially described below.
+**It's up to your threat model**, and of course your personal preferences. Most likely, your phone won't turn into a nuclear weapon if you install F-Droid on it - and this is far from the point that this article is trying to make. Still, we believe the information presented will be valuable for anyone who values a **practical approach to privacy** (rather than an ideological one). Such an approach is partially described below.
 
 > But there is more malware in Play Store! How can you say that it's more secure?
 
@@ -204,7 +204,7 @@ As explained above, it doesn't matter as you shouldn't really rely on any qualit
 
 > With Play App Signing being effectively enforced for new apps, isn't Play Store as "flawed" as F-Droid?
 
-I've seen this comment repeatedly, and it would be dismissing all the other points made in this article. Also, I strongly suggest that you carefully read the sections related to Play App Signing, and preferably the official documentation on this matter. It's not a black and white question and there are many more nuances to it.
+I've seen this comment repeatedly, and it would be dismissing all the other points made in this article. Also, we strongly suggest that you carefully read the sections related to Play App Signing, and preferably the official documentation on this matter. It's not a black and white question and there are many more nuances to it.
 
 > Aren't open-source apps more secure? Doesn't it make F-Droid safer?
 
