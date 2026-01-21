@@ -126,6 +126,15 @@ The work profile is dependent on a device controller to function. Features such 
 
 This method is generally less secure than a secondary user profile; however, it does allow you the convenience of running apps in both the work and personal profiles simultaneously.
 
+## Private Space
+
+[Private Space](https://source.android.com/docs/security/features/private-space) is a feature introduced in Android 15 that adds another way of isolating individual apps. You can set up a private space in the owner profile by navigating to **Settings** → **Security & privacy** → **Private space**. Once set up, your private space resides at the bottom of the app drawer.
+
+Like user profiles, a private space is encrypted using its own encryption key, and you have the option to set up a different unlock method. Like work profiles, you can use apps from both the owner profile and private space simultaneously. Apps launched from a private space are distinguished by an icon depicting a key within a shield.
+
+Unlike work profiles, Private Space is a feature native to Android that does not require a third-party app to manage it. For this reason, we generally recommend using a private space over a work profile, though you can use a work profile alongside a private space.
+
+
 ## Baseband Modem Attack Surface Reduction
 
 By default, your baseband modem will typically be set to support just about every generation of mobile cellular technology, from 2G to 5G. This exposes a large attack surface.
@@ -252,3 +261,7 @@ This is not without its caveats:
 If you live in the United States and use the stock operating system, I highly recommend using Google Fi as your carrier to take advantage of the end to end encrypted calls and Fi VPN. People using a Pixel 4 and above will benefit the most from the VCN as mentioned.
 
 If you use GrapheneOS and do not mind installing Sandboxed Play Services, Fi is still a better option than other providers thanks to Google's general good security practices and the fact that you can enroll in the Advanced Protection Program to have much better protection for your account. Some other providers do not even have multi-factor authentication support, and most will not let you enforce FIDO2 as the authentication method.
+
+## Attributions (not endorsements)
+
+- [Android Overview - Privacy Guides](https://www.privacyguides.org/en/os/android-overview)
