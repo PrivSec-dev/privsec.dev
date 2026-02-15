@@ -30,6 +30,8 @@ Any request which requires rewriting Git history will almost certainly be reject
 
 In the interest of accuracy, quality, and license of the project, contributing using AI generated code and content of any kind is forbidden.
 
+_This AI Content Policy is adapted from [secureblue's AI Content Policy](https://secureblue.dev/contributing#ai-content)._
+
 <br>
 
 ### Corrections and Changes to Existing Posts
