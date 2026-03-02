@@ -162,7 +162,7 @@ GrapheneOS's app store is available on [GitHub](https://github.com/GrapheneOS/Ap
 
 ### Aurora Store
 
-The [Aurora Store](https://auroraoss.com/downloads/AuroraStore/) is a proxy for the Google Play Store. It is great for privacy in the sense that it automatically gives you a disposable account to download apps, and it works on Android-based distributions that do not support Google Play Services. That being said, it lacks security features like certificate pinning and does not support Play Asset Delivery.
+The [Aurora Store](https://auroraoss.com/downloads/AuroraStore/) is a proxy for the Google Play Store. It is great for privacy in the sense that it automatically gives you a disposable account to download apps, and it works on Android-based distributions that do not support Google Play Services. That being said, it lacks security features like Play Asset Delivery.
 
 My recommendation is to stick with the Google Play Store unless your threat model calls for not logging into Google Services at all.
 
