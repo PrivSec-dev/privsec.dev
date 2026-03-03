@@ -949,6 +949,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - ~~[MBNA Mobile App](https://play.google.com/store/apps/details?id=uk.co.mbna.cardservices.android)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/537)
 - [Monzo Bank - Mobile Banking](https://play.google.com/store/apps/details?id=co.uk.getmondo) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/58)
 - [Metro Bank](https://play.google.com/store/apps/details?id=uk.co.metrobankonline.mobile.android.production) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/209)
+  - Secure app spawning must be disabled for this app to run!
 - [M&S Banking](https://play.google.com/store/apps/details?id=com.mns.mnsuk.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/695)
 - [Nationwide Banking App](https://play.google.com/store/apps/details?id=co.uk.Nationwide.Mobile) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/332)
 - [NatWest Mobile Banking](https://play.google.com/store/apps/details?id=com.rbs.mobile.android.natwest) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/34)
