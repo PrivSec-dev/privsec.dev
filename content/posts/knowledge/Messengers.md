@@ -47,9 +47,9 @@ Note that Signal [stores the encryption key in a plaintext file on macOS](https:
 
 # Molly
 
-Molly is an alternative Signal client for Android which allows you to encrypt the local database with a passphrase at rest, to have unused RAM data securely shredded, use SOCKS proxies to route your connection via Tor as an alternative to TLS proxies, and more. It also has usability improvements including scheduled backups, automatic locking, the ability to use your Android phone as a linked device instead of the primary device for a Signal account, and support for [UnifiedPush](https://unifiedpush.org/) through a [MollySocket](https://github.com/mollyim/mollysocket) instance. UnifiedPush can be especially useful with the Molly-FOSS client, which lacks proprietary code allowing support for battery-efficient notifications using Google Play Services.
+Molly is an alternative Signal client for Android which allows you to encrypt the local database with a passphrase at rest, to have unused RAM data securely shredded, use SOCKS proxies to route your connection via Tor as an alternative to TLS proxies, and more. It also has usability improvements including scheduled backups, automatic locking, the ability to use your Android phone as a linked device instead of the primary device for a Signal account, and support for [UnifiedPush](https://unifiedpush.org/) through a [MollySocket](https://github.com/mollyim/mollysocket) instance. 
 
-Note that Molly currently cannot address Signal's media and RTC sandboxing issues, and Molly is also vulnerable to Careless Whisper.
+Note that Molly currently cannot address Signal's media and RTC sandboxing issues, and Molly is also vulnerable to Careless Whisper. However, the [Molly team has been investigating](https://discuss.grapheneos.org/d/28282-careless-whisper-whatsapp-and-signal-can-leak-data-from-silent-receipts/40) the Careless Whisper issue.
 
 ## SimpleX
 
