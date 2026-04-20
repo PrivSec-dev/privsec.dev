@@ -535,6 +535,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 - [AEON Wallet](https://play.google.com/store/apps/details?id=jp.co.aeon.credit.android.wallet) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/467)
 - [DanDanBANK](https://play.google.com/store/apps/details?id=jp.co.gogin.secondbankingappli) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/948)
+- [EVERING](https://play.google.com/store/apps/details?id=jp.evering.payment) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/925)
 - [GMOあおぞらネット銀行 取引アプリ](https://play.google.com/store/apps/details?id=com.gmo_aozora.android.bank) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/929)
 - [Habitto](https://play.google.com/store/apps/details?id=com.sjml.habitto) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/820)
 - [iDアプリ （MVNO/SIMロックフリー端末版）](https://play.google.com/store/apps/details?id=jp.id_credit_sp2.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/551)
