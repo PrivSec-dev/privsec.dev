@@ -12,7 +12,16 @@ The real cost is the time and energy we put into writing, testing, and fact chec
 
 ---
 
-Alternatively, please consider donating to the projects below. These are projects which we rely on for our own digital safety and recommend to our readers. They are vital for the privacy, security, and safety of thousands of people.
+Alternatively, please consider donating to the projects below. These are projects that have made substantial contributions to further the privacy, security, and safety of a great number of people.
+
+### Accrescent
+**Donation Link**: [accrescent.app/donate](https://accrescent.app/donate)
 
 ### GrapheneOS
 **Donation Link**: [grapheneos.org/donate](https://grapheneos.org/donate)
+
+### Redox OS
+**Donation Link**: [www.redox-os.org/donate](https:www.redox-os.org/donate)
+
+### SecureBlue
+**Donation Link**: [secureblue.dev/donate](https://secureblue.dev/donate)
