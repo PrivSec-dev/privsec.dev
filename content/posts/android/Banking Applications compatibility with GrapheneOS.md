@@ -967,7 +967,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Raiffeisen E-Banking](https://play.google.com/store/apps/details?id=ch.raiffeisen.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/26)
 - [Raiffeisen PhotoTAN](https://play.google.com/store/apps/details?id=ch.raiffeisen.phototan) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/618)
 - [Raiffeisen TWINT](https://play.google.com/store/apps/details?id=ch.raiffeisen.twint) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/617)
-- [SGKB – Ihre Finanzbegleiterin](https://play.google.com/store/apps/details?id=ch.sgkb.androidapp) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/1035)
+- ~~[SGKB – Ihre Finanzbegleiterin](https://play.google.com/store/apps/details?id=ch.sgkb.androidapp)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/1035)
 - [Swisscard](https://play.google.com/store/apps/details?id=com.swisscard.prod) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/865)
   - Play Integrity usage must be blocked for this app to run!
 - [Swissquote](https://play.google.com/store/apps/details?id=com.swissquote.android) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/471)
