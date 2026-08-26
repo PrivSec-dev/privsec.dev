@@ -49,6 +49,12 @@ Wayland's predecessor, [X11](https://en.wikipedia.org/wiki/X_Window_System), doe
 
 Here is a quick, non-authoritative list of distributions we recommend over others:
 
+### SecureBlue
+
+[SecureBlue](https://secureblue.dev/) is the best traditional desktop Linux operating system for privacy and security. It provides hardened operating system images based on Fedora Atomic Desktops. While they do additional parties of trust (SecureBlue, GitHub infrastructure, BlueBuild, Negativo, etc), their images are substantially hardened and not easily replicated by hand. There are several very interesting packages maintained by SecureBlue as well:
+- [Trivalent](https://github.com/secureblue/Trivalent), a hardened chromium desktop build with patches from GrapheneOS's [Vanadium](https://github.com/GrapheneOS/Vanadium).
+- [Hardened Malloc](https://github.com/secureblue/fedora-extras/tree/live/hardened_malloc). SecureBlue packages GrapheneOS's memory allocator and enables it system wide, including for Flatpak applications.
+
 ### Fedora Workstation
 
 ![Fedora](fedora-screenshot.png)
@@ -69,13 +75,6 @@ Fedora's package manager, `dnf`, has a great rollback and undo feature that is g
 
 One caveat with Fedora Atomic Desktops is that `rpm-ostree` currently has a hard dependency on `grub` and does not support Unified Kernel Images. The consequence of this is that unlike Fedora Workstation, it is not possible to set up a Fedora Atomic system with meaningful Secure Boot to resist physical tampering.
 
-### SecureBlue
-
-[SecureBlue](https://secureblue.dev/) provides hardened operating system images based on Fedora Atomic Desktops. While they do additional parties of trust (SecureBlue, GitHub infrastructure, BlueBuild, Negativo, etc), their images are substantially hardened and not easily replicated by hand. There are several very interesting packages maintained by SecureBlue as well:
-- [Trivalent](https://github.com/secureblue/Trivalent), a hardened chromium desktop build with patches from GrapheneOS's [Vanadium](https://github.com/GrapheneOS/Vanadium).
-- [Hardened Malloc](https://github.com/secureblue/fedora-extras/tree/live/hardened_malloc). SecureBlue packages GrapheneOS's memory allocator and enables it system wide, including for Flatpak applications.
-
-
 ### openSUSE Aeon
 
 Fedora Atomic Desktop's European counterpart. openSUSE Aeon is a rolling release, fast updating distributions with [transactional updates](https://kubic.opensuse.org/blog/2018-04-04-transactionalupdates/) using [Btrfs](https://en.wikipedia.org/wiki/Btrfs) and [Snapper](https://en.opensuse.org/openSUSE:Snapper_Tutorial).
@@ -83,11 +82,3 @@ Fedora Atomic Desktop's European counterpart. openSUSE Aeon is a rolling release
 [Aeon](https://microos.opensuse.org/) has a relatively small set of base packages (thus lowering the attack surface) and mounts the running BTRFS subvolume as read-only. Updates are applied package by package to a new BTRFS snapshot before the system is rebooted to the new subvolume. This allows the rollback process to be relatively easy just like on Fedora Atomic Desktops.
 
 {{< youtube id="jcl_4Vh6qP4">}}
-
-### Whonix
-
-[Whonix](https://www.whonix.org/) is a distribution focused on anonymity based on [Kicksecure](https://www.whonix.org/wiki/Kicksecure). It is meant to run as two virtual machines: a “Workstation” and a Tor “Gateway.” All communications from the Workstation must go through the Tor gateway. This means that even if the Workstation is compromised by malware of some kind, the true IP address remains hidden. It is currently the best solution that I know of if your threat model requires anonymity.
-
-Some of its features include Tor Stream Isolation, [keystroke anonymization](https://www.whonix.org/wiki/Keystroke_Deanonymization#Kloak), [boot clock randomization](https://www.kicksecure.com/wiki/Boot_Clock_Randomization), [encrypted swap](https://github.com/Whonix/swap-file-creator), hardened boot parameters, and hardened kernel settings. One downside of Whonix is that it still inherits outdated packages with lots of downstream patching from Debian. It would be better if Whonix gets reimplemented on top of a more sensible base like SecureBlue, although no such system publicly exists yet.
-
-Although Whonix is best used [in conjunction with Qubes](https://www.whonix.org/wiki/Qubes/Why_use_Qubes_over_other_Virtualizers), Qubes-Whonix has [various disadvantages](https://forums.whonix.org/t/qubes-whonix-security-disadvantages-help-wanted/8581) when compared to other hypervisors.
