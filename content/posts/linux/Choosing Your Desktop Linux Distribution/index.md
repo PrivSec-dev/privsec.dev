@@ -61,7 +61,7 @@ Fedora's package manager, `dnf`, has a great rollback and undo feature that is g
 
 ### Fedora Atomic Desktops
 
-[Fedora Atomic Desktops](https://fedoraproject.org/atomic-desktops/) are immutable variants of Fedora with a strong focus on container workflows. While they do not provide security benefits over Fedora, they have a much more reliable update mechanism. Unlike traditional Linux where packages are updated one by one, Atomic Desktops will download a whole new OS image first before rebooting to switch over to the new image. The system cannot fail in the middle of an update, and should something be wrong with the new image, it only takes one reboot to return the system to its previous state. Should you feel the `dnf` rollback mechanism isn't enough, we recommend giving Fedora Atomic Desktops a try.
+[Fedora Atomic Desktops](https://fedoraproject.org/atomic-desktops/) are variants of Fedora with a strong focus on container workflows. While they do not provide security benefits over Fedora, they have a much more reliable update mechanism. Unlike traditional Linux where packages are updated one by one, Atomic Desktops will download a whole new OS image first before rebooting to switch over to the new image. The system cannot fail in the middle of an update, and should something be wrong with the new image, it only takes one reboot to return the system to its previous state. Should you feel the `dnf` rollback mechanism isn't enough, we recommend giving Fedora Atomic Desktops a try.
 
 [Adam Šamalík](https://twitter.com/adsamalik) has a presentation with `rpm-ostree` in action:
 
