@@ -29,7 +29,7 @@ TOTP is one of the most common forms of MFA available. When you set up TOTP, you
 
 The time-limited code is then derived from the shared secret and the current time. As the code is only valid for a short time, without access to the shared secret, an adversary cannot generate new codes.
 
-If you have a [YubiKey](https://www.yubico.com/), you should store the "shared secrets" on the key itself using the [Yubico Authenticator](https://www.yubico.com/products/yubico-authenticator/) app. After the initial setup, the Yubico Authenticator will only expose the 6 digit code to the machine it is running on, but not the shared secret. Additional security can be set up by requiring touch confirmation, protecting digit codes not in used from a compromised operating system.
+If you have a [YubiKey](https://www.yubico.com/), you can store the "shared secrets" on the key itself using the [Yubico Authenticator](https://www.yubico.com/products/yubico-authenticator/) app. After the initial setup, the Yubico Authenticator will only expose the 6 digit code to the machine it is running on, but not the shared secret. Additional security can be set up by requiring touch confirmation, protecting digit codes not in used from a compromised operating system.
 
 Unlike [WebAuthn](#fido2-fast-identity-online), TOTP offers no protection against [phishing](https://en.wikipedia.org/wiki/Phishing) or reuse attacks. If an adversary obtains a valid code from you, they may use it as many times as they like until it expires (generally 30 seconds + grace period).
 
@@ -59,9 +59,40 @@ WebAuthn is the most secure and private form of second factor authentication. Wh
 
 {{< youtube id="aMo4ZlWznao">}}
 
-Since FIDO2/WebAuthn uses unique cryptographic keys with each internet site, a site pretending to be another one will not be able to get the correct response to the challenge for MFA, making FIDO2/Webauthn is invulnerable phising. It is also because of this authentication mechanism that a physical FIDO2 security key is not identifiable across different services like Yubico OTP. Even better, FIDO2 uses a counter for each authentication, which would help with detecting cloned keys.
+Since FIDO2/WebAuthn uses unique cryptographic keys with each internet site, a site pretending to be another one will not be able to get the correct response to the challenge for MFA, making FIDO2/Webauthn is invulnerable phising. It is also because of this authentication mechanism that a physical FIDO2 security key is not identifiable across different services like Yubico OTP as long as you do not grant them access to the key serial number. Even better, some FIDO2 implementations use a counter for each authentication, which would help with detecting cloned keys.
 
 If a website or service supports WebAuthn for the authentication, it is highly recommended that you use it over any other form of MFA.
+
+## FIDO2 Security Key Properties
+
+Not all FIDO2 keys are created equal. Here are our observations regarding common security keys:
+
+### Yubikey
+
+The Yubikey supports a wide range of features such as FIDO2, TOTP, OpenPGP Smartcard, PIV Smartcard emulation, and so on. However, there are 2 problems you need to be aware of:
+
+- There is no firmware updates. When a vulnerability is found on your current firmware version, your only recourse is to buy a new key with patched firmware.
+- The internal storage, at least for the FIDO2 interface, is not encrypted in a meaningful manner. Since there is no way to force a PIN for all FIDO2 operations, it is clear that the encryption key, if it even exists at all, is not protected with a secret only known to the user. With a Yubikey, you will be relying solely on the secure element and potting to protect your FIDO2 secrets.
+
+### Nitrokey
+
+Nitrokeys, much like the Yubikey, do not encrypt its FIDO2 storage in a meaningful manner. Additionally, it is explicitly noted in their app that the HOTP/TOTP secret storage is also [not encrypted](https://docs.nitrokey.com/nitrokeys/features/totp/general).
+
+Some NitroKeys do support password storage, however, it is tied to the OpenPGP interface. Resetting the OpenPGP interface will make the password database [inaccessible](https://docs.nitrokey.com/nitrokeys/pro/factory-reset). 
+
+Nitrokeys support firmware updates and receieve them quite frequently. However, the they does not have any potting to protect themselves against physical attacks. 
+
+### OnlyKey
+
+The OnlyKey encrypts its entire internal storage against the user PIN and static secrets baked into the hardware. The PIN consists of digits from 1 to 6, has the maximum length of 10 digits, and has to be physically typed on the key. The Onlykey supports a duress PIN, which other security keys do not have. For further protection against physical attacks, the key is also potted in resin.
+
+
+
+### Trezor
+
+### General recommendation
+
+
 
 ## Notes
 
