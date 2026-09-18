@@ -15,8 +15,7 @@ This post should not be considered an endorsement of Lokinet in any shape or for
 
 ## Creating the TemplateVM
 
-Currently, the Lokinet client seems to work well with only Debian-based distributions. This means that our template will have to be one of the Debian-based ones. Personally, I use [this script](https://github.com/TommyTran732/QubesOS-Scripts/blob/main/debian-gnome/debian-gnome.sh) to trim down the Debian GNOME template and convert it to Kicksecure. Kicksecure reduces the attack surface of Debian with a substantial set of hardening configurations, and a nice feature to go with an anonymity network like Lokinet is [Boot Clock Randomization](https://www.kicksecure.com/wiki/Boot_Clock_Randomization) which helps defend against [time-based denonymization attacks](https://www.whonix.org/wiki/Time_Attacks).
-
+Currently, the Lokinet client seems to work well with only Debian-based distributions. This means that our template will have to be one of the Debian-based ones. Personally, I use [this script](https://github.com/TommyTran732/QubesOS-Scripts/blob/main/debian-gnome/debian-gnome.sh) to trim down and harden the Debian GNOME template.
 Start by creating the bind directories for Lokinet's configurations:
 
 ```bash
