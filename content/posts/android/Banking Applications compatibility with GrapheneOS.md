@@ -388,6 +388,7 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 - [Banque Populaire](https://play.google.com/store/apps/details?id=fr.banquepopulaire.cyberplus) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/473)
 - [Banxo](https://play.google.com/store/apps/details?id=com.caisseepargne.android.mobilebanking) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/215)
 - ~~[BoursoBank](https://play.google.com/store/apps/details?id=com.boursorama.android.clients)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/147)
+  - This app appears to have stopped working for new logins.
 - [Chèque-Vacances](https://play.google.com/store/apps/details?id=fr.ancv.beneficiaire) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/866)
 - [CIC banque: Compte & Assurance](https://play.google.com/store/apps/details?id=com.cic_prod.bad) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/526)
 - [CIC Pay : paiement mobile](https://play.google.com/store/apps/details?id=com.ei.payment.app.cic) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/527)
