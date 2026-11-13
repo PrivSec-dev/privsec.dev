@@ -634,8 +634,6 @@ TEST: Test url again after removing the parameters and verify there is no mistak
 
 ### Jordan
 
-- ~~[Jordan Islamic Bank](https://play.google.com/store/apps/details?id=com.fact.jib)~~ - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/1143)
-
 ### Kazakhstan
 
 - [Alatau City Bank](https://play.google.com/store/apps/details?id=kz.tsb.app24) - [Report](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/916)
